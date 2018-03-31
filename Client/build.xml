@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="help" name="DeustoBox_Client">    
+	<property environment="env"/>
+	<property name="src.dir" location="src"/>
+   	<property name="bin.dir" location="bin"/>
+	<property name="lib.dir" location="lib"/>
+	<property name="rmiregistry.port" value="1099"/> 
+	<property name="rmiregistry.IP" value="127.0.0.1"/> 
+	<property name="server.Name" value="DeustoBox_Client"/>
+	<property name="policy.file" location="security/java.policy"/>	
+
+    <path id="full.classpath">
+        <fileset dir="${lib.dir}">
+            <include name="**/*.jar"/>
+        </fileset>
+        <pathelement location="${bin.dir}"/>    	
+    </path>
+	
+	<target name="help">
+		<echo>Usage: ant [compile | client]</echo>
+	</target>	
+	
+	<target name="compile" description="Builds the project">
+		<delete dir="${bin.dir}"/>
+		<mkdir dir="${bin.dir}"/>
+		<javac srcdir="${src.dir}" destdir="${bin.dir}" classpathref="full.classpath" deprecation="true" fork="true" includeAntRuntime="no" nowarn="true"/>
+    </target>
+
+	<target name="runClient" description="Runs the Client">
+		<java classname="controller.Controller" classpathref="full.classpath" fork="true">
+			<jvmarg value="-Djava.security.policy=${policy.file}"/>				
+        	<arg value="${rmiregistry.IP}"/> 
+	 		<arg value="${rmiregistry.port}"/> 
+			<arg value="${server.Name}"/> 
+        </java>
+    </target>
+</project>

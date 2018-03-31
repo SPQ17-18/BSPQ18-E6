@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<!DOCTYPE orm PUBLIC 
+	"-//Sun Microsystems, Inc.//DTD Java Data Objects Metadata 2.0//EN"
+	"http://java.sun.com/dtd/orm_2_0.dtd">
+<orm>
+   <package name="es.deusto.ingenieria.sd.jdo.easybooking">
+   
+      <class name="Aerolinea" table="AEROLINEAS">
+         <field name="cod_aerolinea" primary-key="true">
+            <column name="cod_aerolinea" length="3" jdbc-type="VARCHAR"/>
+         </field>
+         <field name="nombre">            
+            <column name="nombre" length="255" jdbc-type="VARCHAR"/>
+         </field>
+          <field name="Vuelo">   
+          	<collection element-type="es.deusto.ingenieria.sd.jdo.Vuelo"/>         
+            <join/>
+         </field>
+          <field name="Reserva">   
+          	<collection element-type="es.deusto.ingenieria.sd.jdo.Reserva"/>         
+            <join/>
+         </field>
+      </class>
+      
+      <class name="Aeropuerto" table="AEROPUERTOS">
+         <field name="cod_aeropuerto" primary-key="true">
+            <column name="cod_aeropuerto" length="3" jdbc-type="VARCHAR"/>
+         </field>
+         <field name="nombre">            
+            <column name="nombre" length="255" jdbc-type="VARCHAR"/>
+         </field>
+          <field name="usuario">   
+          	<collection element-type="es.deusto.ingenieria.sd.jdo.usuario"/>         
+            <join/>
+         </field>
+         <field name="Vuelo">   
+          	<collection element-type="es.deusto.ingenieria.sd.jdo.Vuelo"/>         
+            <join/>
+         </field>
+      </class>
+      
+       <class name="vuelo" table="VUELOS">
+         <field name="cod_vuelo" primary-key="true">
+            <column name="cod_vuelo" length="5" jdbc-type="VARCHAR"/>
+         </field>
+         <field name="Aerolinea">     
+            <join/>
+         </field>
+         <field name="Aeropuerto">     
+            <join/>
+         </field>
+      </class>
+      
+      <class name="usuario" table="USUARIOS">
+          <field name="username" primary-key="true">
+            <column name="username" length="255" jdbc-type="VARCHAR"/>
+         </field>
+         <field name="email">
+            <column name="email" length="255" jdbc-type="VARCHAR"/>
+         </field>
+         <field name="nombre">
+            <column name="nombre" length="255" jdbc-type="VARCHAR"/>
+         </field>
+         <field name="tipoAutenticacion">
+            <column name="tipoAutenticacion" length="255" jdbc-type="VARCHAR"/>
+         </field>
+          <field name="listReservas">   
+          	<collection element-type="es.deusto.ingenieria.sd.jdo.Reserva"/>         
+            <join/>
+         </field>
+      </class>
+      
+    <class name="reserva" table="RESERVAS">
+         <field name="localizador" primary-key="true">
+            <column name="localizador" jdbc-type="INTEGER"/>
+         </field>
+         <field name="fecha">            
+            <column name="fecha" length="255" jdbc-type="VARCHAR"/>
+         </field>
+         <field name="numAsientos">            
+            <column name="numAsientos" jdbc-type="INTEGER"/>
+         </field>
+         <field name="importe">            
+            <column name="importe" jdbc-type="INTEGER"/>
+         </field>
+         <field name="pasajeros">            
+            <join/>
+         </field>
+         <field name="Aerolinea">            
+            <join/>
+         </field>
+      </class>
+       
+      <class name="pago" table="RESERVAS">
+         <field name="fecha">
+            <column name="fecha" length="255" jdbc-type="VARCHAR"/>
+         </field>
+         <field name="hora">            
+            <column name="hora" length="255" jdbc-type="VARCHAR"/>
+         </field>
+         <field name="precioTotal">            
+            <column name="precioTotal" jdbc-type="INTEGER"/>
+         </field>
+         <field name="Usuario">
+            <collection element-type="es.deusto.ingenieria.sd.jdo.Usuario"/>
+            </field>
+      </class>
+       
+    </package>
+</orm>

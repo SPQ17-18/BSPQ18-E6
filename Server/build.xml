@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="run" name="DeustoBox_Server">
+    <!-- project directories -->
+    <property name="src.dir" location="src"/>
+    <property name="bin.dir" location="bin"/>
+	<property name="lib.dir" location="lib"/>
+	<property name="resources.dir" location="resources"/>
+	
+	<property name="dist.dir" location="dist"/>
+	<property name="server.port" value="1099"/> 
+	<property name="server.IP" value="127.0.0.1"/>
+	<property name="server.Name" value="DeustoBox_Server"/>
+	<property name="export.file" value="DeustoBox_Server.jar"/>
+	<property name="policy.file" location="security/java.policy"/>	
+	<property name="socket.IP" value="0.0.0.0"/>
+	<property name="socket.port" value="8001"/>
+	
+    <!-- Classpath -->
+    <path id="full.classpath">
+        <fileset dir="${lib.dir}">
+            <include name="**/*.jar"/>
+        </fileset>
+        <pathelement location="${bin.dir}"/>
+        <pathelement location="${resources.dir}"/>
+    </path>
+	
+	<target name="help">
+			<echo>Usage: ant [run | export | runServer]</echo>
+	</target>
+
+    <!-- TARGET : clean -->
+    <target name="clean">
+        <delete includeEmptyDirs="true" quiet="true">
+            <fileset dir="${bin.dir}" includes="**/*.*"/>
+        </delete>
+		<delete dir="${bin.dir}"/>
+    </target>
+
+    <!-- TARGET : prepare -->
+    <target name="prepare">
+        <mkdir dir="${bin.dir}"/>
+    </target>
+
+    <!-- TARGET : compile -->
+    <target name="compile" depends="clean, prepare">
+        <javac srcdir="${src.dir}" destdir="${bin.dir}" classpathref="full.classpath" includeantruntime="no">
+            <include name="**/*.java"/>
+         </javac>
+    </target>
+	
+    <!-- TARGET : enhance -->
+    <target name="enhance" depends="compile">
+    	<taskdef name="enhancer" classpathref="full.classpath" classname="org.datanucleus.enhancer.EnhancerTask" />
+    	
+   		<enhancer classpathref="full.classpath" failonerror="true">
+            <sysproperty key="log4j.configuration" value="file:${resources.dir}/log4j.properties"/>
+            <fileset dir="${bin.dir}">
+                <include name="**/*.class"/>
+            </fileset>
+   		</enhancer>
+    </target>
+
+    <!-- TARGET : SchemaTool "create" -->
+    <target name="createschema" depends="enhance">
+        <taskdef name="schematool" classpathref="full.classpath" classname="org.datanucleus.store.schema.SchemaToolTask"/>
+
+    	<schematool mode="create" classpathref="full.classpath" failonerror="true" props="datanucleus.properties">
+            <sysproperty key="log4j.configuration" value="file:${resources.dir}/log4j.properties"/>
+            <fileset dir="${bin.dir}">
+                <include name="**/*.class"/>
+            </fileset>
+        </schematool>
+    </target>
+
+    <!-- TARGET : SchemaTool "delete" -->
+    <target name="deleteschema">
+        <taskdef name="schematool" classpathref="full.classpath" classname="org.datanucleus.store.schema.SchemaToolTask"/>
+
+    	 	<schematool mode="delete" classpathref="full.classpath" failonerror="true" props="datanucleus.properties">            
+    	      <sysproperty key="log4j.configuration" value="file:${resources.dir}/log4j.properties"/>
+    	 		<fileset dir="${bin.dir}">
+                <include name="**/*.class"/>
+            </fileset>
+        </schematool>
+    </target>
+	
+	 <!-- SchemaTool "dbinfo" -->
+	    <target name="schemainfo">
+	    	<taskdef name="schematool" classpathref="full.classpath" classname="org.datanucleus.store.schema.SchemaToolTask"/>
+	    	
+	        <schematool mode="dbinfo" classpathref="full.classpath" failonerror="true" props="datanucleus.properties">
+	        	 <sysproperty key="log4j.configuration" value="file:${resources.dir}/log4j.properties"/>
+	        	<fileset dir="${bin.dir}">
+	                <include name="**/*.class"/>
+	            </fileset>
+       
+	        </schematool>
+	    </target>
+    <!-- TARGET : Run -->	
+	<target name="run" depends="createschema">
+        <java classname="jdo.Main" classpathref="full.classpath" fork="true">
+        	<jvmarg value="-Dlog4j.configuration=log4j.properties"/>
+		</java>
+    </target>
+	 
+	<!-- TARGET : RMI Service Section - export and runServer -->	
+	
+	<target name="export" depends="compile" description="Export the project into a .jar file">
+			<jar destfile="${dist.dir}/${export.file}" basedir="${bin.dir}" includes="remote/I**.class, dto/**DTO.class"/>
+    </target>	
+	
+	<!-- TARGET : Running the Server -->	
+	
+	<target name="runServer" depends="createschema" description="Runs the Server">
+			<java classname="remote.UserUtils" classpathref="full.classpath" fork="true">
+				<jvmarg value="-Djava.rmi.server.codebase=file:${bin.dir}/"/>
+				<jvmarg value="-Djava.security.policy=${policy.file}"/>		
+				<jvmarg value="-Dlog4j.configuration=log4j.properties"/>
+	        	<arg value="${server.IP}"/> 
+		 		<arg value="${server.port}"/> 
+				<arg value="${server.Name}"/>
+				<arg value="${socket.IP}"/>
+				<arg value="${socket.port}"/>
+	        </java>
+	 </target>
+</project>
