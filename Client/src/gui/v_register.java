@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-public class w_client extends JFrame {
+public class v_register extends JFrame {
 
 	private JPanel contentPane;
 
@@ -18,7 +18,7 @@ public class w_client extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					w_client frame = new w_client();
+					v_register frame = new v_register();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -30,7 +30,7 @@ public class w_client extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public w_client() {
+	public v_register() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
