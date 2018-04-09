@@ -18,7 +18,13 @@ public class idea_client {
 			 * Se sincroniza la Box.
 			 * 
 			 */
-			
+	
+			// Conexión con la Base de datos externa
+			/*
+			 * 
+			 * 
+			 */
+	
 			// Sincronizar la Box
 			/*
 			 * Comprobar si se ha modificado algún archivo.
