@@ -2,7 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="Client/src"/>
 	<classpathentry kind="src" path="Server/src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="Server/lib/datanucleus-api-jdo-5.1.2.jar"/>
 	<classpathentry kind="lib" path="Server/lib/datanucleus-cache-5.1.0-release.jar"/>
 	<classpathentry kind="lib" path="Server/lib/datanucleus-core-5.1.2.jar"/>
