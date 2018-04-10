@@ -1,6 +1,10 @@
 package deusto.bspq18.e6.DeustoBox.Server.gui;
 
 import java.io.File;
+import java.sql.Connection;
+import java.sql.Statement;
+
+import deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection;
 
 public class idea_server {
 
@@ -37,5 +41,7 @@ public class idea_server {
 			File directorio=new File(dir + "\\Deusto-Box"); 
 			directorio.mkdir(); 
 			
+			BDConnection bd = BDConnection.getBD();
+		
 		}
 }

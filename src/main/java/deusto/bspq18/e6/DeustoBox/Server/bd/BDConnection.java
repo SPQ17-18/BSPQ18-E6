@@ -19,11 +19,15 @@ public class BDConnection {
 	private static String pass = data.getProperties("resources/DeustoBox.properties", "password");
 	
 	public BDConnection(Connection conexion, Statement stat) {
-		super();
 		this.conexion = conexion;
 		this.stat = stat;
 	}
 	
+	public static BDConnection getBD() {
+		Connection con = initBD();
+		Statement stat = useBD(con);
+		return new BDConnection(con, stat);
+	}
 	public Connection getConexion() {
 		return conexion;
 	}
