@@ -1,11 +1,7 @@
 package deusto.bspq18.e6.DeustoBox.Server.gui;
 
 import java.io.File;
-import java.sql.Connection;
-import java.sql.Statement;
-
 import deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection;
-import deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red;
 
 public class idea_server {
 
