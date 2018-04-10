@@ -3,29 +3,30 @@ package deusto.bspq18.e6.DeustoBox.Server.data;
 import java.io.File;
 import java.util.ArrayList;
 
-import spq.server.data.PersistenceCapable;
-import spq.server.data.PrimaryKey;
+import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.PrimaryKey;
+
 @PersistenceCapable
 public class Archivo {
 	@PrimaryKey
 	private int FileID;
 	private String name;
 	private File file;
-	private ArrayList <String> Users;
-	
+	private ArrayList<String> Users;
+
 	public Archivo(int fileID, String name, File file, ArrayList<String> users) {
 		this.FileID = fileID;
 		this.name = name;
 		this.file = file;
 		this.Users = users;
 	}
-	
+
 	public Archivo() {
 		this.FileID = 1;
 		this.name = " ";
 		this.file = new File(" ");
-		this.Users = new ArrayList<String> ();	
-		
+		this.Users = new ArrayList<String>();
+
 	}
 
 	public int getFileID() {
@@ -64,9 +65,5 @@ public class Archivo {
 	public String toString() {
 		return "Archivo [FileID=" + FileID + ", name=" + name + ", file=" + file + ", Users=" + Users + "]";
 	}
-	
-	
 
-	
-	
 }
