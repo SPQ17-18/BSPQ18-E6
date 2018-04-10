@@ -1,11 +1,14 @@
 package deusto.bspq18.e6.DeustoBox.Server.data;
 
+import java.io.Serializable;
+
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
 
-@PersistenceCapable
-public class User {
+@PersistenceCapable(detachable="true")
+public class User implements Serializable {
 
+	private static final long serialVersionUID = -3653362043946570733L;
 	@PrimaryKey
 	private String email;
 	private String username;
