@@ -42,6 +42,7 @@ public class idea_server {
 			directorio.mkdir(); 
 			
 			BDConnection bd = BDConnection.getBD();
+			bd.createTable();
 		
 		}
 }

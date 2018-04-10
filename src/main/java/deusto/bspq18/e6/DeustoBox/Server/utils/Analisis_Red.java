@@ -17,11 +17,13 @@ public class Analisis_Red {
 
 	public static void main(String[] args) {
 		
-	/*Analisis_Red a = new Analisis_Red(0, 300);
-	System.out.println(almacen);*/
+		/*Analisis_Red a = new Analisis_Red(0, 300);
+		System.out.println(almacen);
 		iniciar.start();
 		System.out.println("Listado de puertos abiertos");
-		System.out.println(almacen);
+		System.out.println(almacen);*/
+		System.out.println("Conexión a internet: " + TestInternet());
+		System.out.println("Conexión puerto a BD: " + TestPuerto());
 	}
 
 	static Thread iniciar = new Thread() {
@@ -92,9 +94,10 @@ public class Analisis_Red {
 			test = new Socket(web, puerto);
 			if (test.isConnected()) {
 				// Si hay internet comprobamos el puerto 3306
-				if (TestPuerto() == true) {
+				/*if (TestPuerto() == true) {
 					hayinternet = true;
-				}
+				}*/
+				return true;
 			}
 		} catch (Exception e) {
 			return false;
