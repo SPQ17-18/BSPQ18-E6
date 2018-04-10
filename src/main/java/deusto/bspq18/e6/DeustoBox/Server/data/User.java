@@ -1,7 +1,6 @@
-package spq.server.data;
+package deusto.bspq18.e6.DeustoBox.Server.data;
 
-import spq.server.data.PersistenceCapable;
-import spq.server.data.PrimaryKey;
+
 
 	@PersistenceCapable
 	public class User {

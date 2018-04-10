@@ -1,4 +1,4 @@
-package spq.server.data;
+package deusto.bspq18.e6.DeustoBox.Server.data;
 
 import java.io.File;
 import java.util.ArrayList;
