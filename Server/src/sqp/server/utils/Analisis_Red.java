@@ -1,4 +1,4 @@
-package utils;
+package sqp.server.utils;
 
 import java.io.IOException;
 import java.net.ConnectException;
@@ -11,7 +11,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 /*
- * Método que analiza los puertos de la red wifi
+ * Mï¿½todo que analiza los puertos de la red wifi
  */
 public class Analisis_Red {
 
@@ -77,7 +77,7 @@ public class Analisis_Red {
 	}
 
 	/**
-	 * Método que indica si hay disponible una conexión a internet
+	 * Mï¿½todo que indica si hay disponible una conexiï¿½n a internet
 	 * 
 	 * @return true si hay internet
 	 * @return false si no hay internet
@@ -109,11 +109,11 @@ public class Analisis_Red {
 	}
 
 	/*
-	 * Método que comprueba si el puerto necesario para conectarse a la bd está
+	 * Mï¿½todo que comprueba si el puerto necesario para conectarse a la bd estï¿½
 	 * abierto o cerrado
 	 * 
-	 * @return true si está abierto
-	 * @return false si está cerrado
+	 * @return true si estï¿½ abierto
+	 * @return false si estï¿½ cerrado
 	 */
 	private static boolean TestPuerto() {
 		boolean abierto = true;
