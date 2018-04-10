@@ -5,7 +5,10 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+
 import javax.swing.JOptionPane;
+
 
 public class BDConnection {
 
@@ -130,4 +133,19 @@ public class BDConnection {
 		return false;
 	}
 
+	public ArrayList<String> getUsers() {
+		ArrayList<String> users = new ArrayList<String>();
+		try {
+			ResultSet rs = stat.executeQuery("select * from user");
+			while (rs.next()) {
+				String username = rs.getString("username");
+				/*String password = rs.getString("password");
+				String email = rs.getString("email");*/
+				users.add(username);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return users;
+	}
 }

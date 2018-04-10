@@ -39,20 +39,37 @@ public class idea_server {
 				 */
 		public static void main(String[] args) {
 			//String dir = "C:\\\\Users\\\\deusto_06\\\\Desktop";
-			String dir = "D:\\aitor\\Escritorio";
-			File directorio=new File(dir + "\\Deusto-Box"); 
+			String myDir = "D:\\aitor\\Escritorio";
+			String completeDir = myDir + "\\Deusto-Box";
+			File directorio = new File(completeDir); 
 			directorio.mkdir(); 
 			
 			BDConnection bd = null;
-			if(Analisis_Red.TestPuerto()) {
+			
+			/*if(Analisis_Red.TestPuerto()) {
 				System.out.println("Conectado a BD externa");
 				bd = BDConnection.getBD(true);
-			}else {
+			}else {*/
 				System.out.println("Conectado a BD local");
 				bd = BDConnection.getBD(false);
-			}
+			//}
+				
 			System.out.println("Creando tabla");
 			bd.createTable();
-		
+			
+			System.out.println("Añadiendo usuarios");
+			if(!bd.userExits("Aitor", bd.getStat(), bd.getConexion())) {
+				bd.registerUser(bd.getStat(), "Aitor", "123", "aitorugarte@opendeusto.es");
+			}
+			if(!bd.userExits("Markel", bd.getStat(), bd.getConexion())) {
+				bd.registerUser(bd.getStat(), "Markel", "123", "markeluko@opendeusto.es");
+			}
+			
+			for (int i = 0; i < bd.getUsers().size(); i++) {
+				File userFolder = new File(completeDir + "\\" + bd.getUsers().get(i)); 
+				userFolder.mkdir(); 
+			}
+			
+			
 		}
 }
