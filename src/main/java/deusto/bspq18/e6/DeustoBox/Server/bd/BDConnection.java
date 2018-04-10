@@ -22,8 +22,8 @@ public class BDConnection {
 		this.stat = stat;
 	}
 
-	public static BDConnection getBD() {
-		Connection con = initBD();
+	public static BDConnection getBD(boolean aExterna) {
+		Connection con = initBD(aExterna);
 		Statement stat = useBD(con);
 		return new BDConnection(con, stat);
 	}
@@ -44,10 +44,16 @@ public class BDConnection {
 		this.stat = stat;
 	}
 
-	public static Connection initBD() {
+	public static Connection initBD(boolean aExterna) {
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
-			String servidor = "jdbc:mysql://" + host + "/" + BD_name;
+			String servidor = null;
+			if(aExterna) {
+				servidor = "jdbc:mysql://" + host + "/" + BD_name;
+			}else {
+				Class.forName("org.sqlite.JDBC");
+				servidor = "jdbc:sqlite:DeustoBox.db";
+			}
 			return DriverManager.getConnection(servidor, user, pass);
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, "No se ha podido establecer la conexi�n " + e);

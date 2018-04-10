@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.Statement;
 
 import deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection;
+import deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red;
 
 public class idea_server {
 
@@ -37,11 +38,20 @@ public class idea_server {
 				 * 
 				 */
 		public static void main(String[] args) {
-			String dir = "C:\\\\Users\\\\deusto_06\\\\Desktop";
+			//String dir = "C:\\\\Users\\\\deusto_06\\\\Desktop";
+			String dir = "D:\\aitor\\Escritorio";
 			File directorio=new File(dir + "\\Deusto-Box"); 
 			directorio.mkdir(); 
 			
-			BDConnection bd = BDConnection.getBD();
+			BDConnection bd = null;
+			if(Analisis_Red.TestPuerto()) {
+				System.out.println("Conectado a BD externa");
+				bd = BDConnection.getBD(true);
+			}else {
+				System.out.println("Conectado a BD local");
+				bd = BDConnection.getBD(false);
+			}
+			System.out.println("Creando tabla");
 			bd.createTable();
 		
 		}
