@@ -58,11 +58,11 @@ public class idea_server {
 			bd.createTable();
 			
 			System.out.println("Añadiendo usuarios");
-			if(!bd.userExits("Aitor", bd.getStat(), bd.getConexion())) {
-				bd.registerUser(bd.getStat(), "Aitor", "123", "aitorugarte@opendeusto.es");
+			if(!bd.userExits("aitorugarte@opendeusto.es", bd.getStat(), bd.getConexion())) {
+				bd.registerUser(bd.getStat(), "aitorugarte@opendeusto.es", "Aitor", "123");
 			}
-			if(!bd.userExits("Markel", bd.getStat(), bd.getConexion())) {
-				bd.registerUser(bd.getStat(), "Markel", "123", "markeluko@opendeusto.es");
+			if(!bd.userExits("markeluko@opendeusto.es", bd.getStat(), bd.getConexion())) {
+				bd.registerUser(bd.getStat(), "markeluko@opendeusto.es", "Markel", "123");
 			}
 			
 			for (int i = 0; i < bd.getUsers().size(); i++) {
