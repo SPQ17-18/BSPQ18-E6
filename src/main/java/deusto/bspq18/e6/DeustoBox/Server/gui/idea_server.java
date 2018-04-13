@@ -45,13 +45,13 @@ public class idea_server {
 			
 			BDConnection bd = null;
 			
-			/*if(Analisis_Red.TestPuerto()) {
+			if(Analisis_Red.TestPuerto()) {
 				System.out.println("Conectado a BD externa");
 				bd = BDConnection.getBD(true);
-			}else {*/
+			}else {
 				System.out.println("Conectado a BD local");
 				bd = BDConnection.getBD(false);
-			//}
+			}
 				
 			System.out.println("Creando tabla");
 			bd.createTable();
