@@ -83,8 +83,7 @@ public class BDConnection {
 			stat.setQueryTimeout(30);
 			try {
 				stat.executeUpdate("create table user " +
-					"(id_user integer primary key autoincrement,"
-					+ "email text not null, "
+					"(email text primary key, "
 					+ "username text not null, "
 					+ "password text not null)");
 			} catch (SQLException e) {} // If it exits, nothing to do		
