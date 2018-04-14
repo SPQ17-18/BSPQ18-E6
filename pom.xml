@@ -38,7 +38,11 @@
             <artifactId>datanucleus-api-jdo</artifactId>
             <version>[5.1.4, 5.9)</version>
         </dependency>
-      
+     	 <dependency>
+   			 <groupId>org.datanucleus</groupId>
+    		<artifactId>javax.jdo</artifactId>
+   			 <version>3.2.0-m8</version>
+		</dependency>
         <dependency>
                 <groupId>javax.jdo</groupId>
    				<artifactId>jdo-api</artifactId>
