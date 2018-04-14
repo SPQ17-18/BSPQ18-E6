@@ -190,7 +190,6 @@
 						<artifactId>exec-maven-plugin</artifactId>  
 						<version>1.2.1</version>  
 						<configuration>  
-						<!-- Queda hacer una clase de ejecucion del cliente -->
 									<mainClass>es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator</mainClass>
 									<systemProperties>
 										<systemProperty>
