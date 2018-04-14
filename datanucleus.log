@@ -1,0 +1,1075 @@
+10:54:30,934 (main) DEBUG [DataNucleus.General] - Using PluginRegistry org.datanucleus.plugin.NonManagedPluginRegistry
+10:54:30,955 (main) DEBUG [DataNucleus.General] - Registering bundle org.sonatype.inject version 2.3.0 at URL file:/C:/Users/aitor/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar.
+10:54:30,976 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar!/plugin.xml.
+10:54:30,977 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar!/plugin.xml.
+10:54:30,979 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus version 5.1.8 at URL file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-core/5.1.8/datanucleus-core-5.1.8.jar.
+10:54:30,983 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-core/5.1.8/datanucleus-core-5.1.8.jar!/plugin.xml.
+10:54:30,988 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-core/5.1.8/datanucleus-core-5.1.8.jar!/plugin.xml.
+10:54:30,989 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.store.rdbms version 5.1.8 at URL file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-rdbms/5.1.8/datanucleus-rdbms-5.1.8.jar.
+10:54:30,994 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-rdbms/5.1.8/datanucleus-rdbms-5.1.8.jar!/plugin.xml.
+10:54:30,996 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-rdbms/5.1.8/datanucleus-rdbms-5.1.8.jar!/plugin.xml.
+10:54:30,998 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.api.jdo version 5.1.5 at URL file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.1.5/datanucleus-api-jdo-5.1.5.jar.
+10:54:31,002 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.1.5/datanucleus-api-jdo-5.1.5.jar!/plugin.xml.
+10:54:31,003 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.1.5/datanucleus-api-jdo-5.1.5.jar!/plugin.xml.
+10:54:31,013 (main) ERROR [DataNucleus.Persistence] - Error : Un error ocurrio cuando creando un adaptador "org.datanucleus.api.jdo.JDOAdapter" (quizas no tengas el jar apropiado datanucleus-api-XXX en el CLASSPATH, o el API jar para la especificacion que utilisas?) : javax/jdo/JDOUserException
+java.lang.NoClassDefFoundError: javax/jdo/JDOUserException
+	at java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.lang.Class.privateGetDeclaredConstructors(Class.java:2671)
+	at java.lang.Class.getConstructor0(Class.java:3075)
+	at java.lang.Class.getConstructor(Class.java:1825)
+	at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:625)
+	at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:295)
+	at org.datanucleus.api.ApiAdapterFactory.getApiAdapter(ApiAdapterFactory.java:88)
+	at org.datanucleus.AbstractNucleusContext.<init>(AbstractNucleusContext.java:118)
+	at org.datanucleus.enhancer.EnhancementNucleusContextImpl.<init>(EnhancementNucleusContextImpl.java:48)
+	at org.datanucleus.enhancer.EnhancementNucleusContextImpl.<init>(EnhancementNucleusContextImpl.java:37)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.<init>(DataNucleusEnhancer.java:163)
+	at org.datanucleus.enhancer.CommandLineHelper.createDataNucleusEnhancer(CommandLineHelper.java:153)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1113)
+Caused by: java.lang.ClassNotFoundException: javax.jdo.JDOUserException
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:338)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 13 more
+10:54:53,388 (main) DEBUG [DataNucleus.General] - Using PluginRegistry org.datanucleus.plugin.NonManagedPluginRegistry
+10:54:53,409 (main) DEBUG [DataNucleus.General] - Registering bundle org.sonatype.inject version 2.3.0 at URL file:/C:/Users/aitor/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar.
+10:54:53,429 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar!/plugin.xml.
+10:54:53,430 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar!/plugin.xml.
+10:54:53,433 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus version 5.1.8 at URL file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-core/5.1.8/datanucleus-core-5.1.8.jar.
+10:54:53,436 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-core/5.1.8/datanucleus-core-5.1.8.jar!/plugin.xml.
+10:54:53,442 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-core/5.1.8/datanucleus-core-5.1.8.jar!/plugin.xml.
+10:54:53,444 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.store.rdbms version 5.1.8 at URL file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-rdbms/5.1.8/datanucleus-rdbms-5.1.8.jar.
+10:54:53,448 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-rdbms/5.1.8/datanucleus-rdbms-5.1.8.jar!/plugin.xml.
+10:54:53,450 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-rdbms/5.1.8/datanucleus-rdbms-5.1.8.jar!/plugin.xml.
+10:54:53,451 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.api.jdo version 5.1.5 at URL file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.1.5/datanucleus-api-jdo-5.1.5.jar.
+10:54:53,456 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.1.5/datanucleus-api-jdo-5.1.5.jar!/plugin.xml.
+10:54:53,457 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.1.5/datanucleus-api-jdo-5.1.5.jar!/plugin.xml.
+10:54:53,467 (main) ERROR [DataNucleus.Persistence] - Error : Un error ocurrio cuando creando un adaptador "org.datanucleus.api.jdo.JDOAdapter" (quizas no tengas el jar apropiado datanucleus-api-XXX en el CLASSPATH, o el API jar para la especificacion que utilisas?) : javax/jdo/JDOUserException
+java.lang.NoClassDefFoundError: javax/jdo/JDOUserException
+	at java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.lang.Class.privateGetDeclaredConstructors(Class.java:2671)
+	at java.lang.Class.getConstructor0(Class.java:3075)
+	at java.lang.Class.getConstructor(Class.java:1825)
+	at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:625)
+	at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:295)
+	at org.datanucleus.api.ApiAdapterFactory.getApiAdapter(ApiAdapterFactory.java:88)
+	at org.datanucleus.AbstractNucleusContext.<init>(AbstractNucleusContext.java:118)
+	at org.datanucleus.enhancer.EnhancementNucleusContextImpl.<init>(EnhancementNucleusContextImpl.java:48)
+	at org.datanucleus.enhancer.EnhancementNucleusContextImpl.<init>(EnhancementNucleusContextImpl.java:37)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.<init>(DataNucleusEnhancer.java:163)
+	at org.datanucleus.enhancer.CommandLineHelper.createDataNucleusEnhancer(CommandLineHelper.java:153)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1113)
+Caused by: java.lang.ClassNotFoundException: javax.jdo.JDOUserException
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:338)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 13 more
+10:58:17,274 (main) DEBUG [DataNucleus.General] - Using PluginRegistry org.datanucleus.plugin.NonManagedPluginRegistry
+10:58:17,295 (main) DEBUG [DataNucleus.General] - Registering bundle org.sonatype.inject version 2.3.0 at URL file:/C:/Users/aitor/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar.
+10:58:17,315 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar!/plugin.xml.
+10:58:17,317 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar!/plugin.xml.
+10:58:17,319 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus version 5.1.8 at URL file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-core/5.1.8/datanucleus-core-5.1.8.jar.
+10:58:17,322 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-core/5.1.8/datanucleus-core-5.1.8.jar!/plugin.xml.
+10:58:17,328 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-core/5.1.8/datanucleus-core-5.1.8.jar!/plugin.xml.
+10:58:17,329 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.store.rdbms version 5.1.8 at URL file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-rdbms/5.1.8/datanucleus-rdbms-5.1.8.jar.
+10:58:17,334 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-rdbms/5.1.8/datanucleus-rdbms-5.1.8.jar!/plugin.xml.
+10:58:17,337 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-rdbms/5.1.8/datanucleus-rdbms-5.1.8.jar!/plugin.xml.
+10:58:17,338 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.api.jdo version 5.1.5 at URL file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.1.5/datanucleus-api-jdo-5.1.5.jar.
+10:58:17,342 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.1.5/datanucleus-api-jdo-5.1.5.jar!/plugin.xml.
+10:58:17,343 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.1.5/datanucleus-api-jdo-5.1.5.jar!/plugin.xml.
+10:58:17,354 (main) ERROR [DataNucleus.Persistence] - Error : Un error ocurrio cuando creando un adaptador "org.datanucleus.api.jdo.JDOAdapter" (quizas no tengas el jar apropiado datanucleus-api-XXX en el CLASSPATH, o el API jar para la especificacion que utilisas?) : javax/jdo/JDOUserException
+java.lang.NoClassDefFoundError: javax/jdo/JDOUserException
+	at java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.lang.Class.privateGetDeclaredConstructors(Class.java:2671)
+	at java.lang.Class.getConstructor0(Class.java:3075)
+	at java.lang.Class.getConstructor(Class.java:1825)
+	at org.datanucleus.plugin.NonManagedPluginRegistry.createExecutableExtension(NonManagedPluginRegistry.java:625)
+	at org.datanucleus.plugin.PluginManager.createExecutableExtension(PluginManager.java:295)
+	at org.datanucleus.api.ApiAdapterFactory.getApiAdapter(ApiAdapterFactory.java:88)
+	at org.datanucleus.AbstractNucleusContext.<init>(AbstractNucleusContext.java:118)
+	at org.datanucleus.enhancer.EnhancementNucleusContextImpl.<init>(EnhancementNucleusContextImpl.java:48)
+	at org.datanucleus.enhancer.EnhancementNucleusContextImpl.<init>(EnhancementNucleusContextImpl.java:37)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.<init>(DataNucleusEnhancer.java:163)
+	at org.datanucleus.enhancer.CommandLineHelper.createDataNucleusEnhancer(CommandLineHelper.java:153)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1113)
+Caused by: java.lang.ClassNotFoundException: javax.jdo.JDOUserException
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:338)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 13 more
+11:00:13,662 (main) DEBUG [DataNucleus.General] - Using PluginRegistry org.datanucleus.plugin.NonManagedPluginRegistry
+11:00:13,685 (main) DEBUG [DataNucleus.General] - Registering bundle org.sonatype.inject version 2.3.0 at URL file:/C:/Users/aitor/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar.
+11:00:13,705 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar!/plugin.xml.
+11:00:13,707 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar!/plugin.xml.
+11:00:13,709 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus version 5.1.8 at URL file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-core/5.1.8/datanucleus-core-5.1.8.jar.
+11:00:13,712 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-core/5.1.8/datanucleus-core-5.1.8.jar!/plugin.xml.
+11:00:13,718 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-core/5.1.8/datanucleus-core-5.1.8.jar!/plugin.xml.
+11:00:13,720 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.store.rdbms version 5.1.8 at URL file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-rdbms/5.1.8/datanucleus-rdbms-5.1.8.jar.
+11:00:13,725 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-rdbms/5.1.8/datanucleus-rdbms-5.1.8.jar!/plugin.xml.
+11:00:13,728 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-rdbms/5.1.8/datanucleus-rdbms-5.1.8.jar!/plugin.xml.
+11:00:13,730 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.api.jdo version 5.1.5 at URL file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.1.5/datanucleus-api-jdo-5.1.5.jar.
+11:00:13,735 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.1.5/datanucleus-api-jdo-5.1.5.jar!/plugin.xml.
+11:00:13,736 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.1.5/datanucleus-api-jdo-5.1.5.jar!/plugin.xml.
+11:00:13,773 (main) DEBUG [DataNucleus.Persistence] - Tipos de Java inicializando ...
+11:00:13,823 (main) DEBUG [DataNucleus.Persistence] - Soporte para tipos de Java listo : tipos soportados = [B, [C, [D, [F, [I, [J, [Ljava.lang.Boolean;, [Ljava.lang.Byte;, [Ljava.lang.Character;, [Ljava.lang.Double;, [Ljava.lang.Enum;, [Ljava.lang.Float;, [Ljava.lang.Integer;, [Ljava.lang.Long;, [Ljava.lang.Number;, [Ljava.lang.Object;, [Ljava.lang.Short;, [Ljava.lang.String;, [Ljava.math.BigDecimal;, [Ljava.math.BigInteger;, [Ljava.util.Date;, [Ljava.util.Locale;, [S, [Z, boolean, byte, char, double, float, int, java.awt.Color, java.awt.image.BufferedImage, java.lang.Boolean, java.lang.Byte, java.lang.Character, java.lang.Class, java.lang.Double, java.lang.Enum, java.lang.Float, java.lang.Integer, java.lang.Long, java.lang.Number, java.lang.Short, java.lang.String, java.lang.StringBuffer, java.lang.StringBuilder, java.math.BigDecimal, java.math.BigInteger, java.net.URI, java.net.URL, java.sql.Date, java.sql.Time, java.sql.Timestamp, java.time.Duration, java.time.Instant, java.time.LocalDate, java.time.LocalDateTime, java.time.LocalTime, java.time.MonthDay, java.time.OffsetDateTime, java.time.OffsetTime, java.time.Period, java.time.Year, java.time.YearMonth, java.time.ZonedDateTime, java.time.ZoneId, java.time.ZoneOffset, java.util.ArrayList, java.util.Arrays$ArrayList, java.util.BitSet, java.util.Calendar, java.util.Collection, java.util.Currency, java.util.Date, java.util.GregorianCalendar, java.util.HashMap, java.util.HashSet, java.util.Hashtable, java.util.LinkedHashMap, java.util.LinkedHashSet, java.util.LinkedList, java.util.List, java.util.Locale, java.util.Map, java.util.Optional, java.util.PriorityQueue, java.util.Properties, java.util.Queue, java.util.Set, java.util.SortedMap, java.util.SortedSet, java.util.Stack, java.util.TimeZone, java.util.TreeMap, java.util.TreeSet, java.util.UUID, java.util.Vector, long, short
+11:00:13,825 (main) DEBUG [DataNucleus.MetaData] - MetaDataManager : Input=(XML,Annotations), XML-Validation=false, XML-Suffices=(persistence=*.jdo, orm=orm, query=*.jdoquery), JDO-listener=false
+11:00:13,825 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (versión 5.1.8) para el API "JDO" utilisando el JRE "{2}"
+11:00:13,825 (main) DEBUG [DataNucleus.Enhancer] - DataNucleus Enhancer : Classpath
+11:00:13,825 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\datanucleus\datanucleus-maven-plugin\5.0.2\datanucleus-maven-plugin-5.0.2.jar
+11:00:13,825 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\codehaus\plexus\plexus-utils\3.0.8\plexus-utils-3.0.8.jar
+11:00:13,825 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\apache\maven\maven-artifact\3.0.4\maven-artifact-3.0.4.jar
+11:00:13,825 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\apache\maven\maven-plugin-api\3.0.4\maven-plugin-api-3.0.4.jar
+11:00:13,826 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\apache\maven\maven-model\3.0.4\maven-model-3.0.4.jar
+11:00:13,826 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\sonatype\sisu\sisu-inject-plexus\2.3.0\sisu-inject-plexus-2.3.0.jar
+11:00:13,826 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\codehaus\plexus\plexus-component-annotations\1.5.5\plexus-component-annotations-1.5.5.jar
+11:00:13,826 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\sonatype\sisu\sisu-inject-bean\2.3.0\sisu-inject-bean-2.3.0.jar
+11:00:13,826 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\sonatype\sisu\sisu-guice\3.1.0\sisu-guice-3.1.0-no_aop.jar
+11:00:13,826 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\sonatype\sisu\sisu-guava\0.9.9\sisu-guava-0.9.9.jar
+11:00:13,826 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\codehaus\plexus\plexus-container-default\1.5.5\plexus-container-default-1.5.5.jar
+11:00:13,826 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\codehaus\plexus\plexus-classworlds\2.2.2\plexus-classworlds-2.2.2.jar
+11:00:13,826 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\apache\xbean\xbean-reflect\3.4\xbean-reflect-3.4.jar
+11:00:13,826 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar
+11:00:13,826 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\commons-logging\commons-logging-api\1.1\commons-logging-api-1.1.jar
+11:00:13,827 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\com\google\collections\google-collections\1.0\google-collections-1.0.jar
+11:00:13,827 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\junit\junit\3.8.2\junit-3.8.2.jar
+11:00:13,827 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\git\BSPQ18-E6\target\classes
+11:00:13,827 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\datanucleus\datanucleus-core\5.1.8\datanucleus-core-5.1.8.jar
+11:00:13,827 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\datanucleus\datanucleus-rdbms\5.1.8\datanucleus-rdbms-5.1.8.jar
+11:00:13,827 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\datanucleus\datanucleus-api-jdo\5.1.5\datanucleus-api-jdo-5.1.5.jar
+11:00:13,827 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\javax\jdo\jdo-api\3.1\jdo-api-3.1.jar
+11:00:13,827 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\javax\transaction\transaction-api\1.1\transaction-api-1.1.jar
+11:00:13,827 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\mysql\mysql-connector-java\5.1.45\mysql-connector-java-5.1.45.jar
+11:00:13,827 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar
+11:00:13,827 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\com\toedter\jcalendar\1.1.4\jcalendar-1.1.4.jar
+11:00:13,827 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\java\net\substance\substance\6.0\substance-6.0.jar
+11:00:13,827 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\pushing-pixels\trident\1.2\trident-1.2.jar
+11:00:13,827 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\eclipse\swt\win32\win32\x86\3.3.0-v3346\x86-3.3.0-v3346.jar
+11:00:13,828 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\com\google\android\android\2.1_r1\android-2.1_r1.jar
+11:00:13,828 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\commons-logging\commons-logging\1.1.1\commons-logging-1.1.1.jar
+11:00:13,828 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\apache\httpcomponents\httpclient\4.0.1\httpclient-4.0.1.jar
+11:00:13,828 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\apache\httpcomponents\httpcore\4.0.1\httpcore-4.0.1.jar
+11:00:13,828 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\commons-codec\commons-codec\1.3\commons-codec-1.3.jar
+11:00:13,828 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\khronos\opengl-api\gl1.1-android-2.1_r1\opengl-api-gl1.1-android-2.1_r1.jar
+11:00:13,828 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\xerces\xmlParserAPIs\2.6.2\xmlParserAPIs-2.6.2.jar
+11:00:13,828 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\xpp3\xpp3\1.1.4c\xpp3-1.1.4c.jar
+11:00:13,828 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\net\java\dev\laf-widget\laf-widget\5.0\laf-widget-5.0.jar
+11:00:13,828 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\ant\ant\1.6.5\ant-1.6.5.jar
+11:00:13,828 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\asm\asm-all\2.2.3\asm-all-2.2.3.jar
+11:00:13,828 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\net\java\dev\laf-plugin\laf-plugin\1.1\laf-plugin-1.1.jar
+11:00:13,828 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\be\cyberelf\nanoxml\lite\2.2.3\lite-2.2.3.jar
+11:00:13,829 (main) DEBUG [DataNucleus.Enhancer] - Reading fileListFile: C:\Users\aitor\AppData\Local\Temp\enhancer-7250174739245511027.flf
+11:00:13,831 (main) DEBUG [DataNucleus.Enhancer] - Enhancing classes
+11:00:13,849 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata de las clases "[es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller, es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client, es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1, es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client, es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1, es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador, es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1, es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login, es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1, es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register, es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator, es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble, es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection, es.deusto.bspq18.e6.DeustoBox.Server.bd.Data, es.deusto.bspq18.e6.DeustoBox.Server.dao.DeustoBoxDAO, es.deusto.bspq18.e6.DeustoBox.Server.dao.IDeustoBoxDAO, es.deusto.bspq18.e6.DeustoBox.Server.data.User, es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO, es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server, es.deusto.bspq18.e6.DeustoBox.Server.jdo.TestAll, es.deusto.bspq18.e6.DeustoBox.Server.remote.ClientUtils, es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils, es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1, es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red, es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas, es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log]" ...
+11:00:13,852 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" en /META-INF/package.jdo
+11:00:13,852 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" en /WEB-INF/package.jdo
+11:00:13,853 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" en /package.jdo
+11:00:13,853 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" en /es/package.jdo
+11:00:13,853 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" en /es/deusto/package.jdo
+11:00:13,853 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" en /es/deusto/bspq18/package.jdo
+11:00:13,853 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" en /es/deusto/bspq18/e6/package.jdo
+11:00:13,854 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:00:13,854 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" en /es/deusto/bspq18/e6/DeustoBox/Client/package.jdo
+11:00:13,854 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" en /es/deusto/bspq18/e6/DeustoBox/Client/controller/package.jdo
+11:00:13,854 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" en /es/deusto/bspq18/e6/DeustoBox/Client/controller/Controller.jdo
+11:00:13,854 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller"
+11:00:13,854 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" no tener Meta-Data
+11:00:13,854 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" no tiene MetaData o annotaciones.
+11:00:13,855 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" en /META-INF/package.jdo
+11:00:13,856 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" en /WEB-INF/package.jdo
+11:00:13,856 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" en /package.jdo
+11:00:13,856 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" en /es/package.jdo
+11:00:13,856 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" en /es/deusto/package.jdo
+11:00:13,856 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" en /es/deusto/bspq18/package.jdo
+11:00:13,857 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" en /es/deusto/bspq18/e6/package.jdo
+11:00:13,857 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:00:13,857 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" en /es/deusto/bspq18/e6/DeustoBox/Client/package.jdo
+11:00:13,857 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/package.jdo
+11:00:13,857 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/idea_client.jdo
+11:00:13,857 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client"
+11:00:13,858 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" no tener Meta-Data
+11:00:13,858 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" no tiene MetaData o annotaciones.
+11:00:13,858 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" en /META-INF/package.jdo
+11:00:13,859 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" en /WEB-INF/package.jdo
+11:00:13,859 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" en /package.jdo
+11:00:13,859 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" en /es/package.jdo
+11:00:13,859 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" en /es/deusto/package.jdo
+11:00:13,859 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" en /es/deusto/bspq18/package.jdo
+11:00:13,860 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" en /es/deusto/bspq18/e6/package.jdo
+11:00:13,860 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:00:13,860 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" en /es/deusto/bspq18/e6/DeustoBox/Client/package.jdo
+11:00:13,860 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/package.jdo
+11:00:13,861 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/v_client$1.jdo
+11:00:13,861 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1"
+11:00:13,861 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" no tener Meta-Data
+11:00:13,861 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" no tiene MetaData o annotaciones.
+11:00:13,864 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" en /META-INF/package.jdo
+11:00:13,865 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" en /WEB-INF/package.jdo
+11:00:13,865 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" en /package.jdo
+11:00:13,868 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" en /es/package.jdo
+11:00:13,868 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" en /es/deusto/package.jdo
+11:00:13,868 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" en /es/deusto/bspq18/package.jdo
+11:00:13,868 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" en /es/deusto/bspq18/e6/package.jdo
+11:00:13,869 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:00:13,869 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" en /es/deusto/bspq18/e6/DeustoBox/Client/package.jdo
+11:00:13,869 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/package.jdo
+11:00:13,869 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/v_client.jdo
+11:00:13,869 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client"
+11:00:13,869 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" no tener Meta-Data
+11:00:13,869 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" no tiene MetaData o annotaciones.
+11:00:13,870 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" en /META-INF/package.jdo
+11:00:13,870 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" en /WEB-INF/package.jdo
+11:00:13,871 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" en /package.jdo
+11:00:13,871 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" en /es/package.jdo
+11:00:13,871 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" en /es/deusto/package.jdo
+11:00:13,871 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" en /es/deusto/bspq18/package.jdo
+11:00:13,871 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" en /es/deusto/bspq18/e6/package.jdo
+11:00:13,871 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:00:13,872 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" en /es/deusto/bspq18/e6/DeustoBox/Client/package.jdo
+11:00:13,872 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/package.jdo
+11:00:13,872 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/v_instalador$1.jdo
+11:00:13,872 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1"
+11:00:13,872 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" no tener Meta-Data
+11:00:13,872 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" no tiene MetaData o annotaciones.
+11:00:13,873 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" en /META-INF/package.jdo
+11:00:13,873 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" en /WEB-INF/package.jdo
+11:00:13,873 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" en /package.jdo
+11:00:13,874 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" en /es/package.jdo
+11:00:13,874 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" en /es/deusto/package.jdo
+11:00:13,874 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" en /es/deusto/bspq18/package.jdo
+11:00:13,874 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" en /es/deusto/bspq18/e6/package.jdo
+11:00:13,875 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:00:13,875 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" en /es/deusto/bspq18/e6/DeustoBox/Client/package.jdo
+11:00:13,875 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/package.jdo
+11:00:13,875 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/v_instalador.jdo
+11:00:13,875 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador"
+11:00:13,875 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" no tener Meta-Data
+11:00:13,875 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" no tiene MetaData o annotaciones.
+11:00:13,876 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" en /META-INF/package.jdo
+11:00:13,876 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" en /WEB-INF/package.jdo
+11:00:13,876 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" en /package.jdo
+11:00:13,877 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" en /es/package.jdo
+11:00:13,877 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" en /es/deusto/package.jdo
+11:00:13,877 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" en /es/deusto/bspq18/package.jdo
+11:00:13,877 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" en /es/deusto/bspq18/e6/package.jdo
+11:00:13,877 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:00:13,878 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" en /es/deusto/bspq18/e6/DeustoBox/Client/package.jdo
+11:00:13,878 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/package.jdo
+11:00:13,878 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/v_login$1.jdo
+11:00:13,878 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1"
+11:00:13,878 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" no tener Meta-Data
+11:00:13,878 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" no tiene MetaData o annotaciones.
+11:00:13,879 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" en /META-INF/package.jdo
+11:00:13,879 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" en /WEB-INF/package.jdo
+11:00:13,879 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" en /package.jdo
+11:00:13,879 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" en /es/package.jdo
+11:00:13,879 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" en /es/deusto/package.jdo
+11:00:13,880 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" en /es/deusto/bspq18/package.jdo
+11:00:13,880 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" en /es/deusto/bspq18/e6/package.jdo
+11:00:13,880 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:00:13,880 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" en /es/deusto/bspq18/e6/DeustoBox/Client/package.jdo
+11:00:13,880 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/package.jdo
+11:00:13,881 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/v_login.jdo
+11:00:13,881 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login"
+11:00:13,881 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" no tener Meta-Data
+11:00:13,881 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" no tiene MetaData o annotaciones.
+11:00:13,881 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" en /META-INF/package.jdo
+11:00:13,882 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" en /WEB-INF/package.jdo
+11:00:13,882 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" en /package.jdo
+11:00:13,882 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" en /es/package.jdo
+11:00:13,882 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" en /es/deusto/package.jdo
+11:00:13,883 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" en /es/deusto/bspq18/package.jdo
+11:00:13,883 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" en /es/deusto/bspq18/e6/package.jdo
+11:00:13,883 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:00:13,883 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" en /es/deusto/bspq18/e6/DeustoBox/Client/package.jdo
+11:00:13,884 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/package.jdo
+11:00:13,884 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/v_register$1.jdo
+11:00:13,884 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1"
+11:00:13,884 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" no tener Meta-Data
+11:00:13,884 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" no tiene MetaData o annotaciones.
+11:00:13,884 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" en /META-INF/package.jdo
+11:00:13,885 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" en /WEB-INF/package.jdo
+11:00:13,885 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" en /package.jdo
+11:00:13,885 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" en /es/package.jdo
+11:00:13,885 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" en /es/deusto/package.jdo
+11:00:13,885 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" en /es/deusto/bspq18/package.jdo
+11:00:13,885 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" en /es/deusto/bspq18/e6/package.jdo
+11:00:13,886 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:00:13,886 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" en /es/deusto/bspq18/e6/DeustoBox/Client/package.jdo
+11:00:13,886 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/package.jdo
+11:00:13,886 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/v_register.jdo
+11:00:13,886 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register"
+11:00:13,886 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" no tener Meta-Data
+11:00:13,886 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" no tiene MetaData o annotaciones.
+11:00:13,887 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" en /META-INF/package.jdo
+11:00:13,887 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" en /WEB-INF/package.jdo
+11:00:13,887 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" en /package.jdo
+11:00:13,887 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" en /es/package.jdo
+11:00:13,887 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" en /es/deusto/package.jdo
+11:00:13,887 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" en /es/deusto/bspq18/package.jdo
+11:00:13,888 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" en /es/deusto/bspq18/e6/package.jdo
+11:00:13,888 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:00:13,888 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" en /es/deusto/bspq18/e6/DeustoBox/Client/package.jdo
+11:00:13,888 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" en /es/deusto/bspq18/e6/DeustoBox/Client/remote/package.jdo
+11:00:13,888 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" en /es/deusto/bspq18/e6/DeustoBox/Client/remote/RMIServiceLocator.jdo
+11:00:13,888 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator"
+11:00:13,888 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" no tener Meta-Data
+11:00:13,888 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" no tiene MetaData o annotaciones.
+11:00:13,889 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" en /META-INF/package.jdo
+11:00:13,889 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" en /WEB-INF/package.jdo
+11:00:13,889 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" en /package.jdo
+11:00:13,889 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" en /es/package.jdo
+11:00:13,889 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" en /es/deusto/package.jdo
+11:00:13,890 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" en /es/deusto/bspq18/package.jdo
+11:00:13,890 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" en /es/deusto/bspq18/e6/package.jdo
+11:00:13,890 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:00:13,890 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+11:00:13,890 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" en /es/deusto/bspq18/e6/DeustoBox/Server/assembler/package.jdo
+11:00:13,890 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" en /es/deusto/bspq18/e6/DeustoBox/Server/assembler/Assemble.jdo
+11:00:13,890 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble"
+11:00:13,891 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" no tener Meta-Data
+11:00:13,891 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" no tiene MetaData o annotaciones.
+11:00:13,891 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" en /META-INF/package.jdo
+11:00:13,891 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" en /WEB-INF/package.jdo
+11:00:13,891 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" en /package.jdo
+11:00:13,892 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" en /es/package.jdo
+11:00:13,892 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" en /es/deusto/package.jdo
+11:00:13,892 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" en /es/deusto/bspq18/package.jdo
+11:00:13,892 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" en /es/deusto/bspq18/e6/package.jdo
+11:00:13,892 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:00:13,892 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+11:00:13,893 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" en /es/deusto/bspq18/e6/DeustoBox/Server/bd/package.jdo
+11:00:13,893 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" en /es/deusto/bspq18/e6/DeustoBox/Server/bd/BDConnection.jdo
+11:00:13,893 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection"
+11:00:13,893 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" no tener Meta-Data
+11:00:13,893 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" no tiene MetaData o annotaciones.
+11:00:13,893 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" en /META-INF/package.jdo
+11:00:13,893 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" en /WEB-INF/package.jdo
+11:00:13,894 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" en /package.jdo
+11:00:13,894 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" en /es/package.jdo
+11:00:13,894 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" en /es/deusto/package.jdo
+11:00:13,894 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" en /es/deusto/bspq18/package.jdo
+11:00:13,894 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" en /es/deusto/bspq18/e6/package.jdo
+11:00:13,894 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:00:13,894 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+11:00:13,895 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" en /es/deusto/bspq18/e6/DeustoBox/Server/bd/package.jdo
+11:00:13,895 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" en /es/deusto/bspq18/e6/DeustoBox/Server/bd/Data.jdo
+11:00:13,895 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data"
+11:00:13,895 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" no tener Meta-Data
+11:00:13,895 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" no tiene MetaData o annotaciones.
+11:00:13,896 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.DeustoBoxDAO" en /META-INF/package.jdo
+11:00:13,896 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.DeustoBoxDAO" en /WEB-INF/package.jdo
+11:00:13,896 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.DeustoBoxDAO" en /package.jdo
+11:00:13,896 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.DeustoBoxDAO" en /es/package.jdo
+11:00:13,897 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.DeustoBoxDAO" en /es/deusto/package.jdo
+11:00:13,897 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.DeustoBoxDAO" en /es/deusto/bspq18/package.jdo
+11:00:13,897 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.DeustoBoxDAO" en /es/deusto/bspq18/e6/package.jdo
+11:00:13,897 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.DeustoBoxDAO" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:00:13,898 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.DeustoBoxDAO" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+11:00:13,898 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.DeustoBoxDAO" en /es/deusto/bspq18/e6/DeustoBox/Server/dao/package.jdo
+11:00:13,898 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.DeustoBoxDAO" en /es/deusto/bspq18/e6/DeustoBox/Server/dao/DeustoBoxDAO.jdo
+11:00:13,898 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.DeustoBoxDAO"
+11:00:13,898 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.DeustoBoxDAO" no tener Meta-Data
+11:00:13,898 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.DeustoBoxDAO" no tiene MetaData o annotaciones.
+11:00:13,898 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.IDeustoBoxDAO" en /META-INF/package.jdo
+11:00:13,899 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.IDeustoBoxDAO" en /WEB-INF/package.jdo
+11:00:13,899 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.IDeustoBoxDAO" en /package.jdo
+11:00:13,899 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.IDeustoBoxDAO" en /es/package.jdo
+11:00:13,899 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.IDeustoBoxDAO" en /es/deusto/package.jdo
+11:00:13,899 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.IDeustoBoxDAO" en /es/deusto/bspq18/package.jdo
+11:00:13,899 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.IDeustoBoxDAO" en /es/deusto/bspq18/e6/package.jdo
+11:00:13,899 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.IDeustoBoxDAO" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:00:13,900 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.IDeustoBoxDAO" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+11:00:13,900 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.IDeustoBoxDAO" en /es/deusto/bspq18/e6/DeustoBox/Server/dao/package.jdo
+11:00:13,900 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.IDeustoBoxDAO" en /es/deusto/bspq18/e6/DeustoBox/Server/dao/IDeustoBoxDAO.jdo
+11:00:13,900 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.IDeustoBoxDAO"
+11:00:13,900 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.IDeustoBoxDAO" no tener Meta-Data
+11:00:13,900 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.IDeustoBoxDAO" no tiene MetaData o annotaciones.
+11:00:13,901 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" en /META-INF/package.jdo
+11:00:13,901 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" en /WEB-INF/package.jdo
+11:00:13,901 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" en /package.jdo
+11:00:13,901 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" en /es/package.jdo
+11:00:13,901 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" en /es/deusto/package.jdo
+11:00:13,901 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" en /es/deusto/bspq18/package.jdo
+11:00:13,902 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" en /es/deusto/bspq18/e6/package.jdo
+11:00:13,902 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:00:13,902 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+11:00:13,902 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" en /es/deusto/bspq18/e6/DeustoBox/Server/data/package.jdo
+11:00:13,902 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" en /es/deusto/bspq18/e6/DeustoBox/Server/data/User.jdo
+11:00:13,902 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User"
+11:00:13,902 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tener Meta-Data
+11:00:13,902 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene MetaData o annotaciones.
+11:00:13,903 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" en /META-INF/package.jdo
+11:00:13,903 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" en /WEB-INF/package.jdo
+11:00:13,903 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" en /package.jdo
+11:00:13,903 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" en /es/package.jdo
+11:00:13,904 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" en /es/deusto/package.jdo
+11:00:13,904 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" en /es/deusto/bspq18/package.jdo
+11:00:13,904 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" en /es/deusto/bspq18/e6/package.jdo
+11:00:13,904 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:00:13,904 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+11:00:13,904 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" en /es/deusto/bspq18/e6/DeustoBox/Server/dto/package.jdo
+11:00:13,905 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" en /es/deusto/bspq18/e6/DeustoBox/Server/dto/UserDTO.jdo
+11:00:13,905 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO"
+11:00:13,905 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" no tener Meta-Data
+11:00:13,905 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" no tiene MetaData o annotaciones.
+11:00:13,905 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" en /META-INF/package.jdo
+11:00:13,905 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" en /WEB-INF/package.jdo
+11:00:13,906 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" en /package.jdo
+11:00:13,906 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" en /es/package.jdo
+11:00:13,906 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" en /es/deusto/package.jdo
+11:00:13,906 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" en /es/deusto/bspq18/package.jdo
+11:00:13,906 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" en /es/deusto/bspq18/e6/package.jdo
+11:00:13,906 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:00:13,906 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+11:00:13,907 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" en /es/deusto/bspq18/e6/DeustoBox/Server/gui/package.jdo
+11:00:13,907 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" en /es/deusto/bspq18/e6/DeustoBox/Server/gui/idea_server.jdo
+11:00:13,907 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server"
+11:00:13,907 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" no tener Meta-Data
+11:00:13,907 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" no tiene MetaData o annotaciones.
+11:00:13,907 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.TestAll" en /META-INF/package.jdo
+11:00:13,908 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.TestAll" en /WEB-INF/package.jdo
+11:00:13,908 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.TestAll" en /package.jdo
+11:00:13,908 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.TestAll" en /es/package.jdo
+11:00:13,908 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.TestAll" en /es/deusto/package.jdo
+11:00:13,908 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.TestAll" en /es/deusto/bspq18/package.jdo
+11:00:13,908 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.TestAll" en /es/deusto/bspq18/e6/package.jdo
+11:00:13,908 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.TestAll" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:00:13,909 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.TestAll" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+11:00:13,909 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.TestAll" en /es/deusto/bspq18/e6/DeustoBox/Server/jdo/package.jdo
+11:00:13,909 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.TestAll" en /es/deusto/bspq18/e6/DeustoBox/Server/jdo/TestAll.jdo
+11:00:13,909 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.TestAll"
+11:00:13,909 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.TestAll" no tener Meta-Data
+11:00:13,909 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.TestAll" no tiene MetaData o annotaciones.
+11:00:13,910 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.ClientUtils" en /META-INF/package.jdo
+11:00:13,910 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.ClientUtils" en /WEB-INF/package.jdo
+11:00:13,911 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.ClientUtils" en /package.jdo
+11:00:13,911 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.ClientUtils" en /es/package.jdo
+11:00:13,911 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.ClientUtils" en /es/deusto/package.jdo
+11:00:13,911 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.ClientUtils" en /es/deusto/bspq18/package.jdo
+11:00:13,911 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.ClientUtils" en /es/deusto/bspq18/e6/package.jdo
+11:00:13,911 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.ClientUtils" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:00:13,912 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.ClientUtils" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+11:00:13,912 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.ClientUtils" en /es/deusto/bspq18/e6/DeustoBox/Server/remote/package.jdo
+11:00:13,912 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.ClientUtils" en /es/deusto/bspq18/e6/DeustoBox/Server/remote/ClientUtils.jdo
+11:00:13,912 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.ClientUtils"
+11:00:13,912 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.ClientUtils" no tener Meta-Data
+11:00:13,912 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.ClientUtils" no tiene MetaData o annotaciones.
+11:00:13,912 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" en /META-INF/package.jdo
+11:00:13,912 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" en /WEB-INF/package.jdo
+11:00:13,913 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" en /package.jdo
+11:00:13,913 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" en /es/package.jdo
+11:00:13,913 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" en /es/deusto/package.jdo
+11:00:13,913 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" en /es/deusto/bspq18/package.jdo
+11:00:13,913 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" en /es/deusto/bspq18/e6/package.jdo
+11:00:13,913 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:00:13,913 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+11:00:13,914 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" en /es/deusto/bspq18/e6/DeustoBox/Server/remote/package.jdo
+11:00:13,914 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" en /es/deusto/bspq18/e6/DeustoBox/Server/remote/IClientUtils.jdo
+11:00:13,914 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils"
+11:00:13,914 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" no tener Meta-Data
+11:00:13,914 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" no tiene MetaData o annotaciones.
+11:00:13,915 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" en /META-INF/package.jdo
+11:00:13,915 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" en /WEB-INF/package.jdo
+11:00:13,915 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" en /package.jdo
+11:00:13,915 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" en /es/package.jdo
+11:00:13,915 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" en /es/deusto/package.jdo
+11:00:13,915 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" en /es/deusto/bspq18/package.jdo
+11:00:13,916 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" en /es/deusto/bspq18/e6/package.jdo
+11:00:13,916 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:00:13,916 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+11:00:13,916 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" en /es/deusto/bspq18/e6/DeustoBox/Server/utils/package.jdo
+11:00:13,916 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" en /es/deusto/bspq18/e6/DeustoBox/Server/utils/Analisis_Red$1.jdo
+11:00:13,916 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1"
+11:00:13,916 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" no tener Meta-Data
+11:00:13,916 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" no tiene MetaData o annotaciones.
+11:00:13,917 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" en /META-INF/package.jdo
+11:00:13,917 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" en /WEB-INF/package.jdo
+11:00:13,917 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" en /package.jdo
+11:00:13,918 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" en /es/package.jdo
+11:00:13,918 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" en /es/deusto/package.jdo
+11:00:13,918 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" en /es/deusto/bspq18/package.jdo
+11:00:13,918 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" en /es/deusto/bspq18/e6/package.jdo
+11:00:13,918 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:00:13,918 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+11:00:13,919 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" en /es/deusto/bspq18/e6/DeustoBox/Server/utils/package.jdo
+11:00:13,919 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" en /es/deusto/bspq18/e6/DeustoBox/Server/utils/Analisis_Red.jdo
+11:00:13,919 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red"
+11:00:13,919 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" no tener Meta-Data
+11:00:13,919 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" no tiene MetaData o annotaciones.
+11:00:13,919 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" en /META-INF/package.jdo
+11:00:13,920 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" en /WEB-INF/package.jdo
+11:00:13,920 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" en /package.jdo
+11:00:13,920 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" en /es/package.jdo
+11:00:13,920 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" en /es/deusto/package.jdo
+11:00:13,920 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" en /es/deusto/bspq18/package.jdo
+11:00:13,920 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" en /es/deusto/bspq18/e6/package.jdo
+11:00:13,920 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:00:13,921 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+11:00:13,921 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" en /es/deusto/bspq18/e6/DeustoBox/Server/utils/package.jdo
+11:00:13,921 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" en /es/deusto/bspq18/e6/DeustoBox/Server/utils/ejecutarTareas.jdo
+11:00:13,921 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas"
+11:00:13,921 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" no tener Meta-Data
+11:00:13,921 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" no tiene MetaData o annotaciones.
+11:00:13,922 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" en /META-INF/package.jdo
+11:00:13,922 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" en /WEB-INF/package.jdo
+11:00:13,922 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" en /package.jdo
+11:00:13,922 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" en /es/package.jdo
+11:00:13,922 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" en /es/deusto/package.jdo
+11:00:13,922 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" en /es/deusto/bspq18/package.jdo
+11:00:13,922 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" en /es/deusto/bspq18/e6/package.jdo
+11:00:13,923 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:00:13,923 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+11:00:13,923 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" en /es/deusto/bspq18/e6/DeustoBox/Server/utils/package.jdo
+11:00:13,923 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" en /es/deusto/bspq18/e6/DeustoBox/Server/utils/Error_log.jdo
+11:00:13,923 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log"
+11:00:13,923 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" no tener Meta-Data
+11:00:13,923 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" no tiene MetaData o annotaciones.
+11:00:13,923 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata ya ha terminado
+11:00:13,924 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado con exito para 0 clases. Tiempos : input=92 ms, enhance=0 ms, total=92 ms. Compruebe el LOG para los detalles
+11:00:13,924 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado sin enhance ninguna clase. Compruebe el LOG para los detalles.
+11:01:40,494 (main) DEBUG [DataNucleus.General] - Using PluginRegistry org.datanucleus.plugin.NonManagedPluginRegistry
+11:01:40,515 (main) DEBUG [DataNucleus.General] - Registering bundle org.sonatype.inject version 2.3.0 at URL file:/C:/Users/aitor/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar.
+11:01:40,534 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar!/plugin.xml.
+11:01:40,536 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar!/plugin.xml.
+11:01:40,538 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus version 5.1.8 at URL file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-core/5.1.8/datanucleus-core-5.1.8.jar.
+11:01:40,541 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-core/5.1.8/datanucleus-core-5.1.8.jar!/plugin.xml.
+11:01:40,547 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-core/5.1.8/datanucleus-core-5.1.8.jar!/plugin.xml.
+11:01:40,548 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.store.rdbms version 5.1.8 at URL file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-rdbms/5.1.8/datanucleus-rdbms-5.1.8.jar.
+11:01:40,552 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-rdbms/5.1.8/datanucleus-rdbms-5.1.8.jar!/plugin.xml.
+11:01:40,555 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-rdbms/5.1.8/datanucleus-rdbms-5.1.8.jar!/plugin.xml.
+11:01:40,556 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.api.jdo version 5.1.5 at URL file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.1.5/datanucleus-api-jdo-5.1.5.jar.
+11:01:40,560 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.1.5/datanucleus-api-jdo-5.1.5.jar!/plugin.xml.
+11:01:40,561 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.1.5/datanucleus-api-jdo-5.1.5.jar!/plugin.xml.
+11:01:40,584 (main) DEBUG [DataNucleus.Persistence] - Tipos de Java inicializando ...
+11:01:40,624 (main) DEBUG [DataNucleus.Persistence] - Soporte para tipos de Java listo : tipos soportados = [B, [C, [D, [F, [I, [J, [Ljava.lang.Boolean;, [Ljava.lang.Byte;, [Ljava.lang.Character;, [Ljava.lang.Double;, [Ljava.lang.Enum;, [Ljava.lang.Float;, [Ljava.lang.Integer;, [Ljava.lang.Long;, [Ljava.lang.Number;, [Ljava.lang.Object;, [Ljava.lang.Short;, [Ljava.lang.String;, [Ljava.math.BigDecimal;, [Ljava.math.BigInteger;, [Ljava.util.Date;, [Ljava.util.Locale;, [S, [Z, boolean, byte, char, double, float, int, java.awt.Color, java.awt.image.BufferedImage, java.lang.Boolean, java.lang.Byte, java.lang.Character, java.lang.Class, java.lang.Double, java.lang.Enum, java.lang.Float, java.lang.Integer, java.lang.Long, java.lang.Number, java.lang.Short, java.lang.String, java.lang.StringBuffer, java.lang.StringBuilder, java.math.BigDecimal, java.math.BigInteger, java.net.URI, java.net.URL, java.sql.Date, java.sql.Time, java.sql.Timestamp, java.time.Duration, java.time.Instant, java.time.LocalDate, java.time.LocalDateTime, java.time.LocalTime, java.time.MonthDay, java.time.OffsetDateTime, java.time.OffsetTime, java.time.Period, java.time.Year, java.time.YearMonth, java.time.ZonedDateTime, java.time.ZoneId, java.time.ZoneOffset, java.util.ArrayList, java.util.Arrays$ArrayList, java.util.BitSet, java.util.Calendar, java.util.Collection, java.util.Currency, java.util.Date, java.util.GregorianCalendar, java.util.HashMap, java.util.HashSet, java.util.Hashtable, java.util.LinkedHashMap, java.util.LinkedHashSet, java.util.LinkedList, java.util.List, java.util.Locale, java.util.Map, java.util.Optional, java.util.PriorityQueue, java.util.Properties, java.util.Queue, java.util.Set, java.util.SortedMap, java.util.SortedSet, java.util.Stack, java.util.TimeZone, java.util.TreeMap, java.util.TreeSet, java.util.UUID, java.util.Vector, long, short
+11:01:40,626 (main) DEBUG [DataNucleus.MetaData] - MetaDataManager : Input=(XML,Annotations), XML-Validation=false, XML-Suffices=(persistence=*.jdo, orm=orm, query=*.jdoquery), JDO-listener=false
+11:01:40,626 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (versión 5.1.8) para el API "JDO" utilisando el JRE "{2}"
+11:01:40,626 (main) DEBUG [DataNucleus.Enhancer] - DataNucleus Enhancer : Classpath
+11:01:40,626 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\datanucleus\datanucleus-maven-plugin\5.0.2\datanucleus-maven-plugin-5.0.2.jar
+11:01:40,627 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\codehaus\plexus\plexus-utils\3.0.8\plexus-utils-3.0.8.jar
+11:01:40,627 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\apache\maven\maven-artifact\3.0.4\maven-artifact-3.0.4.jar
+11:01:40,627 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\apache\maven\maven-plugin-api\3.0.4\maven-plugin-api-3.0.4.jar
+11:01:40,627 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\apache\maven\maven-model\3.0.4\maven-model-3.0.4.jar
+11:01:40,627 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\sonatype\sisu\sisu-inject-plexus\2.3.0\sisu-inject-plexus-2.3.0.jar
+11:01:40,627 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\codehaus\plexus\plexus-component-annotations\1.5.5\plexus-component-annotations-1.5.5.jar
+11:01:40,627 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\sonatype\sisu\sisu-inject-bean\2.3.0\sisu-inject-bean-2.3.0.jar
+11:01:40,627 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\sonatype\sisu\sisu-guice\3.1.0\sisu-guice-3.1.0-no_aop.jar
+11:01:40,627 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\sonatype\sisu\sisu-guava\0.9.9\sisu-guava-0.9.9.jar
+11:01:40,627 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\codehaus\plexus\plexus-container-default\1.5.5\plexus-container-default-1.5.5.jar
+11:01:40,627 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\codehaus\plexus\plexus-classworlds\2.2.2\plexus-classworlds-2.2.2.jar
+11:01:40,628 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\apache\xbean\xbean-reflect\3.4\xbean-reflect-3.4.jar
+11:01:40,628 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar
+11:01:40,628 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\commons-logging\commons-logging-api\1.1\commons-logging-api-1.1.jar
+11:01:40,628 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\com\google\collections\google-collections\1.0\google-collections-1.0.jar
+11:01:40,628 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\junit\junit\3.8.2\junit-3.8.2.jar
+11:01:40,628 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\git\BSPQ18-E6\target\classes
+11:01:40,628 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\datanucleus\datanucleus-core\5.1.8\datanucleus-core-5.1.8.jar
+11:01:40,628 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\datanucleus\datanucleus-rdbms\5.1.8\datanucleus-rdbms-5.1.8.jar
+11:01:40,628 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\datanucleus\datanucleus-api-jdo\5.1.5\datanucleus-api-jdo-5.1.5.jar
+11:01:40,628 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\javax\jdo\jdo-api\3.1\jdo-api-3.1.jar
+11:01:40,628 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\javax\transaction\transaction-api\1.1\transaction-api-1.1.jar
+11:01:40,628 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\mysql\mysql-connector-java\5.1.45\mysql-connector-java-5.1.45.jar
+11:01:40,628 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar
+11:01:40,629 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\com\toedter\jcalendar\1.1.4\jcalendar-1.1.4.jar
+11:01:40,629 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\java\net\substance\substance\6.0\substance-6.0.jar
+11:01:40,629 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\pushing-pixels\trident\1.2\trident-1.2.jar
+11:01:40,629 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\eclipse\swt\win32\win32\x86\3.3.0-v3346\x86-3.3.0-v3346.jar
+11:01:40,629 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\com\google\android\android\2.1_r1\android-2.1_r1.jar
+11:01:40,629 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\commons-logging\commons-logging\1.1.1\commons-logging-1.1.1.jar
+11:01:40,629 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\apache\httpcomponents\httpclient\4.0.1\httpclient-4.0.1.jar
+11:01:40,630 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\apache\httpcomponents\httpcore\4.0.1\httpcore-4.0.1.jar
+11:01:40,631 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\commons-codec\commons-codec\1.3\commons-codec-1.3.jar
+11:01:40,631 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\khronos\opengl-api\gl1.1-android-2.1_r1\opengl-api-gl1.1-android-2.1_r1.jar
+11:01:40,631 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\xerces\xmlParserAPIs\2.6.2\xmlParserAPIs-2.6.2.jar
+11:01:40,631 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\xpp3\xpp3\1.1.4c\xpp3-1.1.4c.jar
+11:01:40,631 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\net\java\dev\laf-widget\laf-widget\5.0\laf-widget-5.0.jar
+11:01:40,631 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\ant\ant\1.6.5\ant-1.6.5.jar
+11:01:40,632 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\asm\asm-all\2.2.3\asm-all-2.2.3.jar
+11:01:40,632 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\net\java\dev\laf-plugin\laf-plugin\1.1\laf-plugin-1.1.jar
+11:01:40,632 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\be\cyberelf\nanoxml\lite\2.2.3\lite-2.2.3.jar
+11:01:40,632 (main) DEBUG [DataNucleus.Enhancer] - Reading fileListFile: C:\Users\aitor\AppData\Local\Temp\enhancer-3860914521377460214.flf
+11:01:40,635 (main) DEBUG [DataNucleus.Enhancer] - Enhancing classes
+11:01:40,646 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata de las clases "[es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller, es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client, es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1, es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client, es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1, es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador, es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1, es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login, es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1, es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register, es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator, es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble, es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection, es.deusto.bspq18.e6.DeustoBox.Server.bd.Data, es.deusto.bspq18.e6.DeustoBox.Server.dao.DeustoBoxDAO, es.deusto.bspq18.e6.DeustoBox.Server.dao.IDeustoBoxDAO, es.deusto.bspq18.e6.DeustoBox.Server.data.User, es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO, es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server, es.deusto.bspq18.e6.DeustoBox.Server.jdo.TestAll, es.deusto.bspq18.e6.DeustoBox.Server.remote.ClientUtils, es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils, es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1, es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red, es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas, es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log]" ...
+11:01:40,650 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" en /META-INF/package.jdo
+11:01:40,650 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" en /WEB-INF/package.jdo
+11:01:40,650 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" en /package.jdo
+11:01:40,650 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" en /es/package.jdo
+11:01:40,650 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" en /es/deusto/package.jdo
+11:01:40,653 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" en /es/deusto/bspq18/package.jdo
+11:01:40,653 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" en /es/deusto/bspq18/e6/package.jdo
+11:01:40,654 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:01:40,654 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" en /es/deusto/bspq18/e6/DeustoBox/Client/package.jdo
+11:01:40,655 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" en /es/deusto/bspq18/e6/DeustoBox/Client/controller/package.jdo
+11:01:40,656 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" en /es/deusto/bspq18/e6/DeustoBox/Client/controller/Controller.jdo
+11:01:40,656 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller"
+11:01:40,656 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" no tener Meta-Data
+11:01:40,657 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" no tiene MetaData o annotaciones.
+11:01:40,658 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" en /META-INF/package.jdo
+11:01:40,658 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" en /WEB-INF/package.jdo
+11:01:40,658 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" en /package.jdo
+11:01:40,658 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" en /es/package.jdo
+11:01:40,658 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" en /es/deusto/package.jdo
+11:01:40,659 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" en /es/deusto/bspq18/package.jdo
+11:01:40,659 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" en /es/deusto/bspq18/e6/package.jdo
+11:01:40,659 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:01:40,659 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" en /es/deusto/bspq18/e6/DeustoBox/Client/package.jdo
+11:01:40,660 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/package.jdo
+11:01:40,660 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/idea_client.jdo
+11:01:40,660 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client"
+11:01:40,660 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" no tener Meta-Data
+11:01:40,660 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" no tiene MetaData o annotaciones.
+11:01:40,661 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" en /META-INF/package.jdo
+11:01:40,661 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" en /WEB-INF/package.jdo
+11:01:40,661 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" en /package.jdo
+11:01:40,661 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" en /es/package.jdo
+11:01:40,661 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" en /es/deusto/package.jdo
+11:01:40,662 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" en /es/deusto/bspq18/package.jdo
+11:01:40,662 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" en /es/deusto/bspq18/e6/package.jdo
+11:01:40,662 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:01:40,662 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" en /es/deusto/bspq18/e6/DeustoBox/Client/package.jdo
+11:01:40,662 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/package.jdo
+11:01:40,663 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/v_client$1.jdo
+11:01:40,663 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1"
+11:01:40,663 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" no tener Meta-Data
+11:01:40,663 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" no tiene MetaData o annotaciones.
+11:01:40,665 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" en /META-INF/package.jdo
+11:01:40,666 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" en /WEB-INF/package.jdo
+11:01:40,666 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" en /package.jdo
+11:01:40,666 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" en /es/package.jdo
+11:01:40,666 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" en /es/deusto/package.jdo
+11:01:40,666 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" en /es/deusto/bspq18/package.jdo
+11:01:40,667 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" en /es/deusto/bspq18/e6/package.jdo
+11:01:40,667 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:01:40,667 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" en /es/deusto/bspq18/e6/DeustoBox/Client/package.jdo
+11:01:40,667 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/package.jdo
+11:01:40,668 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/v_client.jdo
+11:01:40,668 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client"
+11:01:40,668 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" no tener Meta-Data
+11:01:40,668 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" no tiene MetaData o annotaciones.
+11:01:40,668 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" en /META-INF/package.jdo
+11:01:40,669 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" en /WEB-INF/package.jdo
+11:01:40,669 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" en /package.jdo
+11:01:40,669 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" en /es/package.jdo
+11:01:40,669 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" en /es/deusto/package.jdo
+11:01:40,669 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" en /es/deusto/bspq18/package.jdo
+11:01:40,670 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" en /es/deusto/bspq18/e6/package.jdo
+11:01:40,670 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:01:40,670 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" en /es/deusto/bspq18/e6/DeustoBox/Client/package.jdo
+11:01:40,670 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/package.jdo
+11:01:40,670 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/v_instalador$1.jdo
+11:01:40,670 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1"
+11:01:40,671 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" no tener Meta-Data
+11:01:40,671 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" no tiene MetaData o annotaciones.
+11:01:40,671 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" en /META-INF/package.jdo
+11:01:40,672 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" en /WEB-INF/package.jdo
+11:01:40,672 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" en /package.jdo
+11:01:40,672 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" en /es/package.jdo
+11:01:40,672 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" en /es/deusto/package.jdo
+11:01:40,672 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" en /es/deusto/bspq18/package.jdo
+11:01:40,673 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" en /es/deusto/bspq18/e6/package.jdo
+11:01:40,673 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:01:40,673 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" en /es/deusto/bspq18/e6/DeustoBox/Client/package.jdo
+11:01:40,673 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/package.jdo
+11:01:40,673 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/v_instalador.jdo
+11:01:40,673 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador"
+11:01:40,674 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" no tener Meta-Data
+11:01:40,674 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" no tiene MetaData o annotaciones.
+11:01:40,674 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" en /META-INF/package.jdo
+11:01:40,675 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" en /WEB-INF/package.jdo
+11:01:40,675 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" en /package.jdo
+11:01:40,675 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" en /es/package.jdo
+11:01:40,675 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" en /es/deusto/package.jdo
+11:01:40,675 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" en /es/deusto/bspq18/package.jdo
+11:01:40,676 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" en /es/deusto/bspq18/e6/package.jdo
+11:01:40,676 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:01:40,676 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" en /es/deusto/bspq18/e6/DeustoBox/Client/package.jdo
+11:01:40,676 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/package.jdo
+11:01:40,676 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/v_login$1.jdo
+11:01:40,677 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1"
+11:01:40,677 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" no tener Meta-Data
+11:01:40,677 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" no tiene MetaData o annotaciones.
+11:01:40,677 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" en /META-INF/package.jdo
+11:01:40,677 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" en /WEB-INF/package.jdo
+11:01:40,678 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" en /package.jdo
+11:01:40,678 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" en /es/package.jdo
+11:01:40,678 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" en /es/deusto/package.jdo
+11:01:40,678 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" en /es/deusto/bspq18/package.jdo
+11:01:40,678 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" en /es/deusto/bspq18/e6/package.jdo
+11:01:40,678 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:01:40,679 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" en /es/deusto/bspq18/e6/DeustoBox/Client/package.jdo
+11:01:40,679 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/package.jdo
+11:01:40,679 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/v_login.jdo
+11:01:40,679 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login"
+11:01:40,679 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" no tener Meta-Data
+11:01:40,679 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" no tiene MetaData o annotaciones.
+11:01:40,680 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" en /META-INF/package.jdo
+11:01:40,680 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" en /WEB-INF/package.jdo
+11:01:40,680 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" en /package.jdo
+11:01:40,680 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" en /es/package.jdo
+11:01:40,680 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" en /es/deusto/package.jdo
+11:01:40,681 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" en /es/deusto/bspq18/package.jdo
+11:01:40,681 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" en /es/deusto/bspq18/e6/package.jdo
+11:01:40,681 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:01:40,681 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" en /es/deusto/bspq18/e6/DeustoBox/Client/package.jdo
+11:01:40,681 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/package.jdo
+11:01:40,681 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/v_register$1.jdo
+11:01:40,681 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1"
+11:01:40,682 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" no tener Meta-Data
+11:01:40,682 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" no tiene MetaData o annotaciones.
+11:01:40,682 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" en /META-INF/package.jdo
+11:01:40,682 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" en /WEB-INF/package.jdo
+11:01:40,683 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" en /package.jdo
+11:01:40,683 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" en /es/package.jdo
+11:01:40,683 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" en /es/deusto/package.jdo
+11:01:40,683 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" en /es/deusto/bspq18/package.jdo
+11:01:40,683 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" en /es/deusto/bspq18/e6/package.jdo
+11:01:40,683 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:01:40,684 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" en /es/deusto/bspq18/e6/DeustoBox/Client/package.jdo
+11:01:40,684 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/package.jdo
+11:01:40,684 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/v_register.jdo
+11:01:40,684 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register"
+11:01:40,684 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" no tener Meta-Data
+11:01:40,684 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" no tiene MetaData o annotaciones.
+11:01:40,685 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" en /META-INF/package.jdo
+11:01:40,685 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" en /WEB-INF/package.jdo
+11:01:40,685 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" en /package.jdo
+11:01:40,685 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" en /es/package.jdo
+11:01:40,685 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" en /es/deusto/package.jdo
+11:01:40,686 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" en /es/deusto/bspq18/package.jdo
+11:01:40,686 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" en /es/deusto/bspq18/e6/package.jdo
+11:01:40,686 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:01:40,686 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" en /es/deusto/bspq18/e6/DeustoBox/Client/package.jdo
+11:01:40,686 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" en /es/deusto/bspq18/e6/DeustoBox/Client/remote/package.jdo
+11:01:40,686 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" en /es/deusto/bspq18/e6/DeustoBox/Client/remote/RMIServiceLocator.jdo
+11:01:40,686 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator"
+11:01:40,686 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" no tener Meta-Data
+11:01:40,686 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" no tiene MetaData o annotaciones.
+11:01:40,687 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" en /META-INF/package.jdo
+11:01:40,687 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" en /WEB-INF/package.jdo
+11:01:40,687 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" en /package.jdo
+11:01:40,688 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" en /es/package.jdo
+11:01:40,688 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" en /es/deusto/package.jdo
+11:01:40,688 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" en /es/deusto/bspq18/package.jdo
+11:01:40,688 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" en /es/deusto/bspq18/e6/package.jdo
+11:01:40,688 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:01:40,688 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+11:01:40,689 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" en /es/deusto/bspq18/e6/DeustoBox/Server/assembler/package.jdo
+11:01:40,689 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" en /es/deusto/bspq18/e6/DeustoBox/Server/assembler/Assemble.jdo
+11:01:40,689 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble"
+11:01:40,689 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" no tener Meta-Data
+11:01:40,689 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" no tiene MetaData o annotaciones.
+11:01:40,689 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" en /META-INF/package.jdo
+11:01:40,690 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" en /WEB-INF/package.jdo
+11:01:40,690 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" en /package.jdo
+11:01:40,690 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" en /es/package.jdo
+11:01:40,690 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" en /es/deusto/package.jdo
+11:01:40,693 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" en /es/deusto/bspq18/package.jdo
+11:01:40,693 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" en /es/deusto/bspq18/e6/package.jdo
+11:01:40,693 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:01:40,694 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+11:01:40,694 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" en /es/deusto/bspq18/e6/DeustoBox/Server/bd/package.jdo
+11:01:40,694 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" en /es/deusto/bspq18/e6/DeustoBox/Server/bd/BDConnection.jdo
+11:01:40,694 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection"
+11:01:40,694 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" no tener Meta-Data
+11:01:40,694 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" no tiene MetaData o annotaciones.
+11:01:40,695 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" en /META-INF/package.jdo
+11:01:40,695 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" en /WEB-INF/package.jdo
+11:01:40,695 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" en /package.jdo
+11:01:40,695 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" en /es/package.jdo
+11:01:40,695 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" en /es/deusto/package.jdo
+11:01:40,695 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" en /es/deusto/bspq18/package.jdo
+11:01:40,696 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" en /es/deusto/bspq18/e6/package.jdo
+11:01:40,696 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:01:40,696 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+11:01:40,696 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" en /es/deusto/bspq18/e6/DeustoBox/Server/bd/package.jdo
+11:01:40,696 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" en /es/deusto/bspq18/e6/DeustoBox/Server/bd/Data.jdo
+11:01:40,696 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data"
+11:01:40,696 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" no tener Meta-Data
+11:01:40,696 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" no tiene MetaData o annotaciones.
+11:01:40,697 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.DeustoBoxDAO" en /META-INF/package.jdo
+11:01:40,697 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.DeustoBoxDAO" en /WEB-INF/package.jdo
+11:01:40,698 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.DeustoBoxDAO" en /package.jdo
+11:01:40,698 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.DeustoBoxDAO" en /es/package.jdo
+11:01:40,698 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.DeustoBoxDAO" en /es/deusto/package.jdo
+11:01:40,698 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.DeustoBoxDAO" en /es/deusto/bspq18/package.jdo
+11:01:40,698 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.DeustoBoxDAO" en /es/deusto/bspq18/e6/package.jdo
+11:01:40,698 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.DeustoBoxDAO" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:01:40,699 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.DeustoBoxDAO" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+11:01:40,699 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.DeustoBoxDAO" en /es/deusto/bspq18/e6/DeustoBox/Server/dao/package.jdo
+11:01:40,699 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.DeustoBoxDAO" en /es/deusto/bspq18/e6/DeustoBox/Server/dao/DeustoBoxDAO.jdo
+11:01:40,699 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.DeustoBoxDAO"
+11:01:40,699 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.DeustoBoxDAO" no tener Meta-Data
+11:01:40,699 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.DeustoBoxDAO" no tiene MetaData o annotaciones.
+11:01:40,699 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.IDeustoBoxDAO" en /META-INF/package.jdo
+11:01:40,699 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.IDeustoBoxDAO" en /WEB-INF/package.jdo
+11:01:40,700 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.IDeustoBoxDAO" en /package.jdo
+11:01:40,700 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.IDeustoBoxDAO" en /es/package.jdo
+11:01:40,700 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.IDeustoBoxDAO" en /es/deusto/package.jdo
+11:01:40,700 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.IDeustoBoxDAO" en /es/deusto/bspq18/package.jdo
+11:01:40,700 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.IDeustoBoxDAO" en /es/deusto/bspq18/e6/package.jdo
+11:01:40,700 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.IDeustoBoxDAO" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:01:40,701 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.IDeustoBoxDAO" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+11:01:40,701 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.IDeustoBoxDAO" en /es/deusto/bspq18/e6/DeustoBox/Server/dao/package.jdo
+11:01:40,701 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.IDeustoBoxDAO" en /es/deusto/bspq18/e6/DeustoBox/Server/dao/IDeustoBoxDAO.jdo
+11:01:40,701 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.IDeustoBoxDAO"
+11:01:40,701 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.IDeustoBoxDAO" no tener Meta-Data
+11:01:40,701 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.dao.IDeustoBoxDAO" no tiene MetaData o annotaciones.
+11:01:40,743 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" tiene anotaciones de JDO y vamos a usarlas.
+11:01:40,748 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" en /META-INF/package.jdo
+11:01:40,748 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" en /WEB-INF/package.jdo
+11:01:40,748 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" en /package.jdo
+11:01:40,748 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" en /es/package.jdo
+11:01:40,748 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" en /es/deusto/package.jdo
+11:01:40,748 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" en /es/deusto/bspq18/package.jdo
+11:01:40,749 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" en /es/deusto/bspq18/e6/package.jdo
+11:01:40,749 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:01:40,749 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+11:01:40,749 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" en /es/deusto/bspq18/e6/DeustoBox/Server/dto/package.jdo
+11:01:40,749 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" en /es/deusto/bspq18/e6/DeustoBox/Server/dto/UserDTO.jdo
+11:01:40,749 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO"
+11:01:40,749 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" no tener Meta-Data
+11:01:40,749 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" no tiene MetaData o annotaciones.
+11:01:40,750 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" en /META-INF/package.jdo
+11:01:40,750 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" en /WEB-INF/package.jdo
+11:01:40,750 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" en /package.jdo
+11:01:40,750 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" en /es/package.jdo
+11:01:40,751 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" en /es/deusto/package.jdo
+11:01:40,751 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" en /es/deusto/bspq18/package.jdo
+11:01:40,751 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" en /es/deusto/bspq18/e6/package.jdo
+11:01:40,751 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:01:40,751 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+11:01:40,751 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" en /es/deusto/bspq18/e6/DeustoBox/Server/gui/package.jdo
+11:01:40,752 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" en /es/deusto/bspq18/e6/DeustoBox/Server/gui/idea_server.jdo
+11:01:40,752 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server"
+11:01:40,752 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" no tener Meta-Data
+11:01:40,752 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" no tiene MetaData o annotaciones.
+11:01:40,752 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.TestAll" en /META-INF/package.jdo
+11:01:40,752 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.TestAll" en /WEB-INF/package.jdo
+11:01:40,753 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.TestAll" en /package.jdo
+11:01:40,753 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.TestAll" en /es/package.jdo
+11:01:40,753 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.TestAll" en /es/deusto/package.jdo
+11:01:40,753 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.TestAll" en /es/deusto/bspq18/package.jdo
+11:01:40,753 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.TestAll" en /es/deusto/bspq18/e6/package.jdo
+11:01:40,753 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.TestAll" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:01:40,753 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.TestAll" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+11:01:40,754 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.TestAll" en /es/deusto/bspq18/e6/DeustoBox/Server/jdo/package.jdo
+11:01:40,754 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.TestAll" en /es/deusto/bspq18/e6/DeustoBox/Server/jdo/TestAll.jdo
+11:01:40,754 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.TestAll"
+11:01:40,754 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.TestAll" no tener Meta-Data
+11:01:40,754 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.TestAll" no tiene MetaData o annotaciones.
+11:01:40,755 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.ClientUtils" en /META-INF/package.jdo
+11:01:40,755 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.ClientUtils" en /WEB-INF/package.jdo
+11:01:40,755 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.ClientUtils" en /package.jdo
+11:01:40,755 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.ClientUtils" en /es/package.jdo
+11:01:40,755 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.ClientUtils" en /es/deusto/package.jdo
+11:01:40,756 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.ClientUtils" en /es/deusto/bspq18/package.jdo
+11:01:40,756 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.ClientUtils" en /es/deusto/bspq18/e6/package.jdo
+11:01:40,756 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.ClientUtils" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:01:40,756 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.ClientUtils" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+11:01:40,756 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.ClientUtils" en /es/deusto/bspq18/e6/DeustoBox/Server/remote/package.jdo
+11:01:40,756 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.ClientUtils" en /es/deusto/bspq18/e6/DeustoBox/Server/remote/ClientUtils.jdo
+11:01:40,756 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.ClientUtils"
+11:01:40,756 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.ClientUtils" no tener Meta-Data
+11:01:40,756 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.ClientUtils" no tiene MetaData o annotaciones.
+11:01:40,757 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" en /META-INF/package.jdo
+11:01:40,757 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" en /WEB-INF/package.jdo
+11:01:40,757 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" en /package.jdo
+11:01:40,757 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" en /es/package.jdo
+11:01:40,757 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" en /es/deusto/package.jdo
+11:01:40,757 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" en /es/deusto/bspq18/package.jdo
+11:01:40,757 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" en /es/deusto/bspq18/e6/package.jdo
+11:01:40,758 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:01:40,758 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+11:01:40,758 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" en /es/deusto/bspq18/e6/DeustoBox/Server/remote/package.jdo
+11:01:40,758 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" en /es/deusto/bspq18/e6/DeustoBox/Server/remote/IClientUtils.jdo
+11:01:40,758 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils"
+11:01:40,758 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" no tener Meta-Data
+11:01:40,758 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" no tiene MetaData o annotaciones.
+11:01:40,759 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" en /META-INF/package.jdo
+11:01:40,759 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" en /WEB-INF/package.jdo
+11:01:40,759 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" en /package.jdo
+11:01:40,759 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" en /es/package.jdo
+11:01:40,759 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" en /es/deusto/package.jdo
+11:01:40,759 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" en /es/deusto/bspq18/package.jdo
+11:01:40,760 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" en /es/deusto/bspq18/e6/package.jdo
+11:01:40,760 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:01:40,760 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+11:01:40,760 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" en /es/deusto/bspq18/e6/DeustoBox/Server/utils/package.jdo
+11:01:40,760 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" en /es/deusto/bspq18/e6/DeustoBox/Server/utils/Analisis_Red$1.jdo
+11:01:40,760 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1"
+11:01:40,760 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" no tener Meta-Data
+11:01:40,760 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" no tiene MetaData o annotaciones.
+11:01:40,761 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" en /META-INF/package.jdo
+11:01:40,761 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" en /WEB-INF/package.jdo
+11:01:40,761 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" en /package.jdo
+11:01:40,761 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" en /es/package.jdo
+11:01:40,761 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" en /es/deusto/package.jdo
+11:01:40,762 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" en /es/deusto/bspq18/package.jdo
+11:01:40,762 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" en /es/deusto/bspq18/e6/package.jdo
+11:01:40,762 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:01:40,762 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+11:01:40,762 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" en /es/deusto/bspq18/e6/DeustoBox/Server/utils/package.jdo
+11:01:40,762 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" en /es/deusto/bspq18/e6/DeustoBox/Server/utils/Analisis_Red.jdo
+11:01:40,762 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red"
+11:01:40,762 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" no tener Meta-Data
+11:01:40,762 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" no tiene MetaData o annotaciones.
+11:01:40,763 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" en /META-INF/package.jdo
+11:01:40,763 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" en /WEB-INF/package.jdo
+11:01:40,763 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" en /package.jdo
+11:01:40,763 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" en /es/package.jdo
+11:01:40,763 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" en /es/deusto/package.jdo
+11:01:40,764 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" en /es/deusto/bspq18/package.jdo
+11:01:40,764 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" en /es/deusto/bspq18/e6/package.jdo
+11:01:40,764 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:01:40,764 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+11:01:40,764 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" en /es/deusto/bspq18/e6/DeustoBox/Server/utils/package.jdo
+11:01:40,764 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" en /es/deusto/bspq18/e6/DeustoBox/Server/utils/ejecutarTareas.jdo
+11:01:40,764 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas"
+11:01:40,764 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" no tener Meta-Data
+11:01:40,765 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" no tiene MetaData o annotaciones.
+11:01:40,765 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" en /META-INF/package.jdo
+11:01:40,765 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" en /WEB-INF/package.jdo
+11:01:40,765 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" en /package.jdo
+11:01:40,765 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" en /es/package.jdo
+11:01:40,766 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" en /es/deusto/package.jdo
+11:01:40,766 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" en /es/deusto/bspq18/package.jdo
+11:01:40,766 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" en /es/deusto/bspq18/e6/package.jdo
+11:01:40,766 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+11:01:40,766 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+11:01:40,766 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" en /es/deusto/bspq18/e6/DeustoBox/Server/utils/package.jdo
+11:01:40,766 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" en /es/deusto/bspq18/e6/DeustoBox/Server/utils/Error_log.jdo
+11:01:40,766 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log"
+11:01:40,766 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" no tener Meta-Data
+11:01:40,766 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" no tiene MetaData o annotaciones.
+11:01:40,766 (main) DEBUG [DataNucleus.MetaData] - Populación del MetaData ...
+11:01:40,767 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" : Populando Meta-Data
+11:01:40,767 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" campo "username" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+11:01:40,767 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" campo "password" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+11:01:40,771 (main) DEBUG [DataNucleus.MetaData] - Inicialisación del MetaData ...
+11:01:40,772 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" : Inicializando Meta-Data
+11:01:40,773 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata ya ha terminado
+11:01:40,776 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" empezando ...
+11:01:40,791 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no implementa el interfaz "org.datanucleus.enhancement.Persistable"!
+11:01:40,791 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no implementa el interfaz "org.datanucleus.enhancement.Detachable"!
+11:01:40,791 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el campo "dnStateManager" pero lo necesita
+11:01:40,791 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el campo "dnDetachedState" pero lo necesita
+11:01:40,791 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el campo "dnInheritedFieldCount" pero lo necesita
+11:01:40,791 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el campo "dnFlags" pero lo necesita
+11:01:40,791 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el campo "dnFieldTypes" pero lo necesita
+11:01:40,791 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el campo "dnFieldNames" pero lo necesita
+11:01:40,791 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el campo "dnFieldFlags" pero lo necesita
+11:01:40,791 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el campo "dnPersistableSuperclass" pero lo necesita
+11:01:40,791 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "dnReplaceField" pero lo necesita
+11:01:40,791 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "dnGetStateManager" pero lo necesita
+11:01:40,791 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "dnIsTransactional" pero lo necesita
+11:01:40,791 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "dnNewInstance" pero lo necesita
+11:01:40,791 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "dnNewInstance" pero lo necesita
+11:01:40,791 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "dnSuperClone" pero lo necesita
+11:01:40,792 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "dnProvideFields" pero lo necesita
+11:01:40,792 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "___dn$loadClass" pero lo necesita
+11:01:40,792 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "dnGetManagedFieldCount" pero lo necesita
+11:01:40,792 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "dnIsDirty" pero lo necesita
+11:01:40,792 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "dnReplaceStateManager" pero lo necesita
+11:01:40,792 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "dnReplaceFlags" pero lo necesita
+11:01:40,792 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "dnIsDetached" pero lo necesita
+11:01:40,792 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "dnMakeDirty" pero lo necesita
+11:01:40,792 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "__dnPersistableSuperclassInit" pero lo necesita
+11:01:40,792 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "dnIsDeleted" pero lo necesita
+11:01:40,792 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "__dnFieldFlagsInit" pero lo necesita
+11:01:40,792 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "__dnFieldTypesInit" pero lo necesita
+11:01:40,792 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "dnProvideField" pero lo necesita
+11:01:40,792 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "dnPreSerialize" pero lo necesita
+11:01:40,792 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "dnGetObjectId" pero lo necesita
+11:01:40,792 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "dnGetVersion" pero lo necesita
+11:01:40,792 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "dnGetTransactionalObjectId" pero lo necesita
+11:01:40,792 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "dnIsNew" pero lo necesita
+11:01:40,792 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "dnCopyKeyFieldsToObjectId" pero lo necesita
+11:01:40,792 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "dnCopyKeyFieldsToObjectId" pero lo necesita
+11:01:40,792 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "dnCopyField" pero lo necesita
+11:01:40,792 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "dnCopyKeyFieldsFromObjectId" pero lo necesita
+11:01:40,792 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "dnCopyKeyFieldsFromObjectId" pero lo necesita
+11:01:40,792 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "dnGetExecutionContext" pero lo necesita
+11:01:40,792 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "dnCopyFields" pero lo necesita
+11:01:40,792 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "__dnGetInheritedFieldCount" pero lo necesita
+11:01:40,792 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "dnNewObjectIdInstance" pero lo necesita
+11:01:40,792 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "dnNewObjectIdInstance" pero lo necesita
+11:01:40,792 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "dnReplaceDetachedState" pero lo necesita
+11:01:40,792 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "dnIsPersistent" pero lo necesita
+11:01:40,792 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "dnReplaceFields" pero lo necesita
+11:01:40,792 (main) DEBUG [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" no tiene el metodo "__dnFieldNamesInit" pero lo necesita
+11:01:40,799 (main) DEBUG [DataNucleus.Enhancer] - Agregando el interfaz: org.datanucleus.enhancement.Detachable
+11:01:40,799 (main) DEBUG [DataNucleus.Enhancer] - Agregando el interfaz: org.datanucleus.enhancement.Persistable
+11:01:40,803 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original es.deusto.bspq18.e6.DeustoBox.Server.data.User.<init> : ignorando enhance de set del campo "es.deusto.bspq18.e6.DeustoBox.Server.data.User.email"
+11:01:40,803 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original es.deusto.bspq18.e6.DeustoBox.Server.data.User.<init> : ignorando enhance de set del campo "es.deusto.bspq18.e6.DeustoBox.Server.data.User.username"
+11:01:40,803 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original es.deusto.bspq18.e6.DeustoBox.Server.data.User.<init> : ignorando enhance de set del campo "es.deusto.bspq18.e6.DeustoBox.Server.data.User.password"
+11:01:40,803 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original es.deusto.bspq18.e6.DeustoBox.Server.data.User.getEmail, cambiando el uso del campo "es.deusto.bspq18.e6.DeustoBox.Server.data.User.email" para utilisar "dnGetemail()"
+11:01:40,803 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original es.deusto.bspq18.e6.DeustoBox.Server.data.User.setEmail, cambiando el uso del campo "es.deusto.bspq18.e6.DeustoBox.Server.data.User.email" para utilisar "dnSetemail()"
+11:01:40,803 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original es.deusto.bspq18.e6.DeustoBox.Server.data.User.getName, cambiando el uso del campo "es.deusto.bspq18.e6.DeustoBox.Server.data.User.username" para utilisar "dnGetusername()"
+11:01:40,803 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original es.deusto.bspq18.e6.DeustoBox.Server.data.User.setName, cambiando el uso del campo "es.deusto.bspq18.e6.DeustoBox.Server.data.User.username" para utilisar "dnSetusername()"
+11:01:40,803 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original es.deusto.bspq18.e6.DeustoBox.Server.data.User.getPassword, cambiando el uso del campo "es.deusto.bspq18.e6.DeustoBox.Server.data.User.password" para utilisar "dnGetpassword()"
+11:01:40,803 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original es.deusto.bspq18.e6.DeustoBox.Server.data.User.setPassword, cambiando el uso del campo "es.deusto.bspq18.e6.DeustoBox.Server.data.User.password" para utilisar "dnSetpassword()"
+11:01:40,803 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original es.deusto.bspq18.e6.DeustoBox.Server.data.User.toString, cambiando el uso del campo "es.deusto.bspq18.e6.DeustoBox.Server.data.User.email" para utilisar "dnGetemail()"
+11:01:40,804 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original es.deusto.bspq18.e6.DeustoBox.Server.data.User.toString, cambiando el uso del campo "es.deusto.bspq18.e6.DeustoBox.Server.data.User.username" para utilisar "dnGetusername()"
+11:01:40,804 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original es.deusto.bspq18.e6.DeustoBox.Server.data.User.toString, cambiando el uso del campo "es.deusto.bspq18.e6.DeustoBox.Server.data.User.password" para utilisar "dnGetpassword()"
+11:01:40,804 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "org.datanucleus.enhancement.StateManager dnStateManager"
+11:01:40,804 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "byte dnFlags"
+11:01:40,804 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "[Ljava.lang.Object; dnDetachedState"
+11:01:40,804 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "[B dnFieldFlags"
+11:01:40,804 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "java.lang.Class dnPersistableSuperclass"
+11:01:40,804 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "[Ljava.lang.Class; dnFieldTypes"
+11:01:40,804 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "[Ljava.lang.String; dnFieldNames"
+11:01:40,804 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "int dnInheritedFieldCount"
+11:01:40,804 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void <clinit>()"
+11:01:40,805 (main) DEBUG [DataNucleus.Enhancer] - Agregando el constructor "es.deusto.bspq18.e6.DeustoBox.Server.data.User()"
+11:01:40,806 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyKeyFieldsFromObjectId(org.datanucleus.enhancement.Persistable$ObjectIdFieldConsumer fc, java.lang.Object oid)"
+11:01:40,806 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyKeyFieldsFromObjectId(java.lang.Object oid)"
+11:01:40,806 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyKeyFieldsToObjectId(java.lang.Object oid)"
+11:01:40,806 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyKeyFieldsToObjectId(org.datanucleus.enhancement.Persistable$ObjectIdFieldSupplier fs, java.lang.Object oid)"
+11:01:40,806 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnGetObjectId()"
+11:01:40,807 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnGetVersion()"
+11:01:40,807 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnPreSerialize()"
+11:01:40,807 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "org.datanucleus.enhancement.ExecutionContextReference dnGetExecutionContext()"
+11:01:40,807 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "org.datanucleus.enhancement.StateManager dnGetStateManager()"
+11:01:40,807 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnGetTransactionalObjectId()"
+11:01:40,808 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsDeleted()"
+11:01:40,808 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsDirty()"
+11:01:40,808 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsNew()"
+11:01:40,808 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsPersistent()"
+11:01:40,808 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsTransactional()"
+11:01:40,808 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnMakeDirty(java.lang.String fieldName)"
+11:01:40,808 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnNewObjectIdInstance()"
+11:01:40,808 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnNewObjectIdInstance(java.lang.Object key)"
+11:01:40,809 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnProvideFields([I indices)"
+11:01:40,809 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceFields([I indices)"
+11:01:40,809 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceFlags()"
+11:01:40,809 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceStateManager(org.datanucleus.enhancement.StateManager sm)"
+11:01:40,809 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceDetachedState()"
+11:01:40,809 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsDetached()"
+11:01:40,809 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "org.datanucleus.enhancement.Persistable dnNewInstance(org.datanucleus.enhancement.StateManager sm)"
+11:01:40,810 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "org.datanucleus.enhancement.Persistable dnNewInstance(org.datanucleus.enhancement.StateManager sm, java.lang.Object obj)"
+11:01:40,810 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceField(int index)"
+11:01:40,810 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnProvideField(int index)"
+11:01:40,810 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyField(es.deusto.bspq18.e6.DeustoBox.Server.data.User obj, int index)"
+11:01:40,810 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyFields(java.lang.Object obj, [I indices)"
+11:01:40,810 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "[Ljava.lang.String; __dnFieldNamesInit()"
+11:01:40,810 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "[Ljava.lang.Class; __dnFieldTypesInit()"
+11:01:40,810 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "[B __dnFieldFlagsInit()"
+11:01:40,810 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "int __dnGetInheritedFieldCount()"
+11:01:40,810 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "int dnGetManagedFieldCount()"
+11:01:40,811 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Class __dnPersistableSuperclassInit()"
+11:01:40,811 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Class ___dn$loadClass(java.lang.String className)"
+11:01:40,811 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnSuperClone()"
+11:01:40,812 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void writeObject(java.io.ObjectOutputStream out)"
+11:01:40,812 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.String dnGetemail(es.deusto.bspq18.e6.DeustoBox.Server.data.User objPC)"
+11:01:40,812 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnSetemail(es.deusto.bspq18.e6.DeustoBox.Server.data.User objPC, java.lang.String val)"
+11:01:40,813 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.String dnGetpassword(es.deusto.bspq18.e6.DeustoBox.Server.data.User objPC)"
+11:01:40,813 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnSetpassword(es.deusto.bspq18.e6.DeustoBox.Server.data.User objPC, java.lang.String val)"
+11:01:40,813 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.String dnGetusername(es.deusto.bspq18.e6.DeustoBox.Server.data.User objPC)"
+11:01:40,813 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnSetusername(es.deusto.bspq18.e6.DeustoBox.Server.data.User objPC, java.lang.String val)"
+11:01:40,814 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\aitor\git\BSPQ18-E6\target\classes\es\deusto\bspq18\e6\DeustoBox\Server\data\User.class" con definicion enhanced
+11:01:40,814 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : es.deusto.bspq18.e6.DeustoBox.Server.data.User
+11:01:40,814 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "es.deusto.bspq18.e6.DeustoBox.Server.data.User" ha terminado
+11:01:40,815 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado con exito para 1 clases. Tiempos : input=138 ms, enhance=41 ms, total=179 ms. Compruebe el LOG para los detalles
