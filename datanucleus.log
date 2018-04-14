@@ -4923,3 +4923,1255 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown database 'deu
 12:37:18,253 (es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO.main()) DEBUG [DataNucleus.Persistence] - Disconectando es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User@63b14a20 de StateManager[pc=es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User@63b14a20, lifecycle=HOLLOW]
 12:37:18,253 (es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO.main()) DEBUG [DataNucleus.Cache] - Cache de nivel 1 vaciada.
 12:37:18,253 (es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO.main()) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@35954a86" se cerr�
+12:42:06,524 (main) DEBUG [DataNucleus.General] - Using PluginRegistry org.datanucleus.plugin.NonManagedPluginRegistry
+12:42:06,548 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus version 5.1.8 at URL file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-core/5.1.8/datanucleus-core-5.1.8.jar.
+12:42:06,558 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-core/5.1.8/datanucleus-core-5.1.8.jar!/plugin.xml.
+12:42:06,567 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-core/5.1.8/datanucleus-core-5.1.8.jar!/plugin.xml.
+12:42:06,568 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.store.rdbms version 5.1.8 at URL file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-rdbms/5.1.8/datanucleus-rdbms-5.1.8.jar.
+12:42:06,573 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-rdbms/5.1.8/datanucleus-rdbms-5.1.8.jar!/plugin.xml.
+12:42:06,577 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-rdbms/5.1.8/datanucleus-rdbms-5.1.8.jar!/plugin.xml.
+12:42:06,578 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.api.jdo version 5.1.5 at URL file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.1.5/datanucleus-api-jdo-5.1.5.jar.
+12:42:06,583 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.1.5/datanucleus-api-jdo-5.1.5.jar!/plugin.xml.
+12:42:06,584 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.1.5/datanucleus-api-jdo-5.1.5.jar!/plugin.xml.
+12:42:06,597 (main) INFO  [DataNucleus.Persistence] - Propiedad datanucleus.validateTables desconocida - vamos a ignorarla
+12:42:06,598 (main) INFO  [DataNucleus.Persistence] - Propiedad datanucleus.validateConstraints desconocida - vamos a ignorarla
+12:42:06,608 (main) DEBUG [DataNucleus.Persistence] - Tipos de Java inicializando ...
+12:42:06,669 (main) DEBUG [DataNucleus.Persistence] - Soporte para tipos de Java listo : tipos soportados = [B, [C, [D, [F, [I, [J, [Ljava.lang.Boolean;, [Ljava.lang.Byte;, [Ljava.lang.Character;, [Ljava.lang.Double;, [Ljava.lang.Enum;, [Ljava.lang.Float;, [Ljava.lang.Integer;, [Ljava.lang.Long;, [Ljava.lang.Number;, [Ljava.lang.Object;, [Ljava.lang.Short;, [Ljava.lang.String;, [Ljava.math.BigDecimal;, [Ljava.math.BigInteger;, [Ljava.util.Date;, [Ljava.util.Locale;, [S, [Z, boolean, byte, char, double, float, int, java.awt.Color, java.awt.image.BufferedImage, java.lang.Boolean, java.lang.Byte, java.lang.Character, java.lang.Class, java.lang.Double, java.lang.Enum, java.lang.Float, java.lang.Integer, java.lang.Long, java.lang.Number, java.lang.Short, java.lang.String, java.lang.StringBuffer, java.lang.StringBuilder, java.math.BigDecimal, java.math.BigInteger, java.net.URI, java.net.URL, java.sql.Date, java.sql.Time, java.sql.Timestamp, java.time.Duration, java.time.Instant, java.time.LocalDate, java.time.LocalDateTime, java.time.LocalTime, java.time.MonthDay, java.time.OffsetDateTime, java.time.OffsetTime, java.time.Period, java.time.Year, java.time.YearMonth, java.time.ZonedDateTime, java.time.ZoneId, java.time.ZoneOffset, java.util.ArrayList, java.util.Arrays$ArrayList, java.util.BitSet, java.util.Calendar, java.util.Collection, java.util.Currency, java.util.Date, java.util.GregorianCalendar, java.util.HashMap, java.util.HashSet, java.util.Hashtable, java.util.LinkedHashMap, java.util.LinkedHashSet, java.util.LinkedList, java.util.List, java.util.Locale, java.util.Map, java.util.Optional, java.util.PriorityQueue, java.util.Properties, java.util.Queue, java.util.Set, java.util.SortedMap, java.util.SortedSet, java.util.Stack, java.util.TimeZone, java.util.TreeMap, java.util.TreeSet, java.util.UUID, java.util.Vector, long, short
+12:42:06,669 (main) DEBUG [DataNucleus.Persistence] - Inicializando TypeConverters ...
+12:42:06,703 (main) DEBUG [DataNucleus.Persistence] - TypeConverters listo
+12:42:06,704 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for byte[] to : java.nio.ByteBuffer
+12:42:06,704 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for char[] to : java.nio.ByteBuffer
+12:42:06,704 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for double[] to : java.nio.ByteBuffer
+12:42:06,704 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for float[] to : java.nio.ByteBuffer
+12:42:06,704 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for int[] to : java.nio.ByteBuffer
+12:42:06,704 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for long[] to : java.nio.ByteBuffer
+12:42:06,704 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for [Ljava.math.BigDecimal; to : java.nio.ByteBuffer
+12:42:06,704 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for [Ljava.math.BigInteger; to : java.nio.ByteBuffer
+12:42:06,704 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for short[] to : java.nio.ByteBuffer
+12:42:06,704 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for boolean[] to : java.nio.ByteBuffer
+12:42:06,704 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.awt.Color to : java.lang.String,int[]
+12:42:06,705 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.awt.image.BufferedImage to : byte[],java.nio.ByteBuffer
+12:42:06,705 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.io.Serializable to : byte[],java.lang.String,java.nio.ByteBuffer
+12:42:06,705 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Boolean to : java.lang.Character,java.lang.Integer
+12:42:06,705 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Character to : java.lang.String
+12:42:06,705 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Class to : java.lang.String
+12:42:06,705 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Integer to : java.lang.String
+12:42:06,705 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Long to : java.lang.String
+12:42:06,705 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.StringBuffer to : java.lang.String
+12:42:06,705 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.StringBuilder to : java.lang.String
+12:42:06,705 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.math.BigDecimal to : java.lang.String,java.lang.Double
+12:42:06,705 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.math.BigInteger to : java.lang.String,java.lang.Long
+12:42:06,705 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.net.URI to : java.lang.String
+12:42:06,705 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.net.URL to : java.lang.String
+12:42:06,705 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Date to : java.lang.String,java.util.Date,java.lang.Long
+12:42:06,705 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Time to : java.lang.String,java.util.Date,java.lang.Long
+12:42:06,705 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Timestamp to : java.lang.String,java.util.Date,java.lang.Long
+12:42:06,705 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Duration to : java.lang.String,java.lang.Double,java.lang.Long
+12:42:06,705 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Instant to : java.lang.String,java.sql.Timestamp,java.util.Date,java.lang.Long
+12:42:06,705 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.LocalDate to : java.lang.String,java.sql.Date,java.util.Date
+12:42:06,705 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.LocalDateTime to : java.lang.String,java.sql.Timestamp,java.util.Date
+12:42:06,706 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.LocalTime to : java.lang.String,java.util.Date,java.sql.Time,java.lang.Long
+12:42:06,706 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.MonthDay to : java.lang.String,int[],java.sql.Date,java.util.Date
+12:42:06,706 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.OffsetDateTime to : java.lang.String,java.sql.Timestamp,java.util.Date
+12:42:06,706 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.OffsetTime to : java.lang.String,java.lang.Long,java.sql.Time
+12:42:06,706 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Period to : java.lang.String,int[]
+12:42:06,706 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Year to : java.lang.String,java.lang.Integer
+12:42:06,706 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.YearMonth to : java.lang.String,int[],java.sql.Date,java.util.Date
+12:42:06,706 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.ZonedDateTime to : java.lang.String,java.sql.Timestamp
+12:42:06,706 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.ZoneId to : java.lang.String
+12:42:06,706 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.ZoneOffset to : java.lang.String
+12:42:06,706 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.BitSet to : java.lang.String
+12:42:06,706 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Calendar to : java.lang.String,[Ljava.lang.Object;,java.sql.Timestamp,java.util.Date
+12:42:06,706 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Currency to : java.lang.String
+12:42:06,706 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Date to : java.lang.String,java.lang.Long
+12:42:06,706 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Locale to : java.lang.String
+12:42:06,706 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.TimeZone to : java.lang.String
+12:42:06,706 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.UUID to : java.lang.String
+12:42:06,707 (main) DEBUG [DataNucleus.MetaData] - MetaDataManager : Input=(XML,Annotations), XML-Validation=false, XML-Suffices=(persistence=*.jdo, orm=orm, query=*.jdoquery) mapping-name=mysql, JDO-listener=true
+12:42:06,707 (main) DEBUG [DataNucleus.MetaData] - Registering listener for metadata initialisation
+12:42:06,711 (main) DEBUG [DataNucleus.Datastore] - Creating StoreManager for datastore
+12:42:06,828 (main) DEBUG [DataNucleus.Connection] - Creado ConnectionPool "tx" con data source de tipo dbcp2-builtin
+12:42:06,829 (main) DEBUG [DataNucleus.Connection] - Registrado la factoria de connecciones transaccionales bajo el nombre "rdbms/tx"
+12:42:06,829 (main) DEBUG [DataNucleus.Connection] - Registrado la factoria de connecciones nontransaccionales bajo el nombre "rdbms/nontx"
+12:42:06,838 (main) DEBUG [DataNucleus.Connection] - Creado ConnectionPool "nontx" con data source de tipo dbcp2-builtin
+12:42:07,074 (main) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@49c43f4e [conn=null, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" en resource "nontx"
+12:42:07,108 (main) DEBUG [DataNucleus.Datastore] - No Soportando el tipo RDBMS de Java java.lang.Float, jdbc-type=REAL
+12:42:07,108 (main) DEBUG [DataNucleus.Datastore] - No Soportando el tipo RDBMS de Java java.lang.String, jdbc-type=NVARCHAR
+12:42:07,108 (main) DEBUG [DataNucleus.Datastore] - No Soportando el tipo RDBMS de Java java.lang.String, jdbc-type=NCHAR
+12:42:07,108 (main) DEBUG [DataNucleus.Datastore] - No Soportando el tipo RDBMS de Java java.lang.Boolean, jdbc-type=BOOLEAN
+12:42:07,108 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "[B" con jdbc-types=[BLOB, BINARY, VARBINARY, LONGVARBINARY], sql-types=[BLOB, BINARY, VARBINARY, LONGVARBINARY] y defecto (jdbc-type=LONGVARBINARY, sql-type=LONGVARBINARY)
+12:42:07,108 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.io.File" con jdbc-types=[LONGVARBINARY], sql-types=[LONGVARBINARY] y defecto (jdbc-type=LONGVARBINARY, sql-type=LONGVARBINARY)
+12:42:07,108 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.io.Serializable" con jdbc-types=[BLOB, BINARY, VARBINARY, LONGVARBINARY], sql-types=[BLOB, BINARY, VARBINARY, LONGVARBINARY] y defecto (jdbc-type=LONGVARBINARY, sql-type=LONGVARBINARY)
+12:42:07,108 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Boolean" con jdbc-types=[SMALLINT, CHAR, BIT, TINYINT], sql-types=[SMALLINT, CHAR, BIT, TINYINT] y defecto (jdbc-type=BIT, sql-type=BIT)
+12:42:07,108 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Byte" con jdbc-types=[SMALLINT, TINYINT], sql-types=[SMALLINT, TINYINT] y defecto (jdbc-type=TINYINT, sql-type=TINYINT)
+12:42:07,108 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Character" con jdbc-types=[CHAR, INTEGER], sql-types=[CHAR, INTEGER] y defecto (jdbc-type=CHAR, sql-type=CHAR)
+12:42:07,108 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Double" con jdbc-types=[DECIMAL, DOUBLE], sql-types=[DECIMAL, DOUBLE] y defecto (jdbc-type=DOUBLE, sql-type=DOUBLE)
+12:42:07,108 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Float" con jdbc-types=[FLOAT, DECIMAL, DOUBLE], sql-types=[FLOAT, DECIMAL, DOUBLE] y defecto (jdbc-type=FLOAT, sql-type=FLOAT)
+12:42:07,108 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Integer" con jdbc-types=[NUMERIC, SMALLINT, BIGINT, TINYINT, INTEGER], sql-types=[NUMERIC, SMALLINT, BIGINT, TINYINT, INTEGER] y defecto (jdbc-type=INTEGER, sql-type=INTEGER)
+12:42:07,108 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Long" con jdbc-types=[NUMERIC, SMALLINT, BIGINT, TINYINT, INTEGER], sql-types=[NUMERIC, SMALLINT, BIGINT, INT, TINYINT] y defecto (jdbc-type=BIGINT, sql-type=BIGINT)
+12:42:07,109 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Short" con jdbc-types=[SMALLINT, TINYINT, INTEGER], sql-types=[SMALLINT, TINYINT, INTEGER] y defecto (jdbc-type=SMALLINT, sql-type=SMALLINT)
+12:42:07,109 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.String" con jdbc-types=[BLOB, LONGVARCHAR, CLOB, VARCHAR, CHAR, BIGINT], sql-types=[BLOB, LONGVARCHAR, CLOB, LONGTEXT, CHAR, BIGINT, TEXT, MEDIUMTEXT, MEDIUMBLOB, VARCHAR, LONGBLOB] y defecto (jdbc-type=VARCHAR, sql-type=VARCHAR)
+12:42:07,109 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.math.BigDecimal" con jdbc-types=[NUMERIC, DECIMAL], sql-types=[NUMERIC, DECIMAL] y defecto (jdbc-type=DECIMAL, sql-type=DECIMAL)
+12:42:07,109 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.math.BigInteger" con jdbc-types=[NUMERIC], sql-types=[NUMERIC] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+12:42:07,109 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.sql.Date" con jdbc-types=[DATE, TIMESTAMP, VARCHAR, CHAR, BIGINT], sql-types=[DATE, TIMESTAMP, VARCHAR, CHAR, BIGINT] y defecto (jdbc-type=DATE, sql-type=DATE)
+12:42:07,109 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.sql.Time" con jdbc-types=[TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT], sql-types=[TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT] y defecto (jdbc-type=TIME, sql-type=TIME)
+12:42:07,109 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.sql.Timestamp" con jdbc-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME], sql-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME] y defecto (jdbc-type=TIMESTAMP, sql-type=TIMESTAMP)
+12:42:07,109 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.util.Date" con jdbc-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT], sql-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT] y defecto (jdbc-type=TIMESTAMP, sql-type=TIMESTAMP)
+12:42:07,109 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "org.datanucleus.identity.DatastoreId" con jdbc-types=[NUMERIC, VARCHAR, CHAR, BIGINT, INTEGER], sql-types=[NUMERIC, VARCHAR, CHAR, BIGINT, INTEGER] y defecto (jdbc-type=BIGINT, sql-type=BIGINT)
+12:42:07,136 (main) DEBUG [DataNucleus.Datastore.Schema] - La columna "`DELETEME1523702527120`.`UNUSED`" añadió a la representación de la table.
+12:42:07,139 (main) DEBUG [DataNucleus.Datastore.Schema] - CREATE TABLE `DELETEME1523702527120`
+(
+    `UNUSED` INTEGER NOT NULL
+) ENGINE=INNODB
+12:42:07,150 (main) DEBUG [DataNucleus.Datastore.Schema] - SQL Tiempo de cumplir = 11 ms
+12:42:07,161 (main) DEBUG [DataNucleus.Datastore.Schema] - No era posible determinar el nombre del esquema por este DataStore
+12:42:07,161 (main) DEBUG [DataNucleus.Datastore.Schema] - DROP TABLE `DELETEME1523702527120` CASCADE
+12:42:07,169 (main) DEBUG [DataNucleus.Datastore.Schema] - SQL Tiempo de cumplir = 8 ms
+12:42:07,170 (main) DEBUG [DataNucleus.Datastore] - ======================= Datastore =========================
+12:42:07,170 (main) DEBUG [DataNucleus.Datastore] - StoreManager : "rdbms" (org.datanucleus.store.rdbms.RDBMSStoreManager)
+12:42:07,170 (main) DEBUG [DataNucleus.Datastore] - Datastore : read-write
+12:42:07,170 (main) DEBUG [DataNucleus.Datastore] - Schema Control : AutoCreate(Tables,Columns,Constraints), Validate(None)
+12:42:07,170 (main) DEBUG [DataNucleus.Datastore] - Schema : NamingFactory=datanucleus2 identifierCase=null
+12:42:07,170 (main) DEBUG [DataNucleus.Datastore] - Query Languages : JDOQL, JPQL, STOREDPROC, SQL
+12:42:07,170 (main) DEBUG [DataNucleus.Datastore] - Queries : Timeout=0
+12:42:07,170 (main) DEBUG [DataNucleus.Datastore] - ===========================================================
+12:42:07,170 (main) DEBUG [DataNucleus.Datastore] - Datastore Adapter : org.datanucleus.store.rdbms.adapter.MySQLAdapter
+12:42:07,170 (main) DEBUG [DataNucleus.Datastore] - Datastore : name="MySQL" version="5.5.5-10.1.26-MariaDB"
+12:42:07,170 (main) DEBUG [DataNucleus.Datastore] - Datastore Driver : name="MySQL Connector Java" version="mysql-connector-java-5.1.45 ( Revision: 9131eefa398531c7dc98776e8a3fe839e544c5b2 )"
+12:42:07,170 (main) DEBUG [DataNucleus.Datastore] - Primary Connection Factory : URL[jdbc:mysql://localhost/DeustoBox?verifyServerCertificate=false&useSSL=true]
+12:42:07,170 (main) DEBUG [DataNucleus.Datastore] - Secondary Connection Factory : URL[jdbc:mysql://localhost/DeustoBox?verifyServerCertificate=false&useSSL=true]
+12:42:07,170 (main) DEBUG [DataNucleus.Datastore] - Datastore Identifiers : factory="datanucleus2" case="UPPERCASE" catalog=DeustoBox
+12:42:07,170 (main) DEBUG [DataNucleus.Datastore] - Supported Identifier Cases : lowercase "lowercase" "UPPERCASE" 
+12:42:07,170 (main) DEBUG [DataNucleus.Datastore] - Supported Identifier Lengths (max) : Table=64 Column=64 Constraint=64 Index=64 Delimiter=`
+12:42:07,170 (main) DEBUG [DataNucleus.Datastore] - Support for Identifiers in DDL : catalog=true schema=false
+12:42:07,170 (main) DEBUG [DataNucleus.Datastore] - Datastore : checkTableViewExistence, rdbmsConstraintCreateMode=DataNucleus, initialiseColumnInfo=ALL
+12:42:07,170 (main) DEBUG [DataNucleus.Datastore] - Support Statement Batching : yes (max-batch-size=50)
+12:42:07,170 (main) DEBUG [DataNucleus.Datastore] - Queries : Results direction=forward, type=forward-only, concurrency=read-only
+12:42:07,170 (main) DEBUG [DataNucleus.Datastore] - Java-Types : string-default-length=255
+12:42:07,170 (main) DEBUG [DataNucleus.Datastore] - JDBC-Types : VARCHAR, LONGVARCHAR, BINARY, VARBINARY, LONGVARBINARY, BIGINT, TINYINT, BIT, CHAR, NUMERIC, DECIMAL, INTEGER, CLOB, SMALLINT, BLOB, FLOAT, DOUBLE, DATE, TIME, TIMESTAMP
+12:42:07,170 (main) DEBUG [DataNucleus.Datastore] - ===========================================================
+12:42:07,171 (main) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@49c43f4e [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@71c8becc, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" 
+12:42:07,171 (main) DEBUG [DataNucleus.Datastore] - StoreManager now created
+12:42:07,173 (main) DEBUG [DataNucleus.Persistence] - Started pool of ExecutionContext (maxPool=20, reaperThread=false)
+12:42:07,176 (main) DEBUG [DataNucleus.Persistence] - ================= NucleusContext ===============
+12:42:07,176 (main) DEBUG [DataNucleus.Persistence] - DataNucleus Context : Versión: "5.1.8" con JRE "1.8.0_161" en "Windows 10"
+12:42:07,176 (main) DEBUG [DataNucleus.Persistence] - Persistence API : JDO
+12:42:07,176 (main) DEBUG [DataNucleus.Persistence] - Plugin Registry : org.datanucleus.plugin.NonManagedPluginRegistry
+12:42:07,176 (main) DEBUG [DataNucleus.Persistence] - ClassLoading : default
+12:42:07,177 (main) DEBUG [DataNucleus.Persistence] - Persistence : pm-singlethreaded, nontransactional-read, nontransactional-write, reachability-at-commit, copy-on-attach, managed-relations(checked), deletion-policy=JDO2, serverTimeZone=Europe/Paris
+12:42:07,177 (main) DEBUG [DataNucleus.Persistence] - Transactions : type=RESOURCE_LOCAL, mode=datastore, isolation=read-committed
+12:42:07,177 (main) DEBUG [DataNucleus.Persistence] - ValueGeneration : txn-isolation=read-committed connection=New
+12:42:07,177 (main) DEBUG [DataNucleus.Persistence] - Cache : Level1 (soft), Level2 (soft, mode=UNSPECIFIED), QueryResults (soft), Collections/Maps 
+12:42:07,177 (main) DEBUG [DataNucleus.Persistence] - ================================================
+12:42:07,178 (main) DEBUG [DataNucleus.MetaData] - Listener found initialisation for persistable class es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User
+12:42:07,179 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /META-INF/package.jdo
+12:42:07,179 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /WEB-INF/package.jdo
+12:42:07,179 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /package.jdo
+12:42:07,180 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /es/package.jdo
+12:42:07,180 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /es/deusto/package.jdo
+12:42:07,180 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /es/deusto/bspq18/package.jdo
+12:42:07,180 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /es/deusto/bspq18/e6/package.jdo
+12:42:07,180 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+12:42:07,181 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+12:42:07,181 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /es/deusto/bspq18/e6/DeustoBox/Server/jdo/package.jdo
+12:42:07,181 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /es/deusto/bspq18/e6/DeustoBox/Server/jdo/data/package.jdo
+12:42:07,181 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /es/deusto/bspq18/e6/DeustoBox/Server/jdo/data/User.jdo
+12:42:07,181 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User"
+12:42:07,204 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" tiene anotaciones de JDO y vamos a usarlas.
+12:42:07,210 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" : Populando Meta-Data
+12:42:07,210 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /META-INF/package-mysql.orm
+12:42:07,210 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /WEB-INF/package-mysql.orm
+12:42:07,211 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /package-mysql.orm
+12:42:07,211 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /es/package-mysql.orm
+12:42:07,211 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /es/deusto/package-mysql.orm
+12:42:07,211 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /es/deusto/bspq18/package-mysql.orm
+12:42:07,212 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /es/deusto/bspq18/e6/package-mysql.orm
+12:42:07,212 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /es/deusto/bspq18/e6/DeustoBox/package-mysql.orm
+12:42:07,212 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /es/deusto/bspq18/e6/DeustoBox/Server/package-mysql.orm
+12:42:07,213 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /es/deusto/bspq18/e6/DeustoBox/Server/jdo/package-mysql.orm
+12:42:07,213 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /es/deusto/bspq18/e6/DeustoBox/Server/jdo/data/package-mysql.orm
+12:42:07,213 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /es/deusto/bspq18/e6/DeustoBox/Server/jdo/data/User-mysql.orm
+12:42:07,213 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "orm" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User"
+12:42:07,213 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" campo "username" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:42:07,214 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" campo "password" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:42:07,215 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" : Inicializando Meta-Data
+12:42:07,232 (main) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@1ddf84b8" se abrió para la base de datos "org.datanucleus.store.rdbms.RDBMSStoreManager@4206a205" con transaccion="org.datanucleus.TransactionImpl@1139b2f3"
+12:42:07,237 (main) DEBUG [DataNucleus.Transaction] - Transaction created [DataNucleus Transaction, ID=-944397569-1, enlisted resources=[]]
+12:42:07,237 (main) DEBUG [DataNucleus.Transaction] - Transacción empezada para el ExecutionContext org.datanucleus.ExecutionContextImpl@1ddf84b8 (optimistic=false)
+12:42:07,237 (main) DEBUG [DataNucleus.Persistence] - Haciendo el objeto persistente : "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User@28eaa59a"
+12:42:07,248 (main) DEBUG [DataNucleus.Cache] - Objeto "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User@28eaa59a" (id="es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User:aitorugarte@opendeusto.es") añadido a la Cache de nivel 1 (loadedFlags="[YYY]")
+12:42:07,248 (main) DEBUG [DataNucleus.Transaction] - Objeto "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User@28eaa59a" (id="aitorugarte@opendeusto.es") ha sido puesto en la cache transaccional
+12:42:07,259 (main) DEBUG [DataNucleus.Persistence] - Va a manjejar la persistencia de Clase : es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User [Tabla : `USER`, Estrategia de heredar : new-table]
+12:42:07,259 (main) DEBUG [DataNucleus.Datastore.Schema] - La columna "`USER`.`EMAIL`" añadió a la representación de la table.
+12:42:07,261 (main) DEBUG [DataNucleus.Datastore.Schema] - Attempt to find JDBC driver 'typeInfo' for jdbc-type=VARCHAR but sql-type=VARCHAR is not found. Using default sql-type for this jdbc-type.
+12:42:07,261 (main) DEBUG [DataNucleus.Datastore.Schema] - Campo [es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User.email] -> Columnas [`USER`.`EMAIL`] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
+12:42:07,264 (main) DEBUG [DataNucleus.Datastore.Schema] - La tabla `USER` va a manejar la persistencia de los campos de la clase es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User (estrategia de heredar="new-table")
+12:42:07,264 (main) DEBUG [DataNucleus.Datastore.Schema] - La columna "`USER`.`PASSWORD`" añadió a la representación de la table.
+12:42:07,264 (main) DEBUG [DataNucleus.Datastore.Schema] - Attempt to find JDBC driver 'typeInfo' for jdbc-type=VARCHAR but sql-type=VARCHAR is not found. Using default sql-type for this jdbc-type.
+12:42:07,264 (main) DEBUG [DataNucleus.Datastore.Schema] - Campo [es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User.password] -> Columnas [`USER`.`PASSWORD`] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
+12:42:07,264 (main) DEBUG [DataNucleus.Datastore.Schema] - La columna "`USER`.`USERNAME`" añadió a la representación de la table.
+12:42:07,264 (main) DEBUG [DataNucleus.Datastore.Schema] - Attempt to find JDBC driver 'typeInfo' for jdbc-type=VARCHAR but sql-type=VARCHAR is not found. Using default sql-type for this jdbc-type.
+12:42:07,264 (main) DEBUG [DataNucleus.Datastore.Schema] - Campo [es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User.username] -> Columnas [`USER`.`USERNAME`] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
+12:42:07,264 (main) DEBUG [DataNucleus.Datastore.Schema] - Table/View `USER` ha sido inicializado
+12:42:07,266 (main) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@368f2016 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@4c583ecf, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" en resource "nontx" con isolación "serializable" y auto-commit=false
+12:42:07,266 (main) DEBUG [DataNucleus.Datastore.Schema] - Empezando transaccion del esquema con conneccion "org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@4c583ecf" y isolacion "serializable"
+12:42:07,268 (main) DEBUG [DataNucleus.Datastore.Schema] - Check of existence of `USER` returned table type of TABLE
+12:42:07,268 (main) DEBUG [DataNucleus.Datastore.Schema] - Cargando información de columna para las tablas "user" por el Catalogo "", el Esquema ""
+12:42:07,278 (main) DEBUG [DataNucleus.Datastore.Schema] - Información de columna cargado por el Catalogo "", el Esquema "", 1 tablas, tiempo = 10 ms
+12:42:07,278 (main) DEBUG [DataNucleus.Datastore.Schema] - Información de columna cargado por la tabla "USER" : hemos encontrado 3 columnas
+12:42:07,283 (main) DEBUG [DataNucleus.Datastore.Schema] - Validando 1 indic(es) de la tabla `USER`
+12:42:07,289 (main) DEBUG [DataNucleus.Datastore.Schema] - Validando 0 foreign key(s) de la tabla `USER`
+12:42:07,290 (main) DEBUG [DataNucleus.Datastore.Schema] - Validando 1 llaves unicas de la tabla `USER`
+12:42:07,290 (main) DEBUG [DataNucleus.Datastore.Schema] - Committing transaccion del esquema "org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@4c583ecf"
+12:42:07,291 (main) DEBUG [DataNucleus.Datastore.Schema] - Cerrando la conneccion de la transaccion del esquema "org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@4c583ecf"
+12:42:07,291 (main) DEBUG [DataNucleus.Connection] - ManagedConnection VA A COMMIT : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@368f2016 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@4c583ecf, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]"
+12:42:07,291 (main) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@368f2016 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@4c583ecf, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" 
+12:42:07,299 (main) DEBUG [DataNucleus.Persistence] - Objeto "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User@28eaa59a" va a ser añadido a la tabla "`USER`"
+12:42:07,305 (main) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@43bc63a3 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@702657cc, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]" en resource "tx" con isolación "read-committed" y auto-commit=false
+12:42:07,306 (main) DEBUG [DataNucleus.Transaction] - Running enlist operation on resource: org.datanucleus.store.rdbms.ConnectionFactoryImpl$EmulatedXAResource@2d1ef81a, error code TMNOFLAGS and transaction [DataNucleus Transaction, ID=-944397569-1, enlisted resources=[]]
+12:42:07,316 (main) DEBUG [DataNucleus.Datastore] - Utilizando PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@5aa9e4eb" para la conneccion "org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@702657cc"
+12:42:07,316 (main) DEBUG [DataNucleus.Datastore.Persist] - El statement "INSERT INTO `USER` (`PASSWORD`,`USERNAME`,`EMAIL`) VALUES (?,?,?)" ya es batchable
+12:42:07,318 (main) DEBUG [DataNucleus.Datastore.Persist] - Añadiendo statement "INSERT INTO `USER` (`PASSWORD`,`USERNAME`,`EMAIL`) VALUES (?,?,?)" al batch para procesar (tamaño de batch = 1)
+12:42:07,318 (main) DEBUG [DataNucleus.Datastore.Native] - BATCH [INSERT INTO `USER` (`PASSWORD`,`USERNAME`,`EMAIL`) VALUES (<'123'>,<'aitorugarte'>,<'aitorugarte@opendeusto.es'>)]
+12:42:07,321 (main) DEBUG [DataNucleus.Transaction] - Ha tirado una excepción al hacer flush() a la base de datos
+org.datanucleus.exceptions.NucleusDataStoreException: Ha tirado una excepción al hacer flush() a la base de datos
+	at org.datanucleus.store.rdbms.SQLController$1.transactionFlushed(SQLController.java:746)
+	at org.datanucleus.store.connection.AbstractManagedConnection.transactionFlushed(AbstractManagedConnection.java:95)
+	at org.datanucleus.store.connection.ConnectionManagerImpl$2.transactionFlushed(ConnectionManagerImpl.java:527)
+	at org.datanucleus.TransactionImpl.flush(TransactionImpl.java:222)
+	at org.datanucleus.TransactionImpl.commit(TransactionImpl.java:286)
+	at org.datanucleus.api.jdo.JDOTransaction.commit(JDOTransaction.java:107)
+	at es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO.storeDB(DeustoBoxDAO.java:77)
+	at es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO.main(DeustoBoxDAO.java:95)
+Caused by: java.sql.BatchUpdateException: Duplicate entry 'aitorugarte@opendeusto.es' for key 'PRIMARY'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createBatchUpdateException(SQLError.java:1163)
+	at com.mysql.jdbc.PreparedStatement.executeBatchSerially(PreparedStatement.java:1778)
+	at com.mysql.jdbc.PreparedStatement.executeBatchInternal(PreparedStatement.java:1262)
+	at com.mysql.jdbc.StatementImpl.executeBatch(StatementImpl.java:970)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DelegatingStatement.executeBatch(DelegatingStatement.java:345)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DelegatingStatement.executeBatch(DelegatingStatement.java:345)
+	at org.datanucleus.store.rdbms.ParamLoggingPreparedStatement.executeBatch(ParamLoggingPreparedStatement.java:366)
+	at org.datanucleus.store.rdbms.SQLController.processConnectionStatement(SQLController.java:667)
+	at org.datanucleus.store.rdbms.SQLController.processStatementsForConnection(SQLController.java:635)
+	at org.datanucleus.store.rdbms.SQLController$1.transactionFlushed(SQLController.java:721)
+	... 7 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'aitorugarte@opendeusto.es' for key 'PRIMARY'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:936)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2527)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2680)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2484)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
+	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2079)
+	at com.mysql.jdbc.PreparedStatement.executeBatchSerially(PreparedStatement.java:1756)
+	... 15 more
+Nested Throwables StackTrace:
+java.sql.BatchUpdateException: Duplicate entry 'aitorugarte@opendeusto.es' for key 'PRIMARY'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createBatchUpdateException(SQLError.java:1163)
+	at com.mysql.jdbc.PreparedStatement.executeBatchSerially(PreparedStatement.java:1778)
+	at com.mysql.jdbc.PreparedStatement.executeBatchInternal(PreparedStatement.java:1262)
+	at com.mysql.jdbc.StatementImpl.executeBatch(StatementImpl.java:970)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DelegatingStatement.executeBatch(DelegatingStatement.java:345)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DelegatingStatement.executeBatch(DelegatingStatement.java:345)
+	at org.datanucleus.store.rdbms.ParamLoggingPreparedStatement.executeBatch(ParamLoggingPreparedStatement.java:366)
+	at org.datanucleus.store.rdbms.SQLController.processConnectionStatement(SQLController.java:667)
+	at org.datanucleus.store.rdbms.SQLController.processStatementsForConnection(SQLController.java:635)
+	at org.datanucleus.store.rdbms.SQLController$1.transactionFlushed(SQLController.java:721)
+	at org.datanucleus.store.connection.AbstractManagedConnection.transactionFlushed(AbstractManagedConnection.java:95)
+	at org.datanucleus.store.connection.ConnectionManagerImpl$2.transactionFlushed(ConnectionManagerImpl.java:527)
+	at org.datanucleus.TransactionImpl.flush(TransactionImpl.java:222)
+	at org.datanucleus.TransactionImpl.commit(TransactionImpl.java:286)
+	at org.datanucleus.api.jdo.JDOTransaction.commit(JDOTransaction.java:107)
+	at es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO.storeDB(DeustoBoxDAO.java:77)
+	at es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO.main(DeustoBoxDAO.java:95)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'aitorugarte@opendeusto.es' for key 'PRIMARY'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:936)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2527)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2680)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2484)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
+	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2079)
+	at com.mysql.jdbc.PreparedStatement.executeBatchSerially(PreparedStatement.java:1756)
+	... 15 more
+
+12:42:07,321 (main) DEBUG [DataNucleus.Transaction] - Haciendo rollback de la transacción para el ExecutionContext org.datanucleus.ExecutionContextImpl@1ddf84b8
+12:42:07,322 (main) DEBUG [DataNucleus.Lifecycle] - Objeto "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User@28eaa59a" (id="es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User:aitorugarte@opendeusto.es") tiene cambio de lifeycle : "P_NEW"->""
+12:42:07,322 (main) DEBUG [DataNucleus.Transaction] - Objeto "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User@28eaa59a" (id="es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User:aitorugarte@opendeusto.es") fue ser borrado de la cache transactional
+12:42:07,322 (main) DEBUG [DataNucleus.Persistence] - Disconectando es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User@28eaa59a de StateManager[pc=es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User@28eaa59a, lifecycle=P_NEW]
+12:42:07,322 (main) DEBUG [DataNucleus.Cache] - Objeto con identidad="es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User:aitorugarte@opendeusto.es" borrado de la Cache de nivel 1
+12:42:07,322 (main) DEBUG [DataNucleus.Transaction] - Rolling back [DataNucleus Transaction, ID=-944397569-1, enlisted resources=[org.datanucleus.store.rdbms.ConnectionFactoryImpl$EmulatedXAResource@2d1ef81a]]
+12:42:07,322 (main) DEBUG [DataNucleus.Connection] - ManagedConnection VA A ROLLBACK : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@43bc63a3 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@702657cc, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]"
+12:42:07,323 (main) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@43bc63a3 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@702657cc, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]" 
+12:42:07,323 (main) DEBUG [DataNucleus.Transaction] - Transacción rolled back en 2 ms
+12:42:07,327 (main) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@1ddf84b8" se cerró
+12:42:07,328 (main) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@1ddf84b8" se abrió para la base de datos "org.datanucleus.store.rdbms.RDBMSStoreManager@4206a205" con transaccion="org.datanucleus.TransactionImpl@b3ca52e"
+12:42:07,328 (main) DEBUG [DataNucleus.Transaction] - Transaction created [DataNucleus Transaction, ID=-944397569-2, enlisted resources=[]]
+12:42:07,328 (main) DEBUG [DataNucleus.Transaction] - Transacción empezada para el ExecutionContext org.datanucleus.ExecutionContextImpl@1ddf84b8 (optimistic=false)
+12:42:07,328 (main) DEBUG [DataNucleus.Persistence] - Haciendo el objeto persistente : "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User@2925bf5b"
+12:42:07,328 (main) DEBUG [DataNucleus.Cache] - Objeto "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User@2925bf5b" (id="es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User:markelalva@opendeusto.es") añadido a la Cache de nivel 1 (loadedFlags="[YYY]")
+12:42:07,328 (main) DEBUG [DataNucleus.Transaction] - Objeto "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User@2925bf5b" (id="markelalva@opendeusto.es") ha sido puesto en la cache transaccional
+12:42:07,328 (main) DEBUG [DataNucleus.Persistence] - Objeto "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User@2925bf5b" va a ser añadido a la tabla "`USER`"
+12:42:07,329 (main) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@65e98b1c [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@61322f9d, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]" en resource "tx" con isolación "read-committed" y auto-commit=false
+12:42:07,329 (main) DEBUG [DataNucleus.Transaction] - Running enlist operation on resource: org.datanucleus.store.rdbms.ConnectionFactoryImpl$EmulatedXAResource@6ad82709, error code TMNOFLAGS and transaction [DataNucleus Transaction, ID=-944397569-2, enlisted resources=[]]
+12:42:07,330 (main) DEBUG [DataNucleus.Datastore] - Utilizando PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@7817fd62" para la conneccion "org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@61322f9d"
+12:42:07,330 (main) DEBUG [DataNucleus.Datastore.Persist] - El statement "INSERT INTO `USER` (`PASSWORD`,`USERNAME`,`EMAIL`) VALUES (?,?,?)" ya es batchable
+12:42:07,330 (main) DEBUG [DataNucleus.Datastore.Persist] - Añadiendo statement "INSERT INTO `USER` (`PASSWORD`,`USERNAME`,`EMAIL`) VALUES (?,?,?)" al batch para procesar (tamaño de batch = 1)
+12:42:07,330 (main) DEBUG [DataNucleus.Datastore.Native] - BATCH [INSERT INTO `USER` (`PASSWORD`,`USERNAME`,`EMAIL`) VALUES (<'123'>,<'markelalva'>,<'markelalva@opendeusto.es'>)]
+12:42:07,331 (main) DEBUG [DataNucleus.Transaction] - Ha tirado una excepción al hacer flush() a la base de datos
+org.datanucleus.exceptions.NucleusDataStoreException: Ha tirado una excepción al hacer flush() a la base de datos
+	at org.datanucleus.store.rdbms.SQLController$1.transactionFlushed(SQLController.java:746)
+	at org.datanucleus.store.connection.AbstractManagedConnection.transactionFlushed(AbstractManagedConnection.java:95)
+	at org.datanucleus.store.connection.ConnectionManagerImpl$2.transactionFlushed(ConnectionManagerImpl.java:527)
+	at org.datanucleus.TransactionImpl.flush(TransactionImpl.java:222)
+	at org.datanucleus.TransactionImpl.commit(TransactionImpl.java:286)
+	at org.datanucleus.api.jdo.JDOTransaction.commit(JDOTransaction.java:107)
+	at es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO.storeDB(DeustoBoxDAO.java:77)
+	at es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO.main(DeustoBoxDAO.java:96)
+Caused by: java.sql.BatchUpdateException: Duplicate entry 'markelalva@opendeusto.es' for key 'PRIMARY'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createBatchUpdateException(SQLError.java:1163)
+	at com.mysql.jdbc.PreparedStatement.executeBatchSerially(PreparedStatement.java:1778)
+	at com.mysql.jdbc.PreparedStatement.executeBatchInternal(PreparedStatement.java:1262)
+	at com.mysql.jdbc.StatementImpl.executeBatch(StatementImpl.java:970)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DelegatingStatement.executeBatch(DelegatingStatement.java:345)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DelegatingStatement.executeBatch(DelegatingStatement.java:345)
+	at org.datanucleus.store.rdbms.ParamLoggingPreparedStatement.executeBatch(ParamLoggingPreparedStatement.java:366)
+	at org.datanucleus.store.rdbms.SQLController.processConnectionStatement(SQLController.java:667)
+	at org.datanucleus.store.rdbms.SQLController.processStatementsForConnection(SQLController.java:635)
+	at org.datanucleus.store.rdbms.SQLController$1.transactionFlushed(SQLController.java:721)
+	... 7 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'markelalva@opendeusto.es' for key 'PRIMARY'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:936)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2527)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2680)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2484)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
+	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2079)
+	at com.mysql.jdbc.PreparedStatement.executeBatchSerially(PreparedStatement.java:1756)
+	... 15 more
+Nested Throwables StackTrace:
+java.sql.BatchUpdateException: Duplicate entry 'markelalva@opendeusto.es' for key 'PRIMARY'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createBatchUpdateException(SQLError.java:1163)
+	at com.mysql.jdbc.PreparedStatement.executeBatchSerially(PreparedStatement.java:1778)
+	at com.mysql.jdbc.PreparedStatement.executeBatchInternal(PreparedStatement.java:1262)
+	at com.mysql.jdbc.StatementImpl.executeBatch(StatementImpl.java:970)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DelegatingStatement.executeBatch(DelegatingStatement.java:345)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DelegatingStatement.executeBatch(DelegatingStatement.java:345)
+	at org.datanucleus.store.rdbms.ParamLoggingPreparedStatement.executeBatch(ParamLoggingPreparedStatement.java:366)
+	at org.datanucleus.store.rdbms.SQLController.processConnectionStatement(SQLController.java:667)
+	at org.datanucleus.store.rdbms.SQLController.processStatementsForConnection(SQLController.java:635)
+	at org.datanucleus.store.rdbms.SQLController$1.transactionFlushed(SQLController.java:721)
+	at org.datanucleus.store.connection.AbstractManagedConnection.transactionFlushed(AbstractManagedConnection.java:95)
+	at org.datanucleus.store.connection.ConnectionManagerImpl$2.transactionFlushed(ConnectionManagerImpl.java:527)
+	at org.datanucleus.TransactionImpl.flush(TransactionImpl.java:222)
+	at org.datanucleus.TransactionImpl.commit(TransactionImpl.java:286)
+	at org.datanucleus.api.jdo.JDOTransaction.commit(JDOTransaction.java:107)
+	at es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO.storeDB(DeustoBoxDAO.java:77)
+	at es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO.main(DeustoBoxDAO.java:96)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'markelalva@opendeusto.es' for key 'PRIMARY'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:936)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2527)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2680)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2484)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
+	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2079)
+	at com.mysql.jdbc.PreparedStatement.executeBatchSerially(PreparedStatement.java:1756)
+	... 15 more
+
+12:42:07,331 (main) DEBUG [DataNucleus.Transaction] - Haciendo rollback de la transacción para el ExecutionContext org.datanucleus.ExecutionContextImpl@1ddf84b8
+12:42:07,331 (main) DEBUG [DataNucleus.Lifecycle] - Objeto "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User@2925bf5b" (id="es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User:markelalva@opendeusto.es") tiene cambio de lifeycle : "P_NEW"->""
+12:42:07,331 (main) DEBUG [DataNucleus.Transaction] - Objeto "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User@2925bf5b" (id="es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User:markelalva@opendeusto.es") fue ser borrado de la cache transactional
+12:42:07,331 (main) DEBUG [DataNucleus.Persistence] - Disconectando es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User@2925bf5b de StateManager[pc=es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User@2925bf5b, lifecycle=P_NEW]
+12:42:07,331 (main) DEBUG [DataNucleus.Cache] - Objeto con identidad="es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User:markelalva@opendeusto.es" borrado de la Cache de nivel 1
+12:42:07,332 (main) DEBUG [DataNucleus.Transaction] - Rolling back [DataNucleus Transaction, ID=-944397569-2, enlisted resources=[org.datanucleus.store.rdbms.ConnectionFactoryImpl$EmulatedXAResource@6ad82709]]
+12:42:07,332 (main) DEBUG [DataNucleus.Connection] - ManagedConnection VA A ROLLBACK : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@65e98b1c [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@61322f9d, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]"
+12:42:07,332 (main) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@65e98b1c [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@61322f9d, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]" 
+12:42:07,332 (main) DEBUG [DataNucleus.Transaction] - Transacción rolled back en 1 ms
+12:42:07,332 (main) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@1ddf84b8" se cerró
+12:42:38,098 (main) DEBUG [DataNucleus.General] - Using PluginRegistry org.datanucleus.plugin.NonManagedPluginRegistry
+12:42:38,122 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus version 5.1.8 at URL file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-core/5.1.8/datanucleus-core-5.1.8.jar.
+12:42:38,134 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-core/5.1.8/datanucleus-core-5.1.8.jar!/plugin.xml.
+12:42:38,146 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-core/5.1.8/datanucleus-core-5.1.8.jar!/plugin.xml.
+12:42:38,148 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.store.rdbms version 5.1.8 at URL file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-rdbms/5.1.8/datanucleus-rdbms-5.1.8.jar.
+12:42:38,154 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-rdbms/5.1.8/datanucleus-rdbms-5.1.8.jar!/plugin.xml.
+12:42:38,158 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-rdbms/5.1.8/datanucleus-rdbms-5.1.8.jar!/plugin.xml.
+12:42:38,159 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.api.jdo version 5.1.5 at URL file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.1.5/datanucleus-api-jdo-5.1.5.jar.
+12:42:38,164 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.1.5/datanucleus-api-jdo-5.1.5.jar!/plugin.xml.
+12:42:38,165 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.1.5/datanucleus-api-jdo-5.1.5.jar!/plugin.xml.
+12:42:38,181 (main) INFO  [DataNucleus.Persistence] - Propiedad datanucleus.validateTables desconocida - vamos a ignorarla
+12:42:38,181 (main) INFO  [DataNucleus.Persistence] - Propiedad datanucleus.validateConstraints desconocida - vamos a ignorarla
+12:42:38,194 (main) DEBUG [DataNucleus.Persistence] - Tipos de Java inicializando ...
+12:42:38,265 (main) DEBUG [DataNucleus.Persistence] - Soporte para tipos de Java listo : tipos soportados = [B, [C, [D, [F, [I, [J, [Ljava.lang.Boolean;, [Ljava.lang.Byte;, [Ljava.lang.Character;, [Ljava.lang.Double;, [Ljava.lang.Enum;, [Ljava.lang.Float;, [Ljava.lang.Integer;, [Ljava.lang.Long;, [Ljava.lang.Number;, [Ljava.lang.Object;, [Ljava.lang.Short;, [Ljava.lang.String;, [Ljava.math.BigDecimal;, [Ljava.math.BigInteger;, [Ljava.util.Date;, [Ljava.util.Locale;, [S, [Z, boolean, byte, char, double, float, int, java.awt.Color, java.awt.image.BufferedImage, java.lang.Boolean, java.lang.Byte, java.lang.Character, java.lang.Class, java.lang.Double, java.lang.Enum, java.lang.Float, java.lang.Integer, java.lang.Long, java.lang.Number, java.lang.Short, java.lang.String, java.lang.StringBuffer, java.lang.StringBuilder, java.math.BigDecimal, java.math.BigInteger, java.net.URI, java.net.URL, java.sql.Date, java.sql.Time, java.sql.Timestamp, java.time.Duration, java.time.Instant, java.time.LocalDate, java.time.LocalDateTime, java.time.LocalTime, java.time.MonthDay, java.time.OffsetDateTime, java.time.OffsetTime, java.time.Period, java.time.Year, java.time.YearMonth, java.time.ZonedDateTime, java.time.ZoneId, java.time.ZoneOffset, java.util.ArrayList, java.util.Arrays$ArrayList, java.util.BitSet, java.util.Calendar, java.util.Collection, java.util.Currency, java.util.Date, java.util.GregorianCalendar, java.util.HashMap, java.util.HashSet, java.util.Hashtable, java.util.LinkedHashMap, java.util.LinkedHashSet, java.util.LinkedList, java.util.List, java.util.Locale, java.util.Map, java.util.Optional, java.util.PriorityQueue, java.util.Properties, java.util.Queue, java.util.Set, java.util.SortedMap, java.util.SortedSet, java.util.Stack, java.util.TimeZone, java.util.TreeMap, java.util.TreeSet, java.util.UUID, java.util.Vector, long, short
+12:42:38,265 (main) DEBUG [DataNucleus.Persistence] - Inicializando TypeConverters ...
+12:42:38,307 (main) DEBUG [DataNucleus.Persistence] - TypeConverters listo
+12:42:38,307 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for byte[] to : java.nio.ByteBuffer
+12:42:38,307 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for char[] to : java.nio.ByteBuffer
+12:42:38,307 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for double[] to : java.nio.ByteBuffer
+12:42:38,307 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for float[] to : java.nio.ByteBuffer
+12:42:38,307 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for int[] to : java.nio.ByteBuffer
+12:42:38,307 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for long[] to : java.nio.ByteBuffer
+12:42:38,307 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for [Ljava.math.BigDecimal; to : java.nio.ByteBuffer
+12:42:38,307 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for [Ljava.math.BigInteger; to : java.nio.ByteBuffer
+12:42:38,307 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for short[] to : java.nio.ByteBuffer
+12:42:38,307 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for boolean[] to : java.nio.ByteBuffer
+12:42:38,307 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.awt.Color to : java.lang.String,int[]
+12:42:38,307 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.awt.image.BufferedImage to : byte[],java.nio.ByteBuffer
+12:42:38,307 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.io.Serializable to : byte[],java.lang.String,java.nio.ByteBuffer
+12:42:38,308 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Boolean to : java.lang.Character,java.lang.Integer
+12:42:38,308 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Character to : java.lang.String
+12:42:38,308 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Class to : java.lang.String
+12:42:38,308 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Integer to : java.lang.String
+12:42:38,308 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Long to : java.lang.String
+12:42:38,308 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.StringBuffer to : java.lang.String
+12:42:38,308 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.StringBuilder to : java.lang.String
+12:42:38,308 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.math.BigDecimal to : java.lang.String,java.lang.Double
+12:42:38,308 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.math.BigInteger to : java.lang.String,java.lang.Long
+12:42:38,308 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.net.URI to : java.lang.String
+12:42:38,308 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.net.URL to : java.lang.String
+12:42:38,308 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Date to : java.lang.String,java.util.Date,java.lang.Long
+12:42:38,308 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Time to : java.lang.String,java.util.Date,java.lang.Long
+12:42:38,308 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Timestamp to : java.lang.String,java.util.Date,java.lang.Long
+12:42:38,308 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Duration to : java.lang.String,java.lang.Double,java.lang.Long
+12:42:38,308 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Instant to : java.lang.String,java.sql.Timestamp,java.util.Date,java.lang.Long
+12:42:38,308 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.LocalDate to : java.lang.String,java.sql.Date,java.util.Date
+12:42:38,308 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.LocalDateTime to : java.lang.String,java.sql.Timestamp,java.util.Date
+12:42:38,308 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.LocalTime to : java.lang.String,java.util.Date,java.sql.Time,java.lang.Long
+12:42:38,308 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.MonthDay to : java.lang.String,int[],java.sql.Date,java.util.Date
+12:42:38,308 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.OffsetDateTime to : java.lang.String,java.sql.Timestamp,java.util.Date
+12:42:38,308 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.OffsetTime to : java.lang.String,java.lang.Long,java.sql.Time
+12:42:38,309 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Period to : java.lang.String,int[]
+12:42:38,309 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Year to : java.lang.String,java.lang.Integer
+12:42:38,309 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.YearMonth to : java.lang.String,int[],java.sql.Date,java.util.Date
+12:42:38,309 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.ZonedDateTime to : java.lang.String,java.sql.Timestamp
+12:42:38,309 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.ZoneId to : java.lang.String
+12:42:38,309 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.ZoneOffset to : java.lang.String
+12:42:38,309 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.BitSet to : java.lang.String
+12:42:38,309 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Calendar to : java.lang.String,[Ljava.lang.Object;,java.sql.Timestamp,java.util.Date
+12:42:38,309 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Currency to : java.lang.String
+12:42:38,309 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Date to : java.lang.String,java.lang.Long
+12:42:38,309 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Locale to : java.lang.String
+12:42:38,309 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.TimeZone to : java.lang.String
+12:42:38,309 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.UUID to : java.lang.String
+12:42:38,309 (main) DEBUG [DataNucleus.MetaData] - MetaDataManager : Input=(XML,Annotations), XML-Validation=false, XML-Suffices=(persistence=*.jdo, orm=orm, query=*.jdoquery) mapping-name=mysql, JDO-listener=true
+12:42:38,309 (main) DEBUG [DataNucleus.MetaData] - Registering listener for metadata initialisation
+12:42:38,313 (main) DEBUG [DataNucleus.Datastore] - Creating StoreManager for datastore
+12:42:38,429 (main) DEBUG [DataNucleus.Connection] - Creado ConnectionPool "tx" con data source de tipo dbcp2-builtin
+12:42:38,429 (main) DEBUG [DataNucleus.Connection] - Registrado la factoria de connecciones transaccionales bajo el nombre "rdbms/tx"
+12:42:38,429 (main) DEBUG [DataNucleus.Connection] - Registrado la factoria de connecciones nontransaccionales bajo el nombre "rdbms/nontx"
+12:42:38,437 (main) DEBUG [DataNucleus.Connection] - Creado ConnectionPool "nontx" con data source de tipo dbcp2-builtin
+12:42:38,675 (main) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@49c43f4e [conn=null, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" en resource "nontx"
+12:42:38,707 (main) DEBUG [DataNucleus.Datastore] - No Soportando el tipo RDBMS de Java java.lang.Float, jdbc-type=REAL
+12:42:38,707 (main) DEBUG [DataNucleus.Datastore] - No Soportando el tipo RDBMS de Java java.lang.String, jdbc-type=NVARCHAR
+12:42:38,708 (main) DEBUG [DataNucleus.Datastore] - No Soportando el tipo RDBMS de Java java.lang.String, jdbc-type=NCHAR
+12:42:38,708 (main) DEBUG [DataNucleus.Datastore] - No Soportando el tipo RDBMS de Java java.lang.Boolean, jdbc-type=BOOLEAN
+12:42:38,709 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "[B" con jdbc-types=[BLOB, BINARY, VARBINARY, LONGVARBINARY], sql-types=[BLOB, BINARY, VARBINARY, LONGVARBINARY] y defecto (jdbc-type=LONGVARBINARY, sql-type=LONGVARBINARY)
+12:42:38,709 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.io.File" con jdbc-types=[LONGVARBINARY], sql-types=[LONGVARBINARY] y defecto (jdbc-type=LONGVARBINARY, sql-type=LONGVARBINARY)
+12:42:38,710 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.io.Serializable" con jdbc-types=[BLOB, BINARY, VARBINARY, LONGVARBINARY], sql-types=[BLOB, BINARY, VARBINARY, LONGVARBINARY] y defecto (jdbc-type=LONGVARBINARY, sql-type=LONGVARBINARY)
+12:42:38,710 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Boolean" con jdbc-types=[SMALLINT, CHAR, BIT, TINYINT], sql-types=[SMALLINT, CHAR, BIT, TINYINT] y defecto (jdbc-type=BIT, sql-type=BIT)
+12:42:38,710 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Byte" con jdbc-types=[SMALLINT, TINYINT], sql-types=[SMALLINT, TINYINT] y defecto (jdbc-type=TINYINT, sql-type=TINYINT)
+12:42:38,710 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Character" con jdbc-types=[CHAR, INTEGER], sql-types=[CHAR, INTEGER] y defecto (jdbc-type=CHAR, sql-type=CHAR)
+12:42:38,710 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Double" con jdbc-types=[DECIMAL, DOUBLE], sql-types=[DECIMAL, DOUBLE] y defecto (jdbc-type=DOUBLE, sql-type=DOUBLE)
+12:42:38,710 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Float" con jdbc-types=[FLOAT, DECIMAL, DOUBLE], sql-types=[FLOAT, DECIMAL, DOUBLE] y defecto (jdbc-type=FLOAT, sql-type=FLOAT)
+12:42:38,710 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Integer" con jdbc-types=[NUMERIC, SMALLINT, BIGINT, TINYINT, INTEGER], sql-types=[NUMERIC, SMALLINT, BIGINT, TINYINT, INTEGER] y defecto (jdbc-type=INTEGER, sql-type=INTEGER)
+12:42:38,710 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Long" con jdbc-types=[NUMERIC, SMALLINT, BIGINT, TINYINT, INTEGER], sql-types=[NUMERIC, SMALLINT, BIGINT, INT, TINYINT] y defecto (jdbc-type=BIGINT, sql-type=BIGINT)
+12:42:38,710 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Short" con jdbc-types=[SMALLINT, TINYINT, INTEGER], sql-types=[SMALLINT, TINYINT, INTEGER] y defecto (jdbc-type=SMALLINT, sql-type=SMALLINT)
+12:42:38,710 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.String" con jdbc-types=[BLOB, LONGVARCHAR, CLOB, VARCHAR, CHAR, BIGINT], sql-types=[BLOB, LONGVARCHAR, CLOB, LONGTEXT, CHAR, BIGINT, TEXT, MEDIUMTEXT, MEDIUMBLOB, VARCHAR, LONGBLOB] y defecto (jdbc-type=VARCHAR, sql-type=VARCHAR)
+12:42:38,710 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.math.BigDecimal" con jdbc-types=[NUMERIC, DECIMAL], sql-types=[NUMERIC, DECIMAL] y defecto (jdbc-type=DECIMAL, sql-type=DECIMAL)
+12:42:38,710 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.math.BigInteger" con jdbc-types=[NUMERIC], sql-types=[NUMERIC] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+12:42:38,710 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.sql.Date" con jdbc-types=[DATE, TIMESTAMP, VARCHAR, CHAR, BIGINT], sql-types=[DATE, TIMESTAMP, VARCHAR, CHAR, BIGINT] y defecto (jdbc-type=DATE, sql-type=DATE)
+12:42:38,711 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.sql.Time" con jdbc-types=[TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT], sql-types=[TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT] y defecto (jdbc-type=TIME, sql-type=TIME)
+12:42:38,711 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.sql.Timestamp" con jdbc-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME], sql-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME] y defecto (jdbc-type=TIMESTAMP, sql-type=TIMESTAMP)
+12:42:38,711 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.util.Date" con jdbc-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT], sql-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT] y defecto (jdbc-type=TIMESTAMP, sql-type=TIMESTAMP)
+12:42:38,711 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "org.datanucleus.identity.DatastoreId" con jdbc-types=[NUMERIC, VARCHAR, CHAR, BIGINT, INTEGER], sql-types=[NUMERIC, VARCHAR, CHAR, BIGINT, INTEGER] y defecto (jdbc-type=BIGINT, sql-type=BIGINT)
+12:42:38,736 (main) DEBUG [DataNucleus.Datastore.Schema] - La columna "`DELETEME1523702558722`.`UNUSED`" añadió a la representación de la table.
+12:42:38,740 (main) DEBUG [DataNucleus.Datastore.Schema] - CREATE TABLE `DELETEME1523702558722`
+(
+    `UNUSED` INTEGER NOT NULL
+) ENGINE=INNODB
+12:42:38,751 (main) DEBUG [DataNucleus.Datastore.Schema] - SQL Tiempo de cumplir = 10 ms
+12:42:38,762 (main) DEBUG [DataNucleus.Datastore.Schema] - No era posible determinar el nombre del esquema por este DataStore
+12:42:38,762 (main) DEBUG [DataNucleus.Datastore.Schema] - DROP TABLE `DELETEME1523702558722` CASCADE
+12:42:38,770 (main) DEBUG [DataNucleus.Datastore.Schema] - SQL Tiempo de cumplir = 7 ms
+12:42:38,771 (main) DEBUG [DataNucleus.Datastore] - ======================= Datastore =========================
+12:42:38,771 (main) DEBUG [DataNucleus.Datastore] - StoreManager : "rdbms" (org.datanucleus.store.rdbms.RDBMSStoreManager)
+12:42:38,771 (main) DEBUG [DataNucleus.Datastore] - Datastore : read-write
+12:42:38,771 (main) DEBUG [DataNucleus.Datastore] - Schema Control : AutoCreate(Tables,Columns,Constraints), Validate(None)
+12:42:38,771 (main) DEBUG [DataNucleus.Datastore] - Schema : NamingFactory=datanucleus2 identifierCase=null
+12:42:38,771 (main) DEBUG [DataNucleus.Datastore] - Query Languages : JDOQL, JPQL, STOREDPROC, SQL
+12:42:38,771 (main) DEBUG [DataNucleus.Datastore] - Queries : Timeout=0
+12:42:38,771 (main) DEBUG [DataNucleus.Datastore] - ===========================================================
+12:42:38,771 (main) DEBUG [DataNucleus.Datastore] - Datastore Adapter : org.datanucleus.store.rdbms.adapter.MySQLAdapter
+12:42:38,771 (main) DEBUG [DataNucleus.Datastore] - Datastore : name="MySQL" version="5.5.5-10.1.26-MariaDB"
+12:42:38,771 (main) DEBUG [DataNucleus.Datastore] - Datastore Driver : name="MySQL Connector Java" version="mysql-connector-java-5.1.45 ( Revision: 9131eefa398531c7dc98776e8a3fe839e544c5b2 )"
+12:42:38,771 (main) DEBUG [DataNucleus.Datastore] - Primary Connection Factory : URL[jdbc:mysql://localhost/DeustoBox?verifyServerCertificate=false&useSSL=true]
+12:42:38,771 (main) DEBUG [DataNucleus.Datastore] - Secondary Connection Factory : URL[jdbc:mysql://localhost/DeustoBox?verifyServerCertificate=false&useSSL=true]
+12:42:38,771 (main) DEBUG [DataNucleus.Datastore] - Datastore Identifiers : factory="datanucleus2" case="UPPERCASE" catalog=DeustoBox
+12:42:38,771 (main) DEBUG [DataNucleus.Datastore] - Supported Identifier Cases : lowercase "lowercase" "UPPERCASE" 
+12:42:38,772 (main) DEBUG [DataNucleus.Datastore] - Supported Identifier Lengths (max) : Table=64 Column=64 Constraint=64 Index=64 Delimiter=`
+12:42:38,772 (main) DEBUG [DataNucleus.Datastore] - Support for Identifiers in DDL : catalog=true schema=false
+12:42:38,772 (main) DEBUG [DataNucleus.Datastore] - Datastore : checkTableViewExistence, rdbmsConstraintCreateMode=DataNucleus, initialiseColumnInfo=ALL
+12:42:38,772 (main) DEBUG [DataNucleus.Datastore] - Support Statement Batching : yes (max-batch-size=50)
+12:42:38,772 (main) DEBUG [DataNucleus.Datastore] - Queries : Results direction=forward, type=forward-only, concurrency=read-only
+12:42:38,772 (main) DEBUG [DataNucleus.Datastore] - Java-Types : string-default-length=255
+12:42:38,772 (main) DEBUG [DataNucleus.Datastore] - JDBC-Types : VARCHAR, LONGVARCHAR, BINARY, VARBINARY, LONGVARBINARY, BIGINT, TINYINT, BIT, CHAR, NUMERIC, DECIMAL, INTEGER, CLOB, SMALLINT, BLOB, FLOAT, DOUBLE, DATE, TIME, TIMESTAMP
+12:42:38,772 (main) DEBUG [DataNucleus.Datastore] - ===========================================================
+12:42:38,772 (main) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@49c43f4e [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@71c8becc, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" 
+12:42:38,773 (main) DEBUG [DataNucleus.Datastore] - StoreManager now created
+12:42:38,775 (main) DEBUG [DataNucleus.Persistence] - Started pool of ExecutionContext (maxPool=20, reaperThread=false)
+12:42:38,778 (main) DEBUG [DataNucleus.Persistence] - ================= NucleusContext ===============
+12:42:38,778 (main) DEBUG [DataNucleus.Persistence] - DataNucleus Context : Versión: "5.1.8" con JRE "1.8.0_161" en "Windows 10"
+12:42:38,778 (main) DEBUG [DataNucleus.Persistence] - Persistence API : JDO
+12:42:38,778 (main) DEBUG [DataNucleus.Persistence] - Plugin Registry : org.datanucleus.plugin.NonManagedPluginRegistry
+12:42:38,778 (main) DEBUG [DataNucleus.Persistence] - ClassLoading : default
+12:42:38,778 (main) DEBUG [DataNucleus.Persistence] - Persistence : pm-singlethreaded, nontransactional-read, nontransactional-write, reachability-at-commit, copy-on-attach, managed-relations(checked), deletion-policy=JDO2, serverTimeZone=Europe/Paris
+12:42:38,778 (main) DEBUG [DataNucleus.Persistence] - Transactions : type=RESOURCE_LOCAL, mode=datastore, isolation=read-committed
+12:42:38,778 (main) DEBUG [DataNucleus.Persistence] - ValueGeneration : txn-isolation=read-committed connection=New
+12:42:38,778 (main) DEBUG [DataNucleus.Persistence] - Cache : Level1 (soft), Level2 (soft, mode=UNSPECIFIED), QueryResults (soft), Collections/Maps 
+12:42:38,778 (main) DEBUG [DataNucleus.Persistence] - ================================================
+12:42:38,780 (main) DEBUG [DataNucleus.MetaData] - Listener found initialisation for persistable class es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User
+12:42:38,781 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /META-INF/package.jdo
+12:42:38,781 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /WEB-INF/package.jdo
+12:42:38,781 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /package.jdo
+12:42:38,781 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /es/package.jdo
+12:42:38,781 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /es/deusto/package.jdo
+12:42:38,782 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /es/deusto/bspq18/package.jdo
+12:42:38,782 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /es/deusto/bspq18/e6/package.jdo
+12:42:38,782 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+12:42:38,782 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+12:42:38,782 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /es/deusto/bspq18/e6/DeustoBox/Server/jdo/package.jdo
+12:42:38,783 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /es/deusto/bspq18/e6/DeustoBox/Server/jdo/data/package.jdo
+12:42:38,783 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /es/deusto/bspq18/e6/DeustoBox/Server/jdo/data/User.jdo
+12:42:38,783 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User"
+12:42:38,805 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" tiene anotaciones de JDO y vamos a usarlas.
+12:42:38,811 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" : Populando Meta-Data
+12:42:38,812 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /META-INF/package-mysql.orm
+12:42:38,813 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /WEB-INF/package-mysql.orm
+12:42:38,813 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /package-mysql.orm
+12:42:38,813 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /es/package-mysql.orm
+12:42:38,813 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /es/deusto/package-mysql.orm
+12:42:38,814 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /es/deusto/bspq18/package-mysql.orm
+12:42:38,814 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /es/deusto/bspq18/e6/package-mysql.orm
+12:42:38,814 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /es/deusto/bspq18/e6/DeustoBox/package-mysql.orm
+12:42:38,815 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /es/deusto/bspq18/e6/DeustoBox/Server/package-mysql.orm
+12:42:38,815 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /es/deusto/bspq18/e6/DeustoBox/Server/jdo/package-mysql.orm
+12:42:38,815 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /es/deusto/bspq18/e6/DeustoBox/Server/jdo/data/package-mysql.orm
+12:42:38,815 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "orm" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" en /es/deusto/bspq18/e6/DeustoBox/Server/jdo/data/User-mysql.orm
+12:42:38,815 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "orm" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User"
+12:42:38,816 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" campo "username" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:42:38,816 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" campo "password" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+12:42:38,818 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" : Inicializando Meta-Data
+12:42:38,835 (main) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@1ddf84b8" se abrió para la base de datos "org.datanucleus.store.rdbms.RDBMSStoreManager@4206a205" con transaccion="org.datanucleus.TransactionImpl@1139b2f3"
+12:42:38,842 (main) DEBUG [DataNucleus.Transaction] - Transaction created [DataNucleus Transaction, ID=-1959081672-1, enlisted resources=[]]
+12:42:38,843 (main) DEBUG [DataNucleus.Transaction] - Transacción empezada para el ExecutionContext org.datanucleus.ExecutionContextImpl@1ddf84b8 (optimistic=false)
+12:42:38,843 (main) DEBUG [DataNucleus.Persistence] - Haciendo el objeto persistente : "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User@28eaa59a"
+12:42:38,854 (main) DEBUG [DataNucleus.Cache] - Objeto "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User@28eaa59a" (id="es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User:aitorugarte@opendeusto.es") añadido a la Cache de nivel 1 (loadedFlags="[YYY]")
+12:42:38,854 (main) DEBUG [DataNucleus.Transaction] - Objeto "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User@28eaa59a" (id="aitorugarte@opendeusto.es") ha sido puesto en la cache transaccional
+12:42:38,868 (main) DEBUG [DataNucleus.Persistence] - Va a manjejar la persistencia de Clase : es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User [Tabla : `USER`, Estrategia de heredar : new-table]
+12:42:38,870 (main) DEBUG [DataNucleus.Datastore.Schema] - La columna "`USER`.`EMAIL`" añadió a la representación de la table.
+12:42:38,871 (main) DEBUG [DataNucleus.Datastore.Schema] - Attempt to find JDBC driver 'typeInfo' for jdbc-type=VARCHAR but sql-type=VARCHAR is not found. Using default sql-type for this jdbc-type.
+12:42:38,871 (main) DEBUG [DataNucleus.Datastore.Schema] - Campo [es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User.email] -> Columnas [`USER`.`EMAIL`] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
+12:42:38,873 (main) DEBUG [DataNucleus.Datastore.Schema] - La tabla `USER` va a manejar la persistencia de los campos de la clase es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User (estrategia de heredar="new-table")
+12:42:38,874 (main) DEBUG [DataNucleus.Datastore.Schema] - La columna "`USER`.`PASSWORD`" añadió a la representación de la table.
+12:42:38,874 (main) DEBUG [DataNucleus.Datastore.Schema] - Attempt to find JDBC driver 'typeInfo' for jdbc-type=VARCHAR but sql-type=VARCHAR is not found. Using default sql-type for this jdbc-type.
+12:42:38,874 (main) DEBUG [DataNucleus.Datastore.Schema] - Campo [es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User.password] -> Columnas [`USER`.`PASSWORD`] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
+12:42:38,874 (main) DEBUG [DataNucleus.Datastore.Schema] - La columna "`USER`.`USERNAME`" añadió a la representación de la table.
+12:42:38,874 (main) DEBUG [DataNucleus.Datastore.Schema] - Attempt to find JDBC driver 'typeInfo' for jdbc-type=VARCHAR but sql-type=VARCHAR is not found. Using default sql-type for this jdbc-type.
+12:42:38,874 (main) DEBUG [DataNucleus.Datastore.Schema] - Campo [es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User.username] -> Columnas [`USER`.`USERNAME`] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
+12:42:38,874 (main) DEBUG [DataNucleus.Datastore.Schema] - Table/View `USER` ha sido inicializado
+12:42:38,877 (main) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@368f2016 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@4c583ecf, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" en resource "nontx" con isolación "serializable" y auto-commit=false
+12:42:38,877 (main) DEBUG [DataNucleus.Datastore.Schema] - Empezando transaccion del esquema con conneccion "org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@4c583ecf" y isolacion "serializable"
+12:42:38,878 (main) DEBUG [DataNucleus.Datastore.Schema] - Check of existence of `USER` returned table type of TABLE
+12:42:38,879 (main) DEBUG [DataNucleus.Datastore.Schema] - Cargando información de columna para las tablas "user" por el Catalogo "", el Esquema ""
+12:42:38,891 (main) DEBUG [DataNucleus.Datastore.Schema] - Información de columna cargado por el Catalogo "", el Esquema "", 1 tablas, tiempo = 12 ms
+12:42:38,891 (main) DEBUG [DataNucleus.Datastore.Schema] - Información de columna cargado por la tabla "USER" : hemos encontrado 3 columnas
+12:42:38,897 (main) DEBUG [DataNucleus.Datastore.Schema] - Validando 1 indic(es) de la tabla `USER`
+12:42:38,903 (main) DEBUG [DataNucleus.Datastore.Schema] - Validando 0 foreign key(s) de la tabla `USER`
+12:42:38,904 (main) DEBUG [DataNucleus.Datastore.Schema] - Validando 1 llaves unicas de la tabla `USER`
+12:42:38,904 (main) DEBUG [DataNucleus.Datastore.Schema] - Committing transaccion del esquema "org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@4c583ecf"
+12:42:38,905 (main) DEBUG [DataNucleus.Datastore.Schema] - Cerrando la conneccion de la transaccion del esquema "org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@4c583ecf"
+12:42:38,905 (main) DEBUG [DataNucleus.Connection] - ManagedConnection VA A COMMIT : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@368f2016 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@4c583ecf, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]"
+12:42:38,905 (main) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@368f2016 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@4c583ecf, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" 
+12:42:38,912 (main) DEBUG [DataNucleus.Persistence] - Objeto "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User@28eaa59a" va a ser añadido a la tabla "`USER`"
+12:42:38,919 (main) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@43bc63a3 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@702657cc, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]" en resource "tx" con isolación "read-committed" y auto-commit=false
+12:42:38,920 (main) DEBUG [DataNucleus.Transaction] - Running enlist operation on resource: org.datanucleus.store.rdbms.ConnectionFactoryImpl$EmulatedXAResource@2d1ef81a, error code TMNOFLAGS and transaction [DataNucleus Transaction, ID=-1959081672-1, enlisted resources=[]]
+12:42:38,930 (main) DEBUG [DataNucleus.Datastore] - Utilizando PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@5aa9e4eb" para la conneccion "org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@702657cc"
+12:42:38,930 (main) DEBUG [DataNucleus.Datastore.Persist] - El statement "INSERT INTO `USER` (`PASSWORD`,`USERNAME`,`EMAIL`) VALUES (?,?,?)" ya es batchable
+12:42:38,933 (main) DEBUG [DataNucleus.Datastore.Persist] - Añadiendo statement "INSERT INTO `USER` (`PASSWORD`,`USERNAME`,`EMAIL`) VALUES (?,?,?)" al batch para procesar (tamaño de batch = 1)
+12:42:38,934 (main) DEBUG [DataNucleus.Datastore.Native] - BATCH [INSERT INTO `USER` (`PASSWORD`,`USERNAME`,`EMAIL`) VALUES (<'123'>,<'aitorugarte'>,<'aitorugarte@opendeusto.es'>)]
+12:42:38,936 (main) DEBUG [DataNucleus.Transaction] - Ha tirado una excepción al hacer flush() a la base de datos
+org.datanucleus.exceptions.NucleusDataStoreException: Ha tirado una excepción al hacer flush() a la base de datos
+	at org.datanucleus.store.rdbms.SQLController$1.transactionFlushed(SQLController.java:746)
+	at org.datanucleus.store.connection.AbstractManagedConnection.transactionFlushed(AbstractManagedConnection.java:95)
+	at org.datanucleus.store.connection.ConnectionManagerImpl$2.transactionFlushed(ConnectionManagerImpl.java:527)
+	at org.datanucleus.TransactionImpl.flush(TransactionImpl.java:222)
+	at org.datanucleus.TransactionImpl.commit(TransactionImpl.java:286)
+	at org.datanucleus.api.jdo.JDOTransaction.commit(JDOTransaction.java:107)
+	at es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO.storeDB(DeustoBoxDAO.java:77)
+	at es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO.main(DeustoBoxDAO.java:96)
+Caused by: java.sql.BatchUpdateException: Duplicate entry 'aitorugarte@opendeusto.es' for key 'PRIMARY'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createBatchUpdateException(SQLError.java:1163)
+	at com.mysql.jdbc.PreparedStatement.executeBatchSerially(PreparedStatement.java:1778)
+	at com.mysql.jdbc.PreparedStatement.executeBatchInternal(PreparedStatement.java:1262)
+	at com.mysql.jdbc.StatementImpl.executeBatch(StatementImpl.java:970)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DelegatingStatement.executeBatch(DelegatingStatement.java:345)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DelegatingStatement.executeBatch(DelegatingStatement.java:345)
+	at org.datanucleus.store.rdbms.ParamLoggingPreparedStatement.executeBatch(ParamLoggingPreparedStatement.java:366)
+	at org.datanucleus.store.rdbms.SQLController.processConnectionStatement(SQLController.java:667)
+	at org.datanucleus.store.rdbms.SQLController.processStatementsForConnection(SQLController.java:635)
+	at org.datanucleus.store.rdbms.SQLController$1.transactionFlushed(SQLController.java:721)
+	... 7 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'aitorugarte@opendeusto.es' for key 'PRIMARY'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:936)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2527)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2680)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2484)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
+	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2079)
+	at com.mysql.jdbc.PreparedStatement.executeBatchSerially(PreparedStatement.java:1756)
+	... 15 more
+Nested Throwables StackTrace:
+java.sql.BatchUpdateException: Duplicate entry 'aitorugarte@opendeusto.es' for key 'PRIMARY'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createBatchUpdateException(SQLError.java:1163)
+	at com.mysql.jdbc.PreparedStatement.executeBatchSerially(PreparedStatement.java:1778)
+	at com.mysql.jdbc.PreparedStatement.executeBatchInternal(PreparedStatement.java:1262)
+	at com.mysql.jdbc.StatementImpl.executeBatch(StatementImpl.java:970)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DelegatingStatement.executeBatch(DelegatingStatement.java:345)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DelegatingStatement.executeBatch(DelegatingStatement.java:345)
+	at org.datanucleus.store.rdbms.ParamLoggingPreparedStatement.executeBatch(ParamLoggingPreparedStatement.java:366)
+	at org.datanucleus.store.rdbms.SQLController.processConnectionStatement(SQLController.java:667)
+	at org.datanucleus.store.rdbms.SQLController.processStatementsForConnection(SQLController.java:635)
+	at org.datanucleus.store.rdbms.SQLController$1.transactionFlushed(SQLController.java:721)
+	at org.datanucleus.store.connection.AbstractManagedConnection.transactionFlushed(AbstractManagedConnection.java:95)
+	at org.datanucleus.store.connection.ConnectionManagerImpl$2.transactionFlushed(ConnectionManagerImpl.java:527)
+	at org.datanucleus.TransactionImpl.flush(TransactionImpl.java:222)
+	at org.datanucleus.TransactionImpl.commit(TransactionImpl.java:286)
+	at org.datanucleus.api.jdo.JDOTransaction.commit(JDOTransaction.java:107)
+	at es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO.storeDB(DeustoBoxDAO.java:77)
+	at es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO.main(DeustoBoxDAO.java:96)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'aitorugarte@opendeusto.es' for key 'PRIMARY'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:936)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2527)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2680)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2484)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
+	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2079)
+	at com.mysql.jdbc.PreparedStatement.executeBatchSerially(PreparedStatement.java:1756)
+	... 15 more
+
+12:42:38,937 (main) DEBUG [DataNucleus.Transaction] - Haciendo rollback de la transacción para el ExecutionContext org.datanucleus.ExecutionContextImpl@1ddf84b8
+12:42:38,937 (main) DEBUG [DataNucleus.Lifecycle] - Objeto "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User@28eaa59a" (id="es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User:aitorugarte@opendeusto.es") tiene cambio de lifeycle : "P_NEW"->""
+12:42:38,937 (main) DEBUG [DataNucleus.Transaction] - Objeto "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User@28eaa59a" (id="es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User:aitorugarte@opendeusto.es") fue ser borrado de la cache transactional
+12:42:38,938 (main) DEBUG [DataNucleus.Persistence] - Disconectando es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User@28eaa59a de StateManager[pc=es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User@28eaa59a, lifecycle=P_NEW]
+12:42:38,938 (main) DEBUG [DataNucleus.Cache] - Objeto con identidad="es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User:aitorugarte@opendeusto.es" borrado de la Cache de nivel 1
+12:42:38,938 (main) DEBUG [DataNucleus.Transaction] - Rolling back [DataNucleus Transaction, ID=-1959081672-1, enlisted resources=[org.datanucleus.store.rdbms.ConnectionFactoryImpl$EmulatedXAResource@2d1ef81a]]
+12:42:38,938 (main) DEBUG [DataNucleus.Connection] - ManagedConnection VA A ROLLBACK : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@43bc63a3 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@702657cc, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]"
+12:42:38,938 (main) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@43bc63a3 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@702657cc, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]" 
+12:42:38,939 (main) DEBUG [DataNucleus.Transaction] - Transacción rolled back en 2 ms
+12:42:38,946 (main) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@1ddf84b8" se cerró
+12:42:38,946 (main) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@1ddf84b8" se abrió para la base de datos "org.datanucleus.store.rdbms.RDBMSStoreManager@4206a205" con transaccion="org.datanucleus.TransactionImpl@b3ca52e"
+12:42:38,946 (main) DEBUG [DataNucleus.Transaction] - Transaction created [DataNucleus Transaction, ID=-1959081672-2, enlisted resources=[]]
+12:42:38,946 (main) DEBUG [DataNucleus.Transaction] - Transacción empezada para el ExecutionContext org.datanucleus.ExecutionContextImpl@1ddf84b8 (optimistic=false)
+12:42:38,946 (main) DEBUG [DataNucleus.Persistence] - Haciendo el objeto persistente : "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User@2925bf5b"
+12:42:38,947 (main) DEBUG [DataNucleus.Cache] - Objeto "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User@2925bf5b" (id="es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User:markelalva@opendeusto.es") añadido a la Cache de nivel 1 (loadedFlags="[YYY]")
+12:42:38,947 (main) DEBUG [DataNucleus.Transaction] - Objeto "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User@2925bf5b" (id="markelalva@opendeusto.es") ha sido puesto en la cache transaccional
+12:42:38,947 (main) DEBUG [DataNucleus.Persistence] - Objeto "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User@2925bf5b" va a ser añadido a la tabla "`USER`"
+12:42:38,948 (main) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@65e98b1c [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@61322f9d, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]" en resource "tx" con isolación "read-committed" y auto-commit=false
+12:42:38,948 (main) DEBUG [DataNucleus.Transaction] - Running enlist operation on resource: org.datanucleus.store.rdbms.ConnectionFactoryImpl$EmulatedXAResource@6ad82709, error code TMNOFLAGS and transaction [DataNucleus Transaction, ID=-1959081672-2, enlisted resources=[]]
+12:42:38,948 (main) DEBUG [DataNucleus.Datastore] - Utilizando PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@7817fd62" para la conneccion "org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@61322f9d"
+12:42:38,948 (main) DEBUG [DataNucleus.Datastore.Persist] - El statement "INSERT INTO `USER` (`PASSWORD`,`USERNAME`,`EMAIL`) VALUES (?,?,?)" ya es batchable
+12:42:38,948 (main) DEBUG [DataNucleus.Datastore.Persist] - Añadiendo statement "INSERT INTO `USER` (`PASSWORD`,`USERNAME`,`EMAIL`) VALUES (?,?,?)" al batch para procesar (tamaño de batch = 1)
+12:42:38,949 (main) DEBUG [DataNucleus.Datastore.Native] - BATCH [INSERT INTO `USER` (`PASSWORD`,`USERNAME`,`EMAIL`) VALUES (<'123'>,<'markelalva'>,<'markelalva@opendeusto.es'>)]
+12:42:38,949 (main) DEBUG [DataNucleus.Transaction] - Ha tirado una excepción al hacer flush() a la base de datos
+org.datanucleus.exceptions.NucleusDataStoreException: Ha tirado una excepción al hacer flush() a la base de datos
+	at org.datanucleus.store.rdbms.SQLController$1.transactionFlushed(SQLController.java:746)
+	at org.datanucleus.store.connection.AbstractManagedConnection.transactionFlushed(AbstractManagedConnection.java:95)
+	at org.datanucleus.store.connection.ConnectionManagerImpl$2.transactionFlushed(ConnectionManagerImpl.java:527)
+	at org.datanucleus.TransactionImpl.flush(TransactionImpl.java:222)
+	at org.datanucleus.TransactionImpl.commit(TransactionImpl.java:286)
+	at org.datanucleus.api.jdo.JDOTransaction.commit(JDOTransaction.java:107)
+	at es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO.storeDB(DeustoBoxDAO.java:77)
+	at es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO.main(DeustoBoxDAO.java:97)
+Caused by: java.sql.BatchUpdateException: Duplicate entry 'markelalva@opendeusto.es' for key 'PRIMARY'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createBatchUpdateException(SQLError.java:1163)
+	at com.mysql.jdbc.PreparedStatement.executeBatchSerially(PreparedStatement.java:1778)
+	at com.mysql.jdbc.PreparedStatement.executeBatchInternal(PreparedStatement.java:1262)
+	at com.mysql.jdbc.StatementImpl.executeBatch(StatementImpl.java:970)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DelegatingStatement.executeBatch(DelegatingStatement.java:345)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DelegatingStatement.executeBatch(DelegatingStatement.java:345)
+	at org.datanucleus.store.rdbms.ParamLoggingPreparedStatement.executeBatch(ParamLoggingPreparedStatement.java:366)
+	at org.datanucleus.store.rdbms.SQLController.processConnectionStatement(SQLController.java:667)
+	at org.datanucleus.store.rdbms.SQLController.processStatementsForConnection(SQLController.java:635)
+	at org.datanucleus.store.rdbms.SQLController$1.transactionFlushed(SQLController.java:721)
+	... 7 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'markelalva@opendeusto.es' for key 'PRIMARY'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:936)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2527)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2680)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2484)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
+	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2079)
+	at com.mysql.jdbc.PreparedStatement.executeBatchSerially(PreparedStatement.java:1756)
+	... 15 more
+Nested Throwables StackTrace:
+java.sql.BatchUpdateException: Duplicate entry 'markelalva@opendeusto.es' for key 'PRIMARY'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createBatchUpdateException(SQLError.java:1163)
+	at com.mysql.jdbc.PreparedStatement.executeBatchSerially(PreparedStatement.java:1778)
+	at com.mysql.jdbc.PreparedStatement.executeBatchInternal(PreparedStatement.java:1262)
+	at com.mysql.jdbc.StatementImpl.executeBatch(StatementImpl.java:970)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DelegatingStatement.executeBatch(DelegatingStatement.java:345)
+	at org.datanucleus.store.rdbms.datasource.dbcp2.DelegatingStatement.executeBatch(DelegatingStatement.java:345)
+	at org.datanucleus.store.rdbms.ParamLoggingPreparedStatement.executeBatch(ParamLoggingPreparedStatement.java:366)
+	at org.datanucleus.store.rdbms.SQLController.processConnectionStatement(SQLController.java:667)
+	at org.datanucleus.store.rdbms.SQLController.processStatementsForConnection(SQLController.java:635)
+	at org.datanucleus.store.rdbms.SQLController$1.transactionFlushed(SQLController.java:721)
+	at org.datanucleus.store.connection.AbstractManagedConnection.transactionFlushed(AbstractManagedConnection.java:95)
+	at org.datanucleus.store.connection.ConnectionManagerImpl$2.transactionFlushed(ConnectionManagerImpl.java:527)
+	at org.datanucleus.TransactionImpl.flush(TransactionImpl.java:222)
+	at org.datanucleus.TransactionImpl.commit(TransactionImpl.java:286)
+	at org.datanucleus.api.jdo.JDOTransaction.commit(JDOTransaction.java:107)
+	at es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO.storeDB(DeustoBoxDAO.java:77)
+	at es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO.main(DeustoBoxDAO.java:97)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'markelalva@opendeusto.es' for key 'PRIMARY'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:936)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2527)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2680)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2484)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
+	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2079)
+	at com.mysql.jdbc.PreparedStatement.executeBatchSerially(PreparedStatement.java:1756)
+	... 15 more
+
+12:42:38,950 (main) DEBUG [DataNucleus.Transaction] - Haciendo rollback de la transacción para el ExecutionContext org.datanucleus.ExecutionContextImpl@1ddf84b8
+12:42:38,950 (main) DEBUG [DataNucleus.Lifecycle] - Objeto "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User@2925bf5b" (id="es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User:markelalva@opendeusto.es") tiene cambio de lifeycle : "P_NEW"->""
+12:42:38,950 (main) DEBUG [DataNucleus.Transaction] - Objeto "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User@2925bf5b" (id="es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User:markelalva@opendeusto.es") fue ser borrado de la cache transactional
+12:42:38,950 (main) DEBUG [DataNucleus.Persistence] - Disconectando es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User@2925bf5b de StateManager[pc=es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User@2925bf5b, lifecycle=P_NEW]
+12:42:38,950 (main) DEBUG [DataNucleus.Cache] - Objeto con identidad="es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User:markelalva@opendeusto.es" borrado de la Cache de nivel 1
+12:42:38,950 (main) DEBUG [DataNucleus.Transaction] - Rolling back [DataNucleus Transaction, ID=-1959081672-2, enlisted resources=[org.datanucleus.store.rdbms.ConnectionFactoryImpl$EmulatedXAResource@6ad82709]]
+12:42:38,950 (main) DEBUG [DataNucleus.Connection] - ManagedConnection VA A ROLLBACK : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@65e98b1c [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@61322f9d, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]"
+12:42:38,950 (main) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@65e98b1c [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@61322f9d, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]" 
+12:42:38,951 (main) DEBUG [DataNucleus.Transaction] - Transacción rolled back en 2 ms
+12:42:38,951 (main) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@1ddf84b8" se cerró
+12:45:30,214 (main) DEBUG [DataNucleus.General] - Using PluginRegistry org.datanucleus.plugin.NonManagedPluginRegistry
+12:45:30,239 (main) DEBUG [DataNucleus.General] - Registering bundle org.sonatype.inject version 2.3.0 at URL file:/C:/Users/aitor/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar.
+12:45:30,262 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar!/plugin.xml.
+12:45:30,264 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar!/plugin.xml.
+12:45:30,266 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus version 5.1.8 at URL file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-core/5.1.8/datanucleus-core-5.1.8.jar.
+12:45:30,269 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-core/5.1.8/datanucleus-core-5.1.8.jar!/plugin.xml.
+12:45:30,276 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-core/5.1.8/datanucleus-core-5.1.8.jar!/plugin.xml.
+12:45:30,278 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.store.rdbms version 5.1.8 at URL file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-rdbms/5.1.8/datanucleus-rdbms-5.1.8.jar.
+12:45:30,283 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-rdbms/5.1.8/datanucleus-rdbms-5.1.8.jar!/plugin.xml.
+12:45:30,286 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-rdbms/5.1.8/datanucleus-rdbms-5.1.8.jar!/plugin.xml.
+12:45:30,287 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.api.jdo version 5.1.5 at URL file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.1.5/datanucleus-api-jdo-5.1.5.jar.
+12:45:30,294 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.1.5/datanucleus-api-jdo-5.1.5.jar!/plugin.xml.
+12:45:30,297 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/aitor/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.1.5/datanucleus-api-jdo-5.1.5.jar!/plugin.xml.
+12:45:30,334 (main) DEBUG [DataNucleus.Persistence] - Tipos de Java inicializando ...
+12:45:30,394 (main) DEBUG [DataNucleus.Persistence] - Soporte para tipos de Java listo : tipos soportados = [B, [C, [D, [F, [I, [J, [Ljava.lang.Boolean;, [Ljava.lang.Byte;, [Ljava.lang.Character;, [Ljava.lang.Double;, [Ljava.lang.Enum;, [Ljava.lang.Float;, [Ljava.lang.Integer;, [Ljava.lang.Long;, [Ljava.lang.Number;, [Ljava.lang.Object;, [Ljava.lang.Short;, [Ljava.lang.String;, [Ljava.math.BigDecimal;, [Ljava.math.BigInteger;, [Ljava.util.Date;, [Ljava.util.Locale;, [S, [Z, boolean, byte, char, double, float, int, java.awt.Color, java.awt.image.BufferedImage, java.lang.Boolean, java.lang.Byte, java.lang.Character, java.lang.Class, java.lang.Double, java.lang.Enum, java.lang.Float, java.lang.Integer, java.lang.Long, java.lang.Number, java.lang.Short, java.lang.String, java.lang.StringBuffer, java.lang.StringBuilder, java.math.BigDecimal, java.math.BigInteger, java.net.URI, java.net.URL, java.sql.Date, java.sql.Time, java.sql.Timestamp, java.time.Duration, java.time.Instant, java.time.LocalDate, java.time.LocalDateTime, java.time.LocalTime, java.time.MonthDay, java.time.OffsetDateTime, java.time.OffsetTime, java.time.Period, java.time.Year, java.time.YearMonth, java.time.ZonedDateTime, java.time.ZoneId, java.time.ZoneOffset, java.util.ArrayList, java.util.Arrays$ArrayList, java.util.BitSet, java.util.Calendar, java.util.Collection, java.util.Currency, java.util.Date, java.util.GregorianCalendar, java.util.HashMap, java.util.HashSet, java.util.Hashtable, java.util.LinkedHashMap, java.util.LinkedHashSet, java.util.LinkedList, java.util.List, java.util.Locale, java.util.Map, java.util.Optional, java.util.PriorityQueue, java.util.Properties, java.util.Queue, java.util.Set, java.util.SortedMap, java.util.SortedSet, java.util.Stack, java.util.TimeZone, java.util.TreeMap, java.util.TreeSet, java.util.UUID, java.util.Vector, long, short
+12:45:30,396 (main) DEBUG [DataNucleus.MetaData] - MetaDataManager : Input=(XML,Annotations), XML-Validation=false, XML-Suffices=(persistence=*.jdo, orm=orm, query=*.jdoquery), JDO-listener=false
+12:45:30,396 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (versi�n 5.1.8) para el API "JDO" utilisando el JRE "{2}"
+12:45:30,396 (main) DEBUG [DataNucleus.Enhancer] - DataNucleus Enhancer : Classpath
+12:45:30,396 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\datanucleus\datanucleus-maven-plugin\5.0.2\datanucleus-maven-plugin-5.0.2.jar
+12:45:30,396 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\codehaus\plexus\plexus-utils\3.0.8\plexus-utils-3.0.8.jar
+12:45:30,396 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\apache\maven\maven-artifact\3.0.4\maven-artifact-3.0.4.jar
+12:45:30,396 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\apache\maven\maven-plugin-api\3.0.4\maven-plugin-api-3.0.4.jar
+12:45:30,397 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\apache\maven\maven-model\3.0.4\maven-model-3.0.4.jar
+12:45:30,397 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\sonatype\sisu\sisu-inject-plexus\2.3.0\sisu-inject-plexus-2.3.0.jar
+12:45:30,397 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\codehaus\plexus\plexus-component-annotations\1.5.5\plexus-component-annotations-1.5.5.jar
+12:45:30,397 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\sonatype\sisu\sisu-inject-bean\2.3.0\sisu-inject-bean-2.3.0.jar
+12:45:30,397 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\sonatype\sisu\sisu-guice\3.1.0\sisu-guice-3.1.0-no_aop.jar
+12:45:30,397 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\sonatype\sisu\sisu-guava\0.9.9\sisu-guava-0.9.9.jar
+12:45:30,397 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\codehaus\plexus\plexus-container-default\1.5.5\plexus-container-default-1.5.5.jar
+12:45:30,397 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\codehaus\plexus\plexus-classworlds\2.2.2\plexus-classworlds-2.2.2.jar
+12:45:30,397 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\apache\xbean\xbean-reflect\3.4\xbean-reflect-3.4.jar
+12:45:30,397 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar
+12:45:30,397 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\commons-logging\commons-logging-api\1.1\commons-logging-api-1.1.jar
+12:45:30,398 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\com\google\collections\google-collections\1.0\google-collections-1.0.jar
+12:45:30,398 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\junit\junit\3.8.2\junit-3.8.2.jar
+12:45:30,398 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\git\BSPQ18-E6\target\classes
+12:45:30,398 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\datanucleus\datanucleus-core\5.1.8\datanucleus-core-5.1.8.jar
+12:45:30,398 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\datanucleus\datanucleus-rdbms\5.1.8\datanucleus-rdbms-5.1.8.jar
+12:45:30,398 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\datanucleus\datanucleus-api-jdo\5.1.5\datanucleus-api-jdo-5.1.5.jar
+12:45:30,398 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\datanucleus\javax.jdo\3.2.0-m8\javax.jdo-3.2.0-m8.jar
+12:45:30,398 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\javax\transaction\transaction-api\1.1\transaction-api-1.1.jar
+12:45:30,398 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\javax\jdo\jdo-api\3.1\jdo-api-3.1.jar
+12:45:30,398 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\mysql\mysql-connector-java\5.1.45\mysql-connector-java-5.1.45.jar
+12:45:30,399 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar
+12:45:30,399 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\com\toedter\jcalendar\1.1.4\jcalendar-1.1.4.jar
+12:45:30,399 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\java\net\substance\substance\6.0\substance-6.0.jar
+12:45:30,399 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\pushing-pixels\trident\1.2\trident-1.2.jar
+12:45:30,399 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\eclipse\swt\win32\win32\x86\3.3.0-v3346\x86-3.3.0-v3346.jar
+12:45:30,400 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\com\google\android\android\2.1_r1\android-2.1_r1.jar
+12:45:30,400 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\commons-logging\commons-logging\1.1.1\commons-logging-1.1.1.jar
+12:45:30,400 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\apache\httpcomponents\httpclient\4.0.1\httpclient-4.0.1.jar
+12:45:30,401 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\apache\httpcomponents\httpcore\4.0.1\httpcore-4.0.1.jar
+12:45:30,401 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\commons-codec\commons-codec\1.3\commons-codec-1.3.jar
+12:45:30,401 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\org\khronos\opengl-api\gl1.1-android-2.1_r1\opengl-api-gl1.1-android-2.1_r1.jar
+12:45:30,401 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\xerces\xmlParserAPIs\2.6.2\xmlParserAPIs-2.6.2.jar
+12:45:30,401 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\xpp3\xpp3\1.1.4c\xpp3-1.1.4c.jar
+12:45:30,402 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\net\java\dev\laf-widget\laf-widget\5.0\laf-widget-5.0.jar
+12:45:30,402 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\ant\ant\1.6.5\ant-1.6.5.jar
+12:45:30,402 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\asm\asm-all\2.2.3\asm-all-2.2.3.jar
+12:45:30,402 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\net\java\dev\laf-plugin\laf-plugin\1.1\laf-plugin-1.1.jar
+12:45:30,402 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\aitor\.m2\repository\be\cyberelf\nanoxml\lite\2.2.3\lite-2.2.3.jar
+12:45:30,403 (main) DEBUG [DataNucleus.Enhancer] - Reading fileListFile: C:\Users\aitor\AppData\Local\Temp\enhancer-8366464707381959697.flf
+12:45:30,406 (main) DEBUG [DataNucleus.Enhancer] - Enhancing classes
+12:45:30,418 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata de las clases "[es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller, es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client, es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1, es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client, es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1, es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador, es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1, es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login, es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1, es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register, es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator, es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble, es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection, es.deusto.bspq18.e6.DeustoBox.Server.bd.Data, es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO, es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server, es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO, es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO, es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User, es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils, es.deusto.bspq18.e6.DeustoBox.Server.Server, es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1, es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red, es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas, es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log]" ...
+12:45:30,423 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" en /META-INF/package.jdo
+12:45:30,423 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" en /WEB-INF/package.jdo
+12:45:30,423 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" en /package.jdo
+12:45:30,423 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" en /es/package.jdo
+12:45:30,424 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" en /es/deusto/package.jdo
+12:45:30,424 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" en /es/deusto/bspq18/package.jdo
+12:45:30,424 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" en /es/deusto/bspq18/e6/package.jdo
+12:45:30,424 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+12:45:30,424 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" en /es/deusto/bspq18/e6/DeustoBox/Client/package.jdo
+12:45:30,425 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" en /es/deusto/bspq18/e6/DeustoBox/Client/controller/package.jdo
+12:45:30,425 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" en /es/deusto/bspq18/e6/DeustoBox/Client/controller/Controller.jdo
+12:45:30,425 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller"
+12:45:30,425 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" no tener Meta-Data
+12:45:30,425 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller" no tiene MetaData o annotaciones.
+12:45:30,427 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" en /META-INF/package.jdo
+12:45:30,428 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" en /WEB-INF/package.jdo
+12:45:30,428 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" en /package.jdo
+12:45:30,428 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" en /es/package.jdo
+12:45:30,429 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" en /es/deusto/package.jdo
+12:45:30,429 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" en /es/deusto/bspq18/package.jdo
+12:45:30,430 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" en /es/deusto/bspq18/e6/package.jdo
+12:45:30,430 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+12:45:30,431 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" en /es/deusto/bspq18/e6/DeustoBox/Client/package.jdo
+12:45:30,431 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/package.jdo
+12:45:30,431 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/idea_client.jdo
+12:45:30,431 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client"
+12:45:30,431 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" no tener Meta-Data
+12:45:30,431 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.idea_client" no tiene MetaData o annotaciones.
+12:45:30,432 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" en /META-INF/package.jdo
+12:45:30,432 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" en /WEB-INF/package.jdo
+12:45:30,433 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" en /package.jdo
+12:45:30,433 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" en /es/package.jdo
+12:45:30,434 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" en /es/deusto/package.jdo
+12:45:30,434 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" en /es/deusto/bspq18/package.jdo
+12:45:30,434 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" en /es/deusto/bspq18/e6/package.jdo
+12:45:30,435 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+12:45:30,435 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" en /es/deusto/bspq18/e6/DeustoBox/Client/package.jdo
+12:45:30,435 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/package.jdo
+12:45:30,435 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/v_client$1.jdo
+12:45:30,435 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1"
+12:45:30,435 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" no tener Meta-Data
+12:45:30,435 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client$1" no tiene MetaData o annotaciones.
+12:45:30,440 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" en /META-INF/package.jdo
+12:45:30,440 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" en /WEB-INF/package.jdo
+12:45:30,441 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" en /package.jdo
+12:45:30,441 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" en /es/package.jdo
+12:45:30,441 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" en /es/deusto/package.jdo
+12:45:30,441 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" en /es/deusto/bspq18/package.jdo
+12:45:30,441 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" en /es/deusto/bspq18/e6/package.jdo
+12:45:30,442 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+12:45:30,442 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" en /es/deusto/bspq18/e6/DeustoBox/Client/package.jdo
+12:45:30,442 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/package.jdo
+12:45:30,442 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/v_client.jdo
+12:45:30,442 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client"
+12:45:30,442 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" no tener Meta-Data
+12:45:30,443 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_client" no tiene MetaData o annotaciones.
+12:45:30,444 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" en /META-INF/package.jdo
+12:45:30,444 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" en /WEB-INF/package.jdo
+12:45:30,444 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" en /package.jdo
+12:45:30,445 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" en /es/package.jdo
+12:45:30,445 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" en /es/deusto/package.jdo
+12:45:30,445 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" en /es/deusto/bspq18/package.jdo
+12:45:30,446 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" en /es/deusto/bspq18/e6/package.jdo
+12:45:30,446 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+12:45:30,446 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" en /es/deusto/bspq18/e6/DeustoBox/Client/package.jdo
+12:45:30,446 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/package.jdo
+12:45:30,447 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/v_instalador$1.jdo
+12:45:30,447 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1"
+12:45:30,447 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" no tener Meta-Data
+12:45:30,447 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador$1" no tiene MetaData o annotaciones.
+12:45:30,448 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" en /META-INF/package.jdo
+12:45:30,448 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" en /WEB-INF/package.jdo
+12:45:30,448 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" en /package.jdo
+12:45:30,448 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" en /es/package.jdo
+12:45:30,449 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" en /es/deusto/package.jdo
+12:45:30,449 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" en /es/deusto/bspq18/package.jdo
+12:45:30,450 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" en /es/deusto/bspq18/e6/package.jdo
+12:45:30,450 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+12:45:30,450 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" en /es/deusto/bspq18/e6/DeustoBox/Client/package.jdo
+12:45:30,450 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/package.jdo
+12:45:30,450 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/v_instalador.jdo
+12:45:30,451 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador"
+12:45:30,451 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" no tener Meta-Data
+12:45:30,451 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_instalador" no tiene MetaData o annotaciones.
+12:45:30,452 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" en /META-INF/package.jdo
+12:45:30,452 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" en /WEB-INF/package.jdo
+12:45:30,453 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" en /package.jdo
+12:45:30,453 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" en /es/package.jdo
+12:45:30,453 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" en /es/deusto/package.jdo
+12:45:30,453 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" en /es/deusto/bspq18/package.jdo
+12:45:30,454 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" en /es/deusto/bspq18/e6/package.jdo
+12:45:30,454 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+12:45:30,454 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" en /es/deusto/bspq18/e6/DeustoBox/Client/package.jdo
+12:45:30,454 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/package.jdo
+12:45:30,455 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/v_login$1.jdo
+12:45:30,455 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1"
+12:45:30,455 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" no tener Meta-Data
+12:45:30,455 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login$1" no tiene MetaData o annotaciones.
+12:45:30,456 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" en /META-INF/package.jdo
+12:45:30,456 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" en /WEB-INF/package.jdo
+12:45:30,456 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" en /package.jdo
+12:45:30,456 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" en /es/package.jdo
+12:45:30,456 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" en /es/deusto/package.jdo
+12:45:30,457 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" en /es/deusto/bspq18/package.jdo
+12:45:30,457 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" en /es/deusto/bspq18/e6/package.jdo
+12:45:30,457 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+12:45:30,457 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" en /es/deusto/bspq18/e6/DeustoBox/Client/package.jdo
+12:45:30,457 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/package.jdo
+12:45:30,458 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/v_login.jdo
+12:45:30,458 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login"
+12:45:30,458 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" no tener Meta-Data
+12:45:30,458 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login" no tiene MetaData o annotaciones.
+12:45:30,458 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" en /META-INF/package.jdo
+12:45:30,459 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" en /WEB-INF/package.jdo
+12:45:30,459 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" en /package.jdo
+12:45:30,459 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" en /es/package.jdo
+12:45:30,459 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" en /es/deusto/package.jdo
+12:45:30,459 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" en /es/deusto/bspq18/package.jdo
+12:45:30,460 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" en /es/deusto/bspq18/e6/package.jdo
+12:45:30,460 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+12:45:30,460 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" en /es/deusto/bspq18/e6/DeustoBox/Client/package.jdo
+12:45:30,460 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/package.jdo
+12:45:30,460 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/v_register$1.jdo
+12:45:30,460 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1"
+12:45:30,460 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" no tener Meta-Data
+12:45:30,460 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register$1" no tiene MetaData o annotaciones.
+12:45:30,461 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" en /META-INF/package.jdo
+12:45:30,461 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" en /WEB-INF/package.jdo
+12:45:30,462 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" en /package.jdo
+12:45:30,462 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" en /es/package.jdo
+12:45:30,462 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" en /es/deusto/package.jdo
+12:45:30,462 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" en /es/deusto/bspq18/package.jdo
+12:45:30,462 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" en /es/deusto/bspq18/e6/package.jdo
+12:45:30,462 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+12:45:30,463 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" en /es/deusto/bspq18/e6/DeustoBox/Client/package.jdo
+12:45:30,463 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/package.jdo
+12:45:30,463 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" en /es/deusto/bspq18/e6/DeustoBox/Client/gui/v_register.jdo
+12:45:30,463 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register"
+12:45:30,463 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" no tener Meta-Data
+12:45:30,463 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Client.gui.v_register" no tiene MetaData o annotaciones.
+12:45:30,464 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" en /META-INF/package.jdo
+12:45:30,464 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" en /WEB-INF/package.jdo
+12:45:30,464 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" en /package.jdo
+12:45:30,464 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" en /es/package.jdo
+12:45:30,464 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" en /es/deusto/package.jdo
+12:45:30,465 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" en /es/deusto/bspq18/package.jdo
+12:45:30,465 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" en /es/deusto/bspq18/e6/package.jdo
+12:45:30,465 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+12:45:30,465 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" en /es/deusto/bspq18/e6/DeustoBox/Client/package.jdo
+12:45:30,465 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" en /es/deusto/bspq18/e6/DeustoBox/Client/remote/package.jdo
+12:45:30,465 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" en /es/deusto/bspq18/e6/DeustoBox/Client/remote/RMIServiceLocator.jdo
+12:45:30,465 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator"
+12:45:30,465 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" no tener Meta-Data
+12:45:30,465 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator" no tiene MetaData o annotaciones.
+12:45:30,466 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" en /META-INF/package.jdo
+12:45:30,466 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" en /WEB-INF/package.jdo
+12:45:30,466 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" en /package.jdo
+12:45:30,467 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" en /es/package.jdo
+12:45:30,467 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" en /es/deusto/package.jdo
+12:45:30,467 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" en /es/deusto/bspq18/package.jdo
+12:45:30,467 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" en /es/deusto/bspq18/e6/package.jdo
+12:45:30,467 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+12:45:30,467 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+12:45:30,468 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" en /es/deusto/bspq18/e6/DeustoBox/Server/assembler/package.jdo
+12:45:30,468 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" en /es/deusto/bspq18/e6/DeustoBox/Server/assembler/Assemble.jdo
+12:45:30,468 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble"
+12:45:30,468 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" no tener Meta-Data
+12:45:30,468 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble" no tiene MetaData o annotaciones.
+12:45:30,469 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" en /META-INF/package.jdo
+12:45:30,469 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" en /WEB-INF/package.jdo
+12:45:30,471 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" en /package.jdo
+12:45:30,472 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" en /es/package.jdo
+12:45:30,472 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" en /es/deusto/package.jdo
+12:45:30,472 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" en /es/deusto/bspq18/package.jdo
+12:45:30,472 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" en /es/deusto/bspq18/e6/package.jdo
+12:45:30,472 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+12:45:30,473 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+12:45:30,473 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" en /es/deusto/bspq18/e6/DeustoBox/Server/bd/package.jdo
+12:45:30,473 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" en /es/deusto/bspq18/e6/DeustoBox/Server/bd/BDConnection.jdo
+12:45:30,473 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection"
+12:45:30,473 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" no tener Meta-Data
+12:45:30,473 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection" no tiene MetaData o annotaciones.
+12:45:30,474 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" en /META-INF/package.jdo
+12:45:30,474 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" en /WEB-INF/package.jdo
+12:45:30,474 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" en /package.jdo
+12:45:30,474 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" en /es/package.jdo
+12:45:30,474 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" en /es/deusto/package.jdo
+12:45:30,474 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" en /es/deusto/bspq18/package.jdo
+12:45:30,475 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" en /es/deusto/bspq18/e6/package.jdo
+12:45:30,475 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+12:45:30,475 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+12:45:30,475 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" en /es/deusto/bspq18/e6/DeustoBox/Server/bd/package.jdo
+12:45:30,475 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" en /es/deusto/bspq18/e6/DeustoBox/Server/bd/Data.jdo
+12:45:30,475 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data"
+12:45:30,475 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" no tener Meta-Data
+12:45:30,475 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.bd.Data" no tiene MetaData o annotaciones.
+12:45:30,476 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" en /META-INF/package.jdo
+12:45:30,476 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" en /WEB-INF/package.jdo
+12:45:30,476 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" en /package.jdo
+12:45:30,477 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" en /es/package.jdo
+12:45:30,477 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" en /es/deusto/package.jdo
+12:45:30,477 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" en /es/deusto/bspq18/package.jdo
+12:45:30,477 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" en /es/deusto/bspq18/e6/package.jdo
+12:45:30,478 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+12:45:30,478 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+12:45:30,478 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" en /es/deusto/bspq18/e6/DeustoBox/Server/dto/package.jdo
+12:45:30,478 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" en /es/deusto/bspq18/e6/DeustoBox/Server/dto/UserDTO.jdo
+12:45:30,478 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO"
+12:45:30,478 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" no tener Meta-Data
+12:45:30,478 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO" no tiene MetaData o annotaciones.
+12:45:30,479 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" en /META-INF/package.jdo
+12:45:30,479 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" en /WEB-INF/package.jdo
+12:45:30,480 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" en /package.jdo
+12:45:30,480 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" en /es/package.jdo
+12:45:30,480 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" en /es/deusto/package.jdo
+12:45:30,480 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" en /es/deusto/bspq18/package.jdo
+12:45:30,480 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" en /es/deusto/bspq18/e6/package.jdo
+12:45:30,480 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+12:45:30,481 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+12:45:30,481 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" en /es/deusto/bspq18/e6/DeustoBox/Server/gui/package.jdo
+12:45:30,481 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" en /es/deusto/bspq18/e6/DeustoBox/Server/gui/idea_server.jdo
+12:45:30,481 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server"
+12:45:30,481 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" no tener Meta-Data
+12:45:30,481 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.gui.idea_server" no tiene MetaData o annotaciones.
+12:45:30,482 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO" en /META-INF/package.jdo
+12:45:30,482 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO" en /WEB-INF/package.jdo
+12:45:30,482 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO" en /package.jdo
+12:45:30,482 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO" en /es/package.jdo
+12:45:30,483 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO" en /es/deusto/package.jdo
+12:45:30,483 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO" en /es/deusto/bspq18/package.jdo
+12:45:30,483 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO" en /es/deusto/bspq18/e6/package.jdo
+12:45:30,483 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+12:45:30,483 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+12:45:30,484 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO" en /es/deusto/bspq18/e6/DeustoBox/Server/jdo/package.jdo
+12:45:30,484 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO" en /es/deusto/bspq18/e6/DeustoBox/Server/jdo/dao/package.jdo
+12:45:30,484 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO" en /es/deusto/bspq18/e6/DeustoBox/Server/jdo/dao/DeustoBoxDAO.jdo
+12:45:30,484 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO"
+12:45:30,484 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO" no tener Meta-Data
+12:45:30,484 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO" no tiene MetaData o annotaciones.
+12:45:30,484 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO" en /META-INF/package.jdo
+12:45:30,485 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO" en /WEB-INF/package.jdo
+12:45:30,485 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO" en /package.jdo
+12:45:30,485 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO" en /es/package.jdo
+12:45:30,485 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO" en /es/deusto/package.jdo
+12:45:30,486 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO" en /es/deusto/bspq18/package.jdo
+12:45:30,486 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO" en /es/deusto/bspq18/e6/package.jdo
+12:45:30,486 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+12:45:30,486 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+12:45:30,486 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO" en /es/deusto/bspq18/e6/DeustoBox/Server/jdo/package.jdo
+12:45:30,487 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO" en /es/deusto/bspq18/e6/DeustoBox/Server/jdo/dao/package.jdo
+12:45:30,487 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO" en /es/deusto/bspq18/e6/DeustoBox/Server/jdo/dao/IDeustoBoxDAO.jdo
+12:45:30,487 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO"
+12:45:30,487 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO" no tener Meta-Data
+12:45:30,487 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO" no tiene MetaData o annotaciones.
+12:45:30,520 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" tiene anotaciones de JDO y vamos a usarlas.
+12:45:30,527 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" en /META-INF/package.jdo
+12:45:30,527 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" en /WEB-INF/package.jdo
+12:45:30,528 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" en /package.jdo
+12:45:30,528 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" en /es/package.jdo
+12:45:30,528 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" en /es/deusto/package.jdo
+12:45:30,528 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" en /es/deusto/bspq18/package.jdo
+12:45:30,528 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" en /es/deusto/bspq18/e6/package.jdo
+12:45:30,528 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+12:45:30,528 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+12:45:30,529 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" en /es/deusto/bspq18/e6/DeustoBox/Server/remote/package.jdo
+12:45:30,529 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" en /es/deusto/bspq18/e6/DeustoBox/Server/remote/IClientUtils.jdo
+12:45:30,529 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils"
+12:45:30,529 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" no tener Meta-Data
+12:45:30,529 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils" no tiene MetaData o annotaciones.
+12:45:30,530 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.Server" en /META-INF/package.jdo
+12:45:30,530 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.Server" en /WEB-INF/package.jdo
+12:45:30,530 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.Server" en /package.jdo
+12:45:30,530 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.Server" en /es/package.jdo
+12:45:30,530 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.Server" en /es/deusto/package.jdo
+12:45:30,530 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.Server" en /es/deusto/bspq18/package.jdo
+12:45:30,530 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.Server" en /es/deusto/bspq18/e6/package.jdo
+12:45:30,531 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.Server" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+12:45:30,531 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.Server" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+12:45:30,531 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.Server" en /es/deusto/bspq18/e6/DeustoBox/Server/Server.jdo
+12:45:30,531 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.Server"
+12:45:30,531 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.Server" no tener Meta-Data
+12:45:30,531 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.Server" no tiene MetaData o annotaciones.
+12:45:30,531 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" en /META-INF/package.jdo
+12:45:30,532 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" en /WEB-INF/package.jdo
+12:45:30,532 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" en /package.jdo
+12:45:30,532 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" en /es/package.jdo
+12:45:30,532 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" en /es/deusto/package.jdo
+12:45:30,532 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" en /es/deusto/bspq18/package.jdo
+12:45:30,532 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" en /es/deusto/bspq18/e6/package.jdo
+12:45:30,532 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+12:45:30,533 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+12:45:30,533 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" en /es/deusto/bspq18/e6/DeustoBox/Server/utils/package.jdo
+12:45:30,533 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" en /es/deusto/bspq18/e6/DeustoBox/Server/utils/Analisis_Red$1.jdo
+12:45:30,533 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1"
+12:45:30,533 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" no tener Meta-Data
+12:45:30,533 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red$1" no tiene MetaData o annotaciones.
+12:45:30,534 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" en /META-INF/package.jdo
+12:45:30,534 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" en /WEB-INF/package.jdo
+12:45:30,534 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" en /package.jdo
+12:45:30,534 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" en /es/package.jdo
+12:45:30,535 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" en /es/deusto/package.jdo
+12:45:30,535 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" en /es/deusto/bspq18/package.jdo
+12:45:30,535 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" en /es/deusto/bspq18/e6/package.jdo
+12:45:30,535 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+12:45:30,535 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+12:45:30,535 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" en /es/deusto/bspq18/e6/DeustoBox/Server/utils/package.jdo
+12:45:30,535 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" en /es/deusto/bspq18/e6/DeustoBox/Server/utils/Analisis_Red.jdo
+12:45:30,535 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red"
+12:45:30,535 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" no tener Meta-Data
+12:45:30,535 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Analisis_Red" no tiene MetaData o annotaciones.
+12:45:30,536 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" en /META-INF/package.jdo
+12:45:30,536 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" en /WEB-INF/package.jdo
+12:45:30,536 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" en /package.jdo
+12:45:30,536 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" en /es/package.jdo
+12:45:30,537 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" en /es/deusto/package.jdo
+12:45:30,537 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" en /es/deusto/bspq18/package.jdo
+12:45:30,537 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" en /es/deusto/bspq18/e6/package.jdo
+12:45:30,537 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+12:45:30,538 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+12:45:30,538 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" en /es/deusto/bspq18/e6/DeustoBox/Server/utils/package.jdo
+12:45:30,538 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" en /es/deusto/bspq18/e6/DeustoBox/Server/utils/ejecutarTareas.jdo
+12:45:30,538 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas"
+12:45:30,538 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" no tener Meta-Data
+12:45:30,538 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.ejecutarTareas" no tiene MetaData o annotaciones.
+12:45:30,539 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" en /META-INF/package.jdo
+12:45:30,539 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" en /WEB-INF/package.jdo
+12:45:30,539 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" en /package.jdo
+12:45:30,539 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" en /es/package.jdo
+12:45:30,539 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" en /es/deusto/package.jdo
+12:45:30,539 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" en /es/deusto/bspq18/package.jdo
+12:45:30,540 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" en /es/deusto/bspq18/e6/package.jdo
+12:45:30,540 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" en /es/deusto/bspq18/e6/DeustoBox/package.jdo
+12:45:30,540 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" en /es/deusto/bspq18/e6/DeustoBox/Server/package.jdo
+12:45:30,540 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" en /es/deusto/bspq18/e6/DeustoBox/Server/utils/package.jdo
+12:45:30,540 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" en /es/deusto/bspq18/e6/DeustoBox/Server/utils/Error_log.jdo
+12:45:30,540 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log"
+12:45:30,540 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" no tener Meta-Data
+12:45:30,540 (main) DEBUG [DataNucleus.MetaData] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log" no tiene MetaData o annotaciones.
+12:45:30,540 (main) DEBUG [DataNucleus.MetaData] - Populaci�n del MetaData ...
+12:45:30,541 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" : Populando Meta-Data
+12:45:30,541 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" campo "username" : a�adiendo el Meta-Data por el campo como no estaba en la definici�n de Meta-Data.
+12:45:30,541 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" campo "password" : a�adiendo el Meta-Data por el campo como no estaba en la definici�n de Meta-Data.
+12:45:30,542 (main) DEBUG [DataNucleus.MetaData] - Inicialisaci�n del MetaData ...
+12:45:30,543 (main) DEBUG [DataNucleus.MetaData] - Clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" : Inicializando Meta-Data
+12:45:30,544 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata ya ha terminado
+12:45:30,546 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" empezando ...
+12:45:30,562 (main) INFO  [DataNucleus.Enhancer] - La clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" esta enhanced.
+12:45:30,562 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User
+12:45:30,562 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" ha terminado
+12:45:30,563 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado con exito para 1 clases. Tiempos : input=138 ms, enhance=18 ms, total=156 ms. Compruebe el LOG para los detalles
