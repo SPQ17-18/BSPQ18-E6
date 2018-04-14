@@ -29,6 +29,7 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 
 		public UserDTO SignUp(String Username, String Email, String password) throws RemoteException {
 			boolean correcto = false;
+			System.out.println("Recibido hermano");
 			User e = new User(Username, Email, password);
 			// Lo almacenamos en la BD
 			//System.out.println(e.toString());

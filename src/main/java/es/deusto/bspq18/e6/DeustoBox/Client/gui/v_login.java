@@ -89,10 +89,6 @@ public class v_login extends JFrame {
 					JOptionPane.showMessageDialog(null,"Insert a Username");
 				}else if(p.equals("")){
 					JOptionPane.showMessageDialog(null,"Insert a password");
-				}else {
-					v_register vp= new v_register();
-					vp.setVisible(true);
-					dispose();
 				}
 			}
 		});
@@ -107,6 +103,10 @@ public class v_login extends JFrame {
 		btnCreateAccount.setForeground(Color.BLUE);
 		btnCreateAccount.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+					v_register vp= new v_register(controlador);
+					vp.setVisible(true);
+					dispose();
+				
 			}
 		});
 		btnCreateAccount.setBounds(218, 194, 163, 29);

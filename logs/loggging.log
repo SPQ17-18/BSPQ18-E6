@@ -93,3 +93,66 @@ Caused by: java.lang.ClassNotFoundException: javax.jdo.JDOUserException
 2018-04-14 13:55:32 INFO  Persistence:82 - Propiedad datanucleus.validateTables desconocida - vamos a ignorarla
 2018-04-14 13:55:32 INFO  Persistence:82 - Propiedad datanucleus.validateConstraints desconocida - vamos a ignorarla
 2018-04-14 13:55:32 INFO  Persistence:82 - Propiedad datanucleus.metadata.validate desconocida - vamos a ignorarla
+2018-04-14 15:38:32 INFO  Enhancer:82 - DataNucleus Enhancer (versión 5.1.8) para el API "JDO" utilisando el JRE "{2}"
+2018-04-14 15:38:32 INFO  Enhancer:82 - Escribiendo el archivo de clase "C:\Users\Markel\git\BSPQ18-E6\target\classes\es\deusto\bspq18\e6\DeustoBox\Server\jdo\data\User.class" con definicion enhanced
+2018-04-14 15:38:32 INFO  Enhancer:82 - ENHANCED (Persistable) : es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User
+2018-04-14 15:38:32 INFO  Enhancer:82 - DataNucleus Enhancer ha terminado con exito para 1 clases. Tiempos : input=187 ms, enhance=53 ms, total=240 ms. Compruebe el LOG para los detalles
+2018-04-14 15:38:59 INFO  Persistence:82 - Propiedad datanucleus.validateTables desconocida - vamos a ignorarla
+2018-04-14 15:38:59 INFO  Persistence:82 - Propiedad datanucleus.validateConstraints desconocida - vamos a ignorarla
+2018-04-14 15:38:59 INFO  Persistence:82 - Propiedad datanucleus.metadata.validate desconocida - vamos a ignorarla
+2018-04-14 15:39:43 INFO  Persistence:82 - Propiedad datanucleus.validateTables desconocida - vamos a ignorarla
+2018-04-14 15:39:43 INFO  Persistence:82 - Propiedad datanucleus.validateConstraints desconocida - vamos a ignorarla
+2018-04-14 15:39:43 INFO  Persistence:82 - Propiedad datanucleus.metadata.validate desconocida - vamos a ignorarla
+2018-04-14 15:41:51 INFO  Enhancer:82 - DataNucleus Enhancer (versión 5.1.8) para el API "JDO" utilisando el JRE "{2}"
+2018-04-14 15:41:51 INFO  Enhancer:82 - La clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" esta enhanced.
+2018-04-14 15:41:51 INFO  Enhancer:82 - ENHANCED (Persistable) : es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User
+2018-04-14 15:41:51 INFO  Enhancer:82 - DataNucleus Enhancer ha terminado con exito para 1 clases. Tiempos : input=171 ms, enhance=24 ms, total=195 ms. Compruebe el LOG para los detalles
+2018-04-14 15:42:11 INFO  Persistence:82 - Propiedad datanucleus.validateTables desconocida - vamos a ignorarla
+2018-04-14 15:42:11 INFO  Persistence:82 - Propiedad datanucleus.validateConstraints desconocida - vamos a ignorarla
+2018-04-14 15:42:11 INFO  Persistence:82 - Propiedad datanucleus.metadata.validate desconocida - vamos a ignorarla
+2018-04-14 15:44:46 INFO  Enhancer:82 - DataNucleus Enhancer (versión 5.1.8) para el API "JDO" utilisando el JRE "{2}"
+2018-04-14 15:44:46 INFO  Enhancer:82 - La clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" esta enhanced.
+2018-04-14 15:44:46 INFO  Enhancer:82 - ENHANCED (Persistable) : es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User
+2018-04-14 15:44:46 INFO  Enhancer:82 - DataNucleus Enhancer ha terminado con exito para 1 clases. Tiempos : input=179 ms, enhance=25 ms, total=204 ms. Compruebe el LOG para los detalles
+2018-04-14 15:44:54 INFO  Persistence:82 - Propiedad datanucleus.validateTables desconocida - vamos a ignorarla
+2018-04-14 15:44:54 INFO  Persistence:82 - Propiedad datanucleus.validateConstraints desconocida - vamos a ignorarla
+2018-04-14 15:44:54 INFO  Persistence:82 - Propiedad datanucleus.metadata.validate desconocida - vamos a ignorarla
+2018-04-14 15:51:38 INFO  Enhancer:82 - DataNucleus Enhancer (versión 5.1.8) para el API "JDO" utilisando el JRE "{2}"
+2018-04-14 15:51:38 INFO  Enhancer:82 - La clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" esta enhanced.
+2018-04-14 15:51:38 INFO  Enhancer:82 - ENHANCED (Persistable) : es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User
+2018-04-14 15:51:38 INFO  Enhancer:82 - DataNucleus Enhancer ha terminado con exito para 1 clases. Tiempos : input=169 ms, enhance=23 ms, total=192 ms. Compruebe el LOG para los detalles
+2018-04-14 15:52:59 INFO  Enhancer:82 - DataNucleus Enhancer (versión 5.1.8) para el API "JDO" utilisando el JRE "{2}"
+2018-04-14 15:53:00 INFO  Enhancer:82 - La clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" esta enhanced.
+2018-04-14 15:53:00 INFO  Enhancer:82 - ENHANCED (Persistable) : es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User
+2018-04-14 15:53:00 INFO  Enhancer:82 - DataNucleus Enhancer ha terminado con exito para 1 clases. Tiempos : input=267 ms, enhance=36 ms, total=303 ms. Compruebe el LOG para los detalles
+2018-04-14 15:54:08 INFO  Persistence:82 - Propiedad datanucleus.validateTables desconocida - vamos a ignorarla
+2018-04-14 15:54:08 INFO  Persistence:82 - Propiedad datanucleus.validateConstraints desconocida - vamos a ignorarla
+2018-04-14 15:54:08 INFO  Persistence:82 - Propiedad datanucleus.metadata.validate desconocida - vamos a ignorarla
+2018-04-14 15:55:41 INFO  Enhancer:82 - DataNucleus Enhancer (versión 5.1.8) para el API "JDO" utilisando el JRE "{2}"
+2018-04-14 15:55:41 INFO  Enhancer:82 - La clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" esta enhanced.
+2018-04-14 15:55:41 INFO  Enhancer:82 - ENHANCED (Persistable) : es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User
+2018-04-14 15:55:41 INFO  Enhancer:82 - DataNucleus Enhancer ha terminado con exito para 1 clases. Tiempos : input=180 ms, enhance=26 ms, total=206 ms. Compruebe el LOG para los detalles
+2018-04-14 15:55:48 INFO  Persistence:82 - Propiedad datanucleus.validateTables desconocida - vamos a ignorarla
+2018-04-14 15:55:48 INFO  Persistence:82 - Propiedad datanucleus.validateConstraints desconocida - vamos a ignorarla
+2018-04-14 15:55:48 INFO  Persistence:82 - Propiedad datanucleus.metadata.validate desconocida - vamos a ignorarla
+2018-04-14 15:59:32 INFO  Enhancer:82 - DataNucleus Enhancer (versión 5.1.8) para el API "JDO" utilisando el JRE "{2}"
+2018-04-14 15:59:32 INFO  Enhancer:82 - La clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" esta enhanced.
+2018-04-14 15:59:32 INFO  Enhancer:82 - ENHANCED (Persistable) : es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User
+2018-04-14 15:59:32 INFO  Enhancer:82 - DataNucleus Enhancer ha terminado con exito para 1 clases. Tiempos : input=172 ms, enhance=25 ms, total=197 ms. Compruebe el LOG para los detalles
+2018-04-14 16:00:12 INFO  Persistence:82 - Propiedad datanucleus.validateTables desconocida - vamos a ignorarla
+2018-04-14 16:00:12 INFO  Persistence:82 - Propiedad datanucleus.validateConstraints desconocida - vamos a ignorarla
+2018-04-14 16:00:12 INFO  Persistence:82 - Propiedad datanucleus.metadata.validate desconocida - vamos a ignorarla
+2018-04-14 16:02:18 INFO  Enhancer:82 - DataNucleus Enhancer (versión 5.1.8) para el API "JDO" utilisando el JRE "{2}"
+2018-04-14 16:02:18 INFO  Enhancer:82 - La clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" esta enhanced.
+2018-04-14 16:02:18 INFO  Enhancer:82 - ENHANCED (Persistable) : es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User
+2018-04-14 16:02:18 INFO  Enhancer:82 - DataNucleus Enhancer ha terminado con exito para 1 clases. Tiempos : input=170 ms, enhance=26 ms, total=196 ms. Compruebe el LOG para los detalles
+2018-04-14 16:03:13 INFO  Persistence:82 - Propiedad datanucleus.validateTables desconocida - vamos a ignorarla
+2018-04-14 16:03:13 INFO  Persistence:82 - Propiedad datanucleus.validateConstraints desconocida - vamos a ignorarla
+2018-04-14 16:03:13 INFO  Persistence:82 - Propiedad datanucleus.metadata.validate desconocida - vamos a ignorarla
+2018-04-14 16:22:07 INFO  Enhancer:82 - DataNucleus Enhancer (versión 5.1.8) para el API "JDO" utilisando el JRE "{2}"
+2018-04-14 16:22:08 INFO  Enhancer:82 - La clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" esta enhanced.
+2018-04-14 16:22:08 INFO  Enhancer:82 - ENHANCED (Persistable) : es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User
+2018-04-14 16:22:08 INFO  Enhancer:82 - DataNucleus Enhancer ha terminado con exito para 1 clases. Tiempos : input=163 ms, enhance=28 ms, total=191 ms. Compruebe el LOG para los detalles
+2018-04-14 16:23:04 INFO  Persistence:82 - Propiedad datanucleus.validateTables desconocida - vamos a ignorarla
+2018-04-14 16:23:04 INFO  Persistence:82 - Propiedad datanucleus.validateConstraints desconocida - vamos a ignorarla
+2018-04-14 16:23:04 INFO  Persistence:82 - Propiedad datanucleus.metadata.validate desconocida - vamos a ignorarla

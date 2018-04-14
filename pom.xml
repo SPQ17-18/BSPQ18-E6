@@ -194,7 +194,7 @@
 						<artifactId>exec-maven-plugin</artifactId>  
 						<version>1.2.1</version>  
 						<configuration>  
-									<mainClass>es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator</mainClass>
+									<mainClass>es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller</mainClass>
 									<systemProperties>
 										<systemProperty>
 											<key>java.security.manager</key>

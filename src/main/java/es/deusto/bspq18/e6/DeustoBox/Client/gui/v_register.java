@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller;
+
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -30,17 +33,19 @@ public class v_register extends JFrame {
 	private JLabel lblPassword2;
 	private JLabel lblEmail;
 	private JButton btnRegister;
+	private Controller controlador;
 
 	/**
 	 * Create the frame.
 	 */
-	public v_register() {
+	public v_register(Controller controlador) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
+		this.controlador = controlador;
 		InitComponents();
 		this.setVisible(true);
 	}
@@ -103,6 +108,12 @@ public class v_register extends JFrame {
 					JOptionPane.showMessageDialog(null,"Please fill in all of the gaps");
 				}else if(!p.equals(p2)) {
 					JOptionPane.showMessageDialog(null,"Make sure you entered the password correctly");
+				}
+				else{
+					//Los datos son correctos, registramos
+					controlador.SignUp(lblUsername.getText(), lblEmail.getText(),lblPassword.getText());
+					System.out.println("Viva la Pepa");
+					
 				}
 				
 			}
