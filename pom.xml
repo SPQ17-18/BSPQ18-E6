@@ -14,7 +14,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   	<server.IP>127.0.0.1</server.IP>
 	<server.port>1099</server.port>
-	<server.Name>ServerCinePlus</server.Name>
+	<server.Name>DeustoBox</server.Name>
  <policy.file>${basedir}/src/main/resources/security/java.policy</policy.file>
 		<config.files.dir>${basedir}/src/main/resources</config.files.dir>
   </properties>
@@ -155,7 +155,7 @@
 						 
 						<configuration> 
 						<!--  Server location  --> 
-									<mainClass>es.deusto.bspq18.e6.DeustoBox.Server.Server</mainClass>
+									<mainClass>es.deusto.bspq18.e6.DeustoBox.Server.DeustoBoxServer</mainClass>
 									<systemProperties>
 										
 										<systemProperty>

@@ -10,7 +10,7 @@ import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User;
 
 public class DeustoBoxDAO implements IDeustoBoxDAO{
 	
-	private PersistenceManagerFactory pmf;
+	PersistenceManagerFactory pmf;
 
 	public DeustoBoxDAO() {
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
