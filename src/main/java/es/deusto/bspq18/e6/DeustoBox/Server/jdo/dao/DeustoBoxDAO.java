@@ -85,5 +85,17 @@ public class DeustoBoxDAO implements IDeustoBoxDAO{
 		}
 
 	}
+	
+	public static void main(String[] args) {
+		IDeustoBoxDAO dao= new DeustoBoxDAO();
+		
+		User user1 = new User("aitorugarte@opendeusto.es", "aitorugarte", "123");
+		User user2 = new User("markelalva@opendeusto.es", "markelalva", "123");
+		
+		dao.storeDB(user1);
+		dao.storeDB(user2);
+	
+		
+	}
 
 }

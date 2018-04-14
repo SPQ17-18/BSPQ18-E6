@@ -1,33 +1,27 @@
-package es.deusto.bspq18.e6.DeustoBox.Server.remote;
+package es.deusto.bspq18.e6.DeustoBox.Server;
 
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
 import es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble;
+import es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User;
-import es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO;
+import es.deusto.bspq18.e6.DeustoBox.Server.remote.IClientUtils;
 
-public class ClientUtils extends UnicastRemoteObject implements IClientUtils {
-	
+public class Server extends UnicastRemoteObject implements IClientUtils{
 	private static final long serialVersionUID = 1L;
 	private IDeustoBoxDAO dao;
 	private Assemble transform;
 
-	public ClientUtils() throws RemoteException {
+	public Server() throws RemoteException {
 		dao = new DeustoBoxDAO();
 		transform = new Assemble();
-		
-		User user1 = new User("aitorugarte@opendeusto.es", "aitorugarte", "123");
-		User user2 = new User("markelalva@opendeusto.es", "markelalva", "123");
-		
-		dao.storeDB(user1);
-		dao.storeDB(user2);		
-		
+			
 	}
-	
+
 	public UserDTO login(String username, String password) throws RemoteException {
 		System.out.println("Checking user...");
 		User user = dao.getUser(username, password);
@@ -43,6 +37,9 @@ public class ClientUtils extends UnicastRemoteObject implements IClientUtils {
 		dao.registerUser(transform.user(userdto));
 	}
 
+	
+	
+	
 	public static void main(String[] args) {
 		if (args.length != 3) {
 			System.exit(0);
@@ -55,15 +52,12 @@ public class ClientUtils extends UnicastRemoteObject implements IClientUtils {
 
 		try {
 
-			ClientUtils server = new ClientUtils();
+			Server server = new Server();
 			Naming.rebind(name, server);
-			System.out.println("Server '" + name + "' active and waiting...");
-			
+			System.out.println("Server '" + name + "' active and waiting...");	
 		} catch (Exception e) {
 			System.err.println("Server Exception: " + e.getMessage());
 			e.printStackTrace();
 		}
 	}
-	
-	
 }

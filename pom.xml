@@ -151,7 +151,7 @@
 						 
 						<configuration> 
 						<!--  Server location  --> 
-									<mainClass>es.deusto.bspq18.e6.DeustoBox.Server.remote.ClientUtils</mainClass>
+									<mainClass>es.deusto.bspq18.e6.DeustoBox.Server.Server</mainClass>
 									<systemProperties>
 										
 										<systemProperty>
@@ -210,6 +210,38 @@
 						</configuration>  
 					</plugin>
 					        				  
+				</plugins>  
+			</build>  
+		</profile>  
+		
+		<!-- run as 'mvn exec:java -Pload' -->
+		<profile>  
+			<id>load</id>  
+			<build>  
+				<plugins>  
+					<plugin>  
+						<groupId>org.codehaus.mojo</groupId>  
+						<artifactId>exec-maven-plugin</artifactId>  
+						<version>1.2.1</version>  
+						<configuration>  
+									<mainClass>es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO</mainClass>
+									<systemProperties>
+										<systemProperty>
+											<key>java.security.manager</key>
+											<value>java.rmi.RMISecurityManager</value>
+										</systemProperty>
+										<systemProperty>
+											<key>java.security.policy</key>
+											<value>${policy.file}</value>
+										</systemProperty>
+									</systemProperties>
+									<arguments>  
+										<argument>${server.IP}</argument>  
+										<argument>${server.port}</argument>  
+										<argument>${server.Name}</argument>  
+									</arguments>  
+						</configuration>  
+					</plugin>  
 				</plugins>  
 			</build>  
 		</profile>  
