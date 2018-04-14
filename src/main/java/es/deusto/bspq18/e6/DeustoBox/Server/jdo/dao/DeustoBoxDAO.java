@@ -16,10 +16,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO{
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 	}
 
-	public void registerUser(User user) {
-		System.out.println("Registrando nuevo usuario: " + user);
-		storeDB(user);
-	}
+
 
 	public User getUser(String email, String pass) {
 		// Persistence Manager
@@ -62,28 +59,41 @@ public class DeustoBoxDAO implements IDeustoBoxDAO{
 		return myUser;
 	}
 
-	public void storeDB(Object objet) {
+	
+	public boolean AddUser(User e) { 
+		boolean correcto = true;
 		// Persistence Manager
-		PersistenceManager pm = pmf.getPersistenceManager();
-		// Transaccion para agrupar las operaciones con la bd
-		Transaction tx = pm.currentTransaction();
+		PersistenceManager pm = null;
+		// Transaction to group DB operations
+		Transaction tx = null;
 
 		try {
-			// Empezamos la transaccion
+			System.out.println("- Store objects in the DB");
+			// Get the Persistence Manager
+			pm = pmf.getPersistenceManager();
+			// Obtain the current transaction
+			tx = pm.currentTransaction();
+			// Start the transaction
 			tx.begin();
-			System.out.println("Introduciendo el contenido en la base de datos...");
-			pm.makePersistent(objet);
-			// Fin de la transccion
+
+			// Users
+			pm.makePersistent(e);
 			tx.commit();
+			System.out.println("Inserting user into the database: SUCCESFUL");
+
 		} catch (Exception ex) {
-			System.out.println("# Error al almacenar los objetos: " + ex.getMessage());
+			System.out.println("# Error storing objects: " + ex.getMessage());
+			correcto = false;
 		} finally {
-			if (tx != null && tx.isActive()) {
+			if (tx.isActive()) {
 				tx.rollback();
 			}
+
 			pm.close();
+
 		}
 
+		return correcto;
 	}
 	
 	public static void main(String[] args) {
@@ -92,8 +102,8 @@ public class DeustoBoxDAO implements IDeustoBoxDAO{
 		User user1 = new User("aitorugarte@opendeusto.es", "aitorugarte", "123");
 		User user2 = new User("markelalva@opendeusto.es", "markelalva", "123");
 		
-		dao.storeDB(user1);
-		dao.storeDB(user2);
+		dao.AddUser(user1);
+		dao.AddUser(user2);
 	
 		
 	}
