@@ -5,9 +5,9 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
 import es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble;
-import es.deusto.bspq18.e6.DeustoBox.Server.dao.DeustoBoxDAO;
-import es.deusto.bspq18.e6.DeustoBox.Server.dao.IDeustoBoxDAO;
-import es.deusto.bspq18.e6.DeustoBox.Server.data.User;
+import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO;
+import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO;
+import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO;
 
 public class ClientUtils extends UnicastRemoteObject implements IClientUtils {

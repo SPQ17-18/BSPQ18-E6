@@ -1,4 +1,4 @@
-package es.deusto.bspq18.e6.DeustoBox.Server.dao;
+package es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao;
 
 import javax.jdo.Extent;
 import javax.jdo.JDOHelper;
@@ -6,7 +6,7 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Transaction;
 
-import es.deusto.bspq18.e6.DeustoBox.Server.data.User;
+import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User;
 
 public class DeustoBoxDAO implements IDeustoBoxDAO{
 	

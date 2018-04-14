@@ -1,4 +1,4 @@
-package es.deusto.bspq18.e6.DeustoBox.Server.data;
+package es.deusto.bspq18.e6.DeustoBox.Server.jdo.data;
 
 import java.io.Serializable;
 

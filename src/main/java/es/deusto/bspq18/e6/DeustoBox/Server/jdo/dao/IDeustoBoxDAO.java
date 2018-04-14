@@ -1,6 +1,6 @@
-package es.deusto.bspq18.e6.DeustoBox.Server.dao;
+package es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao;
 
-import es.deusto.bspq18.e6.DeustoBox.Server.data.User;
+import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User;
 
 public interface IDeustoBoxDAO {
 	

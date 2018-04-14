@@ -1,6 +1,6 @@
 package es.deusto.bspq18.e6.DeustoBox.Server.assembler;
 
-import es.deusto.bspq18.e6.DeustoBox.Server.data.User;
+import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO;
 
 public class Assemble {
