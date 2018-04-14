@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="deusto.bspq18.e6.DeustoBox.AppTest" time="0.004" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="deusto.bspq18.e6.DeustoBox.AppTest" time="0.008" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_161\jre\bin"/>
@@ -27,7 +27,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 10"/>
-    <property name="classworlds.conf" value="C:\Users\Markel\Programacion\SPQ\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf4320960206703826852.tmp"/>
+    <property name="classworlds.conf" value="C:\Users\Markel\Programacion\SPQ\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf6860995154480778350.tmp"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_161\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Java/bin/server;C:/Java/bin;C:/Java/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Microsoft MPI\Bin\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\MinGW\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\Calibre2\;C:\Program Files (x86)\Skype\Phone\;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\MiKTeX 2.9\miktex\bin\x64\;C:\Java\bin;C:\apache-maven-3.5.3\bin;C:\Users\Markel\AppData\Local\Microsoft\WindowsApps;C:\apache-ant-1.10.1\bin;;C:\Users\Markel\Desktop;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -61,5 +61,5 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="deusto.bspq18.e6.DeustoBox.AppTest" name="testApp" time="0.004"/>
+  <testcase classname="deusto.bspq18.e6.DeustoBox.AppTest" name="testApp" time="0.008"/>
 </testsuite>

@@ -82,3 +82,7 @@ Caused by: java.lang.ClassNotFoundException: javax.jdo.JDOUserException
 	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:338)
 	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
 	... 13 more
+2018-04-14 13:51:50 INFO  Enhancer:82 - DataNucleus Enhancer (versión 5.1.8) para el API "JDO" utilisando el JRE "{2}"
+2018-04-14 13:51:51 INFO  Enhancer:82 - Escribiendo el archivo de clase "C:\Users\Markel\git\BSPQ18-E6\target\classes\es\deusto\bspq18\e6\DeustoBox\Server\jdo\data\User.class" con definicion enhanced
+2018-04-14 13:51:51 INFO  Enhancer:82 - ENHANCED (Persistable) : es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User
+2018-04-14 13:51:51 INFO  Enhancer:82 - DataNucleus Enhancer ha terminado con exito para 1 clases. Tiempos : input=240 ms, enhance=79 ms, total=319 ms. Compruebe el LOG para los detalles
