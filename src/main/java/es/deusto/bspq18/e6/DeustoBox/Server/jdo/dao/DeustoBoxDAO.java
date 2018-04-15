@@ -8,27 +8,23 @@ import javax.jdo.Transaction;
 
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User;
 
-public class DeustoBoxDAO implements IDeustoBoxDAO{
-	
-	PersistenceManagerFactory pmf;
+public class DeustoBoxDAO implements IDeustoBoxDAO {
+
+	private PersistenceManagerFactory pmf;
 
 	public DeustoBoxDAO() {
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 	}
 
-
-
 	public User getUser(String email, String pass) {
-		// Persistence Manager
+
 		PersistenceManager pm = pmf.getPersistenceManager();
 		pm.getFetchPlan().setMaxFetchDepth(3);
-		// Transaccion para agrupar las operaciones con la bd
 		Transaction tx = pm.currentTransaction();
-		// El usuario que buscamos
+
 		User myUser = null;
 		try {
-
-			System.out.println("- Recuperando los Usuarios usando un 'Extent'...");
+			System.out.println("- Retrieving Users using an 'Extent'...");
 
 			pm = pmf.getPersistenceManager();
 			tx = pm.currentTransaction();
@@ -48,9 +44,8 @@ public class DeustoBoxDAO implements IDeustoBoxDAO{
 			tx.commit();
 
 		} catch (Exception ex) {
-			System.out.println("# Error obteniendo los Usuarios usando un Extent: " + ex.getMessage());
+			System.out.println("# Error retrieving Users using an 'Extent': " + ex.getMessage());
 		} finally {
-
 			if (tx.isActive()) {
 				tx.rollback();
 			}
@@ -59,53 +54,45 @@ public class DeustoBoxDAO implements IDeustoBoxDAO{
 		return myUser;
 	}
 
-	
-	public boolean AddUser(User e) { 
-		boolean correcto = true;
-		// Persistence Manager
+	public boolean addUser(User user) {
+
+		boolean correct = true;
 		PersistenceManager pm = null;
-		// Transaction to group DB operations
 		Transaction tx = null;
 
 		try {
 			System.out.println("- Store objects in the DB");
-			// Get the Persistence Manager
 			pm = pmf.getPersistenceManager();
-			// Obtain the current transaction
 			tx = pm.currentTransaction();
-			// Start the transaction
 			tx.begin();
 
-			// Users
-			pm.makePersistent(e);
+			pm.makePersistent(user);
 			tx.commit();
 			System.out.println("Inserting user into the database: SUCCESFUL");
 
 		} catch (Exception ex) {
 			System.out.println("# Error storing objects: " + ex.getMessage());
-			correcto = false;
+			correct = false;
 		} finally {
 			if (tx.isActive()) {
 				tx.rollback();
 			}
 
 			pm.close();
-
 		}
 
-		return correcto;
+		return correct;
 	}
-	
+
 	public static void main(String[] args) {
-		IDeustoBoxDAO dao= new DeustoBoxDAO();
-		
+		IDeustoBoxDAO dao = new DeustoBoxDAO();
+
 		User user1 = new User("aitorugarte@opendeusto.es", "aitorugarte", "123");
 		User user2 = new User("markelalva@opendeusto.es", "markelalva", "123");
-		
-		dao.AddUser(user1);
-		dao.AddUser(user2);
-	
-		
+
+		dao.addUser(user1);
+		dao.addUser(user2);
+
 	}
 
 }
