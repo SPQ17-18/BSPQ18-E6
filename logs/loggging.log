@@ -364,3 +364,14 @@ Caused by: java.net.ConnectException: Connection refused: connect
 2018-04-15 18:13:01 INFO  Enhancer:82 - Escribiendo el archivo de clase "C:\Users\Markel\git\BSPQ18-E6\target\classes\es\deusto\bspq18\e6\DeustoBox\Server\jdo\data\User.class" con definicion enhanced
 2018-04-15 18:13:01 INFO  Enhancer:82 - ENHANCED (Persistable) : es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User
 2018-04-15 18:13:01 INFO  Enhancer:82 - DataNucleus Enhancer ha terminado con exito para 1 clases. Tiempos : input=192 ms, enhance=56 ms, total=248 ms. Compruebe el LOG para los detalles
+2018-04-15 19:20:30 INFO  Enhancer:82 - DataNucleus Enhancer (versiÃ³n 5.1.8) para el API "JDO" utilisando el JRE "{2}"
+2018-04-15 19:20:30 INFO  Enhancer:82 - Escribiendo el archivo de clase "/Users/Markel/git/BSPQ18-E6/target/classes/es/deusto/bspq18/e6/DeustoBox/Server/jdo/data/User.class" con definicion enhanced
+2018-04-15 19:20:30 INFO  Enhancer:82 - ENHANCED (Persistable) : es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User
+2018-04-15 19:20:30 INFO  Enhancer:82 - DataNucleus Enhancer ha terminado con exito para 1 clases. Tiempos : input=193 ms, enhance=51 ms, total=244 ms. Compruebe el LOG para los detalles
+2018-04-15 19:24:21 INFO  Persistence:82 - Propiedad datanucleus.validateTables desconocida - vamos a ignorarla
+2018-04-15 19:24:21 INFO  Persistence:82 - Propiedad datanucleus.validateConstraints desconocida - vamos a ignorarla
+2018-04-15 19:24:21 INFO  Persistence:82 - Propiedad datanucleus.metadata.validate desconocida - vamos a ignorarla
+2018-04-15 20:48:42 INFO  Enhancer:82 - DataNucleus Enhancer (versión 5.1.8) para el API "JDO" utilisando el JRE "{2}"
+2018-04-15 20:48:42 INFO  Enhancer:82 - Escribiendo el archivo de clase "C:\Users\aitor\git\BSPQ18-E6\target\classes\es\deusto\bspq18\e6\DeustoBox\Server\jdo\data\User.class" con definicion enhanced
+2018-04-15 20:48:42 INFO  Enhancer:82 - ENHANCED (Persistable) : es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User
+2018-04-15 20:48:42 INFO  Enhancer:82 - DataNucleus Enhancer ha terminado con exito para 1 clases. Tiempos : input=167 ms, enhance=35 ms, total=202 ms. Compruebe el LOG para los detalles
