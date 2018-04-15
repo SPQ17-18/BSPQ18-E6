@@ -37,6 +37,7 @@ public class v_login extends JFrame {
 	private JLabel lblRegister;
 	private JButton btnCreateAccount;
 	private Controller controlador;
+	private v_client window;
 	
 	/**
 	 * Create the frame.
@@ -89,6 +90,17 @@ public class v_login extends JFrame {
 					JOptionPane.showMessageDialog(null,"Insert a Username");
 				}else if(p.equals("")){
 					JOptionPane.showMessageDialog(null,"Insert a password");
+				}
+				else{
+					boolean user = controlador.login(u, p);
+					if(user){
+					JOptionPane.showMessageDialog(null, "We are glad to have you back in DeustoBox " + u + ".");
+					window = new v_client(controlador);
+					setVisible(false);
+					}
+					else{
+						JOptionPane.showMessageDialog(null, "Access data is not correct, try again");
+					}
 				}
 			}
 		});

@@ -364,6 +364,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
 2018-04-15 18:13:01 INFO  Enhancer:82 - Escribiendo el archivo de clase "C:\Users\Markel\git\BSPQ18-E6\target\classes\es\deusto\bspq18\e6\DeustoBox\Server\jdo\data\User.class" con definicion enhanced
 2018-04-15 18:13:01 INFO  Enhancer:82 - ENHANCED (Persistable) : es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User
 2018-04-15 18:13:01 INFO  Enhancer:82 - DataNucleus Enhancer ha terminado con exito para 1 clases. Tiempos : input=192 ms, enhance=56 ms, total=248 ms. Compruebe el LOG para los detalles
+<<<<<<< HEAD
 2018-04-15 18:18:30 INFO  Enhancer:82 - DataNucleus Enhancer (versión 5.1.8) para el API "JDO" utilisando el JRE "{2}"
 2018-04-15 18:18:30 INFO  Enhancer:82 - Escribiendo el archivo de clase "C:\Users\Markel\git\BSPQ18-E6\target\classes\es\deusto\bspq18\e6\DeustoBox\Server\jdo\data\User.class" con definicion enhanced
 2018-04-15 18:18:30 INFO  Enhancer:82 - ENHANCED (Persistable) : es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User
@@ -372,3 +373,5 @@ Caused by: java.net.ConnectException: Connection refused: connect
 2018-04-15 18:18:50 INFO  Enhancer:82 - Escribiendo el archivo de clase "C:\Users\Markel\git\BSPQ18-E6\target\classes\es\deusto\bspq18\e6\DeustoBox\Server\jdo\data\User.class" con definicion enhanced
 2018-04-15 18:18:50 INFO  Enhancer:82 - ENHANCED (Persistable) : es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User
 2018-04-15 18:18:50 INFO  Enhancer:82 - DataNucleus Enhancer ha terminado con exito para 1 clases. Tiempos : input=192 ms, enhance=59 ms, total=251 ms. Compruebe el LOG para los detalles
+=======
+>>>>>>> refs/remotes/origin/Markel
