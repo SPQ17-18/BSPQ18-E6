@@ -19,7 +19,6 @@ public class Server extends UnicastRemoteObject implements IClientUtils{
 	public Server() throws RemoteException {
 		dao = new DeustoBoxDAO();
 		transform = new Assemble();
-			
 	}
 
 	public UserDTO login(String username, String password) throws RemoteException {
@@ -38,8 +37,6 @@ public class Server extends UnicastRemoteObject implements IClientUtils{
 	}
 
 	
-	
-	
 	public static void main(String[] args) {
 		if (args.length != 3) {
 			System.exit(0);
@@ -51,7 +48,6 @@ public class Server extends UnicastRemoteObject implements IClientUtils{
 		String name = "//" + args[0] + ":" + args[1] + "/" + args[2];
 
 		try {
-
 			Server server = new Server();
 			Naming.rebind(name, server);
 			System.out.println("Server '" + name + "' active and waiting...");	
