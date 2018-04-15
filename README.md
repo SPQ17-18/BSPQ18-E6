@@ -9,3 +9,6 @@ mvn exec:java -Pserver
 
 Runs the client
 mvn exec:java -Pclient
+
+RMI FOR MAC USERS
+rmiregistry -J-Djava.rmi.server.useCodebaseOnly=false &
