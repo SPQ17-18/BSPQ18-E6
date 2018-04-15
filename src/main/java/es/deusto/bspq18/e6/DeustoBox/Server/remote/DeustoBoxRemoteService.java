@@ -2,7 +2,7 @@ package es.deusto.bspq18.e6.DeustoBox.Server.remote;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
-import es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assemble;
+import es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assembler;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO;
@@ -14,11 +14,11 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 	
 		private static final long serialVersionUID = 1L;
 		private IDeustoBoxDAO db;
-		private Assemble assemble;
+		private Assembler assemble;
 		
 		public DeustoBoxRemoteService() throws RemoteException {
 			db = new DeustoBoxDAO();
-			assemble = new Assemble();
+			assemble = new Assembler();
 		}
 
 		public UserDTO signUp(String username, String email, String password) throws RemoteException {

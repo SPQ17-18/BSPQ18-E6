@@ -9,7 +9,7 @@ import es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO;
 public class Controller {
 
 	private RMIServiceLocator rsl;
-	public UserDTO userdto;
+	private UserDTO userdto;
 
 	public Controller(String[] args) throws RemoteException {
 		rsl = new RMIServiceLocator();
@@ -17,7 +17,7 @@ public class Controller {
 		new v_login(this);
 	}
 
-	public UserDTO signUp(String username, String email, String password) {
+	public boolean signUp(String username, String email, String password) {
 		UserDTO res = null;
 		try {
 			res = rsl.getService().signUp(username, email, password);
@@ -25,10 +25,14 @@ public class Controller {
 			System.err.println("- Exception " + ex.getMessage());
 			ex.printStackTrace();
 		}
-		return res;
+		if (res != null){
+			this.userdto = res;
+			return true;
+		}else
+			return false;
 	}
 
-	public UserDTO login(String email, String password) {
+	public boolean login(String email, String password) {
 		UserDTO res = null;
 		try {
 			res = rsl.getService().login(email, password);
@@ -39,11 +43,17 @@ public class Controller {
 
 		if (res.equals(null)) {
 			System.out.println("The user doesn't exist");
+			return false;
 		}
-		return res;
+		else{
+			this.userdto = res;
+			return true;
+		}
+		
 	}
 
 	public static void main(String[] args) throws RemoteException {
 		new Controller(args);
 	}
+	
 }

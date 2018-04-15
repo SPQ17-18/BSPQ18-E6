@@ -1,9 +1,9 @@
 package es.deusto.bspq18.e6.DeustoBox.Server.assembler;
 
-import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO;
+import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User;
 
-public class Assemble {
+public class Assembler {
 
 	public UserDTO userDTO(User user) {
 		return new UserDTO(user.getEmail(), user.getName(), user.getPassword());
