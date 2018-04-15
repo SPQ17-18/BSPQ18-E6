@@ -37,15 +37,13 @@ public class Controller {
 		try {
 			res = rsl.getService().login(email, password);
 		} catch (Exception ex) {
-			System.err.println("- Exception " + ex.getMessage());
-			ex.printStackTrace();
+			return false;
 		}
 
 		if (res.equals(null)) {
 			System.out.println("The user doesn't exist");
 			return false;
-		}
-		else{
+		} else{
 			this.userdto = res;
 			return true;
 		}
