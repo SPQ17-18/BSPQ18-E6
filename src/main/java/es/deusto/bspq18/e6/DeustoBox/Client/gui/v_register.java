@@ -35,6 +35,7 @@ public class v_register extends JFrame {
 	private JButton btnRegister;
 	private Controller controlador;
 	private v_client window;
+	private JButton Back;
 
 	/**
 	 * Create the frame.
@@ -127,8 +128,17 @@ public class v_register extends JFrame {
 
 			}
 		});
-		btnRegister.setBounds(166, 203, 115, 29);
+		btnRegister.setBounds(67, 199, 107, 29);
 		panel.add(btnRegister);
+		
+		Back = new JButton("Back");
+		Back.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			new v_login(controlador);
+			dispose();
+			}
+		});
+		Back.setBounds(175, 199, 117, 29);
+		panel.add(Back);
 	}
-
 }
