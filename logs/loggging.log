@@ -101,3 +101,23 @@ Caused by: java.lang.ClassNotFoundException: javax.jdo.JDOUserException
 2018-04-15 13:38:29 INFO  Enhancer:82 - Escribiendo el archivo de clase "C:\Users\aitor\git\BSPQ18-E6\target\classes\es\deusto\bspq18\e6\DeustoBox\Server\jdo\data\User.class" con definicion enhanced
 2018-04-15 13:38:29 INFO  Enhancer:82 - ENHANCED (Persistable) : es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User
 2018-04-15 13:38:29 INFO  Enhancer:82 - DataNucleus Enhancer ha terminado con exito para 1 clases. Tiempos : input=182 ms, enhance=38 ms, total=220 ms. Compruebe el LOG para los detalles
+2018-04-15 13:50:43 INFO  Enhancer:82 - DataNucleus Enhancer (versión 5.1.8) para el API "JDO" utilisando el JRE "{2}"
+2018-04-15 13:50:43 INFO  Enhancer:82 - La clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" esta enhanced.
+2018-04-15 13:50:43 INFO  Enhancer:82 - ENHANCED (Persistable) : es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User
+2018-04-15 13:50:43 INFO  Enhancer:82 - DataNucleus Enhancer ha terminado con exito para 1 clases. Tiempos : input=136 ms, enhance=17 ms, total=153 ms. Compruebe el LOG para los detalles
+2018-04-15 13:54:34 INFO  Enhancer:82 - DataNucleus Enhancer (versión 5.1.8) para el API "JDO" utilisando el JRE "{2}"
+2018-04-15 13:54:34 INFO  Enhancer:82 - La clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" esta enhanced.
+2018-04-15 13:54:34 INFO  Enhancer:82 - ENHANCED (Persistable) : es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User
+2018-04-15 13:54:34 INFO  Enhancer:82 - DataNucleus Enhancer ha terminado con exito para 1 clases. Tiempos : input=122 ms, enhance=19 ms, total=141 ms. Compruebe el LOG para los detalles
+2018-04-15 13:58:41 INFO  Enhancer:82 - DataNucleus Enhancer (versión 5.1.8) para el API "JDO" utilisando el JRE "{2}"
+2018-04-15 13:58:41 INFO  Enhancer:82 - La clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" esta enhanced.
+2018-04-15 13:58:41 INFO  Enhancer:82 - ENHANCED (Persistable) : es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User
+2018-04-15 13:58:41 INFO  Enhancer:82 - DataNucleus Enhancer ha terminado con exito para 1 clases. Tiempos : input=132 ms, enhance=17 ms, total=149 ms. Compruebe el LOG para los detalles
+2018-04-15 13:59:26 INFO  Enhancer:82 - DataNucleus Enhancer (versión 5.1.8) para el API "JDO" utilisando el JRE "{2}"
+2018-04-15 13:59:26 INFO  Enhancer:82 - La clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" esta enhanced.
+2018-04-15 13:59:26 INFO  Enhancer:82 - ENHANCED (Persistable) : es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User
+2018-04-15 13:59:26 INFO  Enhancer:82 - DataNucleus Enhancer ha terminado con exito para 1 clases. Tiempos : input=126 ms, enhance=17 ms, total=143 ms. Compruebe el LOG para los detalles
+2018-04-15 14:01:02 INFO  Enhancer:82 - DataNucleus Enhancer (versión 5.1.8) para el API "JDO" utilisando el JRE "{2}"
+2018-04-15 14:01:02 INFO  Enhancer:82 - La clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" esta enhanced.
+2018-04-15 14:01:02 INFO  Enhancer:82 - ENHANCED (Persistable) : es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User
+2018-04-15 14:01:02 INFO  Enhancer:82 - DataNucleus Enhancer ha terminado con exito para 1 clases. Tiempos : input=127 ms, enhance=18 ms, total=145 ms. Compruebe el LOG para los detalles

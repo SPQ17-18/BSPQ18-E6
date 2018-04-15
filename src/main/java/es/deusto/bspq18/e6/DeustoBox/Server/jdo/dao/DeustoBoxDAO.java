@@ -96,7 +96,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO{
 		return correcto;
 	}
 	
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		IDeustoBoxDAO dao= new DeustoBoxDAO();
 		
 		User user1 = new User("aitorugarte@opendeusto.es", "aitorugarte", "123");
@@ -106,6 +106,6 @@ public class DeustoBoxDAO implements IDeustoBoxDAO{
 		dao.AddUser(user2);
 	
 		
-	}
+	}*/
 
 }
