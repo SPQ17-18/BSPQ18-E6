@@ -34,6 +34,7 @@ public class v_register extends JFrame {
 	private JLabel lblEmail;
 	private JButton btnRegister;
 	private Controller controlador;
+	private v_client window;
 
 	/**
 	 * Create the frame.
@@ -110,8 +111,18 @@ public class v_register extends JFrame {
 					JOptionPane.showMessageDialog(null, "Make sure you entered the password correctly");
 				} else {
 					// Los datos son correctos, registramos
-					controlador.signUp(lblUsername.getText(), lblEmail.getText(), lblPassword.getText());
-					System.out.println("Viva la Pepa");
+					boolean user = controlador.signUp(txtUsername.getText(), txtEmail.getText(), txtPassword.getText());
+					
+					if(user){ //El usuario ha sido registrado con exito
+						JOptionPane.showMessageDialog(null, "Welcome to DeustoBOX " + u + ".");
+						window = new v_client(controlador);
+						setVisible(false);
+						
+					}
+					else{
+						JOptionPane.showMessageDialog(null, "An error happens while registering, check if the email is not already used.");
+					}
+					
 				}
 
 			}

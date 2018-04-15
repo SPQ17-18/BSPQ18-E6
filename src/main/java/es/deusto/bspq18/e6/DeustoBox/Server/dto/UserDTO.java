@@ -1,6 +1,7 @@
 package es.deusto.bspq18.e6.DeustoBox.Server.dto;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class UserDTO implements Serializable {
 
@@ -8,11 +9,13 @@ public class UserDTO implements Serializable {
 	private String email;
 	private String username;
 	private String password;
+	private Date fechaInicio;
 
 	public UserDTO(String email, String username, String password) {
 		this.email = email;
 		this.username = username;
 		this.password = password;
+		this.fechaInicio = new Date();
 	}
 
 	public String getEmail() {
@@ -39,9 +42,32 @@ public class UserDTO implements Serializable {
 		this.password = password;
 	}
 
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public Date getFechaInicio() {
+		return fechaInicio;
+	}
+
+	public void setFechaInicio(Date fechaInicio) {
+		this.fechaInicio = fechaInicio;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 	@Override
 	public String toString() {
-		return "UserDTO [email=" + email + ", username=" + username + ", password=" + password + "]";
+		return "UserDTO [email=" + email + ", username=" + username + ", password=" + password + ", fechaInicio="
+				+ fechaInicio + "]";
 	}
+
+	
 
 }
