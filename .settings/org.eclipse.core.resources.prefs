@@ -1,2 +1,7 @@
 eclipse.preferences.version=1
+<<<<<<< HEAD
+=======
+encoding//src/main/java=UTF-8
+encoding//src/main/test/java=UTF-8
+>>>>>>> refs/heads/Markel
 encoding/<project>=UTF-8
