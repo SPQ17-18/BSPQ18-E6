@@ -1,0 +1,3 @@
+mvn exec:java -Pserver
+mvn exec:java -Pclient
+mvn exec:java -Pload
