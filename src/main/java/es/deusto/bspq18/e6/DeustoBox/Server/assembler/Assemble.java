@@ -12,10 +12,5 @@ public class Assemble {
 	public User user(UserDTO userdto) {
 		return new User(userdto.getEmail(), userdto.getName(), userdto.getPassword());
 	}
-
-	public static UserDTO assembleUser(User e) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	
 }

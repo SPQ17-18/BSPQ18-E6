@@ -7,7 +7,7 @@ import es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO;
 
 public interface IDeustoBoxRemoteService extends Remote{
 
-	public UserDTO SignUp(String Username, String Email, String password)throws RemoteException;
-	public UserDTO Login(String email, String password) throws RemoteException;
+	public UserDTO signUp(String username, String email, String password)throws RemoteException;
+	public UserDTO login(String email, String password) throws RemoteException;
 	
 }

@@ -49,79 +49,75 @@ public class v_register extends JFrame {
 		InitComponents();
 		this.setVisible(true);
 	}
-	
-		public void InitComponents() {
-		
+
+	public void InitComponents() {
+
 		panel = new JPanel();
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
-		
+
 		lblJoinDeustobox = new JLabel("Join DeustoBox");
 		lblJoinDeustobox.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		lblJoinDeustobox.setBounds(98, 16, 162, 35);
 		panel.add(lblJoinDeustobox);
-		
+
 		lblUsername = new JLabel("Username:");
 		lblUsername.setBounds(15, 96, 77, 20);
 		panel.add(lblUsername);
-		
+
 		lblPassword = new JLabel("Password:");
 		lblPassword.setBounds(15, 132, 77, 20);
 		panel.add(lblPassword);
-		
+
 		lblPassword2 = new JLabel("Repeat Password:");
 		lblPassword2.setBounds(15, 168, 135, 20);
 		panel.add(lblPassword2);
-		
+
 		lblEmail = new JLabel("Email:");
 		lblEmail.setBounds(15, 60, 77, 20);
 		panel.add(lblEmail);
-		
+
 		txtEmail = new JTextField();
 		txtEmail.setBounds(98, 59, 155, 22);
 		panel.add(txtEmail);
 		txtEmail.setColumns(10);
-		
+
 		txtUsername = new JTextField();
 		txtUsername.setBounds(98, 93, 146, 22);
 		panel.add(txtUsername);
 		txtUsername.setColumns(10);
-		
+
 		txtPassword = new JTextField();
 		txtPassword.setBounds(98, 129, 146, 22);
 		panel.add(txtPassword);
 		txtPassword.setColumns(10);
-		
+
 		txtPassword2 = new JTextField();
 		txtPassword2.setBounds(146, 165, 146, 22);
 		panel.add(txtPassword2);
 		txtPassword2.setColumns(10);
-		
+
 		btnRegister = new JButton("Register");
-		btnRegister.addActionListener(new ActionListener(){
+		btnRegister.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent Ae) {
 				String e = txtEmail.getText();
 				String u = txtUsername.getText();
 				String p = txtPassword.getText();
 				String p2 = txtPassword2.getText();
-				if(e.equals("")||u.equals("")||p.equals("")||p2.equals("")){
-					JOptionPane.showMessageDialog(null,"Please fill in all of the gaps");
-				}else if(!p.equals(p2)) {
-					JOptionPane.showMessageDialog(null,"Make sure you entered the password correctly");
-				}
-				else{
-					//Los datos son correctos, registramos
-					controlador.SignUp(lblUsername.getText(), lblEmail.getText(),lblPassword.getText());
+				if (e.equals("") || u.equals("") || p.equals("") || p2.equals("")) {
+					JOptionPane.showMessageDialog(null, "Please fill in all of the gaps");
+				} else if (!p.equals(p2)) {
+					JOptionPane.showMessageDialog(null, "Make sure you entered the password correctly");
+				} else {
+					// Los datos son correctos, registramos
+					controlador.signUp(lblUsername.getText(), lblEmail.getText(), lblPassword.getText());
 					System.out.println("Viva la Pepa");
-					
 				}
-				
+
 			}
 		});
 		btnRegister.setBounds(166, 203, 115, 29);
 		panel.add(btnRegister);
 	}
-	
 
 }
-
