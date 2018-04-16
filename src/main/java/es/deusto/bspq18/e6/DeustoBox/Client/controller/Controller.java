@@ -51,6 +51,16 @@ public class Controller {
 		}
 		
 	}
+	
+	
+
+	public UserDTO getUserdto() {
+		return userdto;
+	}
+
+	public void setUserdto(UserDTO userdto) {
+		this.userdto = userdto;
+	}
 
 	public static void main(String[] args) throws RemoteException {
 		new Controller(args);
