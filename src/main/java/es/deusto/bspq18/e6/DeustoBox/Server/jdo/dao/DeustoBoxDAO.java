@@ -2,6 +2,8 @@ package es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 import javax.jdo.Extent;
 import javax.jdo.JDOHelper;
@@ -9,7 +11,8 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Transaction;
 
-import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User;
+import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DFile;
+import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
 
 public class DeustoBoxDAO implements IDeustoBoxDAO {
 
@@ -19,13 +22,13 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 	}
 
-	public User getUser(String email, String pass) {
+	public DUser getUser(String email, String pass) {
 
 		PersistenceManager pm = pmf.getPersistenceManager();
 		pm.getFetchPlan().setMaxFetchDepth(3);
 		Transaction tx = pm.currentTransaction();
 
-		User myUser = null;
+		DUser myUser = null;
 		try {
 			System.out.println("- Retrieving Users using an 'Extent'...");
 
@@ -34,9 +37,9 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 
 			tx.begin();
 
-			Extent<User> extent = pm.getExtent(User.class, true);
+			Extent<DUser> extent = pm.getExtent(DUser.class, true);
 
-			for (User usuario : extent) {
+			for (DUser usuario : extent) {
 				if (usuario.getEmail().equals(email) && usuario.getPassword().equals(pass)) {
 					System.out.println("  -> " + usuario);
 					myUser = usuario;
@@ -57,12 +60,12 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		return myUser;
 	}
 	
-	public ArrayList<User> getAllUsers(){
+	public ArrayList<DUser> getAllUsers(){
 		PersistenceManager pm = pmf.getPersistenceManager();
 		pm.getFetchPlan().setMaxFetchDepth(3);
 		Transaction tx = pm.currentTransaction();
 
-		ArrayList<User> users = new ArrayList<User>();
+		ArrayList<DUser> users = new ArrayList<DUser>();
 		try {
 			System.out.println("- Retrieving Users using an 'Extent'...");
 
@@ -71,9 +74,9 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 
 			tx.begin();
 
-			Extent<User> extent = pm.getExtent(User.class, true);
+			Extent<DUser> extent = pm.getExtent(DUser.class, true);
 
-			for (User usuario : extent) {
+			for (DUser usuario : extent) {
 				users.add(usuario);
 			}
 
@@ -90,7 +93,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		return users;
 	}
 
-	public boolean addUser(User user) {
+	public boolean addUser(DUser user) {
 
 		boolean correct = true;
 		PersistenceManager pm = null;
@@ -120,7 +123,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		return correct;
 	}
 
-	public void addFiles(User user) {
+	public void addFiles(HashMap<String, String> map, DUser user) {
 		PersistenceManager pm = null;
 		Transaction tx = null;
 
@@ -130,12 +133,24 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 			tx = pm.currentTransaction();
 			tx.begin();
 
-			pm.makePersistent(user);
+			Extent<DUser> extent = pm.getExtent(DUser.class, true);
+			for(DUser user2 : extent) {
+				if(user2.getEmail().equals(user.getEmail())) {
+					System.out.println("hi");
+					for (Map.Entry<String, String> entry : map.entrySet()) {
+						user2.addFile(new DFile(user.getEmail(), 1, entry.getKey(), entry.getValue()));
+					}
+					System.out.println(user2.getFiles().toString());
+					pm.makePersistent(user2);
+					break;
+				}
+			}
 			tx.commit();
 			System.out.println("Inserting user's files into the database: SUCCESFUL");
 
 		} catch (Exception ex) {
 			System.out.println("# Error storing objects: " + ex.getMessage());
+			ex.printStackTrace();
 		} finally {
 			if (tx.isActive()) {
 				tx.rollback();
@@ -148,8 +163,8 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 	public static void main(String[] args) {
 		IDeustoBoxDAO dao = new DeustoBoxDAO();
 
-		User user1 = new User("aitorugarte@opendeusto.es", "aitorugarte", "123");
-		User user2 = new User("markelalva@opendeusto.es", "markelalva", "123");
+		DUser user1 = new DUser("aitorugarte@opendeusto.es", "aitorugarte", "123");
+		DUser user2 = new DUser("markelalva@opendeusto.es", "markelalva", "123");
 
 		dao.addUser(user1);
 		dao.addUser(user2);

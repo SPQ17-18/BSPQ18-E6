@@ -3,10 +3,10 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
 import es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assembler;
-import es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO;
+import es.deusto.bspq18.e6.DeustoBox.Server.dto.DUserDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO;
-import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User;
+import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
 import es.deusto.bspq18.e6.DeustoBox.Server.remote.IDeustoBoxRemoteService;
 
 
@@ -21,10 +21,10 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 			assemble = new Assembler();
 		}
 
-		public UserDTO signUp(String username, String email, String password) throws RemoteException {
+		public DUserDTO signUp(String username, String email, String password) throws RemoteException {
 			boolean correcto = false;
 			System.out.println("User received");
-			User user = new User(username, email, password);
+			DUser user = new DUser(username, email, password);
 			System.out.println(user);
 			correcto = db.addUser(user);
 			
@@ -35,7 +35,7 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 			}
 		}
 
-		public UserDTO login(String email, String password) throws RemoteException {
+		public DUserDTO login(String email, String password) throws RemoteException {
 			return assemble.userDTO(db.getUser(email, password));
 		}
 		

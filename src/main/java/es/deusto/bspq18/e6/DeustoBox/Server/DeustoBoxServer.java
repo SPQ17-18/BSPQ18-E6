@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.rmi.Naming;
 
-import es.deusto.bspq18.e6.DeustoBox.Client.gui.v_installer;
+import es.deusto.bspq18.e6.DeustoBox.Server.gui.v_installer;
 import es.deusto.bspq18.e6.DeustoBox.Server.remote.DeustoBoxRemoteService;
 import es.deusto.bspq18.e6.DeustoBox.Server.remote.IDeustoBoxRemoteService;
 
@@ -21,13 +21,14 @@ public class DeustoBoxServer {
 		try {
 			IDeustoBoxRemoteService deustoBox = new DeustoBoxRemoteService();
 			Naming.rebind(name, deustoBox);
+			v_installer installer = new v_installer();
+			installer.frame.setVisible(true);
 			System.out.println("- DeustoBoxServer:  '" + name + "' active and waiting...");
 			InputStreamReader inputStreamReader = new InputStreamReader(System.in);
 			BufferedReader stdin = new BufferedReader(inputStreamReader);
 
 			String line = stdin.readLine();
-			v_installer installer = new v_installer();
-			installer.setVisible(true);
+			
 		} catch (Exception e) {
 			System.err.println("$ DeustoBox exception: " + e.getMessage());
 			e.printStackTrace();

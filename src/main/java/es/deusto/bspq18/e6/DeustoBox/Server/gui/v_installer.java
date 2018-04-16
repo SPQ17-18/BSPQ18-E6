@@ -20,7 +20,7 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO;
-import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User;
+import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
 import es.deusto.bspq18.e6.DeustoBox.Server.remote.DeustoBoxRemoteService;
 
 import javax.swing.JLabel;
@@ -29,7 +29,7 @@ import java.awt.Font;
 
 public class v_installer extends JFrame {
 
-	private JFrame frame;
+	public JFrame frame;
 	private JTextField txtPath;
 	private JFileChooser fileChooser;
 	private DeustoBoxDAO dao;
@@ -122,37 +122,40 @@ public class v_installer extends JFrame {
 	public void createFolders(String path) {
 		File directorio = new File(path);
 		directorio.mkdir();
-		ArrayList<User> users = dao.getAllUsers();
+		ArrayList<DUser> users = dao.getAllUsers();
 		for (int i = 0; i < users.size(); i++) {
 			File userFolder = new File(directorio + "\\" + users.get(i).getEmail());
 			userFolder.mkdir();
-			uploadFiles(users.get(i), userFolder, "/");
+			HashMap<String, String> map = new HashMap<>();
+			uploadFiles(map, users.get(i), userFolder, "/");
 		}
 	}
 
 	/*
 	 * Syncs files (TODO we need a thread here)
 	 */
-	public void uploadFiles(User user, File userFolder, String prefix) {
+	public void uploadFiles(HashMap<String, String> map, DUser user, File userFolder, String prefix) {
+		System.out.println("Current user: " + user.getUsername());
 		File[] list  = userFolder.listFiles();
 		if(list != null) {
 			for(File element : list) {
+				System.out.println("File: " + element.getName());
 				if(element.isDirectory()) {
-					uploadFiles(user, element, element.getName()+"/");
+					System.out.println("Is directory");
+					uploadFiles(map, user, element, element.getName()+"/");
 				}else { // It's file
+					System.out.println("Is file");
 					// Get the name
 					String name = prefix+element.getName();
 					// Get the last modified date
 					Date lastmodified = new Date(element.lastModified());
 					// Upload all info to user's database
-					HashMap<String, String> map = new HashMap<>();
 					map.put(name, lastmodified.toString());
-					user.setFiles(map);
-					dao.addFiles(user);
 				}
 			}
 		}
-
+		System.out.println(map);
+		dao.addFiles(map, user);
 	}
 
 }

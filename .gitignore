@@ -1,6 +1,2 @@
-# Maven
 /target/
-# Eclipse
 .settings/
-# Project
-logs

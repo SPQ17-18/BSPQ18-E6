@@ -1,6 +1,5 @@
 package es.deusto.bspq18.e6.DeustoBox.Client.gui;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,15 +8,14 @@ import java.io.File;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
 
 public class v_installer extends JFrame {
 
+	private static final long serialVersionUID = 1L;
 	protected JFrame frame;
 	private JTextField txtPath;
 	private JFileChooser fileChooser;

@@ -4,12 +4,12 @@ import java.rmi.RemoteException;
 
 import es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login;
 import es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator;
-import es.deusto.bspq18.e6.DeustoBox.Server.dto.UserDTO;
+import es.deusto.bspq18.e6.DeustoBox.Server.dto.DUserDTO;
 
 public class Controller {
 
 	private RMIServiceLocator rsl;
-	private UserDTO userdto;
+	private DUserDTO userdto;
 
 	public Controller(String[] args) throws RemoteException {
 		rsl = new RMIServiceLocator();
@@ -18,7 +18,7 @@ public class Controller {
 	}
 
 	public boolean signUp(String username, String email, String password) {
-		UserDTO res = null;
+		DUserDTO res = null;
 		try {
 			res = rsl.getService().signUp(username, email, password);
 		} catch (Exception ex) {
@@ -34,7 +34,7 @@ public class Controller {
 	}
 
 	public boolean login(String email, String password) {
-		UserDTO res = null;
+		DUserDTO res = null;
 		try {
 			res = rsl.getService().login(email, password);
 		} catch (Exception ex) {
@@ -51,11 +51,11 @@ public class Controller {
 
 	}
 
-	public UserDTO getUserdto() {
+	public DUserDTO getUserdto() {
 		return userdto;
 	}
 
-	public void setUserdto(UserDTO userdto) {
+	public void setUserdto(DUserDTO userdto) {
 		this.userdto = userdto;
 	}
 
