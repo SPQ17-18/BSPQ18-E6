@@ -90,9 +90,11 @@ public class v_profile extends JFrame {
 		contentPane.add(lblNewLabel);
 		lblNewLabel.setText(controlador.getUserdto().getEmail());
 		
+		
 		lbl_password = new JLabel("New label");
 		lbl_password.setBounds(108, 140, 61, 16);
 		contentPane.add(lbl_password);
 		lbl_password.setText(controlador.getUserdto().getPassword());
+		System.out.println("Password " + controlador.getUserdto().getPassword());
 	}
 }

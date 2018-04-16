@@ -47,6 +47,7 @@ public class Controller {
 		}
 		else{
 			this.userdto = res;
+			System.out.println(res.toString());
 			return true;
 		}
 		

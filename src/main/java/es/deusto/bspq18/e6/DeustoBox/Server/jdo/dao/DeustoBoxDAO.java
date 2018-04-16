@@ -36,12 +36,12 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 			for (User usuario : extent) {
 				if (usuario.getEmail().equals(email) && usuario.getPassword().equals(pass)) {
 					System.out.println("  -> " + usuario);
-					myUser = usuario;
+					myUser = new User(usuario.getEmail(), usuario.getName(), usuario.getPassword());
+
 					break;
 				}
 			}
 
-			tx.commit();
 
 		} catch (Exception ex) {
 			System.out.println("# Error retrieving Users using an 'Extent': " + ex.getMessage());
@@ -51,6 +51,8 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 			}
 			pm.close();
 		}
+		System.out.println("BD");
+		System.out.println(myUser);
 		return myUser;
 	}
 
