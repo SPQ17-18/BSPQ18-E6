@@ -25,11 +25,12 @@ public class Controller {
 			System.err.println("- Exception " + ex.getMessage());
 			ex.printStackTrace();
 		}
-		if (res != null){
+		if (res != null) {
 			this.userdto = res;
 			return true;
-		}else
+		} else {
 			return false;
+		}
 	}
 
 	public boolean login(String email, String password) {
@@ -37,21 +38,19 @@ public class Controller {
 		try {
 			res = rsl.getService().login(email, password);
 		} catch (Exception ex) {
-			System.err.println("- Exception " + ex.getMessage());
-			ex.printStackTrace();
+			return false;
 		}
 
 		if (res.equals(null)) {
 			System.out.println("The user doesn't exist");
 			return false;
-		}
-		else{
+		} else {
 			this.userdto = res;
 			return true;
 		}
-		
+
 	}
-	
+
 	public UserDTO getUserdto() {
 		return userdto;
 	}
@@ -63,5 +62,5 @@ public class Controller {
 	public static void main(String[] args) throws RemoteException {
 		new Controller(args);
 	}
-	
+
 }

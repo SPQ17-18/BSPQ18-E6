@@ -568,3 +568,10 @@ Caused by: java.net.ConnectException: Connection refused: connect
 2018-04-16 13:26:26 INFO  Persistence:82 - Propiedad datanucleus.validateTables desconocida - vamos a ignorarla
 2018-04-16 13:26:26 INFO  Persistence:82 - Propiedad datanucleus.validateConstraints desconocida - vamos a ignorarla
 2018-04-16 13:26:26 INFO  Persistence:82 - Propiedad datanucleus.metadata.validate desconocida - vamos a ignorarla
+2018-04-16 13:40:25 INFO  Enhancer:82 - DataNucleus Enhancer (versión 5.1.8) para el API "JDO" utilisando el JRE "{2}"
+2018-04-16 13:40:26 INFO  Enhancer:82 - Escribiendo el archivo de clase "C:\Users\aitor\git\BSPQ18-E6\target\classes\es\deusto\bspq18\e6\DeustoBox\Server\jdo\data\User.class" con definicion enhanced
+2018-04-16 13:40:26 INFO  Enhancer:82 - ENHANCED (Persistable) : es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User
+2018-04-16 13:40:26 INFO  Enhancer:82 - DataNucleus Enhancer ha terminado con exito para 1 clases. Tiempos : input=218 ms, enhance=41 ms, total=259 ms. Compruebe el LOG para los detalles
+2018-04-16 13:40:38 INFO  Persistence:82 - Propiedad datanucleus.validateTables desconocida - vamos a ignorarla
+2018-04-16 13:40:38 INFO  Persistence:82 - Propiedad datanucleus.validateConstraints desconocida - vamos a ignorarla
+2018-04-16 13:40:38 INFO  Persistence:82 - Propiedad datanucleus.metadata.validate desconocida - vamos a ignorarla

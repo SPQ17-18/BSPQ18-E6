@@ -97,10 +97,9 @@ public class v_login extends JFrame {
 					boolean user = controlador.login(name, password);
 					if (user) {
 						JOptionPane.showMessageDialog(null, "We are glad to have you back in DeustoBox " + name + ".");
-						//window = new v_client(controlador);
 						v_installer installer = new v_installer();
-						installer.setVisible(true);
-						//setVisible(false);
+						installer.frame.setVisible(true);
+						dispose();
 					} else {
 						JOptionPane.showMessageDialog(null, "Access data is not correct, try again");
 						txtUsername.setText("");
@@ -113,7 +112,7 @@ public class v_login extends JFrame {
 		panel.add(btnEnter);
 
 		lblRegister = new JLabel("Don't have an account yet?");
-		lblRegister.setBounds(156, 230, 146, 20);
+		lblRegister.setBounds(87, 230, 186, 20);
 		panel.add(lblRegister);
 
 		btnCreateAccount = new JButton("Create an account");

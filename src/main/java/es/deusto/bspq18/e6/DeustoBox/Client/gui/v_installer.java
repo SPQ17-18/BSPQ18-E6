@@ -18,7 +18,7 @@ import java.awt.Font;
 
 public class v_installer extends JFrame {
 
-	private JFrame frame;
+	protected JFrame frame;
 	private JTextField txtPath;
 	private JFileChooser fileChooser;
 
