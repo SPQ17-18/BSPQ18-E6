@@ -52,8 +52,6 @@ public class Controller {
 		
 	}
 	
-	
-
 	public UserDTO getUserdto() {
 		return userdto;
 	}

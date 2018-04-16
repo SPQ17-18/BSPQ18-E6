@@ -561,3 +561,10 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
 	... 53 more
 2018-04-16 06:28:21 ERROR Datastore:120 - Exception thrown creating StoreManager : Connection refused: connect
+2018-04-16 13:25:58 INFO  Enhancer:82 - DataNucleus Enhancer (versión 5.1.8) para el API "JDO" utilisando el JRE "{2}"
+2018-04-16 13:25:58 INFO  Enhancer:82 - Escribiendo el archivo de clase "C:\Users\aitor\git\BSPQ18-E6\target\classes\es\deusto\bspq18\e6\DeustoBox\Server\jdo\data\User.class" con definicion enhanced
+2018-04-16 13:25:58 INFO  Enhancer:82 - ENHANCED (Persistable) : es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User
+2018-04-16 13:25:58 INFO  Enhancer:82 - DataNucleus Enhancer ha terminado con exito para 1 clases. Tiempos : input=371 ms, enhance=56 ms, total=427 ms. Compruebe el LOG para los detalles
+2018-04-16 13:26:26 INFO  Persistence:82 - Propiedad datanucleus.validateTables desconocida - vamos a ignorarla
+2018-04-16 13:26:26 INFO  Persistence:82 - Propiedad datanucleus.validateConstraints desconocida - vamos a ignorarla
+2018-04-16 13:26:26 INFO  Persistence:82 - Propiedad datanucleus.metadata.validate desconocida - vamos a ignorarla
