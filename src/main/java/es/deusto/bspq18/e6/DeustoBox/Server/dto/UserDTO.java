@@ -2,6 +2,7 @@ package es.deusto.bspq18.e6.DeustoBox.Server.dto;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashMap;
 
 public class UserDTO implements Serializable {
 
@@ -10,12 +11,14 @@ public class UserDTO implements Serializable {
 	private String username;
 	private String password;
 	private Date fechaInicio;
+	private HashMap<String, String> files;
 
 	public UserDTO(String email, String username, String password) {
 		this.email = email;
 		this.username = username;
 		this.password = password;
 		this.fechaInicio = new Date();
+		this.files = new HashMap<String, String>();
 	}
 
 	public String getEmail() {
@@ -26,11 +29,11 @@ public class UserDTO implements Serializable {
 		this.email = email;
 	}
 
-	public String getName() {
+	public String getUsername() {
 		return username;
 	}
 
-	public void setName(String username) {
+	public void setUsername(String username) {
 		this.username = username;
 	}
 
@@ -42,14 +45,6 @@ public class UserDTO implements Serializable {
 		this.password = password;
 	}
 
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
 	public Date getFechaInicio() {
 		return fechaInicio;
 	}
@@ -57,9 +52,13 @@ public class UserDTO implements Serializable {
 	public void setFechaInicio(Date fechaInicio) {
 		this.fechaInicio = fechaInicio;
 	}
+	
+	public HashMap<String, String> getFiles() {
+		return files;
+	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+	public void setFiles(HashMap<String, String> files) {
+		this.files = files;
 	}
 
 	@Override

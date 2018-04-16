@@ -1,6 +1,7 @@
 package es.deusto.bspq18.e6.DeustoBox.Server.jdo.data;
 
 import java.io.Serializable;
+import java.util.HashMap;
 
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
@@ -14,11 +15,13 @@ public class User implements Serializable {
 	private String email;
 	private String username;
 	private String password;
+	private HashMap<String, String> files;
 
 	public User(String email, String username, String password) {
 		this.email = email;
 		this.username = username;
 		this.password = password;
+		this.files = new HashMap<String, String>();
 	}
 
 	public String getEmail() {
@@ -29,11 +32,11 @@ public class User implements Serializable {
 		this.email = email;
 	}
 
-	public String getName() {
+	public String getUsername() {
 		return username;
 	}
 
-	public void setName(String username) {
+	public void setUsername(String username) {
 		this.username = username;
 	}
 
@@ -43,6 +46,14 @@ public class User implements Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	public HashMap<String, String> getFiles() {
+		return files;
+	}
+
+	public void setFiles(HashMap<String, String> files) {
+		this.files = files;
 	}
 
 	@Override

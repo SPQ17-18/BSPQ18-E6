@@ -38,5 +38,5 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		public UserDTO login(String email, String password) throws RemoteException {
 			return assemble.userDTO(db.getUser(email, password));
 		}
-
+		
 }

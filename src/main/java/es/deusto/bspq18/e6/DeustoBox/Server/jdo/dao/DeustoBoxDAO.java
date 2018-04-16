@@ -1,5 +1,8 @@
 package es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import javax.jdo.Extent;
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
@@ -53,6 +56,39 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		}
 		return myUser;
 	}
+	
+	public ArrayList<User> getAllUsers(){
+		PersistenceManager pm = pmf.getPersistenceManager();
+		pm.getFetchPlan().setMaxFetchDepth(3);
+		Transaction tx = pm.currentTransaction();
+
+		ArrayList<User> users = new ArrayList<User>();
+		try {
+			System.out.println("- Retrieving Users using an 'Extent'...");
+
+			pm = pmf.getPersistenceManager();
+			tx = pm.currentTransaction();
+
+			tx.begin();
+
+			Extent<User> extent = pm.getExtent(User.class, true);
+
+			for (User usuario : extent) {
+				users.add(usuario);
+			}
+
+			tx.commit();
+
+		} catch (Exception ex) {
+			System.out.println("# Error retrieving Users using an 'Extent': " + ex.getMessage());
+		} finally {
+			if (tx.isActive()) {
+				tx.rollback();
+			}
+			pm.close();
+		}
+		return users;
+	}
 
 	public boolean addUser(User user) {
 
@@ -84,6 +120,31 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		return correct;
 	}
 
+	public void addFiles(User user) {
+		PersistenceManager pm = null;
+		Transaction tx = null;
+
+		try {
+			System.out.println("- Store user's files in the DB");
+			pm = pmf.getPersistenceManager();
+			tx = pm.currentTransaction();
+			tx.begin();
+
+			pm.makePersistent(user);
+			tx.commit();
+			System.out.println("Inserting user's files into the database: SUCCESFUL");
+
+		} catch (Exception ex) {
+			System.out.println("# Error storing objects: " + ex.getMessage());
+		} finally {
+			if (tx.isActive()) {
+				tx.rollback();
+			}
+
+			pm.close();
+		}
+		
+	}
 	public static void main(String[] args) {
 		IDeustoBoxDAO dao = new DeustoBoxDAO();
 

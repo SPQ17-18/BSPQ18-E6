@@ -37,17 +37,29 @@ public class Controller {
 		try {
 			res = rsl.getService().login(email, password);
 		} catch (Exception ex) {
-			return false;
+			System.err.println("- Exception " + ex.getMessage());
+			ex.printStackTrace();
 		}
 
 		if (res.equals(null)) {
 			System.out.println("The user doesn't exist");
 			return false;
-		} else{
+		}
+		else{
 			this.userdto = res;
 			return true;
 		}
 		
+	}
+	
+	
+
+	public UserDTO getUserdto() {
+		return userdto;
+	}
+
+	public void setUserdto(UserDTO userdto) {
+		this.userdto = userdto;
 	}
 
 	public static void main(String[] args) throws RemoteException {
