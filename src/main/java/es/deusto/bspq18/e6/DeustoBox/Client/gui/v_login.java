@@ -97,8 +97,10 @@ public class v_login extends JFrame {
 					boolean user = controlador.login(name, password);
 					if (user) {
 						JOptionPane.showMessageDialog(null, "We are glad to have you back in DeustoBox " + name + ".");
-						window = new v_client(controlador);
-						setVisible(false);
+						//window = new v_client(controlador);
+						v_installer installer = new v_installer();
+						installer.setVisible(true);
+						//setVisible(false);
 					} else {
 						JOptionPane.showMessageDialog(null, "Access data is not correct, try again");
 						txtUsername.setText("");

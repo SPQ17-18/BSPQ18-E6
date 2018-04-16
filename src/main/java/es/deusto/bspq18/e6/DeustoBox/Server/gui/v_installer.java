@@ -1,4 +1,4 @@
-package es.deusto.bspq18.e6.DeustoBox.Client.gui;
+package es.deusto.bspq18.e6.DeustoBox.Server.gui;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
