@@ -12,6 +12,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import java.awt.Font;
 
 public class v_installer extends JFrame {
 
@@ -48,17 +51,17 @@ public class v_installer extends JFrame {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setTitle("Installer");
-		frame.setBounds(100, 100, 610, 456);
+		frame.setBounds(100, 100, 610, 309);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
 		txtPath = new JTextField();
-		txtPath.setBounds(15, 153, 414, 21);
+		txtPath.setBounds(31, 119, 398, 21);
 		frame.getContentPane().add(txtPath);
 		txtPath.setColumns(10);
 
 		JButton btnBrowse = new JButton("Browse");
-		btnBrowse.setBounds(470, 153, 87, 23);
+		btnBrowse.setBounds(465, 112, 87, 37);
 		frame.getContentPane().add(btnBrowse);
 
 		JButton btnCancel = new JButton("Cancel");
@@ -67,7 +70,7 @@ public class v_installer extends JFrame {
 				System.exit(0);
 			}
 		});
-		btnCancel.setBounds(124, 318, 115, 29);
+		btnCancel.setBounds(120, 180, 115, 29);
 		frame.getContentPane().add(btnCancel);
 
 		JButton btnOk = new JButton("Ok");
@@ -78,8 +81,14 @@ public class v_installer extends JFrame {
 				directorio.mkdir(); 
 			}
 		});
-		btnOk.setBounds(347, 318, 115, 29);
+		btnOk.setBounds(314, 180, 115, 29);
 		frame.getContentPane().add(btnOk);
+		
+		JLabel lblDeustoboxInstaller = new JLabel("DeustoBox installer");
+		lblDeustoboxInstaller.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		lblDeustoboxInstaller.setHorizontalAlignment(SwingConstants.CENTER);
+		lblDeustoboxInstaller.setBounds(163, 26, 220, 48);
+		frame.getContentPane().add(lblDeustoboxInstaller);
 
 		btnBrowse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
