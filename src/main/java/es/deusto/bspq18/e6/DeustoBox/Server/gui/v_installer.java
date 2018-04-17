@@ -152,10 +152,13 @@ public class v_installer extends JFrame {
 					// Upload all info to user's database
 					map.put(name, lastmodified.toString());
 				}
-			}
+			
 		}
 		System.out.println(map);
 		dao.addFiles(map, user);
+
+		}
 	}
 
 }
+

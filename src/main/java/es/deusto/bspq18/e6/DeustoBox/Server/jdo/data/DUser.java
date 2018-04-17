@@ -23,7 +23,7 @@ public class DUser implements Serializable {
 	@Join
 	private ArrayList<DFile> files;
 
-	public DUser(String email, String username, String password) {
+	public DUser(String username,String email, String password) {
 		this.email = email;
 		this.username = username;
 		this.password = password;
