@@ -455,3 +455,15 @@ Caused by: java.net.ConnectException: Connection refused: connect
 2018-04-16 08:45:27 INFO  Persistence:82 - Propiedad datanucleus.validateTables desconocida - vamos a ignorarla
 2018-04-16 08:45:27 INFO  Persistence:82 - Propiedad datanucleus.validateConstraints desconocida - vamos a ignorarla
 2018-04-16 08:45:27 INFO  Persistence:82 - Propiedad datanucleus.metadata.validate desconocida - vamos a ignorarla
+2018-04-17 15:38:17 INFO  Enhancer:82 - DataNucleus Enhancer (versión 5.1.8) para el API "JDO" utilisando el JRE "{2}"
+2018-04-17 15:38:18 INFO  Enhancer:82 - Escribiendo el archivo de clase "C:\Users\Markel\git\BSPQ18-E6\target\classes\es\deusto\bspq18\e6\DeustoBox\Server\jdo\data\User.class" con definicion enhanced
+2018-04-17 15:38:18 INFO  Enhancer:82 - ENHANCED (Persistable) : es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User
+2018-04-17 15:38:18 INFO  Enhancer:82 - DataNucleus Enhancer ha terminado con exito para 1 clases. Tiempos : input=194 ms, enhance=50 ms, total=244 ms. Compruebe el LOG para los detalles
+2018-04-17 15:43:23 INFO  Enhancer:82 - DataNucleus Enhancer (versión 5.1.8) para el API "JDO" utilisando el JRE "{2}"
+2018-04-17 15:43:24 INFO  Enhancer:82 - La clase "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User" esta enhanced.
+2018-04-17 15:43:24 INFO  Enhancer:82 - ENHANCED (Persistable) : es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.User
+2018-04-17 15:43:24 INFO  Enhancer:82 - DataNucleus Enhancer ha terminado con exito para 1 clases. Tiempos : input=170 ms, enhance=23 ms, total=193 ms. Compruebe el LOG para los detalles
+2018-04-17 15:44:03 INFO  Persistence:82 - Propiedad datanucleus.validateTables desconocida - vamos a ignorarla
+2018-04-17 15:44:03 INFO  Persistence:82 - Propiedad datanucleus.validateConstraints desconocida - vamos a ignorarla
+2018-04-17 15:44:03 INFO  Persistence:82 - Propiedad datanucleus.metadata.validate desconocida - vamos a ignorarla
+2018-04-17 15:44:05 INFO  DeustoBoxLog:11 - El logger se ha cargado
