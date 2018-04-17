@@ -9,6 +9,7 @@ import javax.jdo.Extent;
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
+import javax.jdo.Query;
 import javax.jdo.Transaction;
 
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DFile;
@@ -123,56 +124,30 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		return correct;
 	}
 
-	public void addFiles(HashMap<String, String> map, DUser user) {
-		PersistenceManager pm = null;
-		Transaction tx = null;
-		int numero = 0;
-		numero = getnewDFileID();
-		int contador = 0;
-		DUser auxiliar = null;
-		System.out.println("El tamaño es : " + map.size());
-		try {
-			System.out.println("- Store user's files in the DB");
-			pm = pmf.getPersistenceManager();
-			pm.getFetchPlan().setMaxFetchDepth(3);
-			tx = pm.currentTransaction();
-			tx.begin();
+	
+	public void addFiles(DFile file) {
+		PersistenceManager pm = pmf.getPersistenceManager();
+		pm.getFetchPlan().setMaxFetchDepth(3);
+		Transaction tx = pm.currentTransaction(); 
 
+		try {
+			tx.begin();
+			System.out.println("Adding files to the user...");
+			
 			Extent<DUser> extent = pm.getExtent(DUser.class, true);
-			for(DUser user2 : extent) {
-			System.out.println(user2.toString());
-				if(user2.getEmail().equals(user.getEmail())) {
-					auxiliar = new DUser(user2.getUsername(),user2.getEmail(),user2.getPassword());
-					pm.deletePersistent(user2);
-					tx.commit();
-					for (Map.Entry<String, String> entry : map.entrySet()) {
-						auxiliar.addFile(new DFile(user, (numero + contador), entry.getKey(), entry.getValue()));
-						
-						System.out.println("Archivo añadido");
-						System.out.println(auxiliar.toString());
-						contador++;
-					}
-					System.out.println("Let's make it persistent and delete the old user");
-					System.out.println("Auxiliar es: " + auxiliar.toString());
-					addUser(auxiliar);
+			
+			for (DUser usuario : extent) {
+				if(file.getUser().getEmail().equals(usuario.getEmail())) {
+					file.setUser(usuario);
+					usuario.addFile(file);
+					pm.makePersistent(usuario);
 					break;
-					
 				}
 			}
-			System.out.println("Inserting user's files into the database: SUCCESFUL");
-
+			tx.commit();
 		} catch (Exception ex) {
 			System.out.println("# Error storing objects: " + ex.getMessage());
-			ex.printStackTrace();
-		} finally {
-			if (tx.isActive()) {
-				tx.rollback();
-			}
-
-			pm.close();
-			System.out.println(getAllUsers());
 		}
-		
 	}
 	
 	public int getnewDFileID() { // Devuelve un User

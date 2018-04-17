@@ -64,6 +64,7 @@ public class DUser implements Serializable {
 	
 	public void addFile(DFile file) {	
 		files.add(file);
+		file.setUser(this);
 	}
 	public void removeFile(DFile file) {
 		files.remove(file);

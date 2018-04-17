@@ -3,6 +3,7 @@ package es.deusto.bspq18.e6.DeustoBox.Server.jdo.data;
 import java.io.Serializable;
 
 import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable(detachable="true")
@@ -13,6 +14,7 @@ public class DFile implements Serializable  {
 	private int id_file;
 	private String name;
 	private String lastModified;
+	@Persistent(defaultFetchGroup="true")
 	private DUser user;
 	
 	public DFile(DUser user, int id_file, String name, String lastModified) {

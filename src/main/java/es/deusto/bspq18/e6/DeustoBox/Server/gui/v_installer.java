@@ -20,6 +20,7 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO;
+import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DFile;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
 import es.deusto.bspq18.e6.DeustoBox.Server.remote.DeustoBoxRemoteService;
 
@@ -137,6 +138,7 @@ public class v_installer extends JFrame {
 	public void uploadFiles(HashMap<String, String> map, DUser user, File userFolder, String prefix) {
 		System.out.println("Current user: " + user.getUsername());
 		File[] list  = userFolder.listFiles();
+		DFile myfile = null;
 		if(list != null) {
 			for(File element : list) {
 				System.out.println("File: " + element.getName());
@@ -151,11 +153,14 @@ public class v_installer extends JFrame {
 					Date lastmodified = new Date(element.lastModified());
 					// Upload all info to user's database
 					map.put(name, lastmodified.toString());
+					// TODO de momento hacemos la prueba con uno
+					myfile = new DFile(user, 1, name, lastmodified.toString());
+					myfile.setUser(user);
 				}
-			
 		}
 		System.out.println(map);
-		dao.addFiles(map, user);
+		dao.addFiles(myfile);
+		//dao.addFiles(map, user);
 
 		}
 	}
