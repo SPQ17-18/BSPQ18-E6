@@ -8,9 +8,18 @@ private Logger logger;
 
 public DeustoBoxLog(){
 	this.logger = LoggerFactory.getLogger(DeustoBoxLog.class);
-	logger.info("El logger se ha cargado");
-	
+	logger.info("DeustoBox Log has been inicialized correctly");
 	
 }
+
+public Logger getLogger() {
+	return logger;
+}
+
+public void setLogger(Logger logger) {
+	this.logger = logger;
+}
+
+
 
 }

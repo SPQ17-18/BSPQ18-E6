@@ -18,12 +18,13 @@ public class DeustoBoxServer {
 		}
 
 		String name = "//" + args[0] + ":" + args[1] + "/" + args[2];
-
+		DeustoBoxLog log = new DeustoBoxLog();
 		try {
-			IDeustoBoxRemoteService deustoBox = new DeustoBoxRemoteService();
+			
+			IDeustoBoxRemoteService deustoBox = new DeustoBoxRemoteService(log);
 			Naming.rebind(name, deustoBox);
-			DeustoBoxLog log = new DeustoBoxLog();
-			System.out.println("- DeustoBoxServer:  '" + name + "' active and waiting...");
+			
+			log.getLogger().info(" DeustoBoxServer:  '" + name + "' active and waiting...");
 			InputStreamReader inputStreamReader = new InputStreamReader(System.in);
 			BufferedReader stdin = new BufferedReader(inputStreamReader);
 			
@@ -31,7 +32,7 @@ public class DeustoBoxServer {
 			
 
 		} catch (Exception e) {
-			System.err.println("$ DeustoBox exception: " + e.getMessage());
+			log.getLogger().error("An error has happened while inicializing the Server: " + e.getMessage());
 			e.printStackTrace();
 		}
 	}
