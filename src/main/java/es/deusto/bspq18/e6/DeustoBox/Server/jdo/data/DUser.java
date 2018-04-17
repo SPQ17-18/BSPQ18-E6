@@ -19,7 +19,7 @@ public class DUser implements Serializable {
 	private String username;
 	private String password;
 	
-	@Persistent(defaultFetchGroup="true", mappedBy="userEmail", dependentElement = "true")
+	@Persistent(defaultFetchGroup="true", mappedBy="user", dependentElement = "true")
 	@Join
 	private ArrayList<DFile> files;
 

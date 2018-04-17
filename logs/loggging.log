@@ -747,3 +747,40 @@ Caused by: java.net.ConnectException: Connection refused: connect
 2018-04-16 17:10:22 INFO  Persistence:82 - Propiedad datanucleus.validateTables desconocida - vamos a ignorarla
 2018-04-16 17:10:22 INFO  Persistence:82 - Propiedad datanucleus.validateConstraints desconocida - vamos a ignorarla
 2018-04-16 17:10:22 INFO  Persistence:82 - Propiedad datanucleus.metadata.validate desconocida - vamos a ignorarla
+2018-04-16 17:17:29 INFO  Enhancer:82 - DataNucleus Enhancer (versión 5.1.8) para el API "JDO" utilisando el JRE "{2}"
+2018-04-16 17:17:30 INFO  Enhancer:82 - Escribiendo el archivo de clase "C:\Users\aitor\git\BSPQ18-E6\target\classes\es\deusto\bspq18\e6\DeustoBox\Server\jdo\data\DFile.class" con definicion enhanced
+2018-04-16 17:17:30 INFO  Enhancer:82 - ENHANCED (Persistable) : es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DFile
+2018-04-16 17:17:30 INFO  Enhancer:82 - Escribiendo el archivo de clase "C:\Users\aitor\git\BSPQ18-E6\target\classes\es\deusto\bspq18\e6\DeustoBox\Server\jdo\data\DUser.class" con definicion enhanced
+2018-04-16 17:17:30 INFO  Enhancer:82 - ENHANCED (Persistable) : es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser
+2018-04-16 17:17:30 INFO  Enhancer:82 - DataNucleus Enhancer ha terminado con exito para 2 clases. Tiempos : input=196 ms, enhance=89 ms, total=285 ms. Compruebe el LOG para los detalles
+2018-04-16 17:18:00 INFO  Persistence:82 - Propiedad datanucleus.validateTables desconocida - vamos a ignorarla
+2018-04-16 17:18:00 INFO  Persistence:82 - Propiedad datanucleus.validateConstraints desconocida - vamos a ignorarla
+2018-04-16 17:18:00 INFO  Persistence:82 - Propiedad datanucleus.metadata.validate desconocida - vamos a ignorarla
+2018-04-16 17:18:01 INFO  Persistence:82 - Propiedad datanucleus.validateTables desconocida - vamos a ignorarla
+2018-04-16 17:18:01 INFO  Persistence:82 - Propiedad datanucleus.validateConstraints desconocida - vamos a ignorarla
+2018-04-16 17:18:01 INFO  Persistence:82 - Propiedad datanucleus.metadata.validate desconocida - vamos a ignorarla
+2018-04-16 17:18:39 INFO  Persistence:82 - Propiedad datanucleus.validateTables desconocida - vamos a ignorarla
+2018-04-16 17:18:39 INFO  Persistence:82 - Propiedad datanucleus.validateConstraints desconocida - vamos a ignorarla
+2018-04-16 17:18:39 INFO  Persistence:82 - Propiedad datanucleus.metadata.validate desconocida - vamos a ignorarla
+2018-04-16 17:18:40 INFO  Persistence:82 - Propiedad datanucleus.validateTables desconocida - vamos a ignorarla
+2018-04-16 17:18:40 INFO  Persistence:82 - Propiedad datanucleus.validateConstraints desconocida - vamos a ignorarla
+2018-04-16 17:18:40 INFO  Persistence:82 - Propiedad datanucleus.metadata.validate desconocida - vamos a ignorarla
+2018-04-16 17:18:57 WARN  Persist:101 - Persistencia del objeto "es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser@6400777e" con SQL "INSERT INTO `DUSER` (`PASSWORD`,`USERNAME`,`EMAIL`) VALUES (?,?,?)" ha tirado un error : Duplicate entry 'aitorugarte@opendeusto.es' for key 'PRIMARY'
+2018-04-16 17:27:42 INFO  Persistence:82 - Propiedad datanucleus.validateTables desconocida - vamos a ignorarla
+2018-04-16 17:27:42 INFO  Persistence:82 - Propiedad datanucleus.validateConstraints desconocida - vamos a ignorarla
+2018-04-16 17:27:42 INFO  Persistence:82 - Propiedad datanucleus.metadata.validate desconocida - vamos a ignorarla
+2018-04-16 17:27:43 INFO  Persistence:82 - Propiedad datanucleus.validateTables desconocida - vamos a ignorarla
+2018-04-16 17:27:43 INFO  Persistence:82 - Propiedad datanucleus.validateConstraints desconocida - vamos a ignorarla
+2018-04-16 17:27:43 INFO  Persistence:82 - Propiedad datanucleus.metadata.validate desconocida - vamos a ignorarla
+2018-04-16 17:29:04 INFO  Persistence:82 - Propiedad datanucleus.validateTables desconocida - vamos a ignorarla
+2018-04-16 17:29:04 INFO  Persistence:82 - Propiedad datanucleus.validateConstraints desconocida - vamos a ignorarla
+2018-04-16 17:29:04 INFO  Persistence:82 - Propiedad datanucleus.metadata.validate desconocida - vamos a ignorarla
+2018-04-16 17:29:05 INFO  Persistence:82 - Propiedad datanucleus.validateTables desconocida - vamos a ignorarla
+2018-04-16 17:29:05 INFO  Persistence:82 - Propiedad datanucleus.validateConstraints desconocida - vamos a ignorarla
+2018-04-16 17:29:05 INFO  Persistence:82 - Propiedad datanucleus.metadata.validate desconocida - vamos a ignorarla
+2018-04-16 17:29:53 INFO  Persistence:82 - Propiedad datanucleus.validateTables desconocida - vamos a ignorarla
+2018-04-16 17:29:53 INFO  Persistence:82 - Propiedad datanucleus.validateConstraints desconocida - vamos a ignorarla
+2018-04-16 17:29:53 INFO  Persistence:82 - Propiedad datanucleus.metadata.validate desconocida - vamos a ignorarla
+2018-04-16 17:29:54 INFO  Persistence:82 - Propiedad datanucleus.validateTables desconocida - vamos a ignorarla
+2018-04-16 17:29:54 INFO  Persistence:82 - Propiedad datanucleus.validateConstraints desconocida - vamos a ignorarla
+2018-04-16 17:29:54 INFO  Persistence:82 - Propiedad datanucleus.metadata.validate desconocida - vamos a ignorarla

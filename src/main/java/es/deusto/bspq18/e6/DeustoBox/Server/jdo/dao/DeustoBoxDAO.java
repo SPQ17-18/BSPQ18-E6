@@ -130,6 +130,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		try {
 			System.out.println("- Store user's files in the DB");
 			pm = pmf.getPersistenceManager();
+			pm.getFetchPlan().setMaxFetchDepth(3);
 			tx = pm.currentTransaction();
 			tx.begin();
 
@@ -138,9 +139,10 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 				if(user2.getEmail().equals(user.getEmail())) {
 					System.out.println("hi");
 					for (Map.Entry<String, String> entry : map.entrySet()) {
-						user2.addFile(new DFile(user.getEmail(), 1, entry.getKey(), entry.getValue()));
+						user2.addFile(new DFile(user, 1, entry.getKey(), entry.getValue()));
 					}
 					System.out.println(user2.getFiles().toString());
+					System.out.println("Let's make it persistent");
 					pm.makePersistent(user2);
 					break;
 				}

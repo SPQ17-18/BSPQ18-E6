@@ -65,10 +65,10 @@ public class DUserDTO implements Serializable {
 	}
 	
 	public void addFiles(DFile file) {
-		DFile newFile = new DFile(this.getEmail(), file.getId_file(), file.getName(), file.getLastModified());
+		/*DFile newFile = new DFile(this, file.getId_file(), file.getName(), file.getLastModified());
 		newFile.setName(file.getName());
 		newFile.setLastModified(file.getLastModified());		
-		files.add(newFile);
+		files.add(newFile);*/
 	}
 	public void removeFile(DFile file) {
 		files.remove(file);
@@ -79,7 +79,5 @@ public class DUserDTO implements Serializable {
 		return "UserDTO [email=" + email + ", username=" + username + ", password=" + password + ", fechaInicio="
 				+ fechaInicio + "]";
 	}
-
-	
 
 }

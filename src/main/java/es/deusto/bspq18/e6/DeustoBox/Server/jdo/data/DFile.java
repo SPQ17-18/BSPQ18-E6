@@ -13,21 +13,21 @@ public class DFile implements Serializable  {
 	private int id_file;
 	private String name;
 	private String lastModified;
-	private String userEmail;
+	private DUser user;
 	
-	public DFile(String userEmail, int id_file, String name, String lastModified) {
-		this.userEmail = userEmail;
+	public DFile(DUser user, int id_file, String name, String lastModified) {
+		this.user = user;
 		this.id_file = id_file;
 		this.name = name;
 		this.lastModified = lastModified;
 	}
 	
-	public String getEmail() {
-		return userEmail;
+	public DUser getUser() {
+		return user;
 	}
 
-	public void setEmail(String email) {
-		this.userEmail = email;
+	public void setUser(DUser user) {
+		this.user = user;
 	}
 
 	public int getId_file() {
