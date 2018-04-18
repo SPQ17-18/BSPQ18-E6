@@ -1,24 +1,33 @@
 package es.deusto.bspq18.e6.DeustoBox.Server.jdo.data;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashMap;
 
+import javax.jdo.annotations.Join;
 import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
 
 @PersistenceCapable(detachable="true")
-public class User implements Serializable {
+public class DUser implements Serializable {
 
 	private static final long serialVersionUID = -3653362043946570733L;
 	@PrimaryKey
 	private String email;
 	private String username;
 	private String password;
+	
+	@Persistent(defaultFetchGroup="true", mappedBy="user", dependentElement = "true")
+	@Join
+	private ArrayList<DFile> files;
 
-	public User(String email, String username, String password) {
+	public DUser(String username,String email, String password) {
 		this.email = email;
 		this.username = username;
 		this.password = password;
+		this.files = new ArrayList<DFile>();
 	}
 
 	public String getEmail() {
@@ -29,11 +38,11 @@ public class User implements Serializable {
 		this.email = email;
 	}
 
-	public String getName() {
+	public String getUsername() {
 		return username;
 	}
 
-	public void setName(String username) {
+	public void setUsername(String username) {
 		this.username = username;
 	}
 
@@ -43,6 +52,22 @@ public class User implements Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+		
+	public ArrayList<DFile> getFiles() {
+		return files;
+	}
+
+	public void setFiles(ArrayList<DFile> files) {
+		this.files = files;
+	}
+	
+	public void addFile(DFile file) {	
+		files.add(file);
+		file.setUser(this);
+	}
+	public void removeFile(DFile file) {
+		files.remove(file);
 	}
 
 	@Override

@@ -34,13 +34,15 @@ C:\Users\aitor\git\BSPQ18-E6\src\main\java\es\deusto\bspq18\e6\DeustoBox\Server\
 C:\Users\aitor\git\BSPQ18-E6\src\main\java\es\deusto\bspq18\e6\DeustoBox\Server\assembler\Assemble.java
 C:\Users\aitor\git\BSPQ18-E6\src\main\java\es\deusto\bspq18\e6\DeustoBox\Client\gui\idea_client.java
 C:\Users\aitor\git\BSPQ18-E6\src\main\java\es\deusto\bspq18\e6\DeustoBox\Client\remote\RMIServiceLocator.java
-C:\Users\aitor\git\BSPQ18-E6\src\main\java\es\deusto\bspq18\e6\DeustoBox\Client\gui\v_instalador.java
-C:\Users\aitor\git\BSPQ18-E6\src\main\java\es\deusto\bspq18\e6\DeustoBox\Server\dto\UserDTO.java
+C:\Users\aitor\git\BSPQ18-E6\src\main\java\es\deusto\bspq18\e6\DeustoBox\Server\jdo\data\DFile.java
+C:\Users\aitor\git\BSPQ18-E6\src\main\java\es\deusto\bspq18\e6\DeustoBox\Server\gui\v_installer.java
+C:\Users\aitor\git\BSPQ18-E6\src\main\java\es\deusto\bspq18\e6\DeustoBox\Server\jdo\data\DUser.java
 C:\Users\aitor\git\BSPQ18-E6\src\main\java\es\deusto\bspq18\e6\DeustoBox\Server\jdo\dao\IDeustoBoxDAO.java
 C:\Users\aitor\git\BSPQ18-E6\src\main\java\es\deusto\bspq18\e6\DeustoBox\Client\gui\v_client.java
 C:\Users\aitor\git\BSPQ18-E6\src\main\java\es\deusto\bspq18\e6\DeustoBox\Client\controller\Controller.java
 C:\Users\aitor\git\BSPQ18-E6\src\main\java\es\deusto\bspq18\e6\DeustoBox\Client\gui\v_register.java
 C:\Users\aitor\git\BSPQ18-E6\src\main\java\es\deusto\bspq18\e6\DeustoBox\Server\utils\Analisis_Red.java
+<<<<<<< HEAD
 C:\Users\aitor\git\BSPQ18-E6\src\main\java\es\deusto\bspq18\e6\DeustoBox\Server\jdo\data\User.java
 >>>>>>> refs/heads/Aitor
 =======
@@ -87,3 +89,7 @@ C:\Users\Markel\git\BSPQ18-E6\src\main\java\es\deusto\bspq18\e6\DeustoBox\Server
 /Users/Markel/git/BSPQ18-E6/src/main/java/es/deusto/bspq18/e6/DeustoBox/Server/utils/Analisis_Red.java
 /Users/Markel/git/BSPQ18-E6/src/main/java/es/deusto/bspq18/e6/DeustoBox/Client/gui/v_login.java
 >>>>>>> refs/remotes/origin/Markel
+=======
+C:\Users\aitor\git\BSPQ18-E6\src\main\java\es\deusto\bspq18\e6\DeustoBox\Client\gui\v_installer.java
+C:\Users\aitor\git\BSPQ18-E6\src\main\java\es\deusto\bspq18\e6\DeustoBox\Server\dto\DUserDTO.java
+>>>>>>> refs/remotes/origin/Aitor

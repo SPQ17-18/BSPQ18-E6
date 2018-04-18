@@ -111,6 +111,7 @@ public class v_register extends JFrame {
 				} else if (!p.equals(p2)) {
 					JOptionPane.showMessageDialog(null, "Make sure you entered the password correctly");
 				} else {
+<<<<<<< HEAD
 					// Los datos son correctos, registramos
 					boolean user = controlador.signUp(txtUsername.getText(), txtEmail.getText(), txtPassword.getText());
 					
@@ -121,6 +122,14 @@ public class v_register extends JFrame {
 						
 					}
 					else{
+=======
+					boolean user = controlador.signUp(txtUsername.getText(), txtEmail.getText(), password1);
+					if(user){ 
+						JOptionPane.showMessageDialog(null, "You have been registered successfully");
+						new v_login(controlador);
+						dispose();
+					}else{
+>>>>>>> refs/remotes/origin/Aitor
 						JOptionPane.showMessageDialog(null, "An error happens while registering, check if the email is not already used.");
 					}
 					
