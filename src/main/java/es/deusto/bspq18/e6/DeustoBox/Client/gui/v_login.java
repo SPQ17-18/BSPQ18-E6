@@ -84,7 +84,6 @@ public class v_login extends JFrame {
 		btnEnter = new JButton("Sign In");
 		btnEnter.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-<<<<<<< HEAD
 				String u = txtUsername.getText();
 				String p = passwordField.getText();
 				if(u.equals("")){
@@ -100,7 +99,6 @@ public class v_login extends JFrame {
 					setVisible(false);
 					}
 					else{
-=======
 				String name = txtUsername.getText();
 				char pass[] = passwordField.getPassword();
 				String password = new String(pass);
@@ -117,7 +115,6 @@ public class v_login extends JFrame {
 						installer.frame.setVisible(true);
 						dispose();
 					} else {
->>>>>>> refs/remotes/origin/Aitor
 						JOptionPane.showMessageDialog(null, "Access data is not correct, try again");
 					}
 				}
@@ -127,11 +124,8 @@ public class v_login extends JFrame {
 		panel.add(btnEnter);
 		
 		lblRegister = new JLabel("Don't have an account yet?");
-<<<<<<< HEAD
 		lblRegister.setBounds(29, 198, 190, 20);
-=======
 		lblRegister.setBounds(87, 230, 186, 20);
->>>>>>> refs/remotes/origin/Aitor
 		panel.add(lblRegister);
 		
 		btnCreateAccount = new JButton("Create an account");

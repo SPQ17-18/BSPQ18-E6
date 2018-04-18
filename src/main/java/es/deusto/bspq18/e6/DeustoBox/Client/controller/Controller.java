@@ -45,12 +45,9 @@ public class Controller {
 		if (res.equals(null)) {
 			System.out.println("The user doesn't exist");
 			return false;
-<<<<<<< HEAD
 		}
 		else{
-=======
-		} else {
->>>>>>> refs/remotes/origin/Aitor
+		
 			this.userdto = res;
 			return true;
 		}
