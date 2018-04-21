@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.border.EmptyBorder;
 
 import es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller;
@@ -24,8 +25,8 @@ public class v_register extends JFrame {
 	private JPanel contentPane;
 	private JTextField txtEmail;
 	private JTextField txtUsername;
-	private JTextField txtPassword;
-	private JTextField txtPassword2;
+	private JPasswordField txtPassword;
+	private JPasswordField txtPassword2;
 	private JPanel panel;
 	private JLabel lblJoinDeustobox;
 	private JLabel lblUsername;
@@ -89,12 +90,12 @@ public class v_register extends JFrame {
 		panel.add(txtUsername);
 		txtUsername.setColumns(10);
 
-		txtPassword = new JTextField();
+		txtPassword = new JPasswordField();
 		txtPassword.setBounds(98, 129, 146, 22);
 		panel.add(txtPassword);
 		txtPassword.setColumns(10);
 
-		txtPassword2 = new JTextField();
+		txtPassword2 = new JPasswordField();
 		txtPassword2.setBounds(146, 165, 146, 22);
 		panel.add(txtPassword2);
 		txtPassword2.setColumns(10);
@@ -102,30 +103,28 @@ public class v_register extends JFrame {
 		btnRegister = new JButton("Register");
 		btnRegister.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent Ae) {
-				String e = txtEmail.getText();
-				String u = txtUsername.getText();
-				String p = txtPassword.getText();
-				String p2 = txtPassword2.getText();
-				if (e.equals("") || u.equals("") || p.equals("") || p2.equals("")) {
+				String email = txtEmail.getText();
+				String username = txtUsername.getText();
+				
+				char pass1[] = txtPassword.getPassword();
+				char pass2[] = txtPassword2.getPassword();
+				String password1 = new String(pass1);
+				String password2 = new String(pass2);
+				
+				if (email.trim().equals("") || username.trim().equals("") || password1.trim().equals("") || password2.trim().equals("")) {
 					JOptionPane.showMessageDialog(null, "Please fill in all of the gaps");
-				} else if (!p.equals(p2)) {
+				} else if (!password1.equals(password2)) {
 					JOptionPane.showMessageDialog(null, "Make sure you entered the password correctly");
 				} else {
-					// Los datos son correctos, registramos
-					boolean user = controlador.signUp(txtUsername.getText(), txtEmail.getText(), txtPassword.getText());
-					
-					if(user){ //El usuario ha sido registrado con exito
-						JOptionPane.showMessageDialog(null, "Welcome to DeustoBOX " + u + ".");
-						window = new v_client(controlador);
-						setVisible(false);
-						
-					}
-					else{
+					boolean user = controlador.signUp(txtUsername.getText(), txtEmail.getText(), password1);
+					if(user){ 
+						JOptionPane.showMessageDialog(null, "You have been registered successfully");
+						new v_login(controlador);
+						dispose();
+					}else{
 						JOptionPane.showMessageDialog(null, "An error happens while registering, check if the email is not already used.");
 					}
-					
 				}
-
 			}
 		});
 		btnRegister.setBounds(67, 199, 107, 29);
