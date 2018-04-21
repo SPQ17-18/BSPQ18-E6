@@ -11,6 +11,9 @@ import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+
+import es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller;
+
 import java.awt.Font;
 
 public class v_installer extends JFrame {
@@ -19,28 +22,14 @@ public class v_installer extends JFrame {
 	protected JFrame frame;
 	private JTextField txtPath;
 	private JFileChooser fileChooser;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					v_installer window = new v_installer();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	private Controller controlador;
 
 	/**
 	 * Create the application.
 	 */
-	public v_installer() {
+	public v_installer(Controller controlador) {
 		initialize();
+		this.controlador = controlador;
 	}
 
 	/**
@@ -75,8 +64,11 @@ public class v_installer extends JFrame {
 		btnOk.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String dir = fileChooser.getSelectedFile().toString();
-				File directorio=new File(dir + "\\Deusto-Box"); 
+				File directorio=new File(dir + "\\Client Deusto-Box"); 
 				directorio.mkdir(); 
+				v_client client = new v_client(controlador);
+				client.setVisible(true);
+				dispose();
 			}
 		});
 		btnOk.setBounds(314, 180, 115, 29);

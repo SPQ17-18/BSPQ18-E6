@@ -97,7 +97,7 @@ public class v_login extends JFrame {
 					boolean user = controlador.login(name, password);
 					if (user) {
 						JOptionPane.showMessageDialog(null, "We are glad to have you back in DeustoBox " + name + ".");
-						v_installer installer = new v_installer();
+						v_installer installer = new v_installer(controlador);
 						installer.frame.setVisible(true);
 						dispose();
 					} else {

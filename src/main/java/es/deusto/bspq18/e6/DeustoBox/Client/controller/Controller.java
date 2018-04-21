@@ -50,6 +50,22 @@ public class Controller {
 		}
 
 	}
+	
+	public void getFiles(String email){
+		//Pedimos al servidor todos los archivos correspondientes a al email
+		
+		
+		//Los almacenamos en el directorio marcado
+		
+		
+		
+	}
+	
+	public int getNumberOfFiles(String email){
+		
+		
+	return 12;
+	}
 
 	public DUserDTO getUserdto() {
 		return userdto;
