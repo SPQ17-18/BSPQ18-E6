@@ -1,13 +1,9 @@
 package es.deusto.bspq18.e6.DeustoBox.Server.gui;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import java.rmi.RemoteException;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -15,21 +11,20 @@ import java.util.HashMap;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.border.EmptyBorder;
-
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DFile;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
-import es.deusto.bspq18.e6.DeustoBox.Server.remote.DeustoBoxRemoteService;
-
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+
+import org.apache.tools.ant.util.FileUtils;
+
 import java.awt.Font;
 
 public class v_installer extends JFrame {
 
+	private static final long serialVersionUID = 1L;
 	public JFrame frame;
 	private JTextField txtPath;
 	private JFileChooser fileChooser;
@@ -122,8 +117,35 @@ public class v_installer extends JFrame {
 	 */
 	public void createFolders(String path) {
 		File directorio = new File(path);
-		directorio.mkdir();
 		ArrayList<DUser> users = dao.getAllUsers();
+		if (directorio.exists()) {
+			System.out.println("Directory exits");
+			// Check if there are any user folders
+			File[] userFiles = directorio.listFiles();
+			// Get all emails registered
+			ArrayList<String> emails = new ArrayList<String>();
+			for (int z = 0; z < users.size(); z++) {
+				emails.add(users.get(z).getEmail());
+			}
+			// Check if the user exits or not
+			for (int i = 0; i < userFiles.length; i++) {
+				System.out.println(userFiles[i].getName());
+				if (!emails.contains(userFiles[i].getName())) {
+					// Delete all files of that non-existing user
+					String[] entries = userFiles[i].list();
+					if (entries != null) {
+						for (String s : entries) {
+							File currentFile = new File(userFiles[i].getPath(), s);
+							currentFile.delete();
+						}
+					}
+					userFiles[i].delete();
+				}
+			}
+		} else {
+			directorio.mkdir();
+		}
+
 		for (int i = 0; i < users.size(); i++) {
 			File userFolder = new File(directorio + "\\" + users.get(i).getEmail());
 			userFolder.mkdir();
@@ -136,34 +158,42 @@ public class v_installer extends JFrame {
 	 * Syncs files (TODO we need a thread here)
 	 */
 	public void uploadFiles(HashMap<String, String> map, DUser user, File userFolder, String prefix) {
-		System.out.println("Current user: " + user.getUsername());
-		File[] list  = userFolder.listFiles();
+		System.out.println("Current user: " + user.getEmail());
+		File[] list = userFolder.listFiles();
 		DFile myfile = null;
-		if(list != null) {
-			for(File element : list) {
+		if (list != null) {
+			for (File element : list) {
 				System.out.println("File: " + element.getName());
-				if(element.isDirectory()) {
+				if (element.isDirectory()) {
 					System.out.println("Is directory");
-					uploadFiles(map, user, element, element.getName()+"/");
-				}else { // It's file
+					uploadFiles(map, user, element, element.getName() + "/");
+				} else { // It's file
 					System.out.println("Is file");
 					// Get the name
-					String name = prefix+element.getName();
+					String name = prefix + element.getName();
 					// Get the last modified date
 					Date lastmodified = new Date(element.lastModified());
 					// Upload all info to user's database
-					map.put(name, lastmodified.toString());
-					// TODO de momento hacemos la prueba con uno
-					myfile = new DFile(user, 1, name, lastmodified.toString());
-					myfile.setUser(user);
+					// Check if it exits
+					DFile file = new DFile(user, 1, name, lastmodified.toString());
+					ArrayList<DFile> files = dao.getAllFiles();
+					//System.out.println(files);
+					if (files.contains(file)) {
+						// TODO Check the lastmodified
+						System.out.println("Checking the last modified");
+					} else {
+						System.out.println("Uploading the file");
+						// Upload the File data
+						map.put(name, lastmodified.toString());
+						// TODO de momento hacemos la prueba con uno
+						myfile = new DFile(user,(int) (Math.random() * 100) + 1, name, lastmodified.toString());
+						myfile.setUser(user);
+						System.out.println(map);
+						dao.addFiles(myfile);
+					}
 				}
-		}
-		System.out.println(map);
-		dao.addFiles(myfile);
-		//dao.addFiles(map, user);
-
+			}
 		}
 	}
 
 }
-

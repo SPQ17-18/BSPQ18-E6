@@ -61,6 +61,39 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		return myUser;
 	}
 	
+	public ArrayList<DFile> getAllFiles(){
+		PersistenceManager pm = pmf.getPersistenceManager();
+		pm.getFetchPlan().setMaxFetchDepth(3);
+		Transaction tx = pm.currentTransaction();
+
+		ArrayList<DFile> files = new ArrayList<DFile>();
+		try {
+			System.out.println("- Retrieving Files using an 'Extent'...");
+
+			pm = pmf.getPersistenceManager();
+			tx = pm.currentTransaction();
+
+			tx.begin();
+
+			Extent<DFile> extent = pm.getExtent(DFile.class, true);
+
+			for (DFile file : extent) {
+				files.add(file);
+			}
+
+			tx.commit();
+
+		} catch (Exception ex) {
+			System.out.println("# Error retrieving Files using an 'Extent': " + ex.getMessage());
+		} finally {
+			if (tx.isActive()) {
+				tx.rollback();
+			}
+			pm.close();
+		}
+		return files;
+	}
+	
 	public ArrayList<DUser> getAllUsers(){
 		PersistenceManager pm = pmf.getPersistenceManager();
 		pm.getFetchPlan().setMaxFetchDepth(3);
@@ -148,39 +181,6 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		} catch (Exception ex) {
 			System.out.println("# Error storing objects: " + ex.getMessage());
 		}
-	}
-	
-	public int getnewDFileID() { // Devuelve un User
-		// Persistence Manager
-		int number = 0;
-		PersistenceManager pm = null;
-		// Transaction to group DB operations
-		Transaction tx = null;
-		pm = pmf.getPersistenceManager();
-		tx = pm.currentTransaction();
-		try {
-
-			// Start the transaction
-			tx.begin();
-
-			Extent<DFile> extent = pm.getExtent(DFile.class, true);
-
-			for (DFile res : extent) {
-				number = res.getId_file();
-			}
-
-			number++;
-
-		} catch (Exception ex) {
-			System.out.println("# Error getting the DFiles " + ex.getMessage());
-		} finally {
-			if (tx.isActive()) {
-				tx.rollback();
-			}
-
-			pm.close();
-		}
-		return number;
 	}
 	
 	public static void main(String[] args) {
