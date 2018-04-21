@@ -4,9 +4,12 @@ import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
@@ -19,6 +22,8 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
 import org.apache.tools.ant.util.FileUtils;
+
+import android.text.format.DateFormat;
 
 import java.awt.Font;
 
@@ -173,20 +178,46 @@ public class v_installer extends JFrame {
 					String name = prefix + element.getName();
 					// Get the last modified date
 					Date lastmodified = new Date(element.lastModified());
-					// Upload all info to user's database
-					// Check if it exits
+
 					DFile file = new DFile(user, 1, name, lastmodified.toString());
-					ArrayList<DFile> files = dao.getAllFiles();
-					//System.out.println(files);
-					if (files.contains(file)) {
-						// TODO Check the lastmodified
-						System.out.println("Checking the last modified");
+					ArrayList<DFile> files = user.getFiles();
+					if (files != null) {
+						// Check if the user has that file
+						for (int i = 0; i < files.size(); i++) {
+							if (file.getName().equals((file.getName()))) {
+								System.out.println("hey");
+								SimpleDateFormat format = new SimpleDateFormat("EE MMM dd HH:mm:ss z yyyy",
+										Locale.ENGLISH);
+								try {
+									// TODO optimizalo porque más arriba se usa el dateDB y
+									// se parsea de una forma más fácil
+									Date dateDB = format.parse(files.get(i).getLastModified());
+									Date datePC = format.parse(file.getLastModified());
+									if (file.getName().equals(files.get(i).getName()) && datePC.after(dateDB)) {
+										System.out.println("Uploading the file");
+										// Upload the File data
+										map.put(name, lastmodified.toString());
+										// TODO de momento hacemos la prueba con uno
+										myfile = new DFile(user, (int) (Math.random() * 100) + 1, name,
+												lastmodified.toString());
+										myfile.setUser(user);
+										System.out.println(map);
+										dao.addFiles(myfile);
+									} else {
+										// nothing, no puede ser
+									}
+								} catch (ParseException e) {
+									e.printStackTrace();
+								}
+								break;
+							}
+						}
 					} else {
 						System.out.println("Uploading the file");
 						// Upload the File data
 						map.put(name, lastmodified.toString());
 						// TODO de momento hacemos la prueba con uno
-						myfile = new DFile(user,(int) (Math.random() * 100) + 1, name, lastmodified.toString());
+						myfile = new DFile(user, (int) (Math.random() * 100) + 1, name, lastmodified.toString());
 						myfile.setUser(user);
 						System.out.println(map);
 						dao.addFiles(myfile);
