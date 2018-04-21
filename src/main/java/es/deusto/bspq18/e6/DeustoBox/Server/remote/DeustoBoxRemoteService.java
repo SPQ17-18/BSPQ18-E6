@@ -58,12 +58,10 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		System.out.println(path);
 		
 		ArrayList<DFile> files = db.getAllFilesOfAUser(email);
-		System.out.println("El archivo es: " + files.get(0).toString());
+		ArrayList<DFileDTO> filesDTO = null;
+		filesDTO = assemble.createFilesDTO(files, path);
 		
-		String pathFile = path + files.get(0).getName().substring(1);
-		System.out.println("El nuevo path es: " + pathFile);
-		assemble.createFileDTO(files.get(0), pathFile);
-			
+		
 			return null;
 		}
 
