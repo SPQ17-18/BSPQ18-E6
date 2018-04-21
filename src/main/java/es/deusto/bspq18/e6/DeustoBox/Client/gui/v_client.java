@@ -44,7 +44,7 @@ public class v_client extends JFrame {
 		lblUsername.setBounds(10, 11, 76, 14);
 		contentPane.add(lblUsername);
 		
-		lblUser = new JLabel("Hola");
+		lblUser = new JLabel(getControlador().getUserdto().getEmail());
 		lblUser.setBounds(140, 11, 46, 14);
 		contentPane.add(lblUser);
 		
@@ -67,7 +67,7 @@ public class v_client extends JFrame {
 		this.setVisible(true);
 		SyncFiles.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				getControlador().getFiles("hola");
+				getControlador().getFiles(getControlador().getUserdto().getEmail());
 			}
 		});
 		

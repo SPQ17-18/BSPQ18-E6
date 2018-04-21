@@ -52,19 +52,18 @@ public class Controller {
 	}
 	
 	public void getFiles(String email){
-		//Pedimos al servidor todos los archivos correspondientes a al email
-		
-		
-		//Los almacenamos en el directorio marcado
-		
-		
-		
+		try {
+			rsl.getService().getFiles(email);
+		} catch (Exception ex) {
+			System.err.println("- Exception " + ex.getMessage());
+			ex.printStackTrace();
+		}		
 	}
 	
 	public int getNumberOfFiles(String email){
 		
 		
-	return 12;
+	return 69;
 	}
 
 	public DUserDTO getUserdto() {

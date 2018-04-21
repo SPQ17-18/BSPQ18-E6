@@ -1,11 +1,15 @@
 package es.deusto.bspq18.e6.DeustoBox.Server.remote;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.ArrayList;
 
 import es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assembler;
+import es.deusto.bspq18.e6.DeustoBox.Server.dto.DFileDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DUserDTO;
+import es.deusto.bspq18.e6.DeustoBox.Server.gui.v_installer;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO;
+import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DFile;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
 import es.deusto.bspq18.e6.DeustoBox.Server.remote.IDeustoBoxRemoteService;
 
@@ -15,10 +19,14 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		private static final long serialVersionUID = 1L;
 		private IDeustoBoxDAO db;
 		private Assembler assemble;
+		private String path;
+		private v_installer installer;
 		
 		public DeustoBoxRemoteService() throws RemoteException {
 			db = new DeustoBoxDAO();
 			assemble = new Assembler();
+			installer = new v_installer();
+			installer.frame.setVisible(true);
 		}
 
 		public DUserDTO signUp(String username, String email, String password) throws RemoteException {
@@ -36,7 +44,42 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		}
 
 		public DUserDTO login(String email, String password) throws RemoteException {
-			return assemble.userDTO(db.getUser(email, password));
+			
+			DUser user = db.getUser(email, password);
+			System.out.println("aqui hay " + user.toString());
+			DUserDTO us = assemble.userDTO(user);
+			
+			return us;
 		}
+
+		public DFileDTO getFiles(String email) throws RemoteException {
+		String path = getInstaller().getTxtPath().getText();
+		path = path + "\\" + email + "\\";
+		System.out.println(path);
+		
+		ArrayList<DFile> files = db.getAllFilesOfAUser(email);
+		System.out.println("El archivo es: " + files.get(0).toString());
+		
+		String pathFile = path + files.get(0).getName().substring(1);
+		System.out.println("El nuevo path es: " + pathFile);
+		assemble.createFileDTO(files.get(0), pathFile);
+			
+			return null;
+		}
+
+		public void setPath(String path) {
+			this.path = path;
+		}
+
+		public v_installer getInstaller() {
+			return installer;
+		}
+
+		
+		
+		
+		
+		
+		
 		
 }

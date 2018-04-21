@@ -30,25 +30,7 @@ public class v_installer extends JFrame {
 	private JFileChooser fileChooser;
 	private DeustoBoxDAO dao;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					v_installer window = new v_installer();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
-	/**
-	 * Create the application.
-	 */
 	public v_installer() {
 		initialize();
 	}
@@ -195,5 +177,11 @@ public class v_installer extends JFrame {
 			}
 		}
 	}
+
+	public JTextField getTxtPath() {
+		return txtPath;
+	}
+	
+	
 
 }
