@@ -1,4 +1,8 @@
 /target/
-.settings/
+
 /logs/
-/datanucleus.log
+
+.DS_Store
+.classpath
+.project
+.settings/
