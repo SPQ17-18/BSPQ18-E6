@@ -68,6 +68,7 @@ public class Controller {
 		getListOfFiles(userdto.getEmail());
 		
 		File directorio=new File(this.path);
+		if(!directorio.exists())
 		directorio.mkdir();
 		
 		for(DFileDTO file : filesDTO){
