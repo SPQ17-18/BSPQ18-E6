@@ -240,5 +240,11 @@ public class v_installer extends JFrame {
 			}
 		}
 	}
+	
+	public JTextField getTxtPath() {
+		return txtPath;
+	}
+	
+	
 
 }
