@@ -241,7 +241,7 @@ public class v_installer extends JFrame {
 											myfile = new DFile(user, hash, name, lastmodified.toString());
 											myfile.setUser(user);
 											dao.deleteFiles(files.get(i));
-											//dao.addFiles(myfile);
+											dao.addFiles(myfile);
 										} else {
 											break;
 										}
