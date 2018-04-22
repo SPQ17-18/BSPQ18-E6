@@ -4,6 +4,14 @@ import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.security.DigestInputStream;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -21,6 +29,8 @@ import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
+import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.commons.io.IOUtils;
 import org.apache.tools.ant.util.FileUtils;
 
 import android.text.format.DateFormat;
@@ -123,10 +133,28 @@ public class v_installer extends JFrame {
 	public void createFolders(String path) {
 		File directorio = new File(path);
 		ArrayList<DUser> users = dao.getAllUsers();
+
 		if (directorio.exists()) {
-			System.out.println("Directory exits");
-			// Check if there are any user folders
-			File[] userFiles = directorio.listFiles();
+			checkOldFolders(directorio, users);
+		} else {
+			directorio.mkdir();
+		}
+		// Create one folder for each user stored in the DB
+		for (int i = 0; i < users.size(); i++) {
+			File userFolder = new File(directorio + "\\" + users.get(i).getEmail());
+			userFolder.mkdir();
+			HashMap<String, String> map = new HashMap<>();
+			System.out.println("Current user: " + users.get(i).getEmail());
+			updateFileDB(map, users.get(i), userFolder, "/");
+		}
+	}
+
+	public void checkOldFolders (File directorio, ArrayList<DUser> users) {
+		System.out.println("Directory exits");
+		// Check if there are any user folders
+		File[] userFiles = directorio.listFiles();
+
+		if (userFiles != null) {
 			// Get all emails registered
 			ArrayList<String> emails = new ArrayList<String>();
 			for (int z = 0; z < users.size(); z++) {
@@ -134,7 +162,6 @@ public class v_installer extends JFrame {
 			}
 			// Check if the user exits or not
 			for (int i = 0; i < userFiles.length; i++) {
-				System.out.println(userFiles[i].getName());
 				if (!emails.contains(userFiles[i].getName())) {
 					// Delete all files of that non-existing user
 					String[] entries = userFiles[i].list();
@@ -144,48 +171,61 @@ public class v_installer extends JFrame {
 							currentFile.delete();
 						}
 					}
+					// Delete user folder
 					userFiles[i].delete();
 				}
 			}
-		} else {
-			directorio.mkdir();
-		}
-
-		for (int i = 0; i < users.size(); i++) {
-			File userFolder = new File(directorio + "\\" + users.get(i).getEmail());
-			userFolder.mkdir();
-			HashMap<String, String> map = new HashMap<>();
-			uploadFiles(map, users.get(i), userFolder, "/");
 		}
 	}
+	
+	public static String generateMD5() {
+		String md5 = null;
+		String dir = "D:\\aitor\\Escritorio\\Deusto-Box\\aitorugarte@opendeusto.es\\prueba.txt";
+		File file = new File(dir);
+		FileInputStream fileInputStream = null;
 
+		try {
+			fileInputStream = new FileInputStream(file);
+			
+			md5 = DigestUtils.md5Hex(IOUtils.toByteArray(fileInputStream));
+
+			fileInputStream.close();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		return md5;
+	}
 	/*
 	 * Syncs files (TODO we need a thread here)
 	 */
-	public void uploadFiles(HashMap<String, String> map, DUser user, File userFolder, String prefix) {
-		System.out.println("Current user: " + user.getEmail());
+	public void updateFileDB(HashMap<String, String> map, DUser user, File userFolder, String prefix) {
 		File[] list = userFolder.listFiles();
 		DFile myfile = null;
+		
 		if (list != null) {
+			// For each element in this directory...
 			for (File element : list) {
 				System.out.println("File: " + element.getName());
+				
 				if (element.isDirectory()) {
-					System.out.println("Is directory");
-					uploadFiles(map, user, element, element.getName() + "/");
-				} else { // It's file
-					System.out.println("Is file");
+					System.out.println("It's directory");
+					updateFileDB(map, user, element, element.getName() + "/");
+				} else {
+					System.out.println("It's file");
 					// Get the name
 					String name = prefix + element.getName();
 					// Get the last modified date
 					Date lastmodified = new Date(element.lastModified());
-
+					// Get the MD5 Hash
+					
 					DFile file = new DFile(user, 1, name, lastmodified.toString());
 					ArrayList<DFile> files = user.getFiles();
 					if (files != null) {
 						// Check if the user has that file
-						for (int i = 0; i < files.size(); i++) {
-							if (file.getName().equals((file.getName()))) {
-								System.out.println("hey");
+						for (int i = 0; i < files.size(); i++) {							
+							if (file.getName().equals((files.get(i).getName()))) {
 								SimpleDateFormat format = new SimpleDateFormat("EE MMM dd HH:mm:ss z yyyy",
 										Locale.ENGLISH);
 								try {
