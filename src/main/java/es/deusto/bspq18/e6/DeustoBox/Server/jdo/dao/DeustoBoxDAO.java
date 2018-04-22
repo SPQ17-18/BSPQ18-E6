@@ -157,31 +157,31 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		return correct;
 	}
 
-	
-	public void addFiles(DFile file) {
+	public void addFile(DFile file) {
 		PersistenceManager pm = pmf.getPersistenceManager();
 		pm.getFetchPlan().setMaxFetchDepth(3);
 		Transaction tx = pm.currentTransaction(); 
 
 		try {
 			tx.begin();
-			System.out.println("Adding files to the user...");
+			System.out.println("Adding file to the user...");
 			
 			Extent<DUser> extent = pm.getExtent(DUser.class, true);
 			
 			for (DUser usuario : extent) {
-				if(file.getUser().getEmail().equals(usuario.getEmail())) {
-					file.setUser(usuario);
-					usuario.addFile(file);
-					pm.makePersistent(usuario);
-					break;
-				}
+					if(file.getUser().getEmail().equals(usuario.getEmail())) {
+						file.setUser(usuario);
+						usuario.addFile(file);
+						pm.makePersistent(usuario);
+						break;
+					}
 			}
 			tx.commit();
 		} catch (Exception ex) {
 			System.out.println("# Error storing objects: " + ex.getMessage());
 		}
 	}
+	
 	
 	public void deleteFiles(DFile file) {
 		PersistenceManager pm = pmf.getPersistenceManager();

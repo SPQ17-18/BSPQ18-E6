@@ -1,22 +1,14 @@
 package es.deusto.bspq18.e6.DeustoBox.Server.gui;
 
-import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.security.DigestInputStream;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Locale;
 
 import javax.swing.JButton;
@@ -31,10 +23,6 @@ import javax.swing.SwingConstants;
 
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.io.IOUtils;
-import org.apache.tools.ant.util.FileUtils;
-
-import android.text.format.DateFormat;
-
 import java.awt.Font;
 
 public class v_installer extends JFrame {
@@ -44,22 +32,6 @@ public class v_installer extends JFrame {
 	private JTextField txtPath;
 	private JFileChooser fileChooser;
 	private DeustoBoxDAO dao;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					v_installer window = new v_installer();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the application.
@@ -143,9 +115,8 @@ public class v_installer extends JFrame {
 		for (int i = 0; i < users.size(); i++) {
 			File userFolder = new File(directorio + "\\" + users.get(i).getEmail());
 			userFolder.mkdir();
-			HashMap<String, String> map = new HashMap<>();
 			System.out.println("Current user: " + users.get(i).getEmail());
-			updateFileDB(map, users.get(i), userFolder, "/");
+			updateFileDB(users.get(i), userFolder, "/");
 		}
 	}
 
@@ -192,11 +163,11 @@ public class v_installer extends JFrame {
 		}
 		return md5;
 	}
-
+	
 	/*
 	 * Syncs files (TODO we need a thread here)
 	 */
-	public void updateFileDB(HashMap<String, String> map, DUser user, File userFolder, String prefix) {
+	public void updateFileDB(DUser user, File userFolder, String prefix) {
 		File[] list = userFolder.listFiles();
 		DFile myfile = null;
 
@@ -204,24 +175,22 @@ public class v_installer extends JFrame {
 			// For each element in this directory...
 			for (File element : list) {
 				System.out.println("File: " + element.getName());
-
 				if (element.isDirectory()) {
 					System.out.println("It's directory");
-					updateFileDB(map, user, element, element.getName() + "/");
+					updateFileDB(user, element, element.getName() + "/");
 				} else {
 					System.out.println("It's file");
 					// Get the name
 					String name = prefix + element.getName();
 					// Get the last modified date
-					SimpleDateFormat format = new SimpleDateFormat("EE MMM dd HH:mm:ss z yyyy",
-							Locale.ENGLISH);
+					SimpleDateFormat format = new SimpleDateFormat("EE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
 					Date lastmodified = new Date(element.lastModified());
 					// Get the MD5 Hash
 					String hash = generateMD5(element);
 					// Create the file
 					DFile file = new DFile(user, hash, name, lastmodified.toString());
 					ArrayList<DFile> files = user.getFiles();
-					System.out.println(files);
+					System.out.println("User files: " + files);
 					if (files != null) {
 						System.out.println("User has at least one file");
 						// Check if the user has that file
@@ -237,12 +206,14 @@ public class v_installer extends JFrame {
 										if (lastmodified.after(dateDB)) {
 											System.out.println("Uploading the file");
 											// Upload the File data
-											map.put(name, lastmodified.toString());
 											myfile = new DFile(user, hash, name, lastmodified.toString());
 											myfile.setUser(user);
+											// Delete old version
 											dao.deleteFiles(files.get(i));
-											dao.addFiles(myfile);
+											// Upload new version
+											dao.addFile(myfile);
 										} else {
+											// Last modified is the same or is older
 											break;
 										}
 									} catch (ParseException e) {
@@ -250,19 +221,20 @@ public class v_installer extends JFrame {
 									}
 									break;
 								} else {
+									// Same Hash, no nothing
 									System.out.println("Same Hash, do nothing");
 									break;
 								}
+							}else {
+								// No file in userDB coincides with this in Server
 							}
 						}
 					} else {
 						System.out.println("Uploading the file2");
 						// Upload the File data
-						map.put(name, lastmodified.toString());
 						myfile = new DFile(user, hash, name, lastmodified.toString());
 						myfile.setUser(user);
-						System.out.println(map);
-						dao.addFiles(myfile);
+						dao.addFile(myfile);
 					}
 				}
 			}
