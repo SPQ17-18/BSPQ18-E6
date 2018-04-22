@@ -54,7 +54,8 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 			return us;
 		}
 
-		public DFileDTO getFiles(String email) throws RemoteException {
+		public ArrayList<DFileDTO> getFiles(String email) throws RemoteException {
+			
 		String path = getInstaller().getTxtPath().getText();
 		path = path + "\\" + "Deusto-Box" + "\\" + email + "\\";
 		
@@ -63,16 +64,15 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		filesDTO = assemble.createFilesDTO(files, path);
 		
 		
-			return null;
+			return filesDTO;
 		}
 		
 		
 		
 		public boolean sendData(String filename, byte[] data, int len) throws RemoteException{
 	        try{
-	        	File f=new File(filename);
-	        	System.out.println("Aqui llega");
-	        	FileOutputStream out=new FileOutputStream("C:\\prueba.txt",true);
+	        	File f = new File(filename);
+	        	FileOutputStream out=new FileOutputStream(filename,true);
 	        	out.write(data,0,len);
 	        	out.flush();
 	        	out.close();

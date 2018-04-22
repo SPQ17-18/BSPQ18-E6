@@ -66,7 +66,7 @@ public class v_client extends JFrame {
 		this.setVisible(true);
 		SyncFiles.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				getControlador().getFiles(getControlador().getUserdto().getEmail());
+				getControlador().getFiles();
 			}
 		});
 		

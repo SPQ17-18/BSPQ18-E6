@@ -33,7 +33,6 @@ public class Assembler {
 		ArrayList<DFileDTO> filesDTO = new ArrayList<DFileDTO>();
 		for(int i = 0; i< files.size(); i++){
 			String pathFile = path + files.get(i).getName().substring(1);
-			System.out.println("El nuevo path es: " + pathFile);
 			filesDTO.add(createFileDTO (files.get(i), pathFile));
 			}
 		

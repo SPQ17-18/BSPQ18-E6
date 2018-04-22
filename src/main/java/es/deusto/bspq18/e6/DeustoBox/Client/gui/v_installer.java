@@ -64,7 +64,8 @@ public class v_installer extends JFrame {
 		btnOk.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String dir = fileChooser.getSelectedFile().toString();
-				File directorio=new File(dir + "\\Client Deusto-Box"); 
+				File directorio=new File(dir + "\\Client Deusto-Box");
+				controlador.setPath(dir + "\\Client Deusto-Box\\");
 				directorio.mkdir(); 
 				v_client client = new v_client(controlador);
 				client.setVisible(true);
