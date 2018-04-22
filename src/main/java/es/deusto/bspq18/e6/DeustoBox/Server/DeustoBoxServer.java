@@ -21,12 +21,11 @@ public class DeustoBoxServer {
 		try {
 			IDeustoBoxRemoteService deustoBox = new DeustoBoxRemoteService();
 			Naming.rebind(name, deustoBox);
-			v_installer installer = new v_installer();
-			installer.frame.setVisible(true);
+			
 			System.out.println("- DeustoBoxServer:  '" + name + "' active and waiting...");
 			InputStreamReader inputStreamReader = new InputStreamReader(System.in);
 			BufferedReader stdin = new BufferedReader(inputStreamReader);
-
+			System.out.println("Hola");
 			String line = stdin.readLine();
 			
 		} catch (Exception e) {

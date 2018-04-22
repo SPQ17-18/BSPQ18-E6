@@ -23,6 +23,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 	}
 
+	@Override
 	public DUser getUser(String email, String pass) {
 
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -43,7 +44,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 			for (DUser usuario : extent) {
 				if (usuario.getEmail().equals(email) && usuario.getPassword().equals(pass)) {
 					System.out.println("  -> " + usuario);
-					myUser = usuario;
+					myUser = new DUser(usuario.getUsername(), usuario.getEmail(), usuario.getPassword());
 					break;
 				}
 			}
@@ -61,6 +62,41 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		return myUser;
 	}
 	
+	@Override
+	public ArrayList<DFile> getAllFiles(){
+		PersistenceManager pm = pmf.getPersistenceManager();
+		pm.getFetchPlan().setMaxFetchDepth(3);
+		Transaction tx = pm.currentTransaction();
+
+		ArrayList<DFile> files = new ArrayList<DFile>();
+		try {
+			System.out.println("- Retrieving Files using an 'Extent'...");
+
+			pm = pmf.getPersistenceManager();
+			tx = pm.currentTransaction();
+
+			tx.begin();
+
+			Extent<DFile> extent = pm.getExtent(DFile.class, true);
+
+			for (DFile file : extent) {
+				files.add(file);
+			}
+
+			tx.commit();
+
+		} catch (Exception ex) {
+			System.out.println("# Error retrieving Files using an 'Extent': " + ex.getMessage());
+		} finally {
+			if (tx.isActive()) {
+				tx.rollback();
+			}
+			pm.close();
+		}
+		return files;
+	}
+	
+	@Override
 	public ArrayList<DUser> getAllUsers(){
 		PersistenceManager pm = pmf.getPersistenceManager();
 		pm.getFetchPlan().setMaxFetchDepth(3);
@@ -94,6 +130,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		return users;
 	}
 
+	@Override
 	public boolean addUser(DUser user) {
 
 		boolean correct = true;
@@ -123,26 +160,26 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 
 		return correct;
 	}
-
 	
-	public void addFiles(DFile file) {
+	@Override
+	public void addFile(DFile file) {
 		PersistenceManager pm = pmf.getPersistenceManager();
 		pm.getFetchPlan().setMaxFetchDepth(3);
 		Transaction tx = pm.currentTransaction(); 
 
 		try {
 			tx.begin();
-			System.out.println("Adding files to the user...");
+			System.out.println("Adding file to the user...");
 			
 			Extent<DUser> extent = pm.getExtent(DUser.class, true);
 			
 			for (DUser usuario : extent) {
-				if(file.getUser().getEmail().equals(usuario.getEmail())) {
-					file.setUser(usuario);
-					usuario.addFile(file);
-					pm.makePersistent(usuario);
-					break;
-				}
+					if(file.getUser().getEmail().equals(usuario.getEmail())) {
+						file.setUser(usuario);
+						usuario.addFile(file);
+						pm.makePersistent(usuario);
+						break;
+					}
 			}
 			tx.commit();
 		} catch (Exception ex) {
@@ -150,38 +187,84 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		}
 	}
 	
-	public int getnewDFileID() { // Devuelve un User
-		// Persistence Manager
-		int number = 0;
-		PersistenceManager pm = null;
-		// Transaction to group DB operations
-		Transaction tx = null;
-		pm = pmf.getPersistenceManager();
-		tx = pm.currentTransaction();
+	@Override
+	public void deleteFiles(DFile file) {
+		PersistenceManager pm = pmf.getPersistenceManager();
+		pm.getFetchPlan().setMaxFetchDepth(3);
+		Transaction tx = pm.currentTransaction(); 
+
 		try {
-
-			// Start the transaction
 			tx.begin();
+			System.out.println("Deleting user files...");
+			
+			Extent<DUser> extent = pm.getExtent(DUser.class, true);
+			
+			for (DUser usuario : extent) {
+				if(file.getUser().getEmail().equals(usuario.getEmail())) {
+					System.out.println("Owner found");
+					usuario.removeFile(file);
+					pm.makePersistent(usuario);
+					break;
+				}
+			}
+			
+			Extent<DFile> extent2 = pm.getExtent(DFile.class, true);
+			
+			for (DFile fileDB : extent2) {
+				if(file.getHash().equals(fileDB.getHash())) {
+					System.out.println("File found");
+					file.setUser(null);
+					pm.deletePersistent(fileDB);
+					break;
+				}
+			}
+			tx.commit();
+			
+		} catch (Exception ex) {
+			System.out.println("# Error deleting objects: " + ex.getMessage());
+		}
+		
+	}
+	
+	@Override
+	public ArrayList<DFile> getAllFilesOfAUser(String email) {
 
-			Extent<DFile> extent = pm.getExtent(DFile.class, true);
+		PersistenceManager pm = pmf.getPersistenceManager();
+		pm.getFetchPlan().setMaxFetchDepth(3);
+		Transaction tx = pm.currentTransaction();
 
-			for (DFile res : extent) {
-				number = res.getId_file();
+		DUser e = null;
+		try {
+			System.out.println("- Retrieving Files of a certain User using an 'Extent'...");
+
+			pm = pmf.getPersistenceManager();
+			tx = pm.currentTransaction();
+
+
+			Extent<DUser> extent = pm.getExtent(DUser.class, true);
+
+			for (DUser user : extent) {
+					if(user.getEmail().equals(email)){
+						e = new DUser(user.getUsername(), user.getEmail(), user.getPassword());
+						System.out.println("En el DAO: " + user.getFiles().get(0).toString());
+						e.setFiles(user.getFiles());
+						System.out.println("Hay archivos" + e.getFiles().size());
+					}
 			}
 
-			number++;
 
 		} catch (Exception ex) {
-			System.out.println("# Error getting the DFiles " + ex.getMessage());
+			System.out.println("# Error retrieving Files of a certain User using an 'Extent': " + ex.getMessage());
 		} finally {
 			if (tx.isActive()) {
 				tx.rollback();
 			}
-
 			pm.close();
 		}
-		return number;
+		
+		return e.getFiles();
 	}
+
 	
 	public static void main(String[] args) {
 		IDeustoBoxDAO dao = new DeustoBoxDAO();
