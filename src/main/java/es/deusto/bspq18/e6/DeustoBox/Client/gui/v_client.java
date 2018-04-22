@@ -33,7 +33,6 @@ public class v_client extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		System.out.println("Hola");
 		InitComponents();
 		this.setVisible(true);
 		

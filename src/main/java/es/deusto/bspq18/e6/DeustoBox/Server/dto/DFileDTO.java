@@ -1,6 +1,7 @@
 package es.deusto.bspq18.e6.DeustoBox.Server.dto;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -18,7 +19,6 @@ public class DFileDTO implements Serializable {
 	public DFileDTO(String userEmail, String path, String string) {
 		this.userEmail = userEmail;
 		this.file = new File(path);
-		System.out.println("El tamaño es : " +  this.file.getTotalSpace());
 		this.creationDate = new Date();
 	}
 
