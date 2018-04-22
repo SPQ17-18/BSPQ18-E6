@@ -11,15 +11,15 @@ public class DFile implements Serializable  {
 
 	private static final long serialVersionUID = 5302060193237346315L;
 	@PrimaryKey
-	private int id_file;
+	private String hash;
 	private String name;
 	private String lastModified;
 	@Persistent(defaultFetchGroup="true")
 	private DUser user;
 	
-	public DFile(DUser user, int id_file, String name, String lastModified) {
+	public DFile(DUser user, String hash, String name, String lastModified) {
 		this.user = user;
-		this.id_file = id_file;
+		this.hash = hash;
 		this.name = name;
 		this.lastModified = lastModified;
 	}
@@ -32,12 +32,12 @@ public class DFile implements Serializable  {
 		this.user = user;
 	}
 
-	public int getId_file() {
-		return id_file;
+	public String getHash() {
+		return hash;
 	}
 
-	public void setId_file(int id_file) {
-		this.id_file = id_file;
+	public void setHash(String hash) {
+		this.hash = hash;
 	}
 
 	public String getName() {

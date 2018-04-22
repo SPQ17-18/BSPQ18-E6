@@ -183,6 +183,44 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		}
 	}
 	
+	public void deleteFiles(DFile file) {
+		PersistenceManager pm = pmf.getPersistenceManager();
+		pm.getFetchPlan().setMaxFetchDepth(3);
+		Transaction tx = pm.currentTransaction(); 
+
+		try {
+			tx.begin();
+			System.out.println("Deleting user files...");
+			
+			Extent<DUser> extent = pm.getExtent(DUser.class, true);
+			
+			for (DUser usuario : extent) {
+				if(file.getUser().getEmail().equals(usuario.getEmail())) {
+					System.out.println("Owner found");
+					usuario.removeFile(file);
+					pm.makePersistent(usuario);
+					break;
+				}
+			}
+			
+			Extent<DFile> extent2 = pm.getExtent(DFile.class, true);
+			
+			for (DFile fileDB : extent2) {
+				if(file.getHash().equals(fileDB.getHash())) {
+					System.out.println("File found");
+					file.setUser(null);
+					pm.deletePersistent(fileDB);
+					break;
+				}
+			}
+			tx.commit();
+			
+		} catch (Exception ex) {
+			System.out.println("# Error deleting objects: " + ex.getMessage());
+		}
+		
+	}
+	
 	public static void main(String[] args) {
 		IDeustoBoxDAO dao = new DeustoBoxDAO();
 

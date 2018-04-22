@@ -149,7 +149,7 @@ public class v_installer extends JFrame {
 		}
 	}
 
-	public void checkOldFolders (File directorio, ArrayList<DUser> users) {
+	public void checkOldFolders(File directorio, ArrayList<DUser> users) {
 		System.out.println("Directory exits");
 		// Check if there are any user folders
 		File[] userFiles = directorio.listFiles();
@@ -177,38 +177,34 @@ public class v_installer extends JFrame {
 			}
 		}
 	}
-	
-	public static String generateMD5() {
+
+	public static String generateMD5(File file) {
 		String md5 = null;
-		String dir = "D:\\aitor\\Escritorio\\Deusto-Box\\aitorugarte@opendeusto.es\\prueba.txt";
-		File file = new File(dir);
 		FileInputStream fileInputStream = null;
 
 		try {
 			fileInputStream = new FileInputStream(file);
-			
 			md5 = DigestUtils.md5Hex(IOUtils.toByteArray(fileInputStream));
-
 			fileInputStream.close();
 
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 		return md5;
 	}
+
 	/*
 	 * Syncs files (TODO we need a thread here)
 	 */
 	public void updateFileDB(HashMap<String, String> map, DUser user, File userFolder, String prefix) {
 		File[] list = userFolder.listFiles();
 		DFile myfile = null;
-		
+
 		if (list != null) {
 			// For each element in this directory...
 			for (File element : list) {
 				System.out.println("File: " + element.getName());
-				
+
 				if (element.isDirectory()) {
 					System.out.println("It's directory");
 					updateFileDB(map, user, element, element.getName() + "/");
@@ -217,47 +213,53 @@ public class v_installer extends JFrame {
 					// Get the name
 					String name = prefix + element.getName();
 					// Get the last modified date
+					SimpleDateFormat format = new SimpleDateFormat("EE MMM dd HH:mm:ss z yyyy",
+							Locale.ENGLISH);
 					Date lastmodified = new Date(element.lastModified());
 					// Get the MD5 Hash
-					
-					DFile file = new DFile(user, 1, name, lastmodified.toString());
+					String hash = generateMD5(element);
+					// Create the file
+					DFile file = new DFile(user, hash, name, lastmodified.toString());
 					ArrayList<DFile> files = user.getFiles();
+					System.out.println(files);
 					if (files != null) {
+						System.out.println("User has at least one file");
 						// Check if the user has that file
-						for (int i = 0; i < files.size(); i++) {							
+						for (int i = 0; i < files.size(); i++) {
+							// Find that file
 							if (file.getName().equals((files.get(i).getName()))) {
-								SimpleDateFormat format = new SimpleDateFormat("EE MMM dd HH:mm:ss z yyyy",
-										Locale.ENGLISH);
-								try {
-									// TODO optimizalo porque más arriba se usa el dateDB y
-									// se parsea de una forma más fácil
-									Date dateDB = format.parse(files.get(i).getLastModified());
-									Date datePC = format.parse(file.getLastModified());
-									if (file.getName().equals(files.get(i).getName()) && datePC.after(dateDB)) {
-										System.out.println("Uploading the file");
-										// Upload the File data
-										map.put(name, lastmodified.toString());
-										// TODO de momento hacemos la prueba con uno
-										myfile = new DFile(user, (int) (Math.random() * 100) + 1, name,
-												lastmodified.toString());
-										myfile.setUser(user);
-										System.out.println(map);
-										dao.addFiles(myfile);
-									} else {
-										// nothing, no puede ser
+								System.out.println("Same file found");
+								if (!hash.equals(files.get(i).getHash())) {
+									System.out.println("Has isn't the same");
+									try {
+										// Check who has the lastest version
+										Date dateDB = format.parse(files.get(i).getLastModified());
+										if (lastmodified.after(dateDB)) {
+											System.out.println("Uploading the file");
+											// Upload the File data
+											map.put(name, lastmodified.toString());
+											myfile = new DFile(user, hash, name, lastmodified.toString());
+											myfile.setUser(user);
+											dao.deleteFiles(files.get(i));
+											//dao.addFiles(myfile);
+										} else {
+											break;
+										}
+									} catch (ParseException e) {
+										e.printStackTrace();
 									}
-								} catch (ParseException e) {
-									e.printStackTrace();
+									break;
+								} else {
+									System.out.println("Same Hash, do nothing");
+									break;
 								}
-								break;
 							}
 						}
 					} else {
-						System.out.println("Uploading the file");
+						System.out.println("Uploading the file2");
 						// Upload the File data
 						map.put(name, lastmodified.toString());
-						// TODO de momento hacemos la prueba con uno
-						myfile = new DFile(user, (int) (Math.random() * 100) + 1, name, lastmodified.toString());
+						myfile = new DFile(user, hash, name, lastmodified.toString());
 						myfile.setUser(user);
 						System.out.println(map);
 						dao.addFiles(myfile);
