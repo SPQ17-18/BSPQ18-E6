@@ -32,6 +32,14 @@ public class DUser implements Serializable {
 		this.files = new ArrayList<DFile>();
 		this.registerDate = new Date();
 	}
+	
+	public DUser(String username,String email, String password, Date registerDate) {
+		this.email = email;
+		this.username = username;
+		this.password = password;
+		this.files = new ArrayList<DFile>();
+		this.registerDate = registerDate;
+	}
 
 	public String getEmail() {
 		return email;

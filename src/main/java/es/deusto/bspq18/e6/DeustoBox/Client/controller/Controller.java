@@ -136,6 +136,12 @@ public class Controller {
 	public boolean updatePassword (String password) {
 		boolean correct = false;
 		
+		try {
+			correct = rsl.getService().updatePassword(userdto.getEmail(), password);
+		} catch (Exception ex) {
+		
+		
+	}
 		
 		
 		

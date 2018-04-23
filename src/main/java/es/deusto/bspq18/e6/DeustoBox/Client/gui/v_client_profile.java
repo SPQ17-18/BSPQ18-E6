@@ -71,7 +71,7 @@ public class v_client_profile extends JFrame {
 		contentPane.add(txtUsername);
 		
 		txtMemberSince = new JLabel(controlador.getUserdto().getRegisteredDate().toString());
-		txtMemberSince.setBounds(153, 139, 145, 16);
+		txtMemberSince.setBounds(153, 139, 202, 16);
 		contentPane.add(txtMemberSince);
 		
 		btnChangePassword = new JButton("Change Password");
@@ -104,7 +104,7 @@ public class v_client_profile extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(!passwordField.getText().equals("")) {
 					if(controlador.passwordCorrect(passwordField.getText())){
-						System.out.println("La contraseña es correcta");
+						v_client_profile_changepassword window = new v_client_profile_changepassword(controlador);
 						
 					}
 					

@@ -46,7 +46,7 @@ public class v_client extends JFrame {
 		contentPane.add(lblUsername);
 		
 		lblUser = new JLabel(getControlador().getUserdto().getEmail());
-		lblUser.setBounds(208, 11, 46, 14);
+		lblUser.setBounds(208, 11, 140, 14);
 		contentPane.add(lblUser);
 		
 		lblNumberOfFiles = new JLabel("Number Of Files:");

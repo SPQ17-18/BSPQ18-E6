@@ -68,7 +68,16 @@ public class v_client_profile_changepassword extends JFrame {
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(String.valueOf(passwordField.getPassword()).equals(String.valueOf(passwordField_1.getPassword()))) {
-					controlador.updatePassword(String.valueOf(passwordField.getPassword()));
+					boolean correct = controlador.updatePassword(String.valueOf(passwordField.getPassword()));
+					if(correct){
+						JOptionPane.showMessageDialog(null, "Your password has been changed");
+						dispose();
+						
+					}
+					else{
+						JOptionPane.showMessageDialog(null, "An error has happened while changing the password, try it again");
+						
+					}
 					
 				}
 				else {

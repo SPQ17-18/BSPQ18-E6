@@ -44,7 +44,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 				if (usuario.getEmail().equals(email) && usuario.getPassword().equals(pass)) {
 					System.out.println("  -> " + usuario);
 
-					myUser = new DUser(usuario.getUsername(), usuario.getEmail(), usuario.getPassword());
+					myUser = new DUser(usuario.getUsername(), usuario.getEmail(), usuario.getPassword(), usuario.getRegisterDate());
 					break;
 				}
 			}
@@ -297,7 +297,31 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 
 	@Override
 	public boolean updatePassword(String email, String password) {
-		// TODO Auto-generated method stub
-		return false;
+		PersistenceManager pm = pmf.getPersistenceManager();
+		pm.getFetchPlan().setMaxFetchDepth(3);
+		Transaction tx = pm.currentTransaction();
+		boolean correcto = true;
+
+		try {
+			tx.begin();
+			System.out.println("Modifying the password...");
+
+			Extent<DUser> extent = pm.getExtent(DUser.class, true);
+
+			for (DUser usuario : extent) {
+				if (email.equals(usuario.getEmail())) {
+					usuario.setPassword(password);
+					pm.makePersistent(usuario);
+					break;
+				}
+			}
+			tx.commit();
+		} catch (Exception ex) {
+			correcto = false;
+			System.out.println("# Error modifying the password: " + ex.getMessage());
+		}
+		return correcto;
 	}
+
+
 }
