@@ -2,6 +2,7 @@ package es.deusto.bspq18.e6.DeustoBox.Server.jdo.data;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 
 import javax.jdo.annotations.Join;
@@ -18,6 +19,7 @@ public class DUser implements Serializable {
 	private String email;
 	private String username;
 	private String password;
+	private Date registerDate;
 	
 	@Persistent(defaultFetchGroup="true", mappedBy="user", dependentElement = "true")
 	@Join
@@ -28,6 +30,7 @@ public class DUser implements Serializable {
 		this.username = username;
 		this.password = password;
 		this.files = new ArrayList<DFile>();
+		this.registerDate = new Date();
 	}
 
 	public String getEmail() {
@@ -68,6 +71,16 @@ public class DUser implements Serializable {
 	}
 	public void removeFile(DFile file) {
 		files.remove(file);
+	}
+	
+	
+
+	public Date getRegisterDate() {
+		return registerDate;
+	}
+
+	public void setRegisterDate(Date registerDate) {
+		this.registerDate = registerDate;
 	}
 
 	@Override

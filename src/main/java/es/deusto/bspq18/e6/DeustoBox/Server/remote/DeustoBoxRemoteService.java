@@ -83,6 +83,12 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 			return true;
 		}
 		
+		public boolean checkPassword(String email,String password)throws RemoteException {
+			boolean correct = false;
+			correct = db.checkPassword(email, password);
+			return correct;
+		}
+		
 			
 			
 			
@@ -94,6 +100,14 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 
 		public v_installer getInstaller() {
 			return installer;
+		}
+
+		@Override
+		public int getNumberOfUserFiles(String email) throws RemoteException {
+			int number = 0;
+			number = db.getNumberOfUserFiles(email);
+			System.out.println("The user has " + number + " files.");
+			return number;
 		}
 		
 		

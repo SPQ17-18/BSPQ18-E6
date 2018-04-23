@@ -10,7 +10,7 @@ import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
 public class Assembler {
 
 	public DUserDTO userDTO(DUser user) {
-		DUserDTO userdto =  new DUserDTO(user.getEmail(), user.getUsername(), user.getPassword());
+		DUserDTO userdto =  new DUserDTO(user.getEmail(), user.getUsername(), user.getPassword(), user.getRegisterDate());
 		System.out.println(userdto.toString());
 		userdto.setFiles(user.getFiles());
 		return userdto;

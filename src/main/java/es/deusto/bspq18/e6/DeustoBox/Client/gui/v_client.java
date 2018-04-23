@@ -22,6 +22,8 @@ public class v_client extends JFrame {
 	private JLabel lblNumberOfFiles;
 	private JLabel lblNumber;
 	private JButton SyncFiles;
+	private JButton btnMyProfile;
+	private v_client_profile myProfile;
 	/**
 	 * Create the frame.
 	 */
@@ -44,29 +46,39 @@ public class v_client extends JFrame {
 		contentPane.add(lblUsername);
 		
 		lblUser = new JLabel(getControlador().getUserdto().getEmail());
-		lblUser.setBounds(140, 11, 46, 14);
+		lblUser.setBounds(208, 11, 46, 14);
 		contentPane.add(lblUser);
 		
 		lblNumberOfFiles = new JLabel("Number Of Files:");
-		lblNumberOfFiles.setBounds(10, 48, 105, 14);
+		lblNumberOfFiles.setBounds(10, 48, 163, 14);
 		contentPane.add(lblNumberOfFiles);
 		
 		
 		lblNumber = new JLabel("");
 		//Connect to the DB and check the number of files that the user have
-		int files = getControlador().getNumberOfFiles("MODIFICAR");
+		int files = getControlador().getNumberOfFiles();
 		lblNumber.setText(String.valueOf(files));
-		lblNumber.setBounds(140, 48, 46, 14);
+		lblNumber.setBounds(208, 48, 46, 14);
 		contentPane.add(lblNumber);
 		
 		SyncFiles = new JButton("SyncFiles");
-		SyncFiles.setBounds(10, 100, 89, 23);
+		SyncFiles.setBounds(10, 92, 89, 23);
 		contentPane.add(SyncFiles);
 		
-		this.setVisible(true);
+		btnMyProfile = new JButton("My profile");
+		btnMyProfile.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				myProfile = new v_client_profile(controlador);
+				
+			}
+		});
+		btnMyProfile.setBounds(170, 89, 117, 29);
+		contentPane.add(btnMyProfile);
+		
 		SyncFiles.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				getControlador().getFiles();
+				lblNumber.setText(String.valueOf(controlador.getNumberOfFiles()));
 			}
 		});
 		

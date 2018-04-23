@@ -112,12 +112,35 @@ public class Controller {
 		
 		
 	
-	public int getNumberOfFiles(String email){
-		
-		
-	return 69;
+	public int getNumberOfFiles(){
+	int files = 0;
+	String email = userdto.getEmail();
+	try {
+		files = rsl.getService().getNumberOfUserFiles(email);
+	} catch (Exception ex) {
+	}
+	return files;
 	}
 	
+	public boolean passwordCorrect(String password) {
+		boolean correct = false;
+		try {
+			correct = rsl.getService().checkPassword(userdto.getEmail(), password);
+		} catch (Exception ex) {
+		
+		
+	}
+		return correct;
+	}
+	
+	public boolean updatePassword (String password) {
+		boolean correct = false;
+		
+		
+		
+		
+		return correct;
+	}
 
 	public DUserDTO getUserdto() {
 		return userdto;
