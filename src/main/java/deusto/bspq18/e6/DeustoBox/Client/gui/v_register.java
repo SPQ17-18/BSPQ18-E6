@@ -11,18 +11,22 @@ import javax.swing.JOptionPane;
 
 import java.awt.Font;
 import javax.swing.JTextField;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JPasswordField;
 
 public class v_register extends JFrame {
 
-	private JPanel contentPane;
-	private JTextField txtEmail;
-	private JTextField txtUsername;
-	private JTextField txtPassword;
-	private JTextField txtPassword2;
-
+	private JPanel contentPane, panel;
+	private JTextField txtEmail, txtUsername;
+	private JPasswordField txtPassword, txtPassword2;
+	private JLabel lblJoinDeustobox, lblUsername, lblPassword, lblPassword2, lblEmail, lblLogo;
+	private JButton btnRegister;
+	private ImageIcon logo;
+	
+	
 	/**
 	 * Launch the application.
 	 */
@@ -50,28 +54,28 @@ public class v_register extends JFrame {
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		
-		JPanel panel = new JPanel();
+		panel = new JPanel();
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		JLabel lblJoinDeustobox = new JLabel("Join DeustoBox");
+		lblJoinDeustobox = new JLabel("Join DeustoBox");
 		lblJoinDeustobox.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		lblJoinDeustobox.setBounds(98, 16, 162, 35);
 		panel.add(lblJoinDeustobox);
 		
-		JLabel lblUsername = new JLabel("Username:");
+		lblUsername = new JLabel("Username:");
 		lblUsername.setBounds(15, 96, 77, 20);
 		panel.add(lblUsername);
 		
-		JLabel lblPassword = new JLabel("Password:");
+		lblPassword = new JLabel("Password:");
 		lblPassword.setBounds(15, 132, 77, 20);
 		panel.add(lblPassword);
 		
-		JLabel lblPassword2 = new JLabel("Repeat Password:");
+		lblPassword2 = new JLabel("Repeat Password:");
 		lblPassword2.setBounds(15, 168, 135, 20);
 		panel.add(lblPassword2);
 		
-		JLabel lblEmail = new JLabel("Email:");
+		lblEmail = new JLabel("Email:");
 		lblEmail.setBounds(15, 60, 77, 20);
 		panel.add(lblEmail);
 		
@@ -85,17 +89,7 @@ public class v_register extends JFrame {
 		panel.add(txtUsername);
 		txtUsername.setColumns(10);
 		
-		txtPassword = new JTextField();
-		txtPassword.setBounds(98, 129, 146, 22);
-		panel.add(txtPassword);
-		txtPassword.setColumns(10);
-		
-		txtPassword2 = new JTextField();
-		txtPassword2.setBounds(146, 165, 146, 22);
-		panel.add(txtPassword2);
-		txtPassword2.setColumns(10);
-		
-		JButton btnRegister = new JButton("Register");
+		btnRegister = new JButton("Register");
 		btnRegister.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent Ae) {
 				String e = txtEmail.getText();
@@ -112,6 +106,18 @@ public class v_register extends JFrame {
 		});
 		btnRegister.setBounds(166, 203, 115, 29);
 		panel.add(btnRegister);
+		
+		txtPassword = new JPasswordField();
+		txtPassword.setBounds(98, 132, 146, 21);
+		panel.add(txtPassword);
+		
+		txtPassword2 = new JPasswordField();
+		txtPassword2.setBounds(146, 165, 146, 23);
+		panel.add(txtPassword2);
+		
+		logo = new ImageIcon("src/main/java/deusto/bspq18/e6/DeustoBox/Client/images/logo.png");
+		lblLogo = new JLabel(logo);
+		lblLogo.setBounds(268, 16, 135, 76);
+		panel.add(lblLogo);
 	}
-
 }
