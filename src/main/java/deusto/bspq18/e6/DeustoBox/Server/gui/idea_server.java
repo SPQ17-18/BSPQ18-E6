@@ -1,9 +1,6 @@
 package deusto.bspq18.e6.DeustoBox.Server.gui;
 
 import java.io.File;
-import java.sql.Connection;
-import java.sql.Statement;
-
 import deusto.bspq18.e6.DeustoBox.Server.bd.BDConnection;
 
 public class idea_server {
@@ -37,12 +34,38 @@ public class idea_server {
 				 * 
 				 */
 		public static void main(String[] args) {
-			String dir = "C:\\\\Users\\\\deusto_06\\\\Desktop";
-			File directorio=new File(dir + "\\Deusto-Box"); 
+			//String dir = "C:\\\\Users\\\\deusto_06\\\\Desktop";
+			String myDir = "D:\\aitor\\Escritorio";
+			String completeDir = myDir + "\\Deusto-Box";
+			File directorio = new File(completeDir); 
 			directorio.mkdir(); 
 			
-			BDConnection bd = BDConnection.getBD();
+			BDConnection bd = null;
+			
+			/*if(Analisis_Red.TestPuerto()) {
+				System.out.println("Conectado a BD externa");
+				bd = BDConnection.getBD(true);
+			}else {*/
+				System.out.println("Conectado a BD local");
+				bd = BDConnection.getBD(false);
+			//}
+				
+			System.out.println("Creando tabla");
 			bd.createTable();
-		
+			
+			System.out.println("Añadiendo usuarios");
+			if(!bd.userExits("aitorugarte@opendeusto.es", bd.getStat(), bd.getConexion())) {
+				bd.registerUser(bd.getStat(), "aitorugarte@opendeusto.es", "Aitor", "123");
+			}
+			if(!bd.userExits("markeluko@opendeusto.es", bd.getStat(), bd.getConexion())) {
+				bd.registerUser(bd.getStat(), "markeluko@opendeusto.es", "Markel", "123");
+			}
+			
+			for (int i = 0; i < bd.getUsers().size(); i++) {
+				File userFolder = new File(completeDir + "\\" + bd.getUsers().get(i)); 
+				userFolder.mkdir(); 
+			}
+			
+			
 		}
 }

@@ -5,7 +5,10 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+
 import javax.swing.JOptionPane;
+
 
 public class BDConnection {
 
@@ -22,8 +25,8 @@ public class BDConnection {
 		this.stat = stat;
 	}
 
-	public static BDConnection getBD() {
-		Connection con = initBD();
+	public static BDConnection getBD(boolean aExterna) {
+		Connection con = initBD(aExterna);
 		Statement stat = useBD(con);
 		return new BDConnection(con, stat);
 	}
@@ -44,10 +47,16 @@ public class BDConnection {
 		this.stat = stat;
 	}
 
-	public static Connection initBD() {
+	public static Connection initBD(boolean aExterna) {
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
-			String servidor = "jdbc:mysql://" + host + "/" + BD_name;
+			String servidor = null;
+			if(aExterna) {
+				servidor = "jdbc:mysql://" + host + "/" + BD_name;
+			}else {
+				Class.forName("org.sqlite.JDBC");
+				servidor = "jdbc:sqlite:DeustoBox.db";
+			}
 			return DriverManager.getConnection(servidor, user, pass);
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, "No se ha podido establecer la conexi�n " + e);
@@ -75,9 +84,9 @@ public class BDConnection {
 			try {
 				stat.executeUpdate("create table user " +
 					"(id_user integer primary key autoincrement,"
+					+ "email text not null, "
 					+ "username text not null, "
-					+ "password text not null, "
-					+ "email text not null)");
+					+ "password text not null)");
 			} catch (SQLException e) {} // If it exits, nothing to do		
 			return stat;
 		} catch (SQLException e) {
@@ -87,11 +96,11 @@ public class BDConnection {
 	}
 	
 	
-	public boolean registerUser(Statement st, String name, String password, String email) {
+	public boolean registerUser(Statement st, String email, String name, String password) {
 		String sentSQL = "";
 		try {
-			sentSQL = "insert into user (username, password, email) values(" + "'" + name + "'," + "'" + password + "',"
-					+ "'" + email + "')";
+			sentSQL = "insert into user (email, username, password) values(" + "'" + email + "'," + "'" + name + "',"
+					+ "'" + password + "')";
 			int val = st.executeUpdate(sentSQL);
 			if (val != 1) {
 				return false;
@@ -106,11 +115,11 @@ public class BDConnection {
 	public boolean userExits(String user, Statement st, Connection con) {
 
 		try {
-			ResultSet rs = st.executeQuery("select username, password from user");
+			ResultSet rs = st.executeQuery("select email, password from user");
 			while (rs.next()) {
-				String username = rs.getString("username");
+				String email = rs.getString("email");
 				String password = rs.getString("password");
-				String together = username + " " + password;
+				String together = email + " " + password;
 
 				if (user.equals(together)) {
 					return true;
@@ -124,4 +133,19 @@ public class BDConnection {
 		return false;
 	}
 
+	public ArrayList<String> getUsers() {
+		ArrayList<String> users = new ArrayList<String>();
+		try {
+			ResultSet rs = stat.executeQuery("select * from user");
+			while (rs.next()) {
+				//String username = rs.getString("username");
+				//String password = rs.getString("password");
+				String email = rs.getString("email");
+				users.add(email);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return users;
+	}
 }

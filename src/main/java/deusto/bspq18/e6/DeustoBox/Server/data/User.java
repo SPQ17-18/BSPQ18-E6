@@ -1,29 +1,23 @@
 package deusto.bspq18.e6.DeustoBox.Server.data;
 
+import java.io.Serializable;
+
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
 
-@PersistenceCapable
-public class User {
+@PersistenceCapable(detachable="true")
+public class User implements Serializable {
 
+	private static final long serialVersionUID = -3653362043946570733L;
 	@PrimaryKey
 	private String email;
-	private String name;
+	private String username;
 	private String password;
-	// Faltan por implementar las reservations
 
-	public User(String email, String name, String password) {
-		super();
+	public User(String email, String username, String password) {
 		this.email = email;
-		this.name = name;
+		this.username = username;
 		this.password = password;
-	}
-
-	public User() {
-		this.email = " ";
-		this.name = " ";
-		this.password = " ";
-
 	}
 
 	public String getEmail() {
@@ -35,11 +29,11 @@ public class User {
 	}
 
 	public String getName() {
-		return name;
+		return username;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setName(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {
@@ -52,7 +46,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [email=" + email + ", name=" + name + ", password=" + password + "]";
+		return "User [email=" + email + ", username=" + username + ", password=" + password + "]";
 	}
 
 }
