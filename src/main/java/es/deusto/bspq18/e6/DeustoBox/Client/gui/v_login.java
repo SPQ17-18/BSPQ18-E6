@@ -28,32 +28,34 @@ import java.io.IOException;
 import java.net.URL;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
+import javax.swing.SwingConstants;
 
 public class v_login extends JFrame {
 
+	private static final long serialVersionUID = 8444678133078858266L;
 	private JPanel contentPane, panel;
 	private JTextField txtUsername;
 	private JPasswordField passwordField;
-	private JLabel lblLogin, lblUsername, lblPassword, lblRegister, lblLogo;
+	private JLabel lblLogin, lblEmail, lblPassword, lblRegister, lblLogo;
 	private JButton btnEnter, btnCreateAccount;
 	private Controller controlador;
-
-
-	/**
-	 * Create the frame.
-	 */
+	private v_client window;
 
 	public v_login(Controller controlador) {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(v_login.class.getResource("/es/deusto/bspq18/e6/DeustoBox/Client/images/logo.png")));
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 450, 314);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		this.controlador = controlador;
-		
+		initComponents();
+		this.setVisible(true);
+	}
+	
+	public void initComponents() {
 		panel = new JPanel();
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
@@ -63,21 +65,21 @@ public class v_login extends JFrame {
 		lblLogin.setBounds(168, 38, 224, 35);
 		panel.add(lblLogin);
 		
-		lblUsername = new JLabel("Username:");
-		lblUsername.setBounds(47, 114, 83, 20);
-		panel.add(lblUsername);
+		lblEmail = new JLabel("E-mail:");
+		lblEmail.setBounds(47, 114, 83, 20);
+		panel.add(lblEmail);
 		
 		lblPassword = new JLabel("Password:");
 		lblPassword.setBounds(47, 156, 83, 20);
 		panel.add(lblPassword);
 		
 		txtUsername = new JTextField();
-		txtUsername.setBounds(145, 111, 146, 26);
+		txtUsername.setBounds(145, 111, 163, 26);
 		panel.add(txtUsername);
 		txtUsername.setColumns(10);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(145, 153, 146, 26);
+		passwordField.setBounds(145, 153, 163, 26);
 		panel.add(passwordField);
 		
 		btnEnter = new JButton("Sign In");
@@ -106,11 +108,12 @@ public class v_login extends JFrame {
 				}
 			}
 		});
-		btnEnter.setBounds(168, 183, 115, 29);
+		btnEnter.setBounds(168, 190, 115, 29);
 		panel.add(btnEnter);
 		
 		lblRegister = new JLabel("Don't have an account yet?");
-		lblRegister.setBounds(29, 214, 190, 20);
+		lblRegister.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblRegister.setBounds(93, 239, 190, 20);
 		panel.add(lblRegister);
 		
 		btnCreateAccount = new JButton("Create an account");
@@ -123,7 +126,7 @@ public class v_login extends JFrame {
 			}
 		});
 		
-		btnCreateAccount.setBounds(220, 210, 163, 29);
+		btnCreateAccount.setBounds(261, 235, 163, 29);
 		btnCreateAccount.setBorderPainted(false);
 		btnCreateAccount.setContentAreaFilled(false);
 		panel.add(btnCreateAccount);
@@ -145,5 +148,7 @@ public class v_login extends JFrame {
 		lblLogo.setIcon(imageIcon);
 		
 		panel.add(lblLogo);
+		
 	}
+
 }
