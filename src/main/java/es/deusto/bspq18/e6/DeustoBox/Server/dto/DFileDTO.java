@@ -10,28 +10,19 @@ public class DFileDTO implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String hash;
 	private String userEmail;
 	private File file;
-	private String lastModified;
-
+	private Date creationDate;
 	
-	public DFileDTO(String hash, String userEmail, String path, String lastModified) {
-		this.hash = hash;
+	
+	
+	public DFileDTO(String userEmail, String path, String string) {
 		this.userEmail = userEmail;
 		this.file = new File(path);
-		this.lastModified = lastModified;
-	}
-	
-	
-	public String getHash() {
-		return hash;
+		this.creationDate = new Date();
 	}
 
-	public void setHash(String hash) {
-		this.hash = hash;
-	}
-
+	
 	public String getUserEmail() {
 		return userEmail;
 	}
@@ -48,12 +39,12 @@ public class DFileDTO implements Serializable {
 		this.file = file;
 	}
 
-	public String getLastModified() {
-		return lastModified;
+	public Date getCreationDate() {
+		return creationDate;
 	}
 
-	public void setLastModified(String lastModified) {
-		this.lastModified = lastModified;
+	public void setCreationDate(Date creationDate) {
+		this.creationDate = creationDate;
 	}
 	
 	
