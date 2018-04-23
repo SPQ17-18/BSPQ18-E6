@@ -13,6 +13,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO;
+import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DFile;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
 import javax.swing.JLabel;
@@ -28,18 +29,18 @@ public class v_installer extends JFrame {
 	public JFrame frame;
 	private JTextField txtPath;
 	private JFileChooser fileChooser;
-	private DeustoBoxDAO dao;
+	private IDeustoBoxDAO dao;
 
 
-	public v_installer() {
+	public v_installer(IDeustoBoxDAO db) {
 		initialize();
+		this.dao = db;
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		dao = new DeustoBoxDAO();
 		frame = new JFrame();
 		frame.setTitle("Installer");
 		frame.setBounds(100, 100, 610, 309);

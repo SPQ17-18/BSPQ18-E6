@@ -14,13 +14,16 @@ import javax.jdo.Transaction;
 
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DFile;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
+import es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log;
 
 public class DeustoBoxDAO implements IDeustoBoxDAO {
 
 	private PersistenceManagerFactory pmf;
+	private Error_log log;
 
-	public DeustoBoxDAO() {
+	public DeustoBoxDAO(Error_log log) {
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+		this.log = log;
 	}
 
 	public DUser getUser(String email, String pass) {
@@ -221,7 +224,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 	}
 
 	public static void main(String[] args) {
-		IDeustoBoxDAO dao = new DeustoBoxDAO();
+		IDeustoBoxDAO dao = new DeustoBoxDAO(new Error_log());
 
 		DUser user1 = new DUser("aitorugarte@opendeusto.es", "aitorugarte", "123");
 		DUser user2 = new DUser("markelalva@opendeusto.es", "markelalva", "123");

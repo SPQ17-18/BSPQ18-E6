@@ -14,6 +14,7 @@ import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DFile;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
 import es.deusto.bspq18.e6.DeustoBox.Server.remote.IDeustoBoxRemoteService;
+import es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log;
 
 
 public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeustoBoxRemoteService {
@@ -23,11 +24,14 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		private Assembler assemble;
 		private String path;
 		private v_installer installer;
+		private Error_log log;
 		
 		public DeustoBoxRemoteService() throws RemoteException {
-			db = new DeustoBoxDAO();
+			this.log = new Error_log();
+			db = new DeustoBoxDAO(this.log);
 			assemble = new Assembler();
-			installer = new v_installer();
+			installer = new v_installer(db);
+			
 			installer.frame.setVisible(true);
 		}
 
