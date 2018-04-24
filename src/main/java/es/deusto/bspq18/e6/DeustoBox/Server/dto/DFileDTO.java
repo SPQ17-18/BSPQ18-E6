@@ -11,17 +11,25 @@ public class DFileDTO implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	private String userEmail;
+	private int id_file;
+	private String name;
+	private String lastModified;
 	private File file;
 	private Date creationDate;
-	
-	
+	private DUserDTO user;
 	
 	public DFileDTO(String userEmail, String path, String string) {
 		this.userEmail = userEmail;
 		this.file = new File(path);
 		this.creationDate = new Date();
 	}
-
+	
+	public DFileDTO(DUserDTO user, int id_file, String name, String lastModified) {
+		this.user = user;
+		this.id_file = id_file;
+		this.name = name;
+		this.lastModified = lastModified;
+	}
 	
 	public String getUserEmail() {
 		return userEmail;
@@ -46,9 +54,39 @@ public class DFileDTO implements Serializable {
 	public void setCreationDate(Date creationDate) {
 		this.creationDate = creationDate;
 	}
-	
-	
-	
-	
 
+	public int getId_file() {
+		return id_file;
+	}
+
+	public void setId_file(int id_file) {
+		this.id_file = id_file;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getLastModified() {
+		return lastModified;
+	}
+
+	public void setLastModified(String lastModified) {
+		this.lastModified = lastModified;
+	}
+
+	public DUserDTO getUser() {
+		return user;
+	}
+
+	public void setUser(DUserDTO user) {
+		this.user = user;
+	}
+		
+	
+	
 }

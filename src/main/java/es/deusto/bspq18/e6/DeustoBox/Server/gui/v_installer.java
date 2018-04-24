@@ -1,6 +1,5 @@
 package es.deusto.bspq18.e6.DeustoBox.Server.gui;
 
-import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -18,8 +17,6 @@ import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
-import org.apache.tools.ant.util.FileUtils;
-
 import java.awt.Font;
 
 public class v_installer extends JFrame {
@@ -29,15 +26,13 @@ public class v_installer extends JFrame {
 	private JTextField txtPath;
 	private JFileChooser fileChooser;
 	private DeustoBoxDAO dao;
+	private installerController installer;
 
 
 	public v_installer() {
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	private void initialize() {
 		dao = new DeustoBoxDAO();
 		frame = new JFrame();
@@ -68,7 +63,9 @@ public class v_installer extends JFrame {
 		btnOk.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String dir = fileChooser.getSelectedFile().toString() + "\\Deusto-Box";
-				createFolders(dir);
+				//createFolders(dir);
+				installer = new installerController(dir);
+				installer.manageFolders();
 			}
 		});
 		btnOk.setBounds(314, 180, 115, 29);
@@ -97,7 +94,7 @@ public class v_installer extends JFrame {
 	/*
 	 * Creates empty folders for each user registered
 	 */
-	public void createFolders(String path) {
+	/*public void createFolders(String path) {
 		File directorio = new File(path);
 		ArrayList<DUser> users = dao.getAllUsers();
 		if (directorio.exists()) {
@@ -134,7 +131,7 @@ public class v_installer extends JFrame {
 			HashMap<String, String> map = new HashMap<>();
 			uploadFiles(map, users.get(i), userFolder, "/");
 		}
-	}
+	}*/
 
 	/*
 	 * Syncs files (TODO we need a thread here)

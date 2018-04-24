@@ -39,7 +39,7 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 			correcto = db.addUser(user);
 			
 			if (correcto) {
-				return assemble.userDTO(user);
+				return assemble.createUserDTO(user);
 			} else {
 				return null;
 			}
@@ -49,7 +49,7 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 			
 			DUser user = db.getUser(email, password);
 			System.out.println("aqui hay " + user.toString());
-			DUserDTO us = assemble.userDTO(user);
+			DUserDTO us = assemble.createUserDTO(user);
 			
 			return us;
 		}
