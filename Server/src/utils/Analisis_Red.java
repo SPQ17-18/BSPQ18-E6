@@ -1,4 +1,4 @@
-package utils;
+package es.deusto.bspq18.e6.DeustoBox.Server.utils;
 
 import java.io.IOException;
 import java.net.ConnectException;
@@ -11,23 +11,25 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 /*
- * Método que analiza los puertos de la red wifi
+ * Mï¿½todo que analiza los puertos de la red wifi
  */
 public class Analisis_Red {
 
 	public static void main(String[] args) {
-		
-	/*Analisis_Red a = new Analisis_Red(0, 300);
-	System.out.println(almacen);*/
-		iniciar.start();
-		System.out.println("Listado de puertos abiertos");
-		System.out.println(almacen);
+
+		/*
+		 * Analisis_Red a = new Analisis_Red(0, 300); System.out.println(almacen);
+		 * iniciar.start(); System.out.println("Listado de puertos abiertos");
+		 * System.out.println(almacen);
+		 */
+		System.out.println("ConexiÃ³n a internet: " + TestInternet());
+		System.out.println("ConexiÃ³n puerto a BD: " + TestPuerto());
 	}
 
 	static Thread iniciar = new Thread() {
 		@Override
 		public void run() {
-			
+
 			ExecutorService executor = Executors.newCachedThreadPool();
 			int inicio = 1;
 			int fin = 100;
@@ -49,11 +51,8 @@ public class Analisis_Red {
 			System.out.println(almacen);
 		}
 	};
-	
-	
-	
-	public static ArrayList<Integer> almacen = new ArrayList<Integer>();
 
+	public static ArrayList<Integer> almacen = new ArrayList<Integer>();
 
 	public Analisis_Red(int puerto, int fin) {
 
@@ -77,24 +76,18 @@ public class Analisis_Red {
 	}
 
 	/**
-	 * Método que indica si hay disponible una conexión a internet
+	 * Mï¿½todo que indica si hay disponible una conexiï¿½n a internet
 	 * 
 	 * @return true si hay internet
 	 * @return false si no hay internet
 	 */
 	public static boolean TestInternet() {
-
-		String web = "www.google.es";
-		int puerto = 80;
 		boolean hayinternet = false;
 		Socket test = null;
 		try {
-			test = new Socket(web, puerto);
+			test = new Socket("www.google.es", 80);
 			if (test.isConnected()) {
-				// Si hay internet comprobamos el puerto 3306
-				if (TestPuerto() == true) {
-					hayinternet = true;
-				}
+				hayinternet = true;
 			}
 		} catch (Exception e) {
 			return false;
@@ -109,13 +102,14 @@ public class Analisis_Red {
 	}
 
 	/*
-	 * Método que comprueba si el puerto necesario para conectarse a la bd está
+	 * Mï¿½todo que comprueba si el puerto necesario para conectarse a la bd estï¿½
 	 * abierto o cerrado
 	 * 
-	 * @return true si está abierto
-	 * @return false si está cerrado
+	 * @return true si estï¿½ abierto
+	 * 
+	 * @return false si estï¿½ cerrado
 	 */
-	private static boolean TestPuerto() {
+	public static boolean TestPuerto() {
 		boolean abierto = true;
 		try {
 			Socket s = null;
@@ -125,8 +119,10 @@ public class Analisis_Red {
 			} catch (ConnectException e) {
 				abierto = false;
 			}
-			// Cerramos el puerto
-			s.close();
+			if(s != null) {
+				// Cerramos el puerto
+				s.close();
+			}
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
 			return false;
@@ -147,7 +143,7 @@ class ejecutarTareas implements Runnable {
 		this.fin = fin;
 	}
 
-	@Override
+	// @Override
 	public void run() {
 		Analisis_Red scan = new Analisis_Red(inicio, fin);
 	}
