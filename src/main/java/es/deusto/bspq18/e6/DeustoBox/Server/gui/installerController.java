@@ -93,6 +93,7 @@ public class installerController {
 				SimpleDateFormat format = new SimpleDateFormat("EE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
 				Date inClient;
 				Date inDB;
+				// TODO COMPARE HASHES
 				// Check if db has that file
 				for (int i = 0; i < userFiles.size(); i++) {
 					if (filesDB.contains(userFiles.get(i))) {
