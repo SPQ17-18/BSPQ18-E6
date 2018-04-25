@@ -1,6 +1,7 @@
 package es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -23,6 +24,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 	}
 
+	@Override
 	public DUser getUser(String email, String pass) {
 
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -44,7 +46,8 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 				if (usuario.getEmail().equals(email) && usuario.getPassword().equals(pass)) {
 					System.out.println("  -> " + usuario);
 
-					myUser = new DUser(usuario.getUsername(), usuario.getEmail(), usuario.getPassword(), usuario.getRegisterDate());
+					myUser = new DUser(usuario.getUsername(), usuario.getEmail(), usuario.getPassword(),
+							usuario.getRegisterDate(), usuario.getLastConnections());
 					break;
 				}
 			}
@@ -61,7 +64,8 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		}
 		return myUser;
 	}
-
+	
+	@Override
 	public ArrayList<DFile> getAllFiles() {
 		PersistenceManager pm = pmf.getPersistenceManager();
 		pm.getFetchPlan().setMaxFetchDepth(3);
@@ -95,6 +99,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		return files;
 	}
 
+	@Override
 	public ArrayList<DUser> getAllUsers() {
 		PersistenceManager pm = pmf.getPersistenceManager();
 		pm.getFetchPlan().setMaxFetchDepth(3);
@@ -128,6 +133,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		return users;
 	}
 
+	@Override
 	public boolean addUser(DUser user) {
 
 		boolean correct = true;
@@ -158,6 +164,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		return correct;
 	}
 
+	@Override
 	public void addFiles(DFile file) {
 		PersistenceManager pm = pmf.getPersistenceManager();
 		pm.getFetchPlan().setMaxFetchDepth(3);
@@ -321,6 +328,37 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 			System.out.println("# Error modifying the password: " + ex.getMessage());
 		}
 		return correcto;
+	}
+
+	@Override
+	public Date getLastConnection(DUser user) {
+		PersistenceManager pm = pmf.getPersistenceManager();
+		pm.getFetchPlan().setMaxFetchDepth(3);
+		Transaction tx = pm.currentTransaction();
+		int number = 0;
+		try {
+			System.out.println("- Retrieving the last connection of a certain User using an 'Extent'...");
+
+			pm = pmf.getPersistenceManager();
+			tx = pm.currentTransaction();
+
+			Extent<DUser> extent = pm.getExtent(DUser.class, true);
+
+			for (DUser newUser : extent) {
+				
+			}
+
+		} catch (Exception ex) {
+			System.out.println(
+					"# Error retrieving the number of  Files of a certain User using an 'Extent': " + ex.getMessage());
+		} finally {
+			if (tx.isActive()) {
+				tx.rollback();
+			}
+			pm.close();
+		}
+
+		return number;
 	}
 
 

@@ -91,10 +91,61 @@ public class installerController {
 			ArrayList<DFile> filesDB = dao.getAllFilesOfAUser(files.get(0).getUser().getEmail());
 			if (filesDB != null) {
 				SimpleDateFormat format = new SimpleDateFormat("EE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
-				Date inClient;
-				Date inDB;
+				Date inClient = null;
+				Date inDB = null;
 				// TODO COMPARE HASHES
 				// Check if db has that file
+				boolean found = false;
+				
+				for (int i = 0; i < userFiles.size(); i++) {
+					for (int q = 0; q < filesDB.size(); q++) {
+						// Get the file
+						if (userFiles.get(i).getName().equals(filesDB.get(q).getName())) {
+							found = true;
+							if(!userFiles.get(i).getHash().equals(filesDB.get(q).getHash())) {
+								// Compare dates
+								try {
+									inClient = format.parse(userFiles.get(i).getLastModified());
+									inDB = format.parse(filesDB.get(filesDB.indexOf(userFiles.get(i))).getLastModified());
+									if (inClient.after(inDB)) {
+										// Ask for it to the client
+										toReceive.add(userFiles.get(i));
+									} else {
+										// Send to the client
+										toSend.add(filesDB.get(filesDB.indexOf(userFiles.get(i))));
+									}
+								} catch (ParseException e) {
+									e.printStackTrace();
+								}
+							}
+						} else {
+							found = false;
+						}
+						
+					}
+					if (found == false && inDB != null) {
+						// Check if the lastModficiaction is later than the last connection to the server
+						if (inDB.after(dao.getLastConnection(userFiles.get(i).getUser()))) {
+							// Ask for it to the client
+							toReceive.add(userFiles.get(i));
+						} else {
+							// Tell the client to delete
+							toDelete.add(userFiles.get(i));
+						}
+						// Check if the file lastMod is later than the last connection to the server
+						
+						/*if (inClient.after(dao.getLastConnection(userFiles.get(i).getUser()){
+						 toReceive.add(userFiles.get(i));
+						 } else {
+						 Delete because this file has been deleted by the user
+						  toDelete.add(userFiles.get(i));
+						  }*/
+						 
+					}
+				}
+				
+
+				
 				for (int i = 0; i < userFiles.size(); i++) {
 					if (filesDB.contains(userFiles.get(i))) {
 						// Compare dates
@@ -111,7 +162,6 @@ public class installerController {
 						} catch (ParseException e) {
 							e.printStackTrace();
 						}
-
 					} else {
 						// Check if the file lastMod is later than the last connection to the server
 						/*if (inClient.after(dao.getLastConnection(userFiles.get(i).getUser()){
