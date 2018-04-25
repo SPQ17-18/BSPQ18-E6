@@ -14,7 +14,6 @@ import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DFile;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
 import es.deusto.bspq18.e6.DeustoBox.Server.remote.IDeustoBoxRemoteService;
-import es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log;
 
 
 public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeustoBoxRemoteService {
@@ -24,14 +23,11 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		private Assembler assemble;
 		private String path;
 		private v_installer installer;
-		private Error_log log;
 		
 		public DeustoBoxRemoteService() throws RemoteException {
-			this.log = new Error_log();
-			db = new DeustoBoxDAO(this.log);
+			db = new DeustoBoxDAO();
 			assemble = new Assembler();
-			installer = new v_installer(db);
-			
+			installer = new v_installer();
 			installer.frame.setVisible(true);
 		}
 
@@ -43,7 +39,7 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 			correcto = db.addUser(user);
 			
 			if (correcto) {
-				return assemble.userDTO(user);
+				return assemble.createUserDTO(user);
 			} else {
 				return null;
 			}
@@ -53,7 +49,7 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 			
 			DUser user = db.getUser(email, password);
 			System.out.println("aqui hay " + user.toString());
-			DUserDTO us = assemble.userDTO(user);
+			DUserDTO us = assemble.createUserDTO(user);
 			
 			return us;
 		}

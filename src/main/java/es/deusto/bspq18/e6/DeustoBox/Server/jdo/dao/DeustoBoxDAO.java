@@ -12,18 +12,17 @@ import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
 
+import org.datanucleus.api.jdo.JDOQuery;
+
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DFile;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
-import es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log;
 
 public class DeustoBoxDAO implements IDeustoBoxDAO {
 
 	private PersistenceManagerFactory pmf;
-	private Error_log log;
 
-	public DeustoBoxDAO(Error_log log) {
+	public DeustoBoxDAO() {
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
-		this.log = log;
 	}
 
 	public DUser getUser(String email, String pass) {
@@ -154,7 +153,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 			if (tx.isActive()) {
 				tx.rollback();
 			}
-
+			
 			pm.close();
 		}
 
@@ -169,7 +168,6 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		try {
 			tx.begin();
 			System.out.println("Adding files to the user...");
-
 			Extent<DUser> extent = pm.getExtent(DUser.class, true);
 
 			for (DUser usuario : extent) {
@@ -224,7 +222,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 	}
 
 	public static void main(String[] args) {
-		IDeustoBoxDAO dao = new DeustoBoxDAO(new Error_log());
+		IDeustoBoxDAO dao = new DeustoBoxDAO();
 
 		DUser user1 = new DUser("aitorugarte@opendeusto.es", "aitorugarte", "123");
 		DUser user2 = new DUser("markelalva@opendeusto.es", "markelalva", "123");
@@ -323,6 +321,58 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 			correcto = false;
 			System.out.println("# Error modifying the password: " + ex.getMessage());
 		}
+		return correcto;
+	}
+
+	@Override
+	public boolean deleteAllFiles() {
+		boolean correcto = true;
+		PersistenceManager pm = pmf.getPersistenceManager();
+
+		Transaction tx = pm.currentTransaction();
+
+		try {
+			tx.begin();
+			JDOQuery<DFile> query = (JDOQuery<DFile>) pm.newQuery(DFile.class);
+			tx.commit();
+		} catch (Exception ex) {
+			correcto = false;
+			
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+			if (pm != null && !pm.isClosed()) {
+				pm.close();
+			}
+		}
+
+		return correcto;
+	}
+
+	@Override
+	public boolean deleteAllUsers() {
+		boolean correcto = true;
+		PersistenceManager pm = pmf.getPersistenceManager();
+
+		Transaction tx = pm.currentTransaction();
+
+		try {
+			tx.begin();
+			JDOQuery<DUser> query = (JDOQuery<DUser>) pm.newQuery(DUser.class);
+			tx.commit();
+		} catch (Exception ex) {
+			correcto = false;
+			
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+			if (pm != null && !pm.isClosed()) {
+				pm.close();
+			}
+		}
+
 		return correcto;
 	}
 

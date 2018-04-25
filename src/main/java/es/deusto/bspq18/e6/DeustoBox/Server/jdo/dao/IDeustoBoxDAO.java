@@ -16,5 +16,7 @@ public interface IDeustoBoxDAO {
 	public int getNumberOfUserFiles(String email);
 	public boolean checkPassword(String email, String password);
 	public boolean updatePassword(String email, String password);
+	public boolean deleteAllFiles();
+	public boolean deleteAllUsers();
 	
 }

@@ -1,5 +1,7 @@
 package es.deusto.bspq18.e6.DeustoBox.Client.remote;
 
+import java.rmi.Naming;
+
 import es.deusto.bspq18.e6.DeustoBox.Server.remote.IDeustoBoxRemoteService;
 
 public class RMIServiceLocator {
@@ -12,7 +14,7 @@ public class RMIServiceLocator {
 		System.out.println(name);
 		
 		try {
-			this.facade = (IDeustoBoxRemoteService) java.rmi.Naming.lookup(name);
+			this.facade = (IDeustoBoxRemoteService) Naming.lookup(name);
 		} catch (Exception ex) {
 
 			System.out.println("An error has happened while setting the service");
