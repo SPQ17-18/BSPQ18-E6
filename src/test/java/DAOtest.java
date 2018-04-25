@@ -3,6 +3,7 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 import java.util.Random;
 
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -49,6 +50,14 @@ public class DAOtest {
 		assertEquals(number, alfiles.get(pos).getId_file());
 		assertEquals("archivo.txt", alfiles.get(pos).getName());
 		assertEquals("Ayer", alfiles.get(pos).getLastModified());
+		
+	}
+	
+	@AfterClass
+	public void deleteDB(){
+		db.deleteAllFiles();
+		db.deleteAllUsers();
+		
 		
 	}
 	

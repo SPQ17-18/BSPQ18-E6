@@ -1,5 +1,6 @@
 import static org.junit.Assert.*;
 
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -39,5 +40,7 @@ public class AssemblerTest {
 	assertEquals(user.getEmail(), userdto.getEmail());
 	assertEquals(user.getPassword(), userdto.getPassword());
 	}
+	
+
 
 }
