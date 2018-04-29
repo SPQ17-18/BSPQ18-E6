@@ -5,13 +5,15 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.Date;
 
+import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
+
 public class DFileDTO implements Serializable {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	private String userEmail;
-	private int id_file;
+	private String hash;
 	private String name;
 	private String lastModified;
 	private File file;
@@ -24,13 +26,13 @@ public class DFileDTO implements Serializable {
 		this.creationDate = new Date();
 	}
 	
-	public DFileDTO(DUserDTO user, int id_file, String name, String lastModified) {
+	public DFileDTO(DUserDTO user, String hash, String name, String lastModified) {
 		this.user = user;
-		this.id_file = id_file;
+		this.hash = hash;
 		this.name = name;
 		this.lastModified = lastModified;
 	}
-	
+
 	public String getUserEmail() {
 		return userEmail;
 	}
@@ -55,14 +57,14 @@ public class DFileDTO implements Serializable {
 		this.creationDate = creationDate;
 	}
 
-	public int getId_file() {
-		return id_file;
+	public String getHash() {
+		return hash;
 	}
 
-	public void setId_file(int id_file) {
-		this.id_file = id_file;
+	public void setHash(String hash) {
+		this.hash = hash;
 	}
-
+	
 	public String getName() {
 		return name;
 	}

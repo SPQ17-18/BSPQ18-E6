@@ -1,6 +1,7 @@
 package es.deusto.bspq18.e6.DeustoBox.Server.gui;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -91,18 +92,17 @@ public class installerController {
 			ArrayList<DFile> filesDB = dao.getAllFilesOfAUser(files.get(0).getUser().getEmail());
 			if (filesDB != null) {
 				SimpleDateFormat format = new SimpleDateFormat("EE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
-				Date inClient = null;
-				Date inDB = null;
-				// TODO COMPARE HASHES
-				// Check if db has that file
-				boolean found = false;
-				
+
 				for (int i = 0; i < userFiles.size(); i++) {
+					Date inClient = null;
+					Date inDB = null;
+					boolean found = false;
 					for (int q = 0; q < filesDB.size(); q++) {
-						// Get the file
+						// Find the file
 						if (userFiles.get(i).getName().equals(filesDB.get(q).getName())) {
 							found = true;
-							if(!userFiles.get(i).getHash().equals(filesDB.get(q).getHash())) {
+							// Check if they are the same version
+							if (!userFiles.get(i).getHash().equals(filesDB.get(q).getHash())) {
 								// Compare dates
 								try {
 									inClient = format.parse(userFiles.get(i).getLastModified());
@@ -117,79 +117,69 @@ public class installerController {
 								} catch (ParseException e) {
 									e.printStackTrace();
 								}
+							} else {
+								// Compare dates
+								try {
+									inClient = format.parse(userFiles.get(i).getLastModified());
+									inDB = format.parse(filesDB.get(filesDB.indexOf(userFiles.get(i))).getLastModified());
+								} catch (ParseException e) {
+									e.printStackTrace();
+								}
+								if(inDB.after(inClient)) {
+									toSend.add(userFiles.get(i));
+								}else {
+									toReceive.add(userFiles.get(i));
+								}		
 							}
 						} else {
+							// File doesn't exit in DB
 							found = false;
 						}
-						
-					}
-					if (found == false && inDB != null) {
-						// Check if the lastModficiaction is later than the last connection to the server
-						if (inDB.after(dao.getLastConnection(userFiles.get(i).getUser()))) {
-							// Ask for it to the client
-							toReceive.add(userFiles.get(i));
-						} else {
-							// Tell the client to delete
-							toDelete.add(userFiles.get(i));
-						}
-						// Check if the file lastMod is later than the last connection to the server
-						
-						/*if (inClient.after(dao.getLastConnection(userFiles.get(i).getUser()){
-						 toReceive.add(userFiles.get(i));
-						 } else {
-						 Delete because this file has been deleted by the user
-						  toDelete.add(userFiles.get(i));
-						  }*/
-						 
-					}
-				}
-				
 
-				
-				for (int i = 0; i < userFiles.size(); i++) {
-					if (filesDB.contains(userFiles.get(i))) {
-						// Compare dates
+					}
+					if (found == false) {
+						// Check if the lastModficiaction is later than the last connection to the
+						// server
 						try {
 							inClient = format.parse(userFiles.get(i).getLastModified());
-							inDB = format.parse(filesDB.get(filesDB.indexOf(userFiles.get(i))).getLastModified());
-							if (inClient.after(inDB)) {
+							if (inClient.after(dao.getLastConnection(userFiles.get(i).getUser()))) {
 								// Ask for it to the client
 								toReceive.add(userFiles.get(i));
 							} else {
-								// Send to the client
-								toSend.add(filesDB.get(filesDB.indexOf(userFiles.get(i))));
+								// Tell the client to delete
+								toDelete.add(userFiles.get(i));
 							}
 						} catch (ParseException e) {
 							e.printStackTrace();
 						}
-					} else {
-						// Check if the file lastMod is later than the last connection to the server
-						/*if (inClient.after(dao.getLastConnection(userFiles.get(i).getUser()){
-						 * toReceive.add(userFiles.get(i));
-						 * } else {
-						 * Delete because this file has been deleted by the user
-						 * toDelete.add(userFiles.get(i));
-						 * }
-						 */
-						
-						// We need last connection of the user -> implement it in the User data
 					}
 				}
+			} else {
+				receiveAllFiles();
 			}
-
+		} else {
+			sendAllFiles();
 		}
+	}
+
+	public void sendAllFiles() {
+
 	}
 
 	public void sendFiles(ArrayList<DFile> toSend) {
 
 	}
-	
-	public void receiveFies(ArrayList<DFile> toReceive) {
-		
+
+	public void receiveAllFiles() {
+
 	}
-	
+
+	public void receiveFiles(ArrayList<DFile> toReceive) {
+
+	}
+
 	public void deleteFiles(ArrayList<DFile> toDelete) {
-		
+
 	}
 
 }

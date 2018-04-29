@@ -1,9 +1,11 @@
 package es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Locale;
 import java.util.Map;
 
 import javax.jdo.Extent;
@@ -335,7 +337,9 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		PersistenceManager pm = pmf.getPersistenceManager();
 		pm.getFetchPlan().setMaxFetchDepth(3);
 		Transaction tx = pm.currentTransaction();
-		int number = 0;
+		
+		SimpleDateFormat format = new SimpleDateFormat("EE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
+		Date date = null;
 		try {
 			System.out.println("- Retrieving the last connection of a certain User using an 'Extent'...");
 
@@ -345,12 +349,16 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 			Extent<DUser> extent = pm.getExtent(DUser.class, true);
 
 			for (DUser newUser : extent) {
-				
+				if(user.getEmail().equals(newUser.getEmail())) {
+					// We get the last connection
+					date = format.parse(newUser.getLastConnections().get(newUser.getLastConnections().size()-1));
+					break;
+				}
 			}
 
 		} catch (Exception ex) {
 			System.out.println(
-					"# Error retrieving the number of  Files of a certain User using an 'Extent': " + ex.getMessage());
+					"# Error retrieving the last connection of a certain User using an 'Extent': " + ex.getMessage());
 		} finally {
 			if (tx.isActive()) {
 				tx.rollback();
@@ -358,7 +366,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 			pm.close();
 		}
 
-		return number;
+		return date;
 	}
 
 

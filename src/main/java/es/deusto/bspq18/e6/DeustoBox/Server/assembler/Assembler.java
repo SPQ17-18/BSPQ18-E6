@@ -28,7 +28,7 @@ public class Assembler {
 	}
 
 	public DFile createFile(DFileDTO dto) {
-		DFile file = new DFile(createUser(dto.getUser()), dto.getId_file(), dto.getName(), dto.getLastModified());
+		DFile file = new DFile(createUser(dto.getUser()), dto.getHash(), dto.getName(), dto.getLastModified());
 		return file;
 	}
 
