@@ -2,6 +2,7 @@ package es.deusto.bspq18.e6.DeustoBox.Client.controller;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
@@ -124,24 +125,51 @@ public class Controller {
 
 				}
 
-				ArrayList<DFileDTO> positionsToRemove = new ArrayList<DFileDTO>();
+				ArrayList<DFileDTO> filesToRemove = new ArrayList<DFileDTO>();
 				for (int i = 0; i < arr_res.length; i++) {
 					for (int j = 0; j < filesDTO.size(); j++) {
 						if (arr_res[i].equals(filesDTO.get(j).getName().substring(1))) {
-							positionsToRemove.add(filesDTO.get(j));
+							filesToRemove.add(filesDTO.get(j));
 
 						}
+					}
+				}
 
+				for (int i = 0; i < filesToRemove.size(); i++) {
+					filesDTO.remove(filesToRemove.get(i));
+
+				}
+				if(filesDTO.size() > 0)
+				getFiles();
+				
+				//Now we have to sync our files with the Server
+				wait(1000);
+				arr_res = null;
+				arr_res = getMyFiles(path);
+				
+				//Actualizamos filesDTO
+				getListOfFiles(userdto.getEmail());
+				ArrayList<String> filesToUpload = new ArrayList<String>();
+				
+				//Comparamos nuestros files con los que no hay en el server, y los que no estén los guardamos en el array
+				boolean existe = true;
+				for (int i = 0; i < arr_res.length; i++) {
+					for (int j = 0; j < filesDTO.size(); j++) {
+						existe = false;
+						if (arr_res[i].equals(filesDTO.get(j).getName().substring(1))) {
+							existe = true;
+
+						}
+						
+
+					}
+					if(!existe){
+						filesToUpload.add(arr_res[i]);
 					}
 
 				}
-
-				for (int i = 0; i < positionsToRemove.size(); i++) {
-					filesDTO.remove(positionsToRemove.get(i));
-
-				}
-
-				getFiles();
+				
+		
 			}
 
 		} catch (Exception ex) {
@@ -201,6 +229,27 @@ public class Controller {
 	public void setPath(String path) {
 		this.path = path + getUserdto().getEmail() + "\\";
 	}
+	
+	
+	
+	
+	public boolean sendData(String filename, byte[] data, int len) throws RemoteException {
+		System.out.println("Sending data");
+		try {
+			File f = new File(filename);
+			FileOutputStream out = new FileOutputStream(filename, true);
+			out.write(data, 0, len);
+			out.flush();
+			out.close();
+			System.out.println("Done writing data...");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return true;
+	}
+	
+	
+	
 
 	public static String[] getMyFiles(String dir_path) {
 		System.out.println(dir_path);

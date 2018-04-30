@@ -1,7 +1,9 @@
 package es.deusto.bspq18.e6.DeustoBox.Server.remote;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
@@ -63,6 +65,7 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 	}
 
 	
+	
 	public boolean sendData(String filename, byte[] data, int len) throws RemoteException {
 		System.out.println("Sending data");
 		try {
@@ -106,5 +109,30 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		System.out.println("The user has " + number + " files.");
 		return number;
 	}
+	
+	public void receiveFiles(ArrayList<DFileDTO> filesDTO) throws RemoteException{
+		for (DFileDTO file : filesDTO) {
+			String pathFichero = path + file.getFile().getName();
+			File f1 = new File(file.getFile().getPath());
+			System.out.println(f1);
+			try {
+				f1.createNewFile();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+				FileInputStream in = new FileInputStream(f1);
+				byte[] mydata = new byte[1024 * 1024];
+				int mylen = in.read(mydata);
+				System.out.println(mylen);
+				while (mylen > 0) {
+					System.out.println("Pedimos que nos envien los datos");
+					rsl.getService().sendData(pathFichero, mydata, mylen);
+					mylen = in.read(mydata);
+				
+		
+		
+	}
 
+}
+	}
 }
