@@ -88,6 +88,12 @@ public class DFileDTO implements Serializable {
 	public void setUser(DUserDTO user) {
 		this.user = user;
 	}
+
+	@Override
+	public String toString() {
+		return "DFileDTO [userEmail=" + userEmail + ", hash=" + hash + ", name=" + name + ", lastModified="
+				+ lastModified + ", file=" + file + ", creationDate=" + creationDate + ", user=" + user + "]";
+	}
 		
 	
 	

@@ -14,9 +14,9 @@ import es.deusto.bspq18.e6.DeustoBox.Server.dto.DUserDTO;
 
 public class Controller {
 
-	private RMIServiceLocator rsl;
+	private static RMIServiceLocator rsl;
 	private DUserDTO userdto;
-	private String path;
+	private static String path;
 	private ArrayList<DFileDTO> filesDTO;
 
 	public Controller(String[] args) throws RemoteException {
@@ -60,16 +60,14 @@ public class Controller {
 	}
 
 	public void getFiles() {
-		getListOfUnknownFiles(userdto.getEmail());
-		getListOfFiles(userdto.getEmail());
 
-		File directorio = new File(this.path);
+		File directorio = new File(path);
 		if (!directorio.exists())
 			directorio.mkdir();
 
 		for (DFileDTO file : filesDTO) {
 			System.out.println("Dentro del for");
-			String pathFichero = this.path + file.getFile().getName();
+			String pathFichero = path + file.getFile().getName();
 			File f1 = new File(file.getFile().getPath());
 			System.out.println(f1);
 			try {
@@ -105,31 +103,51 @@ public class Controller {
 
 		}
 	}
-	
-	public void getListOfUnknownFiles(String email) {
+
+	public void getListOfUnknownFiles() {
 		try {
-			//Pido todos los archivos
-			 String[] arr_res = null;
-			 arr_res = getMyFiles(this.path);
-			 
-			 for(int i =0; i< arr_res.length; i++){
-				 System.out.println("TENGO:" );
-				 System.out.println(arr_res[i]);
-				 
-				 
-			 }
-			
-			//Miro que archivos tengo
-			
-			//Actualizo la lista solo con los archivos que no tengo.
-			
-			
-			filesDTO = rsl.getService().getFiles(email);
+			// Pido todos los archivos
+			String[] arr_res = null;
+			arr_res = getMyFiles(path);
+
+			// Miro que archivos tengo
+
+			if (arr_res[0].equals("VACIO")) {
+				getListOfFiles(userdto.getEmail());
+				getFiles();
+
+			} else {
+				System.out.println("Asking for list of Files");
+				getListOfFiles(userdto.getEmail());
+				for (DFileDTO file : filesDTO) {
+					System.out.println(file.toString());
+
+				}
+
+				ArrayList<DFileDTO> positionsToRemove = new ArrayList<DFileDTO>();
+				for (int i = 0; i < arr_res.length; i++) {
+					for (int j = 0; j < filesDTO.size(); j++) {
+						if (arr_res[i].equals(filesDTO.get(j).getName().substring(1))) {
+							positionsToRemove.add(filesDTO.get(j));
+
+						}
+
+					}
+
+				}
+
+				for (int i = 0; i < positionsToRemove.size(); i++) {
+					filesDTO.remove(positionsToRemove.get(i));
+
+				}
+
+				getFiles();
+			}
+
 		} catch (Exception ex) {
 
 		}
 	}
-	
 
 	public int getNumberOfFiles() {
 		int files = 0;
@@ -183,37 +201,37 @@ public class Controller {
 	public void setPath(String path) {
 		this.path = path + getUserdto().getEmail() + "\\";
 	}
-	
-	
-	
-    public static String[] getMyFiles( String dir_path ) {
-    	System.out.println(dir_path);
 
-        String[] arr_res = null;
+	public static String[] getMyFiles(String dir_path) {
+		System.out.println(dir_path);
 
-        File f = new File( dir_path );
+		String[] arr_res = null;
 
-        if ( f.isDirectory( )) {
+		File f = new File(dir_path);
 
-            List<String> res   = new ArrayList<>();
-            File[] arr_content = f.listFiles();
+		if (f.isDirectory() && (f.listFiles().length > 0)) {
 
-            int size = arr_content.length;
+			List<String> res = new ArrayList<>();
+			File[] arr_content = f.listFiles();
 
-            for ( int i = 0; i < size; i ++ ) {
+			int size = arr_content.length;
 
-                if ( arr_content[ i ].isFile( ))
-                res.add( arr_content[ i ].toString( ));
-            }
+			for (int i = 0; i < size; i++) {
 
+				if (arr_content[i].isFile())
+					res.add(arr_content[i].getName());
+			}
 
-            arr_res = res.toArray( new String[ 0 ] );
+			arr_res = res.toArray(new String[0]);
 
-        } else
-            System.err.println( "¡ Path NO válido !" );
+		} else {
+			arr_res = new String[1];
+			arr_res[0] = "VACIO";
+			System.out.println("Aqui estmaos");
 
+		}
 
-        return arr_res;
-    }
+		return arr_res;
+	}
 
 }

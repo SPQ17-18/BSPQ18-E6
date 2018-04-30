@@ -77,7 +77,7 @@ public class v_client extends JFrame {
 		
 		SyncFiles.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				getControlador().getFiles();
+				getControlador().getListOfUnknownFiles();
 				lblNumber.setText(String.valueOf(controlador.getNumberOfFiles()));
 			}
 		});

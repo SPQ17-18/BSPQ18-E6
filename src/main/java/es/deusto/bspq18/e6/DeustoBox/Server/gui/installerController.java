@@ -233,7 +233,8 @@ public class installerController {
 		System.out.println("Getting files");
 		path = path + "\\" + "Deusto-Box" + "\\" + email + "\\";
 
-		ArrayList<DFile> files = dao.getAllFilesOfAUser(email);
+		ArrayList<DFile> files = new ArrayList<DFile>();
+		files = dao.getAllFilesOfAUser(email);
 		ArrayList<DFileDTO> filesDTO = null;
 		filesDTO = transform.createFilesDTO(files, path);
 		

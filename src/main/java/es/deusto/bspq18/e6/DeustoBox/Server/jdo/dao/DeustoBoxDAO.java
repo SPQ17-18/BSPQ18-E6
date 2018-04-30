@@ -85,7 +85,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 			Extent<DFile> extent = pm.getExtent(DFile.class, true);
 
 			for (DFile file : extent) {
-				files.add(file);
+			files.add(new DFile(file.getUser(), file.getHash(), file.getName(), file.getLastModified()));
 			}
 
 			tx.commit();
@@ -211,7 +211,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 			for (DUser user : extent) {
 				if (user.getEmail().equals(email)) {
 					e = new DUser(user.getUsername(), user.getEmail(), user.getPassword());
-					System.out.println("En el DAO: " + user.getFiles().get(0).toString());
+					System.out.println("En el DAO: " + user.getFiles().get(0).getName());
 					e.setFiles(user.getFiles());
 					System.out.println("Hay archivos" + e.getFiles().size());
 				}

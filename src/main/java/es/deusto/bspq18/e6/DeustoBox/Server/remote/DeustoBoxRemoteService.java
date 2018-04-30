@@ -39,7 +39,7 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		correcto = db.addUser(user);
 
 		if (correcto) {
-			return assemble.createUserDTO(user);
+			return assemble.createUserDTO(user, path);
 		} else {
 			return null;
 		}
@@ -48,8 +48,8 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 	public DUserDTO login(String email, String password) throws RemoteException {
 
 		DUser user = db.getUser(email, password);
-		System.out.println("aqui hay " + user.toString());
-		DUserDTO us = assemble.createUserDTO(user);
+		DUserDTO us = assemble.createUserDTO(user, path);
+		
 
 		return us;
 	}
@@ -57,7 +57,8 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 	public ArrayList<DFileDTO> getFiles(String email) throws RemoteException {
 		String path = getInstaller().getTxtPath().getText();
 			
-		ArrayList<DFileDTO> filesDTO = installer.getInstaller().sendAllFiles(email, path);
+		ArrayList<DFileDTO> filesDTO = new ArrayList<DFileDTO>();
+		filesDTO = installer.getInstaller().sendAllFiles(email, path);
 		return filesDTO;
 	}
 

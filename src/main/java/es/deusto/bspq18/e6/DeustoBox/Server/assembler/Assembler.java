@@ -9,7 +9,7 @@ import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
 
 public class Assembler {
 
-	public DUserDTO createUserDTO(DUser user) {
+	public DUserDTO createUserDTO(DUser user, String path) {
 		DUserDTO userdto = new DUserDTO(user.getEmail(), user.getUsername(), user.getPassword(),
 				user.getRegisterDate());
 		userdto.setFiles(user.getFiles());
@@ -23,7 +23,10 @@ public class Assembler {
 	}
 
 	public DFileDTO createFileDTO(DFile file, String path) {
-		DFileDTO dto = new DFileDTO(file.getUser().getEmail(), path, file.getLastModified());
+		System.out.println("ENTRANDO");
+		DUserDTO user = createUserDTO(file.getUser(), path);
+		DFileDTO dto = new DFileDTO(user, file.getHash(), file.getName(), file.getLastModified());
+		System.out.println("SALIENDO");
 		return dto;
 	}
 
