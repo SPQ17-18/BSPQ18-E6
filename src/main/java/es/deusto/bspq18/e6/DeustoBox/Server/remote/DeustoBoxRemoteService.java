@@ -1,5 +1,6 @@
 package es.deusto.bspq18.e6.DeustoBox.Server.remote;
 
+import java.io.BufferedInputStream;
 import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -10,8 +11,6 @@ import java.net.Socket;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
-
-import android.provider.Settings.System;
 import es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assembler;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DFileDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DUserDTO;
@@ -38,26 +37,36 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		assemble = new Assembler();
 		installer = new v_installer();
 		installer.frame.setVisible(true);
-		t.start();
+		
 	}
 	
-	Thread t = new Thread() {
-		public void run() {
-			try {
-				sc = new ServerSocket(5000);
-				so = sc.accept();
-				in = new DataInputStream(so.getInputStream());
-				String recibido = in.readUTF();
-				if(recibido.equals("hola")) {
-					IOException a = new IOException();
-					a.printStackTrace();
-				}
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			
+	Thread t = new Thread(){
+		public void run(){
+	try {
+		System.out.println("PAPS1");
+			sc = new ServerSocket(5000);
+
+		so = sc.accept();
+		in = new DataInputStream(new BufferedInputStream(so.getInputStream()));
+		
+		System.out.println("Una alu");
+		byte[] bytes = new byte[1024];
+
+		    in.read(bytes);
+		    
+		    FileOutputStream fos = new FileOutputStream("C:\\test3.html");
+		    System.out.println("Hola");
+		    fos.write(bytes);
+		    fos.close();
+		
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
-	};
+		
+		}
+};
+	
+	
 
 	public DUserDTO signUp(String username, String email, String password) throws RemoteException {
 		boolean correcto = false;
@@ -126,12 +135,19 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		return installer;
 	}
 
+
 	@Override
 	public int getNumberOfUserFiles(String email) throws RemoteException {
 		int number = 0;
 		number = db.getNumberOfUserFiles(email);
 		return number;
 	}
+	
+	public void ReceiveFiles(String file) throws RemoteException {
+		t.start();
+
+	}
+
 	
 
 }

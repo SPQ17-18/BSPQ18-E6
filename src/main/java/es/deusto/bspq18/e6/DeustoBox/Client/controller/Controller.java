@@ -143,7 +143,6 @@ public class Controller {
 				getFiles();
 				
 				//Now we have to sync our files with the Server
-				wait(1000);
 				arr_res = null;
 				arr_res = getMyFiles(path);
 				
@@ -153,21 +152,30 @@ public class Controller {
 				
 				//Comparamos nuestros files con los que no hay en el server, y los que no estén los guardamos en el array
 				boolean existe = true;
+				System.out.println("La longitud es: " + arr_res.length);
 				for (int i = 0; i < arr_res.length; i++) {
+					existe = false;
 					for (int j = 0; j < filesDTO.size(); j++) {
-						existe = false;
+						
 						if (arr_res[i].equals(filesDTO.get(j).getName().substring(1))) {
+							System.out.println(arr_res[i] + " " + filesDTO.get(j).getName().substring(1) );
 							existe = true;
 
 						}
 						
-
 					}
 					if(!existe){
 						filesToUpload.add(arr_res[i]);
 					}
 
 				}
+				
+				for(int i = 0; i< filesToUpload.size(); i++){
+					String pathFichero =  path + filesToUpload.get(i);
+					sendFiles(pathFichero);
+					
+				}
+				
 	
 			
 			}
@@ -233,15 +241,23 @@ public class Controller {
 	
 	
 	
-	public boolean sendFiles() throws RemoteException {
+	public boolean sendFiles(String pathFile){
 		try {
+			System.out.print("Solo lumas");
+			rsl.getService().ReceiveFiles("Lumas");
 			Socket so = new Socket("localhost", 5000);
 			DataOutputStream out = new DataOutputStream(so.getOutputStream());
-			out.writeUTF("hola");
-			out.flush();
-			
-			out.close();
-			so.close();
+			File file = new File(pathFile);
+			long length = file.length();
+		    if (length > Integer.MAX_VALUE) {
+		        System.out.println("File is too large.");
+		    }
+		    byte[] bytes = new byte[(int) length];
+		    
+		    out.write(bytes);
+		    out.close();
+		    so.close();
+		    System.out.print("HOLA3");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
