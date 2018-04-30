@@ -95,6 +95,4 @@ public class v_installer extends JFrame {
 		return txtPath;
 	}
 	
-	
-
 }
