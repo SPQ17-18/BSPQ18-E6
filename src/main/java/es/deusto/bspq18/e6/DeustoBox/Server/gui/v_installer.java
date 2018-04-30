@@ -154,7 +154,7 @@ public class v_installer extends JFrame {
 					Date lastmodified = new Date(element.lastModified());
 					// Upload all info to user's database
 					// Check if it exits
-					DFile file = new DFile(user, 1, name, lastmodified.toString());
+					/*DFile file = new DFile(user, 1, name, lastmodified.toString());
 					ArrayList<DFile> files = dao.getAllFiles();
 					//System.out.println(files);
 					if (files.contains(file)) {
@@ -168,8 +168,8 @@ public class v_installer extends JFrame {
 						myfile = new DFile(user,(int) (Math.random() * 100) + 1, name, lastmodified.toString());
 						myfile.setUser(user);
 						System.out.println(map);
-						dao.addFiles(myfile);
-					}
+						dao.addFiles(myfile);*/
+				//	}
 				}
 			}
 		}
