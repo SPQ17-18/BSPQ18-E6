@@ -23,10 +23,8 @@ public class Assembler {
 	}
 
 	public DFileDTO createFileDTO(DFile file, String path) {
-		System.out.println("ENTRANDO");
 		DUserDTO user = createUserDTO(file.getUser(), path);
-		DFileDTO dto = new DFileDTO(user, file.getHash(), file.getName(), file.getLastModified());
-		System.out.println("SALIENDO");
+		DFileDTO dto = new DFileDTO(user, file.getHash(), file.getName(), file.getLastModified(), path);
 		return dto;
 	}
 

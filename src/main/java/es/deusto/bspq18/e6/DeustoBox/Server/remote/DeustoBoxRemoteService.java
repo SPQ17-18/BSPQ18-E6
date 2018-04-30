@@ -8,6 +8,7 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
+import android.provider.Settings.System;
 import es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assembler;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DFileDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DUserDTO;
@@ -35,9 +36,8 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 
 	public DUserDTO signUp(String username, String email, String password) throws RemoteException {
 		boolean correcto = false;
-		System.out.println("User received");
+
 		DUser user = new DUser(username, email, password);
-		System.out.println(user);
 		correcto = db.addUser(user);
 
 		if (correcto) {
@@ -61,25 +61,24 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 			
 		ArrayList<DFileDTO> filesDTO = new ArrayList<DFileDTO>();
 		filesDTO = installer.getInstaller().sendAllFiles(email, path);
+	
 		return filesDTO;
 	}
 
 	
 	
-	public boolean sendData(String filename, byte[] data, int len) throws RemoteException {
-		System.out.println("Sending data");
-		try {
-			File f = new File(filename);
-			FileOutputStream out = new FileOutputStream(filename, true);
-			out.write(data, 0, len);
-			out.flush();
-			out.close();
-			System.out.println("Done writing data...");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+	public boolean sendData(String filename, byte[] data, int len) throws RemoteException{
+        try{
+        	File f = new File(filename);
+        	FileOutputStream out=new FileOutputStream(filename,true);
+        	out.write(data,0,len);
+        	out.flush();
+        	out.close();
+        }catch(Exception e){
+        	e.printStackTrace();
+        }
 		return true;
-	}
+}
 
 	public boolean checkPassword(String email, String password) throws RemoteException {
 		boolean correct = false;
@@ -106,33 +105,8 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 	public int getNumberOfUserFiles(String email) throws RemoteException {
 		int number = 0;
 		number = db.getNumberOfUserFiles(email);
-		System.out.println("The user has " + number + " files.");
 		return number;
 	}
 	
-	public void receiveFiles(ArrayList<DFileDTO> filesDTO) throws RemoteException{
-		for (DFileDTO file : filesDTO) {
-			String pathFichero = path + file.getFile().getName();
-			File f1 = new File(file.getFile().getPath());
-			System.out.println(f1);
-			try {
-				f1.createNewFile();
-			} catch (IOException e1) {
-				e1.printStackTrace();
-			}
-				FileInputStream in = new FileInputStream(f1);
-				byte[] mydata = new byte[1024 * 1024];
-				int mylen = in.read(mydata);
-				System.out.println(mylen);
-				while (mylen > 0) {
-					System.out.println("Pedimos que nos envien los datos");
-					rsl.getService().sendData(pathFichero, mydata, mylen);
-					mylen = in.read(mydata);
-				
-		
-		
-	}
 
-}
-	}
 }
