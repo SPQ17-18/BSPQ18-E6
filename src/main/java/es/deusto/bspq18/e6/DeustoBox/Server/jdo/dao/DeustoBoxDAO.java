@@ -1,8 +1,11 @@
 package es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Locale;
 import java.util.Map;
 
 import javax.jdo.Extent;
@@ -11,8 +14,6 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
-
-import org.datanucleus.api.jdo.JDOQuery;
 
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DFile;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
@@ -25,6 +26,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 	}
 
+	@Override
 	public DUser getUser(String email, String pass) {
 
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -46,7 +48,8 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 				if (usuario.getEmail().equals(email) && usuario.getPassword().equals(pass)) {
 					System.out.println("  -> " + usuario);
 
-					myUser = new DUser(usuario.getUsername(), usuario.getEmail(), usuario.getPassword(), usuario.getRegisterDate());
+					myUser = new DUser(usuario.getUsername(), usuario.getEmail(), usuario.getPassword(),
+							usuario.getRegisterDate(), usuario.getLastConnections());
 					break;
 				}
 			}
@@ -63,7 +66,8 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		}
 		return myUser;
 	}
-
+	
+	@Override
 	public ArrayList<DFile> getAllFiles() {
 		PersistenceManager pm = pmf.getPersistenceManager();
 		pm.getFetchPlan().setMaxFetchDepth(3);
@@ -97,6 +101,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		return files;
 	}
 
+	@Override
 	public ArrayList<DUser> getAllUsers() {
 		PersistenceManager pm = pmf.getPersistenceManager();
 		pm.getFetchPlan().setMaxFetchDepth(3);
@@ -130,6 +135,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		return users;
 	}
 
+	@Override
 	public boolean addUser(DUser user) {
 
 		boolean correct = true;
@@ -153,13 +159,14 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 			if (tx.isActive()) {
 				tx.rollback();
 			}
-			
+
 			pm.close();
 		}
 
 		return correct;
 	}
 
+	@Override
 	public void addFiles(DFile file) {
 		PersistenceManager pm = pmf.getPersistenceManager();
 		pm.getFetchPlan().setMaxFetchDepth(3);
@@ -168,6 +175,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		try {
 			tx.begin();
 			System.out.println("Adding files to the user...");
+
 			Extent<DUser> extent = pm.getExtent(DUser.class, true);
 
 			for (DUser usuario : extent) {
@@ -325,55 +333,40 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 	}
 
 	@Override
-	public boolean deleteAllFiles() {
-		boolean correcto = true;
+	public Date getLastConnection(DUser user) {
 		PersistenceManager pm = pmf.getPersistenceManager();
-
+		pm.getFetchPlan().setMaxFetchDepth(3);
 		Transaction tx = pm.currentTransaction();
-
+		
+		SimpleDateFormat format = new SimpleDateFormat("EE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
+		Date date = null;
 		try {
-			tx.begin();
-			JDOQuery<DFile> query = (JDOQuery<DFile>) pm.newQuery(DFile.class);
-			tx.commit();
+			System.out.println("- Retrieving the last connection of a certain User using an 'Extent'...");
+
+			pm = pmf.getPersistenceManager();
+			tx = pm.currentTransaction();
+
+			Extent<DUser> extent = pm.getExtent(DUser.class, true);
+
+			for (DUser newUser : extent) {
+				if(user.getEmail().equals(newUser.getEmail())) {
+					// We get the last connection
+					date = format.parse(newUser.getLastConnections().get(newUser.getLastConnections().size()-1));
+					break;
+				}
+			}
+
 		} catch (Exception ex) {
-			correcto = false;
-			
+			System.out.println(
+					"# Error retrieving the last connection of a certain User using an 'Extent': " + ex.getMessage());
 		} finally {
-			if (tx != null && tx.isActive()) {
+			if (tx.isActive()) {
 				tx.rollback();
 			}
-			if (pm != null && !pm.isClosed()) {
-				pm.close();
-			}
+			pm.close();
 		}
 
-		return correcto;
-	}
-
-	@Override
-	public boolean deleteAllUsers() {
-		boolean correcto = true;
-		PersistenceManager pm = pmf.getPersistenceManager();
-
-		Transaction tx = pm.currentTransaction();
-
-		try {
-			tx.begin();
-			JDOQuery<DUser> query = (JDOQuery<DUser>) pm.newQuery(DUser.class);
-			tx.commit();
-		} catch (Exception ex) {
-			correcto = false;
-			
-		} finally {
-			if (tx != null && tx.isActive()) {
-				tx.rollback();
-			}
-			if (pm != null && !pm.isClosed()) {
-				pm.close();
-			}
-		}
-
-		return correcto;
+		return date;
 	}
 
 

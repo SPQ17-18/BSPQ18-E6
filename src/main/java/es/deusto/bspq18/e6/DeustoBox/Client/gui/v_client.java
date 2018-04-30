@@ -81,15 +81,7 @@ public class v_client extends JFrame {
 				lblNumber.setText(String.valueOf(controlador.getNumberOfFiles()));
 			}
 		});
-		
-		
-		
-		
 	}
-	
-	
-	
-	
 	
 	public Controller getControlador() {
 		return controlador;

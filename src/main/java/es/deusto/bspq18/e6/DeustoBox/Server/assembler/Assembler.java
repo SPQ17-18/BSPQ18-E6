@@ -17,7 +17,7 @@ public class Assembler {
 	}
 
 	public DUser createUser(DUserDTO userdto) {
-		DUser user = new DUser( userdto.getUsername(),userdto.getEmail(), userdto.getPassword(), userdto.getRegisteredDate());
+		DUser user = new DUser(userdto.getEmail(), userdto.getUsername(), userdto.getPassword());
 		user.setFiles(userdto.getFiles());
 		return user;
 	}
@@ -28,7 +28,7 @@ public class Assembler {
 	}
 
 	public DFile createFile(DFileDTO dto) {
-		DFile file = new DFile(createUser(dto.getUser()), dto.getId_file(), dto.getName(), dto.getLastModified());
+		DFile file = new DFile(createUser(dto.getUser()), dto.getHash(), dto.getName(), dto.getLastModified());
 		return file;
 	}
 

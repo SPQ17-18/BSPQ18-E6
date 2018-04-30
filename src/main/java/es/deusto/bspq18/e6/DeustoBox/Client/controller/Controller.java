@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
+import java.util.List;
 
 import es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login;
 import es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator;
@@ -59,6 +60,7 @@ public class Controller {
 	}
 
 	public void getFiles() {
+		getListOfUnknownFiles(userdto.getEmail());
 		getListOfFiles(userdto.getEmail());
 
 		File directorio = new File(this.path);
@@ -66,28 +68,34 @@ public class Controller {
 			directorio.mkdir();
 
 		for (DFileDTO file : filesDTO) {
+			System.out.println("Dentro del for");
 			String pathFichero = this.path + file.getFile().getName();
 			File f1 = new File(file.getFile().getPath());
+			System.out.println(f1);
 			try {
 				f1.createNewFile();
 			} catch (IOException e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-
+			System.out.println("1");
 			try {
+				System.out.println("2");
 				FileInputStream in = new FileInputStream(f1);
 				byte[] mydata = new byte[1024 * 1024];
 				int mylen = in.read(mydata);
+				System.out.println(mylen);
 				while (mylen > 0) {
+					System.out.println("Pedimos que nos envien los datos");
 					rsl.getService().sendData(pathFichero, mydata, mylen);
 					mylen = in.read(mydata);
 				}
+				in.close();
 			} catch (Exception e) {
 				e.printStackTrace();
 
 			}
 		}
+		System.out.println("Fuera del for");
 	}
 
 	public void getListOfFiles(String email) {
@@ -97,6 +105,31 @@ public class Controller {
 
 		}
 	}
+	
+	public void getListOfUnknownFiles(String email) {
+		try {
+			//Pido todos los archivos
+			 String[] arr_res = null;
+			 arr_res = getMyFiles(this.path);
+			 
+			 for(int i =0; i< arr_res.length; i++){
+				 System.out.println("TENGO:" );
+				 System.out.println(arr_res[i]);
+				 
+				 
+			 }
+			
+			//Miro que archivos tengo
+			
+			//Actualizo la lista solo con los archivos que no tengo.
+			
+			
+			filesDTO = rsl.getService().getFiles(email);
+		} catch (Exception ex) {
+
+		}
+	}
+	
 
 	public int getNumberOfFiles() {
 		int files = 0;
@@ -150,5 +183,37 @@ public class Controller {
 	public void setPath(String path) {
 		this.path = path + getUserdto().getEmail() + "\\";
 	}
+	
+	
+	
+    public static String[] getMyFiles( String dir_path ) {
+    	System.out.println(dir_path);
+
+        String[] arr_res = null;
+
+        File f = new File( dir_path );
+
+        if ( f.isDirectory( )) {
+
+            List<String> res   = new ArrayList<>();
+            File[] arr_content = f.listFiles();
+
+            int size = arr_content.length;
+
+            for ( int i = 0; i < size; i ++ ) {
+
+                if ( arr_content[ i ].isFile( ))
+                res.add( arr_content[ i ].toString( ));
+            }
+
+
+            arr_res = res.toArray( new String[ 0 ] );
+
+        } else
+            System.err.println( "¡ Path NO válido !" );
+
+
+        return arr_res;
+    }
 
 }
