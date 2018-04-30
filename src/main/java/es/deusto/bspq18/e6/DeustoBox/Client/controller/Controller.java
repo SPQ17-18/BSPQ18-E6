@@ -172,7 +172,7 @@ public class Controller {
 				
 				for(int i = 0; i< filesToUpload.size(); i++){
 					String pathFichero =  path + filesToUpload.get(i);
-					sendFiles(pathFichero);
+					sendFiles(pathFichero, filesToUpload.get(i) );
 					
 				}
 				
@@ -241,10 +241,9 @@ public class Controller {
 	
 	
 	
-	public boolean sendFiles(String pathFile){
+	public boolean sendFiles(String pathFile, String fileName){
 		try {
-			System.out.print("Solo lumas");
-			rsl.getService().ReceiveFiles("Lumas");
+			rsl.getService().ReceiveFiles(fileName, this.userdto.getEmail());
 			Socket so = new Socket("localhost", 5000);
 			DataOutputStream out = new DataOutputStream(so.getOutputStream());
 			File file = new File(pathFile);

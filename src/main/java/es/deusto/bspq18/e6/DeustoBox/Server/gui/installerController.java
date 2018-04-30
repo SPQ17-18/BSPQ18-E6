@@ -261,4 +261,11 @@ public class installerController {
 
 	}
 
+	public String getPath() {
+		return path;
+	}
+
+	
+	
+
 }

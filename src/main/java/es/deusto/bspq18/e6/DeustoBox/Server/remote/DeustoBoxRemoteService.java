@@ -31,12 +31,14 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 	private Socket so;
 	private ServerSocket sc;
 	private DataInputStream in;
+	private String FiletoWrite;
 
 	public DeustoBoxRemoteService(Socket so) throws RemoteException {
-		db = new DeustoBoxDAO();
-		assemble = new Assembler();
-		installer = new v_installer();
-		installer.frame.setVisible(true);
+		this.db = new DeustoBoxDAO();
+		this.assemble = new Assembler();
+		this.installer = new v_installer();
+		this.installer.frame.setVisible(true);
+		this.FiletoWrite = " ";
 		
 	}
 	
@@ -49,12 +51,12 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		so = sc.accept();
 		in = new DataInputStream(new BufferedInputStream(so.getInputStream()));
 		
-		System.out.println("Una alu");
 		byte[] bytes = new byte[1024];
 
 		    in.read(bytes);
-		    
-		    FileOutputStream fos = new FileOutputStream("C:\\test3.html");
+		    String write = path + FiletoWrite;
+		    System.out.println(" Se va a escribir en : "  + write);
+		    FileOutputStream fos = new FileOutputStream(write);
 		    System.out.println("Hola");
 		    fos.write(bytes);
 		    fos.close();
@@ -127,14 +129,20 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		return correct;
 	}
 
-	public void setPath(String path) {
-		this.path = path;
+	public void setPath(String email) {
+		this.path = getInstaller().getInstaller().getPath() + "\\" + email + "\\";
+		
 	}
 
 	public v_installer getInstaller() {
 		return installer;
 	}
 
+
+
+	public void setFiletoWrite(String filetoWrite) {
+		FiletoWrite = filetoWrite;
+	}
 
 	@Override
 	public int getNumberOfUserFiles(String email) throws RemoteException {
@@ -143,10 +151,13 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		return number;
 	}
 	
-	public void ReceiveFiles(String file) throws RemoteException {
+	public void ReceiveFiles(String file, String email) throws RemoteException {
+		setPath(email);
+		setFiletoWrite(file);
 		t.start();
 
 	}
+
 
 	
 

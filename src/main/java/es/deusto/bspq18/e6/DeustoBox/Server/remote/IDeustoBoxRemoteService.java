@@ -17,5 +17,5 @@ public interface IDeustoBoxRemoteService extends Remote{
 	public int getNumberOfUserFiles(String email) throws RemoteException;
 	public boolean checkPassword(String email,String password)throws RemoteException;
 	public boolean updatePassword(String email,String password)throws RemoteException;
-	public void ReceiveFiles(String file) throws RemoteException;
+	public void ReceiveFiles(String file, String email) throws RemoteException;
 }
