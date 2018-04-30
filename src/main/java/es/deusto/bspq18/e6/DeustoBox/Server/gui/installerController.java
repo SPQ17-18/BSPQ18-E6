@@ -1,12 +1,18 @@
 package es.deusto.bspq18.e6.DeustoBox.Server.gui;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
+
+import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.commons.io.IOUtils;
+
 import java.util.Date;
 
 import es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assembler;
@@ -72,11 +78,70 @@ public class installerController {
 				File userFolder = new File(directorio + "\\" + users.get(i).getEmail());
 				userFolder.mkdir();
 				HashMap<String, String> map = new HashMap<>();
-				// uploadFiles(map, users.get(i), userFolder, "/");
+				 uploadFiles(map, users.get(i), userFolder, "/");
 			}
 		} else {
 			directorio.mkdir();
 		}
+	}
+
+	/*
+	 * Upload files to the DB
+	 */
+	public void uploadFiles(HashMap<String, String> map, DUser user, File userFolder, String prefix) {
+		System.out.println("Current user: " + user.getEmail());
+		File[] list = userFolder.listFiles();
+		DFile myfile = null;
+		if (list != null) {
+			for (File element : list) {
+				System.out.println("File: " + element.getName());
+				if (element.isDirectory()) {
+					System.out.println("Is directory");
+					uploadFiles(map, user, element, element.getName() + "/");
+				} else { // It's file
+					System.out.println("Is file");
+					// Get the name
+					String name = prefix + element.getName();
+					// Get the last modified date
+					Date lastmodified = new Date(element.lastModified());
+					// Upload all info to user's database
+					// Check if it exits
+					// Get the MD5 Hash
+					String hash = generateMD5(element);
+					DFile file = new DFile(user, hash, name, lastmodified.toString());
+					ArrayList<DFile> files = dao.getAllFiles();
+					// System.out.println(files);
+					if (files.contains(file)) {
+						// TODO Check the lastmodified
+						System.out.println("Checking the last modified");
+					} else {
+						System.out.println("Uploading the file");
+						// Upload the File data
+						map.put(name, lastmodified.toString());
+						// TODO de momento hacemos la prueba con uno
+						myfile = new DFile(user, hash, name, lastmodified.toString());
+						myfile.setUser(user);
+						System.out.println(map);
+						dao.addFiles(myfile);
+					}
+				}
+			}
+		}
+	}
+
+	public static String generateMD5(File file) {
+		String md5 = null;
+		FileInputStream fileInputStream = null;
+
+		try {
+			fileInputStream = new FileInputStream(file);
+			md5 = DigestUtils.md5Hex(IOUtils.toByteArray(fileInputStream));
+			fileInputStream.close();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return md5;
 	}
 
 	/*
@@ -106,7 +171,8 @@ public class installerController {
 								// Compare dates
 								try {
 									inClient = format.parse(userFiles.get(i).getLastModified());
-									inDB = format.parse(filesDB.get(filesDB.indexOf(userFiles.get(i))).getLastModified());
+									inDB = format
+											.parse(filesDB.get(filesDB.indexOf(userFiles.get(i))).getLastModified());
 									if (inClient.after(inDB)) {
 										// Ask for it to the client
 										toReceive.add(userFiles.get(i));
@@ -121,15 +187,16 @@ public class installerController {
 								// Compare dates
 								try {
 									inClient = format.parse(userFiles.get(i).getLastModified());
-									inDB = format.parse(filesDB.get(filesDB.indexOf(userFiles.get(i))).getLastModified());
+									inDB = format
+											.parse(filesDB.get(filesDB.indexOf(userFiles.get(i))).getLastModified());
 								} catch (ParseException e) {
 									e.printStackTrace();
 								}
-								if(inDB.after(inClient)) {
+								if (inDB.after(inClient)) {
 									toSend.add(userFiles.get(i));
-								}else {
+								} else {
 									toReceive.add(userFiles.get(i));
-								}		
+								}
 							}
 						} else {
 							// File doesn't exit in DB

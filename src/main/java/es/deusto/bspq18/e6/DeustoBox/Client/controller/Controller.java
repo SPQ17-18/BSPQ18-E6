@@ -66,27 +66,34 @@ public class Controller {
 			directorio.mkdir();
 
 		for (DFileDTO file : filesDTO) {
+			System.out.println("Dentro del for");
 			String pathFichero = this.path + file.getFile().getName();
 			File f1 = new File(file.getFile().getPath());
+			System.out.println(f1);
 			try {
 				f1.createNewFile();
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}
-
+			System.out.println("1");
 			try {
+				System.out.println("2");
 				FileInputStream in = new FileInputStream(f1);
 				byte[] mydata = new byte[1024 * 1024];
 				int mylen = in.read(mydata);
+				System.out.println(mylen);
 				while (mylen > 0) {
+					System.out.println("Pedimos que nos envien los datos");
 					rsl.getService().sendData(pathFichero, mydata, mylen);
 					mylen = in.read(mydata);
 				}
+				in.close();
 			} catch (Exception e) {
 				e.printStackTrace();
 
 			}
 		}
+		System.out.println("Fuera del for");
 	}
 
 	public void getListOfFiles(String email) {
