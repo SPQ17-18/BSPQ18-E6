@@ -1,7 +1,9 @@
 package es.deusto.bspq18.e6.DeustoBox.Server;
 
 import java.io.BufferedReader;
+import java.io.DataInputStream;
 import java.io.InputStreamReader;
+import java.net.Socket;
 import java.rmi.Naming;
 
 import es.deusto.bspq18.e6.DeustoBox.Server.gui.v_installer;
@@ -19,13 +21,13 @@ public class DeustoBoxServer {
 		String name = "//" + args[0] + ":" + args[1] + "/" + args[2];
 
 		try {
-			IDeustoBoxRemoteService deustoBox = new DeustoBoxRemoteService();
+			Socket so = new Socket();
+			IDeustoBoxRemoteService deustoBox = new DeustoBoxRemoteService(so);
 			Naming.rebind(name, deustoBox);
 			
 			System.out.println("- DeustoBoxServer:  '" + name + "' active and waiting...");
 			InputStreamReader inputStreamReader = new InputStreamReader(System.in);
 			BufferedReader stdin = new BufferedReader(inputStreamReader);
-			System.out.println("Hola");
 			String line = stdin.readLine();
 			
 		} catch (Exception e) {

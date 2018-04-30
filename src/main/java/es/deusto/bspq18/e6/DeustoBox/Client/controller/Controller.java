@@ -1,9 +1,11 @@
 package es.deusto.bspq18.e6.DeustoBox.Client.controller;
 
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.Socket;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
@@ -166,8 +168,8 @@ public class Controller {
 					}
 
 				}
-				
-		
+	
+			
 			}
 
 		} catch (Exception ex) {
@@ -231,18 +233,19 @@ public class Controller {
 	
 	
 	
-	public boolean sendData(String filename, byte[] data, int len) throws RemoteException {
-		System.out.println("Sending data");
+	public boolean sendFiles() throws RemoteException {
 		try {
-			File f = new File(filename);
-			FileOutputStream out = new FileOutputStream(filename, true);
-			out.write(data, 0, len);
+			Socket so = new Socket("localhost", 5000);
+			DataOutputStream out = new DataOutputStream(so.getOutputStream());
+			out.writeUTF("hola");
 			out.flush();
+			
 			out.close();
-			System.out.println("Done writing data...");
-		} catch (Exception e) {
+			so.close();
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
 		return true;
 	}
 	

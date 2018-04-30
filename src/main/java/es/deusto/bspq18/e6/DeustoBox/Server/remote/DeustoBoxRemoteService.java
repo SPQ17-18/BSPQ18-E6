@@ -1,9 +1,12 @@
 package es.deusto.bspq18.e6.DeustoBox.Server.remote;
 
+import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
@@ -26,13 +29,35 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 	private Assembler assemble;
 	private String path;
 	private v_installer installer;
+	private Socket so;
+	private ServerSocket sc;
+	private DataInputStream in;
 
-	public DeustoBoxRemoteService() throws RemoteException {
+	public DeustoBoxRemoteService(Socket so) throws RemoteException {
 		db = new DeustoBoxDAO();
 		assemble = new Assembler();
 		installer = new v_installer();
 		installer.frame.setVisible(true);
+		t.start();
 	}
+	
+	Thread t = new Thread() {
+		public void run() {
+			try {
+				sc = new ServerSocket(5000);
+				so = sc.accept();
+				in = new DataInputStream(so.getInputStream());
+				String recibido = in.readUTF();
+				if(recibido.equals("hola")) {
+					IOException a = new IOException();
+					a.printStackTrace();
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
+		}
+	};
 
 	public DUserDTO signUp(String username, String email, String password) throws RemoteException {
 		boolean correcto = false;
