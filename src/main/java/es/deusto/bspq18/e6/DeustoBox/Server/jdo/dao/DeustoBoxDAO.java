@@ -48,7 +48,6 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 
 			for (DUser usuario : extent) {
 				if (usuario.getEmail().equals(email) && usuario.getPassword().equals(pass)) {
-					System.out.println("  -> " + usuario);
 
 					myUser = new DUser(usuario.getUsername(), usuario.getEmail(), usuario.getPassword(),
 							usuario.getRegisterDate(), usuario.getLastConnections());

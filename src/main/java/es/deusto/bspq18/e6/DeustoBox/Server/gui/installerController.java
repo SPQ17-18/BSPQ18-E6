@@ -50,7 +50,6 @@ public class installerController {
 		     }
 		     // Check if the user exits or not
 		     for (int i = 0; i < userFiles.length; i++) {
-		      System.out.println(userFiles[i].getName());
 		      if (!emails.contains(userFiles[i].getName())) {
 		       // Delete all files of that non-existing user
 		       String[] entries = userFiles[i].list();
@@ -84,17 +83,16 @@ public class installerController {
 	 * Upload files to the DB
 	 */
 	public void uploadFiles(HashMap<String, String> map, DUser user, File userFolder, String prefix) {
-		System.out.println("Current user: " + user.getEmail());
 		File[] list = userFolder.listFiles();
 		DFile myfile = null;
 		if (list != null) {
 			for (File element : list) {
-				System.out.println("File: " + element.getName());
+
 				if (element.isDirectory()) {
-					System.out.println("Is directory");
+
 					uploadFiles(map, user, element, element.getName() + "/");
 				} else { // It's file
-					System.out.println("Is file");
+
 					// Get the name
 					String name = prefix + element.getName();
 					// Get the last modified date
@@ -105,18 +103,17 @@ public class installerController {
 					String hash = generateMD5(element);
 					DFile file = new DFile(user, hash, name, lastmodified.toString());
 					ArrayList<DFile> files = dao.getAllFiles();
-					// System.out.println(files);
 					if (files.contains(file)) {
 						// TODO Check the lastmodified
-						System.out.println("Checking the last modified");
+
 					} else {
-						System.out.println("Uploading the file");
+
 						// Upload the File data
 						map.put(name, lastmodified.toString());
 						// TODO de momento hacemos la prueba con uno
 						myfile = new DFile(user, hash, name, lastmodified.toString());
 						myfile.setUser(user);
-						System.out.println(map);
+
 						dao.addFiles(myfile);
 					}
 				}
@@ -125,7 +122,7 @@ public class installerController {
 	}
 
 	public static String generateMD5(File file) {
-		System.out.println("El file es : " + file.getAbsolutePath());
+
 		String md5 = null;
 		FileInputStream fileInputStream = null;
 
@@ -138,7 +135,7 @@ public class installerController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		System.out.println("El hash para el archivo: " + file.getName() + " es " + md5 );
+
 		return md5;
 	}
 
@@ -229,7 +226,6 @@ public class installerController {
 
 	public ArrayList<DFileDTO> sendAllFiles(String email, String path) {
 		
-		System.out.println("Getting files");
 		path = path + "\\" + "Deusto-Box" + "\\" + email + "\\";
 
 		ArrayList<DFile> files = new ArrayList<DFile>();
