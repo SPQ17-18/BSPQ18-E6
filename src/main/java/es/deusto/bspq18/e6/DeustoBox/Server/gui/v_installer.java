@@ -7,7 +7,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO;
-
+import es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log;
 
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
@@ -26,11 +26,13 @@ public class v_installer extends JFrame {
 	private JButton btnCancel;
 	private JButton btnOk;
 	private JLabel lblDeustoboxInstaller;
+	private Error_log logger;
 
 
-	public v_installer(IDeustoBoxDAO dao) {
+	public v_installer(IDeustoBoxDAO dao, Error_log logger) {
 		initialize();
 		this.dao = dao;
+		this.logger = logger;
 		
 	}
 
@@ -65,7 +67,7 @@ public class v_installer extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				String dir = fileChooser.getSelectedFile().toString() + "\\Deusto-Box";
 				//createFolders(dir);
-				installer = new installerController(dir, dao);
+				installer = new installerController(dir, dao, logger);
 				installer.manageFolders();
 			}
 		});

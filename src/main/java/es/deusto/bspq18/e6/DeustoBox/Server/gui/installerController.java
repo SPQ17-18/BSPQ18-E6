@@ -16,17 +16,20 @@ import es.deusto.bspq18.e6.DeustoBox.Server.dto.DFileDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DFile;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
+import es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log;
 
 public class installerController {
 
 	private IDeustoBoxDAO dao;
 	private Assembler transform;
 	private String path;
+	private Error_log logger;
 
-	public installerController(String path, IDeustoBoxDAO dao) {
+	public installerController(String path, IDeustoBoxDAO dao, Error_log logger) {
 		this.path = path;
 		this.dao = dao;
 		this.transform = new Assembler();
+		this.logger = logger;
 	}
 
 	/*
@@ -34,6 +37,7 @@ public class installerController {
 	 * database
 	 */
 	public void manageFolders() {
+		logger.getLogger().info("Checking if there is any change in the server files");
 		  File directorio = new File(path);
 		  ArrayList<DUser> users = dao.getAllUsers();
 

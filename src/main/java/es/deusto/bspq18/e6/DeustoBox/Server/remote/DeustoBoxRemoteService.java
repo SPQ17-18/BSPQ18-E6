@@ -36,7 +36,7 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		this.logger = new Error_log();
 		this.db = new DeustoBoxDAO(logger);
 		this.assemble = new Assembler();
-		this.installer = new v_installer(db);
+		this.installer = new v_installer(db, logger);
 		this.installer.frame.setVisible(true);
 		this.FiletoWrite = " ";
 		serverReceive.start();
