@@ -1,7 +1,6 @@
 package es.deusto.bspq18.e6.DeustoBox.Client.gui;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -16,6 +15,10 @@ import javax.swing.JPasswordField;
 
 public class v_client_profile extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private Controller controlador;
 	private JLabel lblMyProfile;
@@ -102,9 +105,10 @@ public class v_client_profile extends JFrame {
 		btnVerify.setVisible(false);
 		btnVerify.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(!passwordField.getText().equals("")) {
-					if(controlador.passwordCorrect(passwordField.getText())){
+				if(!String.valueOf(passwordField.getPassword()).equals("")) {
+					if(controlador.passwordCorrect(String.valueOf(passwordField.getPassword()))){
 						v_client_profile_changepassword window = new v_client_profile_changepassword(controlador);
+						window.setVisible(true);
 						
 					}
 					

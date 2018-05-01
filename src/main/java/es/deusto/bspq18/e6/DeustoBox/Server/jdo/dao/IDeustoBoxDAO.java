@@ -1,6 +1,7 @@
 package es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DFile;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
@@ -16,5 +17,6 @@ public interface IDeustoBoxDAO {
 	public int getNumberOfUserFiles(String email);
 	public boolean checkPassword(String email, String password);
 	public boolean updatePassword(String email, String password);
+	public Date getLastConnection(DUser user);
 	
 }

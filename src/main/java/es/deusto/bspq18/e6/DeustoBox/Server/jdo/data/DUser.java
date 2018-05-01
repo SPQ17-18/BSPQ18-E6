@@ -3,7 +3,6 @@ package es.deusto.bspq18.e6.DeustoBox.Server.jdo.data;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 
 import javax.jdo.annotations.Join;
 import javax.jdo.annotations.PersistenceCapable;
@@ -20,6 +19,7 @@ public class DUser implements Serializable {
 	private String username;
 	private String password;
 	private Date registerDate;
+	private ArrayList<String> lastConnections;
 	
 	@Persistent(defaultFetchGroup="true", mappedBy="user", dependentElement = "true")
 	@Join
@@ -33,11 +33,12 @@ public class DUser implements Serializable {
 		this.registerDate = new Date();
 	}
 	
-	public DUser(String username,String email, String password, Date registerDate) {
+	public DUser(String username,String email, String password, Date registerDate, ArrayList<String> lastConnections) {
 		this.email = email;
 		this.username = username;
 		this.password = password;
 		this.files = new ArrayList<DFile>();
+		this.lastConnections = new ArrayList<String>();
 		this.registerDate = registerDate;
 	}
 
@@ -73,15 +74,33 @@ public class DUser implements Serializable {
 		this.files = files;
 	}
 	
-	public void addFile(DFile file) {	
+	public void addFile(DFile file) {
+		boolean existe = false;
+		for(DFile dfile : files){
+			if (dfile.getName().equals(file.getName()))
+				existe = true;
+			
+		}
+		if(!existe){
 		files.add(file);
 		file.setUser(this);
+		}
 	}
 	public void removeFile(DFile file) {
 		files.remove(file);
 	}
+
+	public ArrayList<String> getLastConnections() {
+		return lastConnections;
+	}
+
+	public void addConnection(String lastCon) {
+		this.lastConnections.add(lastCon);
+	}
 	
-	
+	public void setLastConnections(ArrayList<String> lastConnections) {
+		this.lastConnections = lastConnections;
+	}
 
 	public Date getRegisterDate() {
 		return registerDate;
@@ -91,6 +110,7 @@ public class DUser implements Serializable {
 		this.registerDate = registerDate;
 	}
 
+	
 	@Override
 	public String toString() {
 		return "User [email=" + email + ", username=" + username + ", password=" + password + "]";

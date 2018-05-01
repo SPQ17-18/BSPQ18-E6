@@ -3,7 +3,6 @@ package es.deusto.bspq18.e6.DeustoBox.Server.dto;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DFile;
 
@@ -66,12 +65,6 @@ public class DUserDTO implements Serializable {
 		this.files = files;
 	}
 	
-	public void addFiles(DFile file) {
-		/*DFile newFile = new DFile(this, file.getId_file(), file.getName(), file.getLastModified());
-		newFile.setName(file.getName());
-		newFile.setLastModified(file.getLastModified());		
-		files.add(newFile);*/
-	}
 	public void removeFile(DFile file) {
 		files.remove(file);
 	}
