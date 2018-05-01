@@ -3,12 +3,13 @@ package es.deusto.bspq18.e6.DeustoBox.Client.controller;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.swing.JOptionPane;
 
 import es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login;
 import es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator;
@@ -19,7 +20,7 @@ public class Controller {
 
 	private static RMIServiceLocator rsl;
 	private DUserDTO userdto;
-	private static String path;
+	private String path;
 	private ArrayList<DFileDTO> filesDTO;
 
 	public Controller(String[] args) throws RemoteException {
@@ -105,20 +106,21 @@ public class Controller {
 	}
 
 	public void getListOfUnknownFiles() {
+		int downloads = 0;
+		int uploads = 0;
 		try {
+			
 			// Pido todos los archivos
 			String[] arr_res = null;
 			arr_res = getMyFiles(path);
 
 			// Miro que archivos tengo
 
-			if (arr_res[0].equals("VACIO")) {
-				System.out.println("PIDO TODOS");
+			if (arr_res[0].equals("EMPTY")) {
 				getListOfFiles(userdto.getEmail());
 				getFiles();
 
 			} else {
-				System.out.println("Asking for list of Files");
 				getListOfFiles(userdto.getEmail());
 				for (DFileDTO file : filesDTO) {
 					System.out.println(file.toString());
@@ -139,9 +141,10 @@ public class Controller {
 					filesDTO.remove(filesToRemove.get(i));
 
 				}
-				if(filesDTO.size() > 0)
+				if(filesDTO.size() > 0){
+				downloads = filesDTO.size();
 				getFiles();
-				
+				}
 				//Now we have to sync our files with the Server
 				arr_res = null;
 				arr_res = getMyFiles(path);
@@ -152,7 +155,6 @@ public class Controller {
 				
 				//Comparamos nuestros files con los que no hay en el server, y los que no estén los guardamos en el array
 				boolean existe = true;
-				System.out.println("La longitud es: " + arr_res.length);
 				for (int i = 0; i < arr_res.length; i++) {
 					existe = false;
 					for (int j = 0; j < filesDTO.size(); j++) {
@@ -170,9 +172,8 @@ public class Controller {
 					
 				}
 				
-				System.out.println("Se van a subir: " + filesToUpload.size() + " archivos");
+				uploads = filesToUpload.size();
 				for(int i = 0; i< filesToUpload.size(); i++){
-					System.out.println("Enviando un archivo");
 					String pathFichero =  path + filesToUpload.get(i);
 					sendFiles(pathFichero, filesToUpload.get(i) );
 					Thread.sleep(2000);
@@ -183,8 +184,11 @@ public class Controller {
 			}
 
 		} catch (Exception ex) {
-
+			
 		}
+		JOptionPane.showMessageDialog(null, downloads + " files have been downloaded and " + uploads + " files have been uploaded");
+		
+		
 	}
 
 	public int getNumberOfFiles() {
@@ -290,8 +294,7 @@ public class Controller {
 
 		} else {
 			arr_res = new String[1];
-			arr_res[0] = "VACIO";
-			System.out.println("Aqui estmaos");
+			arr_res[0] = "EMPTY";
 
 		}
 

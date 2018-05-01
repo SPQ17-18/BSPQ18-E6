@@ -21,8 +21,8 @@ public class DeustoBoxServer {
 		String name = "//" + args[0] + ":" + args[1] + "/" + args[2];
 
 		try {
-			Socket so = new Socket();
-			IDeustoBoxRemoteService deustoBox = new DeustoBoxRemoteService(so);
+			
+			IDeustoBoxRemoteService deustoBox = new DeustoBoxRemoteService();
 			Naming.rebind(name, deustoBox);
 			
 			System.out.println("- DeustoBoxServer:  '" + name + "' active and waiting...");

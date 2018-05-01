@@ -2,7 +2,6 @@ package es.deusto.bspq18.e6.DeustoBox.Server.gui;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -10,26 +9,23 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Random;
-
-import org.apache.commons.codec.digest.DigestUtils;
-import org.apache.commons.io.IOUtils;
 import java.util.Date;
 
 import es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assembler;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DFileDTO;
-import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO;
+import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DFile;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
 
 public class installerController {
 
-	private DeustoBoxDAO dao;
+	private IDeustoBoxDAO dao;
 	private Assembler transform;
 	private String path;
 
-	public installerController(String path) {
+	public installerController(String path, IDeustoBoxDAO dao) {
 		this.path = path;
-		this.dao = new DeustoBoxDAO();
+		this.dao = dao;
 		this.transform = new Assembler();
 	}
 
@@ -43,7 +39,6 @@ public class installerController {
 
 		  if (users != null) {
 		   if (directorio.exists()) {
-		    System.out.println("Directory exits");
 		    // Check if there are any user folders
 		    File[] userFiles = directorio.listFiles();
 

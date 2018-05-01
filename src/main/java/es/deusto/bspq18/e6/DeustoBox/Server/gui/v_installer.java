@@ -2,18 +2,13 @@ package es.deusto.bspq18.e6.DeustoBox.Server.gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
-import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO;
-import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DFile;
-import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
+import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO;
+
+
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
@@ -25,19 +20,22 @@ public class v_installer extends JFrame {
 	public JFrame frame;
 	private JTextField txtPath;
 	private JFileChooser fileChooser;
-	private DeustoBoxDAO dao;
-	
-
-
 	private installerController installer;
+	private IDeustoBoxDAO dao;
+	private JButton btnBrowse;
+	private JButton btnCancel;
+	private JButton btnOk;
+	private JLabel lblDeustoboxInstaller;
 
 
-	public v_installer() {
+	public v_installer(IDeustoBoxDAO dao) {
 		initialize();
+		this.dao = dao;
+		
 	}
 
 	private void initialize() {
-		dao = new DeustoBoxDAO();
+
 		frame = new JFrame();
 		frame.setTitle("Installer");
 		frame.setBounds(100, 100, 610, 309);
@@ -49,11 +47,11 @@ public class v_installer extends JFrame {
 		frame.getContentPane().add(txtPath);
 		txtPath.setColumns(10);
 
-		JButton btnBrowse = new JButton("Browse");
+		btnBrowse = new JButton("Browse");
 		btnBrowse.setBounds(465, 112, 87, 37);
 		frame.getContentPane().add(btnBrowse);
 
-		JButton btnCancel = new JButton("Cancel");
+		btnCancel = new JButton("Cancel");
 		btnCancel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				System.exit(0);
@@ -62,19 +60,19 @@ public class v_installer extends JFrame {
 		btnCancel.setBounds(120, 180, 115, 29);
 		frame.getContentPane().add(btnCancel);
 
-		JButton btnOk = new JButton("Ok");
+		btnOk = new JButton("Ok");
 		btnOk.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String dir = fileChooser.getSelectedFile().toString() + "\\Deusto-Box";
 				//createFolders(dir);
-				installer = new installerController(dir);
+				installer = new installerController(dir, dao);
 				installer.manageFolders();
 			}
 		});
 		btnOk.setBounds(314, 180, 115, 29);
 		frame.getContentPane().add(btnOk);
 
-		JLabel lblDeustoboxInstaller = new JLabel("DeustoBox installer");
+		lblDeustoboxInstaller = new JLabel("DeustoBox installer");
 		lblDeustoboxInstaller.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		lblDeustoboxInstaller.setHorizontalAlignment(SwingConstants.CENTER);
 		lblDeustoboxInstaller.setBounds(163, 26, 220, 48);

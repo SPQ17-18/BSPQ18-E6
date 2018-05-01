@@ -2,8 +2,6 @@ package es.deusto.bspq18.e6.DeustoBox.Server.remote;
 
 import java.io.BufferedInputStream;
 import java.io.DataInputStream;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -17,9 +15,9 @@ import es.deusto.bspq18.e6.DeustoBox.Server.dto.DUserDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.gui.v_installer;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO;
-import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DFile;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
 import es.deusto.bspq18.e6.DeustoBox.Server.remote.IDeustoBoxRemoteService;
+import es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log;
 
 public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeustoBoxRemoteService {
 
@@ -32,47 +30,18 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 	private ServerSocket sc;
 	private DataInputStream in;
 	private String FiletoWrite;
-	private int contadorSocket;
+	private Error_log logger;
 
-	public DeustoBoxRemoteService(Socket so) throws RemoteException {
-		this.db = new DeustoBoxDAO();
+	public DeustoBoxRemoteService() throws RemoteException {
+		this.logger = new Error_log();
+		this.db = new DeustoBoxDAO(logger);
 		this.assemble = new Assembler();
-		this.installer = new v_installer();
+		this.installer = new v_installer(db);
 		this.installer.frame.setVisible(true);
 		this.FiletoWrite = " ";
-		this.contadorSocket = 0;
-		t.start();
+		serverReceive.start();
 		
 	}
-	
-	Thread t = new Thread(){
-		public void run(){
-		while(true){	
-	try {
-		System.out.println("EJECUTANDO EL HILO" );
-		sc = new ServerSocket(5000);
-		so = sc.accept();
-		in = new DataInputStream(new BufferedInputStream(so.getInputStream()));
-		byte[] bytes = new byte[1024];
-		    in.read(bytes);
-		    String write = path + FiletoWrite;
-		    FileOutputStream fos = new FileOutputStream(write);
-		    fos.write(bytes);
-		    fos.close();
-		    System.out.println("Recibido un archivo");
-		    contadorSocket++;
-		    installer.getInstaller().manageFolders();
-		    in.close();
-		    so.close();
-		    sc.close();
-		
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		}
-		}
-};
 	
 	
 
@@ -113,7 +82,6 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 	
 	public boolean sendData(String filename, byte[] data, int len) throws RemoteException{
         try{
-        	File f = new File(filename);
         	FileOutputStream out=new FileOutputStream(filename,true);
         	out.write(data,0,len);
         	out.flush();
@@ -164,6 +132,33 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		setFiletoWrite(file);
 			
 	}
+	
+	
+	Thread serverReceive = new Thread(){
+		public void run(){
+		while(true){	
+	try {
+		sc = new ServerSocket(5000);
+		so = sc.accept();
+		in = new DataInputStream(new BufferedInputStream(so.getInputStream()));
+		byte[] bytes = new byte[1024];
+		    in.read(bytes);
+		    String write = path + FiletoWrite;
+		    FileOutputStream fos = new FileOutputStream(write);
+		    fos.write(bytes);
+		    fos.close();
+		    installer.getInstaller().manageFolders();
+		    in.close();
+		    so.close();
+		    sc.close();
+		
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		}
+		}
+};
 
 
 	

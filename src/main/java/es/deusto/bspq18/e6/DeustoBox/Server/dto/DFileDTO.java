@@ -1,11 +1,9 @@
 package es.deusto.bspq18.e6.DeustoBox.Server.dto;
 
 import java.io.File;
-import java.io.IOException;
 import java.io.Serializable;
 import java.util.Date;
 
-import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
 
 public class DFileDTO implements Serializable {
 	/**

@@ -1,6 +1,6 @@
 package es.deusto.bspq18.e6.DeustoBox.Client.gui;
 
-import java.awt.EventQueue;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -75,7 +75,7 @@ public class v_installer extends JFrame {
 		btnOk.setBounds(314, 180, 115, 29);
 		frame.getContentPane().add(btnOk);
 		
-		JLabel lblDeustoboxInstaller = new JLabel("DeustoBox installer");
+		JLabel lblDeustoboxInstaller = new JLabel("DeustoBox Client Installer");
 		lblDeustoboxInstaller.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		lblDeustoboxInstaller.setHorizontalAlignment(SwingConstants.CENTER);
 		lblDeustoboxInstaller.setBounds(163, 26, 220, 48);

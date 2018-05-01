@@ -1,6 +1,5 @@
 package es.deusto.bspq18.e6.DeustoBox.Server.remote;
 
-import java.io.File;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
