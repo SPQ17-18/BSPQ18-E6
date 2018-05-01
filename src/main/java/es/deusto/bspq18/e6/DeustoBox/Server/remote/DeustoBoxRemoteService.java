@@ -36,14 +36,11 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		this.logger = new Error_log();
 		this.db = new DeustoBoxDAO(logger);
 		this.assemble = new Assembler();
-<<<<<<< HEAD
-		this.installer = new v_installer(db);
-=======
 		this.installer = new v_installer(db, logger);
->>>>>>> refs/remotes/origin/master
 		this.installer.frame.setVisible(true);
 		this.FiletoWrite = " ";
 		serverReceive.start();
+		updatingFiles.start();
 		
 	}
 	
@@ -165,6 +162,20 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 };
 
 
+Thread updatingFiles = new Thread(){
+	public void run(){
+	while(true){	
+		installer.getInstaller().manageFolders();
+		try {
+			Thread.sleep(10000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 	
 
+}
+	}
+};
 }

@@ -16,26 +16,6 @@ import es.deusto.bspq18.e6.DeustoBox.Server.dto.DFileDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DFile;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
-<<<<<<< HEAD
-
-public class installerController {
-
-	private IDeustoBoxDAO dao;
-	private Assembler transform;
-	private String path;
-
-	public installerController(String path, IDeustoBoxDAO dao) {
-		this.path = path;
-		this.dao = dao;
-		this.transform = new Assembler();
-	}
-
-	/*
-	 * Creates Deusto-Box-Server folder and one folder for each user stored in the
-	 * database
-	 */
-	public void manageFolders() {
-=======
 import es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log;
 
 public class installerController {
@@ -58,7 +38,6 @@ public class installerController {
 	 */
 	public void manageFolders() {
 		logger.getLogger().info("Checking if there is any change in the server files");
->>>>>>> refs/remotes/origin/master
 		  File directorio = new File(path);
 		  ArrayList<DUser> users = dao.getAllUsers();
 
