@@ -167,13 +167,15 @@ public class Controller {
 					if(!existe){
 						filesToUpload.add(arr_res[i]);
 					}
-
+					
 				}
 				
+				System.out.println("Se van a subir: " + filesToUpload.size() + " archivos");
 				for(int i = 0; i< filesToUpload.size(); i++){
+					System.out.println("Enviando un archivo");
 					String pathFichero =  path + filesToUpload.get(i);
 					sendFiles(pathFichero, filesToUpload.get(i) );
-					
+					Thread.sleep(2000);
 				}
 				
 	
@@ -252,11 +254,9 @@ public class Controller {
 		        System.out.println("File is too large.");
 		    }
 		    byte[] bytes = new byte[(int) length];
-		    
 		    out.write(bytes);
 		    out.close();
 		    so.close();
-		    System.out.print("HOLA3");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -269,7 +269,6 @@ public class Controller {
 
 	public static String[] getMyFiles(String dir_path) {
 		System.out.println(dir_path);
-
 		String[] arr_res = null;
 
 		File f = new File(dir_path);

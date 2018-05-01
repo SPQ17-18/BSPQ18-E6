@@ -75,9 +75,18 @@ public class DUser implements Serializable {
 		this.files = files;
 	}
 	
-	public void addFile(DFile file) {	
+	public void addFile(DFile file) {
+		boolean existe = false;
+		for(DFile dfile : files){
+			System.out.println("Se estan comparnado: " + dfile.getName() + " y " + file.getName());
+			if (dfile.getName().equals(file.getName()))
+				existe = true;
+			
+		}
+		if(!existe){
 		files.add(file);
 		file.setUser(this);
+		}
 	}
 	public void removeFile(DFile file) {
 		files.remove(file);

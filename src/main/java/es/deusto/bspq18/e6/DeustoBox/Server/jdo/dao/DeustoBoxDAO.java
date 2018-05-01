@@ -181,8 +181,15 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 			for (DUser usuario : extent) {
 				if (file.getUser().getEmail().equals(usuario.getEmail())) {
 					file.setUser(usuario);
+					boolean existe = false;
+					for(DFile filebd : usuario.getFiles()){
+						if(filebd.getName().equals(file.getName()))
+							existe = true;	
+					}
+					if(!existe){
 					usuario.addFile(file);
 					pm.makePersistent(usuario);
+					}
 					break;
 				}
 			}

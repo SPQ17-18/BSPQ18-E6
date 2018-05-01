@@ -9,6 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
+import java.util.Random;
 
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.io.IOUtils;
@@ -37,52 +38,52 @@ public class installerController {
 	 * database
 	 */
 	public void manageFolders() {
-		File directorio = new File(path);
-		ArrayList<DUser> users = dao.getAllUsers();
+		  File directorio = new File(path);
+		  ArrayList<DUser> users = dao.getAllUsers();
 
-		if (users != null) {
-			if (directorio.exists()) {
-				System.out.println("Directory exits");
-				// Check if there are any user folders
-				File[] userFiles = directorio.listFiles();
+		  if (users != null) {
+		   if (directorio.exists()) {
+		    System.out.println("Directory exits");
+		    // Check if there are any user folders
+		    File[] userFiles = directorio.listFiles();
 
-				if (userFiles != null) {
-					// Get all emails registered
-					ArrayList<String> emails = new ArrayList<String>();
-					for (int z = 0; z < users.size(); z++) {
-						emails.add(users.get(z).getEmail());
-					}
-					// Check if the user exits or not
-					for (int i = 0; i < userFiles.length; i++) {
-						System.out.println(userFiles[i].getName());
-						if (!emails.contains(userFiles[i].getName())) {
-							// Delete all files of that non-existing user
-							String[] entries = userFiles[i].list();
-							if (entries != null) {
-								for (String s : entries) {
-									File currentFile = new File(userFiles[i].getPath(), s);
-									currentFile.delete();
-								}
-							}
-							userFiles[i].delete();
-						}
-					}
-				}
+		    if (userFiles != null) {
+		     // Get all emails registered
+		     ArrayList<String> emails = new ArrayList<String>();
+		     for (int z = 0; z < users.size(); z++) {
+		      emails.add(users.get(z).getEmail());
+		     }
+		     // Check if the user exits or not
+		     for (int i = 0; i < userFiles.length; i++) {
+		      System.out.println(userFiles[i].getName());
+		      if (!emails.contains(userFiles[i].getName())) {
+		       // Delete all files of that non-existing user
+		       String[] entries = userFiles[i].list();
+		       if (entries != null) {
+		        for (String s : entries) {
+		         File currentFile = new File(userFiles[i].getPath(), s);
+		         currentFile.delete();
+		        }
+		       }
+		       userFiles[i].delete();
+		      }
+		     }
+		    }
 
-			} else {
-				directorio.mkdir();
-			}
-			// Create one folder for each user
-			for (int i = 0; i < users.size(); i++) {
-				File userFolder = new File(directorio + "\\" + users.get(i).getEmail());
-				userFolder.mkdir();
-				HashMap<String, String> map = new HashMap<>();
-				 uploadFiles(map, users.get(i), userFolder, "/");
-			}
-		} else {
-			directorio.mkdir();
-		}
-	}
+		   } else {
+		    directorio.mkdir();
+		   }
+		   // Create one folder for each user
+		   for (int i = 0; i < users.size(); i++) {
+		    File userFolder = new File(directorio + "\\" + users.get(i).getEmail());
+		    userFolder.mkdir();
+		    HashMap<String, String> map = new HashMap<>();
+		     uploadFiles(map, users.get(i), userFolder, "/");
+		   }
+		  } else {
+		   directorio.mkdir();
+		  }
+		 }
 
 	/*
 	 * Upload files to the DB
@@ -129,17 +130,20 @@ public class installerController {
 	}
 
 	public static String generateMD5(File file) {
+		System.out.println("El file es : " + file.getAbsolutePath());
 		String md5 = null;
 		FileInputStream fileInputStream = null;
 
 		try {
+			Random r = new Random();
 			fileInputStream = new FileInputStream(file);
-			md5 = DigestUtils.md5Hex(IOUtils.toByteArray(fileInputStream));
+			md5 = String.valueOf(r.nextInt(1000000));
 			fileInputStream.close();
 
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		System.out.println("El hash para el archivo: " + file.getName() + " es " + md5 );
 		return md5;
 	}
 

@@ -32,6 +32,7 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 	private ServerSocket sc;
 	private DataInputStream in;
 	private String FiletoWrite;
+	private int contadorSocket;
 
 	public DeustoBoxRemoteService(Socket so) throws RemoteException {
 		this.db = new DeustoBoxDAO();
@@ -39,32 +40,37 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		this.installer = new v_installer();
 		this.installer.frame.setVisible(true);
 		this.FiletoWrite = " ";
+		this.contadorSocket = 0;
+		t.start();
 		
 	}
 	
 	Thread t = new Thread(){
 		public void run(){
+		while(true){	
 	try {
-		System.out.println("PAPS1");
-			sc = new ServerSocket(5000);
-
+		System.out.println("EJECUTANDO EL HILO" );
+		sc = new ServerSocket(5000);
 		so = sc.accept();
 		in = new DataInputStream(new BufferedInputStream(so.getInputStream()));
-		
 		byte[] bytes = new byte[1024];
-
 		    in.read(bytes);
 		    String write = path + FiletoWrite;
-		    System.out.println(" Se va a escribir en : "  + write);
 		    FileOutputStream fos = new FileOutputStream(write);
-		    System.out.println("Hola");
 		    fos.write(bytes);
 		    fos.close();
+		    System.out.println("Recibido un archivo");
+		    contadorSocket++;
+		    installer.getInstaller().manageFolders();
+		    in.close();
+		    so.close();
+		    sc.close();
 		
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		
+		}
 		}
 };
 	
@@ -77,7 +83,9 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		correcto = db.addUser(user);
 
 		if (correcto) {
+			getInstaller().getInstaller().manageFolders();
 			return assemble.createUserDTO(user, path);
+			
 		} else {
 			return null;
 		}
@@ -154,8 +162,7 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 	public void ReceiveFiles(String file, String email) throws RemoteException {
 		setPath(email);
 		setFiletoWrite(file);
-		t.start();
-
+			
 	}
 
 
