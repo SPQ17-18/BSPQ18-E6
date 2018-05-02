@@ -18,5 +18,7 @@ public interface IDeustoBoxDAO {
 	public boolean checkPassword(String email, String password);
 	public boolean updatePassword(String email, String password);
 	public Date getLastConnection(DUser user);
+	public void deleteAllFiles();
+	public void deleteAllUsers();
 	
 }

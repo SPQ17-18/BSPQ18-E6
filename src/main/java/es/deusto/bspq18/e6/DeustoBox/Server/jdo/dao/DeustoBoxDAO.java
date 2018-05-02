@@ -12,7 +12,7 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Transaction;
 
-
+import org.datanucleus.api.jdo.JDOQuery;
 
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DFile;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
@@ -372,6 +372,61 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		}
 
 		return date;
+	}
+
+	
+	@Override
+	public void deleteAllFiles() {
+		// TODO Auto-generated method stub
+		PersistenceManager pm = pmf.getPersistenceManager();
+
+		Transaction tx = pm.currentTransaction();
+
+		try {
+			tx.begin();
+			JDOQuery<DFile> query = (JDOQuery<DFile>) pm.newQuery(DFile.class);
+			logger.getLogger().info("All files deleted from the DB.");
+			tx.commit();
+		} catch (Exception ex) {
+			logger.getLogger().error("   $ Error cleaning the DB: " + ex.getMessage());
+			ex.printStackTrace();
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+			if (pm != null && !pm.isClosed()) {
+				pm.close();
+			}
+}
+		
+	}
+
+	@Override
+	public void deleteAllUsers() {
+		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub
+		PersistenceManager pm = pmf.getPersistenceManager();
+
+		Transaction tx = pm.currentTransaction();
+
+		try {
+			tx.begin();
+			JDOQuery<DUser> query = (JDOQuery<DUser>) pm.newQuery(DUser.class);
+			logger.getLogger().info("All users deleted from the DB.");
+			tx.commit();
+		} catch (Exception ex) {
+			logger.getLogger().error("   $ Error cleaning the DB: " + ex.getMessage());
+			ex.printStackTrace();
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+			if (pm != null && !pm.isClosed()) {
+				pm.close();
+			}
+}
+		
+		
 	}
 
 
