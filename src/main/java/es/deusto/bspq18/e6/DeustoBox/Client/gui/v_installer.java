@@ -90,34 +90,7 @@ public class v_installer extends JFrame {
 		
 		JLabel lblDeustoboxInstaller = new JLabel("DestoBox Installer");
 		lblDeustoboxInstaller.setBounds(163, 26, 220, 48);
-//		BufferedImage img = null;
-//		try {
-//		    img = ImageIO.read(new File("/es/deusto/bspq18/e6/DeustoBox/Client/images/logo.png"));
-//		} catch (IOException e) {
-//		    e.printStackTrace();
-//		}
-//		Image dimg = img.getScaledInstance(lblDeustoboxInstaller.getWidth(), lblDeustoboxInstaller.getHeight(),
-//		        Image.SCALE_SMOOTH);
-//		ImageIcon imageIcon = new ImageIcon(dimg);
-//		
-//		lblDeustoboxInstaller.setIcon(imageIcon);
-		JLabel lblLogo = new JLabel();	
-		lblLogo.setBounds(15, 14, 137, 81);
-		
-		URL url = this.getClass().getResource("/es/deusto/bspq18/e6/DeustoBox/Client/images/logo.png");
-		BufferedImage img = null;
-		try {
-			img = ImageIO.read(url);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		Image dimg = img.getScaledInstance(lblLogo.getWidth(), lblLogo.getHeight(),
-		        Image.SCALE_SMOOTH);
-		
-		ImageIcon imageIcon = new ImageIcon(dimg);
-		lblLogo.setIcon(imageIcon);
-	
-		panel.add(lblLogo);
+
 		
 		lblDeustoboxInstaller.setBackground(Color.WHITE);
 		lblDeustoboxInstaller.setForeground(Color.BLUE);
