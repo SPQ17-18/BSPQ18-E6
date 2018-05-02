@@ -26,7 +26,10 @@ public class DFileDTO implements Serializable {
 		this.creationDate = new Date();
 	}
 	
-	public DFileDTO(DUserDTO user, String hash, String name, String lastModified) {
+	public DFileDTO(DUserDTO user, String hash, String name, String lastModified, String path) {
+		this.userEmail = user.getEmail();
+		this.file = new File(path);
+		this.creationDate = new Date();
 		this.user = user;
 		this.hash = hash;
 		this.name = name;

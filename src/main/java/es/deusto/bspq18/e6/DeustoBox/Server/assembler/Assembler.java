@@ -17,13 +17,13 @@ public class Assembler {
 	}
 
 	public DUser createUser(DUserDTO userdto) {
-		DUser user = new DUser(userdto.getEmail(), userdto.getUsername(), userdto.getPassword());
+		DUser user = new DUser(userdto.getUsername(),userdto.getEmail(),  userdto.getPassword());
 		user.setFiles(userdto.getFiles());
 		return user;
 	}
 
-	public DFileDTO createFileDTO(DFile file, String path) {
-		DFileDTO dto = new DFileDTO(file.getUser().getEmail(), path, file.getLastModified());
+	public DFileDTO createFileDTO(DFile file, String path, DUserDTO user) {
+		DFileDTO dto = new DFileDTO(user, file.getHash(), file.getName(), file.getLastModified(), path);
 		return dto;
 	}
 
@@ -36,7 +36,9 @@ public class Assembler {
 		ArrayList<DFileDTO> filesDTO = new ArrayList<DFileDTO>();
 		for (int i = 0; i < files.size(); i++) {
 			String pathFile = path + files.get(i).getName().substring(1);
-			filesDTO.add(createFileDTO(files.get(i), pathFile));
+			DUserDTO userdto = null;
+			userdto = createUserDTO(files.get(i).getUser());
+			filesDTO.add(createFileDTO(files.get(i), pathFile, userdto) );
 		}
 		return filesDTO;
 	}
