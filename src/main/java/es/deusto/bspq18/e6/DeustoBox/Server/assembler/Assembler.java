@@ -9,22 +9,28 @@ import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
 
 public class Assembler {
 
-	public DUserDTO userDTO(DUser user) {
-		DUserDTO userdto = new DUserDTO(user.getEmail(), user.getUsername(), user.getPassword());
+	public DUserDTO createUserDTO(DUser user, String path) {
+		DUserDTO userdto = new DUserDTO(user.getEmail(), user.getUsername(), user.getPassword(),
+				user.getRegisterDate());
 		userdto.setFiles(user.getFiles());
 		return userdto;
 	}
 
-	public DUser user(DUserDTO userdto) {
+	public DUser createUser(DUserDTO userdto) {
 		DUser user = new DUser(userdto.getEmail(), userdto.getUsername(), userdto.getPassword());
 		user.setFiles(userdto.getFiles());
 		return user;
 	}
 
 	public DFileDTO createFileDTO(DFile file, String path) {
-		DFileDTO dto = new DFileDTO(file.getHash(), file.getUser().getEmail(), path, file.getLastModified());
+		DUserDTO user = createUserDTO(file.getUser(), path);
+		DFileDTO dto = new DFileDTO(user, file.getHash(), file.getName(), file.getLastModified(), path);
 		return dto;
+	}
 
+	public DFile createFile(DFileDTO dto) {
+		DFile file = new DFile(createUser(dto.getUser()), dto.getHash(), dto.getName(), dto.getLastModified());
+		return file;
 	}
 
 	public ArrayList<DFileDTO> createFilesDTO(ArrayList<DFile> files, String path) {
@@ -33,8 +39,15 @@ public class Assembler {
 			String pathFile = path + files.get(i).getName().substring(1);
 			filesDTO.add(createFileDTO(files.get(i), pathFile));
 		}
-
 		return filesDTO;
 	}
 
+	public ArrayList<DFile> createFiles(ArrayList<DFileDTO> filesDTO) {
+		ArrayList<DFile> files = new ArrayList<DFile>();
+		for (int i = 0; i < filesDTO.size(); i++) {
+			files.add(createFile(filesDTO.get(i)));
+		}
+		return files;
+
+	}
 }

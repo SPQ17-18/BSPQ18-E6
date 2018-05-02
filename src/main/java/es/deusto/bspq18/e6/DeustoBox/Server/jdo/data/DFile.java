@@ -39,7 +39,7 @@ public class DFile implements Serializable  {
 	public void setHash(String hash) {
 		this.hash = hash;
 	}
-
+	
 	public String getName() {
 		return name;
 	}

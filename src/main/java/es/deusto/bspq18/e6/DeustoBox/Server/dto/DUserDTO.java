@@ -3,7 +3,6 @@ package es.deusto.bspq18.e6.DeustoBox.Server.dto;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DFile;
 
@@ -13,15 +12,15 @@ public class DUserDTO implements Serializable {
 	private String email;
 	private String username;
 	private String password;
-	private Date fechaInicio;
 	private ArrayList<DFile> files;
-
-	public DUserDTO(String email, String username, String password) {
+	private Date registeredDate;
+	
+	public DUserDTO(String email, String username, String password, Date registered) {
 		this.email = email;
 		this.username = username;
 		this.password = password;
-		this.fechaInicio = new Date();
 		this.files = new ArrayList<DFile>();
+		this.registeredDate = registered;
 	}
 
 	public String getEmail() {
@@ -48,14 +47,16 @@ public class DUserDTO implements Serializable {
 		this.password = password;
 	}
 
-	public Date getFechaInicio() {
-		return fechaInicio;
+	
+	
+	public Date getRegisteredDate() {
+		return registeredDate;
 	}
 
-	public void setFechaInicio(Date fechaInicio) {
-		this.fechaInicio = fechaInicio;
+	public void setRegisteredDate(Date registeredDate) {
+		this.registeredDate = registeredDate;
 	}
-	
+
 	public ArrayList<DFile> getFiles() {
 		return files;
 	}
@@ -64,12 +65,6 @@ public class DUserDTO implements Serializable {
 		this.files = files;
 	}
 	
-	public void addFiles(DFile file) {
-		/*DFile newFile = new DFile(this, file.getId_file(), file.getName(), file.getLastModified());
-		newFile.setName(file.getName());
-		newFile.setLastModified(file.getLastModified());		
-		files.add(newFile);*/
-	}
 	public void removeFile(DFile file) {
 		files.remove(file);
 	}
@@ -77,7 +72,7 @@ public class DUserDTO implements Serializable {
 	@Override
 	public String toString() {
 		return "UserDTO [email=" + email + ", username=" + username + ", password=" + password + ", fechaInicio="
-				+ fechaInicio + "]";
+				+ registeredDate + "]";
 	}
 
 }
