@@ -118,7 +118,14 @@
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>cobertura-maven-plugin</artifactId>
                         <version>2.7</version> 
-                        <configuration>      
+                        <configuration> 
+                        	<instrumentration>
+                        	<excludes>
+                        	<exclude> es/deusto/bspq18/e6/DeustoBox/Client/gui/*.class</exclude>
+                        	<exclude> es/deusto/bspq18/e6/DeustoBox/Server/gui/*.class</exclude>
+                        	</excludes>
+                        	
+                        	</instrumentration>     
                                <check>       
                                     <haltOnFailure>true</haltOnFailure>       
                                     <totalBranchRate>50</totalBranchRate>       

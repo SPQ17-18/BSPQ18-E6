@@ -33,7 +33,7 @@ public class DAOtest {
 		db.addUser(e);
 		DUser ret = db.getUser("dipina4@deusto.es", "12345");
 		
-		assertEquals("dipina", ret.getUsername());
+		assertEquals("dipina4", ret.getUsername());
 		assertEquals("dipina4@deusto.es", ret.getEmail());
 		assertEquals("12345", ret.getPassword());
 		db.deleteAllUsers();
@@ -44,7 +44,8 @@ public class DAOtest {
 	public void testUserPassword() {
 		e = new DUser("dipina3" ,"dipina3@deusto.es", "12345");
 		db.addUser(e);
-		assertEquals(true, db.checkPassword(e.getEmail(), e.getPassword()));
+		System.out.println();
+		assertEquals(true, db.checkPassword("dipina3@deusto.es", "12345"));
 		db.deleteAllUsers();
 }
 	@Test
@@ -72,7 +73,6 @@ public class DAOtest {
 	
 		
 	}
-	
 	
 	
 	

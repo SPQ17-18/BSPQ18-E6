@@ -385,6 +385,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		try {
 			tx.begin();
 			JDOQuery<DFile> query = (JDOQuery<DFile>) pm.newQuery(DFile.class);
+			query.deletePersistentAll();
 			logger.getLogger().info("All files deleted from the DB.");
 			tx.commit();
 		} catch (Exception ex) {
@@ -412,6 +413,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		try {
 			tx.begin();
 			JDOQuery<DUser> query = (JDOQuery<DUser>) pm.newQuery(DUser.class);
+			query.deletePersistentAll();
 			logger.getLogger().info("All users deleted from the DB.");
 			tx.commit();
 		} catch (Exception ex) {
