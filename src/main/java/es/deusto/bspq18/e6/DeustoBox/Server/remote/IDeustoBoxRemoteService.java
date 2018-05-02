@@ -1,6 +1,5 @@
 package es.deusto.bspq18.e6.DeustoBox.Server.remote;
 
-import java.io.File;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
@@ -17,5 +16,5 @@ public interface IDeustoBoxRemoteService extends Remote{
 	public int getNumberOfUserFiles(String email) throws RemoteException;
 	public boolean checkPassword(String email,String password)throws RemoteException;
 	public boolean updatePassword(String email,String password)throws RemoteException;
-	
+	public void ReceiveFiles(String file, String email) throws RemoteException;
 }

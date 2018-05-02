@@ -11,9 +11,8 @@ import es.deusto.bspq18.e6.DeustoBox.Server.dto.DUserDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DFile;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
 
-
 public class AssemblerTest {
-	
+
 	private static Assembler assembler;
 	private static DUser user;
 	private static DUserDTO userdto;
@@ -27,48 +26,50 @@ public class AssemblerTest {
 		file = new DFile(user, "123", "nombre", "ayer");
 		
 		
-	}
+}
 	
 	@Test
 	public void testUserDTO() {
-		userdto = assembler.createUserDTO(user);
+		userdto = assembler.createUserDTO(user, "C://");
 		assertEquals(user.getEmail(), userdto.getEmail());
 		assertEquals(user.getPassword(), userdto.getPassword());
 		assertEquals(user.getRegisterDate(), userdto.getRegisteredDate());
 		
-		
-	}
+}
+	
 	@Test
 	public void testUser(){
-	userdto = assembler.createUserDTO(user);
+	userdto = assembler.createUserDTO(user, "C://");
 	user = null;
 	user = assembler.createUser(userdto);
 	assertEquals(user.getEmail(), userdto.getEmail());
 	assertEquals(user.getPassword(), userdto.getPassword());
-	}
+}
+	
 	
 	@Test
 	public void testFileDTO() {
-		userdto = assembler.createUserDTO(user);
-		filedto = assembler.createFileDTO(file, "C//", userdto);
+		userdto = assembler.createUserDTO(user, "C://");
+		filedto = assembler.createFileDTO(file, "C//");
 		assertEquals(file.getHash(), filedto.getHash());
 		assertEquals(file.getLastModified(), filedto.getLastModified());
 		assertEquals(file.getName(), filedto.getName());
 		assertEquals(file.getUser().getEmail(), filedto.getUser().getEmail());
 		
 		
-	}
+}
+	
 	@Test
 	public void testFile() {
-		userdto = assembler.createUserDTO(user);
-		filedto = assembler.createFileDTO(file, "C//", userdto);
+		userdto = assembler.createUserDTO(user, "C//");
+		filedto = assembler.createFileDTO(file, "C//");
 		file = assembler.createFile(filedto);
 		assertEquals(file.getHash(), filedto.getHash());
 		assertEquals(file.getLastModified(), filedto.getLastModified());
 		assertEquals(file.getName(), filedto.getName());
 		assertEquals(file.getUser().getEmail(), filedto.getUser().getEmail());
 		
-	}
+}
 	
 	@Test
 	public void testFilesDTO() {
@@ -85,12 +86,13 @@ public class AssemblerTest {
 	assertEquals(files.get(0).getHash(), filesdto.get(0).getHash());
 	assertEquals(files.get(1).getLastModified(), filesdto.get(1).getLastModified());
 		
-	}
+}
+	
 	@Test
 	public void testFiles(){
 		ArrayList<DFile> files = new ArrayList<DFile>();
 		ArrayList<DFileDTO> filesdto = new ArrayList<DFileDTO>();
-		userdto = assembler.createUserDTO(user);
+		userdto = assembler.createUserDTO(user, "c://");
 		DFileDTO file1 = new DFileDTO(userdto, "123", "nombre", "ayer", "C://");
 		DFileDTO file2 = new DFileDTO(userdto, "456", "nombre2", "ayer2","C://" );
 		filesdto.add(file1);
@@ -105,7 +107,7 @@ public class AssemblerTest {
 	
 		
 		
-	}
+}
 	
 	
 

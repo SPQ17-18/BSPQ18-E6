@@ -3,7 +3,6 @@ package es.deusto.bspq18.e6.DeustoBox.Server.jdo.data;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 
 import javax.jdo.annotations.Join;
 import javax.jdo.annotations.PersistenceCapable;
@@ -75,9 +74,17 @@ public class DUser implements Serializable {
 		this.files = files;
 	}
 	
-	public void addFile(DFile file) {	
+	public void addFile(DFile file) {
+		boolean existe = false;
+		for(DFile dfile : files){
+			if (dfile.getName().equals(file.getName()))
+				existe = true;
+			
+		}
+		if(!existe){
 		files.add(file);
 		file.setUser(this);
+		}
 	}
 	public void removeFile(DFile file) {
 		files.remove(file);

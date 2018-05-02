@@ -9,7 +9,7 @@ import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
 
 public class Assembler {
 
-	public DUserDTO createUserDTO(DUser user) {
+	public DUserDTO createUserDTO(DUser user, String path) {
 		DUserDTO userdto = new DUserDTO(user.getEmail(), user.getUsername(), user.getPassword(),
 				user.getRegisterDate());
 		userdto.setFiles(user.getFiles());
@@ -17,12 +17,13 @@ public class Assembler {
 	}
 
 	public DUser createUser(DUserDTO userdto) {
-		DUser user = new DUser(userdto.getUsername(),userdto.getEmail(),  userdto.getPassword());
+		DUser user = new DUser( userdto.getUsername(),userdto.getEmail(), userdto.getPassword());
 		user.setFiles(userdto.getFiles());
 		return user;
 	}
 
-	public DFileDTO createFileDTO(DFile file, String path, DUserDTO user) {
+	public DFileDTO createFileDTO(DFile file, String path) {
+		DUserDTO user = createUserDTO(file.getUser(), path);
 		DFileDTO dto = new DFileDTO(user, file.getHash(), file.getName(), file.getLastModified(), path);
 		return dto;
 	}
@@ -36,9 +37,7 @@ public class Assembler {
 		ArrayList<DFileDTO> filesDTO = new ArrayList<DFileDTO>();
 		for (int i = 0; i < files.size(); i++) {
 			String pathFile = path + files.get(i).getName().substring(1);
-			DUserDTO userdto = null;
-			userdto = createUserDTO(files.get(i).getUser());
-			filesDTO.add(createFileDTO(files.get(i), pathFile, userdto) );
+			filesDTO.add(createFileDTO(files.get(i), pathFile));
 		}
 		return filesDTO;
 	}

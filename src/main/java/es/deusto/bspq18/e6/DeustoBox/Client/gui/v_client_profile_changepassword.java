@@ -1,7 +1,5 @@
 package es.deusto.bspq18.e6.DeustoBox.Client.gui;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -14,11 +12,14 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import javax.swing.JPasswordField;
-import javax.swing.BoxLayout;
-import java.awt.Color;
+
 
 public class v_client_profile_changepassword extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private Controller controlador;
 	private JPasswordField passwordField;

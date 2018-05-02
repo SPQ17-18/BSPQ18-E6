@@ -1,11 +1,9 @@
 package es.deusto.bspq18.e6.DeustoBox.Server.dto;
 
 import java.io.File;
-import java.io.IOException;
 import java.io.Serializable;
 import java.util.Date;
 
-import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
 
 public class DFileDTO implements Serializable {
 	/**
@@ -27,13 +25,11 @@ public class DFileDTO implements Serializable {
 	}
 	
 	public DFileDTO(DUserDTO user, String hash, String name, String lastModified, String path) {
-		this.userEmail = user.getEmail();
-		this.file = new File(path);
-		this.creationDate = new Date();
 		this.user = user;
 		this.hash = hash;
 		this.name = name;
 		this.lastModified = lastModified;
+		this.file = new File(path);
 	}
 
 	public String getUserEmail() {
@@ -90,6 +86,12 @@ public class DFileDTO implements Serializable {
 
 	public void setUser(DUserDTO user) {
 		this.user = user;
+	}
+
+	@Override
+	public String toString() {
+		return "DFileDTO [userEmail=" + userEmail + ", hash=" + hash + ", name=" + name + ", lastModified="
+				+ lastModified + ", file=" + file + ", creationDate=" + creationDate + ", user=" + user + "]";
 	}
 		
 	

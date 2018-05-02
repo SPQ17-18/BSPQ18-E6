@@ -1,10 +1,15 @@
 package es.deusto.bspq18.e6.DeustoBox.Client.controller;
 
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.Socket;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JOptionPane;
 
 import es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login;
 import es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator;
@@ -13,7 +18,7 @@ import es.deusto.bspq18.e6.DeustoBox.Server.dto.DUserDTO;
 
 public class Controller {
 
-	private RMIServiceLocator rsl;
+	private static RMIServiceLocator rsl;
 	private DUserDTO userdto;
 	private String path;
 	private ArrayList<DFileDTO> filesDTO;
@@ -59,31 +64,28 @@ public class Controller {
 	}
 
 	public void getFiles() {
-		getListOfFiles(userdto.getEmail());
-
-		File directorio = new File(this.path);
+		
+		File directorio = new File(path);
 		if (!directorio.exists())
 			directorio.mkdir();
 
 		for (DFileDTO file : filesDTO) {
-			System.out.println("Dentro del for");
-			String pathFichero = this.path + file.getFile().getName();
+			System.out.println(file.getFile().toString());
+			String pathFichero = path + file.getName();
 			File f1 = new File(file.getFile().getPath());
-			System.out.println(f1);
+
 			try {
 				f1.createNewFile();
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}
-			System.out.println("1");
+			
+			
 			try {
-				System.out.println("2");
 				FileInputStream in = new FileInputStream(f1);
 				byte[] mydata = new byte[1024 * 1024];
 				int mylen = in.read(mydata);
-				System.out.println(mylen);
 				while (mylen > 0) {
-					System.out.println("Pedimos que nos envien los datos");
 					rsl.getService().sendData(pathFichero, mydata, mylen);
 					mylen = in.read(mydata);
 				}
@@ -93,7 +95,6 @@ public class Controller {
 
 			}
 		}
-		System.out.println("Fuera del for");
 	}
 
 	public void getListOfFiles(String email) {
@@ -102,6 +103,92 @@ public class Controller {
 		} catch (Exception ex) {
 
 		}
+	}
+
+	public void getListOfUnknownFiles() {
+		int downloads = 0;
+		int uploads = 0;
+		try {
+			
+			// Pido todos los archivos
+			String[] arr_res = null;
+			arr_res = getMyFiles(path);
+
+			// Miro que archivos tengo
+
+			if (arr_res[0].equals("EMPTY")) {
+				getListOfFiles(userdto.getEmail());
+				getFiles();
+
+			} else {
+				getListOfFiles(userdto.getEmail());
+				for (DFileDTO file : filesDTO) {
+					System.out.println(file.toString());
+
+				}
+
+				ArrayList<DFileDTO> filesToRemove = new ArrayList<DFileDTO>();
+				for (int i = 0; i < arr_res.length; i++) {
+					for (int j = 0; j < filesDTO.size(); j++) {
+						if (arr_res[i].equals(filesDTO.get(j).getName().substring(1))) {
+							filesToRemove.add(filesDTO.get(j));
+
+						}
+					}
+				}
+
+				for (int i = 0; i < filesToRemove.size(); i++) {
+					filesDTO.remove(filesToRemove.get(i));
+
+				}
+				if(filesDTO.size() > 0){
+				downloads = filesDTO.size();
+				getFiles();
+				}
+				//Now we have to sync our files with the Server
+				arr_res = null;
+				arr_res = getMyFiles(path);
+				
+				//Actualizamos filesDTO
+				getListOfFiles(userdto.getEmail());
+				ArrayList<String> filesToUpload = new ArrayList<String>();
+				
+				//Comparamos nuestros files con los que no hay en el server, y los que no estén los guardamos en el array
+				boolean existe = true;
+				for (int i = 0; i < arr_res.length; i++) {
+					existe = false;
+					for (int j = 0; j < filesDTO.size(); j++) {
+						
+						if (arr_res[i].equals(filesDTO.get(j).getName().substring(1))) {
+							System.out.println(arr_res[i] + " " + filesDTO.get(j).getName().substring(1) );
+							existe = true;
+
+						}
+						
+					}
+					if(!existe){
+						filesToUpload.add(arr_res[i]);
+					}
+					
+				}
+				
+				uploads = filesToUpload.size();
+				for(int i = 0; i< filesToUpload.size(); i++){
+					String pathFichero =  path + filesToUpload.get(i);
+					sendFiles(pathFichero, filesToUpload.get(i) );
+					Thread.sleep(2000);
+				}
+				
+	
+			
+			}
+
+		} catch (Exception ex) {
+			
+		}
+		JOptionPane.showMessageDialog(null, downloads + " files have been downloaded and " + uploads + " files have been uploaded");
+		
+		
 	}
 
 	public int getNumberOfFiles() {
@@ -155,6 +242,63 @@ public class Controller {
 
 	public void setPath(String path) {
 		this.path = path + getUserdto().getEmail() + "\\";
+	}
+	
+	
+	
+	
+	public boolean sendFiles(String pathFile, String fileName){
+		try {
+			rsl.getService().ReceiveFiles(fileName, this.userdto.getEmail());
+			Socket so = new Socket("localhost", 5000);
+			DataOutputStream out = new DataOutputStream(so.getOutputStream());
+			File file = new File(pathFile);
+			long length = file.length();
+		    if (length > Integer.MAX_VALUE) {
+		        System.out.println("File is too large.");
+		    }
+		    byte[] bytes = new byte[(int) length];
+		    out.write(bytes);
+		    out.close();
+		    so.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		return true;
+	}
+	
+	
+	
+
+	public static String[] getMyFiles(String dir_path) {
+		System.out.println(dir_path);
+		String[] arr_res = null;
+
+		File f = new File(dir_path);
+
+		if (f.isDirectory() && (f.listFiles().length > 0)) {
+
+			List<String> res = new ArrayList<>();
+			File[] arr_content = f.listFiles();
+
+			int size = arr_content.length;
+
+			for (int i = 0; i < size; i++) {
+
+				if (arr_content[i].isFile())
+					res.add(arr_content[i].getName());
+			}
+
+			arr_res = res.toArray(new String[0]);
+
+		} else {
+			arr_res = new String[1];
+			arr_res[0] = "EMPTY";
+
+		}
+
+		return arr_res;
 	}
 
 }
