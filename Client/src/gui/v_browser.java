@@ -78,6 +78,7 @@ public class v_browser {
 	        int rVal = fileChooser.showOpenDialog(null);
 	        if (rVal == JFileChooser.APPROVE_OPTION) {
 	          txtPath.setText(fileChooser.getSelectedFile().toString());
+	          
 	        }
 	      }
 	    });

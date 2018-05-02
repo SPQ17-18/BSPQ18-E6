@@ -3,18 +3,28 @@ package es.deusto.bspq18.e6.DeustoBox.Client.gui;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
+import java.net.URL;
 
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 import es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller;
 
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.awt.Color;
+import java.awt.Container;
 
 public class v_installer extends JFrame {
 
@@ -23,6 +33,7 @@ public class v_installer extends JFrame {
 	private JTextField txtPath;
 	private JFileChooser fileChooser;
 	private Controller controlador;
+	private JPanel panel;
 
 	/**
 	 * Create the application.
@@ -30,6 +41,8 @@ public class v_installer extends JFrame {
 	public v_installer(Controller controlador) {
 		initialize();
 		this.controlador = controlador;
+		setIconImage(Toolkit.getDefaultToolkit().getImage(v_login.class.getResource("/es/deusto/bspq18/e6/DeustoBox/Client/images/logo.png")));
+		setResizable(false);
 	}
 
 	/**
@@ -75,10 +88,41 @@ public class v_installer extends JFrame {
 		btnOk.setBounds(314, 180, 115, 29);
 		frame.getContentPane().add(btnOk);
 		
-		JLabel lblDeustoboxInstaller = new JLabel("DeustoBox installer");
-		lblDeustoboxInstaller.setFont(new Font("Tahoma", Font.PLAIN, 24));
-		lblDeustoboxInstaller.setHorizontalAlignment(SwingConstants.CENTER);
+		JLabel lblDeustoboxInstaller = new JLabel("DestoBox Installer");
 		lblDeustoboxInstaller.setBounds(163, 26, 220, 48);
+//		BufferedImage img = null;
+//		try {
+//		    img = ImageIO.read(new File("/es/deusto/bspq18/e6/DeustoBox/Client/images/logo.png"));
+//		} catch (IOException e) {
+//		    e.printStackTrace();
+//		}
+//		Image dimg = img.getScaledInstance(lblDeustoboxInstaller.getWidth(), lblDeustoboxInstaller.getHeight(),
+//		        Image.SCALE_SMOOTH);
+//		ImageIcon imageIcon = new ImageIcon(dimg);
+//		
+//		lblDeustoboxInstaller.setIcon(imageIcon);
+		JLabel lblLogo = new JLabel();	
+		lblLogo.setBounds(15, 14, 137, 81);
+		
+		URL url = this.getClass().getResource("/es/deusto/bspq18/e6/DeustoBox/Client/images/logo.png");
+		BufferedImage img = null;
+		try {
+			img = ImageIO.read(url);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		Image dimg = img.getScaledInstance(lblLogo.getWidth(), lblLogo.getHeight(),
+		        Image.SCALE_SMOOTH);
+		
+		ImageIcon imageIcon = new ImageIcon(dimg);
+		lblLogo.setIcon(imageIcon);
+	
+		panel.add(lblLogo);
+		
+		lblDeustoboxInstaller.setBackground(Color.WHITE);
+		lblDeustoboxInstaller.setForeground(Color.BLUE);
+		lblDeustoboxInstaller.setFont(new Font("Yu Gothic", Font.PLAIN, 24));
+		lblDeustoboxInstaller.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(lblDeustoboxInstaller);
 
 		btnBrowse.addActionListener(new ActionListener() {
