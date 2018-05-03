@@ -17,7 +17,7 @@ public class Assembler {
 	}
 
 	public DUser createUser(DUserDTO userdto) {
-		DUser user = new DUser(userdto.getEmail(), userdto.getUsername(), userdto.getPassword());
+		DUser user = new DUser( userdto.getUsername(),userdto.getEmail(), userdto.getPassword());
 		user.setFiles(userdto.getFiles());
 		return user;
 	}
