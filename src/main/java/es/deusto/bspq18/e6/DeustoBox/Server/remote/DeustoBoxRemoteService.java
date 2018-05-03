@@ -43,8 +43,6 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		
 	}
 	
-	
-
 	public DUserDTO signUp(String username, String email, String password) throws RemoteException {
 		boolean correcto = false;
 		System.out.println("hOLA");

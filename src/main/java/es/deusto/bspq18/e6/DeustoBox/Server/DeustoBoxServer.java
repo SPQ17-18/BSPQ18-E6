@@ -22,7 +22,6 @@ public class DeustoBoxServer {
 
 		try {
 			IDeustoBoxRemoteService deustoBox = new DeustoBoxRemoteService();
-			deustoBox = new DeustoBoxRemoteService();
 			Naming.rebind(name, deustoBox);
 			
 			System.out.println("- DeustoBoxServer:  '" + name + "' active and waiting...");
