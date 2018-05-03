@@ -138,7 +138,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 
 	@Override
 	public boolean addUser(DUser user) {
-
+		System.out.println("CREANDO USUARIO");
 		boolean correct = true;
 		PersistenceManager pm = null;
 		Transaction tx = null;

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DFileDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DUserDTO;
+import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO;
 
 public interface IDeustoBoxRemoteService extends Remote{
 
@@ -16,5 +17,6 @@ public interface IDeustoBoxRemoteService extends Remote{
 	public int getNumberOfUserFiles(String email) throws RemoteException;
 	public boolean checkPassword(String email,String password)throws RemoteException;
 	public boolean updatePassword(String email,String password)throws RemoteException;
+	public IDeustoBoxDAO getDb() throws RemoteException;
 	public void ReceiveFiles(String file, String email) throws RemoteException;
 }

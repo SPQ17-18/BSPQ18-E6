@@ -8,7 +8,11 @@ import es.deusto.bspq18.e6.DeustoBox.Server.remote.IDeustoBoxRemoteService;
 
 public class DeustoBoxServer {
 	
+	
+
+
 	public static void main(String[] args) {
+		
 
 		if (System.getSecurityManager() == null) {
 			System.setSecurityManager(new SecurityManager());
@@ -17,14 +21,13 @@ public class DeustoBoxServer {
 		String name = "//" + args[0] + ":" + args[1] + "/" + args[2];
 
 		try {
-			
 			IDeustoBoxRemoteService deustoBox = new DeustoBoxRemoteService();
+			deustoBox = new DeustoBoxRemoteService();
 			Naming.rebind(name, deustoBox);
 			
 			System.out.println("- DeustoBoxServer:  '" + name + "' active and waiting...");
 			InputStreamReader inputStreamReader = new InputStreamReader(System.in);
 			BufferedReader stdin = new BufferedReader(inputStreamReader);
-			@SuppressWarnings("unused")
 			String line = stdin.readLine();
 			
 		} catch (Exception e) {

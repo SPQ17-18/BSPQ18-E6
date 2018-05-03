@@ -23,10 +23,7 @@ public class DAOtest {
 		db = new DeustoBoxDAO(new Error_log());
 
 	}
-	
-	
-	
-	
+
 	@Test
 	public void testUser() {
 		e = new DUser("dipina4" ,"dipina4@deusto.es", "12345");
@@ -48,6 +45,7 @@ public class DAOtest {
 		assertEquals(true, db.checkPassword("dipina3@deusto.es", "12345"));
 		db.deleteAllUsers();
 }
+	
 	@Test
 	public void testNewPassword(){
 		e = new DUser("dipina2" ,"dipina2@deusto.es", "12345");

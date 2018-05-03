@@ -47,12 +47,17 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 
 	public DUserDTO signUp(String username, String email, String password) throws RemoteException {
 		boolean correcto = false;
-
+		System.out.println("hOLA");
 		DUser user = new DUser(username, email, password);
 		correcto = db.addUser(user);
 
 		if (correcto) {
+			try {
 			getInstaller().getInstaller().manageFolders();
+			} catch(Exception ex) {
+				
+				
+			}
 			return assemble.createUserDTO(user, path);
 			
 		} else {
@@ -134,6 +139,21 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 	}
 	
 	
+	
+	
+	public IDeustoBoxDAO getDb() {
+		return db;
+	}
+
+
+
+	public void setDb(IDeustoBoxDAO db) {
+		this.db = db;
+	}
+
+
+
+
 	Thread serverReceive = new Thread(){
 		public void run(){
 		while(true){	

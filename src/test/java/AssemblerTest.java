@@ -1,6 +1,7 @@
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -34,6 +35,11 @@ public class AssemblerTest {
 		assertEquals(user.getEmail(), userdto.getEmail());
 		assertEquals(user.getPassword(), userdto.getPassword());
 		assertEquals(user.getRegisterDate(), userdto.getRegisteredDate());
+		userdto.setEmail("email2");
+		userdto.setPassword("password2");
+		assertEquals("email2", userdto.getEmail());
+		assertEquals("password2", userdto.getPassword());
+		
 		
 }
 	
@@ -55,6 +61,14 @@ public class AssemblerTest {
 		assertEquals(file.getLastModified(), filedto.getLastModified());
 		assertEquals(file.getName(), filedto.getName());
 		assertEquals(file.getUser().getEmail(), filedto.getUser().getEmail());
+		filedto.setHash("hash2");
+		assertEquals("hash2", filedto.getHash());
+		filedto.setLastModified("ayer3");
+		assertEquals("ayer3", filedto.getLastModified());
+		filedto.setName("nombre3");
+		assertEquals("nombre3", filedto.getName());
+		filedto.setUserEmail("email3");
+		assertEquals("email3", filedto.getUserEmail());
 		
 		
 }
