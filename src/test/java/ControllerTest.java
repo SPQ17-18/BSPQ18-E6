@@ -23,6 +23,7 @@ public class ControllerTest {
 private static String cwd = ControllerTest.class.getProtectionDomain().getCodeSource().getLocation().getFile();
 private static Thread rmiRegistryThread = null;
 private static Thread rmiServerThread = null;
+private Controller controller;
 
 
 		// Properties are hard-coded because we want the test to be executed without external interaction
@@ -98,7 +99,8 @@ private static Thread rmiServerThread = null;
 		}
 		
 
-		@Before public void setUpClient() {
+		@Before 
+		public void setUpClient() {
 			try {
 			System.setProperty("java.security.policy", "target\\test-classes\\security\\java.policy");
 
@@ -107,12 +109,17 @@ private static Thread rmiServerThread = null;
 			}
 
 			String name = "//127.0.0.1:1099/DeustoBox";
+			String args[] = new String[3];
+			args[0] = "127.0.0.1";
+			args[1] = "1099";
+			args[2] = "DeustoBox";
 			System.out.println("BeforeTest - Setting the client ready for calling TestServer name: " + name);
 			messenger = (IDeustoBoxRemoteService) java.rmi.Naming.lookup(name);
+			controller = new Controller(args);
 			}
 			catch (Exception re) {
 				System.err.println(" # Messenger RemoteException: " + re.getMessage());
-		//		re.printStackTrace();
+				re.printStackTrace();
 				System.exit(-1);
 			} 
 			
@@ -127,22 +134,22 @@ private static Thread rmiServerThread = null;
 		}
 			
 		}
-		
-	/*	public void testLoginUser() {
+		@Test
+		public void testLoginUser() {
 			
 			assertNotEquals(controller.login("email", "password"), null);
 			
 		}
 		@AfterClass
 		public static void end() {
-			IDeustoBoxDAO bd = new DeustoBoxDAO(logger);
+			IDeustoBoxDAO bd = new DeustoBoxDAO(new Error_log());
 			bd.deleteAllFiles();
 			bd.deleteAllUsers();
 			
 			
 			
 		}
-		*/
+		
 	
 }
 
