@@ -28,7 +28,7 @@ private static String cwd = ControllerTest.class.getProtectionDomain().getCodeSo
 private static Thread rmiRegistryThread = null;
 private static Thread rmiServerThread = null;
 private Controller controller;
-@Rule public ContiPerfRule rule = new ContiPerfRule();
+//@Rule public ContiPerfRule rule = new ContiPerfRule();
 
 
 		// Properties are hard-coded because we want the test to be executed without external interaction
@@ -131,8 +131,8 @@ private Controller controller;
 		}
 		
 		@Test
-		@PerfTest(duration = 2000)
-		@Required(max = 120, average = 30)
+		//@PerfTest(duration = 2000)
+		//@Required(max = 120, average = 30)
 		public void testCreateUser() {
 
 			assertEquals(true,controller.signUp("username", "email", "password"));
