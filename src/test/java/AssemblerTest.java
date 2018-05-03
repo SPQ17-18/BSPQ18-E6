@@ -26,7 +26,7 @@ public class AssemblerTest {
 		file = new DFile(user, "123", "nombre", "ayer");
 		
 		
-}
+	}
 	
 	@Test
 	public void testUserDTO() {
@@ -35,7 +35,7 @@ public class AssemblerTest {
 		assertEquals(user.getPassword(), userdto.getPassword());
 		assertEquals(user.getRegisterDate(), userdto.getRegisteredDate());
 		
-}
+	}
 	
 	@Test
 	public void testUser(){
@@ -100,14 +100,7 @@ public class AssemblerTest {
 		files = assembler.createFiles(filesdto);
 		assertEquals(files.get(0).getHash(), filesdto.get(0).getHash());
 		assertEquals(files.get(1).getLastModified(), filesdto.get(1).getLastModified());
-		
-		
-		
-
-	
-		
-		
-}
+	}
 	
 	
 
