@@ -2,6 +2,7 @@ package es.deusto.bspq18.e6.DeustoBox.Server.remote;
 
 import java.io.BufferedInputStream;
 import java.io.DataInputStream;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -40,6 +41,7 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		this.installer.frame.setVisible(true);
 		this.FiletoWrite = " ";
 		serverReceive.start();
+		updateServer.start();
 		
 	}
 	
@@ -86,6 +88,7 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 	public boolean sendData(String filename, byte[] data, int len) throws RemoteException{
         try{
         	FileOutputStream out=new FileOutputStream(filename,true);
+        	File f = new File(filename);
         	out.write(data,0,len);
         	out.flush();
         	out.close();
@@ -176,6 +179,21 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		
 		}
 		}
+};
+
+Thread updateServer = new Thread(){
+	public void run(){
+		
+	while(true){	
+		getInstaller().getInstaller().manageFolders();
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	}
 };
 
 
