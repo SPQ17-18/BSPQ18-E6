@@ -1,99 +1,101 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>deusto.bspq18.e6</groupId>
-  <artifactId>DeustoBox</artifactId>
-  <version>1.0.0</version>
-  <packaging>jar</packaging>
+	<groupId>deusto.bspq18.e6</groupId>
+	<artifactId>DeustoBox</artifactId>
+	<version>1.0.0</version>
+	<packaging>jar</packaging>
 
-  <name>DeustoBox</name>
-  <url>http://maven.apache.org</url>
+	<name>DeustoBox</name>
+	<url>http://maven.apache.org</url>
 
-  <properties>
+	<properties>
 
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  	<server.IP>127.0.0.1</server.IP>
-	<server.port>1099</server.port>
-	<server.Name>DeustoBox</server.Name>
- <policy.file>${basedir}/src/main/resources/security/java.policy</policy.file>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<server.IP>127.0.0.1</server.IP>
+		<server.port>1099</server.port>
+		<server.Name>DeustoBox</server.Name>
+		<policy.file>${basedir}/src/main/resources/security/java.policy</policy.file>
 		<config.files.dir>${basedir}/src/main/resources</config.files.dir>
-  </properties>
+	</properties>
 
- <dependencies>
+	<dependencies>
 
-        <dependency>
-            <groupId>org.datanucleus</groupId>
-            <artifactId>datanucleus-core</artifactId>
-            <version>[5.1.6, 5.9)</version>
-        </dependency>
-        <dependency>
-   			 <groupId>commons-io</groupId>
-   			 <artifactId>commons-io</artifactId>
-   			 <version>2.6</version>
+		<dependency>
+		
+			<groupId>org.datanucleus</groupId>
+			<artifactId>datanucleus-core</artifactId>
+			<version>[5.1.6, 5.9)</version>
 		</dependency>
-        <dependency>
-            <groupId>org.datanucleus</groupId>
-            <artifactId>datanucleus-rdbms</artifactId>
-            <version>[5.1.6, 5.9)</version>
-        </dependency>
-        
-        <dependency>
-            <groupId>org.datanucleus</groupId>
-            <artifactId>datanucleus-api-jdo</artifactId>
-            <version>[5.1.4, 5.9)</version>
-        </dependency>
-     	 <dependency>
-   			 <groupId>org.datanucleus</groupId>
-    		<artifactId>javax.jdo</artifactId>
-   			 <version>3.2.0-m8</version>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.6</version>
 		</dependency>
-        <dependency>
-                <groupId>javax.jdo</groupId>
-   				<artifactId>jdo-api</artifactId>
-   				<version>3.1</version>
-         </dependency>
-        
-		 <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.45</version>
-         </dependency>
-     
-		 <dependency>
+		<dependency>
+			<groupId>org.datanucleus</groupId>
+			<artifactId>datanucleus-rdbms</artifactId>
+			<version>[5.1.6, 5.9)</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.datanucleus</groupId>
+			<artifactId>datanucleus-api-jdo</artifactId>
+			<version>[5.1.4, 5.9)</version>
+		</dependency>
+		<dependency>
+			<groupId>org.datanucleus</groupId>
+			<artifactId>javax.jdo</artifactId>
+			<version>3.2.0-m8</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.jdo</groupId>
+			<artifactId>jdo-api</artifactId>
+			<version>3.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.45</version>
+		</dependency>
+
+		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.10</version>
 			<scope>test</scope>
-		 </dependency>
-	 		
-		 <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>[1.2.17, )</version>
-         </dependency>
+		</dependency>
 
-      		<dependency>
- 		    <groupId>com.toedter</groupId>
- 		    <artifactId>jcalendar</artifactId>
-  		    <version>1.1.4</version>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>[1.2.17, )</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.toedter</groupId>
+			<artifactId>jcalendar</artifactId>
+			<version>1.1.4</version>
 		</dependency>
 		<dependency>
-   			<groupId>org.java.net.substance</groupId>
-    		<artifactId>substance</artifactId>
-  			<version>6.0</version>
+			<groupId>org.java.net.substance</groupId>
+			<artifactId>substance</artifactId>
+			<version>6.0</version>
 		</dependency>
-		
+
 		<dependency>
-		<groupId>org.databene</groupId>
-		<artifactId>contiperf</artifactId>
-		<version>2.3.4</version>
-		<scope>test</scope>
-	</dependency>
-     	   
-    </dependencies>
- 
-  <build>
+			<groupId>org.databene</groupId>
+			<artifactId>contiperf</artifactId>
+			<version>2.3.4</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+	<build>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -121,34 +123,34 @@
 						</goals>
 					</execution>
 				</executions>
-</plugin>
-            <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>cobertura-maven-plugin</artifactId>
-                        <version>2.6</version> 
-                        <configuration> 
-                        	<instrumentration>
-                        	<excludes>
-                        	<exclude> es/deusto/bspq18/e6/DeustoBox/Client/gui/*.class</exclude>
-                        	<exclude> es/deusto/bspq18/e6/DeustoBox/Server/gui/*.class</exclude>
-                        	</excludes>
-                        	
-                        	</instrumentration>     
-                               <check>       
-                                    <haltOnFailure>true</haltOnFailure>       
-                                    <totalBranchRate>50</totalBranchRate>       
-                                    <totalLineRate>50</totalLineRate>          
-                                </check>     
-                        </configuration>   
-                        
-                        
-            </plugin>
-			
-						
-        </plugins>
-     </build>
-     
-     	<reporting>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>cobertura-maven-plugin</artifactId>
+				<version>2.5.1</version>
+				<configuration>
+					<instrumentration>
+						<excludes>
+							<exclude> es/deusto/bspq18/e6/DeustoBox/Client/gui/*.class</exclude>
+							<exclude> es/deusto/bspq18/e6/DeustoBox/Server/gui/*.class</exclude>
+						</excludes>
+
+					</instrumentration>
+					<check>
+						<haltOnFailure>true</haltOnFailure>
+						<totalBranchRate>50</totalBranchRate>
+						<totalLineRate>50</totalLineRate>
+					</check>
+				</configuration>
+
+
+			</plugin>
+
+
+		</plugins>
+	</build>
+
+	<reporting>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -186,14 +188,14 @@
 				<version>1.0.0-beta-1</version>
 			</plugin>
 		</plugins>
-</reporting>
-     
-		
-	<profiles> 
+	</reporting>
+
+
+	<profiles>
 		<!-- run as 'mvn exec:java -Pserver' -->
-		<profile>  
-			<id>server</id>  
-			<build>  
+		<profile>
+			<id>server</id>
+			<build>
 				<resources>
 					<resource>
 						<directory>${config.files.dir}</directory>
@@ -204,7 +206,7 @@
 					</resource>
 				</resources>
 
-				<plugins>  
+				<plugins>
 					<plugin>
 						<artifactId>maven-clean-plugin</artifactId>
 						<version>3.0.0</version>
@@ -221,119 +223,119 @@
 						</configuration>
 					</plugin>
 
-					<plugin>  
-						<groupId>org.codehaus.mojo</groupId>  
-						<artifactId>exec-maven-plugin</artifactId>  
-						<version>1.2.1</version> 
-						 
-						<configuration> 
-						<!--  Server location  --> 
-									<mainClass>es.deusto.bspq18.e6.DeustoBox.Server.DeustoBoxServer</mainClass>
-									<systemProperties>
-										
-										<systemProperty>
-											<key>java.security.manager</key>
-											<value>java.rmi.RMISecurityManager</value>
-										</systemProperty>
-										<systemProperty>
-											<key>java.rmi.server.codebase</key>
-											<value>file:${basedir}/target/classes/</value>
-										</systemProperty>
-										<systemProperty>
-											<key>java.security.policy</key>
-											<value>${policy.file}</value>
-										</systemProperty>
-									</systemProperties>
-									<arguments>  
-										<argument>${server.IP}</argument>  
-										<argument>${server.port}</argument>  
-										<argument>${server.Name}</argument>  
-									</arguments>  
-								</configuration>  
-					</plugin>  
-		
-						
-				</plugins>  
-			</build>  
-		</profile>  
-		
-		<!-- run as 'mvn exec:java -Pclient' -->
-		<profile>  
-			<id>client</id>  
-			<build>  
-				<plugins>  
-					<plugin>  
-						<groupId>org.codehaus.mojo</groupId>  
-						<artifactId>exec-maven-plugin</artifactId>  
-						<version>1.2.1</version>  
-						<configuration>  
-									<mainClass>es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller</mainClass>
-									<systemProperties>
-										<systemProperty>
-											<key>java.security.manager</key>
-											<value>java.rmi.RMISecurityManager</value>
-										</systemProperty>
-										<systemProperty>
-											<key>java.security.policy</key>
-											<value>${policy.file}</value>
-										</systemProperty>
-									</systemProperties>
-									<arguments>  
-										<argument>${server.IP}</argument>  
-										<argument>${server.port}</argument>  
-										<argument>${server.Name}</argument>  
-									</arguments>  
-						</configuration>  
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>exec-maven-plugin</artifactId>
+						<version>1.2.1</version>
+
+						<configuration>
+							<!-- Server location -->
+							<mainClass>es.deusto.bspq18.e6.DeustoBox.Server.DeustoBoxServer</mainClass>
+							<systemProperties>
+
+								<systemProperty>
+									<key>java.security.manager</key>
+									<value>java.rmi.RMISecurityManager</value>
+								</systemProperty>
+								<systemProperty>
+									<key>java.rmi.server.codebase</key>
+									<value>file:${basedir}/target/classes/</value>
+								</systemProperty>
+								<systemProperty>
+									<key>java.security.policy</key>
+									<value>${policy.file}</value>
+								</systemProperty>
+							</systemProperties>
+							<arguments>
+								<argument>${server.IP}</argument>
+								<argument>${server.port}</argument>
+								<argument>${server.Name}</argument>
+							</arguments>
+						</configuration>
 					</plugin>
-					        				  
-				</plugins>  
-			</build>  
-		</profile>  
-		
+
+
+				</plugins>
+			</build>
+		</profile>
+
+		<!-- run as 'mvn exec:java -Pclient' -->
+		<profile>
+			<id>client</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>exec-maven-plugin</artifactId>
+						<version>1.2.1</version>
+						<configuration>
+							<mainClass>es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller</mainClass>
+							<systemProperties>
+								<systemProperty>
+									<key>java.security.manager</key>
+									<value>java.rmi.RMISecurityManager</value>
+								</systemProperty>
+								<systemProperty>
+									<key>java.security.policy</key>
+									<value>${policy.file}</value>
+								</systemProperty>
+							</systemProperties>
+							<arguments>
+								<argument>${server.IP}</argument>
+								<argument>${server.port}</argument>
+								<argument>${server.Name}</argument>
+							</arguments>
+						</configuration>
+					</plugin>
+
+				</plugins>
+			</build>
+		</profile>
+
 		<!-- run as 'mvn exec:java -Pload' -->
-		<profile>  
-			<id>load</id>  
-			<build>  
-				<plugins>  
-					<plugin>  
-						<groupId>org.codehaus.mojo</groupId>  
-						<artifactId>exec-maven-plugin</artifactId>  
-						<version>1.2.1</version>  
-						<configuration>  
-									<mainClass>es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO</mainClass>
-									<systemProperties>
-										<systemProperty>
-											<key>java.security.manager</key>
-											<value>java.rmi.RMISecurityManager</value>
-										</systemProperty>
-										<systemProperty>
-											<key>java.security.policy</key>
-											<value>${policy.file}</value>
-										</systemProperty>
-									</systemProperties>
-									<arguments>  
-										<argument>${server.IP}</argument>  
-										<argument>${server.port}</argument>  
-										<argument>${server.Name}</argument>  
-									</arguments>  
-						</configuration>  
-					</plugin>  
-				</plugins>  
-			</build>  
-		</profile>  
-	</profiles>  
+		<profile>
+			<id>load</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>exec-maven-plugin</artifactId>
+						<version>1.2.1</version>
+						<configuration>
+							<mainClass>es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO</mainClass>
+							<systemProperties>
+								<systemProperty>
+									<key>java.security.manager</key>
+									<value>java.rmi.RMISecurityManager</value>
+								</systemProperty>
+								<systemProperty>
+									<key>java.security.policy</key>
+									<value>${policy.file}</value>
+								</systemProperty>
+							</systemProperties>
+							<arguments>
+								<argument>${server.IP}</argument>
+								<argument>${server.port}</argument>
+								<argument>${server.Name}</argument>
+							</arguments>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 	<repositories>
-	    <repository>
-            <id>DN_M2_Repo</id>
-            <name>DataNucleus Repository</name>
-            <url>http://www.datanucleus.org/downloads/maven2</url>
-        </repository>
-    </repositories>
+		<repository>
+			<id>DN_M2_Repo</id>
+			<name>DataNucleus Repository</name>
+			<url>http://www.datanucleus.org/downloads/maven2</url>
+		</repository>
+	</repositories>
 	<pluginRepositories>
-        <pluginRepository>
-            <id>DataNucleus_2</id>
-            <url>http://www.datanucleus.org/downloads/maven2/</url>
-        </pluginRepository>
-    </pluginRepositories>
+		<pluginRepository>
+			<id>DataNucleus_2</id>
+			<url>http://www.datanucleus.org/downloads/maven2/</url>
+		</pluginRepository>
+	</pluginRepositories>
 
 </project>

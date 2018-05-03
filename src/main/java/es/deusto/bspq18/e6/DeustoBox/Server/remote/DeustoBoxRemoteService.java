@@ -41,7 +41,7 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		this.installer.frame.setVisible(true);
 		this.FiletoWrite = " ";
 		serverReceive.start();
-		//updateServer.start();
+		updateServer.start();
 		
 	}
 	

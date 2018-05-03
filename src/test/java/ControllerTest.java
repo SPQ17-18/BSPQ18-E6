@@ -141,8 +141,7 @@ private Controller controller;
 		}
 		//@Test
 		public void testLoginUser() {
-			
-			assertNotEquals(controller.login("email", "password"), null);
+			//assertNotEquals(controller.login("email", "password"), null);
 			
 		}
 		@AfterClass
