@@ -67,9 +67,10 @@ public class v_installer extends JFrame {
 				File directorio=new File(dir + "\\Client Deusto-Box");
 				controlador.setPath(dir + "\\Client Deusto-Box\\");
 				directorio.mkdir(); 
+				dispose();
 				v_client client = new v_client(controlador);
 				client.setVisible(true);
-				dispose();
+				
 			}
 		});
 		btnOk.setBounds(314, 180, 115, 29);
