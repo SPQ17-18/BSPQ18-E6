@@ -41,10 +41,8 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		this.installer.frame.setVisible(true);
 		this.FiletoWrite = " ";
 		serverReceive.start();
-		updateServer.start();
-		
 	}
-	
+
 	public DUserDTO signUp(String username, String email, String password) throws RemoteException {
 		boolean correcto = false;
 		System.out.println("hOLA");
@@ -53,13 +51,12 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 
 		if (correcto) {
 			try {
-			getInstaller().getInstaller().manageFolders();
-			} catch(Exception ex) {
-				
-				
+				getInstaller().getInstaller().manageFolders();
+			} catch (Exception ex) {
+
 			}
 			return assemble.createUserDTO(user, path);
-			
+
 		} else {
 			return null;
 		}
@@ -69,34 +66,31 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 
 		DUser user = db.getUser(email, password);
 		DUserDTO us = assemble.createUserDTO(user, path);
-		
 
 		return us;
 	}
 
 	public ArrayList<DFileDTO> getFiles(String email) throws RemoteException {
 		String path = getInstaller().getTxtPath().getText();
-			
+
 		ArrayList<DFileDTO> filesDTO = new ArrayList<DFileDTO>();
 		filesDTO = installer.getInstaller().sendAllFiles(email, path);
-	
+
 		return filesDTO;
 	}
 
-	
-	
-	public boolean sendData(String filename, byte[] data, int len) throws RemoteException{
-        try{
-        	FileOutputStream out=new FileOutputStream(filename,true);
-        	File f = new File(filename);
-        	out.write(data,0,len);
-        	out.flush();
-        	out.close();
-        }catch(Exception e){
-        	e.printStackTrace();
-        }
+	public boolean sendData(String filename, byte[] data, int len) throws RemoteException {
+		try {
+			FileOutputStream out = new FileOutputStream(filename, true);
+			File f = new File(filename);
+			out.write(data, 0, len);
+			out.flush();
+			out.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return true;
-}
+	}
 
 	public boolean checkPassword(String email, String password) throws RemoteException {
 		boolean correct = false;
@@ -113,14 +107,11 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 
 	public void setPath(String email) {
 		this.path = getInstaller().getInstaller().getPath() + "\\" + email + "\\";
-		
 	}
 
 	public v_installer getInstaller() {
 		return installer;
 	}
-
-
 
 	public void setFiletoWrite(String filetoWrite) {
 		FiletoWrite = filetoWrite;
@@ -132,70 +123,45 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		number = db.getNumberOfUserFiles(email);
 		return number;
 	}
-	
+
 	public void ReceiveFiles(String file, String email) throws RemoteException {
 		setPath(email);
 		setFiletoWrite(file);
-			
+
 	}
-	
-	
-	
-	
+
 	public IDeustoBoxDAO getDb() {
 		return db;
 	}
-
-
 
 	public void setDb(IDeustoBoxDAO db) {
 		this.db = db;
 	}
 
+	Thread serverReceive = new Thread() {
+		public void run() {
+			while (true) {
+				try {
+					sc = new ServerSocket(5000);
+					so = sc.accept();
+					in = new DataInputStream(new BufferedInputStream(so.getInputStream()));
+					byte[] bytes = new byte[1024];
+					in.read(bytes);
+					String write = path + FiletoWrite;
+					FileOutputStream fos = new FileOutputStream(write);
+					fos.write(bytes);
+					fos.close();
+					installer.getInstaller().manageFolders();
+					in.close();
+					so.close();
+					sc.close();
 
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 
-
-	Thread serverReceive = new Thread(){
-		public void run(){
-		while(true){	
-	try {
-		sc = new ServerSocket(5000);
-		so = sc.accept();
-		in = new DataInputStream(new BufferedInputStream(so.getInputStream()));
-		byte[] bytes = new byte[1024];
-		    in.read(bytes);
-		    String write = path + FiletoWrite;
-		    FileOutputStream fos = new FileOutputStream(write);
-		    fos.write(bytes);
-		    fos.close();
-		    installer.getInstaller().manageFolders();
-		    in.close();
-		    so.close();
-		    sc.close();
-		
-		} catch (IOException e) {
-			e.printStackTrace();
+			}
 		}
-		
-		}
-		}
-};
-
-Thread updateServer = new Thread(){
-	public void run(){
-		
-	while(true){	
-		getInstaller().getInstaller().manageFolders();
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-		}
-	}
-	}
-};
-
-
-	
+	};
 
 }
