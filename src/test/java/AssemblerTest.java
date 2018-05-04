@@ -11,6 +11,7 @@ import es.deusto.bspq18.e6.DeustoBox.Server.dto.DFileDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DUserDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DFile;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
+import es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log;
 
 public class AssemblerTest {
 
@@ -19,6 +20,7 @@ public class AssemblerTest {
 	private static DUserDTO userdto;
 	private static DFile file;
 	private static DFileDTO filedto;
+	private static Error_log logger;
 
 	@BeforeClass
 	public static void setUpClass() {
@@ -28,6 +30,10 @@ public class AssemblerTest {
 		
 		
 }
+
+		
+		
+	
 	
 	@Test
 	public void testUserDTO() {
