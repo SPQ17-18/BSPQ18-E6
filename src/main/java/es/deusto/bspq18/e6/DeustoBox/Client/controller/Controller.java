@@ -15,6 +15,7 @@ import es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login;
 import es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DFileDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DUserDTO;
+import es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log;
 
 public class Controller {
 
@@ -22,12 +23,14 @@ public class Controller {
 	private DUserDTO userdto;
 	private String path;
 	private ArrayList<DFileDTO> filesDTO;
+	private Error_log logger;
 
 	public Controller(String[] args) throws RemoteException {
 		rsl = new RMIServiceLocator();
 		rsl.setService(args);
 		new v_login(this);
 		filesDTO = null;
+		logger = new Error_log();
 	}
 
 	public boolean signUp(String username, String email, String password) {
@@ -35,8 +38,7 @@ public class Controller {
 		try {
 			res = rsl.getService().signUp(username, email, password);
 		} catch (Exception ex) {
-			System.err.println("- Exception " + ex.getMessage());
-			ex.printStackTrace();
+			logger.getLogger().error("- Exception", ex);
 		}
 		if (res != null) {
 			this.userdto = res;
@@ -55,7 +57,7 @@ public class Controller {
 		}
 
 		if (res.equals(null)) {
-			System.out.println("The user doesn't exist");
+			logger.getLogger().error("The user doesn't exist");
 			return false;
 		} else {
 			this.userdto = res;
@@ -70,7 +72,7 @@ public class Controller {
 			directorio.mkdir();
 
 		for (DFileDTO file : filesDTO) {
-			System.out.println(file.getFile().toString());
+			logger.getLogger().error(file.getFile().toString());
 			String pathFichero = path + file.getName();
 			File f1 = new File(file.getFile().getPath());
 
@@ -118,13 +120,13 @@ public class Controller {
 
 			if (arr_res[0].equals("EMPTY")) {
 				getListOfFiles(userdto.getEmail());
+				downloads = filesDTO.size();
 				getFiles();
 
 			} else {
 				getListOfFiles(userdto.getEmail());
 				for (DFileDTO file : filesDTO) {
-					System.out.println(file.toString());
-
+					logger.getLogger().error(file.toString());
 				}
 
 				ArrayList<DFileDTO> filesToRemove = new ArrayList<DFileDTO>();
@@ -160,7 +162,7 @@ public class Controller {
 					for (int j = 0; j < filesDTO.size(); j++) {
 						
 						if (arr_res[i].equals(filesDTO.get(j).getName().substring(1))) {
-							System.out.println(arr_res[i] + " " + filesDTO.get(j).getName().substring(1) );
+							logger.getLogger().error(arr_res[i] + " " + filesDTO.get(j).getName().substring(1) );
 							existe = true;
 
 						}
@@ -255,7 +257,7 @@ public class Controller {
 			File file = new File(pathFile);
 			long length = file.length();
 		    if (length > Integer.MAX_VALUE) {
-		        System.out.println("File is too large.");
+				logger.getLogger().error("File is too large.");
 		    }
 		    byte[] bytes = new byte[(int) length];
 		    out.write(bytes);
