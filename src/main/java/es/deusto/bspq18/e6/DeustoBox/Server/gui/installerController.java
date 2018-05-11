@@ -206,18 +206,6 @@ public class installerController {
 					if (found == false) {
 						// Check if the lastModficiaction is later than the last connection to the
 						// server
-						try {
-							inClient = format.parse(userFiles.get(i).getLastModified());
-							if (inClient.after(dao.getLastConnection(userFiles.get(i).getUser()))) {
-								// Ask for it to the client
-								toReceive.add(userFiles.get(i));
-							} else {
-								// Tell the client to delete
-								toDelete.add(userFiles.get(i));
-							}
-						} catch (ParseException e) {
-							e.printStackTrace();
-						}
 					}
 				}
 			} else {

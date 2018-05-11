@@ -2,7 +2,9 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.Date;
 
+import org.databene.contiperf.junit.ContiPerfRule;
 import org.junit.BeforeClass;
+import org.junit.Rule;
 import org.junit.Test;
 
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DFileDTO;
@@ -19,7 +21,7 @@ public class DataTest {
 	
 	@BeforeClass
 	public static void setUpClass() {
-	 user = new DUser("username","email","password", new Date(), null);
+	 user = new DUser("username","email","password", new Date());
 	 file = new DFile(user, "hash", "name", "lastModified");
 	 userdto = new DUserDTO("email", "username", "password", null);
 	 filedto = new DFileDTO(userdto, "hash", "name", "lastModified", "path");
@@ -40,8 +42,6 @@ public class DataTest {
 		assertEquals(user.getPassword(), "password2");
 		user.addFile(file);
 		assertEquals(user.getFiles().get(0).getName(), file.getName());
-		user.addConnection("lastCon");
-		assertEquals(user.getLastConnections().get(0), "lastCon");
 		user.removeFile(file);
 		Date e = new Date();
 		user.setRegisterDate(e);
@@ -54,7 +54,7 @@ public class DataTest {
 	
 	@Test
 	public void TestFile() {
-		DUser user2 = new DUser("username3","email3","password3", new Date(), null);
+		DUser user2 = new DUser("username3","email3","password3", new Date());
 		assertEquals(file.getUser(), user);
 		file.setUser(user2);
 		assertEquals(file.getUser(), user2);

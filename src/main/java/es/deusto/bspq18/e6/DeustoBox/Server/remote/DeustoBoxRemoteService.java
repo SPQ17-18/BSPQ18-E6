@@ -11,11 +11,13 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assembler;
+import es.deusto.bspq18.e6.DeustoBox.Server.dto.DConnectionDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DFileDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DUserDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.gui.v_installer;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO;
+import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DConnection;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
 import es.deusto.bspq18.e6.DeustoBox.Server.remote.IDeustoBoxRemoteService;
 import es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log;
@@ -48,6 +50,7 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		System.out.println("hOLA");
 		DUser user = new DUser(username, email, password);
 		correcto = db.addUser(user);
+		
 
 		if (correcto) {
 			try {
@@ -62,11 +65,13 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		}
 	}
 
-	public DUserDTO login(String email, String password) throws RemoteException {
+	public DUserDTO login(String email, String password, String os) throws RemoteException {
 
 		DUser user = db.getUser(email, password);
 		DUserDTO us = assemble.createUserDTO(user, path);
-
+		if(!us.equals(null))
+		addConnection(email, os);
+		
 		return us;
 	}
 
@@ -163,5 +168,26 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 			}
 		}
 	};
+
+	@Override
+	public boolean addConnection(String email, String systema)throws RemoteException {
+		boolean correct = false;
+		int number = db.getLastConnectionID();
+		DConnection con = new DConnection(number +1, email, systema);
+		correct =  db.addConnection(con);
+		
+		return correct;
+	}
+
+	@Override
+	public ArrayList<DConnectionDTO> getConnections(String email)throws RemoteException {
+		ArrayList<DConnection> connections = new ArrayList<DConnection>();
+		connections = db.getConnections(email);
+		ArrayList<DConnectionDTO> connectionsDTO;
+		connectionsDTO = assemble.createConnectionsDTO(connections);
+		System.out.println("Hay " + connectionsDTO.size() + " conexiones");
+		return connectionsDTO;
+	}
+
 
 }

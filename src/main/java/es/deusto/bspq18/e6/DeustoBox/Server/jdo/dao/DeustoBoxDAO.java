@@ -14,6 +14,7 @@ import javax.jdo.Transaction;
 
 import org.datanucleus.api.jdo.JDOQuery;
 
+import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DConnection;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DFile;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
 import es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log;
@@ -50,7 +51,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 				if (usuario.getEmail().equals(email) && usuario.getPassword().equals(pass)) {
 
 					myUser = new DUser(usuario.getUsername(), usuario.getEmail(), usuario.getPassword(),
-							usuario.getRegisterDate(), usuario.getLastConnections());
+							usuario.getRegisterDate());
 					break;
 				}
 			}
@@ -138,7 +139,6 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 
 	@Override
 	public boolean addUser(DUser user) {
-		System.out.println("CREANDO USUARIO");
 		boolean correct = true;
 		PersistenceManager pm = null;
 		Transaction tx = null;
@@ -338,41 +338,6 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		return correcto;
 	}
 
-	@Override
-	public Date getLastConnection(DUser user) {
-		PersistenceManager pm = pmf.getPersistenceManager();
-		pm.getFetchPlan().setMaxFetchDepth(3);
-		Transaction tx = pm.currentTransaction();
-		
-		SimpleDateFormat format = new SimpleDateFormat("EE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
-		Date date = null;
-		try {
-			logger.getLogger().info("- Retrieving the last connection of a certain User using an 'Extent'...");
-
-			pm = pmf.getPersistenceManager();
-			tx = pm.currentTransaction();
-
-			Extent<DUser> extent = pm.getExtent(DUser.class, true);
-
-			for (DUser newUser : extent) {
-				if(user.getEmail().equals(newUser.getEmail())) {
-					// We get the last connection
-					date = format.parse(newUser.getLastConnections().get(newUser.getLastConnections().size()-1));
-					break;
-				}
-			}
-
-		} catch (Exception ex) {
-			logger.getLogger().error("# Error retrieving the last connection of a certain User using an 'Extent': " + ex.getMessage());
-		} finally {
-			if (tx.isActive()) {
-				tx.rollback();
-			}
-			pm.close();
-		}
-
-		return date;
-	}
 
 	
 	@Override
@@ -429,6 +394,103 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 }
 		
 		
+	}
+
+	@Override
+	public boolean addConnection(DConnection connection) {
+		boolean correct = true;
+		PersistenceManager pm = null;
+		Transaction tx = null;
+
+		try {
+			logger.getLogger().info("- Store objects in the DB");
+			pm = pmf.getPersistenceManager();
+			tx = pm.currentTransaction();
+			tx.begin();
+
+			pm.makePersistent(connection);
+			tx.commit();
+			logger.getLogger().info("Inserting connection into the database: SUCCESFUL");
+
+		} catch (Exception ex) {
+			logger.getLogger().error("# Error storing connection: " + ex.getMessage());
+			correct = false;
+		} finally {
+			if (tx.isActive()) {
+				tx.rollback();
+			}
+
+			pm.close();
+		}
+
+		return correct;
+	}
+
+	@Override
+	public int getLastConnectionID() {
+		int connections = 0;
+		PersistenceManager pm = pmf.getPersistenceManager();
+		pm.getFetchPlan().setMaxFetchDepth(3);
+		Transaction tx = pm.currentTransaction();
+		try {
+			logger.getLogger().info("- Retrieving the number of connectionsusing an 'Extent'...");
+
+			pm = pmf.getPersistenceManager();
+			tx = pm.currentTransaction();
+
+			Extent<DConnection> extent = pm.getExtent(DConnection.class, true);
+			
+			for (DConnection con : extent) {
+				if(con.getID() > connections) {
+					connections = con.getID();
+				}
+			}
+
+		} catch (Exception ex) {
+			logger.getLogger().error("# Error retrieving the number of connections using an 'Extent': " + ex.getMessage());
+		} finally {
+			if (tx.isActive()) {
+				tx.rollback();
+			}
+			pm.close();
+		}
+
+		return connections;
+	}
+
+	@Override
+	public ArrayList<DConnection> getConnections(String email) {
+		ArrayList<DConnection> connections = new ArrayList<>();
+		PersistenceManager pm = pmf.getPersistenceManager();
+		pm.getFetchPlan().setMaxFetchDepth(3);
+		Transaction tx = pm.currentTransaction();
+		DConnection dec = null;
+
+		DUser e = null;
+		try {
+			logger.getLogger().info("- Retrieving Connections of a certain User using an 'Extent'...");
+
+			pm = pmf.getPersistenceManager();
+			tx = pm.currentTransaction();
+
+			Extent<DConnection> extent = pm.getExtent(DConnection.class, true);
+
+			for (DConnection con : extent) {
+				if( con.getUserEmail().equals(email))
+					dec = new DConnection(con.getID(), con.getUserEmail(), con.getConnectionDate(), con.getOSUsed());
+				connections.add(dec);
+			}
+
+		} catch (Exception ex) {
+			logger.getLogger().error("# Error retrieving Files of a certain User using an 'Extent': " + ex.getMessage());
+		} finally {
+			if (tx.isActive()) {
+				tx.rollback();
+			}
+			pm.close();
+		}
+		
+		return connections;
 	}
 
 

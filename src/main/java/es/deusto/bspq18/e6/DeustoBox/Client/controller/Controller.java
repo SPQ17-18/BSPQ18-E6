@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 
 import es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login;
 import es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator;
+import es.deusto.bspq18.e6.DeustoBox.Server.dto.DConnectionDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DFileDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DUserDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log;
@@ -31,6 +32,7 @@ public class Controller {
 		new v_login(this);
 		filesDTO = null;
 		logger = new Error_log();
+		
 	}
 
 	public boolean signUp(String username, String email, String password) {
@@ -49,9 +51,10 @@ public class Controller {
 	}
 
 	public boolean login(String email, String password) {
+		String os = System.getProperty("os.name");
 		DUserDTO res = null;
 		try {
-			res = rsl.getService().login(email, password);
+			res = rsl.getService().login(email, password, os);
 		} catch (Exception ex) {
 			return false;
 		}
@@ -224,6 +227,17 @@ public class Controller {
 		}
 
 		return correct;
+	}
+	
+	public ArrayList<DConnectionDTO> getConnections (String email) {
+		ArrayList<DConnectionDTO> connectionsDTO = new ArrayList<DConnectionDTO> ();
+		try {
+		connectionsDTO = rsl.getService().getConnections(email);
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+		}
+	return connectionsDTO;
+		
 	}
 
 	public DUserDTO getUserdto() {

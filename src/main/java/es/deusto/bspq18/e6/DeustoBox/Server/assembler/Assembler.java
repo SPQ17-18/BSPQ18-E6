@@ -1,9 +1,12 @@
 package es.deusto.bspq18.e6.DeustoBox.Server.assembler;
 
 import java.util.ArrayList;
+import java.util.Date;
 
+import es.deusto.bspq18.e6.DeustoBox.Server.dto.DConnectionDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DFileDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DUserDTO;
+import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DConnection;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DFile;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
 
@@ -32,6 +35,8 @@ public class Assembler {
 		DFile file = new DFile(createUser(dto.getUser()), dto.getHash(), dto.getName(), dto.getLastModified());
 		return file;
 	}
+	
+	
 
 	public ArrayList<DFileDTO> createFilesDTO(ArrayList<DFile> files, String path) {
 		ArrayList<DFileDTO> filesDTO = new ArrayList<DFileDTO>();
@@ -49,5 +54,19 @@ public class Assembler {
 		}
 		return files;
 
+	}
+	
+	public ArrayList<DConnectionDTO> createConnectionsDTO(ArrayList<DConnection> connections) {
+		ArrayList<DConnectionDTO> connectionsDTO = new ArrayList<DConnectionDTO>();
+		for (int i = 0; i < connections.size(); i++) {
+			connectionsDTO.add(createConnectionDTO(connections.get(i)));
+		}
+		
+		return connectionsDTO;
+	}
+	
+	public DConnectionDTO createConnectionDTO(DConnection conection) {
+		DConnectionDTO dto = new DConnectionDTO(conection.getID(), conection.getUserEmail(), conection.getConnectionDate(), conection.getOSUsed());
+		return dto;
 	}
 }
