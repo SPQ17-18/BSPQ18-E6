@@ -10,6 +10,10 @@ import java.net.Socket;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
+
+import org.databene.contiperf.PerfTest;
+import org.databene.contiperf.Required;
+
 import es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assembler;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DConnectionDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DFileDTO;
@@ -49,7 +53,6 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 
 	public DUserDTO signUp(String username, String email, String password) throws RemoteException {
 		boolean correcto = false;
-		System.out.println("hOLA");
 		DUser user = new DUser(username, email, password);
 		correcto = db.addUser(user);
 		
