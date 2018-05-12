@@ -1,8 +1,13 @@
 package es.deusto.bspq18.e6.DeustoBox.Server.dto;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class DMessageDTO {
+public class DMessageDTO implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int messageId;
 	private String emailfrom;
 	private String emailTo;
@@ -19,6 +24,16 @@ public class DMessageDTO {
 		this.Subject = subject;
 		this.text = text;
 	}
+
+	public DMessageDTO(int messageId, String emailfrom, String emailTo, String subject, String text) {
+		this.messageId = messageId;
+		this.emailfrom = emailfrom;
+		this.emailTo = emailTo;
+		this.date = new Date();
+		this.Subject = subject;
+		this.text = text;
+	}
+
 
 
 	public int getMessageId() {

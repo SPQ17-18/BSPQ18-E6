@@ -26,6 +26,7 @@ public interface IDeustoBoxRemoteService extends Remote{
 	public ArrayList<DConnectionDTO> getConnections(String email) throws RemoteException;
 	public ArrayList<DMessageDTO> getMessages(String email) throws RemoteException;
 	public boolean addMessage(DMessageDTO messagedto) throws RemoteException;
+	public int getNewMessageId() throws RemoteException;
 
 	
 }

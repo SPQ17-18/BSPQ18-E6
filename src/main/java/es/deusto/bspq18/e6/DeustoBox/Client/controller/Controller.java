@@ -15,6 +15,7 @@ import es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login;
 import es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DConnectionDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DFileDTO;
+import es.deusto.bspq18.e6.DeustoBox.Server.dto.DMessageDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DUserDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log;
 
@@ -240,24 +241,19 @@ public class Controller {
 		
 	}
 
-	public DUserDTO getUserdto() {
-		return userdto;
-	}
 
-	public void setUserdto(DUserDTO userdto) {
-		this.userdto = userdto;
-	}
-
-	public static void main(String[] args) throws RemoteException {
-		new Controller(args);
-	}
-
-	public String getPath() {
-		return path;
-	}
-
-	public void setPath(String path) {
-		this.path = path + getUserdto().getEmail() + "\\";
+	public boolean addMessage(String emailfrom, String emailto, String subject, String text){
+		int id = 0;
+		boolean correct = false;
+		try {
+			id = rsl.getService().getNewMessageId();
+			DMessageDTO dto = new DMessageDTO(id,emailfrom, emailto, subject, text);
+			correct = rsl.getService().addMessage(dto);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return correct;
 	}
 	
 	
@@ -315,6 +311,23 @@ public class Controller {
 		}
 
 		return arr_res;
+	}
+	
+	public DUserDTO getUserdto() {
+		return userdto;
+	}
+
+	public void setUserdto(DUserDTO userdto) {
+		this.userdto = userdto;
+	}
+
+
+	public String getPath() {
+		return path;
+	}
+
+	public void setPath(String path) {
+		this.path = path + getUserdto().getEmail() + "\\";
 	}
 
 }

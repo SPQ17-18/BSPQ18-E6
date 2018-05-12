@@ -1,8 +1,17 @@
 package es.deusto.bspq18.e6.DeustoBox.Server.jdo.data;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class DMessage {
+import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.PrimaryKey;
+@PersistenceCapable(detachable="true")
+public class DMessage implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@PrimaryKey
 	private int messageId;
 	private String emailfrom;
 	private String emailTo;

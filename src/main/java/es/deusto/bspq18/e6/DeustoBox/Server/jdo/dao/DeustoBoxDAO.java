@@ -603,6 +603,38 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		return messages;
 	}
 
+	@Override
+	public int getLastMessageID() {
+		int messages = 0;
+		PersistenceManager pm = pmf.getPersistenceManager();
+		pm.getFetchPlan().setMaxFetchDepth(3);
+		Transaction tx = pm.currentTransaction();
+		try {
+			logger.getLogger().info("- Retrieving the number of messages using an 'Extent'...");
+
+			pm = pmf.getPersistenceManager();
+			tx = pm.currentTransaction();
+
+			Extent<DMessage> extent = pm.getExtent(DMessage.class, true);
+			
+			for (DMessage mes : extent) {
+				if(mes.getMessageId() > messages) {
+					messages = mes.getMessageId();
+				}
+			}
+
+		} catch (Exception ex) {
+			logger.getLogger().error("# Error retrieving the number of messages using an 'Extent': " + ex.getMessage());
+		} finally {
+			if (tx.isActive()) {
+				tx.rollback();
+			}
+			pm.close();
+		}
+
+		return messages;
+	}
+
 
 
 

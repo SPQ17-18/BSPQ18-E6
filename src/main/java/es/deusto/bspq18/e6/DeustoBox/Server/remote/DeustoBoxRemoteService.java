@@ -208,5 +208,12 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		return correct;
 	}
 
+	@Override
+	public int getNewMessageId() throws RemoteException {
+		int messages = 0;
+		messages = db.getLastMessageID() + 1;
+		return messages;
+	}
+
 
 }
