@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DConnectionDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DFileDTO;
+import es.deusto.bspq18.e6.DeustoBox.Server.dto.DMessageDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DUserDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DConnection;
@@ -23,6 +24,8 @@ public interface IDeustoBoxRemoteService extends Remote{
 	public void ReceiveFiles(String file, String email) throws RemoteException;
 	public boolean addConnection(String email, String systema) throws RemoteException;
 	public ArrayList<DConnectionDTO> getConnections(String email) throws RemoteException;
+	public ArrayList<DMessageDTO> getMessages(String email) throws RemoteException;
+	public boolean addMessage(DMessageDTO messagedto) throws RemoteException;
 
 	
 }

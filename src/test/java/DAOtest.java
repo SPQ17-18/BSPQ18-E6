@@ -77,6 +77,7 @@ public class DAOtest {
 	@AfterClass
 	public static void tearDownClass() {
 		db.deleteAllFiles();
+		db.deleteAllConnections();
 		db.deleteAllUsers();
 }
 

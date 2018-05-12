@@ -7,8 +7,10 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assembler;
+import es.deusto.bspq18.e6.DeustoBox.Server.dto.DConnectionDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DFileDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DUserDTO;
+import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DConnection;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DFile;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
 import es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log;
@@ -20,6 +22,8 @@ public class AssemblerTest {
 	private static DUserDTO userdto;
 	private static DFile file;
 	private static DFileDTO filedto;
+	private static DConnection connection;
+	private static DConnectionDTO connectiondto;
 	private static Error_log logger;
 
 	@BeforeClass
@@ -27,6 +31,8 @@ public class AssemblerTest {
 		assembler = new Assembler();
 		user = new DUser("goros" ,"gorosinha@deusto.es", "12345");
 		file = new DFile(user, "123", "nombre", "ayer");
+		connection = new DConnection(1,"gorosinha@deusto.es","Windows");
+		
 		
 		
 }
@@ -120,14 +126,35 @@ public class AssemblerTest {
 		files = assembler.createFiles(filesdto);
 		assertEquals(files.get(0).getHash(), filesdto.get(0).getHash());
 		assertEquals(files.get(1).getLastModified(), filesdto.get(1).getLastModified());
-		
-		
-		
-
-	
-		
-		
+				
 }
+	@Test
+	public void testConnectionDTO(){
+		connectiondto = assembler.createConnectionDTO(connection);
+		assertEquals(connectiondto.getConnectionDate(), connection.getConnectionDate());
+		assertEquals(connectiondto.getId(), connection.getID());
+		assertEquals(connectiondto.getOSUsed(), connection.getOSUsed());
+		assertEquals(connectiondto.getUserEmail(), connection.getUserEmail());
+		Date e = new Date();
+		connection.setConnectionDate(e);
+		assertEquals(connection.getConnectionDate(), e);
+		connection.setID(2);
+		assertEquals(connection.getID(), 2);
+		connection.setOSUsed("MAC");
+		assertEquals(connection.getOSUsed(), "MAC");
+		connection.setUserEmail("email");
+		assertEquals(connection.getUserEmail(), "email");
+		
+		connectiondto.setConnectionDate(e);
+		assertEquals(connectiondto.getConnectionDate(), e);
+		connectiondto.setOSUsed("MAC");
+		assertEquals(connectiondto.getOSUsed(), "MAC");
+		connectiondto.setUserEmail("email");
+		assertEquals(connectiondto.getUserEmail(), "email");
+		System.out.println(connection.toString());
+		System.out.println(connectiondto.toString());
+		
+	}
 	
 	
 

@@ -13,11 +13,13 @@ import java.util.ArrayList;
 import es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assembler;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DConnectionDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DFileDTO;
+import es.deusto.bspq18.e6.DeustoBox.Server.dto.DMessageDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DUserDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.gui.v_installer;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DConnection;
+import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DMessage;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
 import es.deusto.bspq18.e6.DeustoBox.Server.remote.IDeustoBoxRemoteService;
 import es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log;
@@ -185,8 +187,25 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		connections = db.getConnections(email);
 		ArrayList<DConnectionDTO> connectionsDTO;
 		connectionsDTO = assemble.createConnectionsDTO(connections);
-		System.out.println("Hay " + connectionsDTO.size() + " conexiones");
 		return connectionsDTO;
+	}
+
+	@Override
+	public ArrayList<DMessageDTO> getMessages(String email) throws RemoteException {
+		// TODO Auto-generated method stub
+		ArrayList<DMessageDTO> messagesdto = new ArrayList<DMessageDTO>();
+		ArrayList<DMessage> messages = new ArrayList<DMessage>();
+		messages =db.getAllMessagesOfSendToAUser(email);
+		messagesdto = assemble.createMessagesDTO(messages);
+		return messagesdto;
+	}
+
+	@Override
+	public boolean addMessage(DMessageDTO messagedto) throws RemoteException {
+		DMessage message = null;
+		message = assemble.createMessage(messagedto);
+		boolean correct = db.addMessage(message);
+		return correct;
 	}
 
 
