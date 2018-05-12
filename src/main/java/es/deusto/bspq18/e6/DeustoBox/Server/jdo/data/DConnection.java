@@ -18,8 +18,8 @@ public class DConnection implements Serializable{
 	
 		this.ID = id;
 		this.userEmail = userEmail;
-		ConnectionDate = new Date();
-		OSUsed = oSUsed;
+		this.ConnectionDate = new Date();
+		this.OSUsed = oSUsed;
 		
 	}
 	
@@ -28,8 +28,8 @@ public class DConnection implements Serializable{
 	public DConnection(int iD, String userEmail, Date connectionDate, String oSUsed) {
 		ID = iD;
 		this.userEmail = userEmail;
-		ConnectionDate = connectionDate;
-		OSUsed = oSUsed;
+		this.ConnectionDate = connectionDate;
+		this.OSUsed = oSUsed;
 	}
 
 

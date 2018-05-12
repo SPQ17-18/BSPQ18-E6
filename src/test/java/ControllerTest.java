@@ -22,7 +22,7 @@ import es.deusto.bspq18.e6.DeustoBox.Server.remote.IDeustoBoxRemoteService;
 import es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log;
 import junit.framework.JUnit4TestAdapter;
 @PerfTest(invocations = 5)
-@Required(max = 1200, average = 500)
+@Required(max = 1200, average = 800)
 public class ControllerTest {
 
 private static String cwd = ControllerTest.class.getProtectionDomain().getCodeSource().getLocation().getFile();
@@ -134,8 +134,6 @@ public ContiPerfRule rule = new ContiPerfRule();
 
 		public void testCreateUser() {
 			IDeustoBoxDAO bd = new DeustoBoxDAO(new Error_log());
-			bd.deleteAllFiles();
-			bd.deleteAllConnections();
 			bd.deleteAllUsers();
 			assertEquals(true,controller.signUp("username", "email", "password"));
 			
@@ -144,7 +142,7 @@ public ContiPerfRule rule = new ContiPerfRule();
 		}
 		@Test
 		@PerfTest(invocations = 1000, threads = 20)
-		@Required(max = 800, average = 38)
+		@Required(max = 800, average = 50)
 		public void testLoginUser() {
 			assertNotSame(controller.login("email", "password"), null);
 			

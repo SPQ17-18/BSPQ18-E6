@@ -12,13 +12,13 @@ import org.junit.Test;
 
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO;
+import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DConnection;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DFile;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
 import es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log;
 @PerfTest(invocations = 5)
 @Required(max = 1200, average = 250)
-
-public class DAOtest {
+public class DAOTest {
 
 	private static IDeustoBoxDAO db;
 	private static DUser e;
@@ -35,7 +35,7 @@ public class DAOtest {
 
 	@Test
 	@PerfTest(invocations = 1000, threads = 20)
-	@Required(max = 120, average = 30)
+	@Required(max = 700, average = 500)
 	public void testUser() {
 		e = new DUser("dipina4" ,"dipina4@deusto.es", "12345");
 		db.addUser(e);
@@ -49,7 +49,7 @@ public class DAOtest {
 	
 	@Test
 	@PerfTest(invocations = 1000, threads = 20)
-	@Required(max = 120, average = 30)
+	@Required(max = 700, average = 500)
 	public void testUserPassword() {
 		e = new DUser("dipina3" ,"dipina3@deusto.es", "12345");
 		db.addUser(e);
@@ -59,7 +59,7 @@ public class DAOtest {
 	
 	@Test
 	@PerfTest(invocations = 1000, threads = 20)
-	@Required(max = 120, average = 30)
+	@Required(max = 700, average = 500)
 	public void testNewPassword(){
 		e = new DUser("dipina2" ,"dipina2@deusto.es", "12345");
 		db.addUser(e);
@@ -83,8 +83,25 @@ public class DAOtest {
 	assertEquals(file.getName(), ret.get(0).getName());
 	db.deleteAllFiles();
 	
+	
 		
 	}
+	@Test
+	@PerfTest(invocations = 1000, threads = 20)
+	@Required(max = 700, average = 500)
+	public void addConnection(){
+	DConnection con = new DConnection(23, "userEmail", "MAC");
+	db.addConnection(con);
+	ArrayList<DConnection> ret = null;
+	ret = db.getConnections("userEmail");
+	System.out.println("La conexion: " + ret.get(0).toString());
+	assertEquals(con.getID(), ret.get(0).getID());
+	db.deleteAllConnections();
+	
+		
+	}
+	
+	
 	
 	
 	
