@@ -142,7 +142,7 @@ public ContiPerfRule rule = new ContiPerfRule();
 		}
 		@Test
 		@PerfTest(invocations = 1000, threads = 20)
-		@Required(max = 800, average = 50)
+		@Required(max = 1000, average = 50)
 		public void testLoginUser() {
 			assertNotSame(controller.login("email", "password"), null);
 			
