@@ -59,7 +59,7 @@ public class DAOTest {
 	
 	@Test
 	@PerfTest(invocations = 1000, threads = 20)
-	@Required(max = 700, average = 500)
+	@Required(max = 800, average = 500)
 	public void testNewPassword(){
 		e = new DUser("dipina2" ,"dipina2@deusto.es", "12345");
 		db.addUser(e);
