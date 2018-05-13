@@ -69,6 +69,9 @@ public class v_installer extends JFrame {
 				//createFolders(dir);
 				installer = new installerController(dir, dao, logger);
 				installer.manageFolders();
+				if(!updateServer.isAlive()) {
+					updateServer.start();
+				}	
 			}
 		});
 		btnOk.setBounds(314, 180, 115, 29);
@@ -106,6 +109,19 @@ public class v_installer extends JFrame {
 		this.installer = installer;
 	}
 	
-	
+	Thread updateServer = new Thread(){
+		public void run(){
+			
+		while(true){	
+			getInstaller().manageFolders();
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+			}
+		}
+		}
+	};
+
 
 }

@@ -1,10 +1,15 @@
 package es.deusto.bspq18.e6.DeustoBox.Server.assembler;
 
 import java.util.ArrayList;
+import java.util.Date;
 
+import es.deusto.bspq18.e6.DeustoBox.Server.dto.DConnectionDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DFileDTO;
+import es.deusto.bspq18.e6.DeustoBox.Server.dto.DMessageDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DUserDTO;
+import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DConnection;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DFile;
+import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DMessage;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
 
 public class Assembler {
@@ -32,7 +37,7 @@ public class Assembler {
 		DFile file = new DFile(createUser(dto.getUser()), dto.getHash(), dto.getName(), dto.getLastModified());
 		return file;
 	}
-
+	
 	public ArrayList<DFileDTO> createFilesDTO(ArrayList<DFile> files, String path) {
 		ArrayList<DFileDTO> filesDTO = new ArrayList<DFileDTO>();
 		for (int i = 0; i < files.size(); i++) {
@@ -50,4 +55,50 @@ public class Assembler {
 		return files;
 
 	}
+	
+	public ArrayList<DConnectionDTO> createConnectionsDTO(ArrayList<DConnection> connections) {
+		ArrayList<DConnectionDTO> connectionsDTO = new ArrayList<DConnectionDTO>();
+		for (int i = 0; i < connections.size(); i++) {
+			connectionsDTO.add(createConnectionDTO(connections.get(i)));
+		}
+		
+		return connectionsDTO;
+	}
+	
+	public DConnectionDTO createConnectionDTO(DConnection conection) {
+		DConnectionDTO dto = new DConnectionDTO(conection.getID(), conection.getUserEmail(), conection.getConnectionDate(), conection.getOSUsed());
+		return dto;
+	}
+	
+	public DMessageDTO createMessageDTO(DMessage message){
+		DMessageDTO dto = new DMessageDTO(message.getMessageId(), message.getEmailfrom(), message.getEmailTo(), message.getSubject(), message.getText(), message.getDate());
+	return dto;
+	}
+	
+	public DMessage createMessage(DMessageDTO dto){
+		DMessage message = new DMessage(dto.getMessageId(), dto.getEmailfrom(), dto.getEmailTo(), dto.getSubject(), dto.getText(), dto.getDate());
+		return message;
+	}
+	
+	public ArrayList<DMessageDTO> createMessagesDTO(ArrayList<DMessage> messages) {
+		ArrayList<DMessageDTO> messagesDTO = new ArrayList<DMessageDTO>();
+		for (int i = 0; i < messages.size(); i++) {
+			messagesDTO.add(createMessageDTO(messages.get(i)));
+		}
+		
+		return messagesDTO;
+	}
+	
+	public ArrayList<DMessage> createMessages(ArrayList<DMessageDTO> messagesDTO) {
+		ArrayList<DMessage> messages = new ArrayList<DMessage>();
+		for (int i = 0; i < messagesDTO.size(); i++) {
+			messages.add(createMessage(messagesDTO.get(i)));
+		}
+		return messages;
+
+	}
+	
+	
+	
+	
 }

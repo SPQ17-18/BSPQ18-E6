@@ -31,6 +31,7 @@ public class v_client extends JFrame {
 	 * Create the frame.
 	 */
 	public v_client(Controller controlador) {
+		setResizable(false);
 		this.controlador = controlador;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);

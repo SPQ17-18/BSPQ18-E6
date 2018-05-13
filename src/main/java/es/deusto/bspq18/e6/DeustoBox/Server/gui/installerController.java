@@ -38,50 +38,50 @@ public class installerController {
 	 */
 	public void manageFolders() {
 		logger.getLogger().info("Checking if there is any change in the server files");
-		  File directorio = new File(path);
-		  ArrayList<DUser> users = dao.getAllUsers();
+		File directorio = new File(path);
+		ArrayList<DUser> users = dao.getAllUsers();
 
-		  if (users != null) {
-		   if (directorio.exists()) {
-		    // Check if there are any user folders
-		    File[] userFiles = directorio.listFiles();
+		if (users != null) {
+			if (directorio.exists()) {
+				// Check if there are any user folders
+				File[] userFiles = directorio.listFiles();
 
-		    if (userFiles != null) {
-		     // Get all emails registered
-		     ArrayList<String> emails = new ArrayList<String>();
-		     for (int z = 0; z < users.size(); z++) {
-		      emails.add(users.get(z).getEmail());
-		     }
-		     // Check if the user exits or not
-		     for (int i = 0; i < userFiles.length; i++) {
-		      if (!emails.contains(userFiles[i].getName())) {
-		       // Delete all files of that non-existing user
-		       String[] entries = userFiles[i].list();
-		       if (entries != null) {
-		        for (String s : entries) {
-		         File currentFile = new File(userFiles[i].getPath(), s);
-		         currentFile.delete();
-		        }
-		       }
-		       userFiles[i].delete();
-		      }
-		     }
-		    }
+				if (userFiles != null) {
+					// Get all emails registered
+					ArrayList<String> emails = new ArrayList<String>();
+					for (int z = 0; z < users.size(); z++) {
+						emails.add(users.get(z).getEmail());
+					}
+					// Check if the user exits or not
+					for (int i = 0; i < userFiles.length; i++) {
+						if (!emails.contains(userFiles[i].getName())) {
+							// Delete all files of that non-existing user
+							String[] entries = userFiles[i].list();
+							if (entries != null) {
+								for (String s : entries) {
+									File currentFile = new File(userFiles[i].getPath(), s);
+									currentFile.delete();
+								}
+							}
+							userFiles[i].delete();
+						}
+					}
+				}
 
-		   } else {
-		    directorio.mkdir();
-		   }
-		   // Create one folder for each user
-		   for (int i = 0; i < users.size(); i++) {
-		    File userFolder = new File(directorio + "\\" + users.get(i).getEmail());
-		    userFolder.mkdir();
-		    HashMap<String, String> map = new HashMap<>();
-		     uploadFiles(map, users.get(i), userFolder, "/");
-		   }
-		  } else {
-		   directorio.mkdir();
-		  }
-		 }
+			} else {
+				directorio.mkdir();
+			}
+			// Create one folder for each user
+			for (int i = 0; i < users.size(); i++) {
+				File userFolder = new File(directorio + "\\" + users.get(i).getEmail());
+				userFolder.mkdir();
+				HashMap<String, String> map = new HashMap<>();
+				uploadFiles(map, users.get(i), userFolder, "/");
+			}
+		} else {
+			directorio.mkdir();
+		}
+	}
 
 	/*
 	 * Upload files to the DB
@@ -206,18 +206,6 @@ public class installerController {
 					if (found == false) {
 						// Check if the lastModficiaction is later than the last connection to the
 						// server
-						try {
-							inClient = format.parse(userFiles.get(i).getLastModified());
-							if (inClient.after(dao.getLastConnection(userFiles.get(i).getUser()))) {
-								// Ask for it to the client
-								toReceive.add(userFiles.get(i));
-							} else {
-								// Tell the client to delete
-								toDelete.add(userFiles.get(i));
-							}
-						} catch (ParseException e) {
-							e.printStackTrace();
-						}
 					}
 				}
 			} else {
@@ -229,19 +217,17 @@ public class installerController {
 	}
 
 	public ArrayList<DFileDTO> sendAllFiles(String email, String path) {
-		
+
 		path = path + "\\" + "Deusto-Box" + "\\" + email + "\\";
 
 		ArrayList<DFile> files = new ArrayList<DFile>();
 		files = dao.getAllFilesOfAUser(email);
 		ArrayList<DFileDTO> filesDTO = null;
 		filesDTO = transform.createFilesDTO(files, path);
-		
-		
+
 		return filesDTO;
 	}
 
-	
 	public ArrayList<DFileDTO> sendFiles(ArrayList<DFile> toSend, String path) {
 		ArrayList<DFileDTO> filesDTO = null;
 		filesDTO = transform.createFilesDTO(toSend, path);
@@ -263,8 +249,5 @@ public class installerController {
 	public String getPath() {
 		return path;
 	}
-
-	
-	
 
 }

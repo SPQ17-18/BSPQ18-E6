@@ -32,6 +32,7 @@ public class v_client_profile extends JFrame {
 	private JPasswordField passwordField;
 	private JLabel lblIntroduceTuContrasea;
 	private JButton btnVerify;
+	private JButton btnCheckConnections;
 
 	/**
 	 * Create the frame.
@@ -102,6 +103,8 @@ public class v_client_profile extends JFrame {
 		btnVerify = new JButton("Verify");
 		btnVerify.setBounds(327, 212, 117, 29);
 		contentPane.add(btnVerify);
+		
+
 		btnVerify.setVisible(false);
 		btnVerify.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -118,7 +121,19 @@ public class v_client_profile extends JFrame {
 			}
 		});
 		
+		btnCheckConnections = new JButton("Check connections");
+		btnCheckConnections.setBounds(299, 32, 145, 29);
+		btnCheckConnections.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				v_client_connections connections = new v_client_connections(controlador);
+				connections.setVisible(true);
+				
+			}
+		});
+		contentPane.add(btnCheckConnections);
 	}
+		
+	
 	
 	public void ActivateBotons() {
 		passwordField.setVisible(true);
