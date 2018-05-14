@@ -72,7 +72,7 @@ public class v_installer extends JFrame {
 				if(!updateServer.isAlive()) {
 					updateServer.start();
 				}	
-				v_server server = new v_server();
+				v_server server = new v_server(dir);
 				server.setVisible(true);
 				frame.dispose();
 			}

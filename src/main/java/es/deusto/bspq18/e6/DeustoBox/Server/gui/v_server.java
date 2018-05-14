@@ -1,6 +1,7 @@
 package es.deusto.bspq18.e6.DeustoBox.Server.gui;
 
 import java.awt.BorderLayout;
+import java.awt.Desktop;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -15,6 +16,8 @@ import java.awt.Rectangle;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 import java.awt.event.ActionEvent;
 
 public class v_server extends JFrame {
@@ -23,27 +26,10 @@ public class v_server extends JFrame {
 	private JLabel lblDeustoBoxServer;
 	private JButton btnNewButton, btnFolder;
 	
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					v_server frame = new v_server();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
 	/**
 	 * Create the frame.
 	 */
-	public v_server() {
+	public v_server(String path) {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 131);
@@ -76,7 +62,14 @@ public class v_server extends JFrame {
 		btnFolder = new JButton("Folder");
 		btnFolder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				 Desktop desktop = Desktop.getDesktop();
+			        File dirToOpen = null;
+			        try {
+			            dirToOpen = new File("D:\\aitor\\Escritorio\\Deusto-Box\\aitorugarte@opendeusto.es");
+			            desktop.open(dirToOpen);
+			        } catch (IllegalArgumentException | IOException iae) {
+			            System.out.println("File Not Found");
+			        }
 			}
 		});
 		btnFolder.setBounds(22, 58, 89, 23);
