@@ -1,7 +1,6 @@
 package es.deusto.bspq18.e6.DeustoBox.Client.gui;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -15,6 +14,10 @@ import javax.swing.JButton;
 
 public class v_client extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private Controller controlador;
 	private JLabel lblUsername;
@@ -28,6 +31,7 @@ public class v_client extends JFrame {
 	 * Create the frame.
 	 */
 	public v_client(Controller controlador) {
+		setResizable(false);
 		this.controlador = controlador;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -37,6 +41,7 @@ public class v_client extends JFrame {
 		contentPane.setLayout(null);
 		InitComponents();
 		this.setVisible(true);
+		this.myProfile = null;
 		
 	}
 		
@@ -69,6 +74,7 @@ public class v_client extends JFrame {
 		btnMyProfile.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				myProfile = new v_client_profile(controlador);
+				myProfile.setVisible(true);
 				
 			}
 		});
@@ -77,7 +83,7 @@ public class v_client extends JFrame {
 		
 		SyncFiles.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				getControlador().getFiles();
+				getControlador().getListOfUnknownFiles();
 				lblNumber.setText(String.valueOf(controlador.getNumberOfFiles()));
 			}
 		});

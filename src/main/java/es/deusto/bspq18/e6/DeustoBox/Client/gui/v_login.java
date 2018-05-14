@@ -42,7 +42,7 @@ public class v_login extends JFrame {
 	private v_client window;
 
 	public v_login(Controller controlador) {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(v_login.class.getResource("/es/deusto/bspq18/e6/DeustoBox/Client/images/logo.png")));
+		//setIconImage(Toolkit.getDefaultToolkit().getImage(v_login.class.getResource("/es/deusto/bspq18/e6/DeustoBox/Client/images/logo.png")));
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 314);
@@ -51,11 +51,16 @@ public class v_login extends JFrame {
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		this.controlador = controlador;
-		initComponents();
+		try {
+			initComponents();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		this.setVisible(true);
 	}
 	
-	public void initComponents() {
+	public void initComponents() throws IOException {
 		panel = new JPanel();
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
@@ -136,18 +141,14 @@ public class v_login extends JFrame {
 		
 		URL url = this.getClass().getResource("/es/deusto/bspq18/e6/DeustoBox/Client/images/logo.png");
 		BufferedImage img = null;
-		try {
-			img = ImageIO.read(url);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		Image dimg = img.getScaledInstance(lblLogo.getWidth(), lblLogo.getHeight(),
+		/*Image dimg = img.getScaledInstance(lblLogo.getWidth(), lblLogo.getHeight(),
 		        Image.SCALE_SMOOTH);
 		
 		ImageIcon imageIcon = new ImageIcon(dimg);
 		lblLogo.setIcon(imageIcon);
 		
 		panel.add(lblLogo);
+		*/
 		
 	}
 

@@ -1,6 +1,6 @@
 package es.deusto.bspq18.e6.DeustoBox.Client.gui;
 
-import java.awt.EventQueue;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -37,6 +37,7 @@ public class v_installer extends JFrame {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setResizable(false);
 		frame.setTitle("Installer");
 		frame.setBounds(100, 100, 610, 309);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -67,18 +68,19 @@ public class v_installer extends JFrame {
 				File directorio=new File(dir + "\\Client Deusto-Box");
 				controlador.setPath(dir + "\\Client Deusto-Box\\");
 				directorio.mkdir(); 
+				frame.dispose();
 				v_client client = new v_client(controlador);
 				client.setVisible(true);
-				dispose();
+				
 			}
 		});
 		btnOk.setBounds(314, 180, 115, 29);
 		frame.getContentPane().add(btnOk);
 		
-		JLabel lblDeustoboxInstaller = new JLabel("DeustoBox installer");
+		JLabel lblDeustoboxInstaller = new JLabel("DeustoBox Client Installer");
 		lblDeustoboxInstaller.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		lblDeustoboxInstaller.setHorizontalAlignment(SwingConstants.CENTER);
-		lblDeustoboxInstaller.setBounds(163, 26, 220, 48);
+		lblDeustoboxInstaller.setBounds(151, 27, 295, 48);
 		frame.getContentPane().add(lblDeustoboxInstaller);
 
 		btnBrowse.addActionListener(new ActionListener() {
