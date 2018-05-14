@@ -27,6 +27,14 @@ public class Controller {
 	private ArrayList<DFileDTO> filesDTO;
 	private Error_log logger;
 
+	public static void main(String[] args) {
+		try {
+			new Controller(args);
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public Controller(String[] args) throws RemoteException {
 		rsl = new RMIServiceLocator();
 		rsl.setService(args);

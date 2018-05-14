@@ -72,6 +72,9 @@ public class v_installer extends JFrame {
 				if(!updateServer.isAlive()) {
 					updateServer.start();
 				}	
+				v_server server = new v_server();
+				server.setVisible(true);
+				frame.dispose();
 			}
 		});
 		btnOk.setBounds(314, 180, 115, 29);
