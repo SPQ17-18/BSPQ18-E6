@@ -2,6 +2,12 @@ package es.deusto.bspq18.e6.DeustoBox.Server.gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.URL;
+
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -13,6 +19,8 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
 
 public class v_installer extends JFrame {
 
@@ -39,8 +47,10 @@ public class v_installer extends JFrame {
 	private void initialize() {
 
 		frame = new JFrame();
+		frame.setResizable(false);
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(v_installer.class.getResource("/es/deusto/bspq18/e6/DeustoBox/Server/images/logo.png")));
 		frame.setTitle("Installer");
-		frame.setBounds(100, 100, 610, 309);
+		frame.setBounds(100, 100, 610, 252);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
@@ -90,6 +100,23 @@ public class v_installer extends JFrame {
 		lblDeustoboxInstaller.setBounds(163, 26, 220, 48);
 		frame.getContentPane().add(lblDeustoboxInstaller);
 
+		JLabel lblLogo = new JLabel("New label");
+		lblLogo.setBounds(507, 11, 87, 48);
+		
+		URL url = this.getClass().getResource("/es/deusto/bspq18/e6/DeustoBox/Server/images/logo.png");
+		BufferedImage img = null;
+		try {
+			img = ImageIO.read(url);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		Image dimg = img.getScaledInstance(lblLogo.getWidth(), lblLogo.getHeight(),
+		        Image.SCALE_SMOOTH);
+		
+		ImageIcon imageIcon = new ImageIcon(dimg);
+		lblLogo.setIcon(imageIcon);
+		frame.getContentPane().add(lblLogo);
+		
 		btnBrowse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				fileChooser = new JFileChooser();
