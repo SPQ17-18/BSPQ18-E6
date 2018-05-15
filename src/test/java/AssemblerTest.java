@@ -13,9 +13,11 @@ import org.databene.contiperf.junit.ContiPerfRule;
 import es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assembler;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DConnectionDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DFileDTO;
+import es.deusto.bspq18.e6.DeustoBox.Server.dto.DMessageDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DUserDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DConnection;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DFile;
+import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DMessage;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
 import es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log;
 
@@ -30,6 +32,8 @@ public class AssemblerTest {
 	private static DFileDTO filedto;
 	private static DConnection connection;
 	private static DConnectionDTO connectiondto;
+	private static DMessage message;
+	private static DMessageDTO messagedto;
 	private static Error_log logger;
 	@Rule
 	public ContiPerfRule rule = new ContiPerfRule();
@@ -40,6 +44,7 @@ public class AssemblerTest {
 		user = new DUser("goros", "gorosinha@deusto.es", "12345");
 		file = new DFile(user, "123", "nombre", "ayer");
 		connection = new DConnection(1, "gorosinha@deusto.es", "Windows");
+		message = new DMessage(1, "from", "to", "subject", "text");
 
 	}
 
@@ -163,5 +168,20 @@ public class AssemblerTest {
 		System.out.println(connectiondto.toString());
 
 	}
+	
+
+	@Test
+	@PerfTest(duration = 2000)
+	public void testMessageDTO() {
+		messagedto = assembler.createMessageDTO(message);
+		assertEquals(message.getDate(), messagedto.getDate());
+		assertEquals(message.getEmailfrom(), messagedto.getEmailfrom());
+		assertEquals(message.getEmailTo(), messagedto.getEmailTo());
+		assertEquals(message.getText(), messagedto.getText());
+		assertEquals(message.getSubject(), messagedto.getSubject());
+
+	}
+	
+	
 
 }

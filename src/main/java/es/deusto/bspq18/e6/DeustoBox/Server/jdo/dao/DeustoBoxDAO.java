@@ -588,7 +588,9 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 
 			for (DMessage mes : extent) {
 				if( mes.getEmailTo().equals(email))
+					System.out.println("AQUIII");
 					dec = new DMessage(mes.getMessageId(), mes.getEmailfrom(), mes.getEmailTo(), mes.getSubject(), mes.getText(), mes.getDate());
+					messages.add(dec);
 			}
 
 		} catch (Exception ex) {

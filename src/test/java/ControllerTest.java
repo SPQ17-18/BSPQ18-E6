@@ -21,7 +21,7 @@ import es.deusto.bspq18.e6.DeustoBox.Server.remote.DeustoBoxRemoteService;
 import es.deusto.bspq18.e6.DeustoBox.Server.remote.IDeustoBoxRemoteService;
 import es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log;
 import junit.framework.JUnit4TestAdapter;
-@PerfTest(invocations = 5)
+@PerfTest(invocations = 1)
 @Required(max = 1200, average = 800)
 public class ControllerTest {
 
@@ -40,7 +40,8 @@ public ContiPerfRule rule = new ContiPerfRule();
 		}
 
 
-		@BeforeClass static public void setUp() {
+		@BeforeClass 
+		static public void setUp() {
 			// Launch the RMI registry
 			class RMIRegistryRunnable implements Runnable {
 
@@ -119,7 +120,7 @@ public ContiPerfRule rule = new ContiPerfRule();
 			args[1] = "1099";
 			args[2] = "DeustoBox";
 			System.out.println("BeforeTest - Setting the client ready for calling TestServer name: " + name);
-			messenger = (IDeustoBoxRemoteService) java.rmi.Naming.lookup(name);
+			messenger = (IDeustoBoxRemoteService)java.rmi.Naming.lookup(name);
 			controller = new Controller(args);
 			}
 			catch (Exception re) {
@@ -129,6 +130,7 @@ public ContiPerfRule rule = new ContiPerfRule();
 			} 
 			
 		}
+		
 		
 		@Test
 

@@ -250,7 +250,6 @@ public class Controller {
 			DMessageDTO dto = new DMessageDTO(id,emailfrom, emailto, subject, text);
 			correct = rsl.getService().addMessage(dto);
 		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return correct;

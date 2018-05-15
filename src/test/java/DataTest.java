@@ -10,8 +10,10 @@ import org.junit.Rule;
 import org.junit.Test;
 
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DFileDTO;
+import es.deusto.bspq18.e6.DeustoBox.Server.dto.DMessageDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DUserDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DFile;
+import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DMessage;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
 
 @PerfTest(invocations = 5)
@@ -21,6 +23,8 @@ public class DataTest {
 	private static DFile file;
 	private static DUserDTO userdto;
 	private static DFileDTO filedto;
+	private static DMessage message;
+	private static DMessageDTO messagedto;
 	@Rule
 	public ContiPerfRule rule = new ContiPerfRule();
 	@BeforeClass
@@ -29,6 +33,8 @@ public class DataTest {
 	 file = new DFile(user, "hash", "name", "lastModified");
 	 userdto = new DUserDTO("email", "username", "password", null);
 	 filedto = new DFileDTO(userdto, "hash", "name", "lastModified", "path");
+	 message = new DMessage(1, "from", "to", "subject", "text");
+	 messagedto = new DMessageDTO(1, "from", "to", "subject", "text");
 	 
 	 
 	}
@@ -114,5 +120,48 @@ public class DataTest {
 		System.out.println(filedto.toString());
 		
 	}
+	@Test
+	@PerfTest(duration= 2000)
+	public void TestMessage(){
+		 message = new DMessage(1, "from", "to", "subject", "text");
+		 Date e = new Date();
+		 message.setDate(e);
+		 message.setEmailfrom("from1");
+		 message.setEmailTo("to1");
+		 message.setMessageId(2);
+		 message.setSubject("subject1");
+		 message.setText("text1");
+		 assertEquals(message.getDate(),e);
+		 assertEquals(message.getEmailfrom(), "from1");
+		 assertEquals(message.getEmailTo(), "to1");
+		 assertEquals(message.getMessageId(),2);
+		 assertEquals(message.getSubject(), "subject1");
+		 assertEquals(message.getText(), "text1");
+		
+		
+	}
 
+	
+	@Test
+	@PerfTest(duration= 2000)
+	public void TestMessageDTO(){
+		 messagedto = new DMessageDTO(1, "from", "to", "subject", "text");
+		 Date e = new Date();
+		 messagedto.setDate(e);
+		 messagedto.setEmailfrom("from1");
+		 messagedto.setEmailTo("to1");
+		 messagedto.setMessageId(2);
+		 messagedto.setSubject("subject1");
+		 messagedto.setText("text1");
+		 assertEquals(messagedto.getDate(),e);
+		 assertEquals(messagedto.getEmailfrom(), "from1");
+		 assertEquals(messagedto.getEmailTo(), "to1");
+		 assertEquals(messagedto.getMessageId(),2);
+		 assertEquals(messagedto.getSubject(), "subject1");
+		 assertEquals(messagedto.getText(), "text1");
+		
+		
+	}
+	
+	//FALTA HACER EL DE LAS CONEXIONES
 }

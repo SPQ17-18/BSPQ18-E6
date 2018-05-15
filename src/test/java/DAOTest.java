@@ -14,11 +14,12 @@ import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DConnection;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DFile;
+import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DMessage;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
 import es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log;
 @PerfTest(invocations = 5)
 @Required(max = 1200, average = 250)
-public class DAOtest {
+public class DAOTest {
 
 	private static IDeustoBoxDAO db;
 	private static DUser e;
@@ -99,6 +100,26 @@ public class DAOtest {
 	
 	
 	
+	@Test
+	@PerfTest(duration = 2000)
+	public void addMessage(){
+		DMessage mes = new DMessage(1,"from", "to", "subject", "text");
+		db.addMessage(mes);
+		ArrayList<DMessage> ret = null;
+		ret = db.getAllMessagesOfSendToAUser("to");
+		System.out.println(ret.get(ret.size()-1).toString());
+		assertEquals(ret.get(ret.size() -1).getEmailfrom(), "from");
+		assertEquals(ret.get(ret.size() -1).getEmailTo(), "to");
+		assertEquals(ret.get(ret.size() -1).getText(), "text");
+		assertEquals(ret.get(ret.size() -1).getMessageId(), 1);
+		assertEquals(ret.get(ret.size() -1).getSubject(), "subject");
+		
+		
+		
+	}
+	
+	
+	
 	
 	
 	@AfterClass
@@ -106,6 +127,7 @@ public class DAOtest {
 		db.deleteAllFiles();
 		db.deleteAllConnections();
 		db.deleteAllUsers();
+		db.deleteAllMessages();
 }
 
 }
