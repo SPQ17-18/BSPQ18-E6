@@ -279,6 +279,19 @@ public class Controller {
 		return true;
 	}
 	
+	public int getNumberOfUserMessages(){
+		int number = 0;
+		
+		try {
+			number = rsl.getService().getNumberOfUserMessages(userdto.getEmail());
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return number;
+		
+	}
+	
 	
 	
 
@@ -327,6 +340,15 @@ public class Controller {
 
 	public void setPath(String path) {
 		this.path = path + getUserdto().getEmail() + "\\";
+	}
+	
+	public static void main(String[] args) {
+		try {
+			new Controller(args);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

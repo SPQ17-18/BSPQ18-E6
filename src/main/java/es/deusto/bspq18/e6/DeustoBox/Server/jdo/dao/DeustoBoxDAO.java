@@ -637,6 +637,38 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		return messages;
 	}
 
+	@Override
+	public int getNumberOfUserMessages(String email) {
+		int messages = 0;
+		PersistenceManager pm = pmf.getPersistenceManager();
+		pm.getFetchPlan().setMaxFetchDepth(3);
+		Transaction tx = pm.currentTransaction();
+		try {
+			logger.getLogger().info("- Retrieving the number of messages of the user " + email + " using an 'Extent'...");
+
+			pm = pmf.getPersistenceManager();
+			tx = pm.currentTransaction();
+
+			Extent<DMessage> extent = pm.getExtent(DMessage.class, true);
+			
+			for (DMessage mes : extent) {
+				if(mes.getEmailTo().equals(email)) {
+					messages++;
+				}
+			}
+
+		} catch (Exception ex) {
+			logger.getLogger().error("# Error retrieving the number of messages of the user " + email + " using an 'Extent': " + ex.getMessage());
+		} finally {
+			if (tx.isActive()) {
+				tx.rollback();
+			}
+			pm.close();
+		}
+
+		return messages;
+	}
+
 
 
 

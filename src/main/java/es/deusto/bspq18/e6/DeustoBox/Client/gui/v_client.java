@@ -27,6 +27,11 @@ public class v_client extends JFrame {
 	private JButton SyncFiles;
 	private JButton btnMyProfile;
 	private v_client_profile myProfile;
+	private v_messageSend sendMessage;
+	private JLabel lblMessages;
+	private JLabel lblNumberOfMessages;
+	private JButton btnWriteAMessage;
+	private JButton btnMyMessages;
 	/**
 	 * Create the frame.
 	 */
@@ -67,7 +72,7 @@ public class v_client extends JFrame {
 		contentPane.add(lblNumber);
 		
 		SyncFiles = new JButton("SyncFiles");
-		SyncFiles.setBounds(10, 92, 89, 23);
+		SyncFiles.setBounds(10, 145, 89, 23);
 		contentPane.add(SyncFiles);
 		
 		btnMyProfile = new JButton("My profile");
@@ -78,8 +83,33 @@ public class v_client extends JFrame {
 				
 			}
 		});
-		btnMyProfile.setBounds(170, 89, 117, 29);
+		btnMyProfile.setBounds(168, 145, 117, 23);
 		contentPane.add(btnMyProfile);
+		
+		lblMessages = new JLabel("Messages:");
+		lblMessages.setBounds(10, 89, 89, 14);
+		contentPane.add(lblMessages);
+		
+		lblNumberOfMessages = new JLabel(" ");
+		lblNumberOfMessages.setBounds(208, 89, 46, 14);
+		contentPane.add(lblNumberOfMessages);
+		lblNumberOfMessages.setText(String.valueOf(controlador.getNumberOfUserMessages()));
+		
+		btnWriteAMessage = new JButton("Write a message");
+		btnWriteAMessage.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				sendMessage = new v_messageSend(controlador);
+				sendMessage.setVisible(true);
+				
+			}
+		});
+		btnWriteAMessage.setBounds(10, 201, 113, 23);
+		contentPane.add(btnWriteAMessage);
+		
+		btnMyMessages = new JButton("My messages");
+		btnMyMessages.setBounds(168, 201, 117, 23);
+		contentPane.add(btnMyMessages);
+		
 		
 		SyncFiles.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {

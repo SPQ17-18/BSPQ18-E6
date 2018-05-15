@@ -214,5 +214,12 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		return messages;
 	}
 
+	@Override
+	public int getNumberOfUserMessages(String email) throws RemoteException {
+		int number = 0;
+		number = db.getNumberOfUserMessages(email);
+		return number;
+	}
+
 
 }

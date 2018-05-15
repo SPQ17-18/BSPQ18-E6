@@ -24,6 +24,7 @@ public interface IDeustoBoxDAO {
 	public boolean addMessage(DMessage message);
 	public int getLastConnectionID();
 	public int getLastMessageID();
+	public int getNumberOfUserMessages(String email);
 	public ArrayList<DConnection> getConnections(String email);
 	public void deleteAllFiles();
 	public void deleteAllUsers();
