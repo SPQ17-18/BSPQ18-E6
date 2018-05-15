@@ -1,35 +1,44 @@
 package es.deusto.bspq18.e6.DeustoBox.Server.gui;
 
-import java.awt.BorderLayout;
 import java.awt.Desktop;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login;
+
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
+import java.awt.Image;
 import java.awt.Rectangle;
+import java.awt.Toolkit;
 
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.awt.event.ActionEvent;
 
 public class v_server extends JFrame {
 
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JLabel lblDeustoBoxServer;
 	private JButton btnNewButton, btnFolder;
+	private JLabel lblLogo;
 	
 	/**
 	 * Create the frame.
 	 */
-	public v_server(String path) {
+	public v_server(final String path) {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(v_login.class.getResource("/es/deusto/bspq18/e6/DeustoBox/Server/images/logo.png")));
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 131);
@@ -50,13 +59,13 @@ public class v_server extends JFrame {
 		lblDeustoBoxServer.setBounds(10, 11, 414, 22);
 		contentPane.add(lblDeustoBoxServer);
 		
-		btnNewButton = new JButton("Desconectar");
+		btnNewButton = new JButton("Disconnect");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
 			}
 		});
-		btnNewButton.setBounds(293, 58, 117, 23);
+		btnNewButton.setBounds(257, 58, 110, 23);
 		contentPane.add(btnNewButton);
 		
 		btnFolder = new JButton("Folder");
@@ -65,14 +74,30 @@ public class v_server extends JFrame {
 				 Desktop desktop = Desktop.getDesktop();
 			        File dirToOpen = null;
 			        try {
-			            dirToOpen = new File("D:\\aitor\\Escritorio\\Deusto-Box\\aitorugarte@opendeusto.es");
+			            dirToOpen = new File(path);
 			            desktop.open(dirToOpen);
 			        } catch (IllegalArgumentException | IOException iae) {
 			            System.out.println("File Not Found");
 			        }
 			}
 		});
-		btnFolder.setBounds(22, 58, 89, 23);
+		btnFolder.setBounds(81, 58, 89, 23);
 		contentPane.add(btnFolder);
+		
+		lblLogo = new JLabel("New label");
+		lblLogo.setBounds(345, 11, 89, 38);
+		URL url = this.getClass().getResource("/es/deusto/bspq18/e6/DeustoBox/Server/images/logo.png");
+		BufferedImage img = null;
+		try {
+			img = ImageIO.read(url);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		Image dimg = img.getScaledInstance(lblLogo.getWidth(), lblLogo.getHeight(),
+		        Image.SCALE_SMOOTH);
+		
+		ImageIcon imageIcon = new ImageIcon(dimg);
+		lblLogo.setIcon(imageIcon);
+		contentPane.add(lblLogo);
 	}
 }

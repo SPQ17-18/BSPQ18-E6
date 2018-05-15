@@ -15,6 +15,7 @@ import javax.swing.SwingConstants;
 import es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller;
 
 import java.awt.Font;
+import java.awt.Toolkit;
 
 public class v_installer extends JFrame {
 
@@ -37,6 +38,7 @@ public class v_installer extends JFrame {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(v_login.class.getResource("/es/deusto/bspq18/e6/DeustoBox/Client/images/logo.png")));
 		frame.setResizable(false);
 		frame.setTitle("Installer");
 		frame.setBounds(100, 100, 610, 309);
