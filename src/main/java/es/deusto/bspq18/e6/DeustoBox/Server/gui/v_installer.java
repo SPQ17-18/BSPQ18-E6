@@ -70,9 +70,16 @@ public class v_installer extends JFrame {
 				installer = new installerController(dir, dao, logger);
 				installer.manageFolders();
 				if(!updateServer.isAlive()) {
-					updateServer.start();
-				}	
-			}
+ 					updateServer.start();
+ 				}	
+
+				v_server server = new v_server(dir);
+
+ 				server.setVisible(true);
+ 
+ 				frame.dispose();
+ 			
+ 			}
 		});
 		btnOk.setBounds(314, 180, 115, 29);
 		frame.getContentPane().add(btnOk);
