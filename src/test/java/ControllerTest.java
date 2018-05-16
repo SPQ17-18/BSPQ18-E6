@@ -86,11 +86,9 @@ public ContiPerfRule rule = new ContiPerfRule();
 					} catch (RemoteException re) {
 						System.err.println(" # Messenger RemoteException: " + re.getMessage());
 						re.printStackTrace();
-						System.exit(-1);
 					} catch (MalformedURLException murle) {
 						System.err.println(" # Messenger MalformedURLException: " + murle.getMessage());
 						murle.printStackTrace();
-						System.exit(-1);
 					}
 				}
 			}
@@ -126,14 +124,13 @@ public ContiPerfRule rule = new ContiPerfRule();
 			catch (Exception re) {
 				System.err.println(" # Messenger RemoteException: " + re.getMessage());
 				re.printStackTrace();
-				System.exit(-1);
 			} 
 			
 		}
 		
 		
 		@Test
-
+		@PerfTest(invocations = 100)
 		public void testCreateUser() {
 			IDeustoBoxDAO bd = new DeustoBoxDAO(new Error_log());
 			bd.deleteAllUsers();
@@ -143,7 +140,7 @@ public ContiPerfRule rule = new ContiPerfRule();
 			
 		}
 		@Test
-		@PerfTest(invocations = 1000, threads = 20)
+		@PerfTest(invocations = 100)
 		@Required(max = 1000, average = 100)
 		public void testLoginUser() {
 			assertNotSame(controller.login("email", "password"), null);
