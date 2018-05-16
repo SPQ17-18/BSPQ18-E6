@@ -105,8 +105,8 @@ public class v_installer extends JFrame {
 		
 		URL url = this.getClass().getResource("/es/deusto/bspq18/e6/DeustoBox/Server/images/logo.png");
 		BufferedImage img = null;
-		try {
-			img = ImageIO.read(url);
+		/*try {
+			//img = ImageIO.read(url);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -116,7 +116,7 @@ public class v_installer extends JFrame {
 		ImageIcon imageIcon = new ImageIcon(dimg);
 		lblLogo.setIcon(imageIcon);
 		frame.getContentPane().add(lblLogo);
-		
+		*/
 		btnBrowse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				fileChooser = new JFileChooser();
