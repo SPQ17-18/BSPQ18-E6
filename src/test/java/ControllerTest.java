@@ -159,6 +159,12 @@ public ContiPerfRule rule = new ContiPerfRule();
 			bd.deleteAllFiles();
 			bd.deleteAllConnections();
 			bd.deleteAllUsers();
+			try {
+				rmiServerThread.join();
+				rmiRegistryThread.join();
+			} catch (InterruptedException ie) {
+				ie.printStackTrace();
+	}
 			
 			
 			
