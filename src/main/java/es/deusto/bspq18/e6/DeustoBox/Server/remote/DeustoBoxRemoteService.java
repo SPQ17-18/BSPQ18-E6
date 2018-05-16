@@ -195,6 +195,7 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		ArrayList<DMessageDTO> messagesdto = new ArrayList<DMessageDTO>();
 		ArrayList<DMessage> messages = new ArrayList<DMessage>();
 		messages =db.getAllMessagesOfSendToAUser(email);
+		System.out.println("Hay un total de : " + messages.size());
 		messagesdto = assemble.createMessagesDTO(messages);
 		return messagesdto;
 	}
@@ -219,6 +220,13 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		int number = 0;
 		number = db.getNumberOfUserMessages(email);
 		return number;
+	}
+
+	@Override
+	public boolean DeleteMessage(int id) throws RemoteException {
+		// TODO Auto-generated method stub
+		boolean correct = db.deleteMessage(id);
+		return correct;
 	}
 
 

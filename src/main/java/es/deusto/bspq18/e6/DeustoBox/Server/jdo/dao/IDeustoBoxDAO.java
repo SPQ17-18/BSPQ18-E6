@@ -22,6 +22,7 @@ public interface IDeustoBoxDAO {
 	public boolean updatePassword(String email, String password);
 	public boolean addConnection(DConnection connection);
 	public boolean addMessage(DMessage message);
+	public boolean deleteMessage(int id);
 	public int getLastConnectionID();
 	public int getLastMessageID();
 	public int getNumberOfUserMessages(String email);
@@ -30,5 +31,6 @@ public interface IDeustoBoxDAO {
 	public void deleteAllUsers();
 	public void deleteAllConnections();
 	public void deleteAllMessages();
+	
 	
 }

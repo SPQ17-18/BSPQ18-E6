@@ -9,6 +9,7 @@ import es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller;
 
 import java.awt.Toolkit;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
@@ -33,7 +34,7 @@ public class v_messageSend extends JFrame {
 	 * Create the frame.
 	 */
 	public v_messageSend(Controller controlador) {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -74,6 +75,28 @@ public class v_messageSend extends JFrame {
 		btnSend = new JButton("Send");
 		btnSend.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if(!txtReciever.getText().equals("")){
+					if(!txtSubject.getText().equals("")){
+						if(!txtMessage.getText().equals("")){
+							boolean correct = controlador.addMessage(txtReciever.getText(), txtSubject.getText(), txtMessage.getText());
+							if(correct){
+								JOptionPane.showMessageDialog(null, "The message to " + txtReciever.getText() + " has been sent correctly");
+								dispose();
+							}else{
+								JOptionPane.showMessageDialog(null, "An error has happened when sending the message");
+							}
+							
+						}
+						else{
+							JOptionPane.showMessageDialog(null, "The message cannot be empty");
+						}
+							
+					} else{
+						JOptionPane.showMessageDialog(null, "The subject cannot be empty");
+					}
+				} else{
+					JOptionPane.showMessageDialog(null, "The receiver cannot be empty");
+				}
 				
 			}
 		});

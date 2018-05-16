@@ -242,17 +242,30 @@ public class Controller {
 	}
 
 
-	public boolean addMessage(String emailfrom, String emailto, String subject, String text){
+	public boolean addMessage( String emailto, String subject, String text){
 		int id = 0;
 		boolean correct = false;
 		try {
 			id = rsl.getService().getNewMessageId();
-			DMessageDTO dto = new DMessageDTO(id,emailfrom, emailto, subject, text);
+			DMessageDTO dto = new DMessageDTO(id,userdto.getEmail(), emailto, subject, text);
 			correct = rsl.getService().addMessage(dto);
 		} catch (RemoteException e) {
 			e.printStackTrace();
 		}
 		return correct;
+	}
+	
+	public ArrayList<DMessageDTO> downloadMessages(){
+		ArrayList<DMessageDTO> messages = null;
+		try {
+			messages = rsl.getService().getMessages(userdto.getEmail());
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return messages;
+		
 	}
 	
 	
@@ -289,6 +302,20 @@ public class Controller {
 			e.printStackTrace();
 		}
 		return number;
+		
+	}
+	
+	public boolean deleteMessage(int id){
+		boolean correct = false;
+		
+		try {
+			correct = rsl.getService().DeleteMessage(id);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return correct;
 		
 	}
 	

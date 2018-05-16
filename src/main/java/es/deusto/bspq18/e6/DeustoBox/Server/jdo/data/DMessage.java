@@ -10,7 +10,7 @@ public class DMessage implements Serializable {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -12343946570733L;
 	@PrimaryKey
 	private int messageId;
 	private String emailfrom;

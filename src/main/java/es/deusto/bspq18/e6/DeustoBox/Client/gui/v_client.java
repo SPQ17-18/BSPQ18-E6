@@ -10,6 +10,7 @@ import javax.swing.border.EmptyBorder;
 
 import es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JButton;
 
 public class v_client extends JFrame {
@@ -28,6 +29,7 @@ public class v_client extends JFrame {
 	private JButton btnMyProfile;
 	private v_client_profile myProfile;
 	private v_messageSend sendMessage;
+	private v_messageReceived readMessages;
 	private JLabel lblMessages;
 	private JLabel lblNumberOfMessages;
 	private JButton btnWriteAMessage;
@@ -109,6 +111,24 @@ public class v_client extends JFrame {
 		btnMyMessages = new JButton("My messages");
 		btnMyMessages.setBounds(168, 201, 117, 23);
 		contentPane.add(btnMyMessages);
+		btnMyMessages.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//Check if we have received any new messages
+				int messages = 0;
+					messages = controlador.getNumberOfUserMessages();
+				//Update the label
+				lblNumberOfMessages.setText(String.valueOf(messages));
+				if(messages ==0){
+					JOptionPane.showMessageDialog(null, "Your inbox is empty");
+				}
+				else{
+					readMessages = new v_messageReceived(controlador);
+					readMessages.setVisible(true);
+				}
+				
+				
+			}
+		});
 		
 		
 		SyncFiles.addActionListener(new ActionListener() {

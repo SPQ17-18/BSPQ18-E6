@@ -1,10 +1,13 @@
 package es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao;
 
 import java.util.ArrayList;
+import java.util.Collection;
+
 import javax.jdo.Extent;
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
+import javax.jdo.Query;
 import javax.jdo.Transaction;
 
 import org.datanucleus.api.jdo.JDOQuery;
@@ -572,14 +575,14 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 
 	@Override
 	public ArrayList<DMessage> getAllMessagesOfSendToAUser(String email) {
-		ArrayList<DMessage> messages = new ArrayList<DMessage>();
+		ArrayList<DMessage> messages = new ArrayList <>();
 		PersistenceManager pm = pmf.getPersistenceManager();
 		pm.getFetchPlan().setMaxFetchDepth(3);
 		Transaction tx = pm.currentTransaction();
 		DMessage dec = null;
 
 		try {
-			logger.getLogger().info("- Retrieving Connections of a certain User using an 'Extent'...");
+			logger.getLogger().info("- Retrieving the messages of " + email +"  using an 'Extent'...");
 
 			pm = pmf.getPersistenceManager();
 			tx = pm.currentTransaction();
@@ -588,13 +591,16 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 
 			for (DMessage mes : extent) {
 				if( mes.getEmailTo().equals(email))
-					System.out.println("AQUIII");
+					System.out.println("Encontrado");
+					System.out.println(mes.toString());
 					dec = new DMessage(mes.getMessageId(), mes.getEmailfrom(), mes.getEmailTo(), mes.getSubject(), mes.getText(), mes.getDate());
 					messages.add(dec);
 			}
 
 		} catch (Exception ex) {
-			logger.getLogger().error("# Error retrieving Files of a certain User using an 'Extent': " + ex.getMessage());
+			
+			logger.getLogger().error("# Error retrieving messages of a certain User using an 'Extent': " + ex.getMessage());
+			ex.printStackTrace();
 		} finally {
 			if (tx.isActive()) {
 				tx.rollback();
@@ -668,6 +674,42 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 
 		return messages;
 	}
+	
+	public boolean deleteMessage(int id) {
+		boolean correct = true;
+		PersistenceManager pm = pmf.getPersistenceManager();
+
+		Transaction tx = pm.currentTransaction();
+
+		try {
+			tx.begin();
+
+			Query<DMessage> query = pm.newQuery(DMessage.class, "messageId ==" + id);
+
+			Collection<?> result = (Collection<?>) query.execute();
+
+			DMessage mes = (DMessage) result.iterator().next();
+
+			query.close(result);
+
+			pm.deletePersistent(mes);
+
+			tx.commit();
+		} catch (Exception ex) {
+			logger.getLogger().error( "#Error deleting a message: " + ex.getMessage());
+			correct = false;
+		
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+			if (pm != null && !pm.isClosed()) {
+				pm.close();
+			}
+		
+		}
+		return correct;
+}
 
 
 

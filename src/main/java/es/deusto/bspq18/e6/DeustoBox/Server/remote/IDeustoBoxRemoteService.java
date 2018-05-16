@@ -28,6 +28,7 @@ public interface IDeustoBoxRemoteService extends Remote{
 	public boolean addMessage(DMessageDTO messagedto) throws RemoteException;
 	public int getNewMessageId() throws RemoteException;
 	public int getNumberOfUserMessages(String email) throws RemoteException;
+	public boolean DeleteMessage(int id) throws RemoteException;
 
 	
 }
