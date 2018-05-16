@@ -9,9 +9,11 @@ import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 
+import es.deusto.bspq18.e6.DeustoBox.Server.dto.DConnectionDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DFileDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DMessageDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DUserDTO;
+import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DConnection;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DFile;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DMessage;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
@@ -25,6 +27,8 @@ public class DataTest {
 	private static DFileDTO filedto;
 	private static DMessage message;
 	private static DMessageDTO messagedto;
+	private static DConnection connection;
+	private static DConnectionDTO connectiondto;
 	@Rule
 	public ContiPerfRule rule = new ContiPerfRule();
 	@BeforeClass
@@ -35,6 +39,8 @@ public class DataTest {
 	 filedto = new DFileDTO(userdto, "hash", "name", "lastModified", "path");
 	 message = new DMessage(1, "from", "to", "subject", "text");
 	 messagedto = new DMessageDTO(1, "from", "to", "subject", "text");
+	 connection = new DConnection(1, "gorosinha@deusto.es", "Windows");
+	 connectiondto = new DConnectionDTO(1, "gorosinha@deusto.es", "Windows");
 	 
 	 
 	}
@@ -117,6 +123,10 @@ public class DataTest {
 		filedto.setCreationDate(e);
 		assertEquals(filedto.getCreationDate(), e);
 		assertEquals(filedto.getName(), "name");
+		assertEquals(filedto.getFile().toString(), "path");
+		userdto = new DUserDTO("email", "username", "password", null);
+		filedto.setUser(userdto);
+		assertEquals(userdto, filedto.getUser());
 		System.out.println(filedto.toString());
 		
 	}
@@ -137,6 +147,7 @@ public class DataTest {
 		 assertEquals(message.getMessageId(),2);
 		 assertEquals(message.getSubject(), "subject1");
 		 assertEquals(message.getText(), "text1");
+		 System.out.println(message.toString());
 		
 		
 	}
@@ -159,9 +170,44 @@ public class DataTest {
 		 assertEquals(messagedto.getMessageId(),2);
 		 assertEquals(messagedto.getSubject(), "subject1");
 		 assertEquals(messagedto.getText(), "text1");
-		
+		System.out.println(messagedto.toString());
 		
 	}
 	
-	//FALTA HACER EL DE LAS CONEXIONES
+	
+	@Test
+	@PerfTest(duration= 2000)
+	public void TestConnection(){
+	connection = new DConnection(1, "gorosinha@deusto.es", "Windows");
+	Date e = new Date();
+	connection.setConnectionDate(e);
+	assertEquals(connection.getConnectionDate(), e);
+	connection.setID(2);
+	assertEquals(connection.getID(), 2);
+	connection.setOSUsed("MAC");
+	assertEquals(connection.getOSUsed(), "MAC");
+	connection.setUserEmail("email");
+	assertEquals(connection.getUserEmail(), "email");
+	connection.setID(12);
+	assertEquals(12, connection.getID());
+	System.out.println(connection.toString());
+
+		
+	}
+	@Test
+	@PerfTest(duration= 2000)
+	public void TesConnectionDTO(){
+	connectiondto = new DConnectionDTO(1, "gorosinha@deusto.es", "Windows");
+	Date e = new Date();
+	connectiondto.setConnectionDate(e);
+	assertEquals(connectiondto.getConnectionDate(), e);
+	connectiondto.setOSUsed("MAC");
+	assertEquals(connectiondto.getOSUsed(), "MAC");
+	connectiondto.setUserEmail("email");
+	assertEquals(connectiondto.getUserEmail(), "email");
+	connectiondto.setId(12);
+	assertEquals(12, connectiondto.getId());
+	assertEquals(1L, DConnectionDTO.getSerialversionuid());
+	System.out.println(connectiondto.toString());
+	}
 }

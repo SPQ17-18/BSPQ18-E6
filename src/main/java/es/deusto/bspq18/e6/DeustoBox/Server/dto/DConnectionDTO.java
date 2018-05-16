@@ -11,11 +11,21 @@ public class DConnectionDTO implements Serializable {
 	private Date ConnectionDate;
 	private String OSUsed;
 	
+	
 	public DConnectionDTO( int id, String userEmail, Date connectionDate, String oSUsed) {
 		this.id = id;
 		this.userEmail = userEmail;
 		ConnectionDate = connectionDate;
 		OSUsed = oSUsed;
+	}
+	
+	public DConnectionDTO(int id, String userEmail, String oSUsed) {
+		
+		this.id = id;
+		this.userEmail = userEmail;
+		this.ConnectionDate = new Date();
+		this.OSUsed = oSUsed;
+		
 	}
 	
 

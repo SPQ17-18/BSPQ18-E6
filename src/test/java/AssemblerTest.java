@@ -59,6 +59,7 @@ public class AssemblerTest {
 		userdto.setPassword("password2");
 		assertEquals("email2", userdto.getEmail());
 		assertEquals("password2", userdto.getPassword());
+		userdto.removeFile(null);
 
 	}
 
@@ -148,24 +149,7 @@ public class AssemblerTest {
 		assertEquals(connectiondto.getId(), connection.getID());
 		assertEquals(connectiondto.getOSUsed(), connection.getOSUsed());
 		assertEquals(connectiondto.getUserEmail(), connection.getUserEmail());
-		Date e = new Date();
-		connection.setConnectionDate(e);
-		assertEquals(connection.getConnectionDate(), e);
-		connection.setID(2);
-		assertEquals(connection.getID(), 2);
-		connection.setOSUsed("MAC");
-		assertEquals(connection.getOSUsed(), "MAC");
-		connection.setUserEmail("email");
-		assertEquals(connection.getUserEmail(), "email");
-
-		connectiondto.setConnectionDate(e);
-		assertEquals(connectiondto.getConnectionDate(), e);
-		connectiondto.setOSUsed("MAC");
-		assertEquals(connectiondto.getOSUsed(), "MAC");
-		connectiondto.setUserEmail("email");
-		assertEquals(connectiondto.getUserEmail(), "email");
-		System.out.println(connection.toString());
-		System.out.println(connectiondto.toString());
+		
 
 	}
 	
