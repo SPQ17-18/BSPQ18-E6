@@ -130,7 +130,6 @@ public ContiPerfRule rule = new ContiPerfRule();
 		
 		
 		@Test
-		@PerfTest(invocations = 100)
 		public void testCreateUser() {
 			IDeustoBoxDAO bd = new DeustoBoxDAO(new Error_log());
 			bd.deleteAllUsers();
