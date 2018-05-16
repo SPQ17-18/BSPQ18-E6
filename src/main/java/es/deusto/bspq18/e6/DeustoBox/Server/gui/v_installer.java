@@ -48,7 +48,7 @@ public class v_installer extends JFrame {
 
 		frame = new JFrame();
 		frame.setResizable(false);
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(v_installer.class.getResource("/es/deusto/bspq18/e6/DeustoBox/Server/images/logo.png")));
+		//frame.setIconImage(Toolkit.getDefaultToolkit().getImage(v_installer.class.getResource("/es/deusto/bspq18/e6/DeustoBox/Server/images/logo.png")));
 		frame.setTitle("Installer");
 		frame.setBounds(100, 100, 610, 252);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
