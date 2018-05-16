@@ -109,6 +109,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		Transaction tx = pm.currentTransaction();
 
 		ArrayList<DUser> users = new ArrayList<DUser>();
+		DUser user = null;
 		try {
 			logger.getLogger().info("- Retrieving Users using an 'Extent'...");
 
@@ -120,7 +121,9 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 			Extent<DUser> extent = pm.getExtent(DUser.class, true);
 
 			for (DUser usuario : extent) {
-				users.add(usuario);
+				user = new DUser(usuario.getUsername(), usuario.getEmail(), usuario.getPassword(),
+						usuario.getRegisterDate());
+				users.add(user);
 			}
 
 			tx.commit();

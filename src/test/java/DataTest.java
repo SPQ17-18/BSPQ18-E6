@@ -1,5 +1,6 @@
 import static org.junit.Assert.assertEquals;
 
+import java.io.File;
 import java.util.Date;
 
 import org.databene.contiperf.PerfTest;
@@ -83,6 +84,8 @@ public class DataTest {
 		assertEquals(file.getHash(), "hash2");
 		file.setLastModified("ayer3");
 		assertEquals(file.getLastModified(), "ayer3");
+		file.setName("File1");
+		assertEquals(file.getName(), "File1");
 		System.out.println(file.toString());
 		
 		
@@ -127,6 +130,7 @@ public class DataTest {
 		userdto = new DUserDTO("email", "username", "password", null);
 		filedto.setUser(userdto);
 		assertEquals(userdto, filedto.getUser());
+		filedto.setFile(new File("path"));
 		System.out.println(filedto.toString());
 		
 	}

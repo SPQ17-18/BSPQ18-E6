@@ -37,13 +37,19 @@ public class DAOTest {
 	@Test
 	@PerfTest(duration= 2000)
 	public void testUser() {
+		
 		e = new DUser("dipina4" ,"dipina4@deusto.es", "12345");
 		db.addUser(e);
 		DUser ret = db.getUser("dipina4@deusto.es", "12345");
 		assertEquals("dipina4", ret.getUsername());
 		assertEquals("dipina4@deusto.es", ret.getEmail());
 		assertEquals("12345", ret.getPassword());
+		ArrayList<DUser> users = null;
+		users = db.getAllUsers();
+		System.out.println("HAY " + users.size());
+		assertEquals("dipina4", users.get(users.size() -1).getUsername());
 		db.deleteAllUsers();
+		
 		
 }
 	
@@ -79,6 +85,10 @@ public class DAOTest {
 	ArrayList<DFile> ret = null;
 	ret = db.getAllFilesOfAUser(e.getEmail());
 	assertEquals(file.getName(), ret.get(0).getName());
+	
+	ret = db.getAllFiles();
+	assertEquals(file.getName(), ret.get(0).getName());
+	
 	db.deleteAllFiles();
 	
 	
@@ -113,6 +123,8 @@ public class DAOTest {
 		assertEquals(ret.get(ret.size() -1).getText(), "text");
 		assertEquals(ret.get(ret.size() -1).getMessageId(), 1);
 		assertEquals(ret.get(ret.size() -1).getSubject(), "subject");
+		assertEquals(ret.get(ret.size() -1).getMessageId(), db.getLastMessageID());
+		db.deleteAllMessages();
 		
 		
 		
