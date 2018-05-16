@@ -7,6 +7,7 @@ import java.awt.Toolkit;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -36,8 +37,8 @@ public class v_messageReceived extends JFrame {
 	 * Create the frame.
 	 */
 	public v_messageReceived(Controller controlador) {
-		//setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Joseba\\git\\BSPQ18-E6\\target\\classes\\deusto\\bspq18\\e6\\DeustoBox\\Client\\images\\logo.png"));
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		// setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Joseba\\git\\BSPQ18-E6\\target\\classes\\deusto\\bspq18\\e6\\DeustoBox\\Client\\images\\logo.png"));
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 302);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -45,49 +46,62 @@ public class v_messageReceived extends JFrame {
 		setContentPane(contentPane);
 		this.controlador = controlador;
 		messages = controlador.downloadMessages();
-		System.out.println("Tamanio " + messages.size());
 		position = 0;
 		InitComponents();
-		
-		
+
 	}
-	
-	
-	public void InitComponents(){
+
+	public void InitComponents() {
 		panel = new JPanel();
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
-		
+
 		lblFrom = new JLabel("From:");
 		lblFrom.setBounds(10, 25, 46, 14);
 		panel.add(lblFrom);
-		
+
 		lblSubject = new JLabel("Subject:");
 		lblSubject.setBounds(10, 50, 46, 14);
 		panel.add(lblSubject);
-		
+
 		lblNewMessage = new JLabel("New message");
 		lblNewMessage.setBounds(10, 0, 86, 14);
 		panel.add(lblNewMessage);
-		
+
 		btnErrase = new JButton("Remove");
 		btnErrase.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				// Comprobamos si hay mas mensajes o no
+				if (messages.size() == 1) {
+					// Pedimos a la BD que se borre
+					controlador.deleteMessage(messages.get(0).getMessageId());
+					JOptionPane.showMessageDialog(null, "You do not have more messages, returning to the main window");
+					dispose();
+				} else {
+					// Pedimos a la BD que lo borre
+					controlador.deleteMessage(messages.get(position).getMessageId());
+					messages.remove(position);
+					if (position > 0)
+						position--;
+					JOptionPane.showMessageDialog(null, "The message has been deleted");
+					UpdateMessage();
+				}
+
 			}
 		});
 		btnErrase.setBounds(311, 228, 89, 23);
 		panel.add(btnErrase);
-		
+
 		lblFromtxt = new JLabel("");
 		lblFromtxt.setBounds(50, 25, 364, 14);
 		lblFromtxt.setText(messages.get(position).getEmailfrom());
 		panel.add(lblFromtxt);
-		
+
 		lblSubjecttxt = new JLabel("");
 		lblSubjecttxt.setBounds(60, 50, 354, 14);
 		lblSubjecttxt.setText(messages.get(position).getSubject());
 		panel.add(lblSubjecttxt);
-		
+
 		txtMessage = new JTextArea();
 		txtMessage.setEditable(false);
 		txtMessage.setWrapStyleWord(true);
@@ -95,13 +109,47 @@ public class v_messageReceived extends JFrame {
 		txtMessage.setBounds(10, 75, 404, 152);
 		txtMessage.setText(messages.get(position).getText());
 		panel.add(txtMessage);
-		
+
 		btnNext = new JButton("Next");
 		btnNext.setBounds(164, 228, 89, 23);
+		btnNext.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (position < messages.size() - 1) {
+					position++;
+					UpdateMessage();
+				} else {
+					JOptionPane.showMessageDialog(null, "This is the last message");
+
+				}
+
+			}
+		});
 		panel.add(btnNext);
-		
+
 		btnPreview = new JButton("Preview");
 		btnPreview.setBounds(50, 228, 89, 23);
+
+		btnPreview.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (position > 0) {
+					position--;
+					UpdateMessage();
+				} else {
+					JOptionPane.showMessageDialog(null, "This is the first message");
+
+				}
+
+			}
+		});
 		panel.add(btnPreview);
+	}
+
+	public void UpdateMessage() {
+		txtMessage.setText(messages.get(position).getText());
+		panel.add(txtMessage);
+		lblSubjecttxt.setText(messages.get(position).getSubject());
+		panel.add(lblSubjecttxt);
+		lblFromtxt.setText(messages.get(position).getEmailfrom());
+		panel.add(lblFromtxt);
 	}
 }
