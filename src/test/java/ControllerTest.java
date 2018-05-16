@@ -86,9 +86,12 @@ public ContiPerfRule rule = new ContiPerfRule();
 					} catch (RemoteException re) {
 						System.err.println(" # Messenger RemoteException: " + re.getMessage());
 						re.printStackTrace();
+						System.exit(-1);
 					} catch (MalformedURLException murle) {
 						System.err.println(" # Messenger MalformedURLException: " + murle.getMessage());
+						
 						murle.printStackTrace();
+						System.exit(-1);
 					}
 				}
 			}
@@ -124,6 +127,7 @@ public ContiPerfRule rule = new ContiPerfRule();
 			catch (Exception re) {
 				System.err.println(" # Messenger RemoteException: " + re.getMessage());
 				re.printStackTrace();
+				System.exit(-1);
 			} 
 			
 		}
