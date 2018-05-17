@@ -1,7 +1,5 @@
 package es.deusto.bspq18.e6.DeustoBox.Client.gui;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -15,8 +13,6 @@ import javax.swing.border.EmptyBorder;
 import es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DConnectionDTO;
 
-import javax.swing.JTextField;
-import javax.swing.JTable;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 
@@ -28,6 +24,7 @@ public class v_client_connections extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JLabel txtMyConnections;
+	@SuppressWarnings("rawtypes")
 	private JList listR;
 	private JButton btnBack;
 	private Controller controlador;
@@ -35,7 +32,7 @@ public class v_client_connections extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@SuppressWarnings({ })
 	public v_client_connections(Controller controlador) {
 		this.controlador = controlador;
 
@@ -52,6 +49,7 @@ public class v_client_connections extends JFrame {
 		updateJlist();
 	}
 
+	@SuppressWarnings("rawtypes")
 	public void InitComponents() {
 		txtMyConnections = new JLabel();
 		txtMyConnections.setText("My Connections");
@@ -84,6 +82,7 @@ public class v_client_connections extends JFrame {
 
 	}
 
+	@SuppressWarnings({ "unused", "unchecked" })
 	public void updateJlist() {
 		String email = controlador.getUserdto().getEmail();
 		ArrayList<DConnectionDTO> connections = new ArrayList<DConnectionDTO>();

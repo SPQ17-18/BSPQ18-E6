@@ -34,7 +34,6 @@ public class v_register extends JFrame {
 	private JLabel lblJoinDeustobox, lblUsername, lblPassword, lblPassword2, lblEmail, lblLogo;
 	private JButton btnRegister;
 	private Controller controlador;
-	private v_client window;
 	private JButton back;
 
 	public v_register(Controller controlador) {

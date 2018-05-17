@@ -8,6 +8,8 @@ import java.net.Socket;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import javax.swing.JOptionPane;
 
@@ -26,6 +28,7 @@ public class Controller {
 	private String path;
 	private ArrayList<DFileDTO> filesDTO;
 	private Error_log logger;
+	private ResourceBundle resourcebundle;
 
 	public Controller(String[] args) throws RemoteException {
 		rsl = new RMIServiceLocator();
@@ -33,6 +36,8 @@ public class Controller {
 		new v_login(this);
 		filesDTO = null;
 		logger = new Error_log();
+		resourcebundle = ResourceBundle.getBundle("SystemMessages", Locale.getDefault());
+		resourcebundle = ResourceBundle.getBundle("SystemMessages",	Locale.forLanguageTag("en"));
 		
 	}
 
@@ -98,7 +103,7 @@ public class Controller {
 				}
 				in.close();
 			} catch (Exception e) {
-				e.printStackTrace();
+				logger.getLogger().error("- Exception", e);
 
 			}
 		}
@@ -110,7 +115,7 @@ public class Controller {
 			filesDTO = rsl.getService().getFiles(email);
 			number = filesDTO.size();
 		} catch (Exception ex) {
-
+			logger.getLogger().error("- Exception", ex);
 		}
 		return number;
 	}
@@ -207,6 +212,7 @@ public class Controller {
 		try {
 			files = rsl.getService().getNumberOfUserFiles(email);
 		} catch (Exception ex) {
+			logger.getLogger().error("- Exception", ex);
 		}
 		return files;
 	}
@@ -216,7 +222,7 @@ public class Controller {
 		try {
 			correct = rsl.getService().checkPassword(email, password);
 		} catch (Exception ex) {
-
+			logger.getLogger().error("- Exception", ex);
 		}
 		return correct;
 	}
@@ -227,7 +233,7 @@ public class Controller {
 		try {
 			correct = rsl.getService().updatePassword(email, password);
 		} catch (Exception ex) {
-
+			logger.getLogger().error("- Exception", ex);
 		}
 
 		return correct;
@@ -238,7 +244,7 @@ public class Controller {
 		try {
 		connectionsDTO = rsl.getService().getConnections(email);
 		} catch (Exception ex) {
-			System.out.println(ex.getMessage());
+			logger.getLogger().error("- Exception", ex);
 		}
 	return connectionsDTO;
 		
@@ -253,7 +259,7 @@ public class Controller {
 			DMessageDTO dto = new DMessageDTO(id,emailfrom, emailto, subject, text);
 			correct = rsl.getService().addMessage(dto);
 		} catch (RemoteException e) {
-			e.printStackTrace();
+			logger.getLogger().error("- Exception", e);
 		}
 		return correct;
 	}
@@ -263,8 +269,7 @@ public class Controller {
 		try {
 			messages = rsl.getService().getMessages(email);
 		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.getLogger().error("- Exception", e);
 		}
 		
 		return messages;
@@ -289,7 +294,7 @@ public class Controller {
 		    out.close();
 		    so.close();
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.getLogger().error("- Exception", e);
 		}
 		
 		return true;
@@ -302,7 +307,7 @@ public class Controller {
 			number = rsl.getService().getNumberOfUserMessages(email);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.getLogger().error("- Exception", e);
 		}
 		return number;
 		
@@ -315,7 +320,7 @@ public class Controller {
 			correct = rsl.getService().DeleteMessage(id);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.getLogger().error("- Exception", e);
 		}
 		
 		return correct;
@@ -372,6 +377,11 @@ public class Controller {
 		this.path = path + getUserdto().getEmail() + "\\";
 	}
 	
+	
+	public ResourceBundle getResourcebundle() {
+		return resourcebundle;
+	}
+
 	public static void main(String[] args) {
 		try {
 			new Controller(args);

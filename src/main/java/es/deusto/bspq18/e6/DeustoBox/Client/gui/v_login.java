@@ -1,31 +1,21 @@
 package es.deusto.bspq18.e6.DeustoBox.Client.gui;
 
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller;
 
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.Font;
-import java.awt.Image;
-import java.awt.Toolkit;
-
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import javax.swing.SwingConstants;
@@ -39,8 +29,6 @@ public class v_login extends JFrame {
 	private JLabel lblLogin, lblEmail, lblPassword, lblRegister, lblLogo;
 	private JButton btnEnter, btnCreateAccount;
 	private Controller controlador;
-	private v_client window;
-
 	public v_login(Controller controlador) {
 		//setIconImage(Toolkit.getDefaultToolkit().getImage(v_login.class.getResource("/es/deusto/bspq18/e6/DeustoBox/Client/images/logo.png")));
 		setResizable(false);

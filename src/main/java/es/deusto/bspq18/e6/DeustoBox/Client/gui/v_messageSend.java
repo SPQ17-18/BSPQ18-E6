@@ -7,7 +7,6 @@ import javax.swing.border.EmptyBorder;
 
 import es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller;
 
-import java.awt.Toolkit;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;

@@ -1,20 +1,15 @@
 package es.deusto.bspq18.e6.DeustoBox.Client.gui;
 
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
-import java.awt.Toolkit;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller;
-import es.deusto.bspq18.e6.DeustoBox.Server.dto.DFileDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DMessageDTO;
 
 import java.awt.event.ActionListener;
@@ -23,6 +18,10 @@ import java.awt.event.ActionEvent;
 
 public class v_messageReceived extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane, panel;
 	private JLabel lblNewMessage, lblFrom, lblFromtxt, lblSubjecttxt, lblSubject;
 	private JTextArea txtMessage;

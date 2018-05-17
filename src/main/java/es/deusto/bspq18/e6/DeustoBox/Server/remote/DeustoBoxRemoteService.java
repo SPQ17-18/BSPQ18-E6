@@ -88,6 +88,7 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 	public boolean sendData(String filename, byte[] data, int len) throws RemoteException {
 		try {
 			FileOutputStream out = new FileOutputStream(filename, true);
+			@SuppressWarnings("unused")
 			File f = new File(filename);
 			out.write(data, 0, len);
 			out.flush();
@@ -195,7 +196,6 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		ArrayList<DMessageDTO> messagesdto = new ArrayList<DMessageDTO>();
 		ArrayList<DMessage> messages = new ArrayList<DMessage>();
 		messages =db.getAllMessagesOfSendToAUser(email);
-		System.out.println("Hay un total de : " + messages.size());
 		messagesdto = assemble.createMessagesDTO(messages);
 		return messagesdto;
 	}

@@ -2,6 +2,8 @@ package es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import javax.jdo.Extent;
 import javax.jdo.JDOHelper;
@@ -22,11 +24,14 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 
 	private PersistenceManagerFactory pmf;
 	private Error_log logger;
+	private ResourceBundle resourcebundle;
 
 	public DeustoBoxDAO(Error_log logger) {
 		
 		this.pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 		this.logger = logger;
+		resourcebundle = ResourceBundle.getBundle("SystemMessages", Locale.getDefault());
+		resourcebundle = ResourceBundle.getBundle("SystemMessages",	Locale.forLanguageTag("en"));
 	}
 
 	public DUser getUser(String email, String pass) {
@@ -594,8 +599,6 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 
 			for (DMessage mes : extent) {
 				if( mes.getEmailTo().equals(email))
-					System.out.println("Encontrado");
-					System.out.println(mes.toString());
 					dec = new DMessage(mes.getMessageId(), mes.getEmailfrom(), mes.getEmailTo(), mes.getSubject(), mes.getText(), mes.getDate());
 					messages.add(dec);
 			}
@@ -603,7 +606,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		} catch (Exception ex) {
 			
 			logger.getLogger().error("# Error retrieving messages of a certain User using an 'Extent': " + ex.getMessage());
-			ex.printStackTrace();
+			
 		} finally {
 			if (tx.isActive()) {
 				tx.rollback();

@@ -29,10 +29,13 @@ private static String cwd = ControllerTest.class.getProtectionDomain().getCodeSo
 private static Thread rmiRegistryThread = null;
 private static Thread rmiServerThread = null;
 private Controller controller;
+private static Error_log logger = new Error_log();
 @Rule
 public ContiPerfRule rule = new ContiPerfRule();
 
+
 	
+	@SuppressWarnings("unused")
 	private IDeustoBoxRemoteService messenger;
 
 	public static junit.framework.Test suite() {
@@ -48,9 +51,9 @@ public ContiPerfRule rule = new ContiPerfRule();
 				public void run() {
 					try {
 						java.rmi.registry.LocateRegistry.createRegistry(1099);
-						System.out.println("BeforeClass: RMI registry ready.");
+						logger.getLogger().info("BeforeClass: RMI registry ready.");
 					} catch (Exception e) {
-						System.out.println("Exception starting RMI registry:");
+						logger.getLogger().error("CONTROLLER TEST -- Exception starting RMI registry:");
 						e.printStackTrace();
 					}	
 				}
@@ -67,8 +70,8 @@ public ContiPerfRule rule = new ContiPerfRule();
 			class RMIServerRunnable implements Runnable {
 
 				public void run() {
-					System.out.println("This is a test to check how mvn test executes this test without external interaction; JVM properties by program");
-					System.out.println("**************: " + cwd);
+					logger.getLogger().info("This is a test to check how mvn test executes this test without external interaction; JVM properties by program");
+					logger.getLogger().info("**************: " + cwd);
 					System.setProperty("java.rmi.server.codebase", "file:" + cwd);
 					System.setProperty("java.security.policy", "target\\test-classes\\security\\java.policy");
 
@@ -77,18 +80,18 @@ public ContiPerfRule rule = new ContiPerfRule();
 					}
 
 					String name = "//127.0.0.1:1099/DeustoBox";
-					System.out.println("BeforeClass - Setting the server ready TestServer name: " + name);
+					logger.getLogger().info("BeforeClass - Setting the server ready TestServer name: " + name);
 
 					try {
 						
 						IDeustoBoxRemoteService messenger = new DeustoBoxRemoteService();
 						Naming.rebind(name, messenger);
 					} catch (RemoteException re) {
-						System.err.println(" # Messenger RemoteException: " + re.getMessage());
+						logger.getLogger().error("CONTROLLER TEST --# Messenger RemoteException: " + re.getMessage());
 						re.printStackTrace();
 						System.exit(-1);
 					} catch (MalformedURLException murle) {
-						System.err.println(" # Messenger MalformedURLException: " + murle.getMessage());
+						logger.getLogger().error("CONTROLLER TEST -- # Messenger MalformedURLException: " + murle.getMessage());
 						
 						murle.printStackTrace();
 						System.exit(-1);
@@ -120,12 +123,12 @@ public ContiPerfRule rule = new ContiPerfRule();
 			args[0] = "127.0.0.1";
 			args[1] = "1099";
 			args[2] = "DeustoBox";
-			System.out.println("BeforeTest - Setting the client ready for calling TestServer name: " + name);
+			logger.getLogger().info("BeforeTest - Setting the client ready for calling TestServer name: " + name);
 			messenger = (IDeustoBoxRemoteService)java.rmi.Naming.lookup(name);
 			controller = new Controller(args);
 			}
 			catch (Exception re) {
-				System.err.println(" # Messenger RemoteException: " + re.getMessage());
+				logger.getLogger().error("CONTROLLER TEST -- # Messenger RemoteException: " + re.getMessage());
 				re.printStackTrace();
 				System.exit(-1);
 			} 
@@ -138,7 +141,7 @@ public ContiPerfRule rule = new ContiPerfRule();
 			IDeustoBoxDAO bd = new DeustoBoxDAO(new Error_log());
 			bd.deleteAllUsers();
 			assertEquals(true,controller.signUp("username", "email", "password"));
-			
+			logger.getLogger().info("CONTROLLER TEST -- Test CreateUser done");
 
 			
 		}
@@ -146,37 +149,45 @@ public ContiPerfRule rule = new ContiPerfRule();
 		@PerfTest(duration = 2000)
 		public void testLoginUser() {
 			assertNotSame(controller.login("email", "password"), true);
-			
+			logger.getLogger().info("CONTROLLER TEST -- Test LoginUser done");
 		}
 		@Test
 
 		public void testChangePassword(){
 			assertEquals(controller.passwordCorrect("email","password12"), false);
+			logger.getLogger().info("CONTROLLER TEST -- Test ChangePassword done");
 		}
 		@Test
 		public void testgetConnections(){
 			assertTrue(controller.getConnections("email").size() >=0) ;
+			logger.getLogger().info("CONTROLLER TEST -- Test getConnections done");
 			
 			
 		}
 		@Test
 		public void testSendMessage(){
 			assertEquals(controller.addMessage("from", "emailto", "subject", "text"), true);
+			logger.getLogger().info("CONTROLLER TEST -- Test SendMessage done");
 			
 		}
 		@Test
 		public void testgetNumberOfMessages(){
+		assertTrue(controller.getNumberOfUserMessages("noEmail") == 0);
 		assertTrue(controller.getNumberOfUserMessages("emailto")> 0);
+		logger.getLogger().info("CONTROLLER TEST -- Test getNumberOfMessages done");
 		}
 		@Test
 		public void testgetToDownloadMessages(){
 		assertEquals(controller.downloadMessages("emailto").get(0).getSubject(), "subject");
+		assertEquals(controller.downloadMessages("emailto").get(0).getText(), "text");
+		logger.getLogger().info("CONTROLLER TEST -- Test DownloadMessages done");
 		}
 		
 		@Test
 		public void testgetNumberOfFiles(){
 		assertTrue(controller.getListOfFiles("email") ==0);
 		assertTrue(controller.getNumberOfFiles("email") ==0);
+		logger.getLogger().info("CONTROLLER TEST -- Test getNumberOfFiles done");
 		}
 		
 		@AfterClass
