@@ -37,7 +37,7 @@ public class v_register extends JFrame {
 	private JButton back;
 
 	public v_register(Controller controlador) {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(v_register.class.getResource("/es/deusto/bspq18/e6/DeustoBox/Client/images/logo.png")));
+		//setIconImage(Toolkit.getDefaultToolkit().getImage(v_register.class.getResource("/es/deusto/bspq18/e6/DeustoBox/Client/images/logo.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -54,24 +54,24 @@ public class v_register extends JFrame {
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		lblJoinDeustobox = new JLabel(controlador.getResourcebundle().getBundle("msg_join").toString());
+		lblJoinDeustobox = new JLabel(controlador.getResourcebundle().getString("msg_join") );
 		lblJoinDeustobox.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		lblJoinDeustobox.setBounds(98, 16, 162, 35);
 		panel.add(lblJoinDeustobox);
 		
-		lblUsername = new JLabel(controlador.getResourcebundle().getBundle("msg_username").toString());
+		lblUsername = new JLabel(controlador.getResourcebundle().getString("msg_username") );
 		lblUsername.setBounds(15, 96, 77, 20);
 		panel.add(lblUsername);
 		
-		lblPassword = new JLabel(controlador.getResourcebundle().getBundle("msg_pass").toString());
+		lblPassword = new JLabel(controlador.getResourcebundle().getString("msg_pass") );
 		lblPassword.setBounds(15, 132, 77, 20);
 		panel.add(lblPassword);
 		
-		lblPassword2 = new JLabel(controlador.getResourcebundle().getBundle("msg_repeat_pass").toString());
+		lblPassword2 = new JLabel(controlador.getResourcebundle().getString("msg_repeat_pass") );
 		lblPassword2.setBounds(15, 168, 135, 20);
 		panel.add(lblPassword2);
 		
-		lblEmail = new JLabel(controlador.getResourcebundle().getBundle("msg_email").toString());
+		lblEmail = new JLabel(controlador.getResourcebundle().getString("msg_email") );
 		lblEmail.setBounds(15, 60, 77, 20);
 		panel.add(lblEmail);
 		
@@ -85,7 +85,7 @@ public class v_register extends JFrame {
 		panel.add(txtUsername);
 		txtUsername.setColumns(10);
 		
-		btnRegister = new JButton(controlador.getResourcebundle().getBundle("msg_register").toString());
+		btnRegister = new JButton(controlador.getResourcebundle().getString("msg_register") );
 		btnRegister.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent Ae) {
 				String email = txtEmail.getText();
@@ -97,17 +97,17 @@ public class v_register extends JFrame {
 				String password2 = new String(pass2);
 				
 				if (email.trim().equals("") || username.trim().equals("") || password1.trim().equals("") || password2.trim().equals("")) {
-					JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getBundle("msg_error_gaps").toString());
+					JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getString("msg_error_gaps") );
 				} else if (!password1.equals(password2)) {
-					JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getBundle("msg_error_pass").toString());
+					JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getString("msg_error_pass") );
 				} else {
 					boolean user = controlador.signUp(txtUsername.getText(), txtEmail.getText(), password1);
 					if(user){ 
-						JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getBundle("msg_regis").toString());
+						JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getString("msg_regis") );
 						new v_login(controlador);
 						dispose();
 					}else{
-						JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getBundle("msg_error_email").toString());
+						JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getString("msg_error_email") );
 					}
 				}
 			}
@@ -136,7 +136,7 @@ public class v_register extends JFrame {
 		lblLogo = new JLabel();
 		lblLogo.setBounds(268, 16, 135, 76);
 		
-		URL url = this.getClass().getResource("/es/deusto/bspq18/e6/DeustoBox/Client/images/logo.png");
+		/*URL url = this.getClass().getResource("/es/deusto/bspq18/e6/DeustoBox/Client/images/logo.png");
 		BufferedImage img = null;
 		try {
 			img = ImageIO.read(url);
@@ -149,6 +149,7 @@ public class v_register extends JFrame {
 		ImageIcon imageIcon = new ImageIcon(dimg);
 		lblLogo.setIcon(imageIcon);
 		panel.add(lblLogo);
+		*/
 	}
 
 }

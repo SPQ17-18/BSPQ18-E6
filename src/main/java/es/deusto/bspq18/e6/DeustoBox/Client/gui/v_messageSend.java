@@ -49,11 +49,11 @@ public class v_messageSend extends JFrame {
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		lblTo = new JLabel(controlador.getResourcebundle().getBundle("msg_to").toString());
+		lblTo = new JLabel(controlador.getResourcebundle().getString("msg_to") );
 		lblTo.setBounds(10, 25, 46, 14);
 		panel.add(lblTo);
 		
-		lblSubject = new JLabel(controlador.getResourcebundle().getBundle("msg_subject").toString());
+		lblSubject = new JLabel(controlador.getResourcebundle().getString("msg_subject") );
 		lblSubject.setBounds(10, 50, 46, 14);
 		panel.add(lblSubject);
 		
@@ -67,11 +67,11 @@ public class v_messageSend extends JFrame {
 		panel.add(txtSubject);
 		txtSubject.setColumns(10);
 		
-		lblNewMessage = new JLabel(controlador.getResourcebundle().getBundle("msg_new_message").toString());
+		lblNewMessage = new JLabel(controlador.getResourcebundle().getString("msg_new_message") );
 		lblNewMessage.setBounds(10, 0, 86, 14);
 		panel.add(lblNewMessage);
 		
-		btnSend = new JButton(controlador.getResourcebundle().getBundle("msg_send").toString());
+		btnSend = new JButton(controlador.getResourcebundle().getString("msg_send") );
 		btnSend.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(!txtReciever.getText().equals("")){
@@ -80,22 +80,22 @@ public class v_messageSend extends JFrame {
 							String email = controlador.getUserdto().getEmail();
 							boolean correct = controlador.addMessage(email,txtReciever.getText(), txtSubject.getText(), txtMessage.getText());
 							if(correct){
-								JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getBundle("msg_message_to").toString() + txtReciever.getText() + controlador.getResourcebundle().getBundle("msg_message_correct").toString());
+								JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getString("msg_message_to")  + txtReciever.getText() + controlador.getResourcebundle().getString("msg_message_correct") );
 								dispose();
 							}else{
-								JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getBundle("msg_error").toString());
+								JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getString("msg_error") );
 							}
 							
 						}
 						else{
-							JOptionPane.showMessageDialog(null,controlador.getResourcebundle().getBundle("msg_message_empty").toString());
+							JOptionPane.showMessageDialog(null,controlador.getResourcebundle().getString("msg_message_empty") );
 						}
 							
 					} else{
-						JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getBundle("msg_subject_empty").toString());
+						JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getString("msg_subject_empty") );
 					}
 				} else{
-					JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getBundle("msg_reciever_empty").toString());
+					JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getString("msg_reciever_empty") );
 				}
 				
 			}

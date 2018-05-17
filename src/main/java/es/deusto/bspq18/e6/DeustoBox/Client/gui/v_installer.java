@@ -24,13 +24,15 @@ public class v_installer extends JFrame {
 	private JTextField txtPath;
 	private JFileChooser fileChooser;
 	private Controller controlador;
+	private JButton btnBrowse;
 
 	/**
 	 * Create the application.
 	 */
 	public v_installer(Controller controlador) {
-		initialize();
 		this.controlador = controlador;
+		initialize();
+		
 	}
 
 	/**
@@ -38,7 +40,7 @@ public class v_installer extends JFrame {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(v_installer.class.getResource("/es/deusto/bspq18/e6/DeustoBox/Client/images/logo.png")));
+		//frame.setIconImage(Toolkit.getDefaultToolkit().getImage(v_installer.class.getResource("/es/deusto/bspq18/e6/DeustoBox/Client/images/logo.png")));
 		frame.setResizable(false);
 		frame.setTitle("Installer");
 		frame.setBounds(100, 100, 610, 309);
@@ -50,11 +52,11 @@ public class v_installer extends JFrame {
 		frame.getContentPane().add(txtPath);
 		txtPath.setColumns(10);
 
-		JButton btnBrowse = new JButton(controlador.getResourcebundle().getBundle("msg_browse").toString());
+		btnBrowse = new JButton(this.controlador.getResourcebundle().getString("msg_browse") );
 		btnBrowse.setBounds(465, 112, 87, 37);
 		frame.getContentPane().add(btnBrowse);
 
-		JButton btnCancel = new JButton(controlador.getResourcebundle().getBundle("msg_cancel").toString());
+		JButton btnCancel = new JButton(this.controlador.getResourcebundle().getString("msg_cancel") );
 		btnCancel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				System.exit(0);
@@ -66,7 +68,7 @@ public class v_installer extends JFrame {
 		JButton btnOk = new JButton("Ok");
 		btnOk.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String dir = fileChooser.getSelectedFile().toString();
+				String dir = fileChooser.getSelectedFile().toString() ;
 				File directorio=new File(dir + "\\Client Deusto-Box");
 				controlador.setPath(dir + "\\Client Deusto-Box\\");
 				directorio.mkdir(); 
@@ -93,7 +95,7 @@ public class v_installer extends JFrame {
 
 				int rVal = fileChooser.showOpenDialog(null);
 				if (rVal == JFileChooser.APPROVE_OPTION) {
-					txtPath.setText(fileChooser.getSelectedFile().toString());
+					txtPath.setText(fileChooser.getSelectedFile().toString() );
 				}
 			}
 		});

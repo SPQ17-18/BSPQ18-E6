@@ -33,11 +33,12 @@ public class Controller {
 	public Controller(String[] args) throws RemoteException {
 		rsl = new RMIServiceLocator();
 		rsl.setService(args);
+		Locale currentLocale = new Locale("fr", "FR");
+		resourcebundle = ResourceBundle.getBundle("lang/translations", currentLocale);
 		new v_login(this);
 		filesDTO = null;
 		logger = new Error_log();
-		Locale currentLocale = new Locale("en", "US");
-		resourcebundle = ResourceBundle.getBundle("lang/translations", currentLocale);
+
 		
 	}
 
@@ -46,7 +47,7 @@ public class Controller {
 		try {
 			res = rsl.getService().signUp(username, email, password);
 		} catch (Exception ex) {
-			logger.getLogger().error(resourcebundle.getBundle("msg_excepcion").toString(), ex);
+			logger.getLogger().error(resourcebundle.getString("msg_excepcion") , ex);
 		}
 		if (res != null) {
 			this.userdto = res;
@@ -66,11 +67,11 @@ public class Controller {
 		}
 
 		if (res.equals(null)) {
-			logger.getLogger().error(resourcebundle.getBundle("non_existing_user").toString());
+			logger.getLogger().error(resourcebundle.getString("non_existing_user") );
 			return false;
 		} else {
 			this.userdto = res;
-			logger.getLogger().error(resourcebundle.getBundle("user_successfully_loged").toString());
+			logger.getLogger().error(resourcebundle.getString("user_successfully_loged") );
 			return true;
 		}
 	}
@@ -103,7 +104,7 @@ public class Controller {
 				}
 				in.close();
 			} catch (Exception e) {
-				logger.getLogger().error(resourcebundle.getBundle("msg_excepcion").toString(), e);
+				logger.getLogger().error(resourcebundle.getString("msg_excepcion"), e);
 
 			}
 		}
@@ -115,7 +116,7 @@ public class Controller {
 			filesDTO = rsl.getService().getFiles(email);
 			number = filesDTO.size();
 		} catch (Exception ex) {
-			logger.getLogger().error(resourcebundle.getBundle("msg_excepcion").toString(), ex);
+			logger.getLogger().error(resourcebundle.getString("msg_excepcion") , ex);
 		}
 		return number;
 	}
@@ -139,7 +140,7 @@ public class Controller {
 			} else {
 				getListOfFiles(userdto.getEmail());
 				for (DFileDTO file : filesDTO) {
-					logger.getLogger().error(file.toString());
+					logger.getLogger().error(file );
 				}
 
 				ArrayList<DFileDTO> filesToRemove = new ArrayList<DFileDTO>();
@@ -201,7 +202,7 @@ public class Controller {
 		} catch (Exception ex) {
 			
 		}
-		JOptionPane.showMessageDialog(null, downloads + resourcebundle.getBundle("msg_file_download").toString() + uploads + resourcebundle.getBundle("msg_file_upload").toString());
+		JOptionPane.showMessageDialog(null, downloads + resourcebundle.getString("msg_file_download")  + uploads + resourcebundle.getString("msg_file_upload") );
 		
 		
 	}
@@ -212,7 +213,7 @@ public class Controller {
 		try {
 			files = rsl.getService().getNumberOfUserFiles(email);
 		} catch (Exception ex) {
-			logger.getLogger().error(resourcebundle.getBundle("msg_excepcion").toString(), ex);
+			logger.getLogger().error(resourcebundle.getString("msg_excepcion") , ex);
 		}
 		return files;
 	}
@@ -222,7 +223,7 @@ public class Controller {
 		try {
 			correct = rsl.getService().checkPassword(email, password);
 		} catch (Exception ex) {
-			logger.getLogger().error(resourcebundle.getBundle("msg_excepcion").toString(), ex);
+			logger.getLogger().error(resourcebundle.getString("msg_excepcion") , ex);
 		}
 		return correct;
 	}
@@ -233,7 +234,7 @@ public class Controller {
 		try {
 			correct = rsl.getService().updatePassword(email, password);
 		} catch (Exception ex) {
-			logger.getLogger().error(resourcebundle.getBundle("msg_excepcion").toString(), ex);
+			logger.getLogger().error(resourcebundle.getString("msg_excepcion") , ex);
 		}
 
 		return correct;
@@ -244,7 +245,7 @@ public class Controller {
 		try {
 		connectionsDTO = rsl.getService().getConnections(email);
 		} catch (Exception ex) {
-			logger.getLogger().error(resourcebundle.getBundle("msg_excepcion").toString(), ex);
+			logger.getLogger().error(resourcebundle.getString("msg_excepcion") , ex);
 		}
 	return connectionsDTO;
 		
@@ -259,7 +260,7 @@ public class Controller {
 			DMessageDTO dto = new DMessageDTO(id,emailfrom, emailto, subject, text);
 			correct = rsl.getService().addMessage(dto);
 		} catch (RemoteException e) {
-			logger.getLogger().error(resourcebundle.getBundle("msg_excepcion").toString(), e);
+			logger.getLogger().error(resourcebundle.getString("msg_excepcion") , e);
 		}
 		return correct;
 	}
@@ -269,7 +270,7 @@ public class Controller {
 		try {
 			messages = rsl.getService().getMessages(email);
 		} catch (RemoteException e) {
-			logger.getLogger().error(resourcebundle.getBundle("msg_excepcion").toString(), e);
+			logger.getLogger().error(resourcebundle.getString("msg_excepcion") , e);
 		}
 		
 		return messages;
@@ -287,14 +288,14 @@ public class Controller {
 			File file = new File(pathFile);
 			long length = file.length();
 		    if (length > Integer.MAX_VALUE) {
-				logger.getLogger().error(resourcebundle.getBundle("msg_file_large").toString());
+				logger.getLogger().error(resourcebundle.getString("msg_file_large") );
 		    }
 		    byte[] bytes = new byte[(int) length];
 		    out.write(bytes);
 		    out.close();
 		    so.close();
 		} catch (IOException e) {
-			logger.getLogger().error(resourcebundle.getBundle("msg_excepcion").toString(), e);
+			logger.getLogger().error(resourcebundle.getString("msg_excepcion") , e);
 		}
 		
 		return true;
@@ -307,7 +308,7 @@ public class Controller {
 			number = rsl.getService().getNumberOfUserMessages(email);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
-			logger.getLogger().error(resourcebundle.getBundle("msg_excepcion").toString(), e);
+			logger.getLogger().error(resourcebundle.getString("msg_excepcion") , e);
 		}
 		return number;
 		
@@ -320,7 +321,7 @@ public class Controller {
 			correct = rsl.getService().DeleteMessage(id);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
-			logger.getLogger().error(resourcebundle.getBundle("msg_excepcion").toString(), e);
+			logger.getLogger().error(resourcebundle.getString("msg_excepcion") , e);
 		}
 		
 		return correct;

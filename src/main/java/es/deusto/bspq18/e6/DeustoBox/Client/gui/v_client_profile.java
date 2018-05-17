@@ -39,7 +39,7 @@ public class v_client_profile extends JFrame {
 	 */
 	public v_client_profile(Controller controlador) {
 		this.controlador = controlador;
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -50,19 +50,19 @@ public class v_client_profile extends JFrame {
 	
 	}
 	public void InitComponents() {
-		lblMyProfile = new JLabel(controlador.getResourcebundle().getBundle("msg_profile").toString());
+		lblMyProfile = new JLabel(controlador.getResourcebundle().getString("msg_profile") );
 		lblMyProfile.setBounds(223, 6, 112, 16);
 		contentPane.add(lblMyProfile);
 		
-		lblEmail = new JLabel(controlador.getResourcebundle().getBundle("msg_email").toString());
+		lblEmail = new JLabel(controlador.getResourcebundle().getString("msg_email") );
 		lblEmail.setBounds(6, 37, 75, 16);
 		contentPane.add(lblEmail);
 		
-		lblUsername = new JLabel(controlador.getResourcebundle().getBundle("msg_username").toString());
+		lblUsername = new JLabel(controlador.getResourcebundle().getString("msg_username") );
 		lblUsername.setBounds(6, 85, 75, 16);
 		contentPane.add(lblUsername);
 		
-		lblMemberSince = new JLabel(controlador.getResourcebundle().getBundle("msg_member").toString());
+		lblMemberSince = new JLabel(controlador.getResourcebundle().getString("msg_member") );
 		lblMemberSince.setBounds(6, 139, 91, 16);
 		contentPane.add(lblMemberSince);
 		
@@ -74,11 +74,11 @@ public class v_client_profile extends JFrame {
 		txtUsername.setBounds(153, 85, 145, 16);
 		contentPane.add(txtUsername);
 		
-		txtMemberSince = new JLabel(controlador.getUserdto().getRegisteredDate().toString());
+		txtMemberSince = new JLabel(controlador.getUserdto().getRegisteredDate().toString() );
 		txtMemberSince.setBounds(153, 139, 202, 16);
 		contentPane.add(txtMemberSince);
 		
-		btnChangePassword = new JButton(controlador.getResourcebundle().getBundle("msg_cahnge_pass").toString());
+		btnChangePassword = new JButton(controlador.getResourcebundle().getString("msg_change_pass") );
 		btnChangePassword.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			//Mostramos los nuevos botones
@@ -94,13 +94,13 @@ public class v_client_profile extends JFrame {
 		contentPane.add(passwordField);
 		passwordField.setVisible(false);
 		
-		lblIntroduceTuContrasea = new JLabel(controlador.getResourcebundle().getBundle("msg_insert_pass2").toString());
+		lblIntroduceTuContrasea = new JLabel(controlador.getResourcebundle().getString("msg_insert_pass2") );
 		lblIntroduceTuContrasea.setBounds(163, 184, 192, 16);
 		contentPane.add(lblIntroduceTuContrasea);
 		lblIntroduceTuContrasea.setVisible(false);
 		
 		
-		btnVerify = new JButton((controlador.getResourcebundle().getBundle("msg_verify").toString()));
+		btnVerify = new JButton((controlador.getResourcebundle().getString("msg_verify") ));
 		btnVerify.setBounds(327, 212, 117, 29);
 		contentPane.add(btnVerify);
 		
@@ -122,7 +122,7 @@ public class v_client_profile extends JFrame {
 			}
 		});
 		
-		btnCheckConnections = new JButton((controlador.getResourcebundle().getBundle("msg_chckC").toString()));
+		btnCheckConnections = new JButton((controlador.getResourcebundle().getString("msg_checkC") ));
 		btnCheckConnections.setBounds(299, 32, 145, 29);
 		btnCheckConnections.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

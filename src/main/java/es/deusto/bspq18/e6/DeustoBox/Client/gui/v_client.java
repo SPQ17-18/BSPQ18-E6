@@ -53,7 +53,7 @@ public class v_client extends JFrame {
 	}
 		
 		public void InitComponents(){
-		lblUsername = new JLabel(controlador.getResourcebundle().getBundle("msg_username").toString());
+		lblUsername = new JLabel(controlador.getResourcebundle().getString("msg_username") );
 		lblUsername.setBounds(10, 11, 76, 14);
 		contentPane.add(lblUsername);
 		
@@ -61,7 +61,7 @@ public class v_client extends JFrame {
 		lblUser.setBounds(208, 11, 140, 14);
 		contentPane.add(lblUser);
 		
-		lblNumberOfFiles = new JLabel(controlador.getResourcebundle().getBundle("msg_number_files").toString());
+		lblNumberOfFiles = new JLabel(controlador.getResourcebundle().getString("msg_number_files") );
 		lblNumberOfFiles.setBounds(10, 48, 163, 14);
 		contentPane.add(lblNumberOfFiles);
 		
@@ -74,11 +74,11 @@ public class v_client extends JFrame {
 		lblNumber.setBounds(208, 48, 46, 14);
 		contentPane.add(lblNumber);
 		
-		SyncFiles = new JButton(controlador.getResourcebundle().getBundle("msg_sync_files").toString());
+		SyncFiles = new JButton(controlador.getResourcebundle().getString("msg_sync_files") );
 		SyncFiles.setBounds(10, 145, 89, 23);
 		contentPane.add(SyncFiles);
 		
-		btnMyProfile = new JButton(controlador.getResourcebundle().getBundle("msg_profile").toString());
+		btnMyProfile = new JButton(controlador.getResourcebundle().getString("msg_profile") );
 		btnMyProfile.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				myProfile = new v_client_profile(controlador);
@@ -89,7 +89,7 @@ public class v_client extends JFrame {
 		btnMyProfile.setBounds(168, 145, 117, 23);
 		contentPane.add(btnMyProfile);
 		
-		lblMessages = new JLabel(controlador.getResourcebundle().getBundle("msg_message").toString());
+		lblMessages = new JLabel(controlador.getResourcebundle().getString("msg_message") );
 		lblMessages.setBounds(10, 89, 89, 14);
 		contentPane.add(lblMessages);
 		
@@ -98,7 +98,7 @@ public class v_client extends JFrame {
 		contentPane.add(lblNumberOfMessages);
 		lblNumberOfMessages.setText(String.valueOf(controlador.getNumberOfUserMessages(email)));
 		
-		btnWriteAMessage = new JButton(controlador.getResourcebundle().getBundle("msg_write").toString());
+		btnWriteAMessage = new JButton(controlador.getResourcebundle().getString("msg_write") );
 		btnWriteAMessage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				sendMessage = new v_messageSend(controlador);
@@ -109,7 +109,7 @@ public class v_client extends JFrame {
 		btnWriteAMessage.setBounds(10, 201, 113, 23);
 		contentPane.add(btnWriteAMessage);
 		
-		btnMyMessages = new JButton(controlador.getResourcebundle().getBundle("msg_message").toString());
+		btnMyMessages = new JButton(controlador.getResourcebundle().getString("msg_message") );
 		btnMyMessages.setBounds(168, 201, 117, 23);
 		contentPane.add(btnMyMessages);
 		btnMyMessages.addActionListener(new ActionListener() {
@@ -121,7 +121,7 @@ public class v_client extends JFrame {
 				//Update the label
 				lblNumberOfMessages.setText(String.valueOf(messages));
 				if(messages ==0){
-					JOptionPane.showMessageDialog(null,controlador.getResourcebundle().getBundle("msg_empty").toString());
+					JOptionPane.showMessageDialog(null,controlador.getResourcebundle().getString("msg_empty") );
 				}
 				else{
 					readMessages = new v_messageReceived(controlador);

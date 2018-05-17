@@ -45,11 +45,11 @@ public class v_client_profile_changepassword extends JFrame {
 		
 	}
 	public void InitComponents() {
-		lblChangePassword = new JLabel(controlador.getResourcebundle().getString("msg_change_pass").toString());
+		lblChangePassword = new JLabel(controlador.getResourcebundle().getString("msg_change_pass"));
 		lblChangePassword.setBounds(113, 6, 126, 16);
 		contentPane.add(lblChangePassword);
 		
-		lblInsertThePassword = new JLabel(controlador.getResourcebundle().getString("msg_insert_pass").toString());
+		lblInsertThePassword = new JLabel(controlador.getResourcebundle().getString("msg_insert_pass"));
 		lblInsertThePassword.setBounds(107, 51, 132, 16);
 		contentPane.add(lblInsertThePassword);
 		
@@ -57,7 +57,7 @@ public class v_client_profile_changepassword extends JFrame {
 		passwordField.setBounds(92, 79, 147, 26);
 		contentPane.add(passwordField);
 		
-		lblrepeatPassword = new JLabel(controlador.getResourcebundle().getString("msg_repeat_pass").toString());
+		lblrepeatPassword = new JLabel(controlador.getResourcebundle().getString("msg_repeat_pass"));
 		lblrepeatPassword.setBounds(107, 126, 132, 16);
 		contentPane.add(lblrepeatPassword);
 		
@@ -72,18 +72,18 @@ public class v_client_profile_changepassword extends JFrame {
 					String email = controlador.getUserdto().getEmail();
 					boolean correct = controlador.updatePassword(email, String.valueOf(passwordField.getPassword()));
 					if(correct){
-						JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getString("msg_confirm_change").toString());
+						JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getString("msg_confirm_change"));
 						dispose();
 						
 					}
 					else{
-						JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getString("msg_error_pass").toString());
+						JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getString("msg_error_pass"));
 						
 					}
 					
 				}
 				else {
-					JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getString("msg_match_pass").toString());
+					JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getString("msg_match_pass"));
 					
 				}
 			}

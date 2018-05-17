@@ -53,16 +53,16 @@ public class v_login extends JFrame {
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		lblLogin = new JLabel(controlador.getResourcebundle().getBundle("msg_login").toString());
+		lblLogin = new JLabel(controlador.getResourcebundle().getString("msg_login"));
 		lblLogin.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		lblLogin.setBounds(168, 38, 224, 35);
 		panel.add(lblLogin);
 		
-		lblEmail = new JLabel(controlador.getResourcebundle().getBundle("msg_email").toString());
+		lblEmail = new JLabel(controlador.getResourcebundle().getString("msg_email"));
 		lblEmail.setBounds(47, 114, 83, 20);
 		panel.add(lblEmail);
 		
-		lblPassword = new JLabel(controlador.getResourcebundle().getBundle("msg_pass").toString());
+		lblPassword = new JLabel(controlador.getResourcebundle().getString("msg_pass"));
 		lblPassword.setBounds(47, 156, 83, 20);
 		panel.add(lblPassword);
 		
@@ -75,7 +75,7 @@ public class v_login extends JFrame {
 		passwordField.setBounds(145, 153, 163, 26);
 		panel.add(passwordField);
 		
-		btnEnter = new JButton(controlador.getResourcebundle().getBundle("msg_signin").toString());
+		btnEnter = new JButton(controlador.getResourcebundle().getString("msg_signin"));
 		btnEnter.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String name = txtUsername.getText();
@@ -83,18 +83,18 @@ public class v_login extends JFrame {
 				String password = new String(pass);
 
 				if (name.trim().equals("")) {
-					JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getBundle("msg_insert_user").toString());
+					JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getString("msg_insert_user"));
 				} else if (password.trim().equals("")) {
-					JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getBundle("msg_insert_pass").toString());
+					JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getString("msg_insert_pass"));
 				} else {
 					boolean user = controlador.login(name, password);
 					if (user) {
-						JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getBundle("msg_back").toString() + name + ".");
+						JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getString("msg_back") + name + ".");
 						v_installer installer = new v_installer(controlador);
 						installer.frame.setVisible(true);
 						dispose();
 					} else {
-						JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getBundle("msg_data").toString());
+						JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getString("msg_data"));
 						txtUsername.setText("");
 						passwordField.setText("");
 					}
@@ -104,12 +104,12 @@ public class v_login extends JFrame {
 		btnEnter.setBounds(168, 190, 115, 29);
 		panel.add(btnEnter);
 		
-		lblRegister = new JLabel(controlador.getResourcebundle().getBundle("msg_no_acc").toString());
+		lblRegister = new JLabel(controlador.getResourcebundle().getString("msg_no_acc"));
 		lblRegister.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblRegister.setBounds(93, 239, 190, 20);
 		panel.add(lblRegister);
 		
-		btnCreateAccount = new JButton(controlador.getResourcebundle().getBundle("msg_create_acc").toString());
+		btnCreateAccount = new JButton(controlador.getResourcebundle().getString("msg_create_acc"));
 		btnCreateAccount.setForeground(Color.BLUE);
 		btnCreateAccount.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {

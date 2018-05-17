@@ -48,7 +48,7 @@ public class v_installer extends JFrame {
 		frame.setResizable(false);
 		//frame.setIconImage(Toolkit.getDefaultToolkit().getImage(v_installer.class.getResource("/es/deusto/bspq18/e6/DeustoBox/Server/images/logo.png")));
 		
-		//frame.setTitle(resourcebundle.getBundle("msg_txt_installer").toString());
+		frame.setTitle(resourcebundle.getString("msg_txt_installer"));
 		frame.setBounds(100, 100, 610, 252);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -58,7 +58,7 @@ public class v_installer extends JFrame {
 		frame.getContentPane().add(txtPath);
 		txtPath.setColumns(10);
 
-		btnBrowse = new JButton(resourcebundle.getBundle("txt_browse").toString());
+		btnBrowse = new JButton(resourcebundle.getString("txt_browse"));
 		btnBrowse.setBounds(465, 112, 87, 37);
 		frame.getContentPane().add(btnBrowse);
 
@@ -93,7 +93,7 @@ public class v_installer extends JFrame {
 		btnOk.setBounds(314, 180, 115, 29);
 		frame.getContentPane().add(btnOk);
 
-		lblDeustoboxInstaller = new JLabel(installer.getResourcebundle().getBundle("txt_td").toString());
+		lblDeustoboxInstaller = new JLabel(resourcebundle.getString("txt_dt"));
 		lblDeustoboxInstaller.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		lblDeustoboxInstaller.setHorizontalAlignment(SwingConstants.CENTER);
 		lblDeustoboxInstaller.setBounds(163, 26, 220, 48);

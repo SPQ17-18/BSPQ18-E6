@@ -28,8 +28,8 @@ public class installerController {
 	private ResourceBundle resourcebundle;
 
 	public installerController(String path, IDeustoBoxDAO dao, Error_log logger) {
-		resourcebundle = ResourceBundle.getBundle("SystemMessages", Locale.getDefault());
-		resourcebundle = ResourceBundle.getBundle("SystemMessages",	Locale.forLanguageTag("en"));
+		Locale currentLocale = new Locale("en", "US");
+		resourcebundle = ResourceBundle.getBundle("lang/translations", currentLocale);
 		this.path = path;
 		this.dao = dao;
 		this.transform = new Assembler();
@@ -43,7 +43,7 @@ public class installerController {
 	 * database
 	 */
 	public void manageFolders() {
-		logger.getLogger().info(resourcebundle.getBundle("msg_manage_folders").toString());
+		logger.getLogger().info(resourcebundle.getString("msg_manage_folders"));
 		File directorio = new File(path);
 		ArrayList<DUser> users = dao.getAllUsers();
 
