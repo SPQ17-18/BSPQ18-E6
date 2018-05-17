@@ -36,8 +36,8 @@ public class Controller {
 		new v_login(this);
 		filesDTO = null;
 		logger = new Error_log();
-		resourcebundle = ResourceBundle.getBundle("SystemMessages", Locale.getDefault());
-		resourcebundle = ResourceBundle.getBundle("SystemMessages",	Locale.forLanguageTag("en"));
+		Locale currentLocale = new Locale("en", "US");
+		resourcebundle = ResourceBundle.getBundle("lang/translations", currentLocale);
 		
 	}
 

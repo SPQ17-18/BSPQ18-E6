@@ -30,8 +30,8 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		
 		this.pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 		this.logger = logger;
-		resourcebundle = ResourceBundle.getBundle("SystemMessages", Locale.getDefault());
-		resourcebundle = ResourceBundle.getBundle("SystemMessages",	Locale.forLanguageTag("en"));
+		Locale currentLocale = new Locale("en", "US");
+		resourcebundle = ResourceBundle.getBundle("lang/translations", currentLocale);
 	}
 
 	public DUser getUser(String email, String pass) {

@@ -2,6 +2,9 @@ package es.deusto.bspq18.e6.DeustoBox.Server.gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Locale;
+import java.util.ResourceBundle;
+
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -27,9 +30,12 @@ public class v_installer extends JFrame {
 	private JButton btnOk;
 	private JLabel lblDeustoboxInstaller;
 	private Error_log logger;
+	private ResourceBundle resourcebundle;
 
 
 	public v_installer(IDeustoBoxDAO dao, Error_log logger) {
+		Locale currentLocale = new Locale("en", "US");
+		resourcebundle = ResourceBundle.getBundle("lang/translations", currentLocale);
 		initialize();
 		this.dao = dao;
 		this.logger = logger;
@@ -42,7 +48,7 @@ public class v_installer extends JFrame {
 		frame.setResizable(false);
 		//frame.setIconImage(Toolkit.getDefaultToolkit().getImage(v_installer.class.getResource("/es/deusto/bspq18/e6/DeustoBox/Server/images/logo.png")));
 		
-		frame.setTitle(installer.getResourcebundle().getBundle("txt_installer").toString());
+		//frame.setTitle(resourcebundle.getBundle("msg_txt_installer").toString());
 		frame.setBounds(100, 100, 610, 252);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -52,7 +58,7 @@ public class v_installer extends JFrame {
 		frame.getContentPane().add(txtPath);
 		txtPath.setColumns(10);
 
-		btnBrowse = new JButton(installer.getResourcebundle().getBundle("txt_browse").toString());
+		btnBrowse = new JButton(resourcebundle.getBundle("txt_browse").toString());
 		btnBrowse.setBounds(465, 112, 87, 37);
 		frame.getContentPane().add(btnBrowse);
 

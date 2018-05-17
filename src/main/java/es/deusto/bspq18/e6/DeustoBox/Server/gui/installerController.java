@@ -28,12 +28,13 @@ public class installerController {
 	private ResourceBundle resourcebundle;
 
 	public installerController(String path, IDeustoBoxDAO dao, Error_log logger) {
+		resourcebundle = ResourceBundle.getBundle("SystemMessages", Locale.getDefault());
+		resourcebundle = ResourceBundle.getBundle("SystemMessages",	Locale.forLanguageTag("en"));
 		this.path = path;
 		this.dao = dao;
 		this.transform = new Assembler();
 		this.logger = logger;
-		resourcebundle = ResourceBundle.getBundle("SystemMessages", Locale.getDefault());
-		resourcebundle = ResourceBundle.getBundle("SystemMessages",	Locale.forLanguageTag("en"));
+
 	}
 	
 
