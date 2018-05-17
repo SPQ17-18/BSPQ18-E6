@@ -52,7 +52,7 @@ public class v_client_connections extends JFrame {
 	@SuppressWarnings("rawtypes")
 	public void InitComponents() {
 		txtMyConnections = new JLabel();
-		txtMyConnections.setText("My Connections");
+		txtMyConnections.setText(controlador.getResourcebundle().getBundle("msg_connections").toString());
 		txtMyConnections.setBounds(152, 6, 130, 26);
 		contentPane.add(txtMyConnections);
 
@@ -60,7 +60,7 @@ public class v_client_connections extends JFrame {
 		listR.setBounds(25, 44, 405, 187);
 		getContentPane().add(listR);
 
-		btnBack = new JButton("BACK");
+		btnBack = new JButton(controlador.getResourcebundle().getBundle("back_btn").toString());
 		btnBack.setBounds(152, 243, 117, 29);
 		contentPane.add(btnBack);
 		btnBack.addActionListener(new ActionListener() {

@@ -50,11 +50,11 @@ public class v_installer extends JFrame {
 		frame.getContentPane().add(txtPath);
 		txtPath.setColumns(10);
 
-		JButton btnBrowse = new JButton("Browse");
+		JButton btnBrowse = new JButton(controlador.getResourcebundle().getBundle("msg_browse").toString());
 		btnBrowse.setBounds(465, 112, 87, 37);
 		frame.getContentPane().add(btnBrowse);
 
-		JButton btnCancel = new JButton("Cancel");
+		JButton btnCancel = new JButton(controlador.getResourcebundle().getBundle("msg_cancel").toString());
 		btnCancel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				System.exit(0);

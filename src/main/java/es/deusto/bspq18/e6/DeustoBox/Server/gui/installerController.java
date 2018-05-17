@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Random;
+import java.util.ResourceBundle;
 import java.util.Date;
 
 import es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assembler;
@@ -24,20 +25,24 @@ public class installerController {
 	private Assembler transform;
 	private String path;
 	private Error_log logger;
+	private ResourceBundle resourcebundle;
 
 	public installerController(String path, IDeustoBoxDAO dao, Error_log logger) {
 		this.path = path;
 		this.dao = dao;
 		this.transform = new Assembler();
 		this.logger = logger;
+		resourcebundle = ResourceBundle.getBundle("SystemMessages", Locale.getDefault());
+		resourcebundle = ResourceBundle.getBundle("SystemMessages",	Locale.forLanguageTag("en"));
 	}
+	
 
 	/*
 	 * Creates Deusto-Box-Server folder and one folder for each user stored in the
 	 * database
 	 */
 	public void manageFolders() {
-		logger.getLogger().info("Checking if there is any change in the server files");
+		logger.getLogger().info(resourcebundle.getBundle("msg_manage_folders").toString());
 		File directorio = new File(path);
 		ArrayList<DUser> users = dao.getAllUsers();
 
@@ -248,4 +253,7 @@ public class installerController {
 		return path;
 	}
 
+	public ResourceBundle getResourcebundle() {
+		return resourcebundle;
+	}
 }

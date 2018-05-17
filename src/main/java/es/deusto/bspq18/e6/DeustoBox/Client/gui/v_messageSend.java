@@ -49,11 +49,11 @@ public class v_messageSend extends JFrame {
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		lblTo = new JLabel("To:");
+		lblTo = new JLabel(controlador.getResourcebundle().getBundle("msg_to").toString());
 		lblTo.setBounds(10, 25, 46, 14);
 		panel.add(lblTo);
 		
-		lblSubject = new JLabel("Subject:");
+		lblSubject = new JLabel(controlador.getResourcebundle().getBundle("msg_subject").toString());
 		lblSubject.setBounds(10, 50, 46, 14);
 		panel.add(lblSubject);
 		
@@ -67,11 +67,11 @@ public class v_messageSend extends JFrame {
 		panel.add(txtSubject);
 		txtSubject.setColumns(10);
 		
-		lblNewMessage = new JLabel("New message");
+		lblNewMessage = new JLabel(controlador.getResourcebundle().getBundle("msg_new_message").toString());
 		lblNewMessage.setBounds(10, 0, 86, 14);
 		panel.add(lblNewMessage);
 		
-		btnSend = new JButton("Send");
+		btnSend = new JButton(controlador.getResourcebundle().getBundle("msg_send").toString());
 		btnSend.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(!txtReciever.getText().equals("")){
@@ -80,22 +80,22 @@ public class v_messageSend extends JFrame {
 							String email = controlador.getUserdto().getEmail();
 							boolean correct = controlador.addMessage(email,txtReciever.getText(), txtSubject.getText(), txtMessage.getText());
 							if(correct){
-								JOptionPane.showMessageDialog(null, "The message to " + txtReciever.getText() + " has been sent correctly");
+								JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getBundle("msg_message_to").toString() + txtReciever.getText() + controlador.getResourcebundle().getBundle("msg_message_correct").toString());
 								dispose();
 							}else{
-								JOptionPane.showMessageDialog(null, "An error has happened when sending the message");
+								JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getBundle("msg_error").toString());
 							}
 							
 						}
 						else{
-							JOptionPane.showMessageDialog(null, "The message cannot be empty");
+							JOptionPane.showMessageDialog(null,controlador.getResourcebundle().getBundle("msg_message_empty").toString());
 						}
 							
 					} else{
-						JOptionPane.showMessageDialog(null, "The subject cannot be empty");
+						JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getBundle("msg_subject_empty").toString());
 					}
 				} else{
-					JOptionPane.showMessageDialog(null, "The receiver cannot be empty");
+					JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getBundle("msg_reciever_empty").toString());
 				}
 				
 			}

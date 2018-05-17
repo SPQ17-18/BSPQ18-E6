@@ -42,7 +42,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 
 		DUser myUser = null;
 		try {
-			logger.getLogger().info("- Retrieving Users using an 'Extent'...");
+			logger.getLogger().info(resourcebundle.getBundle("msg_users").toString());
 
 			pm = pmf.getPersistenceManager();
 			tx = pm.currentTransaction();
@@ -63,7 +63,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 			tx.commit();
 
 		} catch (Exception ex) {
-			logger.getLogger().error("# Error retrieving Users using an 'Extent': " + ex.getMessage());
+			logger.getLogger().error(resourcebundle.getBundle("msg_error_users").toString(), ex);
 		} finally {
 			if (tx.isActive()) {
 				tx.rollback();
@@ -81,7 +81,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 
 		ArrayList<DFile> files = new ArrayList<DFile>();
 		try {
-			logger.getLogger().info("- Retrieving Files using an 'Extent'...");
+			logger.getLogger().info(resourcebundle.getBundle("msg_files").toString());
 
 			pm = pmf.getPersistenceManager();
 			tx = pm.currentTransaction();
@@ -97,7 +97,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 			tx.commit();
 
 		} catch (Exception ex) {
-			logger.getLogger().error("# Error retrieving Files using an 'Extent': " + ex.getMessage());
+			logger.getLogger().error(resourcebundle.getBundle("msg_error_files").toString(), ex);
 		} finally {
 			if (tx.isActive()) {
 				tx.rollback();
@@ -116,7 +116,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		ArrayList<DUser> users = new ArrayList<DUser>();
 		DUser user = null;
 		try {
-			logger.getLogger().info("- Retrieving Users using an 'Extent'...");
+			logger.getLogger().info(resourcebundle.getBundle("msg_all_users").toString());
 
 			pm = pmf.getPersistenceManager();
 			tx = pm.currentTransaction();
@@ -134,7 +134,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 			tx.commit();
 
 		} catch (Exception ex) {
-			logger.getLogger().error("# Error retrieving Users using an 'Extent': " + ex.getMessage());
+			logger.getLogger().error(resourcebundle.getBundle("msg_error_all_users").toString(), ex);
 		} finally {
 			if (tx.isActive()) {
 				tx.rollback();
@@ -151,17 +151,17 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		Transaction tx = null;
 
 		try {
-			logger.getLogger().info("- Store objects in the DB");
+			logger.getLogger().info(resourcebundle.getBundle("msg_store_user").toString());
 			pm = pmf.getPersistenceManager();
 			tx = pm.currentTransaction();
 			tx.begin();
 
 			pm.makePersistent(user);
 			tx.commit();
-			logger.getLogger().info("Inserting user into the database: SUCCESFUL");
+			logger.getLogger().info(resourcebundle.getBundle("msg_insert_users").toString());
 
 		} catch (Exception ex) {
-			logger.getLogger().error("# Error storing objects: " + ex.getMessage());
+			logger.getLogger().error(resourcebundle.getBundle("msg_error_user").toString(), ex);
 			correct = false;
 		} finally {
 			if (tx.isActive()) {
@@ -182,7 +182,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 
 		try {
 			tx.begin();
-			logger.getLogger().info("Adding files to the user...");
+			logger.getLogger().info(resourcebundle.getBundle("msg_add_file").toString());
 
 			Extent<DUser> extent = pm.getExtent(DUser.class, true);
 
@@ -203,7 +203,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 			}
 			tx.commit();
 		} catch (Exception ex) {
-			logger.getLogger().error("# Error storing objects: " + ex.getMessage());
+			logger.getLogger().error(resourcebundle.getBundle("msg_error_files").toString(), ex);
 		}
 	}
 
@@ -216,7 +216,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 
 		DUser e = null;
 		try {
-			logger.getLogger().info("- Retrieving Files of a certain User using an 'Extent'...");
+			logger.getLogger().info(resourcebundle.getBundle("msg_all_files_users").toString());
 
 			pm = pmf.getPersistenceManager();
 			tx = pm.currentTransaction();
@@ -231,7 +231,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 			}
 
 		} catch (Exception ex) {
-			logger.getLogger().error("# Error retrieving Files of a certain User using an 'Extent': " + ex.getMessage());
+			logger.getLogger().error(resourcebundle.getBundle("msg_error_all_files").toString(), ex);
 		} finally {
 			if (tx.isActive()) {
 				tx.rollback();
@@ -260,7 +260,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		Transaction tx = pm.currentTransaction();
 		int number = 0;
 		try {
-			logger.getLogger().info("- Retrieving the number of files of a certain User using an 'Extent'...");
+			logger.getLogger().info(resourcebundle.getBundle("msg_number").toString());
 
 			pm = pmf.getPersistenceManager();
 			tx = pm.currentTransaction();
@@ -274,7 +274,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 			}
 
 		} catch (Exception ex) {
-			logger.getLogger().error("# Error retrieving the number of  Files of a certain User using an 'Extent': " + ex.getMessage());
+			logger.getLogger().error(resourcebundle.getBundle("msg_error_number_files").toString(), ex);
 		} finally {
 			if (tx.isActive()) {
 				tx.rollback();
@@ -295,7 +295,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		Transaction tx = pm.currentTransaction();
 
 		try {
-			logger.getLogger().info("- Checking the password of the  User using an 'Extent'...");
+			logger.getLogger().info(resourcebundle.getBundle("msg_check_password").toString());
 
 			pm = pmf.getPersistenceManager();
 			tx = pm.currentTransaction();
@@ -310,8 +310,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 			}
 
 		} catch (Exception ex) {
-			logger.getLogger().error("Error Checking the password of the  User using an 'Extent': " + ex.getMessage());
-
+			logger.getLogger().error(resourcebundle.getBundle("msg_error_check_pass").toString(), ex);
 		}
 		return correct;
 
@@ -326,7 +325,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 
 		try {
 			tx.begin();
-			logger.getLogger().info("Modifying the password...");
+			logger.getLogger().info(resourcebundle.getBundle("msg_update_pass").toString());
 
 			Extent<DUser> extent = pm.getExtent(DUser.class, true);
 
@@ -340,7 +339,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 			tx.commit();
 		} catch (Exception ex) {
 			correcto = false;
-			logger.getLogger().error("# Error modifying the password: " + ex.getMessage());
+			logger.getLogger().error(resourcebundle.getBundle("msg_error_update_pass").toString(), ex);
 		}
 		return correcto;
 	}
@@ -358,11 +357,10 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 			tx.begin();
 			JDOQuery<DFile> query = (JDOQuery<DFile>) pm.newQuery(DFile.class);
 			query.deletePersistentAll();
-			logger.getLogger().info("All files deleted from the DB.");
+			logger.getLogger().info(resourcebundle.getBundle("msg_delete_files").toString());
 			tx.commit();
 		} catch (Exception ex) {
-			logger.getLogger().error("   $ Error cleaning the DB: " + ex.getMessage());
-			ex.printStackTrace();
+			logger.getLogger().error(resourcebundle.getBundle("msg_error_delete_files").toString(), ex);
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
@@ -384,11 +382,10 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 			tx.begin();
 			JDOQuery<DConnection> query = (JDOQuery<DConnection>) pm.newQuery(DConnection.class);
 			query.deletePersistentAll();
-			logger.getLogger().info("All connections deleted from the DB.");
+			logger.getLogger().info(resourcebundle.getBundle("msg_delete_cons").toString());
 			tx.commit();
 		} catch (Exception ex) {
-			logger.getLogger().error("   $ Error cleaning the DB: " + ex.getMessage());
-			ex.printStackTrace();
+			logger.getLogger().error(resourcebundle.getBundle("msg_error_delete_cons").toString(), ex);
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
@@ -410,11 +407,10 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 			tx.begin();
 			JDOQuery<DUser> query = (JDOQuery<DUser>) pm.newQuery(DUser.class);
 			query.deletePersistentAll();
-			logger.getLogger().info("All users deleted from the DB.");
+			logger.getLogger().info(resourcebundle.getBundle("msg_delete_users").toString());
 			tx.commit();
 		} catch (Exception ex) {
-			logger.getLogger().error("   $ Error cleaning the DB: " + ex.getMessage());
-			ex.printStackTrace();
+			logger.getLogger().error(resourcebundle.getBundle("msg_error_delete_users").toString(), ex);
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
@@ -437,11 +433,10 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 			tx.begin();
 			JDOQuery<DMessage> query = (JDOQuery<DMessage>) pm.newQuery(DMessage.class);
 			query.deletePersistentAll();
-			logger.getLogger().info("All messages deleted from the DB.");
+			logger.getLogger().info(resourcebundle.getBundle("msg_delete_msg").toString());
 			tx.commit();
 		} catch (Exception ex) {
-			logger.getLogger().error("   $ Error cleaning the DB: " + ex.getMessage());
-			ex.printStackTrace();
+			logger.getLogger().error(resourcebundle.getBundle("msg_error_delete_msg").toString(), ex);
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
@@ -460,17 +455,17 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		Transaction tx = null;
 
 		try {
-			logger.getLogger().info("- Store connections in the DB");
+			logger.getLogger().info(resourcebundle.getBundle("msg_add_con").toString());
 			pm = pmf.getPersistenceManager();
 			tx = pm.currentTransaction();
 			tx.begin();
 
 			pm.makePersistent(connection);
 			tx.commit();
-			logger.getLogger().info("Inserting connection into the database: SUCCESFUL");
+			logger.getLogger().info(resourcebundle.getBundle("msg_insert_con").toString());
 
 		} catch (Exception ex) {
-			logger.getLogger().error("# Error storing connection: " + ex.getMessage());
+			logger.getLogger().error(resourcebundle.getBundle("msg_error_add_con").toString(), ex);
 			correct = false;
 		} finally {
 			if (tx.isActive()) {
@@ -490,7 +485,8 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		pm.getFetchPlan().setMaxFetchDepth(3);
 		Transaction tx = pm.currentTransaction();
 		try {
-			logger.getLogger().info("- Retrieving the number of connectionsusing an 'Extent'...");
+			logger.getLogger().info(resourcebundle.getBundle("msg_get_con").toString());
+
 
 			pm = pmf.getPersistenceManager();
 			tx = pm.currentTransaction();
@@ -504,7 +500,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 			}
 
 		} catch (Exception ex) {
-			logger.getLogger().error("# Error retrieving the number of connections using an 'Extent': " + ex.getMessage());
+			logger.getLogger().error(resourcebundle.getBundle("msg_error_con_id").toString(), ex);
 		} finally {
 			if (tx.isActive()) {
 				tx.rollback();
@@ -524,7 +520,8 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		DConnection dec = null;
 
 		try {
-			logger.getLogger().info("- Retrieving Connections of a certain User using an 'Extent'...");
+			logger.getLogger().info(resourcebundle.getBundle("msg_cons").toString());
+
 
 			pm = pmf.getPersistenceManager();
 			tx = pm.currentTransaction();
@@ -538,7 +535,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 			}
 
 		} catch (Exception ex) {
-			logger.getLogger().error("# Error retrieving Files of a certain User using an 'Extent': " + ex.getMessage());
+			logger.getLogger().error(resourcebundle.getBundle("msg_error_con").toString(), ex);
 		} finally {
 			if (tx.isActive()) {
 				tx.rollback();
@@ -558,17 +555,19 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		Transaction tx = null;
 
 		try {
-			logger.getLogger().info("- Store messages in the DB");
+			logger.getLogger().info(resourcebundle.getBundle("msg_add_msg").toString());
+
 			pm = pmf.getPersistenceManager();
 			tx = pm.currentTransaction();
 			tx.begin();
 
 			pm.makePersistent(message);
 			tx.commit();
-			logger.getLogger().info("Inserting message into the database: SUCCESFUL");
+			logger.getLogger().info(resourcebundle.getBundle("msg_insert_msm").toString());
+
 
 		} catch (Exception ex) {
-			logger.getLogger().error("# Error storing messages: " + ex.getMessage());
+			logger.getLogger().error(resourcebundle.getBundle("msg_error_message").toString(), ex);
 			correct = false;
 		} finally {
 			if (tx.isActive()) {
@@ -590,7 +589,8 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		DMessage dec = null;
 
 		try {
-			logger.getLogger().info("- Retrieving the messages of " + email +"  using an 'Extent'...");
+			logger.getLogger().info(resourcebundle.getBundle("msg_all_msg_user").toString());
+
 
 			pm = pmf.getPersistenceManager();
 			tx = pm.currentTransaction();
@@ -604,9 +604,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 			}
 
 		} catch (Exception ex) {
-			
-			logger.getLogger().error("# Error retrieving messages of a certain User using an 'Extent': " + ex.getMessage());
-			
+			logger.getLogger().error(resourcebundle.getBundle("msg_error_msg_user").toString(), ex);			
 		} finally {
 			if (tx.isActive()) {
 				tx.rollback();
@@ -624,7 +622,8 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		pm.getFetchPlan().setMaxFetchDepth(3);
 		Transaction tx = pm.currentTransaction();
 		try {
-			logger.getLogger().info("- Retrieving the number of messages using an 'Extent'...");
+			logger.getLogger().info(resourcebundle.getBundle("msg_get_id").toString());
+
 
 			pm = pmf.getPersistenceManager();
 			tx = pm.currentTransaction();
@@ -638,7 +637,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 			}
 
 		} catch (Exception ex) {
-			logger.getLogger().error("# Error retrieving the number of messages using an 'Extent': " + ex.getMessage());
+			logger.getLogger().error(resourcebundle.getBundle("msg_error_id").toString(), ex);
 		} finally {
 			if (tx.isActive()) {
 				tx.rollback();
@@ -656,7 +655,8 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		pm.getFetchPlan().setMaxFetchDepth(3);
 		Transaction tx = pm.currentTransaction();
 		try {
-			logger.getLogger().info("- Retrieving the number of messages of the user " + email + " using an 'Extent'...");
+			logger.getLogger().info(resourcebundle.getBundle("msg_num_msg").toString());
+
 
 			pm = pmf.getPersistenceManager();
 			tx = pm.currentTransaction();
@@ -670,7 +670,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 			}
 
 		} catch (Exception ex) {
-			logger.getLogger().error("# Error retrieving the number of messages of the user " + email + " using an 'Extent': " + ex.getMessage());
+			logger.getLogger().error(resourcebundle.getBundle("msg_user_msg").toString(), ex);
 		} finally {
 			if (tx.isActive()) {
 				tx.rollback();
@@ -702,7 +702,7 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 
 			tx.commit();
 		} catch (Exception ex) {
-			logger.getLogger().error( "#Error deleting a message: " + ex.getMessage());
+			logger.getLogger().error(resourcebundle.getBundle("msg_error_delete_msg").toString(), ex);
 			correct = false;
 		
 		} finally {
@@ -716,10 +716,6 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 		}
 		return correct;
 }
-
-
-
-
 
 
 }
