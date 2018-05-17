@@ -18,6 +18,7 @@
 		<server.Name>DeustoBox</server.Name>
 		<policy.file>${basedir}/src/main/resources/security/java.policy</policy.file>
 		<config.files.dir>${basedir}/src/main/resources</config.files.dir>
+		<doxygen.config.file>${basedir}/src/main/resources/Doxyfile</doxygen.config.file> 
 	</properties>
 
 	<dependencies>
@@ -164,6 +165,16 @@
 
 
 			</plugin>
+			
+            <plugin>       
+              <groupId>com.soebes.maven.plugins</groupId>   
+              <artifactId>doxygen-maven-plugin</artifactId>   
+              <version>1.1.0</version>   
+              <configuration> 
+               <configurationFile>${doxygen.config.file}</configurationFile>   
+               </configuration>     
+            </plugin>
+			
 
 
 		</plugins>
