@@ -45,11 +45,11 @@ public class v_client_profile_changepassword extends JFrame {
 		
 	}
 	public void InitComponents() {
-		lblChangePassword = new JLabel("Change Password");
+		lblChangePassword = new JLabel(controlador.getResourcebundle().getString("msg_change_pass").toString());
 		lblChangePassword.setBounds(113, 6, 126, 16);
 		contentPane.add(lblChangePassword);
 		
-		lblInsertThePassword = new JLabel("Insert the password");
+		lblInsertThePassword = new JLabel(controlador.getResourcebundle().getString("msg_insert_pass").toString());
 		lblInsertThePassword.setBounds(107, 51, 132, 16);
 		contentPane.add(lblInsertThePassword);
 		
@@ -57,7 +57,7 @@ public class v_client_profile_changepassword extends JFrame {
 		passwordField.setBounds(92, 79, 147, 26);
 		contentPane.add(passwordField);
 		
-		lblrepeatPassword = new JLabel("Repeat the password");
+		lblrepeatPassword = new JLabel(controlador.getResourcebundle().getString("msg_repeat_pass").toString());
 		lblrepeatPassword.setBounds(107, 126, 132, 16);
 		contentPane.add(lblrepeatPassword);
 		
@@ -65,25 +65,25 @@ public class v_client_profile_changepassword extends JFrame {
 		passwordField_1.setBounds(92, 154, 147, 26);
 		contentPane.add(passwordField_1);
 		
-		btnConfirm = new JButton("Confirm");
+		btnConfirm = new JButton(controlador.getResourcebundle().getString("confirm_btn").toString());
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(String.valueOf(passwordField.getPassword()).equals(String.valueOf(passwordField_1.getPassword()))) {
 					String email = controlador.getUserdto().getEmail();
 					boolean correct = controlador.updatePassword(email, String.valueOf(passwordField.getPassword()));
 					if(correct){
-						JOptionPane.showMessageDialog(null, "Your password has been changed");
+						JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getString("msg_confirm_change").toString());
 						dispose();
 						
 					}
 					else{
-						JOptionPane.showMessageDialog(null, "An error has happened while changing the password, try it again");
+						JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getString("msg_error_pass").toString());
 						
 					}
 					
 				}
 				else {
-					JOptionPane.showMessageDialog(null, "Passwords do not match");
+					JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getString("msg_match_pass").toString());
 					
 				}
 			}

@@ -46,7 +46,7 @@ public class Controller {
 		try {
 			res = rsl.getService().signUp(username, email, password);
 		} catch (Exception ex) {
-			logger.getLogger().error("- Exception", ex);
+			logger.getLogger().error(resourcebundle.getBundle("msg_excepcion").toString(), ex);
 		}
 		if (res != null) {
 			this.userdto = res;
@@ -66,11 +66,11 @@ public class Controller {
 		}
 
 		if (res.equals(null)) {
-			logger.getLogger().error("The user doesn't exist");
+			logger.getLogger().error(resourcebundle.getBundle("non_existing_user").toString());
 			return false;
 		} else {
 			this.userdto = res;
-			logger.getLogger().error("The user has logged correctly");
+			logger.getLogger().error(resourcebundle.getBundle("user_successfully_loged").toString());
 			return true;
 		}
 	}
@@ -103,7 +103,7 @@ public class Controller {
 				}
 				in.close();
 			} catch (Exception e) {
-				logger.getLogger().error("- Exception", e);
+				logger.getLogger().error(resourcebundle.getBundle("msg_excepcion").toString(), e);
 
 			}
 		}
@@ -115,7 +115,7 @@ public class Controller {
 			filesDTO = rsl.getService().getFiles(email);
 			number = filesDTO.size();
 		} catch (Exception ex) {
-			logger.getLogger().error("- Exception", ex);
+			logger.getLogger().error(resourcebundle.getBundle("msg_excepcion").toString(), ex);
 		}
 		return number;
 	}
@@ -201,7 +201,7 @@ public class Controller {
 		} catch (Exception ex) {
 			
 		}
-		JOptionPane.showMessageDialog(null, downloads + " files have been downloaded and " + uploads + " files have been uploaded");
+		JOptionPane.showMessageDialog(null, downloads + resourcebundle.getBundle("msg_file_download").toString() + uploads + resourcebundle.getBundle("msg_file_upload").toString());
 		
 		
 	}
@@ -212,7 +212,7 @@ public class Controller {
 		try {
 			files = rsl.getService().getNumberOfUserFiles(email);
 		} catch (Exception ex) {
-			logger.getLogger().error("- Exception", ex);
+			logger.getLogger().error(resourcebundle.getBundle("msg_excepcion").toString(), ex);
 		}
 		return files;
 	}
@@ -222,7 +222,7 @@ public class Controller {
 		try {
 			correct = rsl.getService().checkPassword(email, password);
 		} catch (Exception ex) {
-			logger.getLogger().error("- Exception", ex);
+			logger.getLogger().error(resourcebundle.getBundle("msg_excepcion").toString(), ex);
 		}
 		return correct;
 	}
@@ -233,7 +233,7 @@ public class Controller {
 		try {
 			correct = rsl.getService().updatePassword(email, password);
 		} catch (Exception ex) {
-			logger.getLogger().error("- Exception", ex);
+			logger.getLogger().error(resourcebundle.getBundle("msg_excepcion").toString(), ex);
 		}
 
 		return correct;
@@ -244,7 +244,7 @@ public class Controller {
 		try {
 		connectionsDTO = rsl.getService().getConnections(email);
 		} catch (Exception ex) {
-			logger.getLogger().error("- Exception", ex);
+			logger.getLogger().error(resourcebundle.getBundle("msg_excepcion").toString(), ex);
 		}
 	return connectionsDTO;
 		
@@ -259,7 +259,7 @@ public class Controller {
 			DMessageDTO dto = new DMessageDTO(id,emailfrom, emailto, subject, text);
 			correct = rsl.getService().addMessage(dto);
 		} catch (RemoteException e) {
-			logger.getLogger().error("- Exception", e);
+			logger.getLogger().error(resourcebundle.getBundle("msg_excepcion").toString(), e);
 		}
 		return correct;
 	}
@@ -269,7 +269,7 @@ public class Controller {
 		try {
 			messages = rsl.getService().getMessages(email);
 		} catch (RemoteException e) {
-			logger.getLogger().error("- Exception", e);
+			logger.getLogger().error(resourcebundle.getBundle("msg_excepcion").toString(), e);
 		}
 		
 		return messages;
@@ -287,14 +287,14 @@ public class Controller {
 			File file = new File(pathFile);
 			long length = file.length();
 		    if (length > Integer.MAX_VALUE) {
-				logger.getLogger().error("File is too large.");
+				logger.getLogger().error(resourcebundle.getBundle("msg_file_large").toString());
 		    }
 		    byte[] bytes = new byte[(int) length];
 		    out.write(bytes);
 		    out.close();
 		    so.close();
 		} catch (IOException e) {
-			logger.getLogger().error("- Exception", e);
+			logger.getLogger().error(resourcebundle.getBundle("msg_excepcion").toString(), e);
 		}
 		
 		return true;
@@ -307,7 +307,7 @@ public class Controller {
 			number = rsl.getService().getNumberOfUserMessages(email);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
-			logger.getLogger().error("- Exception", e);
+			logger.getLogger().error(resourcebundle.getBundle("msg_excepcion").toString(), e);
 		}
 		return number;
 		
@@ -320,7 +320,7 @@ public class Controller {
 			correct = rsl.getService().DeleteMessage(id);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
-			logger.getLogger().error("- Exception", e);
+			logger.getLogger().error(resourcebundle.getBundle("msg_excepcion").toString(), e);
 		}
 		
 		return correct;

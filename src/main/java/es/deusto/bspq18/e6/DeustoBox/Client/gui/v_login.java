@@ -53,16 +53,16 @@ public class v_login extends JFrame {
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		lblLogin = new JLabel("Log In to DeustoBox");
+		lblLogin = new JLabel(controlador.getResourcebundle().getBundle("msg_login").toString());
 		lblLogin.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		lblLogin.setBounds(168, 38, 224, 35);
 		panel.add(lblLogin);
 		
-		lblEmail = new JLabel("E-mail:");
+		lblEmail = new JLabel(controlador.getResourcebundle().getBundle("msg_email").toString());
 		lblEmail.setBounds(47, 114, 83, 20);
 		panel.add(lblEmail);
 		
-		lblPassword = new JLabel("Password:");
+		lblPassword = new JLabel(controlador.getResourcebundle().getBundle("msg_pass").toString());
 		lblPassword.setBounds(47, 156, 83, 20);
 		panel.add(lblPassword);
 		
@@ -75,7 +75,7 @@ public class v_login extends JFrame {
 		passwordField.setBounds(145, 153, 163, 26);
 		panel.add(passwordField);
 		
-		btnEnter = new JButton("Sign In");
+		btnEnter = new JButton(controlador.getResourcebundle().getBundle("msg_signin").toString());
 		btnEnter.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String name = txtUsername.getText();
@@ -83,18 +83,18 @@ public class v_login extends JFrame {
 				String password = new String(pass);
 
 				if (name.trim().equals("")) {
-					JOptionPane.showMessageDialog(null, "Insert an username");
+					JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getBundle("msg_insert_user").toString());
 				} else if (password.trim().equals("")) {
-					JOptionPane.showMessageDialog(null, "Insert a password");
+					JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getBundle("msg_insert_pass").toString());
 				} else {
 					boolean user = controlador.login(name, password);
 					if (user) {
-						JOptionPane.showMessageDialog(null, "We are glad to have you back in DeustoBox " + name + ".");
+						JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getBundle("msg_back").toString() + name + ".");
 						v_installer installer = new v_installer(controlador);
 						installer.frame.setVisible(true);
 						dispose();
 					} else {
-						JOptionPane.showMessageDialog(null, "Access data is not correct, try again");
+						JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getBundle("msg_data").toString());
 						txtUsername.setText("");
 						passwordField.setText("");
 					}
@@ -104,12 +104,12 @@ public class v_login extends JFrame {
 		btnEnter.setBounds(168, 190, 115, 29);
 		panel.add(btnEnter);
 		
-		lblRegister = new JLabel("Don't have an account yet?");
+		lblRegister = new JLabel(controlador.getResourcebundle().getBundle("msg_no_acc").toString());
 		lblRegister.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblRegister.setBounds(93, 239, 190, 20);
 		panel.add(lblRegister);
 		
-		btnCreateAccount = new JButton("Create an account");
+		btnCreateAccount = new JButton(controlador.getResourcebundle().getBundle("msg_create_acc").toString());
 		btnCreateAccount.setForeground(Color.BLUE);
 		btnCreateAccount.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {

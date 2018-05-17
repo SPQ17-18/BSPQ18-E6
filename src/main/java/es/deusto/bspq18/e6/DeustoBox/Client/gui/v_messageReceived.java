@@ -56,26 +56,26 @@ public class v_messageReceived extends JFrame {
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 
-		lblFrom = new JLabel("From:");
+		lblFrom = new JLabel(controlador.getResourcebundle().getBundle("msg_from").toString());
 		lblFrom.setBounds(10, 25, 46, 14);
 		panel.add(lblFrom);
 
-		lblSubject = new JLabel("Subject:");
+		lblSubject = new JLabel(controlador.getResourcebundle().getBundle("msg_subject").toString());
 		lblSubject.setBounds(10, 50, 46, 14);
 		panel.add(lblSubject);
 
-		lblNewMessage = new JLabel("New message");
+		lblNewMessage = new JLabel(controlador.getResourcebundle().getBundle("msg_new_message").toString());
 		lblNewMessage.setBounds(10, 0, 86, 14);
 		panel.add(lblNewMessage);
 
-		btnErrase = new JButton("Remove");
+		btnErrase = new JButton(controlador.getResourcebundle().getBundle("remove_btn").toString());
 		btnErrase.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// Comprobamos si hay mas mensajes o no
 				if (messages.size() == 1) {
 					// Pedimos a la BD que se borre
 					controlador.deleteMessage(messages.get(0).getMessageId());
-					JOptionPane.showMessageDialog(null, "You do not have more messages, returning to the main window");
+					JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getBundle("msg_no_messages").toString());
 					dispose();
 				} else {
 					// Pedimos a la BD que lo borre
@@ -83,7 +83,7 @@ public class v_messageReceived extends JFrame {
 					messages.remove(position);
 					if (position > 0)
 						position--;
-					JOptionPane.showMessageDialog(null, "The message has been deleted");
+					JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getBundle("msg_delete_message").toString());
 					UpdateMessage();
 				}
 
@@ -110,7 +110,7 @@ public class v_messageReceived extends JFrame {
 		txtMessage.setText(messages.get(position).getText());
 		panel.add(txtMessage);
 
-		btnNext = new JButton("Next");
+		btnNext = new JButton(controlador.getResourcebundle().getBundle("next_btn").toString());
 		btnNext.setBounds(164, 228, 89, 23);
 		btnNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -118,7 +118,7 @@ public class v_messageReceived extends JFrame {
 					position++;
 					UpdateMessage();
 				} else {
-					JOptionPane.showMessageDialog(null, "This is the last message");
+					JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getBundle("msg_last").toString());
 
 				}
 
@@ -135,7 +135,7 @@ public class v_messageReceived extends JFrame {
 					position--;
 					UpdateMessage();
 				} else {
-					JOptionPane.showMessageDialog(null, "This is the first message");
+					JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getBundle("msg_first").toString());
 
 				}
 

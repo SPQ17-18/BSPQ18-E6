@@ -50,19 +50,19 @@ public class v_client_profile extends JFrame {
 	
 	}
 	public void InitComponents() {
-		lblMyProfile = new JLabel("My Profile");
+		lblMyProfile = new JLabel(controlador.getResourcebundle().getBundle("msg_profile").toString());
 		lblMyProfile.setBounds(223, 6, 112, 16);
 		contentPane.add(lblMyProfile);
 		
-		lblEmail = new JLabel("Email:");
+		lblEmail = new JLabel(controlador.getResourcebundle().getBundle("msg_email").toString());
 		lblEmail.setBounds(6, 37, 75, 16);
 		contentPane.add(lblEmail);
 		
-		lblUsername = new JLabel("Username:");
+		lblUsername = new JLabel(controlador.getResourcebundle().getBundle("msg_username").toString());
 		lblUsername.setBounds(6, 85, 75, 16);
 		contentPane.add(lblUsername);
 		
-		lblMemberSince = new JLabel("Member since:");
+		lblMemberSince = new JLabel(controlador.getResourcebundle().getBundle("msg_member").toString());
 		lblMemberSince.setBounds(6, 139, 91, 16);
 		contentPane.add(lblMemberSince);
 		
@@ -78,7 +78,7 @@ public class v_client_profile extends JFrame {
 		txtMemberSince.setBounds(153, 139, 202, 16);
 		contentPane.add(txtMemberSince);
 		
-		btnChangePassword = new JButton("Change Password");
+		btnChangePassword = new JButton(controlador.getResourcebundle().getBundle("msg_cahnge_pass").toString());
 		btnChangePassword.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			//Mostramos los nuevos botones
@@ -94,13 +94,13 @@ public class v_client_profile extends JFrame {
 		contentPane.add(passwordField);
 		passwordField.setVisible(false);
 		
-		lblIntroduceTuContrasea = new JLabel("Introduce tu contraseña actual");
+		lblIntroduceTuContrasea = new JLabel(controlador.getResourcebundle().getBundle("msg_insert_pass2").toString());
 		lblIntroduceTuContrasea.setBounds(163, 184, 192, 16);
 		contentPane.add(lblIntroduceTuContrasea);
 		lblIntroduceTuContrasea.setVisible(false);
 		
 		
-		btnVerify = new JButton("Verify");
+		btnVerify = new JButton((controlador.getResourcebundle().getBundle("msg_verify").toString()));
 		btnVerify.setBounds(327, 212, 117, 29);
 		contentPane.add(btnVerify);
 		
@@ -122,7 +122,7 @@ public class v_client_profile extends JFrame {
 			}
 		});
 		
-		btnCheckConnections = new JButton("Check connections");
+		btnCheckConnections = new JButton((controlador.getResourcebundle().getBundle("msg_chckC").toString()));
 		btnCheckConnections.setBounds(299, 32, 145, 29);
 		btnCheckConnections.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

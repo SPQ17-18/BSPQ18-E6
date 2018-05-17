@@ -54,24 +54,24 @@ public class v_register extends JFrame {
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		lblJoinDeustobox = new JLabel("Join DeustoBox");
+		lblJoinDeustobox = new JLabel(controlador.getResourcebundle().getBundle("msg_join").toString());
 		lblJoinDeustobox.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		lblJoinDeustobox.setBounds(98, 16, 162, 35);
 		panel.add(lblJoinDeustobox);
 		
-		lblUsername = new JLabel("Username:");
+		lblUsername = new JLabel(controlador.getResourcebundle().getBundle("msg_username").toString());
 		lblUsername.setBounds(15, 96, 77, 20);
 		panel.add(lblUsername);
 		
-		lblPassword = new JLabel("Password:");
+		lblPassword = new JLabel(controlador.getResourcebundle().getBundle("msg_pass").toString());
 		lblPassword.setBounds(15, 132, 77, 20);
 		panel.add(lblPassword);
 		
-		lblPassword2 = new JLabel("Repeat Password:");
+		lblPassword2 = new JLabel(controlador.getResourcebundle().getBundle("msg_repeat_pass").toString());
 		lblPassword2.setBounds(15, 168, 135, 20);
 		panel.add(lblPassword2);
 		
-		lblEmail = new JLabel("Email:");
+		lblEmail = new JLabel(controlador.getResourcebundle().getBundle("msg_email").toString());
 		lblEmail.setBounds(15, 60, 77, 20);
 		panel.add(lblEmail);
 		
@@ -85,7 +85,7 @@ public class v_register extends JFrame {
 		panel.add(txtUsername);
 		txtUsername.setColumns(10);
 		
-		btnRegister = new JButton("Register");
+		btnRegister = new JButton(controlador.getResourcebundle().getBundle("msg_register").toString());
 		btnRegister.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent Ae) {
 				String email = txtEmail.getText();
@@ -97,17 +97,17 @@ public class v_register extends JFrame {
 				String password2 = new String(pass2);
 				
 				if (email.trim().equals("") || username.trim().equals("") || password1.trim().equals("") || password2.trim().equals("")) {
-					JOptionPane.showMessageDialog(null, "Please fill in all of the gaps");
+					JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getBundle("msg_error_gaps").toString());
 				} else if (!password1.equals(password2)) {
-					JOptionPane.showMessageDialog(null, "Make sure you entered the password correctly");
+					JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getBundle("msg_error_pass").toString());
 				} else {
 					boolean user = controlador.signUp(txtUsername.getText(), txtEmail.getText(), password1);
 					if(user){ 
-						JOptionPane.showMessageDialog(null, "You have been registered successfully");
+						JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getBundle("msg_regis").toString());
 						new v_login(controlador);
 						dispose();
 					}else{
-						JOptionPane.showMessageDialog(null, "An error happens while registering, check if the email is not already used.");
+						JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getBundle("msg_error_email").toString());
 					}
 				}
 			}
