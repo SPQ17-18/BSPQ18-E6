@@ -144,6 +144,7 @@
 	        <instrumentation>
 	            <excludes>
 	                <exclude>es/deusto/bspq18/e6/DeustoBox/Client/gui/*.class</exclude>
+	                <exclude>es/deusto/bspq18/e6/DeustoBox/Server/gui/*.class</exclude>
 	                <exclude>es/deusto/bspq18/e6/DeustoBox/Server/gui/installerController.class</exclude>
 	                <exclude>es/deusto/bspq18/e6/DeustoBox/Server/*.class</exclude>
 	            </excludes>

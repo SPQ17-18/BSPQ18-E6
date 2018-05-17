@@ -65,6 +65,7 @@ public class Controller {
 			return false;
 		} else {
 			this.userdto = res;
+			logger.getLogger().error("The user has logged correctly");
 			return true;
 		}
 	}
@@ -103,12 +104,15 @@ public class Controller {
 		}
 	}
 
-	public void getListOfFiles(String email) {
+	public int getListOfFiles(String email) {
+		int number = 0;
 		try {
 			filesDTO = rsl.getService().getFiles(email);
+			number = filesDTO.size();
 		} catch (Exception ex) {
 
 		}
+		return number;
 	}
 
 	public void getListOfUnknownFiles() {
@@ -197,9 +201,8 @@ public class Controller {
 		
 	}
 
-	public int getNumberOfFiles() {
+	public int getNumberOfFiles(String email) {
 		int files = 0;
-		String email = userdto.getEmail();
 
 		try {
 			files = rsl.getService().getNumberOfUserFiles(email);
@@ -208,21 +211,21 @@ public class Controller {
 		return files;
 	}
 
-	public boolean passwordCorrect(String password) {
+	public boolean passwordCorrect(String email, String password) {
 		boolean correct = false;
 		try {
-			correct = rsl.getService().checkPassword(userdto.getEmail(), password);
+			correct = rsl.getService().checkPassword(email, password);
 		} catch (Exception ex) {
 
 		}
 		return correct;
 	}
 
-	public boolean updatePassword(String password) {
+	public boolean updatePassword(String email, String password) {
 		boolean correct = false;
 
 		try {
-			correct = rsl.getService().updatePassword(userdto.getEmail(), password);
+			correct = rsl.getService().updatePassword(email, password);
 		} catch (Exception ex) {
 
 		}
@@ -242,12 +245,12 @@ public class Controller {
 	}
 
 
-	public boolean addMessage( String emailto, String subject, String text){
+	public boolean addMessage( String emailfrom, String emailto, String subject, String text){
 		int id = 0;
 		boolean correct = false;
 		try {
 			id = rsl.getService().getNewMessageId();
-			DMessageDTO dto = new DMessageDTO(id,userdto.getEmail(), emailto, subject, text);
+			DMessageDTO dto = new DMessageDTO(id,emailfrom, emailto, subject, text);
 			correct = rsl.getService().addMessage(dto);
 		} catch (RemoteException e) {
 			e.printStackTrace();
@@ -255,10 +258,10 @@ public class Controller {
 		return correct;
 	}
 	
-	public ArrayList<DMessageDTO> downloadMessages(){
+	public ArrayList<DMessageDTO> downloadMessages(String email){
 		ArrayList<DMessageDTO> messages = null;
 		try {
-			messages = rsl.getService().getMessages(userdto.getEmail());
+			messages = rsl.getService().getMessages(email);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -292,11 +295,11 @@ public class Controller {
 		return true;
 	}
 	
-	public int getNumberOfUserMessages(){
+	public int getNumberOfUserMessages(String email){
 		int number = 0;
 		
 		try {
-			number = rsl.getService().getNumberOfUserMessages(userdto.getEmail());
+			number = rsl.getService().getNumberOfUserMessages(email);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

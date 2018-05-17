@@ -78,7 +78,8 @@ public class v_messageSend extends JFrame {
 				if(!txtReciever.getText().equals("")){
 					if(!txtSubject.getText().equals("")){
 						if(!txtMessage.getText().equals("")){
-							boolean correct = controlador.addMessage(txtReciever.getText(), txtSubject.getText(), txtMessage.getText());
+							String email = controlador.getUserdto().getEmail();
+							boolean correct = controlador.addMessage(email,txtReciever.getText(), txtSubject.getText(), txtMessage.getText());
 							if(correct){
 								JOptionPane.showMessageDialog(null, "The message to " + txtReciever.getText() + " has been sent correctly");
 								dispose();

@@ -45,7 +45,8 @@ public class v_messageReceived extends JFrame {
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		this.controlador = controlador;
-		messages = controlador.downloadMessages();
+		String email = controlador.getUserdto().getEmail();
+		messages = controlador.downloadMessages(email);
 		position = 0;
 		InitComponents();
 

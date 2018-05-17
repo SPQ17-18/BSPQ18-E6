@@ -1,7 +1,6 @@
 package es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DConnection;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DFile;

@@ -9,7 +9,6 @@ import es.deusto.bspq18.e6.DeustoBox.Server.dto.DFileDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DMessageDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DUserDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO;
-import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DConnection;
 
 public interface IDeustoBoxRemoteService extends Remote{
 

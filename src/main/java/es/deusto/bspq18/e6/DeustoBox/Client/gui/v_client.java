@@ -68,7 +68,8 @@ public class v_client extends JFrame {
 		
 		lblNumber = new JLabel("");
 		//Connect to the DB and check the number of files that the user have
-		int files = getControlador().getNumberOfFiles();
+		String email = controlador.getUserdto().getEmail();
+		int files = getControlador().getNumberOfFiles(email);
 		lblNumber.setText(String.valueOf(files));
 		lblNumber.setBounds(208, 48, 46, 14);
 		contentPane.add(lblNumber);
@@ -95,7 +96,7 @@ public class v_client extends JFrame {
 		lblNumberOfMessages = new JLabel(" ");
 		lblNumberOfMessages.setBounds(208, 89, 46, 14);
 		contentPane.add(lblNumberOfMessages);
-		lblNumberOfMessages.setText(String.valueOf(controlador.getNumberOfUserMessages()));
+		lblNumberOfMessages.setText(String.valueOf(controlador.getNumberOfUserMessages(email)));
 		
 		btnWriteAMessage = new JButton("Write a message");
 		btnWriteAMessage.addActionListener(new ActionListener() {
@@ -115,7 +116,8 @@ public class v_client extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				//Check if we have received any new messages
 				int messages = 0;
-					messages = controlador.getNumberOfUserMessages();
+				String email = controlador.getUserdto().getEmail();
+					messages = controlador.getNumberOfUserMessages(email);
 				//Update the label
 				lblNumberOfMessages.setText(String.valueOf(messages));
 				if(messages ==0){
@@ -134,7 +136,8 @@ public class v_client extends JFrame {
 		SyncFiles.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				getControlador().getListOfUnknownFiles();
-				lblNumber.setText(String.valueOf(controlador.getNumberOfFiles()));
+				String email = controlador.getUserdto().getEmail();
+				lblNumber.setText(String.valueOf(controlador.getNumberOfFiles(email)));
 			}
 		});
 	}

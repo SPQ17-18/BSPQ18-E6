@@ -113,18 +113,19 @@ public class DAOTest {
 	@Test
 	@PerfTest(duration = 2000)
 	public void addMessage(){
-		DMessage mes = new DMessage(1,"from", "to", "subject", "text");
+		DMessage mes = new DMessage(1,"from", "emailto", "subject", "text");
 		db.addMessage(mes);
 		ArrayList<DMessage> ret = null;
 		ret = db.getAllMessagesOfSendToAUser("to");
 		System.out.println(ret.get(ret.size()-1).toString());
 		assertEquals(ret.get(ret.size() -1).getEmailfrom(), "from");
-		assertEquals(ret.get(ret.size() -1).getEmailTo(), "to");
+		assertEquals(ret.get(ret.size() -1).getEmailTo(), "emailto");
 		assertEquals(ret.get(ret.size() -1).getText(), "text");
-		assertEquals(ret.get(ret.size() -1).getMessageId(), 1);
+		assertTrue(ret.get(ret.size() -1).getMessageId()>=1);
 		assertEquals(ret.get(ret.size() -1).getSubject(), "subject");
 		assertEquals(ret.get(ret.size() -1).getMessageId(), db.getLastMessageID());
-		db.deleteAllMessages();
+		assertTrue(db.getNumberOfUserMessages("emailto")> 0);
+		assertEquals(db.deleteMessage(1), true);
 		
 		
 		

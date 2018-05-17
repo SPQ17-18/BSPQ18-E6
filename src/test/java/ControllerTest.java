@@ -143,22 +143,49 @@ public ContiPerfRule rule = new ContiPerfRule();
 			
 		}
 		@Test
-
+		@PerfTest(duration = 2000)
 		public void testLoginUser() {
-			assertNotSame(controller.login("email", "password"), null);
+			assertNotSame(controller.login("email", "password"), true);
 			
 		}
 		@Test
 
 		public void testChangePassword(){
-			assertEquals(controller.passwordCorrect("password"), false);
+			assertEquals(controller.passwordCorrect("email","password12"), false);
 		}
+		@Test
+		public void testgetConnections(){
+			assertTrue(controller.getConnections("email").size() >=0) ;
+			
+			
+		}
+		@Test
+		public void testSendMessage(){
+			assertEquals(controller.addMessage("from", "emailto", "subject", "text"), true);
+			
+		}
+		@Test
+		public void testgetNumberOfMessages(){
+		assertTrue(controller.getNumberOfUserMessages("emailto")> 0);
+		}
+		@Test
+		public void testgetDownloadMessages(){
+		assertEquals(controller.downloadMessages("emailto").get(0).getSubject(), "subject");
+		}
+		
+		@Test
+		public void testgetNumberOfFiles(){
+		assertTrue(controller.getListOfFiles("email") ==0);
+		assertTrue(controller.getNumberOfFiles("email") ==0);
+		}
+		
 		@AfterClass
 		public static void end() {
 			IDeustoBoxDAO bd = new DeustoBoxDAO(new Error_log());
 			bd.deleteAllFiles();
 			bd.deleteAllConnections();
 			bd.deleteAllUsers();
+			
 			try {
 				rmiServerThread.join();
 				rmiRegistryThread.join();

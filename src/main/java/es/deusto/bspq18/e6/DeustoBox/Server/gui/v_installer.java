@@ -102,10 +102,10 @@ public class v_installer extends JFrame {
 
 		JLabel lblLogo = new JLabel("New label");
 		lblLogo.setBounds(507, 11, 87, 48);
-		
+		/*
 		URL url = this.getClass().getResource("/es/deusto/bspq18/e6/DeustoBox/Server/images/logo.png");
 		BufferedImage img = null;
-		/*try {
+		try {
 			//img = ImageIO.read(url);
 		} catch (IOException e) {
 			e.printStackTrace();

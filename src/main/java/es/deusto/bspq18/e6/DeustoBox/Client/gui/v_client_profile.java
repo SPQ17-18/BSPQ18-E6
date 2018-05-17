@@ -109,7 +109,8 @@ public class v_client_profile extends JFrame {
 		btnVerify.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(!String.valueOf(passwordField.getPassword()).equals("")) {
-					if(controlador.passwordCorrect(String.valueOf(passwordField.getPassword()))){
+					String email = controlador.getUserdto().getEmail();
+					if(controlador.passwordCorrect(email,String.valueOf(passwordField.getPassword()))){
 						v_client_profile_changepassword window = new v_client_profile_changepassword(controlador);
 						window.setVisible(true);
 						

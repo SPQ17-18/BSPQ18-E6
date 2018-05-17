@@ -150,8 +150,6 @@ public class installerController {
 		ArrayList<DFile> userFiles = transform.createFiles(files);
 		ArrayList<DFile> toSend = new ArrayList<DFile>();
 		ArrayList<DFile> toReceive = new ArrayList<DFile>();
-		ArrayList<DFile> toDelete = new ArrayList<DFile>();
-
 		if (userFiles != null) {
 			ArrayList<DFile> filesDB = dao.getAllFilesOfAUser(files.get(0).getUser().getEmail());
 			if (filesDB != null) {
