@@ -169,7 +169,7 @@ public ContiPerfRule rule = new ContiPerfRule();
 		assertTrue(controller.getNumberOfUserMessages("emailto")> 0);
 		}
 		@Test
-		public void testgetDownloadMessages(){
+		public void testgetToDownloadMessages(){
 		assertEquals(controller.downloadMessages("emailto").get(0).getSubject(), "subject");
 		}
 		
