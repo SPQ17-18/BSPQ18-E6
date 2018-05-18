@@ -7,15 +7,22 @@ import javax.swing.border.EmptyBorder;
 
 import es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller;
 
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
+
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.net.URL;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import javax.swing.SwingConstants;
@@ -30,7 +37,7 @@ public class v_login extends JFrame {
 	private JButton btnEnter, btnCreateAccount;
 	private Controller controlador;
 	public v_login(Controller controlador) {
-		//setIconImage(Toolkit.getDefaultToolkit().getImage(v_login.class.getResource("/es/deusto/bspq18/e6/DeustoBox/Client/images/logo.png")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(v_login.class.getResource("/es/deusto/bspq18/e6/DeustoBox/Client/images/logo.png")));
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 314);
@@ -126,9 +133,14 @@ public class v_login extends JFrame {
 	
 		lblLogo = new JLabel();	
 		lblLogo.setBounds(15, 14, 137, 81);
-		/*
-		URL url = this.getClass().getResource("/es/deusto/bspq18/e6/DeustoBox/Client/images/logo.png");
+		
+		URL url = this.getClass().getResource("/es/deusto/bspq18/e6/DeustoBox/Server/images/logo.png");
 		BufferedImage img = null;
+		try {
+			img = ImageIO.read(url);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		Image dimg = img.getScaledInstance(lblLogo.getWidth(), lblLogo.getHeight(),
 		        Image.SCALE_SMOOTH);
 		
@@ -136,7 +148,7 @@ public class v_login extends JFrame {
 		lblLogo.setIcon(imageIcon);
 		
 		panel.add(lblLogo);
-		*/
+		
 		
 	}
 

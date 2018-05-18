@@ -234,6 +234,7 @@
 					<resource>
 						<directory>${config.files.dir}</directory>
 						<includes>
+							<include>**/*.png</include>
 							<include>**/*.jdo</include>
 							<include>**/*.properties</include>
 						</includes>
@@ -249,6 +250,7 @@
 								<fileset>
 									<directory>${basedir}</directory>
 									<includes>
+										<include>**/*.png</include>
 										<include>*.log</include>
 										<include>*.ods</include>
 									</includes>

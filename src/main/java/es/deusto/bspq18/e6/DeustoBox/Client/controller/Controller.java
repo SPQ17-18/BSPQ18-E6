@@ -33,7 +33,7 @@ public class Controller {
 	public Controller(String[] args) throws RemoteException {
 		rsl = new RMIServiceLocator();
 		rsl.setService(args);
-		Locale currentLocale = new Locale("fr", "FR");
+		Locale currentLocale = new Locale("en", "US");
 		resourcebundle = ResourceBundle.getBundle("lang/translations", currentLocale);
 		new v_login(this);
 		filesDTO = null;
