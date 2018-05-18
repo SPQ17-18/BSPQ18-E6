@@ -3,6 +3,9 @@ package es.deusto.bspq18.e6.DeustoBox.Server;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.rmi.Naming;
+import java.util.Locale;
+import java.util.ResourceBundle;
+
 import es.deusto.bspq18.e6.DeustoBox.Server.remote.DeustoBoxRemoteService;
 import es.deusto.bspq18.e6.DeustoBox.Server.remote.IDeustoBoxRemoteService;
 
@@ -22,7 +25,9 @@ public class DeustoBoxServer {
 		String name = "//" + args[0] + ":" + args[1] + "/" + args[2];
 
 		try {
-			IDeustoBoxRemoteService deustoBox = new DeustoBoxRemoteService();
+			Locale currentLocale = new Locale("en", "US");
+			ResourceBundle resourcebundle = ResourceBundle.getBundle("lang/translations", currentLocale);
+			IDeustoBoxRemoteService deustoBox = new DeustoBoxRemoteService(resourcebundle);
 			Naming.rebind(name, deustoBox);
 			
 			

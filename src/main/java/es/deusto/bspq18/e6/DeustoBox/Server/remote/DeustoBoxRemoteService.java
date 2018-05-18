@@ -42,9 +42,8 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 	private Locale currentLocale;
 	private ResourceBundle resourcebundle;
 
-	public DeustoBoxRemoteService() throws RemoteException {
-		currentLocale = new Locale("en", "US");
-		resourcebundle = ResourceBundle.getBundle("lang/translations", currentLocale);
+	public DeustoBoxRemoteService(ResourceBundle resourcebundle) throws RemoteException {
+		this.resourcebundle = resourcebundle;
 		this.logger = new Error_log();
 		this.db = new DeustoBoxDAO(logger, resourcebundle);
 		this.assemble = new Assembler();

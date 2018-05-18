@@ -85,8 +85,9 @@ public ContiPerfRule rule = new ContiPerfRule();
 					logger.getLogger().info("BeforeClass - Setting the server ready TestServer name: " + name);
 
 					try {
-						
-						IDeustoBoxRemoteService messenger = new DeustoBoxRemoteService();
+						Locale currentLocale = new Locale("en", "US");
+						ResourceBundle resourcebundle = ResourceBundle.getBundle("lang/translations", currentLocale);
+						IDeustoBoxRemoteService messenger = new DeustoBoxRemoteService(resourcebundle);
 						Naming.rebind(name, messenger);
 					} catch (RemoteException re) {
 						logger.getLogger().error("CONTROLLER TEST --# Messenger RemoteException: " + re.getMessage());
