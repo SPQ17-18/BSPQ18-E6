@@ -76,12 +76,12 @@ public class v_register extends JFrame {
 		panel.add(lblEmail);
 		
 		txtEmail = new JTextField();
-		txtEmail.setBounds(98, 59, 155, 22);
+		txtEmail.setBounds(98, 59, 155, 25);
 		panel.add(txtEmail);
 		txtEmail.setColumns(10);
 		
 		txtUsername = new JTextField();
-		txtUsername.setBounds(98, 93, 146, 22);
+		txtUsername.setBounds(98, 93, 146, 25);
 		panel.add(txtUsername);
 		txtUsername.setColumns(10);
 		
@@ -112,15 +112,15 @@ public class v_register extends JFrame {
 				}
 			}
 		});
-		btnRegister.setBounds(109, 199, 115, 29);
+		btnRegister.setBounds(109, 199, 115, 31);
 		panel.add(btnRegister);
 		
 		txtPassword = new JPasswordField();
-		txtPassword.setBounds(98, 132, 146, 21);
+		txtPassword.setBounds(98, 132, 146, 25);
 		panel.add(txtPassword);
 		
 		txtPassword2 = new JPasswordField();
-		txtPassword2.setBounds(146, 165, 146, 23);
+		txtPassword2.setBounds(146, 165, 146, 25);
 		panel.add(txtPassword2);
 		
 		back = new JButton("Back");
@@ -130,7 +130,7 @@ public class v_register extends JFrame {
 			dispose();
 			}
 		});
-		back.setBounds(234, 199, 117, 29);
+		back.setBounds(234, 199, 117, 31);
 		panel.add(back);
 		
 		lblLogo = new JLabel();

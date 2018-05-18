@@ -61,12 +61,12 @@ public class v_installer extends JFrame {
 		frame.getContentPane().setLayout(null);
 
 		txtPath = new JTextField();
-		txtPath.setBounds(31, 119, 398, 21);
+		txtPath.setBounds(31, 119, 398, 30);
 		frame.getContentPane().add(txtPath);
 		txtPath.setColumns(10);
 
 		btnBrowse = new JButton(resourcebundle.getString("txt_browse"));
-		btnBrowse.setBounds(465, 112, 87, 37);
+		btnBrowse.setBounds(465, 112, 87, 40);
 		frame.getContentPane().add(btnBrowse);
 
 		btnCancel = new JButton("Cancel");
@@ -75,7 +75,7 @@ public class v_installer extends JFrame {
 				System.exit(0);
 			}
 		});
-		btnCancel.setBounds(120, 180, 115, 29);
+		btnCancel.setBounds(120, 179, 115, 35);
 		frame.getContentPane().add(btnCancel);
 
 		btnOk = new JButton("Ok");
@@ -97,7 +97,7 @@ public class v_installer extends JFrame {
  			
  			}
 		});
-		btnOk.setBounds(314, 180, 115, 29);
+		btnOk.setBounds(314, 180, 115, 35);
 		frame.getContentPane().add(btnOk);
 
 		lblDeustoboxInstaller = new JLabel(resourcebundle.getString("txt_dt"));

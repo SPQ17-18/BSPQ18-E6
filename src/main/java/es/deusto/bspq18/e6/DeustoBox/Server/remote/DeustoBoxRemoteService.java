@@ -10,6 +10,10 @@ import java.net.Socket;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
+
+import javax.swing.UIManager;
+import javax.swing.UIManager.LookAndFeelInfo;
+
 import es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assembler;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DConnectionDTO;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DFileDTO;
@@ -41,6 +45,17 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		this.logger = new Error_log();
 		this.db = new DeustoBoxDAO(logger);
 		this.assemble = new Assembler();
+		try {
+			for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+				if ("Nimbus".equals(info.getName())) {
+					UIManager.setLookAndFeel(info.getClassName());
+					break;
+				}
+			}
+		} catch (Exception e) {
+			// If Nimbus is not available, you can set the GUI to another look
+			// and feel.
+		}
 		this.installer = new v_installer(db, logger);
 		this.installer.frame.setVisible(true);
 		this.FiletoWrite = " ";
