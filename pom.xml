@@ -14,7 +14,7 @@
 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<server.IP>127.0.0.1</server.IP>
-		<server.IPc>deustobox2018.ddns.net</server.IPc>
+		<server.IPc>127.0.0.1</server.IPc>
 		<server.port>1099</server.port>
 		<server.Name>DeustoBox</server.Name>
 		<policy.file>${basedir}/src/main/resources/security/java.policy</policy.file>
