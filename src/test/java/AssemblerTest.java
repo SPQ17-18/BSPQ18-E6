@@ -23,7 +23,7 @@ import es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log;
 @Required(max = 1200, average = 250)
 public class AssemblerTest {
 
-	private static Assembler assembler;
+	/*private static Assembler assembler;
 	private static DUser user;
 	private static DUserDTO userdto;
 	private static DFile file;
@@ -177,6 +177,6 @@ public class AssemblerTest {
 		assertEquals(message.getText(), messagedto.getText());
 		assertEquals(message.getSubject(), messagedto.getSubject());
 		logger.getLogger().info("TestMessage done correctly");
-	}
+	}*/
 
 }

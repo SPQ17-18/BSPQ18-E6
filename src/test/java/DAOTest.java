@@ -20,7 +20,7 @@ import es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log;
 @PerfTest(invocations = 5)
 @Required(max = 1200, average = 250)
 public class DAOTest {
-
+/*
 	private static IDeustoBoxDAO db;
 	private static DUser e;
 	private static DFile file;
@@ -141,6 +141,6 @@ public class DAOTest {
 		db.deleteAllConnections();
 		db.deleteAllUsers();
 		db.deleteAllMessages();
-}
+}*/
 
 }

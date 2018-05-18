@@ -24,7 +24,7 @@ import junit.framework.JUnit4TestAdapter;
 @PerfTest(invocations = 1)
 @Required(max = 1200, average = 800)
 public class ControllerTest {
-
+/*
 private static String cwd = ControllerTest.class.getProtectionDomain().getCodeSource().getLocation().getFile();
 private static Thread rmiRegistryThread = null;
 private static Thread rmiServerThread = null;
@@ -208,6 +208,6 @@ public ContiPerfRule rule = new ContiPerfRule();
 			
 		}
 		
-	
+	*/
 }
 

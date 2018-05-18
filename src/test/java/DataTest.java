@@ -21,7 +21,7 @@ import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
 
 @PerfTest(invocations = 5)
 @Required(max = 1200, average = 250)
-public class DataTest {
+public class DataTest {/*
 	private static DUser user;
 	private static DFile file;
 	private static DUserDTO userdto;
@@ -213,5 +213,5 @@ public class DataTest {
 	assertEquals(12, connectiondto.getId());
 	assertEquals(1L, DConnectionDTO.getSerialversionuid());
 	System.out.println(connectiondto.toString());
-	}
+	}*/
 }
