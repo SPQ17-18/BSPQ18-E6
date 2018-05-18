@@ -26,12 +26,11 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 	private Error_log logger;
 	private ResourceBundle resourcebundle;
 
-	public DeustoBoxDAO(Error_log logger) {
-		
+	public DeustoBoxDAO(Error_log logger, ResourceBundle resourcebundle) {
+		this.resourcebundle = resourcebundle;
 		this.pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 		this.logger = logger;
-		Locale currentLocale = new Locale("en", "US");
-		resourcebundle = ResourceBundle.getBundle("lang/translations", currentLocale);
+
 	}
 
 	public DUser getUser(String email, String pass) {
@@ -243,7 +242,9 @@ public class DeustoBoxDAO implements IDeustoBoxDAO {
 	}
 
 	public static void main(String[] args) {
-		IDeustoBoxDAO dao = new DeustoBoxDAO(new Error_log());
+		Locale currentLocale = new Locale("en", "US");
+		ResourceBundle resourcebundle = ResourceBundle.getBundle("lang/translations", currentLocale);
+		IDeustoBoxDAO dao = new DeustoBoxDAO(new Error_log(), resourcebundle);
 
 		DUser user1 = new DUser("aitorugarte@opendeusto.es", "aitorugarte", "123");
 		DUser user2 = new DUser("markelalva@opendeusto.es", "markelalva", "123");

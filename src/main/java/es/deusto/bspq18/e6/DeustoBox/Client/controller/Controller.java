@@ -12,8 +12,6 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 import javax.swing.JOptionPane;
-import javax.swing.UIManager;
-import javax.swing.UIManager.LookAndFeelInfo;
 
 import es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login;
 import es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator;
@@ -37,17 +35,6 @@ public class Controller {
 		rsl.setService(args);
 		Locale currentLocale = new Locale("en", "US");
 		resourcebundle = ResourceBundle.getBundle("lang/translations", currentLocale);
-		try {
-			for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
-				if ("Nimbus".equals(info.getName())) {
-					UIManager.setLookAndFeel(info.getClassName());
-					break;
-				}
-			}
-		} catch (Exception e) {
-			// If Nimbus is not available, you can set the GUI to another look
-			// and feel.
-		}
 		new v_login(this);
 		filesDTO = null;
 		logger = new Error_log();

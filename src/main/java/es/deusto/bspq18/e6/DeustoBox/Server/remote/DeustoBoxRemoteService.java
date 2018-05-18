@@ -10,9 +10,8 @@ import java.net.Socket;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
-
-import javax.swing.UIManager;
-import javax.swing.UIManager.LookAndFeelInfo;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assembler;
 import es.deusto.bspq18.e6.DeustoBox.Server.dto.DConnectionDTO;
@@ -40,29 +39,23 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 	private DataInputStream in;
 	private String FiletoWrite;
 	private Error_log logger;
+	private Locale currentLocale;
+	private ResourceBundle resourcebundle;
 
 	public DeustoBoxRemoteService() throws RemoteException {
+		currentLocale = new Locale("en", "US");
+		resourcebundle = ResourceBundle.getBundle("lang/translations", currentLocale);
 		this.logger = new Error_log();
-		this.db = new DeustoBoxDAO(logger);
+		this.db = new DeustoBoxDAO(logger, resourcebundle);
 		this.assemble = new Assembler();
-		try {
-			for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
-				if ("Nimbus".equals(info.getName())) {
-					UIManager.setLookAndFeel(info.getClassName());
-					break;
-				}
-			}
-		} catch (Exception e) {
-			// If Nimbus is not available, you can set the GUI to another look
-			// and feel.
-		}
-		this.installer = new v_installer(db, logger);
+		this.installer = new v_installer(db, logger, resourcebundle);
 		this.installer.frame.setVisible(true);
 		this.FiletoWrite = " ";
 		serverReceive.start();
 	}
 
 	public DUserDTO signUp(String username, String email, String password) throws RemoteException {
+		System.out.println("HOLAAA");
 		boolean correcto = false;
 		DUser user = new DUser(username, email, password);
 		correcto = db.addUser(user);

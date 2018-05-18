@@ -13,8 +13,8 @@
 	<properties>
 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<server.IP>127.0.0.1</server.IP>
-		<server.IPc>127.0.0.1</server.IPc>
+		<server.IP>25.35.181.114</server.IP>
+		<server.IPc>25.35.181.114</server.IPc>
 		<server.port>1099</server.port>
 		<server.Name>DeustoBox</server.Name>
 		<policy.file>${basedir}/src/main/resources/security/java.policy</policy.file>

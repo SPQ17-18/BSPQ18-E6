@@ -1,6 +1,8 @@
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import org.databene.contiperf.PerfTest;
 import org.databene.contiperf.Required;
@@ -20,7 +22,7 @@ import es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log;
 @PerfTest(invocations = 5)
 @Required(max = 1200, average = 250)
 public class DAOTest {
-/*
+
 	private static IDeustoBoxDAO db;
 	private static DUser e;
 	private static DFile file;
@@ -30,7 +32,9 @@ public class DAOTest {
 	
 	@BeforeClass
 	public static void setUpClass() {
-		db = new DeustoBoxDAO(new Error_log());
+		Locale currentLocale = new Locale("en", "US");
+		ResourceBundle resourcebundle = ResourceBundle.getBundle("lang/translations", currentLocale);
+		db = new DeustoBoxDAO(new Error_log(), resourcebundle);
 
 	}
 
@@ -141,6 +145,6 @@ public class DAOTest {
 		db.deleteAllConnections();
 		db.deleteAllUsers();
 		db.deleteAllMessages();
-}*/
+}
 
 }

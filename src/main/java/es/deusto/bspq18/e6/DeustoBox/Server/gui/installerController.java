@@ -27,9 +27,8 @@ public class installerController {
 	private Error_log logger;
 	private ResourceBundle resourcebundle;
 
-	public installerController(String path, IDeustoBoxDAO dao, Error_log logger) {
-		Locale currentLocale = new Locale("en", "US");
-		resourcebundle = ResourceBundle.getBundle("lang/translations", currentLocale);
+	public installerController(String path, IDeustoBoxDAO dao, Error_log logger, ResourceBundle resource) {
+		this.resourcebundle = resource;
 		this.path = path;
 		this.dao = dao;
 		this.transform = new Assembler();

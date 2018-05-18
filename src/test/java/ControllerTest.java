@@ -3,6 +3,8 @@ import static org.junit.Assert.*;
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import org.databene.contiperf.PerfTest;
 import org.databene.contiperf.Required;
@@ -22,9 +24,9 @@ import es.deusto.bspq18.e6.DeustoBox.Server.remote.IDeustoBoxRemoteService;
 import es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log;
 import junit.framework.JUnit4TestAdapter;
 @PerfTest(invocations = 1)
-@Required(max = 1200, average = 800)
+@Required(max = 3000, average = 800)
 public class ControllerTest {
-/*
+
 private static String cwd = ControllerTest.class.getProtectionDomain().getCodeSource().getLocation().getFile();
 private static Thread rmiRegistryThread = null;
 private static Thread rmiServerThread = null;
@@ -138,7 +140,9 @@ public ContiPerfRule rule = new ContiPerfRule();
 		
 		@Test
 		public void testCreateUser() {
-			IDeustoBoxDAO bd = new DeustoBoxDAO(new Error_log());
+			Locale currentLocale = new Locale("en", "US");
+			ResourceBundle resourcebundle = ResourceBundle.getBundle("lang/translations", currentLocale);
+			IDeustoBoxDAO bd = new DeustoBoxDAO(new Error_log(), resourcebundle);
 			bd.deleteAllUsers();
 			assertEquals(true,controller.signUp("username", "email", "password"));
 			logger.getLogger().info("CONTROLLER TEST -- Test CreateUser done");
@@ -192,7 +196,9 @@ public ContiPerfRule rule = new ContiPerfRule();
 		
 		@AfterClass
 		public static void end() {
-			IDeustoBoxDAO bd = new DeustoBoxDAO(new Error_log());
+			Locale currentLocale = new Locale("en", "US");
+			ResourceBundle resourcebundle = ResourceBundle.getBundle("lang/translations", currentLocale);
+			IDeustoBoxDAO bd = new DeustoBoxDAO(new Error_log(), resourcebundle);
 			bd.deleteAllFiles();
 			bd.deleteAllConnections();
 			bd.deleteAllUsers();
@@ -208,6 +214,6 @@ public ContiPerfRule rule = new ContiPerfRule();
 			
 		}
 		
-	*/
+	
 }
 

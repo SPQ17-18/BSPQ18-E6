@@ -25,6 +25,7 @@ public class DeustoBoxServer {
 			IDeustoBoxRemoteService deustoBox = new DeustoBoxRemoteService();
 			Naming.rebind(name, deustoBox);
 			
+			
 			System.out.println("- DeustoBoxServer:  '" + name + "' active and waiting...");
 			InputStreamReader inputStreamReader = new InputStreamReader(System.in);
 			BufferedReader stdin = new BufferedReader(inputStreamReader);
