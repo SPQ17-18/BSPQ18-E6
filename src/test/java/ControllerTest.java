@@ -128,7 +128,7 @@ public ContiPerfRule rule = new ContiPerfRule();
 			args[2] = "DeustoBox";
 			logger.getLogger().info("BeforeTest - Setting the client ready for calling TestServer name: " + name);
 			messenger = (IDeustoBoxRemoteService)java.rmi.Naming.lookup(name);
-			controller = new Controller(args);
+			controller = new Controller(args,0);
 			}
 			catch (Exception re) {
 				logger.getLogger().error("CONTROLLER TEST -- # Messenger RemoteException: " + re.getMessage());

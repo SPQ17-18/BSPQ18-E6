@@ -29,17 +29,24 @@ public class Controller {
 	private ArrayList<DFileDTO> filesDTO;
 	private Error_log logger;
 	private ResourceBundle resourcebundle;
+	private Locale currentLocale;
 
-	public Controller(String[] args) throws RemoteException {
+	public Controller(String[] args, int language) throws RemoteException {
+		if (language == 0) {
+			currentLocale = new Locale("es", "ES");
+		} else if (language == 1) {
+			currentLocale = new Locale("en", "US");
+		}
+		if (language == 2) {
+			currentLocale = new Locale("fr", "FR");
+		}
+		resourcebundle = ResourceBundle.getBundle("lang/translations", currentLocale);
 		rsl = new RMIServiceLocator();
 		rsl.setService(args);
-		Locale currentLocale = new Locale("en", "US");
-		resourcebundle = ResourceBundle.getBundle("lang/translations", currentLocale);
 		new v_login(this);
 		filesDTO = null;
 		logger = new Error_log();
 
-		
 	}
 
 	public boolean signUp(String username, String email, String password) {
@@ -47,7 +54,7 @@ public class Controller {
 		try {
 			res = rsl.getService().signUp(username, email, password);
 		} catch (Exception ex) {
-			logger.getLogger().error(resourcebundle.getString("msg_excepcion") , ex);
+			logger.getLogger().error(resourcebundle.getString("msg_excepcion"), ex);
 		}
 		if (res != null) {
 			this.userdto = res;
@@ -67,17 +74,17 @@ public class Controller {
 		}
 
 		if (res.equals(null)) {
-			logger.getLogger().error(resourcebundle.getString("non_existing_user") );
+			logger.getLogger().error(resourcebundle.getString("non_existing_user"));
 			return false;
 		} else {
 			this.userdto = res;
-			logger.getLogger().error(resourcebundle.getString("user_successfully_loged") );
+			logger.getLogger().error(resourcebundle.getString("user_successfully_loged"));
 			return true;
 		}
 	}
 
 	public void getFiles() {
-		
+
 		File directorio = new File(path);
 		if (!directorio.exists())
 			directorio.mkdir();
@@ -92,8 +99,7 @@ public class Controller {
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}
-			
-			
+
 			try {
 				FileInputStream in = new FileInputStream(f1);
 				byte[] mydata = new byte[1024 * 1024];
@@ -116,7 +122,7 @@ public class Controller {
 			filesDTO = rsl.getService().getFiles(email);
 			number = filesDTO.size();
 		} catch (Exception ex) {
-			logger.getLogger().error(resourcebundle.getString("msg_excepcion") , ex);
+			logger.getLogger().error(resourcebundle.getString("msg_excepcion"), ex);
 		}
 		return number;
 	}
@@ -125,7 +131,7 @@ public class Controller {
 		int downloads = 0;
 		int uploads = 0;
 		try {
-			
+
 			// Pido todos los archivos
 			String[] arr_res = null;
 			arr_res = getMyFiles(path);
@@ -140,7 +146,7 @@ public class Controller {
 			} else {
 				getListOfFiles(userdto.getEmail());
 				for (DFileDTO file : filesDTO) {
-					logger.getLogger().error(file );
+					logger.getLogger().error(file);
 				}
 
 				ArrayList<DFileDTO> filesToRemove = new ArrayList<DFileDTO>();
@@ -157,54 +163,53 @@ public class Controller {
 					filesDTO.remove(filesToRemove.get(i));
 
 				}
-				if(filesDTO.size() > 0){
-				downloads = filesDTO.size();
-				getFiles();
+				if (filesDTO.size() > 0) {
+					downloads = filesDTO.size();
+					getFiles();
 				}
-				//Now we have to sync our files with the Server
+				// Now we have to sync our files with the Server
 				arr_res = null;
 				arr_res = getMyFiles(path);
-				
-				//Actualizamos filesDTO
+
+				// Actualizamos filesDTO
 				getListOfFiles(userdto.getEmail());
 				ArrayList<String> filesToUpload = new ArrayList<String>();
-				
-				//Comparamos nuestros files con los que no hay en el server, y los que no estén los guardamos en el array
+
+				// Comparamos nuestros files con los que no hay en el server, y
+				// los que no estén los guardamos en el array
 				boolean existe = true;
 				for (int i = 0; i < arr_res.length; i++) {
 					existe = false;
 					for (int j = 0; j < filesDTO.size(); j++) {
-						
+
 						if (arr_res[i].equals(filesDTO.get(j).getName().substring(1))) {
-							logger.getLogger().error(arr_res[i] + " " + filesDTO.get(j).getName().substring(1) );
+							logger.getLogger().error(arr_res[i] + " " + filesDTO.get(j).getName().substring(1));
 							existe = true;
 
 						}
-						
+
 					}
-					if(!existe){
+					if (!existe) {
 						filesToUpload.add(arr_res[i]);
 					}
-					
+
 				}
-				
+
 				uploads = filesToUpload.size();
-				for(int i = 0; i< filesToUpload.size(); i++){
-					String pathFichero =  path + filesToUpload.get(i);
-					sendFiles(pathFichero, filesToUpload.get(i) );
+				for (int i = 0; i < filesToUpload.size(); i++) {
+					String pathFichero = path + filesToUpload.get(i);
+					sendFiles(pathFichero, filesToUpload.get(i));
 					Thread.sleep(2000);
 				}
-				
-	
-			
+
 			}
 
 		} catch (Exception ex) {
-			
+
 		}
-		JOptionPane.showMessageDialog(null, downloads + resourcebundle.getString("msg_file_download")  + uploads + resourcebundle.getString("msg_file_upload") );
-		
-		
+		JOptionPane.showMessageDialog(null, downloads + resourcebundle.getString("msg_file_download") + uploads
+				+ resourcebundle.getString("msg_file_upload"));
+
 	}
 
 	public int getNumberOfFiles(String email) {
@@ -213,7 +218,7 @@ public class Controller {
 		try {
 			files = rsl.getService().getNumberOfUserFiles(email);
 		} catch (Exception ex) {
-			logger.getLogger().error(resourcebundle.getString("msg_excepcion") , ex);
+			logger.getLogger().error(resourcebundle.getString("msg_excepcion"), ex);
 		}
 		return files;
 	}
@@ -223,7 +228,7 @@ public class Controller {
 		try {
 			correct = rsl.getService().checkPassword(email, password);
 		} catch (Exception ex) {
-			logger.getLogger().error(resourcebundle.getString("msg_excepcion") , ex);
+			logger.getLogger().error(resourcebundle.getString("msg_excepcion"), ex);
 		}
 		return correct;
 	}
@@ -234,102 +239,95 @@ public class Controller {
 		try {
 			correct = rsl.getService().updatePassword(email, password);
 		} catch (Exception ex) {
-			logger.getLogger().error(resourcebundle.getString("msg_excepcion") , ex);
+			logger.getLogger().error(resourcebundle.getString("msg_excepcion"), ex);
 		}
 
 		return correct;
 	}
-	
-	public ArrayList<DConnectionDTO> getConnections (String email) {
-		ArrayList<DConnectionDTO> connectionsDTO = new ArrayList<DConnectionDTO> ();
+
+	public ArrayList<DConnectionDTO> getConnections(String email) {
+		ArrayList<DConnectionDTO> connectionsDTO = new ArrayList<DConnectionDTO>();
 		try {
-		connectionsDTO = rsl.getService().getConnections(email);
+			connectionsDTO = rsl.getService().getConnections(email);
 		} catch (Exception ex) {
-			logger.getLogger().error(resourcebundle.getString("msg_excepcion") , ex);
+			logger.getLogger().error(resourcebundle.getString("msg_excepcion"), ex);
 		}
-	return connectionsDTO;
-		
+		return connectionsDTO;
+
 	}
 
-
-	public boolean addMessage( String emailfrom, String emailto, String subject, String text){
+	public boolean addMessage(String emailfrom, String emailto, String subject, String text) {
 		int id = 0;
 		boolean correct = false;
 		try {
 			id = rsl.getService().getNewMessageId();
-			DMessageDTO dto = new DMessageDTO(id,emailfrom, emailto, subject, text);
+			DMessageDTO dto = new DMessageDTO(id, emailfrom, emailto, subject, text);
 			correct = rsl.getService().addMessage(dto);
 		} catch (RemoteException e) {
-			logger.getLogger().error(resourcebundle.getString("msg_excepcion") , e);
+			logger.getLogger().error(resourcebundle.getString("msg_excepcion"), e);
 		}
 		return correct;
 	}
-	
-	public ArrayList<DMessageDTO> downloadMessages(String email){
+
+	public ArrayList<DMessageDTO> downloadMessages(String email) {
 		ArrayList<DMessageDTO> messages = null;
 		try {
 			messages = rsl.getService().getMessages(email);
 		} catch (RemoteException e) {
-			logger.getLogger().error(resourcebundle.getString("msg_excepcion") , e);
+			logger.getLogger().error(resourcebundle.getString("msg_excepcion"), e);
 		}
-		
+
 		return messages;
-		
+
 	}
-	
-	
-	
-	
-	public boolean sendFiles(String pathFile, String fileName){
+
+	public boolean sendFiles(String pathFile, String fileName) {
 		try {
 			rsl.getService().ReceiveFiles(fileName, this.userdto.getEmail());
 			Socket so = new Socket("localhost", 5000);
 			DataOutputStream out = new DataOutputStream(so.getOutputStream());
 			File file = new File(pathFile);
 			long length = file.length();
-		    if (length > Integer.MAX_VALUE) {
-				logger.getLogger().error(resourcebundle.getString("msg_file_large") );
-		    }
-		    byte[] bytes = new byte[(int) length];
-		    out.write(bytes);
-		    out.close();
-		    so.close();
+			if (length > Integer.MAX_VALUE) {
+				logger.getLogger().error(resourcebundle.getString("msg_file_large"));
+			}
+			byte[] bytes = new byte[(int) length];
+			out.write(bytes);
+			out.close();
+			so.close();
 		} catch (IOException e) {
-			logger.getLogger().error(resourcebundle.getString("msg_excepcion") , e);
+			logger.getLogger().error(resourcebundle.getString("msg_excepcion"), e);
 		}
-		
+
 		return true;
 	}
-	
-	public int getNumberOfUserMessages(String email){
+
+	public int getNumberOfUserMessages(String email) {
 		int number = 0;
-		
+
 		try {
 			number = rsl.getService().getNumberOfUserMessages(email);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
-			logger.getLogger().error(resourcebundle.getString("msg_excepcion") , e);
+			logger.getLogger().error(resourcebundle.getString("msg_excepcion"), e);
 		}
 		return number;
-		
+
 	}
-	
-	public boolean deleteMessage(int id){
+
+	public boolean deleteMessage(int id) {
 		boolean correct = false;
-		
+
 		try {
 			correct = rsl.getService().DeleteMessage(id);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
-			logger.getLogger().error(resourcebundle.getString("msg_excepcion") , e);
+			logger.getLogger().error(resourcebundle.getString("msg_excepcion"), e);
 		}
-		
+
 		return correct;
-		
+
 	}
-	
-	
-	
 
 	public static String[] getMyFiles(String dir_path) {
 		System.out.println(dir_path);
@@ -360,7 +358,7 @@ public class Controller {
 
 		return arr_res;
 	}
-	
+
 	public DUserDTO getUserdto() {
 		return userdto;
 	}
@@ -369,7 +367,6 @@ public class Controller {
 		this.userdto = userdto;
 	}
 
-
 	public String getPath() {
 		return path;
 	}
@@ -377,15 +374,14 @@ public class Controller {
 	public void setPath(String path) {
 		this.path = path + getUserdto().getEmail() + "\\";
 	}
-	
-	
+
 	public ResourceBundle getResourcebundle() {
 		return resourcebundle;
 	}
 
 	public static void main(String[] args) {
 		try {
-			new Controller(args);
+			new Controller(args, 0);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
