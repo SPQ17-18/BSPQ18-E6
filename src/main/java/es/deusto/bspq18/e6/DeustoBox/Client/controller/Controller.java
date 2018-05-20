@@ -89,6 +89,7 @@ public class Controller {
 		DUserDTO res = null;
 		try {
 			res = rsl.getService().login(email, password, os);
+			System.out.println(res);
 		} catch (Exception ex) {
 			return false;
 		}
