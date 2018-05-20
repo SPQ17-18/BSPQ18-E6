@@ -17,6 +17,9 @@ public class DeustoBoxServer {
 	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		
+		Locale currentLocale = new Locale("en", "US");
+		ResourceBundle resourcebundle = ResourceBundle.getBundle("lang/translations", currentLocale);
+		
 
 		if (System.getSecurityManager() == null) {
 			System.setSecurityManager(new SecurityManager());
@@ -25,19 +28,17 @@ public class DeustoBoxServer {
 		String name = "//" + args[0] + ":" + args[1] + "/" + args[2];
 
 		try {
-			Locale currentLocale = new Locale("en", "US");
-			ResourceBundle resourcebundle = ResourceBundle.getBundle("lang/translations", currentLocale);
 			IDeustoBoxRemoteService deustoBox = new DeustoBoxRemoteService(resourcebundle);
 			Naming.rebind(name, deustoBox);
 			
 			
-			System.out.println("- DeustoBoxServer:  '" + name + "' active and waiting...");
+			System.out.println(resourcebundle.getString("server_DeustoBox") + name + resourcebundle.getString("server_active"));
 			InputStreamReader inputStreamReader = new InputStreamReader(System.in);
 			BufferedReader stdin = new BufferedReader(inputStreamReader);
 			String line = stdin.readLine();
 			
 		} catch (Exception e) {
-			System.err.println("$ DeustoBox exception: " + e.getMessage());
+			System.err.println(resourcebundle.getString("server_excep") + e.getMessage());
 			e.printStackTrace();
 		}
 	}

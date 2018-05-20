@@ -2,6 +2,8 @@ package es.deusto.bspq18.e6.DeustoBox.Server.dto;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 public class DConnectionDTO implements Serializable {
 	
@@ -10,6 +12,9 @@ public class DConnectionDTO implements Serializable {
 	private String userEmail;
 	private Date ConnectionDate;
 	private String OSUsed;
+
+	Locale currentLocale = new Locale("en", "US");
+	ResourceBundle resourcebundle = ResourceBundle.getBundle("lang/translations", currentLocale);
 	
 	
 	public DConnectionDTO( int id, String userEmail, Date connectionDate, String oSUsed) {
@@ -71,7 +76,7 @@ public class DConnectionDTO implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Date=" + ConnectionDate.toString() + ", OSUsed=" + OSUsed;
+		return resourcebundle.getString("msg_date") + ConnectionDate.toString() + resourcebundle.getString("opperative_sys") + OSUsed;
 	}
 	
 	

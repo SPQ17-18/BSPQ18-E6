@@ -3,6 +3,8 @@ package es.deusto.bspq18.e6.DeustoBox.Server.dto;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DFile;
 
@@ -14,6 +16,10 @@ public class DUserDTO implements Serializable {
 	private String password;
 	private ArrayList<DFile> files;
 	private Date registeredDate;
+	
+
+	Locale currentLocale = new Locale("en", "US");
+	ResourceBundle resourcebundle = ResourceBundle.getBundle("lang/translations", currentLocale);
 	
 	public DUserDTO(String email, String username, String password, Date registered) {
 		this.email = email;
@@ -71,7 +77,7 @@ public class DUserDTO implements Serializable {
 
 	@Override
 	public String toString() {
-		return "UserDTO [email=" + email + ", username=" + username + ", password=" + password + ", fechaInicio="
+		return resourcebundle.getString("msg_udto_email") + email + resourcebundle.getString("msg_udto_user") + username + resourcebundle.getString("msg_udto_pass") + password + resourcebundle.getString("msg_udto_date")
 				+ registeredDate + "]";
 	}
 

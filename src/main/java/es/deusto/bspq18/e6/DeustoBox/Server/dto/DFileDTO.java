@@ -3,6 +3,8 @@ package es.deusto.bspq18.e6.DeustoBox.Server.dto;
 import java.io.File;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 
 public class DFileDTO implements Serializable {
@@ -17,6 +19,9 @@ public class DFileDTO implements Serializable {
 	private File file;
 	private Date creationDate;
 	private DUserDTO user;
+	
+	Locale currentLocale = new Locale("en", "US");
+	ResourceBundle resourcebundle = ResourceBundle.getBundle("lang/translations", currentLocale);
 	
 	public DFileDTO(String userEmail, String path, String string) {
 		this.userEmail = userEmail;
@@ -90,8 +95,8 @@ public class DFileDTO implements Serializable {
 
 	@Override
 	public String toString() {
-		return "DFileDTO [userEmail=" + userEmail + ", hash=" + hash + ", name=" + name + ", lastModified="
-				+ lastModified + ", file=" + file + ", creationDate=" + creationDate + ", user=" + user + "]";
+		return resourcebundle.getString("msg_dfile_email") + userEmail + resourcebundle.getString("msg_hash") + hash + resourcebundle.getString("msg_dfile_name") + name + resourcebundle.getString("msg_dfile_mod")
+				+ lastModified + resourcebundle.getString("msg_dfile_file") + file + resourcebundle.getString("msg_dfile_date") + creationDate + resourcebundle.getString("msg_dfile_user") + user + "]";
 	}
 		
 	

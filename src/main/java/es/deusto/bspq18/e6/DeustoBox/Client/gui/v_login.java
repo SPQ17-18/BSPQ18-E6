@@ -38,7 +38,7 @@ public class v_login extends JFrame {
 	private Controller controlador;
 	
 	public v_login(Controller controlador) {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(v_login.class.getResource("/es/deusto/bspq18/e6/DeustoBox/Client/images/logo.png")));
+		//setIconImage(Toolkit.getDefaultToolkit().getImage(v_login.class.getResource("/es/deusto/bspq18/e6/DeustoBox/Client/images/logo.png")));
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 314);
@@ -135,7 +135,7 @@ public class v_login extends JFrame {
 	
 		lblLogo = new JLabel();	
 		lblLogo.setBounds(15, 14, 137, 81);
-		
+		/*
 		URL url = this.getClass().getResource("/es/deusto/bspq18/e6/DeustoBox/Server/images/logo.png");
 		BufferedImage img = null;
 		try {
@@ -150,6 +150,7 @@ public class v_login extends JFrame {
 		lblLogo.setIcon(imageIcon);
 		
 		panel.add(lblLogo);
+		*/
 		
 		
 	}

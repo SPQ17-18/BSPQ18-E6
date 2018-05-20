@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: DataTest
 -------------------------------------------------------------------------------
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 52.646 sec
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 16.054 sec

@@ -2,6 +2,8 @@ package es.deusto.bspq18.e6.DeustoBox.Server.dto;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 public class DMessageDTO implements Serializable {
 	/**
@@ -14,6 +16,10 @@ public class DMessageDTO implements Serializable {
 	private Date date;
 	private String Subject;
 	private String text;
+	
+
+	Locale currentLocale = new Locale("en", "US");
+	ResourceBundle resourcebundle = ResourceBundle.getBundle("lang/translations", currentLocale);
 	
 	
 	public DMessageDTO(int messageId, String emailfrom, String emailTo, String subject, String text, Date date) {
@@ -98,8 +104,8 @@ public class DMessageDTO implements Serializable {
 
 	@Override
 	public String toString() {
-		return "DMessageDTO [messageId=" + messageId + ", emailfrom=" + emailfrom + ", emailTo=" + emailTo + ", date="
-				+ date + ", Subject=" + Subject + ", text=" + text + "]";
+		return resourcebundle.getString("msg_message_id") + messageId + resourcebundle.getString("msg_message_from") + emailfrom + resourcebundle.getString("msg_message_to") + emailTo + resourcebundle.getString("msg_message_date")
+				+ date + resourcebundle.getString("msg_message_subject") + Subject + resourcebundle.getString("msg_message_txt") + text + "]";
 	}
 	
 	
