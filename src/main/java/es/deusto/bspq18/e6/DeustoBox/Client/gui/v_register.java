@@ -37,7 +37,8 @@ public class v_register extends JFrame {
 	private JButton back;
 
 	public v_register(Controller controlador) {
-		//setIconImage(Toolkit.getDefaultToolkit().getImage(v_register.class.getResource("/es/deusto/bspq18/e6/DeustoBox/Client/images/logo.png")));
+		setResizable(false);
+		setIconImage(Toolkit.getDefaultToolkit().getImage(v_register.class.getResource("/es/deusto/bspq18/e6/DeustoBox/Client/images/logo.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -46,6 +47,7 @@ public class v_register extends JFrame {
 		setContentPane(contentPane);
 		this.controlador = controlador;
 		initComponents();
+		setLocationRelativeTo(null);
 		this.setVisible(true);
 	}
 	
@@ -136,7 +138,7 @@ public class v_register extends JFrame {
 		lblLogo = new JLabel();
 		lblLogo.setBounds(268, 16, 135, 76);
 		
-		/*URL url = this.getClass().getResource("/es/deusto/bspq18/e6/DeustoBox/Client/images/logo.png");
+		URL url = this.getClass().getResource("/es/deusto/bspq18/e6/DeustoBox/Client/images/logo.png");
 		BufferedImage img = null;
 		try {
 			img = ImageIO.read(url);
@@ -149,7 +151,7 @@ public class v_register extends JFrame {
 		ImageIcon imageIcon = new ImageIcon(dimg);
 		lblLogo.setIcon(imageIcon);
 		panel.add(lblLogo);
-		*/
+		
 	}
 
 }

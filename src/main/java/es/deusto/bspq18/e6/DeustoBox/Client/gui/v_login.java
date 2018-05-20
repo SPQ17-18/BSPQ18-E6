@@ -36,8 +36,8 @@ public class v_login extends JFrame {
 	private JLabel lblLogin, lblEmail, lblPassword, lblRegister, lblLogo;
 	private JButton btnEnter, btnCreateAccount;
 	private Controller controlador;
+	
 	public v_login(Controller controlador) {
-		setLocationRelativeTo(null);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(v_login.class.getResource("/es/deusto/bspq18/e6/DeustoBox/Client/images/logo.png")));
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -53,6 +53,7 @@ public class v_login extends JFrame {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		setLocationRelativeTo(null);
 		this.setVisible(true);
 	}
 	
@@ -97,7 +98,7 @@ public class v_login extends JFrame {
 				} else {
 					boolean user = controlador.login(name, password);
 					if (user) {
-						JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getString("msg_back") + name + ".");
+						JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getString("msg_back") + " " + name + ".");
 						v_installer installer = new v_installer(controlador);
 						installer.frame.setVisible(true);
 						dispose();

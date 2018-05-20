@@ -1,6 +1,7 @@
 package es.deusto.bspq18.e6.DeustoBox.Client.gui;
 
 
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -38,10 +39,11 @@ public class v_client extends JFrame {
 	 * Create the frame.
 	 */
 	public v_client(Controller controlador) {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(v_register.class.getResource("/es/deusto/bspq18/e6/DeustoBox/Client/images/logo.png")));
 		setResizable(false);
 		this.controlador = controlador;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 384, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -49,20 +51,20 @@ public class v_client extends JFrame {
 		InitComponents();
 		this.setVisible(true);
 		this.myProfile = null;
-		
+		setLocationRelativeTo(null);
 	}
 		
 		public void InitComponents(){
 		lblUsername = new JLabel(controlador.getResourcebundle().getString("msg_username") );
-		lblUsername.setBounds(10, 11, 76, 14);
+		lblUsername.setBounds(10, 11, 123, 14);
 		contentPane.add(lblUsername);
 		
 		lblUser = new JLabel(getControlador().getUserdto().getEmail());
-		lblUser.setBounds(208, 11, 140, 14);
+		lblUser.setBounds(177, 11, 246, 14);
 		contentPane.add(lblUser);
 		
 		lblNumberOfFiles = new JLabel(controlador.getResourcebundle().getString("msg_number_files") );
-		lblNumberOfFiles.setBounds(10, 48, 163, 14);
+		lblNumberOfFiles.setBounds(10, 48, 123, 14);
 		contentPane.add(lblNumberOfFiles);
 		
 		
@@ -71,11 +73,11 @@ public class v_client extends JFrame {
 		String email = controlador.getUserdto().getEmail();
 		int files = getControlador().getNumberOfFiles(email);
 		lblNumber.setText(String.valueOf(files));
-		lblNumber.setBounds(208, 48, 46, 14);
+		lblNumber.setBounds(177, 48, 77, 14);
 		contentPane.add(lblNumber);
 		
 		SyncFiles = new JButton(controlador.getResourcebundle().getString("msg_sync_files") );
-		SyncFiles.setBounds(10, 145, 89, 23);
+		SyncFiles.setBounds(35, 145, 138, 23);
 		contentPane.add(SyncFiles);
 		
 		btnMyProfile = new JButton(controlador.getResourcebundle().getString("msg_profile") );
@@ -86,15 +88,15 @@ public class v_client extends JFrame {
 				
 			}
 		});
-		btnMyProfile.setBounds(168, 145, 117, 23);
+		btnMyProfile.setBounds(200, 145, 138, 23);
 		contentPane.add(btnMyProfile);
 		
 		lblMessages = new JLabel(controlador.getResourcebundle().getString("msg_message") );
-		lblMessages.setBounds(10, 89, 89, 14);
+		lblMessages.setBounds(10, 89, 123, 14);
 		contentPane.add(lblMessages);
 		
 		lblNumberOfMessages = new JLabel(" ");
-		lblNumberOfMessages.setBounds(208, 89, 46, 14);
+		lblNumberOfMessages.setBounds(177, 89, 77, 14);
 		contentPane.add(lblNumberOfMessages);
 		lblNumberOfMessages.setText(String.valueOf(controlador.getNumberOfUserMessages(email)));
 		
@@ -106,11 +108,11 @@ public class v_client extends JFrame {
 				
 			}
 		});
-		btnWriteAMessage.setBounds(10, 201, 113, 23);
+		btnWriteAMessage.setBounds(35, 201, 138, 23);
 		contentPane.add(btnWriteAMessage);
 		
 		btnMyMessages = new JButton(controlador.getResourcebundle().getString("msg_message") );
-		btnMyMessages.setBounds(168, 201, 117, 23);
+		btnMyMessages.setBounds(200, 201, 138, 23);
 		contentPane.add(btnMyMessages);
 		btnMyMessages.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

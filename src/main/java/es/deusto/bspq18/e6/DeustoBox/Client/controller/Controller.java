@@ -36,8 +36,7 @@ public class Controller {
 			currentLocale = new Locale("es", "ES");
 		} else if (language == 1) {
 			currentLocale = new Locale("en", "US");
-		}
-		if (language == 2) {
+		} else if (language == 2) {
 			currentLocale = new Locale("fr", "FR");
 		}
 		resourcebundle = ResourceBundle.getBundle("lang/translations", currentLocale);

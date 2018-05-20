@@ -46,6 +46,7 @@ public class v_installer extends JFrame {
 		frame.setBounds(100, 100, 610, 309);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		frame.setLocationRelativeTo(null);
 
 		txtPath = new JTextField();
 		txtPath.setBounds(31, 119, 398, 21);
