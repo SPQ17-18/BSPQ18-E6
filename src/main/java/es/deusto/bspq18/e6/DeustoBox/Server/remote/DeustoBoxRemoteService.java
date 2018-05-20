@@ -10,7 +10,6 @@ import java.net.Socket;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
-import java.util.Locale;
 import java.util.ResourceBundle;
 
 import es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assembler;
@@ -32,7 +31,7 @@ import es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log;
  *
  */
 public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeustoBoxRemoteService {
-
+	
 	private static final long serialVersionUID = 1L;
 	private IDeustoBoxDAO db;
 	private Assembler assemble;
@@ -43,16 +42,12 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 	private DataInputStream in;
 	private String FiletoWrite;
 	private Error_log logger;
-	private Locale currentLocale;
-	private ResourceBundle resourcebundle;
-
 	/**
 	 * Class Constructor.
 	 * @param resourcebundle language.
 	 * @throws RemoteException.
 	 */
 	public DeustoBoxRemoteService(ResourceBundle resourcebundle) throws RemoteException {
-		this.resourcebundle = resourcebundle;
 		this.logger = new Error_log();
 		this.db = new DeustoBoxDAO(logger, resourcebundle);
 		this.assemble = new Assembler();
@@ -148,8 +143,7 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 	public boolean sendData(String filename, byte[] data, int len) throws RemoteException {
 		try {
 			FileOutputStream out = new FileOutputStream(filename, true);
-			@SuppressWarnings("unused")
-			File f = new File(filename);
+			new File(filename);
 			out.write(data, 0, len);
 			out.flush();
 			out.close();

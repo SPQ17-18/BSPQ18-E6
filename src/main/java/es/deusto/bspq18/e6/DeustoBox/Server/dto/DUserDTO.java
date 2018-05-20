@@ -3,9 +3,6 @@ package es.deusto.bspq18.e6.DeustoBox.Server.dto;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Locale;
-import java.util.ResourceBundle;
-
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DFile;
 
 public class DUserDTO implements Serializable {

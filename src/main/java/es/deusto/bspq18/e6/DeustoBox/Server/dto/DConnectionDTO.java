@@ -2,8 +2,6 @@ package es.deusto.bspq18.e6.DeustoBox.Server.dto;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.Locale;
-import java.util.ResourceBundle;
 
 public class DConnectionDTO implements Serializable {
 	

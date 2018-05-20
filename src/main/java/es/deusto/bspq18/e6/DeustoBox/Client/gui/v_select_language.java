@@ -45,6 +45,7 @@ public class v_select_language extends JFrame {
 		setLocationRelativeTo(null);
 		this.setVisible(true);
 	}
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public void Initialize(){
 		String[] languages = { "Spanish", "English", "French"};
 		comboBox = new JComboBox(languages);

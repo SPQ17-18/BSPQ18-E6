@@ -17,7 +17,6 @@ import org.junit.Rule;
 import org.junit.Test;
 
 import es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller;
-import es.deusto.bspq18.e6.DeustoBox.Server.DeustoBoxServer;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.DeustoBoxDAO;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao.IDeustoBoxDAO;
 import es.deusto.bspq18.e6.DeustoBox.Server.remote.DeustoBoxRemoteService;

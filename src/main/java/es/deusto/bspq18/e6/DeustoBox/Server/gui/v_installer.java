@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
-import java.util.Locale;
 import java.util.ResourceBundle;
 
 import javax.imageio.ImageIO;
@@ -52,7 +51,7 @@ public class v_installer extends JFrame {
 
 		frame = new JFrame();
 		frame.setResizable(false);
-		//frame.setIconImage(Toolkit.getDefaultToolkit().getImage(v_installer.class.getResource("/es/deusto/bspq18/e6/DeustoBox/Server/images/logo.png")));
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(v_installer.class.getResource("/es/deusto/bspq18/e6/DeustoBox/Server/images/logo.png")));
 		
 		frame.setTitle(resourcebundle.getString("msg_txt_installer"));
 		frame.setBounds(100, 100, 610, 252);
@@ -107,7 +106,7 @@ public class v_installer extends JFrame {
 
 		JLabel lblLogo = new JLabel("New label");
 		lblLogo.setBounds(507, 11, 87, 48);
-		/*
+		
 		URL url = this.getClass().getResource("/es/deusto/bspq18/e6/DeustoBox/Server/images/logo.png");
 		BufferedImage img = null;
 		try {
@@ -121,7 +120,7 @@ public class v_installer extends JFrame {
 		ImageIcon imageIcon = new ImageIcon(dimg);
 		lblLogo.setIcon(imageIcon);
 		frame.getContentPane().add(lblLogo);
-		*/
+		
 		
 		btnBrowse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
