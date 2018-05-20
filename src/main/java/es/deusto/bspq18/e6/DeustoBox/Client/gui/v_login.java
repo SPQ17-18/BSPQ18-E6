@@ -37,6 +37,7 @@ public class v_login extends JFrame {
 	private JButton btnEnter, btnCreateAccount;
 	private Controller controlador;
 	public v_login(Controller controlador) {
+		setLocationRelativeTo(null);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(v_login.class.getResource("/es/deusto/bspq18/e6/DeustoBox/Client/images/logo.png")));
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

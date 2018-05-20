@@ -76,7 +76,8 @@ public class v_server extends JFrame {
 
 			}
 		});
-		//setIconImage(Toolkit.getDefaultToolkit().getImage(v_server.class.getResource("/es/deusto/bspq18/e6/DeustoBox/Server/images/logo.png")));
+		setLocationRelativeTo(null);
+		setIconImage(Toolkit.getDefaultToolkit().getImage(v_server.class.getResource(imgPath)));
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 131);
@@ -97,7 +98,7 @@ public class v_server extends JFrame {
 		lblDeustoBoxServer.setBounds(10, 11, 414, 22);
 		contentPane.add(lblDeustoBoxServer);
 		
-		btnNewButton = new JButton("Desconectar");
+		btnNewButton = new JButton("Disconnect");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
@@ -126,7 +127,7 @@ public class v_server extends JFrame {
 		lblLogo.setBounds(345, 11, 89, 38);
 		URL url = this.getClass().getResource(imgPath);
 		BufferedImage img = null;
-		/*try {
+		try {
 			img = ImageIO.read(url);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -137,7 +138,7 @@ public class v_server extends JFrame {
 		ImageIcon imageIcon = new ImageIcon(dimg);
 		lblLogo.setIcon(imageIcon);
 		contentPane.add(lblLogo);
-		*/
+		
 	}
 	
 	public Image getImage() {

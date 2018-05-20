@@ -12,6 +12,9 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.rmi.RemoteException;
 import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+import java.awt.Toolkit;
 
 public class v_select_language extends JFrame {
 
@@ -34,43 +37,46 @@ public class v_select_language extends JFrame {
 	 * Create the frame.
 	 */
 	public v_select_language(String[] args) {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(v_login.class.getResource("/es/deusto/bspq18/e6/DeustoBox/Client/images/logo.png")));
+		setResizable(false);
 		this.args = args;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 237, 186);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		Initialize();
+		setLocationRelativeTo(null);
 		this.setVisible(true);
 	}
 	public void Initialize(){
 		String[] languages = { "Spanish", "English", "French"};
 		comboBox = new JComboBox(languages);
-		comboBox.setBounds(139, 107, 134, 20);
+		comboBox.setBounds(50, 61, 134, 20);
 		contentPane.add(comboBox);
 		
-		lblSelectLanguage = new JLabel("SELECT LANGUAGE");
-		lblSelectLanguage.setBounds(139, 35, 190, 39);
+		lblSelectLanguage = new JLabel(" DeustoBox Client");
+		lblSelectLanguage.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lblSelectLanguage.setHorizontalAlignment(SwingConstants.CENTER);
+		lblSelectLanguage.setBounds(10, 11, 211, 39);
 		contentPane.add(lblSelectLanguage);
 		
-		JButton btnEnterDeustobox = new JButton("ENTER DEUSTOBOX");
+		JButton btnEnterDeustobox = new JButton("Enter");
+		btnEnterDeustobox.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnEnterDeustobox.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(comboBox.getSelectedIndex() ==0){
 					try {
 						new Controller(args, 0);
 					} catch (RemoteException e1) {
-						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
-					
 				}
 				else if (comboBox.getSelectedIndex() == 1){
 					try {
 						new Controller(args, 1);
 					} catch (RemoteException e1) {
-						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
 				}
@@ -78,14 +84,13 @@ public class v_select_language extends JFrame {
 					try {
 						new Controller(args, 2);
 					} catch (RemoteException e1) {
-						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
 				}
 				
 			}
 		});
-		btnEnterDeustobox.setBounds(139, 179, 134, 23);
+		btnEnterDeustobox.setBounds(50, 101, 134, 23);
 		contentPane.add(btnEnterDeustobox);
 	}
 }
