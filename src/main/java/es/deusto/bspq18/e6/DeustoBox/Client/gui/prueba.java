@@ -125,8 +125,20 @@ public class prueba extends JFrame {
 		lblMisMensajes.setBounds(27, 59, 101, 20);
 		contentPane.add(lblMisMensajes);
 		
-		JButton btnLeerSms = new JButton("Leer sms");
-		btnLeerSms.setBounds(350, 94, 89, 23);
+		JButton btnLeerSms = new JButton("");
+		btnLeerSms.setBounds(392, 94, 47, 40);
+		URL url4 = this.getClass().getResource("/es/deusto/bspq18/e6/DeustoBox/Client/images/entry.png");
+		BufferedImage img4 = null;
+		try {
+			img4 = ImageIO.read(url4);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		Image dimg4 = img4.getScaledInstance(btnLeerSms.getWidth()/2, btnLeerSms.getHeight()/2,
+		        Image.SCALE_SMOOTH);
+		
+		ImageIcon imageIcon4 = new ImageIcon(dimg4);
+		btnLeerSms.setIcon(imageIcon4);
 		contentPane.add(btnLeerSms);
 	}
 }
