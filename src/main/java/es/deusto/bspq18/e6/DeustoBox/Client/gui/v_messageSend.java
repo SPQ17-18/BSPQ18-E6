@@ -33,6 +33,7 @@ public class v_messageSend extends JFrame {
 	 * Create the frame.
 	 */
 	public v_messageSend(Controller controlador) {
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -68,7 +69,7 @@ public class v_messageSend extends JFrame {
 		txtSubject.setColumns(10);
 		
 		lblNewMessage = new JLabel(controlador.getResourcebundle().getString("msg_new_message") );
-		lblNewMessage.setBounds(10, 0, 86, 14);
+		lblNewMessage.setBounds(10, 0, 265, 14);
 		panel.add(lblNewMessage);
 		
 		btnSend = new JButton(controlador.getResourcebundle().getString("msg_send") );

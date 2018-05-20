@@ -13,6 +13,9 @@ import java.awt.event.ActionListener;
 import java.rmi.RemoteException;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
+import javax.swing.UIManager;
+import javax.swing.UIManager.LookAndFeelInfo;
+
 import java.awt.Font;
 import java.awt.Toolkit;
 
@@ -25,6 +28,17 @@ public class v_select_language extends JFrame {
 	private String[] args;
 
 	public static void main(String[] args) {
+		try {
+			for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+				if ("Nimbus".equals(info.getName())) {
+					UIManager.setLookAndFeel(info.getClassName());
+					break;
+				}
+			}
+		} catch (Exception e) {
+			// If Nimbus is not available, you can set the GUI to another look
+			// and feel.
+		}
 		new v_select_language(args);
 	}
 
@@ -49,7 +63,7 @@ public class v_select_language extends JFrame {
 	public void Initialize(){
 		String[] languages = { "Spanish", "English", "French"};
 		comboBox = new JComboBox(languages);
-		comboBox.setBounds(50, 61, 134, 20);
+		comboBox.setBounds(50, 61, 134, 29);
 		contentPane.add(comboBox);
 		
 		lblSelectLanguage = new JLabel(" DeustoBox Client");
@@ -89,7 +103,7 @@ public class v_select_language extends JFrame {
 				
 			}
 		});
-		btnEnterDeustobox.setBounds(50, 101, 134, 23);
+		btnEnterDeustobox.setBounds(50, 101, 134, 32);
 		contentPane.add(btnEnterDeustobox);
 	}
 }

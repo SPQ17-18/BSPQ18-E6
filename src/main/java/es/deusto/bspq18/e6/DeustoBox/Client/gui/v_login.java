@@ -76,12 +76,12 @@ public class v_login extends JFrame {
 		panel.add(lblPassword);
 		
 		txtUsername = new JTextField();
-		txtUsername.setBounds(145, 111, 163, 26);
+		txtUsername.setBounds(145, 111, 163, 31);
 		panel.add(txtUsername);
 		txtUsername.setColumns(10);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(145, 153, 163, 26);
+		passwordField.setBounds(145, 153, 163, 31);
 		panel.add(passwordField);
 		
 		btnEnter = new JButton(controlador.getResourcebundle().getString("msg_signin"));
@@ -110,7 +110,7 @@ public class v_login extends JFrame {
 				}
 			}
 		});
-		btnEnter.setBounds(168, 190, 115, 29);
+		btnEnter.setBounds(168, 197, 115, 32);
 		panel.add(btnEnter);
 		
 		lblRegister = new JLabel(controlador.getResourcebundle().getString("msg_no_acc"));

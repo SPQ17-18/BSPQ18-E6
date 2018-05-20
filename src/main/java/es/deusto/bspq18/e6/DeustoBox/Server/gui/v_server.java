@@ -104,7 +104,7 @@ public class v_server extends JFrame {
 				System.exit(0);
 			}
 		});
-		btnNewButton.setBounds(293, 58, 117, 23);
+		btnNewButton.setBounds(293, 58, 117, 33);
 		contentPane.add(btnNewButton);
 		
 		btnFolder = new JButton("Folder");
@@ -120,7 +120,7 @@ public class v_server extends JFrame {
 			        }
 			}
 		});
-		btnFolder.setBounds(22, 58, 89, 23);
+		btnFolder.setBounds(22, 58, 89, 33);
 		contentPane.add(btnFolder);
 		
 		lblLogo = new JLabel("New label");

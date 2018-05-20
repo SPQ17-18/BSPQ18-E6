@@ -52,19 +52,19 @@ public class v_installer extends JFrame {
 		frame = new JFrame();
 		frame.setResizable(false);
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(v_installer.class.getResource("/es/deusto/bspq18/e6/DeustoBox/Server/images/logo.png")));
-		
 		frame.setTitle(resourcebundle.getString("msg_txt_installer"));
-		frame.setBounds(100, 100, 610, 252);
+		frame.setBounds(100, 100, 610, 237);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		frame.setLocationRelativeTo(null);
 
 		txtPath = new JTextField();
-		txtPath.setBounds(31, 119, 398, 21);
+		txtPath.setBounds(29, 101, 398, 30);
 		frame.getContentPane().add(txtPath);
 		txtPath.setColumns(10);
 
 		btnBrowse = new JButton(resourcebundle.getString("txt_browse"));
-		btnBrowse.setBounds(465, 112, 87, 37);
+		btnBrowse.setBounds(463, 94, 87, 48);
 		frame.getContentPane().add(btnBrowse);
 
 		btnCancel = new JButton("Cancel");
@@ -73,7 +73,7 @@ public class v_installer extends JFrame {
 				System.exit(0);
 			}
 		});
-		btnCancel.setBounds(120, 180, 115, 29);
+		btnCancel.setBounds(118, 154, 115, 37);
 		frame.getContentPane().add(btnCancel);
 
 		btnOk = new JButton("Ok");
@@ -95,7 +95,7 @@ public class v_installer extends JFrame {
  			
  			}
 		});
-		btnOk.setBounds(314, 180, 115, 29);
+		btnOk.setBounds(312, 154, 115, 37);
 		frame.getContentPane().add(btnOk);
 
 		lblDeustoboxInstaller = new JLabel(resourcebundle.getString("txt_dt"));

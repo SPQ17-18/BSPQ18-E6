@@ -9,6 +9,7 @@ import es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
+import java.awt.Desktop;
 import java.awt.Font;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
@@ -16,6 +17,7 @@ import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
@@ -36,11 +38,12 @@ public class v_client extends JFrame {
 	private v_client_profile myProfile;
 	private v_messageSend sendMessage;
 	private v_messageReceived readMessages;
+	private String path;
 
 	/**
 	 * Create the frame.
 	 */
-	public v_client(Controller controlador) {
+	public v_client(Controller controlador, String path) {
 		setIconImage(Toolkit.getDefaultToolkit()
 				.getImage(v_register.class.getResource("/es/deusto/bspq18/e6/DeustoBox/Client/images/logo.png")));
 		this.controlador = controlador;
@@ -52,10 +55,10 @@ public class v_client extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		this.path = path;
 		initComponents();
 		this.setVisible(true);
 		this.myProfile = null;
-		setLocationRelativeTo(null);
 	}
 
 	public void initComponents() {
@@ -74,10 +77,17 @@ public class v_client extends JFrame {
 		buttonFolder = new JButton("Folder");
 		buttonFolder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				 Desktop desktop = Desktop.getDesktop();
+			        File dirToOpen = null;
+			        try {
+			            dirToOpen = new File(path);
+			            desktop.open(dirToOpen);
+			        } catch (IllegalArgumentException | IOException iae) {
+			            System.out.println("File Not Found");
+			        }
 			}
 		});
-		buttonFolder.setBounds(27, 111, 89, 23);
+		buttonFolder.setBounds(27, 104, 89, 30);
 		contentPane.add(buttonFolder);
 
 		btnSync = new JButton("");
@@ -144,11 +154,11 @@ public class v_client extends JFrame {
 		contentPane.add(btnPerfil);
 
 		lblNmeroDeArchivos = new JLabel(controlador.getResourcebundle().getString("msg_number_files"));
-		lblNmeroDeArchivos.setBounds(27, 39, 125, 20);
+		lblNmeroDeArchivos.setBounds(27, 36, 125, 20);
 		contentPane.add(lblNmeroDeArchivos);
 
 		lblMisMensajes = new JLabel(controlador.getResourcebundle().getString("msg_message"));
-		lblMisMensajes.setBounds(27, 59, 101, 20);
+		lblMisMensajes.setBounds(27, 56, 101, 20);
 		contentPane.add(lblMisMensajes);
 
 		btnLeerSms = new JButton("");
@@ -187,12 +197,12 @@ public class v_client extends JFrame {
 		String email = controlador.getUserdto().getEmail();
 		int files = getControlador().getNumberOfFiles(email);
 		lblNumFiles.setText(String.valueOf(files));
-		lblNumFiles.setBounds(174, 42, 46, 14);
+		lblNumFiles.setBounds(174, 39, 46, 14);
 		contentPane.add(lblNumFiles);
 
 		lblNumMSM = new JLabel("");
 		lblNumMSM.setText(String.valueOf(controlador.getNumberOfUserMessages(email)));
-		lblNumMSM.setBounds(174, 60, 46, 14);
+		lblNumMSM.setBounds(174, 57, 46, 14);
 		contentPane.add(lblNumMSM);
 	}
 

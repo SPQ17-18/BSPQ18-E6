@@ -182,6 +182,7 @@ public ContiPerfRule rule = new ContiPerfRule();
 		}
 		@Test
 		public void testgetToDownloadMessages(){
+		controller.addMessage("from", "emailto", "subject", "text");
 		assertEquals(controller.downloadMessages("emailto").get(0).getSubject(), "subject");
 		assertEquals(controller.downloadMessages("emailto").get(0).getText(), "text");
 		logger.getLogger().info("CONTROLLER TEST -- Test DownloadMessages done");

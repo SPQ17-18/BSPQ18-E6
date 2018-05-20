@@ -38,6 +38,7 @@ public class v_client_profile extends JFrame {
 	 * Create the frame.
 	 */
 	public v_client_profile(Controller controlador) {
+		setResizable(false);
 		this.controlador = controlador;
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -46,6 +47,7 @@ public class v_client_profile extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		InitComponents();
+		this.setLocationRelativeTo(null);
 		this.setVisible(true);
 	
 	}

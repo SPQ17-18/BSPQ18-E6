@@ -64,6 +64,7 @@ public class Assembler {
 	}
 	
 	public DConnectionDTO createConnectionDTO(DConnection conection) {
+		System.out.println(conection);
 		DConnectionDTO dto = new DConnectionDTO(conection.getID(), conection.getUserEmail(), conection.getConnectionDate(), conection.getOSUsed());
 		return dto;
 	}

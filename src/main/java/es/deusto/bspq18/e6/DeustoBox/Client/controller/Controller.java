@@ -12,6 +12,8 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
+import javax.swing.UIManager.LookAndFeelInfo;
 
 import es.deusto.bspq18.e6.DeustoBox.Client.gui.v_login;
 import es.deusto.bspq18.e6.DeustoBox.Client.remote.RMIServiceLocator;
@@ -239,8 +241,8 @@ public class Controller {
 		} catch (Exception ex) {
 
 		}
-		JOptionPane.showMessageDialog(null, downloads + resourcebundle.getString("msg_file_download") + uploads
-				+ resourcebundle.getString("msg_file_upload"));
+		JOptionPane.showMessageDialog(null, downloads + " " + resourcebundle.getString("msg_file_download") + "\n "+ uploads 
+				+ " " + resourcebundle.getString("msg_file_upload"));
 
 	}
 
