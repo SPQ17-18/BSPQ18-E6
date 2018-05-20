@@ -120,7 +120,7 @@ public class DAOTest {
 		DMessage mes = new DMessage(1,"from", "emailto", "subject", "text");
 		db.addMessage(mes);
 		ArrayList<DMessage> ret = null;
-		ret = db.getAllMessagesOfSendToAUser("to");
+		ret = db.getAllMessagesOfSendToAUser("emailto");
 		System.out.println(ret.get(ret.size()-1).toString());
 		assertEquals(ret.get(ret.size() -1).getEmailfrom(), "from");
 		assertEquals(ret.get(ret.size() -1).getEmailTo(), "emailto");
