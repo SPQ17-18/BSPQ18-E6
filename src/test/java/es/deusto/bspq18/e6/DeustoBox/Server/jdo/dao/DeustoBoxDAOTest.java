@@ -1,3 +1,4 @@
+package es.deusto.bspq18.e6.DeustoBox.Server.jdo.dao;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
@@ -21,7 +22,7 @@ import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
 import es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log;
 @PerfTest(invocations = 5)
 @Required(max = 1200, average = 250)
-public class DAOTest {
+public class DeustoBoxDAOTest {
 
 	private static IDeustoBoxDAO db;
 	private static DUser e;
