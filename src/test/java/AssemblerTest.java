@@ -44,6 +44,7 @@ public class AssemblerTest {
 		file = new DFile(user, "123", "nombre", "ayer");
 		connection = new DConnection(1, "gorosinha@deusto.es", "Windows");
 		message = new DMessage(1, "from", "to", "subject", "text");
+		logger.getLogger().info("ASSEMBLER TEST -- Ready for starting with the tests.");
 
 	}
 
@@ -59,7 +60,7 @@ public class AssemblerTest {
 		assertEquals("email2", userdto.getEmail());
 		assertEquals("password2", userdto.getPassword());
 		userdto.removeFile(null);
-		logger.getLogger().info("TestUserDTO done correctly");
+		logger.getLogger().info("ASSEMBLER TEST-- TestUserDTO done correctly");
 
 	}
 
@@ -71,7 +72,7 @@ public class AssemblerTest {
 		user = assembler.createUser(userdto);
 		assertEquals(user.getEmail(), userdto.getEmail());
 		assertEquals(user.getPassword(), userdto.getPassword());
-		logger.getLogger().info("TestUser done correctly");
+		logger.getLogger().info("ASSEMBLER TEST-- TestUser done correctly");
 	}
 
 	@Test
@@ -91,7 +92,7 @@ public class AssemblerTest {
 		assertEquals("nombre3", filedto.getName());
 		filedto.setUserEmail("email3");
 		assertEquals("email3", filedto.getUserEmail());
-		logger.getLogger().info("TestFileDTO done correctly");
+		logger.getLogger().info("ASSEMBLER TEST-- TestFileDTO done correctly");
 	}
 
 	@Test
@@ -105,7 +106,7 @@ public class AssemblerTest {
 		assertEquals(file.getLastModified(), filedto.getLastModified());
 		assertEquals(file.getName(), filedto.getName());
 		assertEquals(file.getUser().getEmail(), filedto.getUser().getEmail());
-		logger.getLogger().info("TestFile done correctly");
+		logger.getLogger().info("ASSEMBLER TEST-- TestFile done correctly");
 	}
 
 	@Test
@@ -123,7 +124,7 @@ public class AssemblerTest {
 
 		assertEquals(files.get(0).getHash(), filesdto.get(0).getHash());
 		assertEquals(files.get(1).getLastModified(), filesdto.get(1).getLastModified());
-		logger.getLogger().info("TestFilesDTO done correctly");
+		logger.getLogger().info("ASSEMBLER TEST-- TestFilesDTO done correctly");
 	}
 
 	@Test
@@ -139,7 +140,7 @@ public class AssemblerTest {
 		files = assembler.createFiles(filesdto);
 		assertEquals(files.get(0).getHash(), filesdto.get(0).getHash());
 		assertEquals(files.get(1).getLastModified(), filesdto.get(1).getLastModified());
-		logger.getLogger().info("TestFiles done correctly");
+		logger.getLogger().info("ASSEMBLER TEST-- TestFiles done correctly");
 	}
 
 	@Test
@@ -150,7 +151,7 @@ public class AssemblerTest {
 		assertEquals(connectiondto.getId(), connection.getID());
 		assertEquals(connectiondto.getOSUsed(), connection.getOSUsed());
 		assertEquals(connectiondto.getUserEmail(), connection.getUserEmail());
-		logger.getLogger().info("TestConnectionDTO done correctly");
+		logger.getLogger().info("ASSEMBLER TEST-- TestConnectionDTO done correctly");
 
 	}
 
@@ -163,7 +164,7 @@ public class AssemblerTest {
 		assertEquals(message.getEmailTo(), messagedto.getEmailTo());
 		assertEquals(message.getText(), messagedto.getText());
 		assertEquals(message.getSubject(), messagedto.getSubject());
-		logger.getLogger().info("TestMessageDTO done correctly");
+		logger.getLogger().info("ASSEMBLER TEST-- TestMessageDTO done correctly");
 	}
 
 	@Test
@@ -176,7 +177,7 @@ public class AssemblerTest {
 		assertEquals(message.getEmailTo(), messagedto.getEmailTo());
 		assertEquals(message.getText(), messagedto.getText());
 		assertEquals(message.getSubject(), messagedto.getSubject());
-		logger.getLogger().info("TestMessage done correctly");
+		logger.getLogger().info("ASSEMBLER TEST-- TestMessage done correctly");
 	}
 
 }

@@ -53,7 +53,7 @@ public ContiPerfRule rule = new ContiPerfRule();
 				public void run() {
 					try {
 						java.rmi.registry.LocateRegistry.createRegistry(1099);
-						logger.getLogger().info("BeforeClass: RMI registry ready.");
+						logger.getLogger().info("CONTROLLER TEST -- BeforeClass: RMI registry ready.");
 					} catch (Exception e) {
 						logger.getLogger().error("CONTROLLER TEST -- Exception starting RMI registry:");
 						e.printStackTrace();
@@ -72,8 +72,8 @@ public ContiPerfRule rule = new ContiPerfRule();
 			class RMIServerRunnable implements Runnable {
 
 				public void run() {
-					logger.getLogger().info("This is a test to check how mvn test executes this test without external interaction; JVM properties by program");
-					logger.getLogger().info("**************: " + cwd);
+					logger.getLogger().info("CONTROLLER TEST -- This is a test to check how mvn test executes this test without external interaction; JVM properties by program");
+					logger.getLogger().info("CONTROLLER TEST -- **************: " + cwd);
 					System.setProperty("java.rmi.server.codebase", "file:" + cwd);
 					System.setProperty("java.security.policy", "target\\test-classes\\security\\java.policy");
 
@@ -126,7 +126,7 @@ public ContiPerfRule rule = new ContiPerfRule();
 			args[0] = "127.0.0.1";
 			args[1] = "1099";
 			args[2] = "DeustoBox";
-			logger.getLogger().info("BeforeTest - Setting the client ready for calling TestServer name: " + name);
+			logger.getLogger().info("CONTROLLER TEST -- BeforeTest - Setting the client ready for calling TestServer name: " + name);
 			messenger = (IDeustoBoxRemoteService)java.rmi.Naming.lookup(name);
 			controller = new Controller(args,0);
 			}

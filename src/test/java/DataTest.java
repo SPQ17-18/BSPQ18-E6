@@ -18,6 +18,7 @@ import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DConnection;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DFile;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DMessage;
 import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
+import es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log;
 
 @PerfTest(invocations = 5)
 @Required(max = 1200, average = 250)
@@ -30,6 +31,7 @@ public class DataTest {
 	private static DMessageDTO messagedto;
 	private static DConnection connection;
 	private static DConnectionDTO connectiondto;
+	private static Error_log logger = new Error_log();
 	@Rule
 	public ContiPerfRule rule = new ContiPerfRule();
 	@BeforeClass
@@ -42,6 +44,7 @@ public class DataTest {
 	 messagedto = new DMessageDTO(1, "from", "to", "subject", "text");
 	 connection = new DConnection(1, "gorosinha@deusto.es", "Windows");
 	 connectiondto = new DConnectionDTO(1, "gorosinha@deusto.es", "Windows");
+	 logger.getLogger().info("DATA TEST -- Ready for starting with the tests.");
 	 
 	 
 	}
@@ -64,7 +67,8 @@ public class DataTest {
 		Date e = new Date();
 		user.setRegisterDate(e);
 		assertEquals(user.getRegisterDate(), e);
-		System.out.println(user.toString());
+		logger.getLogger().info(user.toString());
+		logger.getLogger().info("DATA TEST -- TestUser test done correctly");
 		
 		
 
@@ -86,7 +90,8 @@ public class DataTest {
 		assertEquals(file.getLastModified(), "ayer3");
 		file.setName("File1");
 		assertEquals(file.getName(), "File1");
-		System.out.println(file.toString());
+		logger.getLogger().info(file.toString());
+		logger.getLogger().info("DATA TEST -- TestUser test done correctly");
 		
 		
 
@@ -108,7 +113,8 @@ public class DataTest {
 		Date e = new Date();
 		userdto.setRegisteredDate(e);
 		assertEquals(userdto.getRegisteredDate(), e);
-		System.out.println(userdto.toString());
+		logger.getLogger().info(userdto.toString());
+		logger.getLogger().info("DATA TEST -- TestUserDTO test done correctly");
 		
 	}
 	
@@ -131,7 +137,8 @@ public class DataTest {
 		filedto.setUser(userdto);
 		assertEquals(userdto, filedto.getUser());
 		filedto.setFile(new File("path"));
-		System.out.println(filedto.toString());
+		logger.getLogger().info(filedto.toString());
+		logger.getLogger().info("DATA TEST -- TestFileDTO test done correctly");
 		
 	}
 	@Test
@@ -151,8 +158,8 @@ public class DataTest {
 		 assertEquals(message.getMessageId(),2);
 		 assertEquals(message.getSubject(), "subject1");
 		 assertEquals(message.getText(), "text1");
-		 System.out.println(message.toString());
-		
+		 logger.getLogger().info(message.toString());
+		 logger.getLogger().info("DATA TEST -- TestMessage test done correctly");
 		
 	}
 
@@ -174,7 +181,8 @@ public class DataTest {
 		 assertEquals(messagedto.getMessageId(),2);
 		 assertEquals(messagedto.getSubject(), "subject1");
 		 assertEquals(messagedto.getText(), "text1");
-		System.out.println(messagedto.toString());
+		 logger.getLogger().info(messagedto.toString());
+		logger.getLogger().info("DATA TEST -- TestMessageDTO test done correctly");
 		
 	}
 	
@@ -194,7 +202,8 @@ public class DataTest {
 	assertEquals(connection.getUserEmail(), "email");
 	connection.setID(12);
 	assertEquals(12, connection.getID());
-	System.out.println(connection.toString());
+	logger.getLogger().info(connection.toString());
+	logger.getLogger().info("DATA TEST -- TestConnection test done correctly");
 
 		
 	}
@@ -212,6 +221,7 @@ public class DataTest {
 	connectiondto.setId(12);
 	assertEquals(12, connectiondto.getId());
 	assertEquals(1L, DConnectionDTO.getSerialversionuid());
-	System.out.println(connectiondto.toString());
+	logger.getLogger().info(connectiondto.toString());
+	logger.getLogger().info("DATA TEST -- TestConnectionDTO test done correctly");
 	}
 }

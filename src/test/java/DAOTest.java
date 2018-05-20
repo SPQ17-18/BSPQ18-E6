@@ -26,7 +26,7 @@ public class DAOTest {
 	private static IDeustoBoxDAO db;
 	private static DUser e;
 	private static DFile file;
-	
+	private static Error_log logger = new Error_log();
 	@Rule 
 	public ContiPerfRule rule1 = new ContiPerfRule();
 	
@@ -35,7 +35,7 @@ public class DAOTest {
 		Locale currentLocale = new Locale("en", "US");
 		ResourceBundle resourcebundle = ResourceBundle.getBundle("lang/translations", currentLocale);
 		db = new DeustoBoxDAO(new Error_log(), resourcebundle);
-
+		logger.getLogger().info("DAOTest -- Ready for starting with the tests.");
 	}
 
 	@Test
@@ -53,6 +53,7 @@ public class DAOTest {
 		System.out.println("HAY " + users.size());
 		assertEquals("dipina4", users.get(users.size() -1).getUsername());
 		db.deleteAllUsers();
+		logger.getLogger().info("DAO TEST -- testUser test done correctly");
 		
 		
 }
@@ -64,6 +65,7 @@ public class DAOTest {
 		db.addUser(e);
 		assertEquals(true, db.checkPassword("dipina3@deusto.es", "12345"));
 		db.deleteAllUsers();
+		logger.getLogger().info("DAO TEST -- testUserPassword test done correctly");
 }
 	
 	@Test
@@ -75,6 +77,7 @@ public class DAOTest {
 		DUser ret = db.getUser("dipina2@deusto.es", "nuevapassword");
 		assertEquals("nuevapassword", ret.getPassword());
 		db.deleteAllUsers();
+		logger.getLogger().info("DAO TEST -- testNewPassword test done correctly");
 		
 	}
 	
@@ -94,6 +97,7 @@ public class DAOTest {
 	assertEquals(file.getName(), ret.get(0).getName());
 	
 	db.deleteAllFiles();
+	logger.getLogger().info("DAO TEST -- addFile test done correctly");
 	
 	
 		
@@ -108,7 +112,7 @@ public class DAOTest {
 	System.out.println("La conexion: " + ret.get(0).toString());
 	assertEquals(con.getID(), ret.get(0).getID());
 	db.deleteAllConnections();
-	
+	logger.getLogger().info("DAO TEST -- addConnection test done correctly");
 		
 	}
 	
@@ -130,6 +134,7 @@ public class DAOTest {
 		assertEquals(ret.get(ret.size() -1).getMessageId(), db.getLastMessageID());
 		assertTrue(db.getNumberOfUserMessages("emailto")> 0);
 		assertEquals(db.deleteMessage(1), true);
+		logger.getLogger().info("DAO TEST -- addMessage test done correctly");
 		
 		
 		

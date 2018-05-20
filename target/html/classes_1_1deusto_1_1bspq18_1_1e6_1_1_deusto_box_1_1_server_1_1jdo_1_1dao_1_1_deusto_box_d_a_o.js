@@ -1,0 +1,25 @@
+var classes_1_1deusto_1_1bspq18_1_1e6_1_1_deusto_box_1_1_server_1_1jdo_1_1dao_1_1_deusto_box_d_a_o =
+[
+    [ "DeustoBoxDAO", "classes_1_1deusto_1_1bspq18_1_1e6_1_1_deusto_box_1_1_server_1_1jdo_1_1dao_1_1_deusto_box_d_a_o.html#a260d9bf0638f37e6a744558379aee259", null ],
+    [ "addConnection", "classes_1_1deusto_1_1bspq18_1_1e6_1_1_deusto_box_1_1_server_1_1jdo_1_1dao_1_1_deusto_box_d_a_o.html#a08be11b50fb6622c2b3a961f24c1d940", null ],
+    [ "addFiles", "classes_1_1deusto_1_1bspq18_1_1e6_1_1_deusto_box_1_1_server_1_1jdo_1_1dao_1_1_deusto_box_d_a_o.html#aa1b57d294990a7f260c204444d6f25c7", null ],
+    [ "addMessage", "classes_1_1deusto_1_1bspq18_1_1e6_1_1_deusto_box_1_1_server_1_1jdo_1_1dao_1_1_deusto_box_d_a_o.html#a54afa270fb0e6e8bc7725c52b080649d", null ],
+    [ "addUser", "classes_1_1deusto_1_1bspq18_1_1e6_1_1_deusto_box_1_1_server_1_1jdo_1_1dao_1_1_deusto_box_d_a_o.html#a4873b92825ffdb620162f77cbb23b8d7", null ],
+    [ "checkPassword", "classes_1_1deusto_1_1bspq18_1_1e6_1_1_deusto_box_1_1_server_1_1jdo_1_1dao_1_1_deusto_box_d_a_o.html#a59f48069908a66b9711a3aa6c7a20c41", null ],
+    [ "deleteAllConnections", "classes_1_1deusto_1_1bspq18_1_1e6_1_1_deusto_box_1_1_server_1_1jdo_1_1dao_1_1_deusto_box_d_a_o.html#ab3e381e995e007128725c851650d2fde", null ],
+    [ "deleteAllFiles", "classes_1_1deusto_1_1bspq18_1_1e6_1_1_deusto_box_1_1_server_1_1jdo_1_1dao_1_1_deusto_box_d_a_o.html#a07df24c6fd58e408892f8f4bd39931c4", null ],
+    [ "deleteAllMessages", "classes_1_1deusto_1_1bspq18_1_1e6_1_1_deusto_box_1_1_server_1_1jdo_1_1dao_1_1_deusto_box_d_a_o.html#acfd7aa92ccb93a6fcb20015156118f03", null ],
+    [ "deleteAllUsers", "classes_1_1deusto_1_1bspq18_1_1e6_1_1_deusto_box_1_1_server_1_1jdo_1_1dao_1_1_deusto_box_d_a_o.html#a7c2b9657c40ace84e9ddb2a1750e6ee2", null ],
+    [ "deleteMessage", "classes_1_1deusto_1_1bspq18_1_1e6_1_1_deusto_box_1_1_server_1_1jdo_1_1dao_1_1_deusto_box_d_a_o.html#a4e42b41382683d87b32810a60080c8d0", null ],
+    [ "getAllFiles", "classes_1_1deusto_1_1bspq18_1_1e6_1_1_deusto_box_1_1_server_1_1jdo_1_1dao_1_1_deusto_box_d_a_o.html#afe1ece43464200c0c300f3eac92d728e", null ],
+    [ "getAllFilesOfAUser", "classes_1_1deusto_1_1bspq18_1_1e6_1_1_deusto_box_1_1_server_1_1jdo_1_1dao_1_1_deusto_box_d_a_o.html#a1f838db8a746072ab5b426ff5c1448da", null ],
+    [ "getAllMessagesOfSendToAUser", "classes_1_1deusto_1_1bspq18_1_1e6_1_1_deusto_box_1_1_server_1_1jdo_1_1dao_1_1_deusto_box_d_a_o.html#a5357c3fa65d1cb8e48114eee52358a9b", null ],
+    [ "getAllUsers", "classes_1_1deusto_1_1bspq18_1_1e6_1_1_deusto_box_1_1_server_1_1jdo_1_1dao_1_1_deusto_box_d_a_o.html#af6a98ee487f66dcbc56663226d7ce425", null ],
+    [ "getConnections", "classes_1_1deusto_1_1bspq18_1_1e6_1_1_deusto_box_1_1_server_1_1jdo_1_1dao_1_1_deusto_box_d_a_o.html#a108d2f8a1699240f686d31a66245021f", null ],
+    [ "getLastConnectionID", "classes_1_1deusto_1_1bspq18_1_1e6_1_1_deusto_box_1_1_server_1_1jdo_1_1dao_1_1_deusto_box_d_a_o.html#a93943c61dcd773e7d4828fd99b5904c9", null ],
+    [ "getLastMessageID", "classes_1_1deusto_1_1bspq18_1_1e6_1_1_deusto_box_1_1_server_1_1jdo_1_1dao_1_1_deusto_box_d_a_o.html#acfc34cbf454de0b8ef1bc83ef8c41562", null ],
+    [ "getNumberOfUserFiles", "classes_1_1deusto_1_1bspq18_1_1e6_1_1_deusto_box_1_1_server_1_1jdo_1_1dao_1_1_deusto_box_d_a_o.html#a9487ee775445414a5b562b1e2c77afc7", null ],
+    [ "getNumberOfUserMessages", "classes_1_1deusto_1_1bspq18_1_1e6_1_1_deusto_box_1_1_server_1_1jdo_1_1dao_1_1_deusto_box_d_a_o.html#a31147274fcf6c6d1f5d63d2b42c43708", null ],
+    [ "getUser", "classes_1_1deusto_1_1bspq18_1_1e6_1_1_deusto_box_1_1_server_1_1jdo_1_1dao_1_1_deusto_box_d_a_o.html#ad7a2019d707d5698bdb80f4fc7df9248", null ],
+    [ "updatePassword", "classes_1_1deusto_1_1bspq18_1_1e6_1_1_deusto_box_1_1_server_1_1jdo_1_1dao_1_1_deusto_box_d_a_o.html#aee61a6f577f75d59d725644c1fc47f6b", null ]
+];
