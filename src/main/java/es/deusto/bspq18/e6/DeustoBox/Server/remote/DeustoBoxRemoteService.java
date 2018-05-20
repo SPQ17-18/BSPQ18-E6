@@ -79,6 +79,7 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		boolean correcto = false;
 		DUser user = new DUser(username, email, password);
 		correcto = db.addUser(user);
+		System.out.println(correcto);
 
 		if (correcto) {
 			try {

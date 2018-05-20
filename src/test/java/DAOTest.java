@@ -97,6 +97,7 @@ public class DAOTest {
 	assertEquals(file.getName(), ret.get(0).getName());
 	
 	db.deleteAllFiles();
+	db.deleteAllUsers();
 	logger.getLogger().info("DAO TEST -- addFile test done correctly");
 	
 	
@@ -134,6 +135,7 @@ public class DAOTest {
 		assertEquals(ret.get(ret.size() -1).getMessageId(), db.getLastMessageID());
 		assertTrue(db.getNumberOfUserMessages("emailto")> 0);
 		assertEquals(db.deleteMessage(1), true);
+		db.deleteAllMessages();
 		logger.getLogger().info("DAO TEST -- addMessage test done correctly");
 		
 		

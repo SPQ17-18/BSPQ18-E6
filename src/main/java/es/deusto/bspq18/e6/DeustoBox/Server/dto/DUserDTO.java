@@ -18,8 +18,7 @@ public class DUserDTO implements Serializable {
 	private Date registeredDate;
 	
 
-	Locale currentLocale = new Locale("en", "US");
-	ResourceBundle resourcebundle = ResourceBundle.getBundle("lang/translations", currentLocale);
+
 	
 	public DUserDTO(String email, String username, String password, Date registered) {
 		this.email = email;
@@ -77,8 +76,10 @@ public class DUserDTO implements Serializable {
 
 	@Override
 	public String toString() {
-		return resourcebundle.getString("msg_udto_email") + email + resourcebundle.getString("msg_udto_user") + username + resourcebundle.getString("msg_udto_pass") + password + resourcebundle.getString("msg_udto_date")
-				+ registeredDate + "]";
+		return "DUserDTO [email=" + email + ", username=" + username + ", password=" + password + ", files=" + files
+				+ ", registeredDate=" + registeredDate + "]";
 	}
+
+
 
 }

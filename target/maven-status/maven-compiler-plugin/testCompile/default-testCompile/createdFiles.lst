@@ -1,2 +1,3 @@
-AssemblerTest.class
-DataTest.class
+ControllerTest.class
+ControllerTest$1RMIRegistryRunnable.class
+ControllerTest$1RMIServerRunnable.class

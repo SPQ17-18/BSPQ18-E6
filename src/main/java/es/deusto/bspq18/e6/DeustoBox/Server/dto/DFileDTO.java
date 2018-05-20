@@ -20,9 +20,7 @@ public class DFileDTO implements Serializable {
 	private Date creationDate;
 	private DUserDTO user;
 	
-	Locale currentLocale = new Locale("en", "US");
-	ResourceBundle resourcebundle = ResourceBundle.getBundle("lang/translations", currentLocale);
-	
+
 	public DFileDTO(String userEmail, String path, String string) {
 		this.userEmail = userEmail;
 		this.file = new File(path);
@@ -95,9 +93,11 @@ public class DFileDTO implements Serializable {
 
 	@Override
 	public String toString() {
-		return resourcebundle.getString("msg_dfile_email") + userEmail + resourcebundle.getString("msg_hash") + hash + resourcebundle.getString("msg_dfile_name") + name + resourcebundle.getString("msg_dfile_mod")
-				+ lastModified + resourcebundle.getString("msg_dfile_file") + file + resourcebundle.getString("msg_dfile_date") + creationDate + resourcebundle.getString("msg_dfile_user") + user + "]";
+		return "DFileDTO [userEmail=" + userEmail + ", hash=" + hash + ", name=" + name + ", lastModified="
+				+ lastModified + ", file=" + file + ", creationDate=" + creationDate + ", user=" + user + "]";
 	}
+
+
 		
 	
 	

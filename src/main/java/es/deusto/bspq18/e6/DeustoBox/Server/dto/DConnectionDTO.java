@@ -13,8 +13,7 @@ public class DConnectionDTO implements Serializable {
 	private Date ConnectionDate;
 	private String OSUsed;
 
-	Locale currentLocale = new Locale("en", "US");
-	ResourceBundle resourcebundle = ResourceBundle.getBundle("lang/translations", currentLocale);
+
 	
 	
 	public DConnectionDTO( int id, String userEmail, Date connectionDate, String oSUsed) {
@@ -73,12 +72,13 @@ public class DConnectionDTO implements Serializable {
 		return serialVersionUID;
 	}
 
-
 	@Override
 	public String toString() {
-		return resourcebundle.getString("msg_date") + ConnectionDate.toString() + resourcebundle.getString("opperative_sys") + OSUsed;
+		return "DConnectionDTO [id=" + id + ", userEmail=" + userEmail + ", ConnectionDate=" + ConnectionDate
+				+ ", OSUsed=" + OSUsed + "]";
 	}
-	
+
+
 	
 	
 	

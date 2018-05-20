@@ -12,7 +12,7 @@
 <div class="separator">&nbsp;</div>
 <table class="report">
 <thead><tr>  <td class="heading">Classes in this File</td>  <td class="heading"><a class="dfn" href="help.html" onclick="popupwindow('help.html'); return false;">Line Coverage</a></td>  <td class="heading"><a class="dfn" href="help.html" onclick="popupwindow('help.html'); return false;">Branch Coverage</a></td>  <td class="heading"><a class="dfn" href="help.html" onclick="popupwindow('help.html'); return false;">Complexity</a></td></tr></thead>
-  <tr><td><a href="es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assembler.html">Assembler</a></td><td><table cellpadding="0px" cellspacing="0px" class="percentgraph"><tr class="percentgraph"><td align="right" class="percentgraph" width="40">74%</td><td class="percentgraph"><div class="percentgraph"><div class="greenbar" style="width:74px"><span class="text">50/67</span></div></div></td></tr></table></td><td><table cellpadding="0px" cellspacing="0px" class="percentgraph"><tr class="percentgraph"><td align="right" class="percentgraph" width="40">55%</td><td class="percentgraph"><div class="percentgraph"><div class="greenbar" style="width:55px"><span class="text">11/20</span></div></div></td></tr></table></td><td class="value"><span class="hidden">1.4166666666666667;</span>1,417</td></tr>
+  <tr><td><a href="es.deusto.bspq18.e6.DeustoBox.Server.assembler.Assembler.html">Assembler</a></td><td><table cellpadding="0px" cellspacing="0px" class="percentgraph"><tr class="percentgraph"><td align="right" class="percentgraph" width="40">90%</td><td class="percentgraph"><div class="percentgraph"><div class="greenbar" style="width:90px"><span class="text">36/40</span></div></div></td></tr></table></td><td><table cellpadding="0px" cellspacing="0px" class="percentgraph"><tr class="percentgraph"><td align="right" class="percentgraph" width="40">80%</td><td class="percentgraph"><div class="percentgraph"><div class="greenbar" style="width:80px"><span class="text">8/10</span></div></div></td></tr></table></td><td class="value"><span class="hidden">1.4166666666666667;</span>1,417</td></tr>
 
 </table>
 <div class="separator">&nbsp;</div>
@@ -41,109 +41,136 @@
   <td class="src"><pre class="src">&nbsp;<span class="keyword">import</span> es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;12</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;13</td>  <td class="nbHitsCovered">&nbsp;4</td>  <td class="src"><pre class="src">&nbsp;<span class="keyword">public</span> <span class="keyword">class</span> Assembler {</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;13</td>  <td class="nbHitsCovered">&nbsp;9</td>  <td class="src"><pre class="src">&nbsp;<span class="keyword">public</span> <span class="keyword">class</span> Assembler {</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;14</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;15</td>  <td class="nbHitsCovered">&nbsp;1</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">public</span> DUserDTO createUserDTO(DUser user, String path) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;16</td>  <td class="nbHitsCovered">&nbsp;108976</td>  <td class="src"><pre class="src">&nbsp;                DUserDTO userdto = <span class="keyword">new</span> DUserDTO(user.getEmail(), user.getUsername(), user.getPassword(),</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;17</td>  <td class="nbHitsCovered">&nbsp;108444</td>  <td class="src"><pre class="src">&nbsp;                                user.getRegisterDate());</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;18</td>  <td class="nbHitsCovered">&nbsp;41773914</td>  <td class="src"><pre class="src">&nbsp;                userdto.setFiles(user.getFiles());</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;19</td>  <td class="nbHitsCovered">&nbsp;41773915</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> userdto;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;20</td>  <td class="nbHitsCovered">&nbsp;41665471</td>  <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;21</td>  <td class="nbHitsCovered">&nbsp;41665469</td>  <td class="src"><pre class="src">&nbsp;</pre></td></tr>
+<tr>  <td class="numLine">&nbsp;15</td>  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        <span class="keyword">public</span> DUserDTO createUserDTO(DUser user, String path) {</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;16</td>  <td class="nbHitsCovered">&nbsp;609029</td>  <td class="src"><pre class="src">&nbsp;                DUserDTO userdto = <span class="keyword">new</span> DUserDTO(user.getEmail(), user.getUsername(), user.getPassword(),</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;17</td>  <td class="nbHitsCovered">&nbsp;399597</td>  <td class="src"><pre class="src">&nbsp;                                user.getRegisterDate());</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;18</td>  <td class="nbHitsCovered">&nbsp;399596</td>  <td class="src"><pre class="src">&nbsp;                userdto.setFiles(user.getFiles());</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;19</td>  <td class="nbHitsCovered">&nbsp;399596</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> userdto;</pre></td></tr>
+<tr>  <td class="numLine">&nbsp;20</td>  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
+<tr>  <td class="numLine">&nbsp;21</td>  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;22</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        <span class="keyword">public</span> DUser createUser(DUserDTO userdto) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;23</td>  <td class="nbHitsCovered">&nbsp;38648</td>  <td class="src"><pre class="src">&nbsp;                DUser user = <span class="keyword">new</span> DUser( userdto.getUsername(),userdto.getEmail(), userdto.getPassword());</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;24</td>  <td class="nbHitsCovered">&nbsp;38648</td>  <td class="src"><pre class="src">&nbsp;                user.setFiles(userdto.getFiles());</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;25</td>  <td class="nbHitsCovered">&nbsp;7730219</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> user;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;26</td>  <td class="nbHitsCovered">&nbsp;7691574</td>  <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;27</td>  <td class="nbHitsCovered">&nbsp;7691575</td>  <td class="src"><pre class="src">&nbsp;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;23</td>  <td class="nbHitsCovered">&nbsp;143864</td>  <td class="src"><pre class="src">&nbsp;                DUser user = <span class="keyword">new</span> DUser( userdto.getUsername(),userdto.getEmail(), userdto.getPassword());</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;24</td>  <td class="nbHitsCovered">&nbsp;143867</td>  <td class="src"><pre class="src">&nbsp;                user.setFiles(userdto.getFiles());</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;25</td>  <td class="nbHitsCovered">&nbsp;143868</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> user;</pre></td></tr>
+<tr>  <td class="numLine">&nbsp;26</td>  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
+<tr>  <td class="numLine">&nbsp;27</td>  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;28</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        <span class="keyword">public</span> DFileDTO createFileDTO(DFile file, String path) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;29</td>  <td class="nbHitsCovered">&nbsp;54469</td>  <td class="src"><pre class="src">&nbsp;                DUserDTO user = createUserDTO(file.getUser(), path);</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;30</td>  <td class="nbHitsCovered">&nbsp;54469</td>  <td class="src"><pre class="src">&nbsp;                DFileDTO dto = <span class="keyword">new</span> DFileDTO(user, file.getHash(), file.getName(), file.getLastModified(), path);</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;31</td>  <td class="nbHitsCovered">&nbsp;15837667</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> dto;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;32</td>  <td class="nbHitsCovered">&nbsp;15783198</td>  <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;33</td>  <td class="nbHitsCovered">&nbsp;15783198</td>  <td class="src"><pre class="src">&nbsp;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;29</td>  <td class="nbHitsCovered">&nbsp;194175</td>  <td class="src"><pre class="src">&nbsp;                DUserDTO user = createUserDTO(file.getUser(), path);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;30</td>  <td class="nbHitsCovered">&nbsp;194175</td>  <td class="src"><pre class="src">&nbsp;                DFileDTO dto = <span class="keyword">new</span> DFileDTO(user, file.getHash(), file.getName(), file.getLastModified(), path);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;31</td>  <td class="nbHitsCovered">&nbsp;194174</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> dto;</pre></td></tr>
+<tr>  <td class="numLine">&nbsp;32</td>  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
+<tr>  <td class="numLine">&nbsp;33</td>  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;34</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        <span class="keyword">public</span> DFile createFile(DFileDTO dto) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;35</td>  <td class="nbHitsCovered">&nbsp;37647</td>  <td class="src"><pre class="src">&nbsp;                DFile file = <span class="keyword">new</span> DFile(createUser(dto.getUser()), dto.getHash(), dto.getName(), dto.getLastModified());</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;36</td>  <td class="nbHitsCovered">&nbsp;37647</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> file;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;37</td>  <td class="nbHitsCovered">&nbsp;7690590</td>  <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;38</td>  <td class="nbHitsCovered">&nbsp;7690590</td>  <td class="src"><pre class="src">&nbsp;        </pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;35</td>  <td class="nbHitsCovered">&nbsp;139867</td>  <td class="src"><pre class="src">&nbsp;                DFile file = <span class="keyword">new</span> DFile(createUser(dto.getUser()), dto.getHash(), dto.getName(), dto.getLastModified());</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;36</td>  <td class="nbHitsCovered">&nbsp;139870</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> file;</pre></td></tr>
+<tr>  <td class="numLine">&nbsp;37</td>  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
+<tr>  <td class="numLine">&nbsp;38</td>  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        </pre></td></tr>
 <tr>  <td class="numLine">&nbsp;39</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        <span class="keyword">public</span> ArrayList&lt;DFileDTO&gt; createFilesDTO(ArrayList&lt;DFile&gt; files, String path) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;40</td>  <td class="nbHitsCovered">&nbsp;19979</td>  <td class="src"><pre class="src">&nbsp;                ArrayList&lt;DFileDTO&gt; filesDTO = <span class="keyword">new</span> ArrayList&lt;DFileDTO&gt;();</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;41</td>  <td class="nbHitsCovered"><a title="Line 41: Conditional coverage 100% (2/2).">&nbsp;59937</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 41: Conditional coverage 100% (2/2).">                <span class="keyword">for</span> (<span class="keyword">int</span> i = 0; i &lt; files.size(); i++) {</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;42</td>  <td class="nbHitsCovered">&nbsp;4471359</td>  <td class="src"><pre class="src">&nbsp;                        String pathFile = path + files.get(i).getName().substring(1);</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;43</td>  <td class="nbHitsCovered"><a title="Line 43: Conditional coverage 100% (2/2).">&nbsp;13334161</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 43: Conditional coverage 100% (2/2).">                        filesDTO.add(createFileDTO(files.get(i), pathFile));</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;44</td>  <td class="nbHitsCovered">&nbsp;8862802</td>  <td class="src"><pre class="src">&nbsp;                }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;45</td>  <td class="nbHitsCovered">&nbsp;8882781</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> filesDTO;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;40</td>  <td class="nbHitsCovered">&nbsp;67129</td>  <td class="src"><pre class="src">&nbsp;                ArrayList&lt;DFileDTO&gt; filesDTO = <span class="keyword">new</span> ArrayList&lt;DFileDTO&gt;();</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;41</td>  <td class="nbHitsCovered"><a title="Line 41: Conditional coverage 100% (2/2).">&nbsp;201387</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 41: Conditional coverage 100% (2/2).">                <span class="keyword">for</span> (<span class="keyword">int</span> i = 0; i &lt; files.size(); i++) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;42</td>  <td class="nbHitsCovered">&nbsp;134258</td>  <td class="src"><pre class="src">&nbsp;                        String pathFile = path + files.get(i).getName().substring(1);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;43</td>  <td class="nbHitsCovered">&nbsp;134258</td>  <td class="src"><pre class="src">&nbsp;                        filesDTO.add(createFileDTO(files.get(i), pathFile));</pre></td></tr>
+<tr>  <td class="numLine">&nbsp;44</td>  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;                }</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;45</td>  <td class="nbHitsCovered">&nbsp;67129</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> filesDTO;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;46</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;47</td>  <td class="nbHitsCovered">&nbsp;4431401</td>  <td class="src"><pre class="src">&nbsp;</pre></td></tr>
+<tr>  <td class="numLine">&nbsp;47</td>  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;48</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        <span class="keyword">public</span> ArrayList&lt;DFile&gt; createFiles(ArrayList&lt;DFileDTO&gt; filesDTO) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;49</td>  <td class="nbHitsCovered">&nbsp;18322</td>  <td class="src"><pre class="src">&nbsp;                ArrayList&lt;DFile&gt; files = <span class="keyword">new</span> ArrayList&lt;DFile&gt;();</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;50</td>  <td class="nbHitsCovered"><a title="Line 50: Conditional coverage 100% (2/2).">&nbsp;54966</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 50: Conditional coverage 100% (2/2).">                <span class="keyword">for</span> (<span class="keyword">int</span> i = 0; i &lt; filesDTO.size(); i++) {</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;51</td>  <td class="nbHitsCovered">&nbsp;3881440</td>  <td class="src"><pre class="src">&nbsp;                        files.add(createFile(filesDTO.get(i)));</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;52</td>  <td class="nbHitsCovered"><a title="Line 52: Conditional coverage 100% (2/2).">&nbsp;11534388</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 52: Conditional coverage 100% (2/2).">                }</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;53</td>  <td class="nbHitsCovered">&nbsp;7707914</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> files;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;49</td>  <td class="nbHitsCovered">&nbsp;67935</td>  <td class="src"><pre class="src">&nbsp;                ArrayList&lt;DFile&gt; files = <span class="keyword">new</span> ArrayList&lt;DFile&gt;();</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;50</td>  <td class="nbHitsCovered"><a title="Line 50: Conditional coverage 100% (2/2).">&nbsp;203805</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 50: Conditional coverage 100% (2/2).">                <span class="keyword">for</span> (<span class="keyword">int</span> i = 0; i &lt; filesDTO.size(); i++) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;51</td>  <td class="nbHitsCovered">&nbsp;135870</td>  <td class="src"><pre class="src">&nbsp;                        files.add(createFile(filesDTO.get(i)));</pre></td></tr>
+<tr>  <td class="numLine">&nbsp;52</td>  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;                }</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;53</td>  <td class="nbHitsCovered">&nbsp;67935</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> files;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;54</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;55</td>  <td class="nbHitsCovered">&nbsp;3844796</td>  <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
+<tr>  <td class="numLine">&nbsp;55</td>  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;56</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        </pre></td></tr>
 <tr>  <td class="numLine">&nbsp;57</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        <span class="keyword">public</span> ArrayList&lt;DConnectionDTO&gt; createConnectionsDTO(ArrayList&lt;DConnection&gt; connections) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;58</td>  <td class="nbHitsCovered">&nbsp;1</td>  <td class="src"><pre class="src">&nbsp;                ArrayList&lt;DConnectionDTO&gt; connectionsDTO = <span class="keyword">new</span> ArrayList&lt;DConnectionDTO&gt;();</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;59</td>  <td class="nbHitsUncovered"><a title="Line 59: Conditional coverage 50% (1/2).">&nbsp;1</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 59: Conditional coverage 50% (1/2).">                <span class="keyword">for</span> (<span class="keyword">int</span> i = 0; i &lt; connections.size(); i++) {</a></span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;60</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;                        connectionsDTO.add(createConnectionDTO(connections.get(i)));</span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;61</td>  <td class="nbHitsUncovered"><a title="Line 61: Conditional coverage 0% (0/2).">&nbsp;0</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 61: Conditional coverage 0% (0/2).">                }</a></span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;62</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;                </span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;63</td>  <td class="nbHitsCovered">&nbsp;1</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> connectionsDTO;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;58</td>  <td class="nbHitsCovered">&nbsp;5</td>  <td class="src"><pre class="src">&nbsp;                ArrayList&lt;DConnectionDTO&gt; connectionsDTO = <span class="keyword">new</span> ArrayList&lt;DConnectionDTO&gt;();</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;59</td>  <td class="nbHitsCovered"><a title="Line 59: Conditional coverage 100% (2/2).">&nbsp;139</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 59: Conditional coverage 100% (2/2).">                <span class="keyword">for</span> (<span class="keyword">int</span> i = 0; i &lt; connections.size(); i++) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;60</td>  <td class="nbHitsCovered">&nbsp;134</td>  <td class="src"><pre class="src">&nbsp;                        connectionsDTO.add(createConnectionDTO(connections.get(i)));</pre></td></tr>
+<tr>  <td class="numLine">&nbsp;61</td>  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;                }</pre></td></tr>
+<tr>  <td class="numLine">&nbsp;62</td>  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;                </pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;63</td>  <td class="nbHitsCovered">&nbsp;5</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> connectionsDTO;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;64</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;65</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;        </span></pre></td></tr>
+<tr>  <td class="numLine">&nbsp;65</td>  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        </pre></td></tr>
 <tr>  <td class="numLine">&nbsp;66</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        <span class="keyword">public</span> DConnectionDTO createConnectionDTO(DConnection conection) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;67</td>  <td class="nbHitsCovered">&nbsp;20890</td>  <td class="src"><pre class="src">&nbsp;                DConnectionDTO dto = <span class="keyword">new</span> DConnectionDTO(conection.getID(), conection.getUserEmail(), conection.getConnectionDate(), conection.getOSUsed());</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;68</td>  <td class="nbHitsCovered">&nbsp;20890</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> dto;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;69</td>  <td class="nbHitsCovered">&nbsp;109742</td>  <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;70</td>  <td class="nbHitsCovered">&nbsp;109742</td>  <td class="src"><pre class="src">&nbsp;        </pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;67</td>  <td class="nbHitsCovered">&nbsp;74022</td>  <td class="src"><pre class="src">&nbsp;                DConnectionDTO dto = <span class="keyword">new</span> DConnectionDTO(conection.getID(), conection.getUserEmail(), conection.getConnectionDate(), conection.getOSUsed());</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;68</td>  <td class="nbHitsCovered">&nbsp;74022</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> dto;</pre></td></tr>
+<tr>  <td class="numLine">&nbsp;69</td>  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
+<tr>  <td class="numLine">&nbsp;70</td>  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        </pre></td></tr>
 <tr>  <td class="numLine">&nbsp;71</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        <span class="keyword">public</span> DMessageDTO createMessageDTO(DMessage message){</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;72</td>  <td class="nbHitsCovered">&nbsp;41511</td>  <td class="src"><pre class="src">&nbsp;                DMessageDTO dto = <span class="keyword">new</span> DMessageDTO(message.getMessageId(), message.getEmailfrom(), message.getEmailTo(), message.getSubject(), message.getText(), message.getDate());</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;73</td>  <td class="nbHitsCovered">&nbsp;41511</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> dto;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;74</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;        }</span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;75</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;        </span></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;72</td>  <td class="nbHitsCovered">&nbsp;144185</td>  <td class="src"><pre class="src">&nbsp;                DMessageDTO dto = <span class="keyword">new</span> DMessageDTO(message.getMessageId(), message.getEmailfrom(), message.getEmailTo(), message.getSubject(), message.getText(), message.getDate());</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;73</td>  <td class="nbHitsCovered">&nbsp;144185</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> dto;</pre></td></tr>
+<tr>  <td class="numLine">&nbsp;74</td>  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
+<tr>  <td class="numLine">&nbsp;75</td>  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        </pre></td></tr>
 <tr>  <td class="numLine">&nbsp;76</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        <span class="keyword">public</span> DMessage createMessage(DMessageDTO dto){</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;77</td>  <td class="nbHitsCovered">&nbsp;20543</td>  <td class="src"><pre class="src">&nbsp;                DMessage message = <span class="keyword">new</span> DMessage(dto.getMessageId(), dto.getEmailfrom(), dto.getEmailTo(), dto.getSubject(), dto.getText(), dto.getDate());</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;78</td>  <td class="nbHitsCovered">&nbsp;20543</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> message;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;79</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;        }</span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;80</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;        </span></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;77</td>  <td class="nbHitsCovered">&nbsp;70655</td>  <td class="src"><pre class="src">&nbsp;                DMessage message = <span class="keyword">new</span> DMessage(dto.getMessageId(), dto.getEmailfrom(), dto.getEmailTo(), dto.getSubject(), dto.getText(), dto.getDate());</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;78</td>  <td class="nbHitsCovered">&nbsp;70655</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> message;</pre></td></tr>
+<tr>  <td class="numLine">&nbsp;79</td>  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
+<tr>  <td class="numLine">&nbsp;80</td>  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        </pre></td></tr>
 <tr>  <td class="numLine">&nbsp;81</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        <span class="keyword">public</span> ArrayList&lt;DMessageDTO&gt; createMessagesDTO(ArrayList&lt;DMessage&gt; messages) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;82</td>  <td class="nbHitsCovered">&nbsp;2</td>  <td class="src"><pre class="src">&nbsp;                ArrayList&lt;DMessageDTO&gt; messagesDTO = <span class="keyword">new</span> ArrayList&lt;DMessageDTO&gt;();</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;83</td>  <td class="nbHitsCovered"><a title="Line 83: Conditional coverage 100% (2/2).">&nbsp;4</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 83: Conditional coverage 100% (2/2).">                <span class="keyword">for</span> (<span class="keyword">int</span> i = 0; i &lt; messages.size(); i++) {</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;84</td>  <td class="nbHitsCovered">&nbsp;2</td>  <td class="src"><pre class="src">&nbsp;                        messagesDTO.add(createMessageDTO(messages.get(i)));</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;85</td>  <td class="nbHitsUncovered"><a title="Line 85: Conditional coverage 0% (0/2).">&nbsp;0</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 85: Conditional coverage 0% (0/2).">                }</a></span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;86</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;                </span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;87</td>  <td class="nbHitsCovered">&nbsp;2</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> messagesDTO;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;82</td>  <td class="nbHitsCovered">&nbsp;7</td>  <td class="src"><pre class="src">&nbsp;                ArrayList&lt;DMessageDTO&gt; messagesDTO = <span class="keyword">new</span> ArrayList&lt;DMessageDTO&gt;();</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;83</td>  <td class="nbHitsCovered"><a title="Line 83: Conditional coverage 100% (2/2).">&nbsp;11</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 83: Conditional coverage 100% (2/2).">                <span class="keyword">for</span> (<span class="keyword">int</span> i = 0; i &lt; messages.size(); i++) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;84</td>  <td class="nbHitsCovered">&nbsp;4</td>  <td class="src"><pre class="src">&nbsp;                        messagesDTO.add(createMessageDTO(messages.get(i)));</pre></td></tr>
+<tr>  <td class="numLine">&nbsp;85</td>  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;                }</pre></td></tr>
+<tr>  <td class="numLine">&nbsp;86</td>  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;                </pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;87</td>  <td class="nbHitsCovered">&nbsp;7</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> messagesDTO;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;88</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;89</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;        </span></pre></td></tr>
+<tr>  <td class="numLine">&nbsp;89</td>  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        </pre></td></tr>
 <tr>  <td class="numLine">&nbsp;90</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        <span class="keyword">public</span> ArrayList&lt;DMessage&gt; createMessages(ArrayList&lt;DMessageDTO&gt; messagesDTO) {</pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;91</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;                ArrayList&lt;DMessage&gt; messages = <span class="keyword">new</span> ArrayList&lt;DMessage&gt;();</span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;92</td>  <td class="nbHitsUncovered"><a title="Line 92: Conditional coverage 0% (0/2).">&nbsp;0</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 92: Conditional coverage 0% (0/2).">                <span class="keyword">for</span> (<span class="keyword">int</span> i = 0; i &lt; messagesDTO.size(); i++) {</a></span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;93</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;                        messages.add(createMessage(messagesDTO.get(i)));</span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;94</td>  <td class="nbHitsUncovered"><a title="Line 94: Conditional coverage 0% (0/2).">&nbsp;0</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 94: Conditional coverage 0% (0/2).">                }</a></span></pre></td></tr>
+<tr>  <td class="numLine">&nbsp;94</td>  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;                }</pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;95</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;                <span class="keyword">return</span> messages;</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;96</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;97</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;        }</span></pre></td></tr>
+<tr>  <td class="numLine">&nbsp;97</td>  <td class="nbHits">&nbsp;</td>
+  <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;98</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        </pre></td></tr>
 <tr>  <td class="numLine">&nbsp;99</td>  <td class="nbHits">&nbsp;</td>
@@ -156,6 +183,6 @@
   <td class="src"><pre class="src">&nbsp;}</pre></td></tr>
 </table>
 
-<div class="footer">Report generated by <a href="http://cobertura.sourceforge.net/" target="_top">Cobertura</a> 2.0.3 on 20/05/18 16:00.</div>
+<div class="footer">Report generated by <a href="http://cobertura.sourceforge.net/" target="_top">Cobertura</a> 2.0.3 on 20/05/18 16:30.</div>
 </body>
 </html>

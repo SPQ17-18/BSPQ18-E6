@@ -129,8 +129,7 @@
 				<artifactId>cobertura-maven-plugin</artifactId>
 				<version>2.6</version>
 				
-				
-			
+
         <configuration>
 	    	<formats>
 				<format>xml</format>

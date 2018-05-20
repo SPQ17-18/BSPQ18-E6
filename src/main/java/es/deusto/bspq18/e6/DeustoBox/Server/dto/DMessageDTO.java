@@ -18,10 +18,6 @@ public class DMessageDTO implements Serializable {
 	private String text;
 	
 
-	Locale currentLocale = new Locale("en", "US");
-	ResourceBundle resourcebundle = ResourceBundle.getBundle("lang/translations", currentLocale);
-	
-	
 	public DMessageDTO(int messageId, String emailfrom, String emailTo, String subject, String text, Date date) {
 		this.messageId = messageId;
 		this.emailfrom = emailfrom;
@@ -101,12 +97,13 @@ public class DMessageDTO implements Serializable {
 		this.text = text;
 	}
 
-
 	@Override
 	public String toString() {
-		return resourcebundle.getString("msg_message_id") + messageId + resourcebundle.getString("msg_message_from") + emailfrom + resourcebundle.getString("msg_message_to") + emailTo + resourcebundle.getString("msg_message_date")
-				+ date + resourcebundle.getString("msg_message_subject") + Subject + resourcebundle.getString("msg_message_txt") + text + "]";
+		return "DMessageDTO [messageId=" + messageId + ", emailfrom=" + emailfrom + ", emailTo=" + emailTo + ", date="
+				+ date + ", Subject=" + Subject + ", text=" + text + "]";
 	}
+
+
 	
 	
 	

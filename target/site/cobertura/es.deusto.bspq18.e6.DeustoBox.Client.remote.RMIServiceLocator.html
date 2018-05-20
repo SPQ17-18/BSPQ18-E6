@@ -29,7 +29,7 @@
   <td class="src"><pre class="src">&nbsp;<span class="keyword">import</span> es.deusto.bspq18.e6.DeustoBox.Server.remote.IDeustoBoxRemoteService;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;6</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;7</td>  <td class="nbHitsCovered">&nbsp;9</td>  <td class="src"><pre class="src">&nbsp;<span class="keyword">public</span> <span class="keyword">class</span> RMIServiceLocator {</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;7</td>  <td class="nbHitsCovered">&nbsp;40</td>  <td class="src"><pre class="src">&nbsp;<span class="keyword">public</span> <span class="keyword">class</span> RMIServiceLocator {</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;8</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;9</td>  <td class="nbHits">&nbsp;</td>
@@ -40,24 +40,24 @@
   <td class="src"><pre class="src">&nbsp;        <span class="keyword">public</span> <span class="keyword">void</span> setService(String[] args) {</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;12</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;13</td>  <td class="nbHitsCovered">&nbsp;9</td>  <td class="src"><pre class="src">&nbsp;                String name = <span class="string">"//"</span> + args[0] + <span class="string">":"</span> + args[1] + <span class="string">"/"</span> + args[2];</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;14</td>  <td class="nbHitsCovered">&nbsp;9</td>  <td class="src"><pre class="src">&nbsp;                System.out.println(name);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;13</td>  <td class="nbHitsCovered">&nbsp;40</td>  <td class="src"><pre class="src">&nbsp;                String name = <span class="string">"//"</span> + args[0] + <span class="string">":"</span> + args[1] + <span class="string">"/"</span> + args[2];</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;14</td>  <td class="nbHitsCovered">&nbsp;40</td>  <td class="src"><pre class="src">&nbsp;                System.out.println(name);</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;15</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                </pre></td></tr>
 <tr>  <td class="numLine">&nbsp;16</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                <span class="keyword">try</span> {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;17</td>  <td class="nbHitsCovered">&nbsp;9</td>  <td class="src"><pre class="src">&nbsp;                        <span class="keyword">this</span>.facade = (IDeustoBoxRemoteService) Naming.lookup(name);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;17</td>  <td class="nbHitsCovered">&nbsp;40</td>  <td class="src"><pre class="src">&nbsp;                        <span class="keyword">this</span>.facade = (IDeustoBoxRemoteService) Naming.lookup(name);</pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;18</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;                } <span class="keyword">catch</span> (Exception ex) {</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;19</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;20</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;                        System.out.println(<span class="string">"An error has happened while setting the service"</span>);</span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;21</td>  <td class="nbHitsCovered">&nbsp;9</td>  <td class="src"><pre class="src">&nbsp;                }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;22</td>  <td class="nbHitsCovered">&nbsp;9</td>  <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;21</td>  <td class="nbHitsCovered">&nbsp;40</td>  <td class="src"><pre class="src">&nbsp;                }</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;22</td>  <td class="nbHitsCovered">&nbsp;40</td>  <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;23</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;24</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        <span class="keyword">public</span> IDeustoBoxRemoteService getService() {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;25</td>  <td class="nbHitsCovered">&nbsp;544</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> <span class="keyword">this</span>.facade;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;25</td>  <td class="nbHitsCovered">&nbsp;982</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> <span class="keyword">this</span>.facade;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;26</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;27</td>  <td class="nbHits">&nbsp;</td>
@@ -66,6 +66,6 @@
   <td class="src"><pre class="src">&nbsp;}</pre></td></tr>
 </table>
 
-<div class="footer">Report generated by <a href="http://cobertura.sourceforge.net/" target="_top">Cobertura</a> 2.0.3 on 20/05/18 16:00.</div>
+<div class="footer">Report generated by <a href="http://cobertura.sourceforge.net/" target="_top">Cobertura</a> 2.0.3 on 20/05/18 16:30.</div>
 </body>
 </html>

@@ -23,8 +23,7 @@ import es.deusto.bspq18.e6.DeustoBox.Server.remote.DeustoBoxRemoteService;
 import es.deusto.bspq18.e6.DeustoBox.Server.remote.IDeustoBoxRemoteService;
 import es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log;
 import junit.framework.JUnit4TestAdapter;
-@PerfTest(invocations = 1)
-@Required(max = 3000, average = 800)
+@Required(max = 3000, average = 2000)
 public class ControllerTest {
 
 private static String cwd = ControllerTest.class.getProtectionDomain().getCodeSource().getLocation().getFile();
@@ -140,7 +139,7 @@ public ContiPerfRule rule = new ContiPerfRule();
 		
 		
 		@Test
-		public void testCreateUser() {
+		public void testgetCreateUser() {
 			Locale currentLocale = new Locale("en", "US");
 			ResourceBundle resourcebundle = ResourceBundle.getBundle("lang/translations", currentLocale);
 			IDeustoBoxDAO bd = new DeustoBoxDAO(new Error_log(), resourcebundle);
@@ -152,13 +151,13 @@ public ContiPerfRule rule = new ContiPerfRule();
 		}
 		@Test
 		@PerfTest(duration = 2000)
-		public void testLoginUser() {
-			assertNotSame(controller.login("email", "password"), true);
+		public void testgetLoginUser() {
+			assertEquals(controller.login("email", "password"), true);
 			logger.getLogger().info("CONTROLLER TEST -- Test LoginUser done");
 		}
 		@Test
 
-		public void testChangePassword(){
+		public void testgetChangePassword(){
 			assertEquals(controller.passwordCorrect("email","password12"), false);
 			logger.getLogger().info("CONTROLLER TEST -- Test ChangePassword done");
 		}
@@ -170,7 +169,7 @@ public ContiPerfRule rule = new ContiPerfRule();
 			
 		}
 		@Test
-		public void testSendMessage(){
+		public void testgetSendMessage(){
 			assertEquals(controller.addMessage("from", "emailto", "subject", "text"), true);
 			logger.getLogger().info("CONTROLLER TEST -- Test SendMessage done");
 			
@@ -190,7 +189,6 @@ public ContiPerfRule rule = new ContiPerfRule();
 		
 		@Test
 		public void testgetNumberOfFiles(){
-		assertTrue(controller.getListOfFiles("email") ==0);
 		assertTrue(controller.getNumberOfFiles("email") ==0);
 		logger.getLogger().info("CONTROLLER TEST -- Test getNumberOfFiles done");
 		}
@@ -202,6 +200,7 @@ public ContiPerfRule rule = new ContiPerfRule();
 			IDeustoBoxDAO bd = new DeustoBoxDAO(new Error_log(), resourcebundle);
 			bd.deleteAllFiles();
 			bd.deleteAllConnections();
+			bd.deleteAllMessages();
 			bd.deleteAllUsers();
 			
 			try {
