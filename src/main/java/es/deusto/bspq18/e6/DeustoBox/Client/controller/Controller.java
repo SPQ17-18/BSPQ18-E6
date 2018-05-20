@@ -31,12 +31,20 @@ public class Controller {
 	private ResourceBundle resourcebundle;
 	private Locale currentLocale;
 
+	
+	/**
+	 * Class Constructor.
+	 * @param args Command line arguments.
+	 * @param language language.
+	 * @throws RemoteExeption
+	 */
 	public Controller(String[] args, int language) throws RemoteException {
 		if (language == 0) {
 			currentLocale = new Locale("es", "ES");
 		} else if (language == 1) {
 			currentLocale = new Locale("en", "US");
-		} else if (language == 2) {
+		}
+		if (language == 2) {
 			currentLocale = new Locale("fr", "FR");
 		}
 		resourcebundle = ResourceBundle.getBundle("lang/translations", currentLocale);
@@ -48,6 +56,13 @@ public class Controller {
 
 	}
 
+	/**
+	 * Register the user.
+	 * @param username username of the user.
+	 * @param email email of the user.
+	 * @param password password of the user.
+	 * @return Successful or not.
+	 */
 	public boolean signUp(String username, String email, String password) {
 		DUserDTO res = null;
 		try {
@@ -63,6 +78,12 @@ public class Controller {
 		}
 	}
 
+	/**
+	 * Login.
+	 * @param email email of the user.
+	 * @param password password of the user.
+	 * @return Successful or not.
+	 */
 	public boolean login(String email, String password) {
 		String os = System.getProperty("os.name");
 		DUserDTO res = null;
@@ -82,6 +103,9 @@ public class Controller {
 		}
 	}
 
+	/**
+	 * Get the files.
+	 */
 	public void getFiles() {
 
 		File directorio = new File(path);
@@ -115,6 +139,11 @@ public class Controller {
 		}
 	}
 
+	/**
+	 * Get the files.
+	 * @param email email of the user.
+	 * @return number of files.
+	 */
 	public int getListOfFiles(String email) {
 		int number = 0;
 		try {
@@ -125,7 +154,10 @@ public class Controller {
 		}
 		return number;
 	}
-
+	
+	/**
+	 * Updates the list of files.
+	 */
 	public void getListOfUnknownFiles() {
 		int downloads = 0;
 		int uploads = 0;
@@ -211,6 +243,11 @@ public class Controller {
 
 	}
 
+	/**
+	 * Get the number of Files.
+	 * @param email email of the user.
+	 * @return number number of files.
+	 */
 	public int getNumberOfFiles(String email) {
 		int files = 0;
 
@@ -222,6 +259,12 @@ public class Controller {
 		return files;
 	}
 
+	/**
+	 * Check if the password is correct.
+	 * @param email
+	 * @param password
+	 * @return Correct or not.
+	 */
 	public boolean passwordCorrect(String email, String password) {
 		boolean correct = false;
 		try {
@@ -232,6 +275,12 @@ public class Controller {
 		return correct;
 	}
 
+	/**
+	 * Update the password.
+	 * @param email email of the user.
+	 * @param password new password.
+	 * @return Successful or not.
+	 */
 	public boolean updatePassword(String email, String password) {
 		boolean correct = false;
 
@@ -244,6 +293,11 @@ public class Controller {
 		return correct;
 	}
 
+	/**
+	 * Gets the connection of a certain user.
+	 * @param email email of the user.
+	 * @return ArayList with all the connections.
+	 */
 	public ArrayList<DConnectionDTO> getConnections(String email) {
 		ArrayList<DConnectionDTO> connectionsDTO = new ArrayList<DConnectionDTO>();
 		try {
@@ -254,7 +308,15 @@ public class Controller {
 		return connectionsDTO;
 
 	}
-
+	/**
+	 * Add a message.
+	 * @param emailfrom who writes the email.
+	 * @param emailto who receives the email.
+	 * @param subject subject of the email.
+	 * @param text text of the email.
+	 * @return Successful or not.
+	 */
+	
 	public boolean addMessage(String emailfrom, String emailto, String subject, String text) {
 		int id = 0;
 		boolean correct = false;
@@ -267,7 +329,11 @@ public class Controller {
 		}
 		return correct;
 	}
-
+	/**
+	 * Download the messages send to a user.
+	 * @param email email of the user.
+	 * @return List with the messages.
+	 */
 	public ArrayList<DMessageDTO> downloadMessages(String email) {
 		ArrayList<DMessageDTO> messages = null;
 		try {
@@ -279,7 +345,12 @@ public class Controller {
 		return messages;
 
 	}
-
+	/**
+	 * Upload a file.
+	 * @param pathFile local path of the file.
+	 * @param fileName Name of the file.
+	 * @return Successful or not.
+	 */
 	public boolean sendFiles(String pathFile, String fileName) {
 		try {
 			rsl.getService().ReceiveFiles(fileName, this.userdto.getEmail());
@@ -301,6 +372,11 @@ public class Controller {
 		return true;
 	}
 
+	/**
+	 * Get the size of user inbox.
+	 * @param email email of the user.
+	 * @return size of the inbox.
+	 */
 	public int getNumberOfUserMessages(String email) {
 		int number = 0;
 
@@ -313,7 +389,11 @@ public class Controller {
 		return number;
 
 	}
-
+	/**
+	 * Deletes a  message.
+	 * @param id identificator of the message.
+	 * @return Successful or not.
+	 */
 	public boolean deleteMessage(int id) {
 		boolean correct = false;
 
@@ -328,6 +408,10 @@ public class Controller {
 
 	}
 
+	/**
+	 * Deletes a film.
+	 * @param path of the local folder
+	 */
 	public static String[] getMyFiles(String dir_path) {
 		System.out.println(dir_path);
 		String[] arr_res = null;
@@ -358,22 +442,36 @@ public class Controller {
 		return arr_res;
 	}
 
+	/**
+	 * Get the current user dto.
+	 */
 	public DUserDTO getUserdto() {
 		return userdto;
 	}
 
+	/**
+	 * Update the userdto
+	 * @param userdto new userdto.
+	 */
 	public void setUserdto(DUserDTO userdto) {
 		this.userdto = userdto;
 	}
-
+	/**
+	 * Get the current user path.
+	 */
 	public String getPath() {
 		return path;
 	}
-
+	/**
+	 * Update the path
+	 * @param path new path.
+	 */
 	public void setPath(String path) {
 		this.path = path + getUserdto().getEmail() + "\\";
 	}
-
+	/**
+	 * Get the current resourcebundle.
+	 */
 	public ResourceBundle getResourcebundle() {
 		return resourcebundle;
 	}

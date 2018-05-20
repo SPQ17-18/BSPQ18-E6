@@ -27,6 +27,10 @@ import es.deusto.bspq18.e6.DeustoBox.Server.jdo.data.DUser;
 import es.deusto.bspq18.e6.DeustoBox.Server.remote.IDeustoBoxRemoteService;
 import es.deusto.bspq18.e6.DeustoBox.Server.utils.Error_log;
 
+/**
+ * @author Markel
+ *
+ */
 public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeustoBoxRemoteService {
 
 	private static final long serialVersionUID = 1L;
@@ -42,6 +46,11 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 	private Locale currentLocale;
 	private ResourceBundle resourcebundle;
 
+	/**
+	 * Class Constructor.
+	 * @param resourcebundle language.
+	 * @throws RemoteException.
+	 */
 	public DeustoBoxRemoteService(ResourceBundle resourcebundle) throws RemoteException {
 		this.resourcebundle = resourcebundle;
 		this.logger = new Error_log();
@@ -53,12 +62,23 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		serverReceive.start();
 	}
 
+	/**
+	 * Register the user.
+	 * 
+	 * @param username
+	 *            username of the new user.
+	 * @param email
+	 *            email of the new user.
+	 * @param password
+	 *            password of the new user.
+	 * @return a new UserDTO.
+	 * @throws RemoteException.
+	 */
 	public DUserDTO signUp(String username, String email, String password) throws RemoteException {
 		System.out.println("HOLAAA");
 		boolean correcto = false;
 		DUser user = new DUser(username, email, password);
 		correcto = db.addUser(user);
-		
 
 		if (correcto) {
 			try {
@@ -73,16 +93,36 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		}
 	}
 
+	/**
+	 * Login the user.
+	 * 
+	 * @param email
+	 *            email of the user.
+	 * @param password
+	 *            password of the user.
+	 * @param os
+	 *            OS used by the client
+	 * @return a new UserDTO.
+	 * @throws RemoteException.
+	 */
 	public DUserDTO login(String email, String password, String os) throws RemoteException {
 
 		DUser user = db.getUser(email, password);
 		DUserDTO us = assemble.createUserDTO(user, path);
-		if(!us.equals(null))
-		addConnection(email, os);
-		
+		if (!us.equals(null))
+			addConnection(email, os);
+
 		return us;
 	}
 
+	/**
+	 * Get the files of a certain user.
+	 * 
+	 * @param email
+	 *            email of the user.
+	 * @return a list with all the files.
+	 * @throws RemoteException.
+	 */
 	public ArrayList<DFileDTO> getFiles(String email) throws RemoteException {
 		String path = getInstaller().getTxtPath().getText();
 
@@ -92,6 +132,18 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		return filesDTO;
 	}
 
+	/**
+	 * Send data to the client.
+	 * 
+	 * @param filename
+	 *            name of the file.
+	 * @param data
+	 *            bytes of the file.
+	 * @param len
+	 *            size of the file.
+	 * @return Succesful or not.
+	 * @throws RemoteException.
+	 */
 	public boolean sendData(String filename, byte[] data, int len) throws RemoteException {
 		try {
 			FileOutputStream out = new FileOutputStream(filename, true);
@@ -106,19 +158,44 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		return true;
 	}
 
+	/**
+	 * Checks if a password for a user is correct.
+	 * 
+	 * @param email
+	 *            email of the user.
+	 * @param password
+	 *            password of the user.
+	 * @return Succesful or not.
+	 * @throws RemoteException.
+	 */
 	public boolean checkPassword(String email, String password) throws RemoteException {
 		boolean correct = false;
 		correct = db.checkPassword(email, password);
 		return correct;
 	}
 
-	@Override
+	/**
+	 * Change the password for an user.
+	 * 
+	 * @param email
+	 *            email of the user.
+	 * @param password
+	 *            password of the user.
+	 * @return Succesful or not.
+	 * @throws RemoteException.
+	 */
 	public boolean updatePassword(String email, String password) throws RemoteException {
 		boolean correct = false;
 		correct = db.updatePassword(email, password);
 		return correct;
 	}
 
+	/**
+	 * Specify the user path.
+	 * 
+	 * @param email
+	 *            email of the user.
+	 */
 	public void setPath(String email) {
 		this.path = getInstaller().getInstaller().getPath() + "\\" + email + "\\";
 	}
@@ -131,23 +208,46 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		FiletoWrite = filetoWrite;
 	}
 
-	@Override
+	/**
+	 * Returns the number of user's files.
+	 * 
+	 * @param email
+	 *            email of the user.
+	 * @return number of files
+	 * @throws RemoteException.
+	 */
 	public int getNumberOfUserFiles(String email) throws RemoteException {
 		int number = 0;
 		number = db.getNumberOfUserFiles(email);
 		return number;
 	}
 
+	/**
+	 * Prepare the server for receiving files.
+	 * 
+	 * @param file
+	 *            file that will be received
+	 * @param email
+	 *            email of the user.
+	 * @throws RemoteException.
+	 */
 	public void ReceiveFiles(String file, String email) throws RemoteException {
 		setPath(email);
 		setFiletoWrite(file);
 
 	}
 
+	/**
+	 * Get the DB.
+	 */
 	public IDeustoBoxDAO getDb() {
 		return db;
 	}
 
+	/**
+	 * Set the DB.
+	* @param db new Data Base.
+	 */
 	public void setDb(IDeustoBoxDAO db) {
 		this.db = db;
 	}
@@ -178,18 +278,29 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		}
 	};
 
-	@Override
-	public boolean addConnection(String email, String systema)throws RemoteException {
+	/**
+	 * Add connections to the DB.
+	* @param email email of the user.
+	* @param systema System used by the client.
+	* @return Succesful or not.
+	* @throws RemoteException.
+	 */
+	public boolean addConnection(String email, String systema) throws RemoteException {
 		boolean correct = false;
 		int number = db.getLastConnectionID();
-		DConnection con = new DConnection(number +1, email, systema);
-		correct =  db.addConnection(con);
-		
+		DConnection con = new DConnection(number + 1, email, systema);
+		correct = db.addConnection(con);
+
 		return correct;
 	}
 
-	@Override
-	public ArrayList<DConnectionDTO> getConnections(String email)throws RemoteException {
+	/**
+	 * Gets the connections of a certain user.
+	* @param email email of the user.
+	* @return List of the user connections.
+	* @throws RemoteException.
+	 */
+	public ArrayList<DConnectionDTO> getConnections(String email) throws RemoteException {
 		ArrayList<DConnection> connections = new ArrayList<DConnection>();
 		connections = db.getConnections(email);
 		ArrayList<DConnectionDTO> connectionsDTO;
@@ -197,17 +308,27 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		return connectionsDTO;
 	}
 
-	@Override
+	/**
+	 * Gets the messages of a certain user.
+	* @param email email of the user.
+	* @return List of the user messages.
+	* @throws RemoteException.
+	 */
 	public ArrayList<DMessageDTO> getMessages(String email) throws RemoteException {
 		// TODO Auto-generated method stub
 		ArrayList<DMessageDTO> messagesdto = new ArrayList<DMessageDTO>();
 		ArrayList<DMessage> messages = new ArrayList<DMessage>();
-		messages =db.getAllMessagesOfSendToAUser(email);
+		messages = db.getAllMessagesOfSendToAUser(email);
 		messagesdto = assemble.createMessagesDTO(messages);
 		return messagesdto;
 	}
 
-	@Override
+	/**
+	 * Add a message to the DB.
+	* @param messagedto
+	* @return Succesful or not.
+	* @throws RemoteException.
+	 */
 	public boolean addMessage(DMessageDTO messagedto) throws RemoteException {
 		DMessage message = null;
 		message = assemble.createMessage(messagedto);
@@ -215,26 +336,39 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		return correct;
 	}
 
-	@Override
+	/**
+	 * Gets the next message id.
+	* @return next message id.
+	* @throws RemoteException.
+	 */
 	public int getNewMessageId() throws RemoteException {
 		int messages = 0;
 		messages = db.getLastMessageID() + 1;
 		return messages;
 	}
 
-	@Override
+	/**
+	 * Gets the number of messages of a certain user.
+	* @param email email of the user.
+	* @return number of emails.
+	* @throws RemoteException.
+	 */
 	public int getNumberOfUserMessages(String email) throws RemoteException {
 		int number = 0;
 		number = db.getNumberOfUserMessages(email);
 		return number;
 	}
 
-	@Override
+	/**
+	 * Delete a message.
+	* @param id message to delete.
+	* @return Succesful or not.
+	* @throws RemoteException.
+	 */
 	public boolean DeleteMessage(int id) throws RemoteException {
 		// TODO Auto-generated method stub
 		boolean correct = db.deleteMessage(id);
 		return correct;
 	}
-
 
 }
