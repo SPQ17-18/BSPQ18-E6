@@ -125,7 +125,7 @@ public class v_register extends JFrame {
 		txtPassword2.setBounds(146, 165, 146, 25);
 		panel.add(txtPassword2);
 		
-		back = new JButton("Back");
+		back = new JButton(controlador.getResourcebundle().getString("msg_btton_back"));
 		back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			new v_login(controlador);

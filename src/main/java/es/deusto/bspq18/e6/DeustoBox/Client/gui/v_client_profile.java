@@ -10,8 +10,11 @@ import javax.swing.border.EmptyBorder;
 
 import es.deusto.bspq18.e6.DeustoBox.Client.controller.Controller;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import javax.swing.JPasswordField;
+import javax.swing.SwingConstants;
+import java.awt.Font;
 
 public class v_client_profile extends JFrame {
 
@@ -41,7 +44,7 @@ public class v_client_profile extends JFrame {
 		setResizable(false);
 		this.controlador = controlador;
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 482, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -53,7 +56,9 @@ public class v_client_profile extends JFrame {
 	}
 	public void InitComponents() {
 		lblMyProfile = new JLabel(controlador.getResourcebundle().getString("msg_profile") );
-		lblMyProfile.setBounds(223, 6, 112, 16);
+		lblMyProfile.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblMyProfile.setHorizontalAlignment(SwingConstants.CENTER);
+		lblMyProfile.setBounds(6, 6, 438, 16);
 		contentPane.add(lblMyProfile);
 		
 		lblEmail = new JLabel(controlador.getResourcebundle().getString("msg_email") );
@@ -115,17 +120,16 @@ public class v_client_profile extends JFrame {
 					if(controlador.passwordCorrect(email,String.valueOf(passwordField.getPassword()))){
 						v_client_profile_changepassword window = new v_client_profile_changepassword(controlador);
 						window.setVisible(true);
-						
+					} else {
+						JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getString("msg_wrong_change"), "Error", JOptionPane.ERROR_MESSAGE);
 					}
-					
-					
 				}
 				
 			}
 		});
 		
 		btnCheckConnections = new JButton((controlador.getResourcebundle().getString("msg_checkC") ));
-		btnCheckConnections.setBounds(299, 32, 145, 29);
+		btnCheckConnections.setBounds(299, 32, 167, 29);
 		btnCheckConnections.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				v_client_connections connections = new v_client_connections(controlador);

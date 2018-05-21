@@ -72,8 +72,7 @@ public class DConnectionDTO implements Serializable {
 
 	@Override
 	public String toString() {
-		return "DConnectionDTO [id=" + id + ", userEmail=" + userEmail + ", ConnectionDate=" + ConnectionDate
-				+ ", OSUsed=" + OSUsed + "]";
+		return " ConnectionDate=" + ConnectionDate + ", OSUsed=" + OSUsed + "]";
 	}
 
 

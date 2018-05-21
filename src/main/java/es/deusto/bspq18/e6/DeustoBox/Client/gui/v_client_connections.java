@@ -15,6 +15,8 @@ import es.deusto.bspq18.e6.DeustoBox.Server.dto.DConnectionDTO;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
+import javax.swing.SwingConstants;
+import java.awt.Font;
 
 public class v_client_connections extends JFrame {
 
@@ -34,10 +36,11 @@ public class v_client_connections extends JFrame {
 	 */
 	@SuppressWarnings({ })
 	public v_client_connections(Controller controlador) {
+		setResizable(false);
 		this.controlador = controlador;
 
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 524, 317);
 		contentPane = new JPanel();
 
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -46,22 +49,25 @@ public class v_client_connections extends JFrame {
 
 		InitComponents();
 		this.setVisible(true);
+		setLocationRelativeTo(null);
 		updateJlist();
 	}
 
 	@SuppressWarnings("rawtypes")
 	public void InitComponents() {
 		txtMyConnections = new JLabel();
+		txtMyConnections.setFont(new Font("Tahoma", Font.BOLD, 15));
+		txtMyConnections.setHorizontalAlignment(SwingConstants.CENTER);
 		txtMyConnections.setText(controlador.getResourcebundle().getString("msg_connections"));
-		txtMyConnections.setBounds(152, 6, 130, 26);
+		txtMyConnections.setBounds(25, 6, 483, 26);
 		contentPane.add(txtMyConnections);
 
 		listR = new JList();
-		listR.setBounds(25, 44, 405, 187);
+		listR.setBounds(25, 44, 483, 187);
 		getContentPane().add(listR);
 
 		btnBack = new JButton(controlador.getResourcebundle().getString("back_btn"));
-		btnBack.setBounds(152, 243, 117, 29);
+		btnBack.setBounds(199, 243, 117, 34);
 		contentPane.add(btnBack);
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

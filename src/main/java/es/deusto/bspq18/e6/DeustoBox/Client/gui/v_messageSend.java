@@ -59,12 +59,12 @@ public class v_messageSend extends JFrame {
 		panel.add(lblSubject);
 		
 		txtReciever = new JTextField();
-		txtReciever.setBounds(34, 22, 380, 20);
+		txtReciever.setBounds(59, 22, 355, 22);
 		panel.add(txtReciever);
 		txtReciever.setColumns(10);
 		
 		txtSubject = new JTextField();
-		txtSubject.setBounds(59, 50, 355, 20);
+		txtSubject.setBounds(59, 50, 355, 22);
 		panel.add(txtSubject);
 		txtSubject.setColumns(10);
 		
@@ -81,7 +81,7 @@ public class v_messageSend extends JFrame {
 							String email = controlador.getUserdto().getEmail();
 							boolean correct = controlador.addMessage(email,txtReciever.getText(), txtSubject.getText(), txtMessage.getText());
 							if(correct){
-								JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getString("msg_message_to")  + txtReciever.getText() + controlador.getResourcebundle().getString("msg_message_correct") );
+								JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getString("msg_message_to") + " " + txtReciever.getText() + "\n " + controlador.getResourcebundle().getString("msg_message_correct") );
 								dispose();
 							}else{
 								JOptionPane.showMessageDialog(null, controlador.getResourcebundle().getString("msg_error") );
@@ -101,7 +101,7 @@ public class v_messageSend extends JFrame {
 				
 			}
 		});
-		btnSend.setBounds(311, 228, 89, 23);
+		btnSend.setBounds(311, 228, 89, 25);
 		panel.add(btnSend);
 
 		txtMessage = new JTextArea();

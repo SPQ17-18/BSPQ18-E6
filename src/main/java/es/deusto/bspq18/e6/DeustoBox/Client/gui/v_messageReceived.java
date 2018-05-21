@@ -65,7 +65,7 @@ public class v_messageReceived extends JFrame {
 		panel.add(lblSubject);
 
 		lblNewMessage = new JLabel(controlador.getResourcebundle().getString("msg_new_message"));
-		lblNewMessage.setBounds(10, 0, 86, 14);
+		lblNewMessage.setBounds(10, 0, 231, 14);
 		panel.add(lblNewMessage);
 
 		btnErrase = new JButton(controlador.getResourcebundle().getString("remove_btn"));
@@ -89,7 +89,7 @@ public class v_messageReceived extends JFrame {
 
 			}
 		});
-		btnErrase.setBounds(311, 228, 89, 23);
+		btnErrase.setBounds(311, 226, 89, 25);
 		panel.add(btnErrase);
 
 		lblFromtxt = new JLabel("");
@@ -106,12 +106,12 @@ public class v_messageReceived extends JFrame {
 		txtMessage.setEditable(false);
 		txtMessage.setWrapStyleWord(true);
 		txtMessage.setLineWrap(true);
-		txtMessage.setBounds(10, 75, 404, 152);
+		txtMessage.setBounds(10, 75, 404, 142);
 		txtMessage.setText(messages.get(position).getText());
 		panel.add(txtMessage);
 
 		btnNext = new JButton(controlador.getResourcebundle().getString("next_btn"));
-		btnNext.setBounds(164, 228, 89, 23);
+		btnNext.setBounds(164, 226, 89, 25);
 		btnNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (position < messages.size() - 1) {
@@ -127,7 +127,7 @@ public class v_messageReceived extends JFrame {
 		panel.add(btnNext);
 
 		btnPreview = new JButton("Preview");
-		btnPreview.setBounds(50, 228, 89, 23);
+		btnPreview.setBounds(50, 226, 89, 25);
 
 		btnPreview.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

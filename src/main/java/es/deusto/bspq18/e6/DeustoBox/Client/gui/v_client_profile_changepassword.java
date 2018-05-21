@@ -12,6 +12,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import javax.swing.JPasswordField;
+import javax.swing.SwingConstants;
+import java.awt.Font;
 
 
 public class v_client_profile_changepassword extends JFrame {
@@ -33,20 +35,24 @@ public class v_client_profile_changepassword extends JFrame {
 	 * Create the frame.
 	 */
 	public v_client_profile_changepassword(Controller controlador) {
+		setResizable(false);
 		this.controlador = controlador;
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 332, 260);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setBounds(100, 100, 332, 270);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		InitComponents();
+		setLocationRelativeTo(null);
 		this.setVisible(true);
 		
 	}
 	public void InitComponents() {
 		lblChangePassword = new JLabel(controlador.getResourcebundle().getString("msg_change_pass"));
-		lblChangePassword.setBounds(113, 6, 126, 16);
+		lblChangePassword.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblChangePassword.setHorizontalAlignment(SwingConstants.CENTER);
+		lblChangePassword.setBounds(10, 6, 296, 16);
 		contentPane.add(lblChangePassword);
 		
 		lblInsertThePassword = new JLabel(controlador.getResourcebundle().getString("msg_insert_pass"));
