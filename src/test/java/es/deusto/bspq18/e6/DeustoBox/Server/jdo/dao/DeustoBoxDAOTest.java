@@ -51,7 +51,6 @@ public class DeustoBoxDAOTest {
 		assertEquals("12345", ret.getPassword());
 		ArrayList<DUser> users = null;
 		users = db.getAllUsers();
-		System.out.println("HAY " + users.size());
 		assertEquals("dipina4", users.get(users.size() -1).getUsername());
 		db.deleteAllUsers();
 		logger.getLogger().info("DAO TEST -- testUser test done correctly");
@@ -111,7 +110,6 @@ public class DeustoBoxDAOTest {
 	db.addConnection(con);
 	ArrayList<DConnection> ret = null;
 	ret = db.getConnections("userEmail");
-	System.out.println("La conexion: " + ret.get(0).toString());
 	assertEquals(con.getID(), ret.get(0).getID());
 	db.deleteAllConnections();
 	logger.getLogger().info("DAO TEST -- addConnection test done correctly");
@@ -127,7 +125,6 @@ public class DeustoBoxDAOTest {
 		db.addMessage(mes);
 		ArrayList<DMessage> ret = null;
 		ret = db.getAllMessagesOfSendToAUser("emailto");
-		System.out.println(ret.get(ret.size()-1).toString());
 		assertEquals(ret.get(ret.size() -1).getEmailfrom(), "from");
 		assertEquals(ret.get(ret.size() -1).getEmailTo(), "emailto");
 		assertEquals(ret.get(ret.size() -1).getText(), "text");
