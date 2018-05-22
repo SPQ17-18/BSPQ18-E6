@@ -353,11 +353,12 @@ public class Controller {
 	 */
 	public boolean sendFiles(String pathFile, String fileName) {
 		try {
-			rsl.getService().ReceiveFiles(fileName, this.userdto.getEmail());
-			Socket so = new Socket("localhost", 5000);
-			DataOutputStream out = new DataOutputStream(so.getOutputStream());
 			File file = new File(pathFile);
 			long length = file.length();
+			rsl.getService().ReceiveFiles(fileName, this.userdto.getEmail(), length);
+			Socket so = new Socket("localhost", 5000);
+			DataOutputStream out = new DataOutputStream(so.getOutputStream());
+
 			if (length > Integer.MAX_VALUE) {
 				logger.getLogger().error(resourcebundle.getString("msg_file_large"));
 			}

@@ -45,6 +45,7 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 	private DataInputStream in;
 	private String FiletoWrite;
 	private Error_log logger;
+	private long lengthFile;
 	/**
 	 * Class Constructor.
 	 * @param resourcebundle language.
@@ -54,6 +55,7 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 		this.logger = new Error_log();
 		this.db = new DeustoBoxDAO(logger, resourcebundle);
 		this.assemble = new Assembler();
+		this.lengthFile = 0;
 		try {
 			for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
 				if ("Nimbus".equals(info.getName())) {
@@ -84,7 +86,6 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 	 * @throws RemoteException.
 	 */
 	public DUserDTO signUp(String username, String email, String password) throws RemoteException {
-		System.out.println("HOLAAA");
 		boolean correcto = false;
 		DUser user = new DUser(username, email, password);
 		correcto = db.addUser(user);
@@ -240,9 +241,11 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 	 *            email of the user.
 	 * @throws RemoteException.
 	 */
-	public void ReceiveFiles(String file, String email) throws RemoteException {
+	public void ReceiveFiles(String file, String email, long length) throws RemoteException {
+		this.lengthFile = length;
 		setPath(email);
 		setFiletoWrite(file);
+		
 
 	}
 
@@ -268,9 +271,11 @@ public class DeustoBoxRemoteService extends UnicastRemoteObject implements IDeus
 					sc = new ServerSocket(5000);
 					so = sc.accept();
 					in = new DataInputStream(new BufferedInputStream(so.getInputStream()));
-					byte[] bytes = new byte[1024];
+					
+					byte[] bytes = new byte[(int) lengthFile];
 					in.read(bytes);
 					String write = path + FiletoWrite;
+					File file = new File(FiletoWrite);
 					FileOutputStream fos = new FileOutputStream(write);
 					fos.write(bytes);
 					fos.close();

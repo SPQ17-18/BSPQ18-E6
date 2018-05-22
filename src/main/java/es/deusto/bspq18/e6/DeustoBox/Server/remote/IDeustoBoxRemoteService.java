@@ -20,7 +20,7 @@ public interface IDeustoBoxRemoteService extends Remote{
 	public boolean checkPassword(String email,String password)throws RemoteException;
 	public boolean updatePassword(String email,String password)throws RemoteException;
 	public IDeustoBoxDAO getDb() throws RemoteException;
-	public void ReceiveFiles(String file, String email) throws RemoteException;
+	public void ReceiveFiles(String file, String email, long length) throws RemoteException;
 	public boolean addConnection(String email, String systema) throws RemoteException;
 	public ArrayList<DConnectionDTO> getConnections(String email) throws RemoteException;
 	public ArrayList<DMessageDTO> getMessages(String email) throws RemoteException;
